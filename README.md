@@ -468,7 +468,9 @@ module Rails
 end
 ```
 
-As we see in the Rack middleware stack, the last one is `@app=#<ActionDispatch::Routing::RouteSet:0x00007fa1e594cbe8>`
+As we see in the Rack middleware stack, the last one is 
+
+`@app=#<ActionDispatch::Routing::RouteSet:0x00007fa1e594cbe8>`
 ```ruby
 # ./gems/actionpack5.2.2/lib/action_dispatch/routing/route_set.rb
 module ActionDispatch
@@ -570,7 +572,8 @@ module ActionDispatch
         def serve(req)
           params     = req.path_parameters # params: { action: 'index', controller: 'home' }
           controller = controller(req) # controller: HomeController
-          res        = controller.make_response!(req) # The definition of make_response! is ActionDispatch::Response.create.tap do |res| res.request = request; end
+          # The definition of make_response! is ActionDispatch::Response.create.tap do |res| res.request = request; end
+          res        = controller.make_response!(req) 
           dispatch(controller, params[:action], req, res) # Let's step into this line.
         rescue ActionController::RoutingError
           if @raise_on_name_error
@@ -1143,7 +1146,7 @@ end
 
 It's time to answer the question before: 
 
-How can this instance variable defined '@users' in HomeController be accessed in './app/views/home/index.html.erb' ?
+How can instance variable like `@users` defined in `HomeController` be accessed in `./app/views/home/index.html.erb`?
 
 ```ruby
 # ./gems/actionview-5.2.2/lib/action_view/rendering.rb
@@ -1236,7 +1239,7 @@ end
 
 ```
 
-## Part 4: What `$ rails server` do?
+## Part 4: What does `$ rails server` do?
 Assume your rails project app class name is `YourProject::Application` (defined in `./config/application.rb`).
 
 First, I will give you a piece of important code.
@@ -1268,7 +1271,7 @@ module Rails
 end
 ```
 
-Then, Let's start rails by `rails server`. The command `rails` locates at `./bin/`.
+Then, let's start rails by `rails server`. The command `rails` locates at `./bin/`.
 ```ruby
 #!/usr/bin/env ruby
 APP_PATH = File.expand_path('../config/application', __dir__)
@@ -1591,6 +1594,6 @@ module Rack
   end
 end
 ```
-Now puma has been started successfully running your app (instance of YourProject::Application). 
+Now puma has been started successfully with your app (instance of YourProject::Application) running. 
 
 
