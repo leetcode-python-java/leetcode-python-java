@@ -1909,7 +1909,7 @@ module Puma
       thread = server.run # Let's step into this line later.
       
       # This line will suspend the main thread execution.
-      # And the `thread`'s block (which is method `handle_servers`) will be executed in main thread.
+      # And the `thread`'s block (which is method `handle_servers`) will be executed.
       # See `Thread#join` for more information.
       # I will show you a simple example for using `thread.join`.
       # Please search `test_thread_join.rb` in this document.
@@ -1991,7 +1991,6 @@ module Puma
       # ...
 
       if background # background: true (for this example)
-      
         # It's important part. 
         # Remember puma created a thread here!
         # We will know that the thread's job is waiting for requests.
@@ -2431,7 +2430,7 @@ module Puma
       # The @thread is just the always running Thread created in `Puma::Server#run`.
       # Please look at method `Puma::Server#run`.
       # `@thread.join` will suspend the main thread execution.
-      # And the @thread's code will continue be executed in main thread.
+      # And the @thread's code will continue be executed.
       # Because @thread is waiting for incoming request, the next executed code 
       # will be `ios = IO.select sockets` in method `handle_servers`.
       @thread.join if @thread && sync
