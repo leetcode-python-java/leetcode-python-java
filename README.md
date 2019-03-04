@@ -1,14 +1,13 @@
 # Learn-Rails-by-Reading-Source-Code
 
-## Part 0: Before you research Rails 5 source code
+## Part 0: Before reading Rails 5 source code
 1) I suggest you learn Rack [http://rack.github.io/](http://rack.github.io/) first. 
 
-You need to know that an object respond to `call` method is the most important convention.
+In rack, an object with `call` method is a rack app.
 
-So which is the object with `call` method in Rails App? I will answer this question in Part 1.
+So what is the object with `call` method in Rails? I will answer this question in Part 1.
 
-2) You need a good IDE with debugging function. I use [RubyMine](https://www.jetbrains.com/).
-
+2) You need a good IDE which can help for debugging. I use [RubyMine](https://www.jetbrains.com/).
 
 ### What you will learn from this tutorial?
 * How does Rails start your application?
@@ -24,7 +23,7 @@ So which is the object with `call` method in Rails App? I will answer this quest
 I should start with the command `$ rails server`, but I put this to Part 4. Because it's a little bit complex.
 
 ## Part 1: Your app: an instance of YourProject::Application
-Assume your Rails app class name is `YourProject::Application` (defined in `./config/application.rb`).
+Assume your Rails app's class name is `YourProject::Application` (defined in `./config/application.rb`).
 
 First, I will give you a piece of important code.
 ```ruby
