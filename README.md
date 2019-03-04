@@ -1908,19 +1908,18 @@ module Puma
       # ...
       thread = server.run # Let's step into this line later.
       
-      # This line will suspend the main process execution.
-      # And the `thread`'s block (which is method `handle_servers`) will be executed in main process.
+      # This line will suspend the main thread execution.
+      # And the `thread`'s block (which is method `handle_servers`) will be executed in main thread.
       # See `Thread#join` for more information.
       # I will show you a simple example for using `thread.join`.
       # Please search `test_thread_join.rb` in this document.
       thread.join
       
-      # The below line will never be executed because `thread` is always running 
-      # and `thread` has joined to main process.
+      # The below line will never be executed because `thread` is always running and `thread` has joined.
       # When `$ kill -s SIGTERM puma_process_id`, the below line will still not be executed
       # because the block of `Signal.trap "SIGTERM"` in `Puma::Launcher#setup_signals` will be executed.
       # If you remove the line `thread.join`, the below line will be executed, 
-      # but the main process will exit after all code executed and all the threads not joined will be killed.
+      # but the main thread will exit after all code executed and all the threads not joined will be killed.
       puts "anything which will never be executed..."
     end
   end
@@ -1992,8 +1991,6 @@ module Puma
       # ...
 
       if background # background: true (for this example)
-        # 
-        puts "#{Thread.current.object_id}"
       
         # It's important part. 
         # Remember puma created a thread here!
