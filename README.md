@@ -34,7 +34,7 @@ module Rails
       def perform
         # ...
         Rails::Server.new(server_options).tap do |server|
-          # APP_PATH is '/Users/your_name/your-project/config/application'.
+          # APP_PATH is '/Users/your_name/your_project/config/application'.
           # require APP_PATH will create the 'Rails.application' object.
           # Actually, 'Rails.application' is an instance of `YourProject::Application`.
           # Rack server will start 'Rails.application'.
@@ -73,7 +73,7 @@ require_relative 'config/environment'
 run Rails.application # It seems that this is the app.
 ```
 
-Let's test it by `Rails.application.respond_to?(:call)`, it returns true.
+Let's test it by `Rails.application.respond_to?(:call)`, it returns `true`.
 
 Let's step into `Rails.application`.
 
@@ -95,7 +95,7 @@ module Rails
 end
 ```
 
-Because `Rails.application.respond_to?(:call)` returns true, `app_class.instance` has a `call` method.
+Because `Rails.application.respond_to?(:call)` returns `true`, `app_class.instance` has a `call` method.
 
 When was `app_class` set?
 ```ruby
@@ -110,20 +110,26 @@ module Rails
 end
 ```
 
-`Rails::Application` is inherited like below,
+`Rails::Application` is inherited by `YourProject`,
 ```ruby
 # ./config/application.rb
 module YourProject
-  # The hooked method `inherited` defined in eigenclass of 'Rails::Application' is invoked.
+  # The hooked method `inherited` will be invoked here.
   class Application < Rails::Application
   end
 end
 ```
-`YourProject::Application` will become the `Rails.app_class`.
+So `YourProject::Application` is the `Rails.app_class` here.
 
-You may have a question: how does rails enter this file (`./config/application.rb`)?
+You may have a question: When does Rails execute the code in `./config/application.rb`?
 
-Let's look back to `config.ru` to see the first line of this file `require_relative 'config/environment'`.
+To answer this question, we need to look back to `config.ru`.
+```ruby
+# ./config.ru
+require_relative 'config/environment' # Let's step into this line.
+
+run Rails.application # It seems that this is the app.
+```
 
 ```ruby
 # ./config/environment.rb
@@ -145,16 +151,18 @@ require 'rails/all'
 Bundler.require(*Rails.groups)
 
 module YourProject
-  # The hooked method `inherited` defined in eigenclass of 'Rails::Application' is invoked.
+  # The hooked method `inherited` will be invoked here.
   class Application < Rails::Application
     config.load_defaults 5.2
     config.i18n.default_locale = :zh
   end
 end
 ```
-Let's replace `app_class.instance` to `YourProject::Application.instance`.
+Because `YourProject::Application` is `Rails.app_class`, `app_class.instance` is `YourProject::Application.instance`.
 
-But where is the `call` method? `call` method should be a method of `YourProject::Application.instance`.
+But where is the `call` method? 
+
+`call` method should be a method of `YourProject::Application.instance`.
 
 The `call` method processes every request. Here it is.
 ```ruby
@@ -183,11 +191,11 @@ end
 
 Ancestor's chain is `YourProject::Application < Rails::Application < Rails::Engine < Rails::Railtie`.
 
-So `YourProject::Application.new.respond_to?(:call)` will return true.
+So `YourProject::Application.new.respond_to?(:call)` returns `true`.
 
 But what does `app_class.instance` really do?
 
-`instance` is just a method name. What we really need is `app_class.new`.
+`instance` is just a method name. What we really expects is something like `app_class.new`.
 
 Let's look at the definition of `instance`.
 ```ruby
@@ -195,15 +203,15 @@ Let's look at the definition of `instance`.
 module Rails
   class Application < Engine
     def instance
-      super.run_load_hooks! # This line confused me. 
+      super.run_load_hooks! # This line confused me at the beginning. 
     end
   end
 end
 ```
-After a deep research, I realized that this code is equal to
+After a deep research, I realized that this code is equal to:
 ```ruby
 def instance
-  return_value = super # Keyword 'super' will call the ancestor's same name method: 'instance'.
+  return_value = super # Keyword 'super' means call the ancestor's same name method: 'instance'.
   return_value.run_load_hooks!
 end
 ```
@@ -220,7 +228,7 @@ module Rails
   end
 end
 ```
-And `YourProject::Application.new` is `Rails.application`.
+
 ```ruby
 module Rails
   def application
@@ -228,22 +236,27 @@ module Rails
   end
 end
 ```
+
+So `YourProject::Application.new` is `Rails.application`.
+
 Rack server will start `Rails.application` in the end.
 
-It is an important object in Rails.
+`Rails.application` is an important object in Rails.
 
-And you'll only have one `Rails.application` in one process. Multiple threads shared only one `Rails.application`.
+And you'll only have one `Rails.application` in one puma process. 
+
+Multiple threads in a puma process shares the `Rails.application`.
 
 ## Part 2: config
-First time we see the `config` is in `./config/application.rb`.
+The first time we see the `config` is in `./config/application.rb`.
 ```ruby
 # ./config/application.rb
 #...
 module YourProject
   class Application < Rails::Application
-    # Actually, config is a method of YourProject::Application.
-    # It is defined in it's grandfather's father: Rails::Railtie
-    config.load_defaults 5.2  # Let's step into this line to see what config is.
+    # Actually, `config` is a method of `YourProject::Application`.
+    # It is defined in it's grandfather's father: `Rails::Railtie`
+    config.load_defaults 5.2  # Let's step into this line to see what is config.
     config.i18n.default_locale = :zh
   end
 end
@@ -253,13 +266,13 @@ end
 module Rails
   class Railtie
     class << self
-      # Method :config is defined here.
-      # Actually, method :config is delegated to another object `:instance`.
+      # Method `:config` is defined here.
+      # Actually, method `:config` is delegated to another object `:instance`.
       delegate :config, to: :instance 
       
       # Call `YourProject::Application.config` will actually call `YourProject::Application.instance.config`
       def instance
-        # return an instance of YourProject::Application.
+        # return an instance of `YourProject::Application`.
         # Call `YourProject::Application.config` will actually call `YourProject::Application.new.config`
         @instance ||= new 
       end
@@ -272,7 +285,9 @@ module Rails
   class Application < Engine
     class << self
       def instance
-        return_value = super # 'super' will call :instance method in Railtie, which will return an instance of YourProject::Application. 
+        # 'super' will call `:instance` method in `Railtie`, 
+        # which will return an instance of `YourProject::Application`.
+        return_value = super  
         return_value.run_load_hooks!
       end
     end
@@ -282,21 +297,19 @@ module Rails
       @ran_load_hooks = true
 
       # ...
-      self # self is an instance of YourProject::Application. And it is Rails.application.
+      self # `self` is an instance of `YourProject::Application`, and `self` is `Rails.application`.
     end
     
-    # This is the method config.
+    # This is the method `config`.
     def config
-      # It is an instance of class Rails::Application::Configuration. 
-      # Please notice that Rails::Application is superclass of YourProject::Application (self's class).   
+      # It is an instance of class `Rails::Application::Configuration`. 
+      # Please notice that `Rails::Application` is superclass of `YourProject::Application` (self's class).   
       @config ||= Application::Configuration.new(self.class.find_root(self.class.called_from))
     end
   end
 end
 ```
-In the end, `YourProject::Application.config` will become `Rails.application.config`.
-
-`YourProject::Application.config === Rails.application.config` returns true.
+In the end, `YourProject::Application.config === Rails.application.config` returns `true`.
 
 Invoke Class's `config` method become invoke the class's instance's `config` method.
 
@@ -309,13 +322,13 @@ module Rails
   end
 end
 ```
-So `Rails.configuration === Rails.application.config # return ture.`.
+So `Rails.configuration === Rails.application.config` returns `true`.
 
+FYI:
 ```ruby
 module Rails
   class Application
     class Configuration < ::Rails::Engine::Configuration
-      
     end
   end
   
@@ -328,7 +341,7 @@ module Rails
         #...
         @middleware = Rails::Configuration::MiddlewareStackProxy.new
       end
-    end  
+    end
   end
   
   class Railtie
@@ -470,10 +483,55 @@ module Rails
     end
     
     def app
-      # You may want to know when does the @app first time initialized.
+      # FYI,
+      # caller: [
+      # "../gems/railties-5.2.2/lib/rails/application/finisher.rb:47:in `block in <module:Finisher>'", 
+      # "../gems/railties-5.2.2/lib/rails/initializable.rb:32:in `instance_exec'", 
+      # "../gems/railties-5.2.2/lib/rails/initializable.rb:32:in `run'", 
+      # "../gems/railties-5.2.2/lib/rails/initializable.rb:63:in `block in run_initializers'", 
+      # "../ruby-2.6.0/lib/ruby/2.6.0/tsort.rb:228:in `block in tsort_each'", 
+      # "../ruby-2.6.0/lib/ruby/2.6.0/tsort.rb:350:in `block (2 levels) in each_strongly_connected_component'",
+      # "../ruby-2.6.0/lib/ruby/2.6.0/tsort.rb:431:in `each_strongly_connected_component_from'", 
+      # "../ruby-2.6.0/lib/ruby/2.6.0/tsort.rb:349:in `block in each_strongly_connected_component'", 
+      # "../ruby-2.6.0/lib/ruby/2.6.0/tsort.rb:347:in `each'", 
+      # "../ruby-2.6.0/lib/ruby/2.6.0/tsort.rb:347:in `call'", 
+      # "../ruby-2.6.0/lib/ruby/2.6.0/tsort.rb:347:in `each_strongly_connected_component'", 
+      # "../ruby-2.6.0/lib/ruby/2.6.0/tsort.rb:226:in `tsort_each'", 
+      # "../ruby-2.6.0/lib/ruby/2.6.0/tsort.rb:205:in `tsort_each'", 
+      # "../gems/railties-5.2.2/lib/rails/initializable.rb:61:in `run_initializers'", 
+      # "../gems/railties-5.2.2/lib/rails/application.rb:361:in `initialize!'", 
+      # "/Users/lanezhang/projects/mine/free-erp/config/environment.rb:5:in `<top (required)>'", 
+      # "config.ru:2:in `require_relative'", "config.ru:2:in `block in <main>'", 
+      # "../gems/rack-2.0.6/lib/rack/builder.rb:55:in `instance_eval'", 
+      # "../gems/rack-2.0.6/lib/rack/builder.rb:55:in `initialize'", 
+      # "config.ru:in `new'", "config.ru:in `<main>'", 
+      # "../gems/rack-2.0.6/lib/rack/builder.rb:49:in `eval'", 
+      # "../gems/rack-2.0.6/lib/rack/builder.rb:49:in `new_from_string'", 
+      # "../gems/rack-2.0.6/lib/rack/builder.rb:40:in `parse_file'", 
+      # "../gems/rack-2.0.6/lib/rack/server.rb:320:in `build_app_and_options_from_config'", 
+      # "../gems/rack-2.0.6/lib/rack/server.rb:219:in `app'", 
+      # "../gems/railties-5.2.2/lib/rails/commands/server/server_command.rb:27:in `app'", 
+      # "../gems/rack-2.0.6/lib/rack/server.rb:357:in `wrapped_app'", 
+      # "../gems/railties-5.2.2/lib/rails/commands/server/server_command.rb:92:in `log_to_stdout'", 
+      # "../gems/railties-5.2.2/lib/rails/commands/server/server_command.rb:54:in `start'", 
+      # "../gems/railties-5.2.2/lib/rails/commands/server/server_command.rb:149:in `block in perform'",
+      # "../gems/railties-5.2.2/lib/rails/commands/server/server_command.rb:144:in `tap'", 
+      # "../gems/railties-5.2.2/lib/rails/commands/server/server_command.rb:144:in `perform'",
+      # "../gems/thor-0.20.3/lib/thor/command.rb:27:in `run'", 
+      # "../gems/thor-0.20.3/lib/thor/invocation.rb:126:in `invoke_command'",
+      # "../gems/thor-0.20.3/lib/thor.rb:391:in `dispatch'", 
+      # "../gems/railties-5.2.2/lib/rails/command/base.rb:65:in `perform'",
+      # "../gems/railties-5.2.2/lib/rails/command.rb:46:in `invoke'", 
+      # "../gems/railties-5.2.2/lib/rails/commands.rb:18:in `<top (required)>'", 
+      # "../path/to/your_project/bin/rails:5:in `require'",
+      # "../path/to/your_project/bin/rails:5:in `<main>'"
+      # ]
+      puts "caller: #{caller.inspect}"
+      
+      # You may want to know when is the @app first time initialized.
       # It is initialized when 'config.ru' is load by rack server.
-      # Please look at Rack::Server#build_app_and_options_from_config for more information.
-      # When Rails.application.initialize! (in ./config/environment.rb), @app is initialized.
+      # Please search `Rack::Server#build_app_and_options_from_config` in this document for more information.
+      # When `Rails.application.initialize!` (in ./config/environment.rb) executed, @app is initialized. 
       @app || @app_build_lock.synchronize { # '@app_build_lock = Mutex.new', so multiple threads share one '@app'.
         @app ||= begin
           # In the end, config.middleware will be an instance of ActionDispatch::MiddlewareStack with preset instance variable @middlewares (which is an Array). 
@@ -702,8 +760,8 @@ module ActionDispatch
         
           req.path_parameters = set_params.merge parameters
         
-          # route is an instance of ActionDispatch::Journey::Route. 
-          # route.app is an instance of ActionDispatch::Routing::RouteSet::Dispatcher.
+          # 'route' is an instance of ActionDispatch::Journey::Route. 
+          # 'route.app' is an instance of ActionDispatch::Routing::RouteSet::Dispatcher.
           status, headers, body = route.app.serve(req) # Let's step into method 'serve'
         
           if "pass" == headers["X-Cascade"]
@@ -755,7 +813,8 @@ module ActionDispatch
         def serve(req)
           params     = req.path_parameters # params: { action: 'index', controller: 'home' }
           controller = controller(req) # controller: HomeController
-          # The definition of make_response! is ActionDispatch::Response.create.tap do |res| res.request = request; end
+          # The definition of 'make_response!' is 
+          # ActionDispatch::Response.create.tap { |res| res.request = request; }
           res        = controller.make_response!(req) 
           dispatch(controller, params[:action], req, res) # Let's step into this line.
         rescue ActionController::RoutingError
@@ -810,9 +869,9 @@ module ActionController
       if middleware_stack.any?
         middleware_stack.build(name) { |env| new.dispatch(name, req, res) }.call req.env
       else
-        # self is HomeController, so in this line Rails will new a HomeController instance.  
-        # See `HomeController.ancestors`, you can find many superclasses.
-        # These are some typical ancestors of HomeController. 
+        # 'self' is HomeController, so for this line Rails will new a HomeController instance.  
+        # Invoke `HomeController.ancestors`, you can find many superclasses of HomeController.
+        # These are some typical superclasses of HomeController. 
         # HomeController
         # < ApplicationController
         # < ActionController::Base
@@ -944,7 +1003,7 @@ module AbstractController
   class Base
     def process_action(method_name, *args)
       # self: #<HomeController:0x00007fcd3c5dfd48>, method_name: 'index'
-      # In the end, method 'send_action' is method 'send' as the below line shown. 
+      # In the end, method 'send_action' is method 'send' by `alias send_action send` 
       send_action(method_name, *args)
     end
 
@@ -1077,7 +1136,7 @@ end
 module ActionController
   module Renderers
     def render_to_body(options)
-      _render_to_body_with_renderer(options) || super # Let's step into this line and super later.
+      _render_to_body_with_renderer(options) || super # Let's step into this line and 'super' later.
     end
     
     # For this example, this method return nil in the end.
@@ -1101,7 +1160,7 @@ end
 module ActionController
   module Rendering
     def render_to_body(options = {})
-      super || _render_in_priorities(options) || " " # Let's step into super
+      super || _render_in_priorities(options) || " " # Let's step into 'super'
     end
   end
 end
@@ -1203,7 +1262,7 @@ module ActionView
         compile!(view)
         # method_name: "_app_views_home_index_html_erb___3699380246341444633_70336654511160" (This method is defined in 'def compile(mod)' below)
         # view: #<#<Class:0x00007ff10d6c9d18>:0x00007ff10ea050a8>, view is an instance of <a subclass of ActionView::Base> which has same instance variables defined in the instance of HomeController.
-        # You get the result html after invoking 'view.send'. 
+        # You will get the result html after invoking 'view.send'. 
         view.send(method_name, locals, buffer, &block)
       end
     rescue => e
@@ -1340,7 +1399,7 @@ module ActionView
     end
     
     def view_context_class
-      # will return a subclass of ActionView::Base.
+      # Will return a subclass of ActionView::Base.
       @_view_context_class ||= self.class.view_context_class
     end
     
@@ -1410,7 +1469,7 @@ After all rack apps called, user will get the response.
 
 ## Part 4: What does `$ rails server` do?
 
-If you start Rails by `$ rails server`. You may want to know how this command can be run? 
+If you start Rails by `$ rails server`. You may want to know what does this command do? 
 
 The command `rails` locates at `./bin/`.
 ```ruby
@@ -1548,33 +1607,35 @@ end
 # ./gems/thor-0.20.3/lib/thor.rb
 class Thor
   # ...
-  include Thor::Base # Will invoke hook method 'Thor::Base.included(self)'
+  include Thor::Base # Will invoke hooked method 'Thor::Base.included(self)'
 end
 
 # ./gems/thor-0.20.3/lib/thor/base.rb
 module Thor
   module Base
     class << self
-      def included(base) # hook method when module 'Thor::Base' is included.
+      # 'included' is a hooked method.
+      # When module 'Thor::Base' is included, method 'included' is executed. 
+      def included(base) 
         # base: Thor
         # this line will define `Thor.method_added`.  
         base.extend ClassMethods
-        # Here module 'Invocation' is included for class 'Thor'. 
+        # Module 'Invocation' is included for class 'Thor' here. 
         # Because Thor is grandfather of Rails::Command::ServerCommand,
         # 'invoke_command' will be instance method of Rails::Command::ServerCommand       
-        base.send :include, Invocation
+        base.send :include, Invocation # 'invoke_command' is defined in module Invocation
         base.send :include, Shell
       end
     end
     
     module ClassMethods
-      # This is a hook method.
-      # Whenever a instance method is created in Rails::Command::ServerCommand, 
+      # 'method_added' is a hooked method.
+      # When an instance method is created in Rails::Command::ServerCommand, 
       # `method_added` will be executed.
       # So, when method `perform` is defined in Rails::Command::ServerCommand,
-      # create_command('perform') will be executed. 
+      # `method_added` will be executed and create_command('perform') will be invoked. 
       # So in the end, method 'server' will be created by alias_method('server', 'perform').
-      # And the method 'server' is for the 'server' command in `$ rails server`.
+      # And the method 'server' is for the 'server' in command `$ rails server`.
       def method_added(meth)
         # ...
         # self: {Class} Rails::Command::ServerCommand 
@@ -1593,7 +1654,7 @@ module Rails
         def create_command(meth)
           if meth == "perform"
             # Calling instance method 'server' of Rails::Command::ServerCommand 
-            # will be transferred to call instance method 'perform' method now.
+            # will be transferred to call instance method 'perform'.
             alias_method('server', meth) 
           end
         end  
@@ -1607,9 +1668,11 @@ class Thor
   class Command < Struct.new(:name, :description, :long_description, :usage, :options, :ancestor_name)
     def run(instance, args = [])
       #...
-      # instance is {Rails::Command::ServerCommand}#<Rails::Command::ServerCommand:0x00007fa5f319bf40>
-      # name is 'server'. Will actually invoke 'instance.perform(*args)'. 
-      # Equals to invoke Rails::Command::ServerCommand#perform(*args). Let's step into #perform.
+      # instance: {Rails::Command::ServerCommand}#<Rails::Command::ServerCommand:0x00007fa5f319bf40>
+      # name: 'server'.
+      # Will actually invoke 'instance.perform(*args)'. 
+      # Equals to invoke Rails::Command::ServerCommand#perform(*args).
+      # Let's step into  Rails::Command::ServerCommand#perform.
       instance.__send__(name, *args) 
     end
   end
@@ -1619,11 +1682,11 @@ end
 module Rails
   module Command
     class ServerCommand < Base
-      # This is the method will be executed when `$ rails server`.    
+      # This is the method will be executed when `$ rails server`.
       def perform
         # ...
         Rails::Server.new(server_options).tap do |server|
-          # APP_PATH is '/Users/your_name/your-project/config/application'.
+          # APP_PATH is '/Users/your_name/your_project/config/application'.
           # require APP_PATH will create the 'Rails.application' object.
           # 'Rails.application' is 'YourProject::Application.new'.
           # Rack server will start 'Rails.application'.
@@ -1654,7 +1717,8 @@ module Rails
       create_tmp_directories
       setup_dev_caching
       
-      log_to_stdout # This line is important. Although the method name seems not. Let step into this line.
+      # This line is important. Although the method name seems not.
+      log_to_stdout# Let step into this line.
 
       super # Will invoke ::Rack::Server#start. I will show you later. 
     ensure
@@ -1662,7 +1726,7 @@ module Rails
     end
     
     def log_to_stdout
-      # 'wrapped_app' will get an well prepared app from './config.ru' file.
+      # 'wrapped_app' will get an well prepared Rack app from './config.ru' file.
       # It's the first time invoke 'wrapped_app'.
       # The app is an instance of YourProject::Application.
       # But the app is not created in 'wrapped_app'.
@@ -1715,7 +1779,8 @@ end
 module Rack
   module Builder
     def self.parse_file(config, opts = Server::Options.new)
-      cfgfile = ::File.read(config) # config is 'config.ru'
+      # config: 'config.ru'
+      cfgfile = ::File.read(config)
       
       app = new_from_string(cfgfile, config)
       
@@ -1723,14 +1788,14 @@ module Rack
     end
   
     # Let's guess what does 'run Rails.application' do in config.ru?
-    # Maybe you may think of that: 
-    #   Run the instance of YourProject::Application.
+    # You may guess that: 
+    #   Run YourProject::Application instance.
     # But 'run' maybe not what you are thinking about.
-    # Because the 'self' object in config.ru is #<Rack::Builder:0x00007f8c861ec278 @warmup=nil, @run=nil, @map=nil, @use=[]>, 
+    # Because the 'self' object in 'config.ru' is #<Rack::Builder:0x00007f8c861ec278 @warmup=nil, @run=nil, @map=nil, @use=[]>, 
     # 'run' is an instance method of Rack::Builder.
     # Let's look at the definition of the 'run' method: 
     # def run(app)
-    #   @run = app # Just set an instance variable of Rack::Builder instance.
+    #   @run = app # Just set an instance variable for Rack::Builder instance.
     # end
     def self.new_from_string(builder_script, file="(rackup)")
       # Rack::Builder implements a small DSL to iteratively construct Rack applications.
@@ -1749,7 +1814,7 @@ As we see in `Rack::Server#start`, there is `Rack::Handler::Puma.run(wrapped_app
 module Rack
   module Handler
     module Puma
-      # This method is invoked in `Rack::Server#start` :
+      # This method is invoked in `Rack::Server#start`:
       # Rack::Handler::Puma.run(wrapped_app, options, &blk) 
       def self.run(app, options = {})
         conf   = self.config(app, options)
@@ -1760,7 +1825,7 @@ module Rack
         begin
           # Puma will run your app (instance of YourProject::Application)
           launcher.run # Let's step into this line.
-        rescue Interrupt # Will enter here when you stop puma by running `$ kill -s SIGTERM rails_process_id`
+        rescue Interrupt 
           puts "* Gracefully stopping, waiting for requests to finish"
           launcher.stop
           puts "* Goodbye!"
@@ -1788,6 +1853,7 @@ module Puma
         # ...
         @runner = Cluster.new(self, @events)
       else
+        # For this example, it is Single.new.
         @runner = Single.new(self, @events)
       end
       
@@ -1797,7 +1863,7 @@ module Puma
     def run
       #...
 
-      # Set the behavior for signals like `$ kill -s SIGTERM process_id`. 
+      # Set the behaviors for signals like `$ kill -s SIGTERM process_id` received. 
       setup_signals # We will discuss this line later.
       
       set_process_title
@@ -1926,6 +1992,9 @@ module Puma
       # ...
 
       if background # background: true (for this example)
+        # 
+        puts "#{Thread.current.object_id}"
+      
         # It's important part. 
         # Remember puma created a thread here!
         # We will know that the thread's job is waiting for requests.
@@ -2155,7 +2224,43 @@ A thread in puma threadPool will process the request.
 
 The thread will invoke rack apps' `call` to get the response for the request.
 
-### Stop Puma
+### Exiting Puma
+#### Process and Thread
+For Puma is multiple threads, we need to have some basic concepts about Process and Thread.
+
+This link's good for you to obtain the concepts: [Process and Thread](https://stackoverflow.com/questions/4894609/will-a-cpu-process-have-at-least-one-thread)  
+
+In the next part, you will often see `thread.join`.
+
+I will use a simple example to tell what does `thread.join` do.
+
+Try to run `test_thread_join.rb`. 
+
+```ruby
+# ./test_thread_join.rb
+thread = Thread.new() do
+  3.times do |n|
+    puts "~~~~ " + n.to_s
+  end
+end
+
+# sleep 1
+puts "==== I am the main thread."
+
+# thread.join # Try to uncomment these two lines to see the differences.
+# puts "==== after thread.join"
+```
+You will find that if there is no `thread.join`, you can only see `==== I am the main thread.` in console.
+
+After you added `thread.join`, you can see:
+```ruby
+~~~~ 1
+~~~~ 2
+~~~~ 3
+````
+in console.
+
+#### Send `SIGTERM` to Puma
 When you stop puma by running `$ kill -s SIGTERM puma_process_id`, you will enter `setup_signals` in `Puma::Launcher#run`.
 ```ruby
 # .gems/puma-3.12.0/lib/puma/launcher.rb
@@ -2181,7 +2286,7 @@ module Puma
     # Press `Control + C` to quit means 'SIGINT'.
     def setup_signals
       begin
-        # After runnning `$ kill -s SIGTERM puma_process_id`, Ruby will execute the block of `Signal.trap "SIGTERM"`.
+        # After running `$ kill -s SIGTERM puma_process_id`, Ruby will execute the block of `Signal.trap "SIGTERM"`.
         Signal.trap "SIGTERM" do
           graceful_stop # Let's step into this line.
 
@@ -2255,8 +2360,8 @@ module Puma
       # ...
       thread = server.run
       
-      # This line will suspend the main process execution.
-      # And the `thread`'s block (which is method `handle_servers`) will be executed in main process. 
+      # This line will suspend the main thread execution.
+      # And the `thread`'s block (which is method `handle_servers`) will be executed.  
       thread.join
     end
       
@@ -2291,8 +2396,27 @@ module Puma
         #...
       end
       
+      # 'Thread.current.object_id' returns '70144214949920', 
+      # which is the same as the 'Thread.current.object_id' in Puma::Server#stop.
+      # Current thread is the main thread here.
+      puts "#{Thread.current.object_id}"
+      
       # The created @thread is the @thread in `stop` method below.
-      @thread = Thread.new { handle_servers }
+      @thread = Thread.new {
+        # 'Thread.current.object_id' returns '70144220123860', 
+        # which is the same as the 'Thread.current.object_id' in 'handle_servers' in Puma::Server#run
+        # def handle_servers
+        #   begin
+        #     # ...
+        #   ensure
+        #     # FYI, the 'ensure' part is executed after `$ kill -s SIGTERM process_id`.
+        #     puts "#{Thread.current.object_id}" # returns '70144220123860' too.
+        #   end
+        # end
+        puts "#{Thread.current.object_id}" # returns '70144220123860'
+        
+        handle_servers
+      }
       return @thread
     end
       
@@ -2302,10 +2426,15 @@ module Puma
       # This line which change the :status to :stop.
       notify_safely(STOP_COMMAND) # Let's step into this line.
       
+      # 'Thread.current.object_id' returns '70144214949920', 
+      # which is the same as the 'Thread.current.object_id' in Puma::Server#run.
+      # Current thread is exactly the main thread here.
+      puts "#{Thread.current.object_id}"
+      
       # The @thread is just the always running Thread created in `Puma::Server#run`.
       # Please look at method `Puma::Server#run`.
-      # `@thread.join` will suspend the main process execution.
-      # And the @thread's code will continue be executed in main process.
+      # `@thread.join` will suspend the main thread execution.
+      # And the @thread's code will continue be executed in main thread.
       # Because @thread is waiting for incoming request, the next executed code 
       # will be `ios = IO.select sockets` in method `handle_servers`.
       @thread.join if @thread && sync
@@ -2323,7 +2452,7 @@ module Puma
         #...
  
         while @status == :run
-          # After `@thread.join` in main process, this line will be executed and will return result.
+          # After `@thread.join` in main thread, this line will be executed and will return result.
           ios = IO.select sockets
             
           ios.first.each do |sock|
@@ -2347,6 +2476,14 @@ module Puma
         
       # ...
       ensure
+        # 'Thread.current.object_id' returns '70144220123860', 
+        # which is the same as the 'Thread.current.object_id' in 'Thread.new block' in Puma::Server#run
+        # @thread = Thread.new do
+        #   puts "#{Thread.current.object_id}" # returns '70144220123860'
+        #   handle_servers
+        # end
+        puts "#{Thread.current.object_id}"
+          
         @check.close
         @notify.close
 
@@ -2400,7 +2537,6 @@ module Puma
 
       # Wait for threads to finish without force shutdown.
       threads.each do |thread|
-        # I will use a simple example to show you what `thread.join` do later.
         thread.join # I guess `thread.join` means join the executing of thread to the calling (main) process.
       end
 
@@ -2474,27 +2610,6 @@ module Puma
     end
   end
 end
-```
-
-Try to run this `test_thread_join.rb`. 
-
-You will find that if there is no `thread.join`, you can only see `==== I am the main thread.` in console.
-
-After you added `thread.join`, you can see `~~~~ 1\n~~~~ 2\n ~~~~ 3` in console.
-
-```ruby
-# ./test_thread_join.rb
-thread = Thread.new() do
-  3.times do |n|
-    puts "~~~~ " + n.to_s
-  end
-end
-
-# sleep 1
-puts "==== I am the main thread."
-
-# thread.join # Try to uncomment these two lines to see the differences.
-# puts "==== after thread.join"
 ```
 
 So all the threads in the ThreadPool joined and finished.
