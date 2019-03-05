@@ -1,4 +1,19 @@
 # Learn-Rails-by-Reading-Source-Code
+## Table of Contents
+
+  * [Part 0: Before reading Rails 5 source code](#part-0:-Before-reading-Rails-5-source-code)
+  * [Syntax](#syntax)
+  * [Naming](#naming)
+  * [Comments](#comments)
+      * [Comment Annotations](#comment-annotations)
+      * [Magic Comments](#magic-comments)
+  * [Classes & Modules](#classes--modules)
+  * [Exceptions](#exceptions)
+  * [Collections](#collections)
+  * [Numbers](#numbers)
+  * [Strings](#strings)
+  * [Date & Time](#date--time)
+ 
 
 ## Part 0: Before reading Rails 5 source code
 1) I suggest you learn Rack [http://rack.github.io/](http://rack.github.io/) first. 
