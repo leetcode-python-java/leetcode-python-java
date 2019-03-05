@@ -1957,6 +1957,7 @@ module Puma
   class Server
     def run(background=true)
       #...
+      @status = :run
       queue_requests = @queue_requests
 
       # This part is important.
@@ -1978,7 +1979,7 @@ module Puma
         
         # ...
         if process_now
-          # process the request. You can treat `client` as request.
+          # Process the request. You can treat `client` as request.
           # If you want to know more about 'process_client', please read part 3 
           # or search 'process_client' in this document.  
           process_client(client, buffer)  
@@ -1991,11 +1992,12 @@ module Puma
       # ...
 
       if background # background: true (for this example)
-        # It's important part. 
+        # This part is important.
         # Remember puma created a thread here!
-        # We will know that the thread's job is waiting for requests.
+        # We will know that the newly created thread's job is waiting for requests.
         # When a request comes, the thread will transfer the request processing work to a thread in ThreadPool.
-        # The method `handle_servers` in thread's block will be executed immediately. 
+        # The method `handle_servers` in thread's block will be executed immediately 
+        # (executed in the newly created thread, not in the main thread).
         @thread = Thread.new { handle_servers } # Let's step into this line to see what I said.
         return @thread
       else
@@ -2010,11 +2012,11 @@ module Puma
 
       # ...
       
-      # The thread is always running!
+      # The thread is always running, because @status has been set to :run in Puma::Server#run.
       # Yes, it should always be running to transfer the incoming requests.
       while @status == :run
         begin
-          # This line will cause current thread waiting until a request is coming.
+          # This line will cause current thread waiting until a request arrives.
           # So it will be the entry of every request!
           ios = IO.select sockets
         
@@ -2029,7 +2031,8 @@ module Puma
                 # ...
                 
                 # FYI, the method '<<' is redefined.
-                # Add the request (client) to thread pool means a thread in the pool will process this request (client).   
+                # Add the request (client) to thread pool means 
+                # a thread in the pool will process this request (client).   
                 pool << client # Let's step into this line.
                 
                 pool.wait_until_not_full # Let's step into this line later.
@@ -2058,8 +2061,8 @@ module Puma
     def initialize(min, max, *extra, &block)
       #..
       @mutex = Mutex.new
-      @todo = [] # @todo is requests (in puma, it's Puma::Client instance) which need to be processed.  
-      @spawned = 0 # The count of @spawned threads.  
+      @todo = [] # @todo is requests (in puma, they are Puma::Client instances) which need to be processed.  
+      @spawned = 0 # the count of @spawned threads
       @min = Integer(min) # @min threads count
       @max = Integer(max) # @max threads count
       @block = block # block will be called in method `spawn_thread` to processed a request.    
@@ -2067,15 +2070,15 @@ module Puma
       @reaper = nil
 
       @mutex.synchronize do
-        @min.times { spawn_thread } # Puma started @min count threads.
+        @min.times { spawn_thread } # Puma spawned @min count threads.
       end
     end
     
     def spawn_thread
       @spawned += 1
 
-      # Run a new Thread now.
-      # The block of the thread will be executed separately from the calling thread. 
+      # Create a new Thread now.
+      # The block of the thread will be executed immediately and separately from the calling thread (main thread).
       th = Thread.new(@spawned) do |spawned|
         # Thread name is new in Ruby 2.3
         Thread.current.name = 'puma %03i' % spawned if Thread.current.respond_to?(:name=)
@@ -2118,7 +2121,7 @@ module Puma
               # You can search `def <<(work)` in this document.
               # Method `<<` is used in method `handle_servers`: `pool << client` in Puma::Server#run.
               # `pool << client` means add a request to the thread pool, 
-              # and then the thread waked up will process the request. 
+              # and then the waked up thread will process the request. 
               not_empty.wait mutex
               
               @waiting -= 1
@@ -2136,7 +2139,7 @@ module Puma
 
           begin
             # `block.call` will switch program to the block definition part.
-            # The Block definition part is in `Puma::Server#run`:
+            # The block definition part is in `Puma::Server#run`:
             # @thread_pool = ThreadPool.new(@min_threads,
             #                               @max_threads,
             #                               IOBuffer) do |client, buffer| #...; end
@@ -2191,7 +2194,7 @@ module Puma
 
         # Wake up the waiting thread to process the request.
         # The waiting thread is defined in the same file: Puma::ThreadPool#spawn_thread.
-        # There are these code in `spawn_thread`:
+        # This code is in `spawn_thread`:
         # while true 
         #   # ...
         #   not_empty.wait mutex
@@ -2200,7 +2203,7 @@ module Puma
         # end 
         @not_empty.signal  
       end
-    end    
+    end
   end
 end
 ```
@@ -2212,7 +2215,7 @@ In `#perform`, call `Rails::Server#start`. Then call `Rack::Server#start`.
 
 Then call `Rack::Handler::Puma.run(YourProject::Application.new)`.
 
-In `.run`, Puma will new a always running Thread to `ios = IO.select(sockets)`.
+In `.run`, Puma will new a always running Thread for `ios = IO.select sockets`.
 
 Request is created from `ios` object.
 
@@ -2222,14 +2225,15 @@ The thread will invoke rack apps' `call` to get the response for the request.
 
 ### Exiting Puma
 #### Process and Thread
-For Puma is multiple threads, we need to have some basic concepts about Process and Thread.
+Because Puma is using multiple threads, we need to have some basic concepts about Process and Thread.
 
-This link's good for you to obtain the concepts: [Process and Thread](https://stackoverflow.com/questions/4894609/will-a-cpu-process-have-at-least-one-thread)  
+This link is good for you to obtain the concepts: [Process and Thread](https://stackoverflow.com/questions/4894609/will-a-cpu-process-have-at-least-one-thread)  
 
 In the next part, you will often see `thread.join`.
 
-I will use a simple example to tell what does `thread.join` do.
+I will use two simple example to tell what does `thread.join` do.
 
+##### Example one
 Try to run `test_thread_join.rb`. 
 
 ```ruby
@@ -2256,6 +2260,32 @@ After you added `thread.join`, you can see:
 ````
 in console.
 
+##### Example two
+```ruby
+arr = [
+  Thread.new { sleep 1 },
+  Thread.new do
+    sleep 5
+    puts 'I am arry[1]'
+  end,
+  Thread.new { sleep 8}
+]
+
+puts Thread.list.size # returns 4 (including the main thread)
+
+sleep 2
+
+arr.each { |thread| puts "~~~~~ #{thread}" }
+
+puts Thread.list.size # returns 3 (because arr[0] is dead)
+
+# arr[1].join # comment off to see differences
+
+arr.each { |thread| puts "~~~~~ #{thread}" }
+
+puts "Exit main thread"
+```
+
 #### Send `SIGTERM` to Puma
 When you stop puma by running `$ kill -s SIGTERM puma_process_id`, you will enter `setup_signals` in `Puma::Launcher#run`.
 ```ruby
@@ -2267,7 +2297,7 @@ module Puma
     def run
       #...
 
-      # Set the behavior for signals like `$ kill -s SIGTERM process_id`. 
+      # Set the behaviors for signals like `$ kill -s SIGTERM process_id`. 
       setup_signals # Let's step into this line.
       
       set_process_title
@@ -2277,7 +2307,7 @@ module Puma
       # ...
     end
     
-    # Set the behavior for signals like `$ kill -s SIGTERM process_id`.
+    # Set the behaviors for signals like `$ kill -s SIGTERM process_id`.
     # Signal.list #=> {"EXIT"=>0, "HUP"=>1, "INT"=>2, "QUIT"=>3, "ILL"=>4, "TRAP"=>5, "IOT"=>6, "ABRT"=>6, "FPE"=>8, "KILL"=>9, "BUS"=>7, "SEGV"=>11, "SYS"=>31, "PIPE"=>13, "ALRM"=>14, "TERM"=>15, "URG"=>23, "STOP"=>19, "TSTP"=>20, "CONT"=>18, "CHLD"=>17, "CLD"=>17, "TTIN"=>21, "TTOU"=>22, "IO"=>29, "XCPU"=>24, "XFSZ"=>25, "VTALRM"=>26, "PROF"=>27, "WINCH"=>28, "USR1"=>10, "USR2"=>12, "PWR"=>30, "POLL"=>29}
     # Press `Control + C` to quit means 'SIGINT'.
     def setup_signals
@@ -2357,7 +2387,7 @@ module Puma
       thread = server.run
       
       # This line will suspend the main thread execution.
-      # And the `thread`'s block (which is method `handle_servers`) will be executed.  
+      # And the `thread`'s block (which is the method `handle_servers`) will be executed.  
       thread.join
     end
       
@@ -2374,7 +2404,7 @@ end
 module Puma
   class Server
     def initialize(app, events=Events.stdio, options={})
-      # This method returns `IO.pipe`.
+      # 'Puma::Util.pipe' returns `IO.pipe`.
       @check, @notify = Puma::Util.pipe # @check, @notify is a pair.
 
       @status = :stop
@@ -2387,7 +2417,7 @@ module Puma
                                     IOBuffer) do |client, buffer|
 
         #...
-        # process the request.
+        # Process the request.
         process_client(client, buffer)  
         #...
       end
@@ -2419,7 +2449,9 @@ module Puma
     # Stops the acceptor thread and then causes the worker threads to finish
     # off the request queue before finally exiting.
     def stop(sync=false)
-      # This line which change the :status to :stop.
+      # This line will set '@status = :stop',
+      # and cause `ios = IO.select sockets` in method `handle_servers` to return result.
+      # So the code after `ios = IO.select sockets` will be executed.   
       notify_safely(STOP_COMMAND) # Let's step into this line.
       
       # 'Thread.current.object_id' returns '70144214949920', 
@@ -2430,9 +2462,7 @@ module Puma
       # The @thread is just the always running Thread created in `Puma::Server#run`.
       # Please look at method `Puma::Server#run`.
       # `@thread.join` will suspend the main thread execution.
-      # And the @thread's code will continue be executed.
-      # Because @thread is waiting for incoming request, the next executed code 
-      # will be `ios = IO.select sockets` in method `handle_servers`.
+      # And the code in @thread will continue be executed.
       @thread.join if @thread && sync
     end
     
@@ -2443,12 +2473,18 @@ module Puma
     def handle_servers
       begin
         check = @check
+        # sockets: [#<IO:fd 23>, #<TCPServer:fd 22, AF_INET, 0.0.0.0, 3000>]
         sockets = [check] + @binder.ios
         pool = @thread_pool
         #...
  
         while @status == :run
-          # After `@thread.join` in main thread, this line will be executed and will return result.
+          # After `notify_safely(STOP_COMMAND)` in main thread, this line will be executed and will return result.
+          # FYI, `@check, @notify = IO.pipe`.
+          # def notify_safely(message)
+          #   @notify << message
+          # end
+          # sockets: [#<IO:fd 23>, #<TCPServer:fd 22, AF_INET, 0.0.0.0, 3000>]
           ios = IO.select sockets
             
           ios.first.each do |sock|
@@ -2528,6 +2564,10 @@ module Puma
         # ...
         
         # dup workers so that we join them all safely
+        # @workers is an array.   
+        # @workers.dup will not create new thread.
+        # @workers is an instance variable and will be changed when shutdown (by `@workers.delete th`). 
+        # So ues dup.
         @workers.dup
       end
 
@@ -2539,7 +2579,7 @@ module Puma
       @spawned = 0
       @workers = []
     end
-      
+
     def initialize(min, max, *extra, &block)
       #..
       @mutex = Mutex.new
@@ -2621,7 +2661,7 @@ module Puma
     def run
       #...
 
-      # Set the behavior for signals like `$ kill -s SIGTERM process_id`. 
+      # Set the behaviors for signals like `$ kill -s SIGTERM process_id`. 
       setup_signals # Let's step into this line.
       
       set_process_title
