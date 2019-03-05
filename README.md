@@ -1,18 +1,24 @@
 # Learn-Rails-by-Reading-Source-Code
 ## Table of Contents
 
-  * [Part 0 - Before reading Rails 5 source code](#part-0---Before-reading-Rails-5-source-code)
-  * [Syntax](#syntax)
-  * [Naming](#naming)
-  * [Comments](#comments)
-      * [Comment Annotations](#comment-annotations)
-      * [Magic Comments](#magic-comments)
-  * [Classes & Modules](#classes--modules)
-  * [Exceptions](#exceptions)
-  * [Collections](#collections)
-  * [Numbers](#numbers)
-  * [Strings](#strings)
-  * [Date & Time](#date--time)
+  * [Part 0: Before reading Rails 5 source code](#part-0-before-reading-rails-5-source-code)
+      * [What will you learn from this tutorial?](#what-will-you-learn-from-this-tutorial)
+  * [Part 1: Your app: an instance of YourProject::Application](#part-1-your-app-an-instance-of-yourprojectapplication)
+  * [Part 2: config](#part-2-config)
+  * [Part 3: Every request and response](#part-3-every-request-and-response)
+      * [Puma](#puma)
+      * [Rack apps](#rack-apps)
+      * [The core app: ActionDispatch::Routing::RouteSet instance](#the-core-app-actiondispatchroutingrouteset-instance)
+      * [Render view](#render-view)
+      * [How can instance variables defined in Controller be accessed in view file?](#how-can-instance-variables-defined-in-controller-be-accessed-in-view-file)
+  * [Part 4: What does `$ rails server` do?](#part-4-what-does--rails-server-do)
+      * [Thor](#thor)
+      * [Rails::Server#start](#railsserverstart)
+      * [Starting Puma](#starting-puma)
+      * [Conclusion](#conclusion)
+      * [Exiting Puma](#exiting-puma)
+          * [Process and Thread](#process-and-thread)
+          * [Send `SIGTERM` to Puma](#send-sigterm-to-puma)
  
 
 ## Part 0: Before reading Rails 5 source code
@@ -24,7 +30,7 @@ So what is the object with `call` method in Rails? I will answer this question i
 
 2) You need a good IDE which can help for debugging. I use [RubyMine](https://www.jetbrains.com/).
 
-### What you will learn from this tutorial?
+### What will you learn from this tutorial?
 * How does Rails start your application?
 
 * How does Rails process every request?
@@ -1821,7 +1827,7 @@ module Rack
 end
 ```
 
-### Puma
+### Starting Puma
 As we see in `Rack::Server#start`, there is `Rack::Handler::Puma.run(wrapped_app, options, &blk)`.
 
 ```ruby
