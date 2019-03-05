@@ -1,7 +1,7 @@
 # Learn-Rails-by-Reading-Source-Code
 ## Table of Contents
 
-  * [Part 0: Before reading Rails 5 source code](#part-0:-Before-reading-Rails-5-source-code)
+  * [Part 0 - Before reading Rails 5 source code](#part-0---Before-reading-Rails-5-source-code)
   * [Syntax](#syntax)
   * [Naming](#naming)
   * [Comments](#comments)
