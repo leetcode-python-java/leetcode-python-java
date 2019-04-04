@@ -1,4 +1,6 @@
 # Learn-Rails-by-Reading-Source-Code
+[![LICENSE](https://img.shields.io/badge/license-Anti%20996-blue.svg)](https://github.com/996icu/996.ICU/blob/master/LICENSE)
+[![996.icu](https://img.shields.io/badge/link-996.icu-red.svg)](https://996.icu)
 ## Table of Contents
 
   * [Part 0: Before reading Rails 5 source code](#part-0-before-reading-rails-5-source-code)
@@ -22,9 +24,9 @@
  
 
 ## Part 0: Before reading Rails 5 source code
-1) I suggest you learn Rack [http://rack.github.io/](http://rack.github.io/) first. 
+1) I suggest you to learn Rack [http://rack.github.io/](http://rack.github.io/) first. 
 
-In rack, an object with `call` method is a rack app.
+In Rack, an object with `call` method is a Rack app.
 
 So what is the object with `call` method in Rails? I will answer this question in Part 1.
 
@@ -37,7 +39,7 @@ So what is the object with `call` method in Rails? I will answer this question i
 
 * How does Rails combine ActionController, ActionView and Routes together?
 
-* How does puma, rack, Rails work together?
+* How does Puma, Rack, Rails work together?
 
 * What's Puma's multiple threads?
 
@@ -55,7 +57,7 @@ module Rails
       def perform
         # ...
         Rails::Server.new(server_options).tap do |server|
-          # APP_PATH is '/Users/your_name/your_project/config/application'.
+          # APP_PATH is '/path/to/your_project/config/application'.
           # require APP_PATH will create the 'Rails.application' object.
           # Actually, 'Rails.application' is an instance of `YourProject::Application`.
           # Rack server will start 'Rails.application'.
@@ -84,9 +86,9 @@ module Rails
   end
 end
 ```
-A rack server need to start with an `App` object. The `App` object should have a `call` method.
+A Rack server need to start with an `App` object. The `App` object should have a `call` method.
 
-`config.ru` is the conventional entry file for rack app. So let's look at it.
+`config.ru` is the conventional entry file for Rack app. So let's look at it.
 ```ruby
 # ./config.ru
 require_relative 'config/environment'
@@ -264,9 +266,9 @@ Rack server will start `Rails.application` in the end.
 
 `Rails.application` is an important object in Rails.
 
-And you'll only have one `Rails.application` in one puma process. 
+And you'll only have one `Rails.application` in one Puma process. 
 
-Multiple threads in a puma process shares the `Rails.application`.
+Multiple threads in a Puma process shares the `Rails.application`.
 
 ## Part 2: config
 The first time we see the `config` is in `./config/application.rb`.
@@ -382,9 +384,9 @@ end
 ```
 
 ### Puma
-When a request is made from client, puma will process the request in `Puma::Server#process_client`.
+When a request is made from client, Puma will process the request in `Puma::Server#process_client`.
 
-If you want to know how puma enter the method `Puma::Server#process_client`, please read part 4 or just search 'process_client' in this document.
+If you want to know how Puma enter the method `Puma::Server#process_client`, please read part 4 or just search 'process_client' in this document.
 
 ```ruby
 # ./gems/puma-3.12.0/lib/puma/server.rb
@@ -447,7 +449,7 @@ module Puma
     
     # Given the request +env+ from +client+ and a partial request body
     # in +body+, finish reading the body if there is one and invoke
-    # the rack app. Then construct the response and write it back to
+    # the Rack app. Then construct the response and write it back to
     # +client+
     #
     def handle_request(req, lines)
@@ -550,7 +552,7 @@ module Rails
       puts "caller: #{caller.inspect}"
       
       # You may want to know when is the @app first time initialized.
-      # It is initialized when 'config.ru' is load by rack server.
+      # It is initialized when 'config.ru' is load by Rack server.
       # Please search `Rack::Server#build_app_and_options_from_config` in this document for more information.
       # When `Rails.application.initialize!` (in ./config/environment.rb) executed, @app is initialized. 
       @app || @app_build_lock.synchronize { # '@app_build_lock = Mutex.new', so multiple threads share one '@app'.
@@ -704,8 +706,8 @@ module ActionDispatch
       end
 
       def build(app)
-        # klass is rack middleware like : Rack::TempfileReaper, Rack::ETag, Rack::ConditionalGet or Rack::Head, etc.
-        # It's typical rack app to use these middlewares.
+        # klass is Rack middleware like : Rack::TempfileReaper, Rack::ETag, Rack::ConditionalGet or Rack::Head, etc.
+        # It's typical Rack app to use these middlewares.
         # See https://github.com/rack/rack-contrib/blob/master/lib/rack/contrib for more information. 
         klass.new(app, *args, &block)
       end      
@@ -730,7 +732,7 @@ end
 #                 >
 #         >
 ``` 
-As we see in the Rack middleware stack, the last one is 
+As we see in the Rack middleware stack, the last @app is 
 
 `@app=#<ActionDispatch::Routing::RouteSet:0x00007fa1e594cbe8>`
 ```ruby
@@ -1486,7 +1488,7 @@ module ActionView
 end
 
 ```
-After all rack apps called, user will get the response.  
+After all Rack apps called, user will get the response.  
 
 ## Part 4: What does `$ rails server` do?
 
@@ -1707,7 +1709,7 @@ module Rails
       def perform
         # ...
         Rails::Server.new(server_options).tap do |server|
-          # APP_PATH is '/Users/your_name/your_project/config/application'.
+          # APP_PATH is '/path/to/your_project/config/application'.
           # require APP_PATH will create the 'Rails.application' object.
           # 'Rails.application' is 'YourProject::Application.new'.
           # Rack server will start 'Rails.application'.
@@ -1863,7 +1865,7 @@ module Puma
   # with configuration in `config/puma.rb` or `config/puma/<env>.rb`.
   #
   # It is responsible for either launching a cluster of Puma workers or a single
-  # puma server.
+  # Puma server.
   class Launcher
     def initialize(conf, launcher_args={})
       @runner        = nil
@@ -1984,7 +1986,7 @@ module Puma
       # This part is important.
       # Remember the block of ThreadPool.new will be called when a request added to the ThreadPool instance.
       # And the block will process the request by calling method `process_client`.
-      # Let's step into this line later to see how puma call the block.
+      # Let's step into this line later to see how Puma call the block.
       @thread_pool = ThreadPool.new(@min_threads,
                                     @max_threads,
                                     IOBuffer) do |client, buffer|
@@ -2000,7 +2002,7 @@ module Puma
         
         # ...
         if process_now
-          # Process the request. You can treat `client` as request.
+          # Process the request. You can look upon `client` as request.
           # If you want to know more about 'process_client', please read part 3 
           # or search 'process_client' in this document.  
           process_client(client, buffer)  
@@ -2014,7 +2016,7 @@ module Puma
 
       if background # background: true (for this example)
         # This part is important.
-        # Remember puma created a thread here!
+        # Remember Puma created a thread here!
         # We will know that the newly created thread's job is waiting for requests.
         # When a request comes, the thread will transfer the request processing work to a thread in ThreadPool.
         # The method `handle_servers` in thread's block will be executed immediately 
@@ -2047,7 +2049,7 @@ module Puma
               break if handle_check
             else
               if io = sock.accept_nonblock
-                # You can simply think a Puma::Client instance as a request.  
+                # You can simply look upon a Puma::Client instance as a request.  
                 client = Client.new(io, @binder.env(sock))
                 
                 # ...
@@ -2083,7 +2085,7 @@ module Puma
     def initialize(min, max, *extra, &block)
       #..
       @mutex = Mutex.new
-      @todo = [] # @todo is requests (in puma, they are Puma::Client instances) which need to be processed.  
+      @todo = [] # @todo is requests (in Puma, they are Puma::Client instances) which need to be processed.  
       @spawned = 0 # the count of @spawned threads
       @min = Integer(min) # @min threads count
       @max = Integer(max) # @max threads count
@@ -2149,7 +2151,7 @@ module Puma
               @waiting -= 1
             end
 
-            # `work` is the request (in puma, it's Puma::Client instance) which need to be processed.
+            # `work` is the request (in Puma, it's Puma::Client instance) which need to be processed.
             work = todo.shift if continue  
           end
 
@@ -2207,7 +2209,7 @@ module Puma
         end
         
         # work: #<Puma::Client:0x00007ff114ece6b0>
-        # You can treat Puma::Client instance as a request.
+        # You can look upon Puma::Client instance as a request.
         @todo << work
 
         if @waiting < @todo.size and @spawned < @max
@@ -2241,9 +2243,9 @@ In `.run`, Puma will new a always running Thread for `ios = IO.select(#<TCPServe
 
 Request is created from `ios` object.
 
-A thread in puma threadPool will process the request.
+A thread in Puma threadPool will process the request.
 
-The thread will invoke rack apps' `call` to get the response for the request.
+The thread will invoke Rack apps' `call` to get the response for the request.
 
 ### Exiting Puma
 #### Process and Thread
@@ -2311,7 +2313,7 @@ puts "Exit main thread"
 ```
 
 #### Send `SIGTERM` to Puma
-When you stop puma by running `$ kill -s SIGTERM puma_process_id`, you will enter `setup_signals` in `Puma::Launcher#run`.
+When you stop Puma by running `$ kill -s SIGTERM puma_process_id`, you will enter `setup_signals` in `Puma::Launcher#run`.
 ```ruby
 # .gems/puma-3.12.0/lib/puma/launcher.rb
 module Puma
@@ -2453,14 +2455,14 @@ module Puma
       
       # The created @thread is the @thread in `stop` method below.
       @thread = Thread.new {
-        # FYI, this is in the puma starting process.      
+        # FYI, this is in the Puma starting process.      
         # 'Thread.current.object_id' returns '70144220123860', 
         # which is the same as the 'Thread.current.object_id' in 'handle_servers' in Puma::Server#run
         # def handle_servers
         #   begin
         #     # ...
         #   ensure
-        #     # FYI, the 'ensure' part is in the puma stopping process.
+        #     # FYI, the 'ensure' part is in the Puma stopping process.
         #     puts "#{Thread.current.object_id}" # returns '70144220123860' too.
         #   end
         # end
@@ -2533,11 +2535,11 @@ module Puma
         
       # ...
       ensure
-        # FYI, the 'ensure' part is in the puma stopping process.
+        # FYI, the 'ensure' part is in the Puma stopping process.
         # 'Thread.current.object_id' returns '70144220123860', 
         # which is the same as the 'Thread.current.object_id' in 'Thread.new block' in Puma::Server#run
         # @thread = Thread.new do
-        #   # FYI, this is in the puma starting process.
+        #   # FYI, this is in the Puma starting process.
         #   puts "#{Thread.current.object_id}" # returns '70144220123860'
         #   handle_servers
         # end
@@ -2611,7 +2613,7 @@ module Puma
       #..
       @mutex = Mutex.new
       @spawned = 0 # The count of @spawned threads.
-      @todo = [] # @todo is requests (in puma, it's Puma::Client instance) which need to be processed.  
+      @todo = [] # @todo is requests (in Puma, it's Puma::Client instance) which need to be processed.  
       @min = Integer(min) # @min threads count
       @block = block # block will be called in method `spawn_thread` to process a request.    
       @workers = []
