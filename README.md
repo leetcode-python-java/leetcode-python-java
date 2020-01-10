@@ -2274,13 +2274,23 @@ puts "==== I am the main thread."
 # thread.join # Try to uncomment these two lines to see the differences.
 # puts "==== after thread.join"
 ```
-You will find that if there is no `thread.join`, you can only see `==== I am the main thread.` in console.
-
-After you added `thread.join`, you can see:
-```ruby
+You will find that if there is no `thread.join`, you can see 
+```log
+==== I am the main thread.
+==== after thread.join
+~~~~ 0
 ~~~~ 1
 ~~~~ 2
-~~~~ 3
+```
+in console.
+
+After you added `thread.join`, you can see:
+```log
+==== I am the main thread.
+~~~~ 0
+~~~~ 1
+~~~~ 2
+==== after thread.join
 ````
 in console.
 
@@ -2289,26 +2299,36 @@ Try to run `test_thread_join2.rb`.
 ```ruby
 # ./test_thread_join2.rb
 arr = [
-  Thread.new { sleep 1 },
   Thread.new do
-    sleep 5
-    puts 'I am arr[1]'
+    puts 'I am arr[0]'
+    sleep 1
+    puts 'After arr[0]'
   end,
-  Thread.new { sleep 8}
+  Thread.new do
+    puts 'I am arr[1]'
+    sleep 5
+    puts 'After arr[1]'
+  end,
+  Thread.new do
+    puts 'I am arr[2]'
+    sleep 8
+    puts 'After arr[2]'
+  end
 ]
 
-puts Thread.list.size # returns 4 (including the main thread)
+puts "Thread.list.size:  #{Thread.list.size}" # returns 4 (including the main thread)
 
 sleep 2
 
 arr.each { |thread| puts "~~~~~ #{thread}" }
 
-puts Thread.list.size # returns 3 (because arr[0] is dead)
+puts "Thread.list.size:  #{Thread.list.size}" # returns 3 (because arr[0] is dead)
 
-# arr[1].join # uncomment to see differences
+arr[1].join # uncomment to see differences
 
 arr.each { |thread| puts "~~~~~ #{thread}" }
 
+sleep 7
 puts "Exit main thread"
 ```
 
