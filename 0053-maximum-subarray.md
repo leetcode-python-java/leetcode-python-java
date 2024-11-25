@@ -1,5 +1,5 @@
 # 53. Maximum Subarray
-LeetCode problem: [53. Maximum Subarray](https://leetcode.com/problems/maximum-subarray/)
+LeetCode problem: [53. Maximum Subarray](https://leetcode.com/problems/maximum-subarray/){:target="_blank"}
 
 ## Problem
 > Given an integer array nums, find the subarray with the largest sum, and return its sum.
@@ -12,19 +12,21 @@ Explanation: The subarray [4,-1,2,1] has the largest sum 6.
 ```
 
 ## Thoughts
+* This problem can be solved by using `greedy algorithm`, but here we will use another way.
 * Imagine the size of nums is `i`, let us consider if the same question is applied to the `subarray` of `nums` from index `0` to `i - 1`.
 * The answer is `yes`. Then let us think if the `i - 1`'s answer could impact the answer of `i`.
 * The answer is still `yes`. What would be the impact?
-* For index `i`,
+* For `nums[i]`,
 if the `previous sum` is negative, we can discard it;
 if the `previous sum` is positive, we can add it to the `current sum`.
-* So we can use dynamic programming to solve the problem, but we should use the `current sum` instead of the `largest sum` in the `dp` array because `largest sum` is recorded in the `dp` array. 
+* So we can use dynamic programming to solve the problem.
 
 ### Common steps in dynamic programming
 These five steps are a pattern for solving dynamic programming problems.
 
 1. Define the `dp` array
     * `dp[i]` represents the `current sum` at index `i`.
+    * We should not define `dp[i]` as the `largest sum` because `largest sum` is recorded in the `current sum` array.
 2. Determine the `dp` array's recurrence formula
     * `dp[i] = max(nums[i], dp[i - 1] + nums[i])`.
 3. Determine the `dp` array's initial value
