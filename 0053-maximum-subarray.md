@@ -20,7 +20,7 @@ if the `previous sum` is negative, we can discard it;
 if the `previous sum` is positive, we can add it to the `current sum`.
 * So we can use dynamic programming to solve the problem, but we should use the `current sum` instead of the `largest sum` in the `dp` array because `largest sum` is recorded in the `dp` array. 
 
-### Steps of dynamic programming
+### Common steps in dynamic programming
 These five steps are a pattern for solving dynamic programming problems.
 
 1. Define the `dp` array
@@ -50,6 +50,54 @@ class Solution:
         return max(dp)
 ```
 
+## C++
+```cpp
+class Solution {
+public:
+    int maxSubArray(vector<int>& nums) {
+        vector<int> dp = nums;
+
+        for (int i = 1; i < dp.size(); i++) {
+            dp[i] = max(nums[i], dp[i - 1] + nums[i]);
+        }
+
+        return *max_element(dp.begin(), dp.end());
+    }
+};
+```
+
+## Java
+```java
+class Solution {
+    int[] dp = nums.clone();
+    int result = dp[0];
+
+    for (int i = 1; i < dp.length; i++) {
+        dp[i] = Math.max(nums[i], dp[i - 1] + nums[i]);
+        if (dp[i] > result) result = dp[i];
+    }
+
+    return result; // or `return Arrays.stream(dp).max().getAsInt();`
+}
+```
+
+## C#
+```c#
+public class Solution {
+    public int MaxSubArray(int[] nums) {
+        int[] dp = (int[]) nums.Clone();
+        int result = dp[0];
+
+        for (int i = 1; i < dp.Length; i++) {
+            dp[i] = Math.Max(nums[i], dp[i - 1] + nums[i]);
+            if (dp[i] > result) result = dp[i];
+        }
+        
+        return result; // or `return dp.Max();`
+    }
+}
+```
+
 ## JavaScript
 ```javascript
 var maxSubArray = function(nums) {
@@ -61,4 +109,30 @@ var maxSubArray = function(nums) {
 
     return Math.max(...dp)
 };
+```
+
+## Go
+```go
+func maxSubArray(nums []int) int {
+    dp := slices.Clone(nums)
+
+    for i := 1; i < len(nums); i++ {
+        dp[i] = max(nums[i], dp[i - 1] + nums[i])
+    }
+
+    return slices.Max(dp)
+}
+```
+
+## Ruby
+```ruby
+def max_sub_array(nums)
+    dp = nums.clone
+
+    for i in 1..dp.size - 1
+      dp[i] = [nums[i], dp[i - 1] + nums[i]].max
+    end
+    
+    dp.max
+end
 ```
