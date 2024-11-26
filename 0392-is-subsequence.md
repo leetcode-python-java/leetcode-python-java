@@ -1,7 +1,7 @@
 # 392. Is Subsequence
 LeetCode problem: [392. Is Subsequence](https://leetcode.com/problems/is-subsequence/)
 
-## Problem
+## LeetCode problem description
 > Given two strings `s` and `t`, return `true` if s is a **subsequence** of `t`, or `false` otherwise.
 
 A **subsequence** of a string is a new string that is formed from the original string by deleting some (can be none) of the characters without disturbing the relative positions of the remaining characters. (i.e., `"ace"` is a subsequence of `"abcde"` while `"aec"` is not).
@@ -51,7 +51,9 @@ These five steps are a pattern for solving dynamic programming problems.
    # b F F F T T T T
    # c F F F F F F T
    ```
-    * After analyzing the sample `dp` data, we can derive the `recurrence formula`:
+    * When analyzing the sample `dp` grid, remember there are three important points which you should pay special attention to: `dp[i - 1][j - 1]`, `dp[i - 1][j]` and `dp[i][j - 1]`. The current `dp[i][j]` often depends on them.
+    * If we need to use `dp[i - 1][j]` or `dp[i][j - 1]`, and the question is also true in reverse, then we probably need to use both of them.
+    * We can derive the `Recurrence Formula`:
    ```
    if s[i - 1] == t[j - 1]
      dp[i][j] = dp[i - 1][j - 1]
