@@ -94,7 +94,7 @@ public:
             }
         }
 
-        return dp[s.size()][t.size()];
+        return dp[dp.size() - 1][dp[0].size() - 1];
     }
 };
 ```
@@ -115,7 +115,7 @@ class Solution {
             }
         }
 
-        return dp[s.length()][t.length()];
+        return dp[dp.length - 1][dp[0].length - 1];
     }
 }
 ```
@@ -139,7 +139,7 @@ public class Solution {
             }
         }
 
-        return dp[s.Length][t.Length];
+        return dp[dp.Length - 1][dp[0].Length - 1];
     }
 }
 ```
@@ -161,7 +161,7 @@ var isSubsequence = function(s, t) {
         }
     }
 
-    return dp[dp.length - 1][dp[0].length - 1]
+   return dp.at(-1).at(-1)
 };
 ```
 
