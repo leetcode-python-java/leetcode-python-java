@@ -1,7 +1,7 @@
 # 53. Maximum Subarray
 LeetCode problem: [53. Maximum Subarray](https://leetcode.com/problems/maximum-subarray/)
 
-## Problem
+## LeetCode problem description
 > Given an integer array nums, find the subarray with the largest sum, and return its sum.
 
 ```
@@ -36,7 +36,7 @@ These five steps are a pattern for solving dynamic programming problems.
    nums = [-2, 1, -3, 4, -1, 2, 1, -5, 4]
    dp   = [-2, 1, -2, 4,  3, 5, 6,  1, 5]
    ```
-    * After analyzing the sample `dp` data, we can derive the `recurrence formula`:
+    * After analyzing the sample `dp` array, we can derive the `Recurrence Formula`:
    ```dp[i] = max(nums[i], dp[i - 1] + nums[i])```
 4. Determine the `dp` array's traversal order
     * `dp[i]` depends on `dp[i - 1]`, so we should traverse the `dp` array from left to right.
