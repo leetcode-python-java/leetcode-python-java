@@ -38,7 +38,7 @@ After initialized, the 'dp' array would be:
 # e 2 0 0 0
 # a 3 0 0 0
 ```
-   * `dp[0][j] = j`, because `dp[0]` represents the empty string, and the number of steps is just the number of chars to be deleted
+   * `dp[0][j] = j`, because `dp[0]` represents the empty string, and the number of steps is just the number of chars to be deleted.
    * `dp[i][0] = i`, the reason is the same as previous line, yet in vertical direction.
 3. Determine the `dp` array's recurrence formula
 ```

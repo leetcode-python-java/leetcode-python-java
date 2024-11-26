@@ -47,22 +47,6 @@ dp   = [-2, 1, -2, 4,  3, 5, 6,  1, 5]
 * Time: `O(n)`.
 * Space: `O(n)`.
 
-## Java
-
-```java
-class Solution {
-    int[] dp = nums.clone();
-    int result = dp[0];
-
-    for (int i = 1; i < dp.length; i++) {
-        dp[i] = Math.max(nums[i], dp[i - 1] + nums[i]);
-        if (dp[i] > result) result = dp[i];
-    }
-
-    return result; // or 'return Arrays.stream(dp).max().getAsInt();'
-}
-```
-
 ## Python
 ```python
 class Solution:
@@ -89,6 +73,23 @@ public:
         return *max_element(dp.begin(), dp.end());
     }
 };
+```
+
+## Java
+```java
+class Solution {
+    public int maxSubArray(int[] nums) {
+        int[] dp = nums.clone();
+        int result = dp[0];
+        
+        for (int i = 1; i < dp.length; i++) {
+            dp[i] = Math.max(nums[i], dp[i - 1] + nums[i]);
+            if (dp[i] > result) result = dp[i];
+        }
+
+        return result; // or 'return Arrays.stream(dp).max().getAsInt();'
+    }
+}
 ```
 
 ## C#
