@@ -1,5 +1,5 @@
 # 392. Is Subsequence
-LeetCode problem: [392. Is Subsequence](https://leetcode.com/problems/is-subsequence/){:target="_blank"}
+LeetCode problem: [392. Is Subsequence](https://leetcode.com/problems/is-subsequence/)
 
 ## Problem
 > Given two strings `s` and `t`, return `true` if s is a **subsequence** of `t`, or `false` otherwise.
@@ -23,9 +23,10 @@ Output: false
 ### Common steps in dynamic programming
 These five steps are a pattern for solving dynamic programming problems.
 
-1. Determine the meaning of the `dp[i][j]`
-    * Since there are two strings, we can use two-dimensional arrays to simplify the process.
-    * `dp[i][j]` represents whether the first `i` letters of `s` are a subsequence of `t`'s first j letters.
+1. Determine the **meaning** of the `dp[i][j]`
+    * Since there are two strings, we can use two-dimensional arrays as the default option.
+    * At first, try to use the problem's `return` value as the value of `dp[i][j]` to determine the meaning of `dp[i][j]`. If it doesn't work, try another way.
+    * `dp[i][j]` represents whether the first `i` letters of `s` are a subsequence of `t`'s first `j` letters.
     * The value of `dp[i][j]` is `true` or `false`.
 2. Determine the `dp` array's recurrence formula
    * Use an example:

@@ -1,5 +1,5 @@
 # 53. Maximum Subarray
-LeetCode problem: [53. Maximum Subarray](https://leetcode.com/problems/maximum-subarray/){:target="_blank"}
+LeetCode problem: [53. Maximum Subarray](https://leetcode.com/problems/maximum-subarray/)
 
 ## Problem
 > Given an integer array nums, find the subarray with the largest sum, and return its sum.
@@ -24,9 +24,10 @@ if the `previous sum` is positive, we can add it to the `current sum`.
 ### Common steps in dynamic programming
 These five steps are a pattern for solving dynamic programming problems.
 
-1. Define the `dp` array
-    * `dp[i]` represents the `current sum` at index `i`.
-    * We should not define `dp[i]` as the `largest sum` because `largest sum` is recorded in the `current sum` array.
+1. Determine the **meaning** of the `dp[i]`
+    * At first, try to use the problem's `return` value as the value of `dp[i]` to determine the meaning of `dp[i]`. If it doesn't work, try another way.
+    * Imagine that `dp[i]` represents the `largest sum` at index `i`. The `dp[i + 1]` cannot be calculated by `dp[i]`. So we have to change this meaning.
+    * Then consider that `dp[i]` represents the `current sum` at index `i`. We can see the `largest sum` is recorded in the `current sum` array. It may work.
 2. Determine the `dp` array's recurrence formula
     * `dp[i] = max(nums[i], dp[i - 1] + nums[i])`.
 3. Determine the `dp` array's initial value
@@ -69,6 +70,7 @@ public:
 ```
 
 ## Java
+
 ```java
 class Solution {
     int[] dp = nums.clone();
@@ -79,7 +81,7 @@ class Solution {
         if (dp[i] > result) result = dp[i];
     }
 
-    return result; // or `return Arrays.stream(dp).max().getAsInt();`
+    return result; // or 'return Arrays.stream(dp).max().getAsInt();'
 }
 ```
 
@@ -95,7 +97,7 @@ public class Solution {
             if (dp[i] > result) result = dp[i];
         }
         
-        return result; // or `return dp.Max();`
+        return result; // or 'return dp.Max();'
     }
 }
 ```
