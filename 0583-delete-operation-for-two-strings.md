@@ -1,7 +1,7 @@
 # 583. Delete Operation for Two Strings
 LeetCode problem: [583. Delete Operation for Two Strings](https://leetcode.com/problems/delete-operation-for-two-strings/)
 
-## Problem
+## LeetCode problem description
 > Given two strings `word1` and `word2`, return the **minimum** number of **steps** required to make `word1` and `word2` the same.
 
 In one step, you can delete exactly one character in either string.
@@ -39,7 +39,7 @@ These five steps are a pattern for solving dynamic programming problems.
    # a 3 0 0 0
    ```
     * `dp[0][j] = j`, because `dp[0]` represents the empty string, and the number of steps is just the number of chars to be deleted.
-    * `dp[i][0] = i`, the reason is the same as previous line, yet in vertical direction.
+    * `dp[i][0] = i`, the reason is the same as the previous line, just viewed in vertical direction.
 3. Determine the `dp` array's recurrence formula
    ```
    The final 'dp' array would be:
@@ -49,7 +49,9 @@ These five steps are a pattern for solving dynamic programming problems.
    # e 2 1 2 3
    # a 3 2 1 2
    ```
-    * After analyzing the sample `dp` data, we can derive the `recurrence formula`:
+    * When analyzing the sample `dp` grid, remember there are three important points which you should pay special attention to: `dp[i - 1][j - 1]`, `dp[i - 1][j]` and `dp[i][j - 1]`. The current `dp[i][j]` often depends on them.
+    * If we need to use `dp[i - 1][j]` or `dp[i][j - 1]`, and the question is also true in reverse, then we probably need to use both of them.  
+    * We can derive the `Recurrence Formula`:
    ```python
    if word1[i - 1] == word2[j - 1]
        dp[i][j] = dp[i - 1][j - 1]
@@ -163,22 +165,22 @@ public class Solution {
 ## JavaScript
 ```javascript
 var minDistance = function(word1, word2) {
-  let dp = Array(word1.length + 1).fill().map(
-      () => Array(word2.length + 1).fill(0)
-  )
-  dp.forEach((_, i) => { dp[i][0] = i })
-  dp[0].forEach((_, j) => { dp[0][j] = j })
+    let dp = Array(word1.length + 1).fill().map(
+        () => Array(word2.length + 1).fill(0)
+    )
+    dp.forEach((_, i) => { dp[i][0] = i })
+    dp[0].forEach((_, j) => { dp[0][j] = j })
 
-  for (let i = 1; i < dp.length; i++) {
-     for (let j = 1; j < dp[0].length; j++) {
-        if (word1[i - 1] == word2[j - 1])
-           dp[i][j] = dp[i - 1][j - 1]
-        else
-           dp[i][j] = Math.min(dp[i - 1][j], dp[i][j - 1]) + 1
-     }
-  }
+    for (let i = 1; i < dp.length; i++) {
+        for (let j = 1; j < dp[0].length; j++) {
+            if (word1[i - 1] == word2[j - 1])
+                dp[i][j] = dp[i - 1][j - 1]
+            else
+                dp[i][j] = Math.min(dp[i - 1][j], dp[i][j - 1]) + 1
+        }
+    }
 
-  return dp.at(-1).at(-1)
+    return dp.at(-1).at(-1)
 };
 ```
 
@@ -211,23 +213,23 @@ func minDistance(word1 string, word2 string) int {
 ## Ruby
 ```ruby
 def min_distance(word1, word2)
-    dp = Array.new(word1.size + 1) do |i|
-      Array.new(word2.size + 1, 0)
-    end
-    dp.each_with_index { |_, i| dp[i][0] = i }
-    dp[0].each_with_index { |_, j| dp[0][j] = j }
+  dp = Array.new(word1.size + 1) do |i|
+    Array.new(word2.size + 1, 0)
+  end
+  dp.each_with_index { |_, i| dp[i][0] = i }
+  dp[0].each_with_index { |_, j| dp[0][j] = j }
     
-    for i in 1..dp.size - 1
-      for j in 1..dp[0].size - 1
-        dp[i][j] = 
-          if word1[i - 1] == word2[j - 1]
-            dp[i - 1][j - 1]
-          else
-            [dp[i - 1][j], dp[i][j - 1]].min + 1
-          end
-      end
+  for i in 1..dp.size - 1
+    for j in 1..dp[0].size - 1
+      dp[i][j] = 
+        if word1[i - 1] == word2[j - 1]
+          dp[i - 1][j - 1]
+        else
+          [dp[i - 1][j], dp[i][j - 1]].min + 1
+        end
     end
+  end
 
-    dp[-1][-1]
+  dp[-1][-1]
 end
 ```
