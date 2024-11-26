@@ -28,17 +28,19 @@ These five steps are a pattern for solving dynamic programming problems.
     * At first, try to use the problem's `return` value as the value of `dp[i][j]` to determine the meaning of `dp[i][j]`. If it doesn't work, try another way.
     * `dp[i][j]` represents the **minimum** number of steps required to make `word1`'s first `i` letters and `word2`'s first `j` letters the same.
     * The value of `dp[i][j]` is an integer.
-2. Determine the `dp` array's recurrence formula
-   * Use an example:
+2. Determine the `dp` array's initial value
+    * Use an example:
 ```
 After initialized, the 'dp' array would be:  
 #     e a t
-#   0 1 2 3 # dp[0] is for empty string, the number of steps is just the number of chars to be deleted
+#   0 1 2 3 # dp[0]
 # s 1 0 0 0
 # e 2 0 0 0
 # a 3 0 0 0
 ```
-
+   * `dp[0][j] = j`, because `dp[0]` represents the empty string, and the number of steps is just the number of chars to be deleted
+   * `dp[i][0] = i`, the reason is the same as previous line, yet in vertical direction.
+3. Determine the `dp` array's recurrence formula
 ```
 The final 'dp' array would be:
 #     e a t
@@ -47,17 +49,13 @@ The final 'dp' array would be:
 # e 2 1 2 3
 # a 3 2 1 2
 ```
-   * Recurrence formula:
+   * After analyzing the sample `dp` data, we can derive the `recurrence formula`:
 ```python
 if word1[i - 1] == word2[j - 1]
     dp[i][j] = dp[i - 1][j - 1]
 else
     dp[i][j] = min(dp[i - 1][j], dp[i][j - 1]) + 1
 ```
-
-3. Determine the `dp` array's initial value
-    * `dp[0][j] = j`, because `dp[0]` represents the empty string, and the number of steps is just the number of chars to be deleted
-    * `dp[i][0] = i`, the reason is the same as previous line, yet in vertical direction. 
 4. Determine the `dp` array's traversal order
     * `dp[i][j]` depends on `dp[i - 1][j - 1]`, `dp[i - 1][j]` and `dp[i][j - 1]`, so we should traverse the `dp` array from top to bottom, then from left to right.
 5. Check the `dp` array's value

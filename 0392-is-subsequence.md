@@ -28,9 +28,22 @@ These five steps are a pattern for solving dynamic programming problems.
     * At first, try to use the problem's `return` value as the value of `dp[i][j]` to determine the meaning of `dp[i][j]`. If it doesn't work, try another way.
     * `dp[i][j]` represents whether the first `i` letters of `s` are a subsequence of `t`'s first `j` letters.
     * The value of `dp[i][j]` is `true` or `false`.
-2. Determine the `dp` array's recurrence formula
+2. Determine the `dp` array's initial value
    * Use an example:
 ```
+After initialized, the 'dp' array would be:
+s = "abc", t = "ahbgdc"
+#     a h b g d c
+#   T T T T T T T # dp[0]
+# a F F F F F F F
+# b F F F F F F F
+# c F F F F F F F
+```
+   * `dp[0][j] = true` because `dp[0]` represents the empty string, and empty string is a subsequence of any string.
+   * `dp[i][j] = false (i != 0)`.
+3. Determine the `dp` array's recurrence formula
+```
+The final 'dp' array would be:
 s = "abc", t = "ahbgdc"
 #     a h b g d c
 #   T T T T T T T
@@ -38,17 +51,13 @@ s = "abc", t = "ahbgdc"
 # b F F F T T T T
 # c F F F F F F T
 ```
-   * Recurrence formula:
+   * After analyzing the sample `dp` data, we can derive the `recurrence formula`:
 ```
 if s[i - 1] == t[j - 1]
   dp[i][j] = dp[i - 1][j - 1]
 else
   dp[i][j] = dp[i][j - 1]
 ```
-
-3. Determine the `dp` array's initial value
-    * `dp[0][j] = true` because `dp[0]` represents the empty string and empty string is a subsequence of any string.
-    * `dp[i][j] = false (i != 0)`.
 4. Determine the `dp` array's traversal order
     * `dp[i][j]` depends on `dp[i - 1][j - 1]` and `dp[i][j - 1]`, so we should traverse the `dp` array from top to bottom, then from left to right.
 5. Check the `dp` array's value
