@@ -31,7 +31,7 @@ These five steps are a pattern for solving dynamic programming problems.
 2. Determine the `dp` array's initial value
     * Use an example:
    ```
-   After initialized, the 'dp' array would be:  
+   After initialization, the 'dp' array would be:  
    #     e a t
    #   0 1 2 3 # dp[0]
    # s 1 0 0 0
@@ -50,7 +50,7 @@ These five steps are a pattern for solving dynamic programming problems.
    # a 3 2 1 2
    ```
     * When analyzing the sample `dp` grid, remember there are three important points which you should pay special attention to: `dp[i - 1][j - 1]`, `dp[i - 1][j]` and `dp[i][j - 1]`. The current `dp[i][j]` often depends on them.
-    * If we need to use `dp[i - 1][j]` or `dp[i][j - 1]`, and the question is also true in reverse, then we probably need to use both of them.  
+    * If the question is also true in reverse (swap `word1` and `word2`), and we need to use `dp[i - 1][j]` or `dp[i][j - 1]`, then we probably need to use both of them.  
     * We can derive the `Recurrence Formula`:
    ```python
    if word1[i - 1] == word2[j - 1]
