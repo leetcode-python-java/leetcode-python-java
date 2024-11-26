@@ -32,12 +32,12 @@ These five steps are a pattern for solving dynamic programming problems.
     * `dp[i] = nums[i]` would be good.
 3. Determine the `dp` array's recurrence formula
     * Use an example:
-```
-nums = [-2, 1, -3, 4, -1, 2, 1, -5, 4]
-dp   = [-2, 1, -2, 4,  3, 5, 6,  1, 5]
-```
-   * After analyzing the sample `dp` data, we can derive the `recurrence formula`:
-   * `dp[i] = max(nums[i], dp[i - 1] + nums[i])`.
+   ```
+   nums = [-2, 1, -3, 4, -1, 2, 1, -5, 4]
+   dp   = [-2, 1, -2, 4,  3, 5, 6,  1, 5]
+   ```
+    * After analyzing the sample `dp` data, we can derive the `recurrence formula`:
+   ```dp[i] = max(nums[i], dp[i - 1] + nums[i])```
 4. Determine the `dp` array's traversal order
     * `dp[i]` depends on `dp[i - 1]`, so we should traverse the `dp` array from left to right.
 5. Check the `dp` array's value
