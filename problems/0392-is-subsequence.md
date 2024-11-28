@@ -21,7 +21,7 @@ Output: false
 * It is a question of comparing two strings. After doing similar questions many times, we will develop an intuition to use dynamic programming with two-dimensional arrays.
 
 ### Common steps in dynamic programming
-These five steps are a pattern for solving dynamic programming problems.
+These five steps are a pattern for solving `dynamic programming` problems.
 
 1. Determine the **meaning** of the `dp[i][j]`
     * Since there are two strings, we can use two-dimensional arrays as the default option.
@@ -42,14 +42,27 @@ These five steps are a pattern for solving dynamic programming problems.
     * `dp[0][j] = true` because `dp[0]` represents the empty string, and empty string is a subsequence of any string.
     * `dp[i][j] = false (i != 0)`.
 3. Determine the `dp` array's recurrence formula
+    * Try to complete the `dp` grid. In the process, you will get inspiration to derive the formula.
    ```
-   The final 'dp' array would be:
-   s = "abc", t = "ahbgdc"
+   1. s = "a", t = "ahbgdc" 
+   #     a h b g d c
+   #   T T T T T T T
+   # a F T T T T T T # dp[1]
+   ```
+   ```
+   2. s = "ab", t = "ahbgdc" 
    #     a h b g d c
    #   T T T T T T T
    # a F T T T T T T
    # b F F F T T T T
-   # c F F F F F F T
+   ```
+   ```
+   3. s = "abc", t = "ahbgdc"
+   #     a h b g d c
+   #   T T T T T T T
+   # a F T T T T T T
+   # b F F F T T T T
+   # c F F F F F F T # dp[3]
    ```
     * When analyzing the sample `dp` grid, remember there are three important points which you should pay special attention to: `dp[i - 1][j - 1]`, `dp[i - 1][j]` and `dp[i][j - 1]`. The current `dp[i][j]` often depends on them.
     * If the question is also true in reverse (swap `s` and `t`), and we need to use `dp[i - 1][j]` or `dp[i][j - 1]`, then we probably need to use both of them.
@@ -96,8 +109,8 @@ public:
         vector<vector<bool>> dp(s.size() + 1, vector<bool>(t.size() + 1));
         fill(dp[0].begin(), dp[0].end(), true);
 
-        for (int i = 1; i < dp.size(); i++) {
-            for (int j = 1; j < dp[0].size(); j++) {
+        for (auto i = 1; i < dp.size(); i++) {
+            for (auto j = 1; j < dp[0].size(); j++) {
                 if (s[i - 1] == t[j - 1])
                     dp[i][j] = dp[i - 1][j - 1];
                 else
@@ -117,8 +130,8 @@ class Solution {
         var dp = new boolean[s.length() + 1][t.length() + 1];
         Arrays.fill(dp[0], true);
 
-        for (int i = 1; i < dp.length; i++) {
-            for (int j = 1; j < dp[0].length; j++) {
+        for (var i = 1; i < dp.length; i++) {
+            for (var j = 1; j < dp[0].length; j++) {
                 if (s.charAt(i - 1) == t.charAt(j - 1))
                     dp[i][j] = dp[i - 1][j - 1];
                 else
@@ -136,13 +149,12 @@ class Solution {
 public class Solution {
     public bool IsSubsequence(string s, string t) {
         var dp = new bool[s.Length + 1][];
-        for (int i = 0; i < dp.Length; i++) {
+        for (var i = 0; i < dp.Length; i++)
             dp[i] = new bool[t.Length + 1];
-        }
         Array.Fill(dp[0], true);
         
-        for (int i = 1; i < dp.Length; i++) {
-            for (int j = 1; j < dp[0].Length; j++) {
+        for (var i = 1; i < dp.Length; i++) {
+            for (var j = 1; j < dp[0].Length; j++) {
                 if (s[i - 1] == t[j - 1])
                     dp[i][j] = dp[i - 1][j - 1];
                 else
@@ -207,8 +219,8 @@ def is_subsequence(s, t)
       Array.new(t.size + 1, i == 0 ? true : false)
     end
     
-    for i in 1..dp.size - 1
-      for j in 1..dp[0].size - 1
+    for i in 1..(dp.size - 1)
+      for j in 1..(dp[0].size - 1)
         dp[i][j] = 
           if s[i - 1] == t[j - 1]
             dp[i - 1][j - 1]
@@ -218,6 +230,6 @@ def is_subsequence(s, t)
       end
     end
 
-    dp[-1][-1]
+    return dp[-1][-1]
 end
 ```

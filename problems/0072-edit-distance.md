@@ -34,7 +34,7 @@ exection -> execution (insert 'u')
 * It is a question of comparing two strings. After doing similar questions many times, we will develop an intuition to use dynamic programming with two-dimensional arrays.
 
 ### Common steps in dynamic programming
-These five steps are a pattern for solving dynamic programming problems.
+These five steps are a pattern for solving `dynamic programming` problems.
 
 1. Determine the **meaning** of the `dp[i][j]`
     * Since there are two strings, we can use two-dimensional arrays as the default option.
@@ -57,15 +57,46 @@ These five steps are a pattern for solving dynamic programming problems.
     * `dp[0][j] = j`, the reason is the same as the previous line, just viewed from the opposite angle: convert `word2` to `word1`.
     
 3. Determine the `dp` array's recurrence formula
+    * Try to complete the `dp` grid. In the process, you will get inspiration to derive the formula.
    ```
-   The final 'dp' array would be:
+   1. Convert `h` to `ros`. 
    #     r o s
-   #   0 1 2 3 # dp[0]
+   #   0 1 2 3
+   # h 1 1 2 3 # dp[1]
+   ```
+   ```
+   2. Convert `ho` to `ros`. 
+   #     r o s
+   #   0 1 2 3
+   # h 1 1 2 3
+   # o 2 2 1 2
+   ```
+   ```
+   3. Convert `hor` to `ros`. 
+   #     r o s
+   #   0 1 2 3
+   # h 1 1 2 3
+   # o 2 2 1 2
+   # r 3 2 2 2
+   ```
+   ```
+   4. Convert `hors` to `ros`. 
+   #     r o s
+   #   0 1 2 3
    # h 1 1 2 3
    # o 2 2 1 2
    # r 3 2 2 2
    # s 4 3 3 2
-   # e 5 4 4 3
+   ```
+   ```
+   5. Convert `horse` to `ros`. 
+   #     r o s
+   #   0 1 2 3
+   # h 1 1 2 3
+   # o 2 2 1 2
+   # r 3 2 2 2
+   # s 4 3 3 2
+   # e 5 4 4 3 # dp[5]
    ```
     * When analyzing the sample `dp` grid, remember there are three important points which you should pay special attention to: `dp[i - 1][j - 1]`, `dp[i - 1][j]` and `dp[i][j - 1]`. The current `dp[i][j]` often depends on them.
     * If the question is also true in reverse (swap `word1` and `word2`), and we need to use `dp[i - 1][j]` or `dp[i][j - 1]`, then we probably need to use both of them.
@@ -115,13 +146,13 @@ class Solution {
 public:
     int minDistance(string word1, string word2) {
         vector<vector<int>> dp(word1.size() + 1, vector<int>(word2.size() + 1));
-        for (int i = 0; i < dp.size(); i++)
+        for (auto i = 0; i < dp.size(); i++)
             dp[i][0] = i;
-        for (int j = 0; j < dp[0].size(); j++)
+        for (auto j = 0; j < dp[0].size(); j++)
             dp[0][j] = j;
         
-        for (int i = 1; i < dp.size(); i++) {
-            for (int j = 1; j < dp[0].size(); j++) {
+        for (auto i = 1; i < dp.size(); i++) {
+            for (auto j = 1; j < dp[0].size(); j++) {
                 if (word1[i - 1] == word2[j - 1])
                     dp[i][j] = dp[i - 1][j - 1];
                 else
@@ -139,20 +170,17 @@ public:
 class Solution {
     public int minDistance(String word1, String word2) {
         var dp = new int[word1.length() + 1][word2.length() + 1];
-        for (int i = 0; i < dp.length; i++)
+        for (var i = 0; i < dp.length; i++)
             dp[i][0] = i;
-        for (int j = 0; j < dp[0].length; j++)
+        for (var j = 0; j < dp[0].length; j++)
             dp[0][j] = j;
 
-        for (int i = 1; i < dp.length; i++) {
-            for (int j = 1; j < dp[0].length; j++) {
+        for (var i = 1; i < dp.length; i++) {
+            for (var j = 1; j < dp[0].length; j++) {
                 if (word1.charAt(i - 1) == word2.charAt(j - 1))
                     dp[i][j] = dp[i - 1][j - 1];
                 else
-                    dp[i][j] = Math.min(
-                        dp[i - 1][j - 1],
-                        Math.min(dp[i - 1][j], dp[i][j - 1])
-                    ) + 1;
+                    dp[i][j] = Math.min(dp[i - 1][j - 1], Math.min(dp[i - 1][j], dp[i][j - 1])) + 1;
             }
         }
 
@@ -166,22 +194,19 @@ class Solution {
 public class Solution {
     public int MinDistance(string word1, string word2) {
         var dp = new int[word1.Length + 1][];
-        for (int i = 0; i < dp.Length; i++) {
+        for (var i = 0; i < dp.Length; i++) {
             dp[i] = new int[word2.Length + 1];
             dp[i][0] = i;
         }
-        for (int j = 0; j < dp[0].Length; j++)
+        for (var j = 0; j < dp[0].Length; j++)
             dp[0][j] = j;
 
-        for (int i = 1; i < dp.Length; i++) {
-            for (int j = 1; j < dp[0].Length; j++) {
+        for (var i = 1; i < dp.Length; i++) {
+            for (var j = 1; j < dp[0].Length; j++) {
                 if (word1[i - 1] == word2[j - 1])
                     dp[i][j] = dp[i - 1][j - 1];
                 else
-                    dp[i][j] = Math.Min(
-                        dp[i - 1][j - 1],
-                        Math.Min(dp[i - 1][j], dp[i][j - 1])
-                    ) + 1;
+                    dp[i][j] = Math.Min(dp[i - 1][j - 1], Math.Min(dp[i - 1][j], dp[i][j - 1])) + 1;
             }
         }
 
@@ -247,8 +272,8 @@ def min_distance(word1, word2)
   dp.each_with_index { |_, i| dp[i][0] = i }
   dp[0].each_with_index { |_, j| dp[0][j] = j }
 
-  for i in 1..dp.size - 1
-    for j in 1..dp[0].size - 1
+  for i in 1..(dp.size - 1)
+    for j in 1..(dp[0].size - 1)
       dp[i][j] = 
         if word1[i - 1] == word2[j - 1]
           dp[i - 1][j - 1]
@@ -258,6 +283,6 @@ def min_distance(word1, word2)
     end
   end
 
-  dp[-1][-1]
+  return dp[-1][-1]
 end
 ```

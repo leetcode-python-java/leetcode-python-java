@@ -19,25 +19,39 @@ Explanation: The subarray [4,-1,2,1] has the largest sum 6.
 * For `nums[i]`,
 if the `previous sum` is negative, we can discard it;
 if the `previous sum` is positive, we can add it to the `current sum`.
-* So we can use dynamic programming to solve the problem.
+* So we can use `dynamic programming` to solve the problem.
 
 ### Common steps in dynamic programming
-These five steps are a pattern for solving dynamic programming problems.
+These five steps are a pattern for solving `dynamic programming` problems.
 
 1. Determine the **meaning** of the `dp[i]`
     * At first, try to use the problem's `return` value as the value of `dp[i]` to determine the meaning of `dp[i]`. If it doesn't work, try another way.
     * Imagine that `dp[i]` represents the `largest sum` at index `i`. The `dp[i + 1]` cannot be calculated by `dp[i]`. So we have to change this meaning.
     * Then consider that `dp[i]` represents the `current sum` at index `i`. We can see the `largest sum` is recorded in the `current sum` array. It may work.
 2. Determine the `dp` array's initial value
-    * `dp[i] = nums[i]` would be good.
-3. Determine the `dp` array's recurrence formula
     * Use an example:
    ```
    nums = [-2, 1, -3, 4, -1, 2, 1, -5, 4]
-   dp   = [-2, 1, -2, 4,  3, 5, 6,  1, 5]
+   dp   = [-2, 1, -3, 4, -1, 2, 1, -5, 4]
    ```
+    * `dp[i] = nums[i]` would be good.
+3. Determine the `dp` array's recurrence formula
+    * Try to complete the `dp` array. In the process, you will get inspiration to derive the formula.
+   ```
+   nums = [-2, 1, -3, 4, -1, 2, 1, -5, 4]
+   dp   = [-2, 1,  N, N,  N, N, N,  N, N] # N means don't pay attention to it now
+   dp   = [-2, 1, -2, N,  N, N, N,  N, N]
+   dp   = [-2, 1, -2, 4,  N, N, N,  N, N]
+   dp   = [-2, 1, -2, 4,  3, N, N,  N, N]
+   dp   = [-2, 1, -2, 4,  3, 5, N,  N, N]
+   dp   = [-2, 1, -2, 4,  3, 5, 6,  N, N]
+   dp   = [-2, 1, -2, 4,  3, 5, 6,  1, N]
+   dp   = [-2, 1, -2, 4,  3, 5, 6,  1, 5]
+   ``` 
     * After analyzing the sample `dp` array, we can derive the `Recurrence Formula`:
-   ```dp[i] = max(nums[i], dp[i - 1] + nums[i])```
+   ```python
+   dp[i] = max(nums[i], dp[i - 1] + nums[i])
+   ```
 4. Determine the `dp` array's traversal order
     * `dp[i]` depends on `dp[i - 1]`, so we should traverse the `dp` array from left to right.
 5. Check the `dp` array's value
@@ -64,9 +78,9 @@ class Solution:
 class Solution {
 public:
     int maxSubArray(vector<int>& nums) {
-        vector<int> dp = nums;
+        auto dp = nums;
 
-        for (int i = 1; i < dp.size(); i++) {
+        for (auto i = 1; i < dp.size(); i++) {
             dp[i] = max(nums[i], dp[i - 1] + nums[i]);
         }
 
@@ -79,15 +93,12 @@ public:
 ```java
 class Solution {
     public int maxSubArray(int[] nums) {
-        int[] dp = nums.clone();
-        int result = dp[0];
+        var dp = nums.clone();
         
-        for (int i = 1; i < dp.length; i++) {
+        for (var i = 1; i < dp.length; i++)
             dp[i] = Math.max(nums[i], dp[i - 1] + nums[i]);
-            if (dp[i] > result) result = dp[i];
-        }
 
-        return result; // or 'return Arrays.stream(dp).max().getAsInt();'
+        return IntStream.of(dp).max().getAsInt(); // if you want to beat 99%, you can use a variable to collect the maximum value: `if (dp[i] > result) result = dp[i];` 
     }
 }
 ```
@@ -96,15 +107,12 @@ class Solution {
 ```c#
 public class Solution {
     public int MaxSubArray(int[] nums) {
-        int[] dp = (int[]) nums.Clone();
-        int result = dp[0];
+        var dp = (int[]) nums.Clone();
 
-        for (int i = 1; i < dp.Length; i++) {
+        for (var i = 1; i < dp.Length; i++)
             dp[i] = Math.Max(nums[i], dp[i - 1] + nums[i]);
-            if (dp[i] > result) result = dp[i];
-        }
         
-        return result; // or 'return dp.Max();'
+        return dp.Max(); // if you want to beat 99%, refer to Java soluiton's comment
     }
 }
 ```
@@ -140,10 +148,10 @@ func maxSubArray(nums []int) int {
 def max_sub_array(nums)
     dp = nums.clone
 
-    for i in 1..dp.size - 1
+    for i in 1..(dp.size - 1)
       dp[i] = [nums[i], dp[i - 1] + nums[i]].max
     end
     
-    dp.max
+    return dp.max
 end
 ```

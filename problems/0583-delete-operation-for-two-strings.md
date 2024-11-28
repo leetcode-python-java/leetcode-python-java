@@ -21,7 +21,7 @@ Output: 4
 * It is a question of comparing two strings. After doing similar questions many times, we will develop an intuition to use dynamic programming with two-dimensional arrays.
 
 ### Common steps in dynamic programming
-These five steps are a pattern for solving dynamic programming problems.
+These five steps are a pattern for solving `dynamic programming` problems.
 
 1. Determine the **meaning** of the `dp[i][j]`
     * Since there are two strings, we can use two-dimensional arrays as the default option.
@@ -41,8 +41,22 @@ These five steps are a pattern for solving dynamic programming problems.
     * `dp[0][j] = j`, because `dp[0]` represents the empty string, and the number of steps is just the number of chars to be deleted.
     * `dp[i][0] = i`, the reason is the same as the previous line, just viewed in vertical direction.
 3. Determine the `dp` array's recurrence formula
+    * Try to complete the grid. In the process, you will get inspiration to derive the formula.
    ```
-   The final 'dp' array would be:
+   1. word1 = "s", word2 = "eat"
+   #     e a t
+   #   0 1 2 3
+   # s 1 2 3 4 # dp[1]
+   ```
+   ```
+   2. word1 = "se", word2 = "eat"
+   #     e a t
+   #   0 1 2 3
+   # s 1 2 3 4
+   # e 2 1 2 3
+   ```
+   ```
+   3. word1 = "sea", word2 = "eat"
    #     e a t
    #   0 1 2 3
    # s 1 2 3 4
@@ -93,13 +107,13 @@ class Solution {
 public:
     int minDistance(string word1, string word2) {
         vector<vector<int>> dp(word1.size() + 1, vector<int>(word2.size() + 1));
-        for (int i = 0; i < dp.size(); i++)
+        for (auto i = 0; i < dp.size(); i++)
             dp[i][0] = i;
-        for (int j = 0; j < dp[0].size(); j++)
+        for (auto j = 0; j < dp[0].size(); j++)
             dp[0][j] = j;
         
-        for (int i = 1; i < dp.size(); i++) {
-            for (int j = 1; j < dp[0].size(); j++) {
+        for (auto i = 1; i < dp.size(); i++) {
+            for (auto j = 1; j < dp[0].size(); j++) {
                 if (word1[i - 1] == word2[j - 1])
                     dp[i][j] = dp[i - 1][j - 1];
                 else
@@ -117,13 +131,13 @@ public:
 class Solution {
     public int minDistance(String word1, String word2) {
         var dp = new int[word1.length() + 1][word2.length() + 1];
-        for (int i = 0; i < dp.length; i++)
+        for (var i = 0; i < dp.length; i++)
             dp[i][0] = i;
-        for (int j = 0; j < dp[0].length; j++)
+        for (var j = 0; j < dp[0].length; j++)
             dp[0][j] = j;
 
-        for (int i = 1; i < dp.length; i++) {
-            for (int j = 1; j < dp[0].length; j++) {
+        for (var i = 1; i < dp.length; i++) {
+            for (var j = 1; j < dp[0].length; j++) {
                 if (word1.charAt(i - 1) == word2.charAt(j - 1))
                     dp[i][j] = dp[i - 1][j - 1];
                 else
@@ -141,15 +155,15 @@ class Solution {
 public class Solution {
     public int MinDistance(string word1, string word2) {
         var dp = new int[word1.Length + 1][];
-        for (int i = 0; i < dp.Length; i++) {
+        for (var i = 0; i < dp.Length; i++) {
             dp[i] = new int[word2.Length + 1];
             dp[i][0] = i;
         }
-        for (int j = 0; j < dp[0].Length; j++)
+        for (var j = 0; j < dp[0].Length; j++)
             dp[0][j] = j;
 
-        for (int i = 1; i < dp.Length; i++) {
-            for (int j = 1; j < dp[0].Length; j++) {
+        for (var i = 1; i < dp.Length; i++) {
+            for (var j = 1; j < dp[0].Length; j++) {
                 if (word1[i - 1] == word2[j - 1])
                     dp[i][j] = dp[i - 1][j - 1];
                 else
@@ -219,8 +233,8 @@ def min_distance(word1, word2)
   dp.each_with_index { |_, i| dp[i][0] = i }
   dp[0].each_with_index { |_, j| dp[0][j] = j }
     
-  for i in 1..dp.size - 1
-    for j in 1..dp[0].size - 1
+  for i in 1..(dp.size - 1)
+    for j in 1..(dp[0].size - 1)
       dp[i][j] = 
         if word1[i - 1] == word2[j - 1]
           dp[i - 1][j - 1]
@@ -230,6 +244,6 @@ def min_distance(word1, word2)
     end
   end
 
-  dp[-1][-1]
+  return dp[-1][-1]
 end
 ```
