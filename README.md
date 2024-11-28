@@ -9,7 +9,7 @@ Here, I will provide you with **common problem-solving patterns** so that you do
 
 I will also provide you with solutions for many common programming languages, such as **Python, C++, Java, JavaScript, C#, Go, Ruby**, etc.
 
-I have tried my best to write the most concise and efficient code, so I call it my best practice. If you have better solutions, welcome to create an issue or PR.
+I have tried my best to write the most concise and efficient code, so I call it my best practice. If you have better solutions, welcome to create an issue or PR!
 
 ## How to use this repo?
 I have planned a learning route for you. You just need to do the questions in the order they are listed.
@@ -23,5 +23,6 @@ After finishing one category of questions, you can study another category to imp
 - [392. Is Subsequence](problems/0392-is-subsequence.md)
 - [583. Delete Operation for Two Strings](problems/0583-delete-operation-for-two-strings.md)
 - [72. Edit Distance](problems/0072-edit-distance.md)
+- [416. Partition Equal Subset Sum](problems/0416-partition-equal-subset-sum.md)
 
 - More LeetCode problems will be added soon...
