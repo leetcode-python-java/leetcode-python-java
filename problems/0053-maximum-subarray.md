@@ -31,22 +31,22 @@ These five steps are a pattern for solving `dynamic programming` problems.
 2. Determine the `dp` array's initial value
     * Use an example:
    ```
-   nums = [-2, 1, -3, 4, -1, 2, 1, -5, 4]
-   dp   = [-2, 1, -3, 4, -1, 2, 1, -5, 4]
+   nums = [-2,  1, -3,  4, -1,  2,  1, -5,  4]
+   dp   = [-2,  1, -3,  4, -1,  2,  1, -5,  4]
    ```
     * `dp[i] = nums[i]` would be good.
 3. Determine the `dp` array's recurrence formula
     * Try to complete the `dp` array. In the process, you will get inspiration to derive the formula.
    ```
-   nums = [-2, 1, -3, 4, -1, 2, 1, -5, 4]
-   dp   = [-2, 1,  N, N,  N, N, N,  N, N] # N means don't pay attention to it now
-   dp   = [-2, 1, -2, N,  N, N, N,  N, N]
-   dp   = [-2, 1, -2, 4,  N, N, N,  N, N]
-   dp   = [-2, 1, -2, 4,  3, N, N,  N, N]
-   dp   = [-2, 1, -2, 4,  3, 5, N,  N, N]
-   dp   = [-2, 1, -2, 4,  3, 5, 6,  N, N]
-   dp   = [-2, 1, -2, 4,  3, 5, 6,  1, N]
-   dp   = [-2, 1, -2, 4,  3, 5, 6,  1, 5]
+   nums = [-2,  1, -3,  4, -1,  2,  1, -5,  4]
+   dp   = [-2,  1,  N,  N,  N,  N,  N,  N,  N] # N means don't pay attention to it now
+   dp   = [-2,  1, -2,  N,  N,  N,  N,  N,  N]
+   dp   = [-2,  1, -2,  4,  N,  N,  N,  N,  N]
+   dp   = [-2,  1, -2,  4,  3,  N,  N,  N,  N]
+   dp   = [-2,  1, -2,  4,  3,  5,  N,  N,  N]
+   dp   = [-2,  1, -2,  4,  3,  5,  6,  N,  N]
+   dp   = [-2,  1, -2,  4,  3,  5,  6,  1,  N]
+   dp   = [-2,  1, -2,  4,  3,  5,  6,  1,  5]
    ``` 
     * After analyzing the sample `dp` array, we can derive the `Recurrence Formula`:
    ```python

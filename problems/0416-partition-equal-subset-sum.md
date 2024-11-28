@@ -115,7 +115,9 @@ class Solution:
         dp[0] = True
         
         for num in nums:
-            for j in range(len(dp) - 1, 0, -1): # If traverse from left to right, the newly assigned value `dp[j - num]` will affect the subsequent `dp[j]`. This is wrong because each `num` can only be used once.
+            # If traverse from left to right, the newly assigned value `dp[j - num]` will affect the subsequent `dp[j]`. 
+            # Then it would be wrong because each `num` can only be used once.
+            for j in range(len(dp) - 1, 0, -1):
                 if j < num:
                     break
                 dp[j] = dp[j] or dp[j - num]
