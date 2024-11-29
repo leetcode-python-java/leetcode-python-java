@@ -2,7 +2,7 @@
 LeetCode problem: [416. Partition Equal Subset Sum](https://leetcode.com/problems/partition-equal-subset-sum/)
 
 ## LeetCode problem description
-> Given an integer array nums, return true if you can partition the array into two subsets such that the sum of the elements in both subsets is equal or false otherwise.
+> Given an integer array `nums`, return `true` if you can partition the array into two subsets such that the sum of the elements in both subsets is equal or `false` otherwise.
 
 ```
 Example 1:
@@ -90,12 +90,12 @@ These five steps are a pattern for solving `Dynamic Programming` problems.
    # 5  T T F F F T T F F F T  T # dp
    ```
     * After analyzing the sample `dp` grid, we can derive the `Recurrence Formula`:
-   ```python
-   dp[j] = dp[j] or dp[j - nums[i]]
+   ```cpp
+   dp[j] = dp[j] || dp[j - nums[i]]
    ```
 4. Determine the `dp` array's traversal order
     * `dp[j]` depends on `dp[j]` and `dp[j - nums[i]]`, so we should traverse the `dp` array from top to bottom, then **from right to left**.
-    * Please think if we can traverse the `dp` array from top to bottom, then `from left to right`? In the `Python` code comments, I will answer this question.
+    * Please think if we can traverse the `dp` array from top to bottom, then `from left to right`? In the `Python` solution's code comments, I will answer this question.
 5. Check the `dp` array's value
     * Print the `dp` to see if it is as expected.
 
@@ -108,15 +108,16 @@ These five steps are a pattern for solving `Dynamic Programming` problems.
 class Solution:
     def canPartition(self, nums: List[int]) -> bool:
         sum_ = sum(nums)
+
         if sum_ % 2 == 1:
             return False
-        
+
         dp = [False] * ((sum_ // 2) + 1)
         dp[0] = True
-        
+
         for num in nums:
-            # If traverse from left to right, the newly assigned value `dp[j - num]` will affect the subsequent `dp[j]`. 
-            # Then it would be wrong because each `num` can only be used once.
+            # If traversing from left to right, the newly assigned value `dp[j]` will act as `dp[j - num]` later,
+            # then the subsequent `dp[j]` will be affected. But each `num` can only be used once.
             for j in range(len(dp) - 1, 0, -1):
                 if j < num:
                     break
@@ -131,13 +132,14 @@ class Solution {
 public:
     bool canPartition(vector<int>& nums) {
         auto sum = reduce(nums.begin(), nums.end());
+
         if (sum % 2 == 1) {
             return false;
         }
-        
+
         auto dp = vector<bool>(sum / 2 + 1);
         dp[0] = true;
-        
+
         for (auto num : nums) {
             for (auto j = dp.size() - 1; j >= num; j--) {
                 dp[j] = dp[j] || dp[j - num];
@@ -154,13 +156,14 @@ public:
 class Solution {
     public boolean canPartition(int[] nums) {
         var sum = IntStream.of(nums).sum();
+        
         if (sum % 2 == 1) {
             return false;
         }
-        
+
         var dp = new boolean[sum / 2 + 1];
         dp[0] = true;
-        
+
         for (var num : nums) {
             for (var j = dp.length - 1; j >= num; j--) {
                 dp[j] = dp[j] || dp[j - num];
@@ -177,13 +180,14 @@ class Solution {
 public class Solution {
     public bool CanPartition(int[] nums) {
         var sum = nums.Sum();
+
         if (sum % 2 == 1) {
             return false;
         }
-        
+
         var dp = new bool[sum / 2 + 1];
         dp[0] = true;
-        
+
         foreach (var num in nums) {
             for (var j = dp.Length - 1; j >= num; j--) {
                 dp[j] = dp[j] || dp[j - num];
@@ -198,20 +202,21 @@ public class Solution {
 ## JavaScript
 ```javascript
 var canPartition = function(nums) {
-    sum = _.sum(nums)
+    const sum = _.sum(nums)
+
     if (sum % 2 == 1) {
         return false
     }
 
-    dp = Array(sum / 2 + 1).fill(false)
+    const dp = Array(sum / 2 + 1).fill(false)
     dp[0] = true
 
-    for (num of nums) {
+    for (const num of nums) {
         for (let j = dp.length - 1; j >= num; j--) {
             dp[j] = dp[j] || dp[j - num]
         }
     }
-    
+
     return dp.at(-1)
 };
 ```
@@ -223,13 +228,14 @@ func canPartition(nums []int) bool {
     for _, num := range nums {
         sum += num
     }
+
     if sum % 2 == 1 {
         return false
     }
-    
+
     dp := make([]bool, sum / 2 + 1)
     dp[0] = true
-    
+
     for _, num := range nums {
         for j := len(dp) - 1; j >= num; j-- {
             dp[j] = dp[j] || dp[j - num]
@@ -244,6 +250,7 @@ func canPartition(nums []int) bool {
 ```ruby
 def can_partition(nums)
   sum = nums.sum
+
   return false if sum % 2 == 1
 
   dp = Array.new(sum / 2 + 1, false)

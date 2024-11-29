@@ -14,6 +14,11 @@ Output: true
 Example 2:
 Input: s = "axc", t = "ahbgdc"
 Output: false
+
+Constraints:
+1. 0 <= s.length <= 100
+2. 0 <= t.length <= 10**4
+3. `s` and `t` consist only of lowercase English letters.
 ```
 
 ## Thoughts
@@ -174,7 +179,7 @@ public class Solution {
 ## JavaScript
 ```javascript
 var isSubsequence = function(s, t) {
-    let dp = Array(s.length + 1).fill().map(
+    const dp = Array(s.length + 1).fill().map(
         () => Array(t.length + 1).fill(false)
     )
     dp[0].fill(true)

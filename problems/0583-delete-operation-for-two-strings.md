@@ -15,6 +15,10 @@ Explanation: You need one step to make "sea" to "ea" and another step to make "e
 Example 2:
 Input: word1 = "leetcode", word2 = "etco"
 Output: 4
+
+Constraints:
+1. 1 <= word1.length, word2.length <= 500
+2. `word1` and `word2` consist of only lowercase English letters.
 ```
 
 ## Thoughts
@@ -187,7 +191,7 @@ public class Solution {
 ## JavaScript
 ```javascript
 var minDistance = function(word1, word2) {
-    let dp = Array(word1.length + 1).fill().map(
+    const dp = Array(word1.length + 1).fill().map(
         () => Array(word2.length + 1).fill(0)
     )
     dp.forEach((_, i) => { dp[i][0] = i })
