@@ -111,10 +111,11 @@ public:
 
         for (auto i = 1; i < dp.size(); i++) {
             for (auto j = 1; j < dp[0].size(); j++) {
-                if (s[i - 1] == t[j - 1])
+                if (s[i - 1] == t[j - 1]) {
                     dp[i][j] = dp[i - 1][j - 1];
-                else
+                } else {
                     dp[i][j] = dp[i][j - 1];
+                }
             }
         }
 
@@ -132,10 +133,11 @@ class Solution {
 
         for (var i = 1; i < dp.length; i++) {
             for (var j = 1; j < dp[0].length; j++) {
-                if (s.charAt(i - 1) == t.charAt(j - 1))
+                if (s.charAt(i - 1) == t.charAt(j - 1)) {
                     dp[i][j] = dp[i - 1][j - 1];
-                else
+                } else {
                     dp[i][j] = dp[i][j - 1];
+                }
             }
         }
 
@@ -149,16 +151,18 @@ class Solution {
 public class Solution {
     public bool IsSubsequence(string s, string t) {
         var dp = new bool[s.Length + 1][];
-        for (var i = 0; i < dp.Length; i++)
+        for (var i = 0; i < dp.Length; i++) {
             dp[i] = new bool[t.Length + 1];
+        }
         Array.Fill(dp[0], true);
         
         for (var i = 1; i < dp.Length; i++) {
             for (var j = 1; j < dp[0].Length; j++) {
-                if (s[i - 1] == t[j - 1])
+                if (s[i - 1] == t[j - 1]) {
                     dp[i][j] = dp[i - 1][j - 1];
-                else
+                } else {
                     dp[i][j] = dp[i][j - 1];
+                }
             }
         }
 
@@ -177,10 +181,11 @@ var isSubsequence = function(s, t) {
 
     for (let i = 1; i < dp.length; i++) {
         for (let j = 1; j < dp[0].length; j++) {
-            if (s[i - 1] == t[j - 1])
+            if (s[i - 1] == t[j - 1]) {
                 dp[i][j] = dp[i - 1][j - 1]
-            else
+            } else {
                 dp[i][j] = dp[i][j - 1]
+            }
         }
     }
 

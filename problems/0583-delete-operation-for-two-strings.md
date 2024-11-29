@@ -107,17 +107,20 @@ class Solution {
 public:
     int minDistance(string word1, string word2) {
         vector<vector<int>> dp(word1.size() + 1, vector<int>(word2.size() + 1));
-        for (auto i = 0; i < dp.size(); i++)
+        for (auto i = 0; i < dp.size(); i++) {
             dp[i][0] = i;
-        for (auto j = 0; j < dp[0].size(); j++)
+        }
+        for (auto j = 0; j < dp[0].size(); j++) {
             dp[0][j] = j;
+        }
         
         for (auto i = 1; i < dp.size(); i++) {
             for (auto j = 1; j < dp[0].size(); j++) {
-                if (word1[i - 1] == word2[j - 1])
+                if (word1[i - 1] == word2[j - 1]) {
                     dp[i][j] = dp[i - 1][j - 1];
-                else
+                } else {
                     dp[i][j] = min(dp[i - 1][j], dp[i][j - 1]) + 1;
+                }
             }
         }
 
@@ -131,17 +134,20 @@ public:
 class Solution {
     public int minDistance(String word1, String word2) {
         var dp = new int[word1.length() + 1][word2.length() + 1];
-        for (var i = 0; i < dp.length; i++)
+        for (var i = 0; i < dp.length; i++) {
             dp[i][0] = i;
-        for (var j = 0; j < dp[0].length; j++)
+        }
+        for (var j = 0; j < dp[0].length; j++) {
             dp[0][j] = j;
+        }
 
         for (var i = 1; i < dp.length; i++) {
             for (var j = 1; j < dp[0].length; j++) {
-                if (word1.charAt(i - 1) == word2.charAt(j - 1))
+                if (word1.charAt(i - 1) == word2.charAt(j - 1)) {
                     dp[i][j] = dp[i - 1][j - 1];
-                else
+                } else {
                     dp[i][j] = Math.min(dp[i - 1][j], dp[i][j - 1]) + 1;
+                }
             }
         }
 
@@ -159,15 +165,17 @@ public class Solution {
             dp[i] = new int[word2.Length + 1];
             dp[i][0] = i;
         }
-        for (var j = 0; j < dp[0].Length; j++)
+        for (var j = 0; j < dp[0].Length; j++) {
             dp[0][j] = j;
+        }
 
         for (var i = 1; i < dp.Length; i++) {
             for (var j = 1; j < dp[0].Length; j++) {
-                if (word1[i - 1] == word2[j - 1])
+                if (word1[i - 1] == word2[j - 1]) {
                     dp[i][j] = dp[i - 1][j - 1];
-                else
+                } else {
                     dp[i][j] = Math.Min(dp[i - 1][j], dp[i][j - 1]) + 1;
+                }
             }
         }
 
@@ -187,10 +195,11 @@ var minDistance = function(word1, word2) {
 
     for (let i = 1; i < dp.length; i++) {
         for (let j = 1; j < dp[0].length; j++) {
-            if (word1[i - 1] == word2[j - 1])
+            if (word1[i - 1] == word2[j - 1]) {
                 dp[i][j] = dp[i - 1][j - 1]
-            else
+            } else {
                 dp[i][j] = Math.min(dp[i - 1][j], dp[i][j - 1]) + 1
+            }
         }
     }
 

@@ -27,13 +27,13 @@ Constraints:
 
 ## Thoughts
 * When we first see this problem, we might want to loop through all subsets of the array. If there is a subset whose sum is equal to `half of the sum`, then return `true`. This can be achieved with a `backtracking algorithm`, but after seeing the constraint `nums.length <= 200`, we can estimate that the program will time out.
-* This is actually a `01 knapsack problem`. `01 knapsack problem` belongs to `dynamic programming`. `Dynamic programming` means that the answer to the current problem can be derived from the previous similar problem. Therefore, the `dp` array is used to record all the answers.
+* This is actually a `01 Knapsack Problem` which belongs to `Dynamic Programming`. `Dynamic programming` means that the answer to the current problem can be derived from the previous similar problem. Therefore, the `dp` array is used to record all the answers.
 
-* The core logic of the `01 knapsack problem` uses a two-dimensional `dp` array or a one-dimensional `dp` **rolling array**, first **traverses the items**, then **traverses the knapsack in reverse**, then **reference the previous value corresponding to the size of current 'item'**.
+* The core logic of the `01 Knapsack Problem` uses a two-dimensional `dp` array or a one-dimensional `dp` **rolling array**, first **traverses the items**, then **traverses the knapsack in reverse**, then **reference the previous value corresponding to the size of current 'item'**.
 * There are many things to remember when using a two-dimensional `dp` array, and it is difficult to write it right at once during an interview, so I won't describe it here.
 
 ### Common steps in '01 Knapsack Problem'
-These five steps are a pattern for solving `dynamic programming` problems.
+These five steps are a pattern for solving `Dynamic Programming` problems.
 
 1. Determine the **meaning** of the `dp[j]`
     * We can use a one-dimensional `dp` **rolling array**. Rolling an array means that the values of the array are overwritten each time through the loop. 
@@ -131,15 +131,18 @@ class Solution {
 public:
     bool canPartition(vector<int>& nums) {
         auto sum = reduce(nums.begin(), nums.end());
-        if (sum % 2 == 1)
+        if (sum % 2 == 1) {
             return false;
+        }
         
         auto dp = vector<bool>(sum / 2 + 1);
         dp[0] = true;
         
-        for (auto num : nums)
-            for (auto j = dp.size() - 1; j >= num; j--)
+        for (auto num : nums) {
+            for (auto j = dp.size() - 1; j >= num; j--) {
                 dp[j] = dp[j] || dp[j - num];
+            }
+        }
 
         return dp[dp.size() - 1];
     }
@@ -151,15 +154,18 @@ public:
 class Solution {
     public boolean canPartition(int[] nums) {
         var sum = IntStream.of(nums).sum();
-        if (sum % 2 == 1)
+        if (sum % 2 == 1) {
             return false;
+        }
         
         var dp = new boolean[sum / 2 + 1];
         dp[0] = true;
         
-        for (var num : nums)
-            for (var j = dp.length - 1; j >= num; j--)
+        for (var num : nums) {
+            for (var j = dp.length - 1; j >= num; j--) {
                 dp[j] = dp[j] || dp[j - num];
+            }
+        }
 
         return dp[dp.length - 1];
     }
@@ -171,15 +177,18 @@ class Solution {
 public class Solution {
     public bool CanPartition(int[] nums) {
         var sum = nums.Sum();
-        if (sum % 2 == 1)
+        if (sum % 2 == 1) {
             return false;
+        }
         
         var dp = new bool[sum / 2 + 1];
         dp[0] = true;
         
-        foreach (var num in nums)
-            for (var j = dp.Length - 1; j >= num; j--)
+        foreach (var num in nums) {
+            for (var j = dp.Length - 1; j >= num; j--) {
                 dp[j] = dp[j] || dp[j - num];
+            }
+        }
 
         return dp[dp.Length - 1];
     }
@@ -189,18 +198,21 @@ public class Solution {
 ## JavaScript
 ```javascript
 var canPartition = function(nums) {
-   sum = _.sum(nums)
-   if (sum % 2 == 1)
-      return false
+    sum = _.sum(nums)
+    if (sum % 2 == 1) {
+        return false
+    }
 
-   dp = Array(sum / 2 + 1).fill(false)
-   dp[0] = true
+    dp = Array(sum / 2 + 1).fill(false)
+    dp[0] = true
 
-   for (num of nums)
-      for (let j = dp.length - 1; j >= num; j--)
-         dp[j] = dp[j] || dp[j - num]
-
-   return dp.at(-1)
+    for (num of nums) {
+        for (let j = dp.length - 1; j >= num; j--) {
+            dp[j] = dp[j] || dp[j - num]
+        }
+    }
+    
+    return dp.at(-1)
 };
 ```
 
