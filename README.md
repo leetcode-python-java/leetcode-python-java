@@ -24,5 +24,6 @@ After finishing one category of questions, you can study another category to imp
 - [583. Delete Operation for Two Strings](problems/0583-delete-operation-for-two-strings.md)
 - [72. Edit Distance](problems/0072-edit-distance.md)
 - [416. Partition Equal Subset Sum](problems/0416-partition-equal-subset-sum.md)
+- [1049. Last Stone Weight II](problems/1049-last-stone-weight-ii.md)
 
 - More LeetCode problems will be added soon...
