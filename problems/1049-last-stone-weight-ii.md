@@ -75,7 +75,7 @@ These five steps are a pattern for solving `Dynamic Programming` problems.
    ```
     * You can see the `dp` array size is one greater than the knapsack size. In this way, the backpack size and index value are equal, which helps to understand.
     * `dp[0]` is set to `true`, indicating that an empty backpack can be achieved by not putting any items in it. In addition, it is used as the starting value, and the subsequent `dp[j]` will depend on it. If it is `false`, all values of `dp[j]` will be `false`.
-    * `dp[j] = false (j != 0)`, indicating that it is impossible to get `j` with no `nums`.
+    * `dp[j] = false (j != 0)`, indicating that it is impossible to get `j` with no `stones`.
     
 3. Determine the `dp` array's recurrence formula
     * Try to complete the grid. In the process, you will get inspiration to derive the formula.
@@ -127,7 +127,7 @@ class Solution:
 
         for stone in stones:
             # If traversing from left to right, the newly assigned value `dp[j]` will act as `dp[j - stone]` later,
-            # then the subsequent `dp[j]` will be affected. But each `stone` can only be used once.
+            # then the subsequent `dp[j]` will be affected. But each `stone` can only be used once!
             for j in range(len(dp) - 1, 0, -1):
                 if j < stone:
                     break
@@ -136,8 +136,6 @@ class Solution:
         for i in range(len(dp) - 1, -1, -1):
             if dp[i]:
                 return sum_ - i * 2
-
-        raise ArithmeticError("lastStoneWeightII() doesn't have a correct return value!")
 ```
 
 ## C++
@@ -222,24 +220,22 @@ public class Solution {
 ## JavaScript
 ```javascript
 var lastStoneWeightII = function(stones) {
-    const sum = _.sum(stones)
+  const sum = _.sum(stones)
 
-    const dp = Array(Math.floor(sum / 2) + 1).fill(false)
-    dp[0] = true
+  const dp = Array(Math.floor(sum / 2) + 1).fill(false)
+  dp[0] = true
 
-    for (const stone of stones) {
-        for (let j = dp.length - 1; j >= stone; j--) {
-            dp[j] = dp[j] || dp[j - stone]
-        }
+  for (const stone of stones) {
+    for (let j = dp.length - 1; j >= stone; j--) {
+      dp[j] = dp[j] || dp[j - stone]
     }
+  }
 
-    for (let j = dp.length - 1; j >= 0; j--) {
-        if (dp[j]) {
-            return sum - j * 2
-        }
+  for (let j = dp.length - 1; j >= 0; j--) {
+    if (dp[j]) {
+      return sum - j * 2
     }
-
-    return -1; // This line should be unreachable. It represents an error state.
+  }
 };
 ```
 
@@ -281,6 +277,7 @@ def last_stone_weight_ii(stones)
   stones.each do |stone|
     (1..(dp.size - 1)).reverse_each do |j|
       break if j < stone
+
       dp[j] = dp[j] || dp[j - stone]
     end
   end
@@ -288,7 +285,5 @@ def last_stone_weight_ii(stones)
   (0..(dp.size - 1)).reverse_each do |j|
     return sum - j * 2 if dp[j]
   end
-
-  raise "last_stone_weight_ii() doesn't have a correct return value!"
 end
 ```

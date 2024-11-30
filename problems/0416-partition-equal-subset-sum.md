@@ -117,7 +117,7 @@ class Solution:
 
         for num in nums:
             # If traversing from left to right, the newly assigned value `dp[j]` will act as `dp[j - num]` later,
-            # then the subsequent `dp[j]` will be affected. But each `num` can only be used once.
+            # then the subsequent `dp[j]` will be affected. But each `num` can only be used once!
             for j in range(len(dp) - 1, 0, -1):
                 if j < num:
                     break
