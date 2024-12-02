@@ -25,5 +25,6 @@ After finishing one category of questions, you can study another category to imp
 - [72. Edit Distance](problems/0072-edit-distance.md)
 - [416. Partition Equal Subset Sum](problems/0416-partition-equal-subset-sum.md)
 - [1049. Last Stone Weight II](problems/1049-last-stone-weight-ii.md)
+- [494. Target Sum](problems/0494-target-sum.md)
 
 - More LeetCode problems will be added soon...
