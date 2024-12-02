@@ -139,7 +139,7 @@ class Solution:
                 return sum_ - i * 2
 ```
 
-* As in the comment above, `for j in range(len(dp) - 1, 0, -1):`'s traversal order is **from right to left** which really matters.
+As in the comment above, `for j in range(len(dp) - 1, 0, -1):`'s traversal order is **from right to left** which really matters.
 
 During the interview, you need to remember it. Is there any way to not worry about the traversal order?
 

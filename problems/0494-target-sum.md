@@ -75,7 +75,6 @@ These five steps are a pattern for solving `Dynamic Programming` problems.
     * You can see the `dp` array size is **one** greater than the knapsack size. In this way, the knapsack size and index value are equal, which helps to understand.
     * `dp[0]` is set to `1`, indicating that an empty knapsack can be achieved by not using any `nums`. In addition, it is used as the starting value, and the subsequent `dp[j]` will depend on it. If it is `0`, all values of `dp[j]` will be `0`.
     * `dp[j] = 0 (j != 0)`, indicating that it is impossible to get `j` with no `nums`.
-    
 3. Determine the `dp` array's recurrence formula
     * Try to complete the grid. In the process, you will get inspiration to derive the formula.
    ```
@@ -83,9 +82,9 @@ These five steps are a pattern for solving `Dynamic Programming` problems.
    #    0  1  2  3  4  5  6
    #    1  0  0  0  0  0  0
    # 1  0  1  0  0  0  0  0 # dp
-   # 2  
-   # 1  
-   # 2  
+   # 2
+   # 1
+   # 2
    ```
    ```
    2. Use the second num '2'.
@@ -118,7 +117,7 @@ These five steps are a pattern for solving `Dynamic Programming` problems.
    ```java
    dp[j] = dp[abs(j - nums[i])] + dp[j + nums[i]]
    ```
-   * If `j < nums[i]`, `dp[j - nums[i]]` will raise `array index out of range` exception. So we use the `dp[abs(j - num)]` which is equal to it, because the `dp[j]` are symmetrical around `0`, such as `dp[-j]` equals to `dp[j]` (`-j` is an imaginary index).
+    * If `j < nums[i]`, `dp[j - nums[i]]` will raise `array index out of range` exception. So we use the `dp[abs(j - num)]` which is equal to it, because the `dp[j]` are symmetrical around `0`, such as `dp[-j]` equals to `dp[j]` (`-j` is an imaginary index).
 4. Determine the `dp` array's traversal order
     * `dp[j]` depends on `dp[abs(j - nums[i])]` and `dp[j + nums[i]]`, so we can traverse the `dp` array in any order, but must reference the clone of `dp` to prevent the referenced value from being modified during the iteration.
     * For `j + nums[i] >= dp.length`, `dp[j + nums[i]]` must be `0` because their values are too large and exceed the maximum sum of `nums`.
