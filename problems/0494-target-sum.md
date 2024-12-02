@@ -38,11 +38,11 @@ Constraints:
 ```
 
 * This problem is quite difficult if you have not solved similar problems before. So before you start working on this question,
-it is recommended that you first work on another relatively simple question [416. Partition Equal Subset Sum](./0416-partition-equal-subset-sum.md) that is very similar to this one.
+it is recommended that you first work on another relatively simple question [416. Partition Equal Subset Sum](./0416-partition-equal-subset-sum.md) that is similar to this one.
 
 ## Thoughts
 * When we see a set of numbers being used once to obtain another number through some calculation (just like this question), we can consider this to be a `01 Knapsack Problem`.
-* `01 Knapsack Problem` which belongs to `Dynamic Programming`. `Dynamic programming` means that the answer to the current problem can be derived from the previous similar problem. Therefore, the `dp` array is used to record all the answers.
+* `01 Knapsack Problem` belongs to `Dynamic Programming`. `Dynamic programming` means that the answer to the current problem can be derived from the previous similar problem. Therefore, the `dp` array is used to record all the answers.
 * The core logic of the `01 Knapsack Problem` uses a two-dimensional `dp` array or a one-dimensional `dp` **rolling array**, first **traverses the items**, then **traverses the knapsack size**, then **reference the previous value corresponding to the size of current 'item'**.
 * There are many things to remember when using a two-dimensional `dp` array, and it is difficult to write it right at once during an interview, so I won't describe it here.
 
@@ -52,28 +52,28 @@ These five steps are a pattern for solving `Dynamic Programming` problems.
 1. Determine the **meaning** of the `dp[j]`
     * We can use a one-dimensional `dp` **rolling array**. Rolling an array means that the values of the array are overwritten each time through the iteration. 
     * At first, try to use the problem's `return` value as the value of `dp[j]` to determine the meaning of `dp[j]`. If it doesn't work, try another way.
-    * So, `dp[j]` represents that by using the **first** `i` nums, the **number** of different **expressions** that you can build, which evaluates to `target`.
-    * The value of `dp[j]` is an **integer**.
+    * So, `dp[j]` represents that by using the **first** `i` nums, the **number** of different **expressions** that you can build, which evaluates to `j`.
+    * `dp[j]` is an **integer**.
 2. Determine the `dp` array's initial value
     * Use an example. We didn't use the `Example 1: Input: nums = [1,1,1,1,1], target = 3` because it is too special and is not a good example for deriving a formula.
     * I made up an example: `nums = [1,2,1,2], target = 4`. The example must be simple, otherwise it would take too long to complete the grid.
-    * First, determine the 'size' of the knapsack.
+    * First, determine the `size` of the knapsack.
     * The `target` value may be very small, such as `0`, so it alone cannot determine the `size` of the knapsack.
     * The sum of `nums` should also be taken into account to fully cover all knapsack sizes.
-    * Both `num` and `target` may be negative, but considering that `+` and `-` are added to `num` arbitrarily, the `results` should be symmetrical around `0`. So the result of negative `target` `dp[target]` is equal to `dp[abs(target)]`.
+    * `target` may be negative, but considering that `+` and `-` are added to `num` arbitrarily, the `dp[j]` should be symmetrical around `0`. So the result of negative `target` `dp[target]` is equal to `dp[abs(target)]`.
     * So the `size` of the knapsack can be `max(sum(nums), target) + 1`.
     * The `items` are the `nums`.
-   ```
-   So after initialization, the 'dp' array would be:
-   #    0  1  2  3  4  5  6
-   #    1  0  0  0  0  0  0 # dp
-   # 1  
-   # 2  
-   # 1  
-   # 2  
-   ```
+    ```
+    So after initialization, the 'dp' array would be:
+    #    0  1  2  3  4  5  6
+    #    1  0  0  0  0  0  0 # dp
+    # 1  
+    # 2  
+    # 1  
+    # 2  
+    ```
     * You can see the `dp` array size is **one** greater than the knapsack size. In this way, the knapsack size and index value are equal, which helps to understand.
-    * `dp[0]` is set to `1`, indicating that an empty knapsack can be achieved by not using any `nums`. In addition, it is used as the starting value, and the subsequent `dp[j]` will depend on it. If it is `false`, all values of `dp[j]` will be `false`.
+    * `dp[0]` is set to `1`, indicating that an empty knapsack can be achieved by not using any `nums`. In addition, it is used as the starting value, and the subsequent `dp[j]` will depend on it. If it is `0`, all values of `dp[j]` will be `0`.
     * `dp[j] = 0 (j != 0)`, indicating that it is impossible to get `j` with no `nums`.
     
 3. Determine the `dp` array's recurrence formula
@@ -112,24 +112,22 @@ These five steps are a pattern for solving `Dynamic Programming` problems.
    # 1  0  1  0  0  0  0  0
    # 2  0  1  0  1  0  0  0
    # 1  2  0  2  0  1  0  0
-   # 2  4  0  3  0  2  0  1
+   # 2  4  0  3  0  2  0  1 # dp
    ```
     * After analyzing the sample `dp` grid, we can derive the `Recurrence Formula`:
    ```java
-   dp[j] = dp[abs(j - num)] + dp[j + num]
+   dp[j] = dp[abs(j - nums[i])] + dp[j + nums[i]]
    ```
-   * If `j < num`, `dp[j - m]` will raise `array index out of range` exception. So we use the `dp[abs(j - num)]` which is equal to it, because the `results` are symmetrical around `0`.
+   * If `j < nums[i]`, `dp[j - nums[i]]` will raise `array index out of range` exception. So we use the `dp[abs(j - num)]` which is equal to it, because the `dp[j]` are symmetrical around `0`, such as `dp[-j]` equals to `dp[j]` (`-j` is an imaginary index).
 4. Determine the `dp` array's traversal order
     * `dp[j]` depends on `dp[abs(j - nums[i])]` and `dp[j + nums[i]]`, so we can traverse the `dp` array in any order, but must reference the clone of `dp` to prevent the referenced value from being modified during the iteration.
-    * For `j + nums[i] >= len[dp]`, `dp[j + nums[i]]` must be `0` because their values are too large and exceed the maximum sum of `nums`.
+    * For `j + nums[i] >= dp.length`, `dp[j + nums[i]]` must be `0` because their values are too large and exceed the maximum sum of `nums`.
 5. Check the `dp` array's value
     * Print the `dp` to see if it is as expected.
 
 ### Complexity
 * Time: `O(n * sum)`.
-* Space:
-   * Solution 1: `O(sum)`.
-   * Solution 2: `O(n * sum)`.
+* Space: `O(n * sum)`.
 
 ## Python
 ```python
@@ -200,10 +198,9 @@ class Solution {
 ```c#
 public class Solution {
     public int FindTargetSumWays(int[] nums, int target) {
-        var sum = nums.Sum();
         target = Math.Abs(target);
 
-        var dp = new int[Math.Max(sum, target) + 1];
+        var dp = new int[Math.Max(nums.Sum(), target) + 1];
         dp[0] = 1;
 
         foreach (var num in nums) {
@@ -222,10 +219,9 @@ public class Solution {
 ## JavaScript
 ```javascript
 var findTargetSumWays = function(nums, target) {
-   const sum = _.sum(nums)
    target = Math.abs(target)
 
-   const dp = Array(Math.max(sum, target) + 1).fill(0)
+   const dp = Array(Math.max(_.sum(nums), target) + 1).fill(0)
    dp[0] = 1
 
    for (const num of nums) {
@@ -271,10 +267,9 @@ func findTargetSumWays(nums []int, target int) int {
 ## Ruby
 ```ruby
 def find_target_sum_ways(nums, target)
-  sum = nums.sum
   target = target.abs
 
-  dp = Array.new([sum, target].max + 1, 0)
+  dp = Array.new([nums.sum, target].max + 1, 0)
   dp[0] = 1
 
   nums.each do |num|

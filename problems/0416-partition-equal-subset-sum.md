@@ -39,7 +39,7 @@ These five steps are a pattern for solving `Dynamic Programming` problems.
     * We can use a one-dimensional `dp` **rolling array**. Rolling an array means that the values of the array are overwritten each time through the iteration. 
     * At first, try to use the problem's `return` value as the value of `dp[j]` to determine the meaning of `dp[j]`. If it doesn't work, try another way.
     * So, `dp[j]` represents whether it is possible to `sum` the first `i` `nums` to get `j`.
-    * The value of `dp[j]` is a boolean.
+    * `dp[j]` is a boolean.
 2. Determine the `dp` array's initial value
     * Use an example:
    ```

@@ -50,7 +50,7 @@ These five steps are a pattern for solving `dynamic programming` problems.
     * Since there are two strings, we can use two-dimensional arrays as the default option.
     * At first, try to use the problem's `return` value as the value of `dp[i][j]` to determine the meaning of `dp[i][j]`. If it doesn't work, try another way.
     * `dp[i][j]` represents the **minimum** number of operations required to convert `word1`'s first `i` letters to `word2`'s first `j` letters.
-    * The value of `dp[i][j]` is an integer.
+    * `dp[i][j]` is an integer.
 2. Determine the `dp` array's initial value
     * Use an example:
    ```

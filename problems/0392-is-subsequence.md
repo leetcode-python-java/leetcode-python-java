@@ -32,7 +32,7 @@ These five steps are a pattern for solving `dynamic programming` problems.
     * Since there are two strings, we can use two-dimensional arrays as the default option.
     * At first, try to use the problem's `return` value as the value of `dp[i][j]` to determine the meaning of `dp[i][j]`. If it doesn't work, try another way.
     * `dp[i][j]` represents whether the first `i` letters of `s` are a subsequence of `t`'s first `j` letters.
-    * The value of `dp[i][j]` is `true` or `false`.
+    * `dp[i][j]` is `true` or `false`.
 2. Determine the `dp` array's initial value
     * Use an example:
    ```
