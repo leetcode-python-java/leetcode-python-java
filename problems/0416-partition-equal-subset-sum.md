@@ -29,7 +29,7 @@ Constraints:
 * When we first see this problem, we might want to loop through all subsets of the array. If there is a subset whose sum is equal to `half of the sum`, then return `true`. This can be achieved with a `backtracking algorithm`, but after seeing the constraint `nums.length <= 200`, we can estimate that the program will time out.
 * This is actually a `01 Knapsack Problem` which belongs to `Dynamic Programming`. `Dynamic programming` means that the answer to the current problem can be derived from the previous similar problem. Therefore, the `dp` array is used to record all the answers.
 
-* The core logic of the `01 Knapsack Problem` uses a two-dimensional `dp` array or a one-dimensional `dp` **rolling array**, first **iterate through the items**, then **iterate through the knapsack size**, then **reference the previous value corresponding to the size of current 'item'**.
+* The core logic of the `01 Knapsack Problem` uses a two-dimensional `dp` array or a one-dimensional `dp` **rolling array**, first **iterate through the items**, then **iterate through the knapsack size** (`in reverse order` or use `dp.clone`), then **reference the previous value corresponding to the size of current 'item'**.
 * There are many things to remember when using a two-dimensional `dp` array, and it is difficult to write it right at once during an interview, so I won't describe it here.
 
 ### Common steps in '01 Knapsack Problem'
@@ -94,7 +94,7 @@ These five steps are a pattern for solving `Dynamic Programming` problems.
    dp[j] = dp[j] || dp[j - nums[i]]
    ```
 4. Determine the `dp` array's traversal order
-    * First **iterate through the items**, then **iterate through the knapsack size**.
+    * First **iterate through the items**, then **iterate through the knapsack size** (`in reverse order` or use `dp.clone`).
     * When iterating through the knapsack size, since `dp[j]` depends on `dp[j]` and `dp[j - nums[i]]`, we should traverse the `dp` array **from right to left**.
     * Please think if we can iterate through the `dp` array from `from left to right`? In the `Python` solution's code comments, I will answer this question.
 5. Check the `dp` array's value
@@ -120,7 +120,7 @@ class Solution:
         dp[0] = True
 
         for num in nums:
-            # If traversing from left to right, the newly assigned value `dp[j]` will act as `dp[j - num]` later,
+            # If not traversing in reverse order, the newly assigned value `dp[j]` will act as `dp[j - num]` later,
             # then the subsequent `dp[j]` will be affected. But each `num` can only be used once!
             for j in range(len(dp) - 1, 0, -1):
                 if j < num:

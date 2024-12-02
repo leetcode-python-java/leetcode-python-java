@@ -47,7 +47,7 @@ Once you have completed `416`, it will be effortless to complete this question.
 * So we need to change our thinking. Before you The question is equivalent to finding the minimum difference between the sums of the two arrays after splitting. If we find a subset array whose sum is closest to half of the sum of the complete array, then it is the subset array we want.
 * Then this problem will become a `01 Knapsack Problem` which belongs to `Dynamic Programming`. `Dynamic programming` means that the answer to the current problem can be derived from the previous similar problem. Therefore, the `dp` array is used to record all the answers.
 
-* The core logic of the `01 Knapsack Problem` uses a two-dimensional `dp` array or a one-dimensional `dp` **rolling array**, first **traverses the items**, then **traverses the knapsack**, then **reference the previous value corresponding to the size of current 'item'**.
+* The core logic of the `01 Knapsack Problem` uses a two-dimensional `dp` array or a one-dimensional `dp` **rolling array**, first **traverses the items**, then **traverses the knapsack size** (`in reverse order` or use `dp.clone`), then **reference the previous value corresponding to the size of current 'item'**.
 * There are many things to remember when using a two-dimensional `dp` array, and it is difficult to write it right at once during an interview, so I won't describe it here.
 
 ### Common steps in '01 Knapsack Problem'
@@ -107,8 +107,8 @@ These five steps are a pattern for solving `Dynamic Programming` problems.
    dp[j] = dp[j] || dp[j - stones[i]]
    ```
 4. Determine the `dp` array's traversal order
-    * `dp[j]` depends on `dp[j]` and `dp[j - stones[i]]`, so we should traverse the `dp` array **from right to left**.
-    * Please think if we can traverse the `dp` array **from left to right**? In the `Python` solution's code comments, I will answer this question.
+    * `dp[j]` depends on `dp[j]` and `dp[j - stones[i]]`, so we should traverse the `dp` array **in reverse order**.
+    * Please think if we can traverse the `dp` array **not in reverse order**? In the `Python` solution's code comments, I will answer this question.
 5. Check the `dp` array's value
     * Print the `dp` to see if it is as expected.
 
@@ -127,7 +127,7 @@ class Solution:
         dp[0] = True
 
         for stone in stones:
-            # If traversing from left to right, the newly assigned value `dp[j]` will act as `dp[j - stone]` later,
+            # If not traversing in reverse order, the newly assigned value `dp[j]` will act as `dp[j - stone]` later,
             # then the subsequent `dp[j]` will be affected. But each `stone` can only be used once!
             for j in range(len(dp) - 1, 0, -1):
                 if j < stone:
@@ -139,7 +139,7 @@ class Solution:
                 return sum_ - i * 2
 ```
 
-As in the comment above, `for j in range(len(dp) - 1, 0, -1):`'s traversal order is **from right to left** which really matters.
+As in the comment above, `for j in range(len(dp) - 1, 0, -1):`'s traversal order is **in reverse order** which really matters.
 
 During the interview, you need to remember it. Is there any way to not worry about the traversal order?
 
@@ -167,7 +167,7 @@ class Solution:
                 return sum_ - i * 2
 ```
 
-* Personally, I like this approach because it makes the code logic clearer, does not need to consider the traversal direction,
+* Personally, I like this approach because it makes the code logic clearer, does not need to consider the traversal order,
 and is more applicable (you will encounter many situations in the future where backward iteration does not work).
 
 ## C++

@@ -43,7 +43,7 @@ it is recommended that you first work on another relatively simple question [416
 ## Thoughts
 * When we see a set of numbers being used once to obtain another number through some calculation (just like this question), we can consider this to be a `01 Knapsack Problem`.
 * `01 Knapsack Problem` belongs to `Dynamic Programming`. `Dynamic programming` means that the answer to the current problem can be derived from the previous similar problem. Therefore, the `dp` array is used to record all the answers.
-* The core logic of the `01 Knapsack Problem` uses a two-dimensional `dp` array or a one-dimensional `dp` **rolling array**, first **traverses the items**, then **traverses the knapsack size**, then **reference the previous value corresponding to the size of current 'item'**.
+* The core logic of the `01 Knapsack Problem` uses a two-dimensional `dp` array or a one-dimensional `dp` **rolling array**, first **traverses the items**, then **traverses the knapsack size** (`in reverse order` or use `dp.clone`), then **reference the previous value corresponding to the size of current 'item'**.
 * There are many things to remember when using a two-dimensional `dp` array, and it is difficult to write it right at once during an interview, so I won't describe it here.
 
 ### Common steps in '01 Knapsack Problem'
