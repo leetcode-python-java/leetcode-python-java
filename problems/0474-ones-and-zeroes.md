@@ -35,15 +35,19 @@ Constraints:
 ```
 
 ## Thoughts
-* This is a two-dimensional `01 Knapsack Problem`. The solution is to first solve the problem in one dimension totally and then expand it to two dimensions.
+* This is a two-dimensional `01 Knapsack Problem`. The solution is to first solve the problem in one dimension once and for all and then expand it to two dimensions.
 
-* Don't draw a grid that considers both dimensions together, that's too complicated.
+* It is no need to draw a grid that considers both dimensions together, that's too complicated.
 
-* For example, let's only consider the case of `0`.
+* For example, let's first only consider the quantity limit of `0`.
 
 Example 1: `Input: strs = ["10","0001","111001","1","0"], m = 5, n = 3`.
 
-* After initialization: `dp = [0] * (zero_count + 1)`.
+* After initialization: 
+    ````
+    max_zero_count = m
+    dp = [0] * (max_zero_count + 1)`.
+    ````
 * Finish this grid by using the `example 1`:
 ```
 #    0 1 2 3 4 5
