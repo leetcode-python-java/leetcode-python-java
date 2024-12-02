@@ -179,22 +179,22 @@ public class Solution {
 ## JavaScript
 ```javascript
 var isSubsequence = function(s, t) {
-    const dp = Array(s.length + 1).fill().map(
-        () => Array(t.length + 1).fill(false)
-    )
-    dp[0].fill(true)
+  const dp = Array(s.length + 1).fill().map(
+    () => Array(t.length + 1).fill(false)
+  )
+  dp[0].fill(true)
 
-    for (let i = 1; i < dp.length; i++) {
-        for (let j = 1; j < dp[0].length; j++) {
-            if (s[i - 1] == t[j - 1]) {
-                dp[i][j] = dp[i - 1][j - 1]
-            } else {
-                dp[i][j] = dp[i][j - 1]
-            }
-        }
+  for (let i = 1; i < dp.length; i++) {
+    for (let j = 1; j < dp[0].length; j++) {
+      if (s[i - 1] == t[j - 1]) {
+        dp[i][j] = dp[i - 1][j - 1]
+      } else {
+        dp[i][j] = dp[i][j - 1]
+      }
     }
+  }
 
-   return dp.at(-1).at(-1)
+  return dp.at(-1).at(-1)
 };
 ```
 

@@ -145,13 +145,13 @@ public class Solution {
 ## JavaScript
 ```javascript
 var maxSubArray = function(nums) {
-    const dp = [...nums]
+  const dp = [...nums]
 
-    for (let i = 1; i < dp.length; i++) {
-        dp[i] = Math.max(nums[i], dp[i - 1] + nums[i])
-    }
+  for (let i = 1; i < dp.length; i++) {
+    dp[i] = Math.max(nums[i], dp[i - 1] + nums[i])
+  }
 
-    return Math.max(...dp)
+  return Math.max(...dp)
 };
 ```
 
