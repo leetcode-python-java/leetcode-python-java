@@ -202,10 +202,10 @@ var isSubsequence = function(s, t) {
 ```go
 func isSubsequence(s string, t string) bool {
     dp := make([][]bool, len(s) + 1)
-    column_count := len(t) + 1
-    dp[0] = slices.Repeat([]bool{true}, column_count)
+    columnSize := len(t) + 1
+    dp[0] = slices.Repeat([]bool{true}, columnSize)
     for i := 1; i < len(dp); i++ {
-        dp[i] = make([]bool, column_count)
+        dp[i] = make([]bool, columnSize)
     }
 
     for i := 1; i < len(dp); i++ {
