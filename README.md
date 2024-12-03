@@ -23,9 +23,12 @@ After finishing one category of questions, you can study another category to imp
 - [392. Is Subsequence](problems/0392-is-subsequence.md)
 - [583. Delete Operation for Two Strings](problems/0583-delete-operation-for-two-strings.md)
 - [72. Edit Distance](problems/0072-edit-distance.md)
+
+### Knapsack problems
 - [416. Partition Equal Subset Sum](problems/0416-partition-equal-subset-sum.md)
 - [1049. Last Stone Weight II](problems/1049-last-stone-weight-ii.md)
 - [494. Target Sum](problems/0494-target-sum.md)
 - [474. Ones and Zeroes](problems/0474-ones-and-zeroes.md)
+- [518. Coin Change II](problems/0518-coin-change-ii.md)
 
 - More LeetCode problems will be added soon...
