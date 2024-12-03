@@ -132,30 +132,227 @@ def count_zero_one(string):
 
 ## C++
 ```
+class Solution {
+public:
+    int findMaxForm(vector<string>& strs, int m, int n) {
+        const auto max_zero_count = m;
+        const auto max_one_count = n;
 
+        vector<vector<int>> dp(max_zero_count + 1, vector<int>(max_one_count + 1, 0));
+
+        for (const auto& str : strs) {
+            auto zero_count = 0;
+            auto one_count = 0;
+
+            for (auto bit : str) {
+                if (bit == '0') {
+                    zero_count++;
+                } else {
+                    one_count++;
+                }
+            }
+
+            for (auto i = max_zero_count; i >= zero_count; i--) {
+                for (auto j = max_one_count; j >= one_count; j--) {
+                    dp[i][j] = max(dp[i][j], dp[i - zero_count][j - one_count] + 1);
+                }
+            }
+        }
+
+        return dp[max_zero_count][max_one_count];
+    }
+};
 ```
 
 ## Java
 ```java
+class Solution {
+    public int findMaxForm(String[] strs, int m, int n) {
+        var maxZeroCount = m;
+        var maxOneCount = n;
 
+        var dp = new int[maxZeroCount + 1][maxOneCount + 1];
+
+        for (var str : strs) {
+            var zeroCount = 0;
+            var oneCount = 0;
+
+            for (var bit : str.toCharArray()) {
+                if (bit == '0') {
+                    zeroCount++;
+                } else {
+                    oneCount++;
+                }
+            }
+
+            for (var i = maxZeroCount; i >= zeroCount; i--) {
+                for (var j = maxOneCount; j >= oneCount; j--) {
+                    dp[i][j] = Math.max(dp[i][j], dp[i - zeroCount][j - oneCount] + 1);
+                }
+            }
+        }
+
+        return dp[maxZeroCount][maxOneCount];
+    }
+}
 ```
 
 ## C#
 ```c#
+public class Solution {
+    public int FindMaxForm(string[] strs, int m, int n) {
+        var maxZeroCount = m;
+        var maxOneCount = n;
 
+        var dp = new int[maxZeroCount + 1][];
+        for (var i = 0; i < dp.Length; i++) {
+            dp[i] = new int[maxOneCount + 1];
+        }
+
+        foreach (var str in strs) {
+            var (zeroCount, oneCount) = CountZeroOne(str);
+
+            for (var i = maxZeroCount; i >= zeroCount; i--) {
+                for (var j = maxOneCount; j >= oneCount; j--) {
+                    dp[i][j] = Math.Max(dp[i][j], dp[i - zeroCount][j - oneCount] + 1);
+                }
+            }
+        }
+
+        return dp[maxZeroCount][maxOneCount];
+    }
+
+    (int, int) CountZeroOne(string str) {
+        var zeroCount = 0;
+        var oneCount = 0;
+
+        foreach (var bit in str) {
+            if (bit == '0') {
+                zeroCount++;
+            } else {
+                oneCount++;
+            }
+        }
+
+        return (zeroCount, oneCount);
+    }
+}
 ```
 
 ## JavaScript
 ```javascript
+var findMaxForm = function(strs, m, n) {
+  const maxZeroCount = m
+  const maxOneCount = n
 
+  const dp = Array(maxZeroCount + 1).fill().map(
+    () => Array(maxOneCount + 1).fill(0)
+  )
+
+  for (const str of strs) {
+    const [zeroCount, oneCount] = countZeroOne(str)
+
+    for (let i = dp.length - 1; i >= zeroCount; i--) {
+      for (let j = dp[0].length - 1; j >= oneCount; j--) {
+        dp[i][j] = Math.max(dp[i][j], dp[i - zeroCount][j - oneCount] + 1)
+      }
+    }
+  }
+
+  return dp.at(-1).at(-1)
+};
+
+function countZeroOne(str) {
+  let zeroCount = 0
+  let oneCount = 0
+
+  for (const bit of str) {
+    if (bit === '0') {
+      zeroCount++
+    } else {
+      oneCount++
+    }
+  }
+
+  return [zeroCount, oneCount]
+}
 ```
 
 ## Go
 ```go
+func findMaxForm(strs []string, m int, n int) int {
+    maxZeroCount := m
+    maxOneCount := n
 
+    dp := make([][]int, maxZeroCount + 1)
+    for i := range dp {
+        dp[i] = make([]int, maxOneCount + 1)
+    }
+
+    for _, str := range strs {
+        zeroCount, oneCount := countZeroOne(str)
+
+        for i := len(dp) - 1; i >= zeroCount; i-- {
+            for j := len(dp[0]) - 1; j >= oneCount; j-- {
+                dp[i][j] = max(dp[i][j], dp[i - zeroCount][j - oneCount] + 1)
+            }
+        }
+    }
+
+    return dp[maxZeroCount][maxOneCount]
+}
+
+func countZeroOne(str string) (int, int) {
+    zeroCount := 0
+    oneCount := 0
+
+    for _, bit := range str {
+        if bit == '0' {
+            zeroCount++
+        } else {
+            oneCount++
+        }
+    }
+
+    return zeroCount, oneCount
+}
 ```
 
 ## Ruby
 ```ruby
+def find_max_form(strs, m, n)
+  max_zero_count = m
+  max_one_count = n
 
+  dp = Array.new(max_zero_count + 1) do
+    Array.new(max_one_count + 1, 0)
+  end
+
+  strs.each do |string|
+    zero_count, one_count = count_zero_one(string)
+
+    (zero_count..(dp.size - 1)).reverse_each do |i|
+      (one_count..(dp[0].size - 1)).reverse_each do |j|
+        dp[i][j] = [ dp[i][j], dp[i - zero_count][j - one_count] + 1 ].max
+      end
+    end
+  end
+
+  dp[-1][-1]
+end
+
+def count_zero_one(string)
+  zero_count = 0
+  one_count = 0
+
+  string.each_char do |bit|
+    if bit == '0'
+      zero_count += 1
+    else
+      one_count += 1
+    end
+  end
+
+  [ zero_count, one_count ]
+end
 ```
