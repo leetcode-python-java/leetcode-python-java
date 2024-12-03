@@ -157,7 +157,7 @@ public:
         auto dp = vector<int>(max(sum, target) + 1);
         dp[0] = 1;
 
-        for (const auto& num : nums) {
+        for (auto num : nums) {
             auto dc = dp;
 
             for (auto j = 0; j < dp.size(); j++) {

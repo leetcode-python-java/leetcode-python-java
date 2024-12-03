@@ -178,7 +178,7 @@ public:
         auto dp = vector<bool>(sum / 2 + 1);
         dp[0] = true;
 
-        for (const auto& num : nums) {
+        for (auto num : nums) {
             for (auto j = dp.size() - 1; j >= num; j--) {
                 dp[j] = dp[j] || dp[j - num];
             }
@@ -203,7 +203,7 @@ public:
         auto dp = vector<bool>(sum / 2 + 1);
         dp[0] = true;
 
-        for (const auto& num : nums) {
+        for (auto num : nums) {
             auto dc = dp;
 
             for (auto j = num; j < dp.size(); j++) {
@@ -430,13 +430,12 @@ def can_partition(nums)
   dp[0] = true
 
   nums.each do |num|
-    (1..(dp.size - 1)).reverse_each do |j|
-      break if j < num
+    (num...dp.size).reverse_each do |j|
       dp[j] = dp[j] || dp[j - num]
     end
   end
 
-  return dp[-1]
+  dp[-1]
 end
 ```
 

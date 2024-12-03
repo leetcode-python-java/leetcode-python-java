@@ -181,7 +181,7 @@ public:
         auto dp = vector<bool>(sum / 2 + 1);
         dp[0] = true;
 
-        for (const auto& stone : stones) {
+        for (auto stone : stones) {
             for (auto j = dp.size() - 1; j >= stone; j--) {
                 dp[j] = dp[j] || dp[j - stone];
             }
@@ -208,7 +208,7 @@ public:
         auto dp = vector<bool>(sum / 2 + 1);
         dp[0] = true;
 
-        for (const auto& stone : stones) {
+        for (auto stone : stones) {
             auto dc = dp;
 
             for (auto j = stone; j < dp.size(); j++) {
@@ -451,14 +451,14 @@ def last_stone_weight_ii(stones)
   dp[0] = true
 
   stones.each do |stone|
-    (1..(dp.size - 1)).reverse_each do |j|
+    (1...dp.size).reverse_each do |j|
       break if j < stone
 
       dp[j] = dp[j] || dp[j - stone]
     end
   end
 
-  (0..(dp.size - 1)).reverse_each do |j|
+  (0...dp.size).reverse_each do |j|
     return sum - j * 2 if dp[j]
   end
 end

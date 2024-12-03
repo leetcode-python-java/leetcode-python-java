@@ -70,8 +70,7 @@ dp[j] = max(
 * The code that only considers the quantity limit of `0` is:
 ```python
 class Solution:
-    def findMaxForm(self, strs: List[str], m: int, n: int) -> int:
-        max_zero_count = m
+    def findMaxForm(self, strs: List[str], max_zero_count: int, n: int) -> int:
         dp = [0] * (max_zero_count + 1)
 
         for string in strs:
@@ -101,10 +100,7 @@ def count_zero_one(string):
 ## Python
 ```python
 class Solution:
-    def findMaxForm(self, strs: List[str], m: int, n: int) -> int:
-        max_zero_count = m
-        max_one_count = n
-
+    def findMaxForm(self, strs: List[str], max_zero_count: int, max_one_count: int) -> int:
         dp = [[0] * (max_one_count + 1) for _ in range(max_zero_count + 1)]
 
         for string in strs:
@@ -134,13 +130,10 @@ def count_zero_one(string):
 ```c++
 class Solution {
 public:
-    int findMaxForm(vector<string>& strs, int m, int n) {
-        const auto max_zero_count = m;
-        const auto max_one_count = n;
-
+    int findMaxForm(vector<string>& strs, int max_zero_count, int max_one_count) {
         vector<vector<int>> dp(max_zero_count + 1, vector<int>(max_one_count + 1, 0));
 
-        for (const auto& str : strs) {
+        for (auto& str : strs) {
             auto zero_count = 0;
             auto one_count = 0;
 
@@ -167,10 +160,7 @@ public:
 ## Java
 ```java
 class Solution {
-    public int findMaxForm(String[] strs, int m, int n) {
-        var maxZeroCount = m;
-        var maxOneCount = n;
-
+    public int findMaxForm(String[] strs, int maxZeroCount, int maxOneCount) {
         var dp = new int[maxZeroCount + 1][maxOneCount + 1];
 
         for (var str : strs) {
@@ -200,10 +190,7 @@ class Solution {
 ## C#
 ```c#
 public class Solution {
-    public int FindMaxForm(string[] strs, int m, int n) {
-        var maxZeroCount = m;
-        var maxOneCount = n;
-
+    public int FindMaxForm(string[] strs, int maxZeroCount, int maxOneCount) {
         var dp = new int[maxZeroCount + 1][];
         for (var i = 0; i < dp.Length; i++) {
             dp[i] = new int[maxOneCount + 1];
@@ -241,10 +228,7 @@ public class Solution {
 
 ## JavaScript
 ```javascript
-var findMaxForm = function(strs, m, n) {
-  const maxZeroCount = m
-  const maxOneCount = n
-
+var findMaxForm = function(strs, maxZeroCount, maxOneCount) {
   const dp = Array(maxZeroCount + 1).fill().map(
     () => Array(maxOneCount + 1).fill(0)
   )
@@ -280,10 +264,7 @@ function countZeroOne(str) {
 
 ## Go
 ```go
-func findMaxForm(strs []string, m int, n int) int {
-    maxZeroCount := m
-    maxOneCount := n
-
+func findMaxForm(strs []string, maxZeroCount int, maxOneCount int) int {
     dp := make([][]int, maxZeroCount + 1)
     for i := range dp {
         dp[i] = make([]int, maxOneCount + 1)
@@ -320,10 +301,7 @@ func countZeroOne(str string) (int, int) {
 
 ## Ruby
 ```ruby
-def find_max_form(strs, m, n)
-  max_zero_count = m
-  max_one_count = n
-
+def find_max_form(strs, max_zero_count, max_one_count)
   dp = Array.new(max_zero_count + 1) do
     Array.new(max_one_count + 1, 0)
   end
@@ -331,8 +309,8 @@ def find_max_form(strs, m, n)
   strs.each do |string|
     zero_count, one_count = count_zero_one(string)
 
-    (zero_count..(dp.size - 1)).reverse_each do |i|
-      (one_count..(dp[0].size - 1)).reverse_each do |j|
+    (zero_count...dp.size).reverse_each do |i|
+      (one_count...dp[0].size).reverse_each do |j|
         dp[i][j] = [ dp[i][j], dp[i - zero_count][j - one_count] + 1 ].max
       end
     end
