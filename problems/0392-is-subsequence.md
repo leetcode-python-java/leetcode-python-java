@@ -155,23 +155,22 @@ class Solution {
 ```c#
 public class Solution {
     public bool IsSubsequence(string s, string t) {
-        var dp = new bool[s.Length + 1][];
-        for (var i = 0; i < dp.Length; i++) {
-            dp[i] = new bool[t.Length + 1];
+        var dp = new bool[s.Length + 1, t.Length + 1];
+        for (var j = 0; j < dp.GetLength(1); j++) {
+            dp[0, j] = true;
         }
-        Array.Fill(dp[0], true);
         
-        for (var i = 1; i < dp.Length; i++) {
-            for (var j = 1; j < dp[0].Length; j++) {
+        for (var i = 1; i < dp.GetLength(0); i++) {
+            for (var j = 1; j < dp.GetLength(1); j++) {
                 if (s[i - 1] == t[j - 1]) {
-                    dp[i][j] = dp[i - 1][j - 1];
+                    dp[i, j] = dp[i - 1, j - 1];
                 } else {
-                    dp[i][j] = dp[i][j - 1];
+                    dp[i, j] = dp[i, j - 1];
                 }
             }
         }
 
-        return dp[dp.Length - 1][dp[0].Length - 1];
+        return dp[dp.GetUpperBound(0), dp.GetUpperBound(1)];
     }
 }
 ```

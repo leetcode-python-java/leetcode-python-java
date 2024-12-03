@@ -293,12 +293,12 @@ public class Solution {
         dp[0] = true;
 
         foreach (var stone in stones) {
-            for (var j = dp.Length - 1; j >= stone; j--) {
+            for (var j = dp.GetUpperBound(0); j >= stone; j--) {
                 dp[j] = dp[j] || dp[j - stone];
             }
         }
 
-        for (var j = dp.Length - 1; j >= 0; j--) {
+        for (var j = dp.GetUpperBound(0); j >= 0; j--) {
             if (dp[j]) {
                 return sum - j * 2;
             }
@@ -326,7 +326,7 @@ public class Solution {
             }
         }
 
-        for (var j = dp.Length - 1; j >= 0; j--) {
+        for (var j = dp.GetUpperBound(0); j >= 0; j--) {
             if (dp[j]) {
                 return sum - j * 2;
             }

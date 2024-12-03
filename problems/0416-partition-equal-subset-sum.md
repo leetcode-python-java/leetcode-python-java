@@ -282,12 +282,12 @@ public class Solution {
         dp[0] = true;
 
         foreach (var num in nums) {
-            for (var j = dp.Length - 1; j >= num; j--) {
+            for (var j = dp.GetUpperBound(0); j >= num; j--) {
                 dp[j] = dp[j] || dp[j - num];
             }
         }
 
-        return dp[dp.Length - 1];
+        return dp.Last();
     }
 }
 ```
@@ -313,7 +313,7 @@ public class Solution {
             }
         }
 
-        return dp[dp.Length - 1];
+        return dp.Last();
     }
 }
 ```

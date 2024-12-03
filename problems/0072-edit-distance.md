@@ -209,26 +209,25 @@ class Solution {
 ```c#
 public class Solution {
     public int MinDistance(string word1, string word2) {
-        var dp = new int[word1.Length + 1][];
-        for (var i = 0; i < dp.Length; i++) {
-            dp[i] = new int[word2.Length + 1];
-            dp[i][0] = i;
+        var dp = new int[word1.Length + 1, word2.Length + 1];
+        for (var i = 0; i < dp.GetLength(0); i++) {
+            dp[i, 0] = i;
         }
-        for (var j = 0; j < dp[0].Length; j++) {
-            dp[0][j] = j;
+        for (var j = 0; j < dp.GetLength(1); j++) {
+            dp[0, j] = j;
         }
 
-        for (var i = 1; i < dp.Length; i++) {
-            for (var j = 1; j < dp[0].Length; j++) {
+        for (var i = 1; i < dp.GetLength(0); i++) {
+            for (var j = 1; j < dp.GetLength(1); j++) {
                 if (word1[i - 1] == word2[j - 1]) {
-                    dp[i][j] = dp[i - 1][j - 1];
+                    dp[i, j] = dp[i - 1, j - 1];
                 } else {
-                    dp[i][j] = Math.Min(dp[i - 1][j - 1], Math.Min(dp[i - 1][j], dp[i][j - 1])) + 1;
+                    dp[i, j] = Math.Min(dp[i - 1, j - 1], Math.Min(dp[i - 1, j], dp[i, j - 1])) + 1;
                 }
             }
         }
 
-        return dp[dp.Length - 1][dp[0].Length - 1];
+        return dp[dp.GetUpperBound(0), dp.GetUpperBound(1)];
     }
 }
 ```

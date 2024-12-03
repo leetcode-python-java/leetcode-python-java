@@ -191,22 +191,19 @@ class Solution {
 ```c#
 public class Solution {
     public int FindMaxForm(string[] strs, int maxZeroCount, int maxOneCount) {
-        var dp = new int[maxZeroCount + 1][];
-        for (var i = 0; i < dp.Length; i++) {
-            dp[i] = new int[maxOneCount + 1];
-        }
+        var dp = new int[maxZeroCount + 1, maxOneCount + 1];
 
         foreach (var str in strs) {
             var (zeroCount, oneCount) = CountZeroOne(str);
 
             for (var i = maxZeroCount; i >= zeroCount; i--) {
                 for (var j = maxOneCount; j >= oneCount; j--) {
-                    dp[i][j] = Math.Max(dp[i][j], dp[i - zeroCount][j - oneCount] + 1);
+                    dp[i, j] = Math.Max(dp[i, j], dp[i - zeroCount, j - oneCount] + 1);
                 }
             }
         }
 
-        return dp[maxZeroCount][maxOneCount];
+        return dp[maxZeroCount, maxOneCount];
     }
 
     (int, int) CountZeroOne(string str) {
