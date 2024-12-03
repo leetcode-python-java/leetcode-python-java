@@ -184,7 +184,7 @@ public:
             }
         }
 
-        return dp[dp.size() - 1];
+        return dp.back();
     }
 };
 ```
@@ -211,7 +211,7 @@ public:
             }
         }
 
-        return dp[dp.size() - 1];
+        return dp.back();
     }
 };
 ```
