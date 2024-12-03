@@ -268,7 +268,7 @@ func findTargetSumWays(nums []int, target int) int {
 def find_target_sum_ways(nums, target)
   target = target.abs
 
-  dp = Array.new([nums.sum, target].max + 1, 0)
+  dp = Array.new([ nums.sum, target ].max + 1, 0)
   dp[0] = 1
 
   nums.each do |num|
@@ -279,6 +279,6 @@ def find_target_sum_ways(nums, target)
     end
   end
 
-  return dp[target]
+  dp[target]
 end
 ```

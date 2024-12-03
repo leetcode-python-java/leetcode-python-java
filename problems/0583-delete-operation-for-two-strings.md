@@ -240,23 +240,27 @@ func minDistance(word1 string, word2 string) int {
 ## Ruby
 ```ruby
 def min_distance(word1, word2)
-  dp = Array.new(word1.size + 1) do |i|
+  dp = Array.new(word1.size + 1) do
     Array.new(word2.size + 1, 0)
   end
-  dp.each_with_index { |_, i| dp[i][0] = i }
-  dp[0].each_with_index { |_, j| dp[0][j] = j }
-    
-  for i in 1..(dp.size - 1)
-    for j in 1..(dp[0].size - 1)
-      dp[i][j] = 
+  dp.each_with_index do |_, i|
+    dp[i][0] = i
+  end
+  dp[0].each_with_index do |_, j|
+    dp[0][j] = j
+  end
+
+  (1...dp.size).each do |i|
+    (1...dp[0].size).each do |j|
+      dp[i][j] =
         if word1[i - 1] == word2[j - 1]
           dp[i - 1][j - 1]
         else
-          [dp[i - 1][j], dp[i][j - 1]].min + 1
+          [ dp[i - 1][j], dp[i][j - 1] ].min + 1
         end
     end
   end
 
-  return dp[-1][-1]
+  dp[-1][-1]
 end
 ```

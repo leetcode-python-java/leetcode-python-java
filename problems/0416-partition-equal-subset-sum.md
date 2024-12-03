@@ -453,11 +453,11 @@ def can_partition(nums)
   nums.each do |num|
     dc = dp.clone
 
-    (num..(dp.size - 1)).each do |j|
+    (num...dp.size).each do |j|
       dp[j] = dc[j] || dc[j - num]
     end
-  endx
+  end
 
-  return dp[-1]
+  dp[-1]
 end
 ```

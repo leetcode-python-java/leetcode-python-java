@@ -225,21 +225,21 @@ func isSubsequence(s string, t string) bool {
 ## Ruby
 ```ruby
 def is_subsequence(s, t)
-    dp = Array.new(s.size + 1) do |i|
-      Array.new(t.size + 1, i == 0 ? true : false)
-    end
-    
-    for i in 1..(dp.size - 1)
-      for j in 1..(dp[0].size - 1)
-        dp[i][j] = 
-          if s[i - 1] == t[j - 1]
-            dp[i - 1][j - 1]
-          else
-            dp[i][j - 1]
-          end
-      end
-    end
+  dp = Array.new(s.size + 1) do |i|
+    Array.new(t.size + 1, i == 0 ? true : false)
+  end
 
-    return dp[-1][-1]
+  (1...dp.size).each do |i|
+    (1...dp[0].size).each do |j|
+      dp[i][j] =
+        if s[i - 1] == t[j - 1]
+          dp[i - 1][j - 1]
+        else
+          dp[i][j - 1]
+        end
+    end
+  end
+
+  dp[-1][-1]
 end
 ```

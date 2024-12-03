@@ -475,12 +475,12 @@ def last_stone_weight_ii(stones)
   stones.each do |stone|
     dc = dp.clone
 
-    (stone..(dp.size - 1)).each do |j|
+    (stone...dp.size).each do |j|
       dp[j] = dc[j] || dc[j - stone]
     end
   end
 
-  (0..(dp.size - 1)).reverse_each do |j|
+  (0...dp.size).reverse_each do |j|
     return sum - j * 2 if dp[j]
   end
 end
