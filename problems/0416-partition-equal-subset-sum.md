@@ -122,10 +122,10 @@ class Solution:
         for num in nums:
             # If not traversing in reverse order, the newly assigned value `dp[j]` will act as `dp[j - num]` later,
             # then the subsequent `dp[j]` will be affected. But each `num` can only be used once!
-            for j in range(len(dp) - 1, 0, -1):
-                if j < num:
-                    break
+            j = len(dp) - 1
+            while j >= num:
                 dp[j] = dp[j] or dp[j - num]
+                j -= 1
 
         return dp[-1]
 ```

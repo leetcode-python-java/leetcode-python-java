@@ -126,11 +126,10 @@ public class Solution {
             }
         }
 
-        var result = dp[dp.Length - 1];
-        if (result == defaultValue) {
+        if (dp.Last() == defaultValue) {
             return -1;
         }
-        return result;
+        return dp.Last();
     }
 }
 ```
