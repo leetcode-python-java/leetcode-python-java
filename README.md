@@ -35,5 +35,6 @@ After finishing one category of questions, you can study another category to imp
 - [518. Coin Change II](problems/0518-coin-change-ii.md)
 - [377. Combination Sum IV](problems/0377-combination-sum-iv.md)
 - [322. Coin Change](problems/0322-coin-change.md)
+- [279. Perfect Squares](problems/0279-perfect-squares.md)
 
 - More LeetCode problems will be added soon...
