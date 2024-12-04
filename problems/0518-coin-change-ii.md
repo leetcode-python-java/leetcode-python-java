@@ -48,6 +48,8 @@ All the values of 'coins' are unique.
 ## Thoughts
 It is a `Unbounded Knapsack Problem`.
 
+Detailed solutions will be given later, and now only the best practices in 7 languages are given.
+
 ### Complexity
 * Time: `O(n * m)`.
 * Space: `O(n)`.
