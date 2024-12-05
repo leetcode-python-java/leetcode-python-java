@@ -46,10 +46,10 @@ Detailed solutions will be given later, and now only the best practices in 3 to 
 class Solution:
     def maxProfit(self, prices: List[int]) -> int:
         # states:
-        #   1: hold stock
+        #   0: hold stock
         #     1) keep holding
-        #     2) just buy
-        #   2: no stock
+        #     2) just bought
+        #   1: no stock
         #     1) keep no stock
         #     2) just sold
         dp = [-prices[0], 0]
