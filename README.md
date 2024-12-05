@@ -20,6 +20,7 @@ After finishing one category of questions, you can study another category to imp
 
 ## Dynamic programming
 - [198. House Robber](problems/0198-house-robber.md)
+- [337. House Robber III](problems/0337-house-robber-iii.md)
 
 - [53. Maximum Subarray](problems/0053-maximum-subarray.md)
 - [392. Is Subsequence](problems/0392-is-subsequence.md)
