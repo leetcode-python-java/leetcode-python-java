@@ -18,7 +18,7 @@ Generally speaking, the simple questions are placed at the front, and the depend
 
 After finishing one category of questions, you can study another category to improve your sense of achievement and learning speed.
 
-## Dynamic programming
+## Dynamic Programming
 - [198. House Robber](problems/0198-house-robber.md)
 - [337. House Robber III](problems/0337-house-robber-iii.md)
 
@@ -27,7 +27,7 @@ After finishing one category of questions, you can study another category to imp
 - [583. Delete Operation for Two Strings](problems/0583-delete-operation-for-two-strings.md)
 - [72. Edit Distance](problems/0072-edit-distance.md)
 
-### Knapsack problems
+### Knapsack Problems
 #### 0/1 Knapsack
 - [416. Partition Equal Subset Sum](problems/0416-partition-equal-subset-sum.md)
 - [1049. Last Stone Weight II](problems/1049-last-stone-weight-ii.md)
@@ -41,4 +41,8 @@ After finishing one category of questions, you can study another category to imp
 - [279. Perfect Squares](problems/0279-perfect-squares.md)
 - [139. Word Break](problems/0139-word-break.md)
 
-- More LeetCode problems will be added soon...
+### Stock Maximum Profit Problems
+- [121. Best Time to Buy and Sell Stock](problems/0121-best-time-to-buy-and-sell-stock.md)
+
+
+More LeetCode problems will be added soon...
