@@ -31,11 +31,11 @@ The number of nodes in the tree is in the range [1, 10000].
 ## Thoughts
 This problem can be solved using **Dynamic programming**.
 
-Detailed solutions will be given later, and now only the best practices in 7 languages are given.
+Detailed solutions will be given later, and now only the best practices in 3-7 languages are given.
 
 ### Complexity
-* Time: `O()`.
-* Space: `O()`.
+* Time: `O(n)`.
+* Space: `O(n)`.
 
 ## Python
 ### Solution 1: Easier to understand
