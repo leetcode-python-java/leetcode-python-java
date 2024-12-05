@@ -37,6 +37,7 @@ Detailed solutions will be given later, and now only the best practices in 7 lan
 * Space: `O(n)`.
 
 ## Python
+### Solution 1
 ```python
 class Solution:
     def rob(self, nums: List[int]) -> int:
@@ -51,6 +52,24 @@ class Solution:
             dp[i] = max(dp[i - 1], dp[i - 2] + nums[i])
 
         return dp[-1]
+```
+
+## Solution 2: Using 'dp' which size is 2
+```python
+class Solution:
+    def rob(self, nums: List[int]) -> int:
+        if len(nums) == 1:
+            return nums[0]
+
+        dp = [nums[0], max(nums[0], nums[1])]
+
+        for num in nums[2:]:
+            dc = dp.copy()
+
+            dp[1] = max(dc[1], dc[0] + num)
+            dp[0] = dc[1]
+
+        return max(dp)
 ```
 
 ## C++
