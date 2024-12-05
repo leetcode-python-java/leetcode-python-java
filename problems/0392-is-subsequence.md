@@ -177,7 +177,7 @@ public class Solution {
 
 ## JavaScript
 ```javascript
-var isSubsequence = function(s, t) {
+var isSubsequence = function (s, t) {
   const dp = Array(s.length + 1).fill().map(
     () => Array(t.length + 1).fill(false)
   )

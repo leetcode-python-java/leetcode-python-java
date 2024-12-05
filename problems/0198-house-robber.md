@@ -2,7 +2,7 @@
 LeetCode problem: [198. House Robber](https://leetcode.com/problems/house-robber/)
 
 ## LeetCode problem description
-> You are a professional robber planning to rob houses along a street. Each house has a certain amount of money stashed, the only constraint stopping you from robbing each of them is that adjacent houses have security systems connected, and **it will automatically contact the police if two adjacent houses were broken into on the same night**.
+You are a professional robber planning to rob houses along a street. Each house has a certain amount of money stashed, the only constraint stopping you from robbing each of them is that adjacent houses have security systems connected, and **it will automatically contact the police if two adjacent houses were broken into on the same night**.
 
 Given an integer array `nums` representing the amount of money of each house, return the maximum amount of money you can rob tonight **without alerting the police**.
 ```
@@ -29,6 +29,8 @@ Explanation: Rob house 1 (money = 2), rob house 3 (money = 9) and rob house 5 (m
 
 ## Thoughts
 This problem can be solved using **Dynamic programming**.
+
+Detailed solutions will be given later, and now only the best practices in 7 languages are given.
 
 ### Complexity
 * Time: `O(n)`.
@@ -117,7 +119,7 @@ public class Solution {
 
 ## JavaScript
 ```javascript
-var rob = function(nums) {
+var rob = function (nums) {
   if (nums.length === 1) {
     return nums[0]
   }

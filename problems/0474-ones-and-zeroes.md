@@ -225,7 +225,7 @@ public class Solution {
 
 ## JavaScript
 ```javascript
-var findMaxForm = function(strs, maxZeroCount, maxOneCount) {
+var findMaxForm = function (strs, maxZeroCount, maxOneCount) {
   const dp = Array(maxZeroCount + 1).fill().map(
     () => Array(maxOneCount + 1).fill(0)
   )

@@ -126,7 +126,7 @@ public class Solution {
 
 ## JavaScript
 ```javascript
-var combinationSum4 = function(nums, target) {
+var combinationSum4 = function (nums, target) {
     const dp = Array(target + 1).fill(0)
     dp[0] = 1
 

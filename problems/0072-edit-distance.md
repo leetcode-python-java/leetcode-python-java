@@ -234,7 +234,7 @@ public class Solution {
 
 ## JavaScript
 ```javascript
-var minDistance = function(word1, word2) {
+var minDistance = function (word1, word2) {
   const dp = Array(word1.length + 1).fill().map(
     () => Array(word2.length + 1).fill(0)
   )

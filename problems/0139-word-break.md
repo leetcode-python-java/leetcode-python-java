@@ -133,7 +133,7 @@ public class Solution {
 
 ## JavaScript
 ```
-var wordBreak = function(s, wordDict) {
+var wordBreak = function (s, wordDict) {
   const dp = Array(s.length + 1).fill(false)
   dp[0] = true
 

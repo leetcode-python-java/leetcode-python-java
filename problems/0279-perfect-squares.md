@@ -112,7 +112,7 @@ public class Solution {
 
 ## JavaScript
 ```javascript
-var numSquares = function(n) {
+var numSquares = function (n) {
   const DEFAULT_VALUE = n + 2 // As long as the value is greater than 'n', it doesn't matter how much it is.
   const dp = Array(n + 1).fill(DEFAULT_VALUE)
   dp[0] = 0

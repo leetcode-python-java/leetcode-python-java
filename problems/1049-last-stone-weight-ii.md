@@ -340,7 +340,7 @@ public class Solution {
 ## JavaScript
 ### Solution 1: Iterate through knapsack size in reverse order
 ```javascript
-var lastStoneWeightII = function(stones) {
+var lastStoneWeightII = function (stones) {
   const sum = _.sum(stones)
 
   const dp = Array(Math.floor(sum / 2) + 1).fill(false)
@@ -362,7 +362,7 @@ var lastStoneWeightII = function(stones) {
 
 ### Solution 2: Iterate through knapsack size in any order (recommended)
 ```javascript
-var lastStoneWeightII = function(stones) {
+var lastStoneWeightII = function (stones) {
   const sum = _.sum(stones)
 
   const dp = Array(Math.floor(sum / 2) + 1).fill(false)

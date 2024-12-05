@@ -144,7 +144,7 @@ public class Solution {
 
 ## JavaScript
 ```javascript
-var maxSubArray = function(nums) {
+var maxSubArray = function (nums) {
   const dp = [...nums]
 
   for (let i = 1; i < dp.length; i++) {

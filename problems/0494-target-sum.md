@@ -217,7 +217,7 @@ public class Solution {
 
 ## JavaScript
 ```javascript
-var findTargetSumWays = function(nums, target) {
+var findTargetSumWays = function (nums, target) {
    target = Math.abs(target)
 
    const dp = Array(Math.max(_.sum(nums), target) + 1).fill(0)

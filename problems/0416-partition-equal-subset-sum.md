@@ -321,7 +321,7 @@ public class Solution {
 ## JavaScript
 ### Solution 1: Iterate through knapsack size in reverse order
 ```javascript
-var canPartition = function(nums) {
+var canPartition = function (nums) {
   const sum = _.sum(nums)
 
   if (sum % 2 == 1) {
@@ -343,7 +343,7 @@ var canPartition = function(nums) {
 
 ### Solution 2: Iterate through knapsack size in any order (recommended)
 ```javascript
-var canPartition = function(nums) {
+var canPartition = function (nums) {
   const sum = _.sum(nums)
 
   if (sum % 2 == 1) {

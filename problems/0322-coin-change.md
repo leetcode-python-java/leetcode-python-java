@@ -136,7 +136,7 @@ public class Solution {
 
 ## JavaScript
 ```javascript
-var coinChange = function(coins, amount) {
+var coinChange = function (coins, amount) {
   const DEFAULT_VALUE = amount + 2 // As long as the value is greater than 'amount', it doesn't matter how much it is.
   const dp = Array(amount + 1).fill(DEFAULT_VALUE)
   dp[0] = 0

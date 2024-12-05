@@ -125,7 +125,7 @@ public class Solution {
 
 ## JavaScript
 ```javascript
-var change = function(amount, coins) {
+var change = function (amount, coins) {
    const dp = Array(amount + 1).fill(0)
    dp[0] = 1
 
