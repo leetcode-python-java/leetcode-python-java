@@ -19,6 +19,8 @@ Generally speaking, the simple questions are placed at the front, and the depend
 After finishing one category of questions, you can study another category to improve your sense of achievement and learning speed.
 
 ## Dynamic programming
+- [198. House Robber](problems/0198-house-robber.md)
+
 - [53. Maximum Subarray](problems/0053-maximum-subarray.md)
 - [392. Is Subsequence](problems/0392-is-subsequence.md)
 - [583. Delete Operation for Two Strings](problems/0583-delete-operation-for-two-strings.md)
