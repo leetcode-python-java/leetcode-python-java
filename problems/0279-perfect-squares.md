@@ -34,6 +34,25 @@ Detailed solutions will be given later, and now only the best practices in 7 lan
 * Time: `O(n * Sqrt(n))`.
 * Space: `O(n)`.
 
+## C#
+```c#
+public class Solution {
+    public int NumSquares(int n) {
+        var defaultValue = n + 2; // As long as the value is greater than 'n', it doesn't matter how much it is.
+        var dp = Enumerable.Repeat(defaultValue, n + 1).ToArray();
+        dp[0] = 0;
+
+        for (var i = 1; i < dp.Length; i++) {
+            for (var j = 1; j * j <= i; j++) {
+                dp[i] = Math.Min(dp[i], dp[i - j * j] + 1);
+            }
+        }
+
+        return dp.Last();
+    }
+}
+```
+
 ## Python
 ```python
 class Solution:
@@ -87,25 +106,6 @@ class Solution {
         }
 
         return dp[dp.length - 1];
-    }
-}
-```
-
-## C#
-```c#
-public class Solution {
-    public int NumSquares(int n) {
-        var defaultValue = n + 2; // As long as the value is greater than 'n', it doesn't matter how much it is.
-        var dp = Enumerable.Repeat(defaultValue, n + 1).ToArray();
-        dp[0] = 0;
-
-        for (var i = 1; i < dp.Length; i++) {
-            for (var j = 1; j * j <= i; j++) {
-                dp[i] = Math.Min(dp[i], dp[i - j * j] + 1);
-            }
-        }
-
-        return dp.Last();
     }
 }
 ```

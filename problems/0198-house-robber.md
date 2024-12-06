@@ -36,6 +36,27 @@ Detailed solutions will be given later, and now only the best practices in 7 lan
 * Time: `O(n)`.
 * Space: `O(n)`.
 
+## C#
+```c#
+public class Solution {
+    public int Rob(int[] nums) {
+        if (nums.Length == 1) {
+            return nums[0];
+        }
+
+        var dp = new int[nums.Length];
+        dp[0] = nums[0];
+        dp[1] = Math.Max(nums[0], nums[1]);
+
+        for (var i = 2; i < dp.Length; i++) {
+            dp[i] = Math.Max(dp[i - 1], dp[i - 2] + nums[i]);
+        }
+
+        return dp.Last();
+    }
+}
+```
+
 ## Python
 ### Solution 1
 ```python
@@ -111,27 +132,6 @@ class Solution {
         }
 
         return dp[dp.length - 1];
-    }
-}
-```
-
-## C#
-```c#
-public class Solution {
-    public int Rob(int[] nums) {
-        if (nums.Length == 1) {
-            return nums[0];
-        }
-
-        var dp = new int[nums.Length];
-        dp[0] = nums[0];
-        dp[1] = Math.Max(nums[0], nums[1]);
-
-        for (var i = 2; i < dp.Length; i++) {
-            dp[i] = Math.Max(dp[i - 1], dp[i - 2] + nums[i]);
-        }
-
-        return dp.Last();
     }
 }
 ```

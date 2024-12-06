@@ -40,6 +40,30 @@ Detailed solutions will be given later, and now only the best practices in 7 lan
 * Time: `O(n * m)`.
 * Space: `O(n)`.
 
+## C#
+```c#
+public class Solution {
+    public bool WordBreak(string s, IList<string> wordDict) {
+        var dp = Enumerable.Repeat(false, s.Length + 1).ToArray();
+        dp[0] = true;
+
+        for (var i = 1; i < dp.Length; i++) {
+            foreach (var word in wordDict) {
+                if (dp[i]) {
+                    break;
+                }
+                if (i >= word.Length) {
+                    dp[i] = dp[i - word.Length] &&
+                            word == s[(i - word.Length)..i];
+                }
+            }
+        }
+
+        return dp.Last();
+    }
+}
+```
+
 ## Python
 ```python
 class Solution:
@@ -103,30 +127,6 @@ class Solution {
         }
 
         return dp[dp.length - 1];
-    }
-}
-```
-
-## C#
-```c#
-public class Solution {
-    public bool WordBreak(string s, IList<string> wordDict) {
-        var dp = Enumerable.Repeat(false, s.Length + 1).ToArray();
-        dp[0] = true;
-
-        for (var i = 1; i < dp.Length; i++) {
-            foreach (var word in wordDict) {
-                if (dp[i]) {
-                    break;
-                }
-                if (i >= word.Length) {
-                    dp[i] = dp[i - word.Length] &&
-                            word == s[(i - word.Length)..i];
-                }
-            }
-        }
-
-        return dp.Last();
     }
 }
 ```

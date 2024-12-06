@@ -48,6 +48,26 @@ Detailed solutions will be given later, and now only the best practices in 7 lan
 * Time: `O(n * m)`.
 * Space: `O(n)`.
 
+## C#
+```c#
+public class Solution {
+    public int CombinationSum4(int[] nums, int target) {
+        var dp = new int[target + 1];
+        dp[0] = 1;
+        
+        for (var i = 1; i < dp.Length; i++) {
+            foreach (var num in nums) {
+                if (i >= num) {
+                    dp[i] += dp[i - num];
+                }
+            }
+        }
+
+        return dp.Last();
+    }
+}
+```
+
 ## Python
 ```python
 class Solution:
@@ -100,26 +120,6 @@ class Solution {
         }
 
         return dp[target];
-    }
-}
-```
-
-## C#
-```c#
-public class Solution {
-    public int CombinationSum4(int[] nums, int target) {
-        var dp = new int[target + 1];
-        dp[0] = 1;
-        
-        for (var i = 1; i < dp.Length; i++) {
-            foreach (var num in nums) {
-                if (i >= num) {
-                    dp[i] += dp[i - num];
-                }
-            }
-        }
-
-        return dp.Last();
     }
 }
 ```

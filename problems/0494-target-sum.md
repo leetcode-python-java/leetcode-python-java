@@ -128,6 +128,28 @@ These five steps are a pattern for solving `Dynamic Programming` problems.
 * Time: `O(n * sum)`.
 * Space: `O(n * sum)`.
 
+## C#
+```c#
+public class Solution {
+    public int FindTargetSumWays(int[] nums, int target) {
+        target = Math.Abs(target);
+
+        var dp = new int[Math.Max(nums.Sum(), target) + 1];
+        dp[0] = 1;
+
+        foreach (var num in nums) {
+            var dc = (int[]) dp.Clone();
+
+            for (var j = 0; j < dp.Length; j++) {
+                dp[j] = dc[Math.Abs(j - num)] + (j + num < dp.Length ? dc[j + num] : 0);
+            }
+        }
+
+        return dp[target];
+    }
+}
+```
+
 ## Python
 ```python
 class Solution:
@@ -185,28 +207,6 @@ class Solution {
 
             for (var j = 0; j < dp.length; j++) {
                 dp[j] = dc[Math.abs(j - num)] + (j + num < dp.length ? dc[j + num] : 0);
-            }
-        }
-
-        return dp[target];
-    }
-}
-```
-
-## C#
-```c#
-public class Solution {
-    public int FindTargetSumWays(int[] nums, int target) {
-        target = Math.Abs(target);
-
-        var dp = new int[Math.Max(nums.Sum(), target) + 1];
-        dp[0] = 1;
-
-        foreach (var num in nums) {
-            var dc = (int[]) dp.Clone();
-
-            for (var j = 0; j < dp.Length; j++) {
-                dp[j] = dc[Math.Abs(j - num)] + (j + num < dp.Length ? dc[j + num] : 0);
             }
         }
 

@@ -170,6 +170,61 @@ class Solution:
 * Personally, I like this approach because it makes the code logic clearer, does not need to consider the traversal order,
 and is more applicable (you will encounter many situations in the future where backward iteration does not work).
 
+## C#
+### Solution 1: Iterate through knapsack size in reverse order
+```c#
+public class Solution {
+    public int LastStoneWeightII(int[] stones) {
+        var sum = stones.Sum();
+
+        var dp = new bool[sum / 2 + 1];
+        dp[0] = true;
+
+        foreach (var stone in stones) {
+            for (var j = dp.GetUpperBound(0); j >= stone; j--) {
+                dp[j] = dp[j] || dp[j - stone];
+            }
+        }
+
+        for (var j = dp.GetUpperBound(0); j >= 0; j--) {
+            if (dp[j]) {
+                return sum - j * 2;
+            }
+        }
+
+        throw new ArithmeticException("lastStoneWeightII() has a logical error!");
+    }
+}
+```
+
+### Solution 2: Iterate through knapsack size in any order (recommended)
+```c#
+public class Solution {
+    public int LastStoneWeightII(int[] stones) {
+        var sum = stones.Sum();
+
+        var dp = new bool[sum / 2 + 1];
+        dp[0] = true;
+
+        foreach (var stone in stones) {
+            var dc = (bool[]) dp.Clone();
+
+            for (var j = stone; j < dp.Length; j++) {
+                dp[j] = dc[j] || dc[j - stone];
+            }
+        }
+
+        for (var j = dp.GetUpperBound(0); j >= 0; j--) {
+            if (dp[j]) {
+                return sum - j * 2;
+            }
+        }
+
+        throw new ArithmeticException("lastStoneWeightII() has a logical error!");
+    }
+}
+```
+
 ## C++
 ### Solution 1: Iterate through knapsack size in reverse order
 ```cpp
@@ -272,61 +327,6 @@ class Solution {
         }
 
         for (var j = dp.length - 1; j >= 0; j--) {
-            if (dp[j]) {
-                return sum - j * 2;
-            }
-        }
-
-        throw new ArithmeticException("lastStoneWeightII() has a logical error!");
-    }
-}
-```
-
-## C#
-### Solution 1: Iterate through knapsack size in reverse order
-```c#
-public class Solution {
-    public int LastStoneWeightII(int[] stones) {
-        var sum = stones.Sum();
-
-        var dp = new bool[sum / 2 + 1];
-        dp[0] = true;
-
-        foreach (var stone in stones) {
-            for (var j = dp.GetUpperBound(0); j >= stone; j--) {
-                dp[j] = dp[j] || dp[j - stone];
-            }
-        }
-
-        for (var j = dp.GetUpperBound(0); j >= 0; j--) {
-            if (dp[j]) {
-                return sum - j * 2;
-            }
-        }
-
-        throw new ArithmeticException("lastStoneWeightII() has a logical error!");
-    }
-}
-```
-
-### Solution 2: Iterate through knapsack size in any order (recommended)
-```c#
-public class Solution {
-    public int LastStoneWeightII(int[] stones) {
-        var sum = stones.Sum();
-
-        var dp = new bool[sum / 2 + 1];
-        dp[0] = true;
-
-        foreach (var stone in stones) {
-            var dc = (bool[]) dp.Clone();
-
-            for (var j = stone; j < dp.Length; j++) {
-                dp[j] = dc[j] || dc[j - stone];
-            }
-        }
-
-        for (var j = dp.GetUpperBound(0); j >= 0; j--) {
             if (dp[j]) {
                 return sum - j * 2;
             }
