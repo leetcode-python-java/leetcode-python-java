@@ -68,17 +68,17 @@ class Solution:
 
 ## C++
 ```cpp
-
+// Welcome to create a PR to complete the code of this language, thanks!
 ```
 
 ## Java
 ```java
-
+// Welcome to create a PR to complete the code of this language, thanks!
 ```
 
 ## C#
 ```c#
-
+// Welcome to create a PR to complete the code of this language, thanks!
 ```
 
 ## JavaScript
@@ -119,6 +119,7 @@ func maxProfit(prices []int) int {
 
 ## Ruby
 ```ruby
+# Welcome to create a PR to complete the code of this language, thanks!
 ```
 
 ## Rust

@@ -84,17 +84,17 @@ class Solution:
 
 ## C++
 ```cpp
-
+// Welcome to create a PR to complete the code of this language, thanks!
 ```
 
 ## Java
 ```java
-
+// Welcome to create a PR to complete the code of this language, thanks!
 ```
 
 ## C#
 ```c#
-
+// Welcome to create a PR to complete the code of this language, thanks!
 ```
 
 ## JavaScript
@@ -230,6 +230,7 @@ func robTree(node *TreeNode) []int {
 
 ## Ruby
 ```ruby
+# Welcome to create a PR to complete the code of this language, thanks!
 ```
 
 ## Rust
