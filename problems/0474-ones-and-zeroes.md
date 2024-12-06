@@ -35,7 +35,7 @@ Constraints:
 ```
 
 ## Thoughts
-* This is a two-dimensional `01 Knapsack Problem`. The solution is to first solve the problem in one dimension once and for all and then expand it to two dimensions.
+* This is a two-dimensional `0/1 Knapsack Problem`. The solution is to first solve the problem in one dimension once and for all and then expand it to two dimensions.
 
 * It is no need to draw a grid that considers both dimensions together, that's too complicated.
 

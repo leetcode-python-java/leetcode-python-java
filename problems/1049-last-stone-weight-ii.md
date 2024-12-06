@@ -45,12 +45,12 @@ Once you have completed `416`, it will be effortless to complete this question.
 ## Thoughts
 * This problem can be solved by brute force, that is, find all subsets of the array, see if the sum of each subset array is close to half of the sum of the complete array, and find the one that is closest. But when we see `stones.length <= 30`, we know that such a solution will definitely time out.
 * So we need to change our thinking. Before you The question is equivalent to finding the minimum difference between the sums of the two arrays after splitting. If we find a subset array whose sum is closest to half of the sum of the complete array, then it is the subset array we want.
-* Then this problem will become a `01 Knapsack Problem` which belongs to `Dynamic Programming`. `Dynamic programming` means that the answer to the current problem can be derived from the previous similar problem. Therefore, the `dp` array is used to record all the answers.
+* Then this problem will become a `0/1 Knapsack Problem` which belongs to `Dynamic Programming`. `Dynamic programming` means that the answer to the current problem can be derived from the previous similar problem. Therefore, the `dp` array is used to record all the answers.
 
-* The core logic of the `01 Knapsack Problem` uses a two-dimensional `dp` array or a one-dimensional `dp` **rolling array**, first **traverses the items**, then **traverses the knapsack size** (`in reverse order` or use `dp.clone`), then **reference the previous value corresponding to the size of current 'item'**.
+* The core logic of the `0/1 Knapsack Problem` uses a two-dimensional `dp` array or a one-dimensional `dp` **rolling array**, first **traverses the items**, then **traverses the knapsack size** (`in reverse order` or use `dp.clone`), then **reference the previous value corresponding to the size of current 'item'**.
 * There are many things to remember when using a two-dimensional `dp` array, and it is difficult to write it right at once during an interview, so I won't describe it here.
 
-### Common steps in '01 Knapsack Problem'
+### Common steps in '0/1 Knapsack Problem'
 These five steps are a pattern for solving `Dynamic Programming` problems.
 
 1. Determine the **meaning** of the `dp[j]`
