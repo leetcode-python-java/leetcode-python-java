@@ -33,11 +33,11 @@ Output: 1
 ## Thoughts
 This problem can be solved using **Dynamic programming**.
 
-Detailed solutions will be given later, and now only the best practices in 3 to 7 languages are given.
+Detailed solutions will be given later, and now only the best practices in 4 to 7 languages are given.
 
 ### Complexity
-* Time: `O()`.
-* Space: `O()`.
+* Time: `O(n * n)`.
+* Space: `O(n)`.
 
 ## C#
 ```c#
