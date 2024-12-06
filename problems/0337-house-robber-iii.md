@@ -46,24 +46,24 @@ class Solution:
 
     # Uncomment the next line, you can solve it without using `self.node_to_money` dict.
     # @cache
-    def rob(self, root: Optional[TreeNode]) -> int:
-        if root is None:
+    def rob(self, node: Optional[TreeNode]) -> int:
+        if node is None:
             return 0
 
-        if root in self.node_to_money:
-            return self.node_to_money[root]
+        if node in self.node_to_money:
+            return self.node_to_money[node]
 
-        money_exclude_node = self.rob(root.left) + self.rob(root.right)
+        money_exclude_node = self.rob(node.left) + self.rob(node.right)
 
-        money_include_node = root.val
-        if root.left:
-            money_include_node += self.rob(root.left.left) + self.rob(root.left.right)
-        if root.right:
-            money_include_node += self.rob(root.right.left) + self.rob(root.right.right)
+        money_include_node = node.val
+        if node.left:
+            money_include_node += self.rob(node.left.left) + self.rob(node.left.right)
+        if node.right:
+            money_include_node += self.rob(node.right.left) + self.rob(node.right.right)
 
-        self.node_to_money[root] = max(money_exclude_node, money_include_node)
+        self.node_to_money[node] = max(money_exclude_node, money_include_node)
 
-        return self.node_to_money[root]
+        return self.node_to_money[node]
 ```
 
 ### Solution 2: Most concise
