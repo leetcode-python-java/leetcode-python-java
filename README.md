@@ -45,6 +45,7 @@ After finishing one category of questions, you can study another category to imp
 ### Stock Maximum Profit Problems
 - [121. Best Time to Buy and Sell Stock](problems/0121-best-time-to-buy-and-sell-stock.md)
 - [122. Best Time to Buy and Sell Stock II](problems/0122-best-time-to-buy-and-sell-stock-ii.md)
+- [714. Best Time to Buy and Sell Stock with Transaction Fee](problems/0714-best-time-to-buy-and-sell-stock-with-transaction-fee.md)
 - [123. Best Time to Buy and Sell Stock III](problems/0123-best-time-to-buy-and-sell-stock-iii.md)
 - [188. Best Time to Buy and Sell Stock IV](problems/0188-best-time-to-buy-and-sell-stock-iv.md)
 
