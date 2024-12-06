@@ -54,5 +54,6 @@ After finishing one category of questions, you can study another category to imp
 - [674. Longest Continuous Increasing Subsequence](problems/0674-longest-continuous-increasing-subsequence.md)
 - [300. Longest Increasing Subsequence](problems/0300-longest-increasing-subsequence.md)
 - [718. Maximum Length of Repeated Subarray](problems/0718-maximum-length-of-repeated-subarray.md)
+- [1143. Longest Common Subsequence](problems/1143-longest-common-subsequence.md)
 
 More LeetCode problems will be added soon...
