@@ -48,10 +48,10 @@ class Solution:
         # states:
         #   0: hold stock
         #     1) keep holding
-        #     2) just bought
+        #     2) today just bought
         #   1: no stock
         #     1) keep no stock
-        #     2) just sold
+        #     2) today just sold
         dp = [-prices[0], 0]
 
         for price in prices[1:]:
