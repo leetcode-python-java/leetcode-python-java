@@ -485,3 +485,13 @@ def last_stone_weight_ii(stones)
   end
 end
 ```
+
+## Rust
+```rust
+// Welcome to create a PR to complete the code of this language, thanks!
+```
+
+## Other languages
+```
+// Welcome to create a PR to complete the code of this language, thanks!
+```

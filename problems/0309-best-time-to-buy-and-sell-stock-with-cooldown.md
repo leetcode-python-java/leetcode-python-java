@@ -133,3 +133,8 @@ func maxProfit(prices []int) int {
 ```rust
 // Welcome to create a PR to complete the code of this language, thanks!
 ```
+
+## Other languages
+```
+// Welcome to create a PR to complete the code of this language, thanks!
+```

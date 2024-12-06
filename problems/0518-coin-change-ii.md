@@ -170,3 +170,13 @@ def change(amount, coins)
   dp[-1]
 end
 ```
+
+## Rust
+```rust
+// Welcome to create a PR to complete the code of this language, thanks!
+```
+
+## Other languages
+```
+// Welcome to create a PR to complete the code of this language, thanks!
+```

@@ -331,3 +331,13 @@ def count_zero_one(string)
   [ zero_count, one_count ]
 end
 ```
+
+## Rust
+```rust
+// Welcome to create a PR to complete the code of this language, thanks!
+```
+
+## Other languages
+```
+// Welcome to create a PR to complete the code of this language, thanks!
+```
