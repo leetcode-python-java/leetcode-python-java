@@ -87,6 +87,28 @@ These five steps are a pattern for solving `dynamic programming` problems.
 * Time: `O(n * m)`.
 * Space: `O(n * m)`.
 
+## Java
+```java
+class Solution {
+    public boolean isSubsequence(String s, String t) {
+        var dp = new boolean[s.length() + 1][t.length() + 1];
+        Arrays.fill(dp[0], true);
+
+        for (var i = 1; i < dp.length; i++) {
+            for (var j = 1; j < dp[0].length; j++) {
+                if (s.charAt(i - 1) == t.charAt(j - 1)) {
+                    dp[i][j] = dp[i - 1][j - 1];
+                } else {
+                    dp[i][j] = dp[i][j - 1];
+                }
+            }
+        }
+
+        return dp[dp.length - 1][dp[0].length - 1];
+    }
+}
+```
+
 ## C#
 ```c#
 public class Solution {
@@ -151,28 +173,6 @@ public:
         return dp[dp.size() - 1][dp[0].size() - 1];
     }
 };
-```
-
-## Java
-```java
-class Solution {
-    public boolean isSubsequence(String s, String t) {
-        var dp = new boolean[s.length() + 1][t.length() + 1];
-        Arrays.fill(dp[0], true);
-
-        for (var i = 1; i < dp.length; i++) {
-            for (var j = 1; j < dp[0].length; j++) {
-                if (s.charAt(i - 1) == t.charAt(j - 1)) {
-                    dp[i][j] = dp[i - 1][j - 1];
-                } else {
-                    dp[i][j] = dp[i][j - 1];
-                }
-            }
-        }
-
-        return dp[dp.length - 1][dp[0].length - 1];
-    }
-}
 ```
 
 ## JavaScript
