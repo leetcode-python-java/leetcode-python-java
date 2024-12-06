@@ -49,5 +49,6 @@ After finishing one category of questions, you can study another category to imp
 - [123. Best Time to Buy and Sell Stock III](problems/0123-best-time-to-buy-and-sell-stock-iii.md)
 - [188. Best Time to Buy and Sell Stock IV](problems/0188-best-time-to-buy-and-sell-stock-iv.md)
 - [309. Best Time to Buy and Sell Stock with Cooldown](problems/0309-best-time-to-buy-and-sell-stock-with-cooldown.md)
+- [300. Longest Increasing Subsequence](problems/0300-longest-increasing-subsequence.md)
 
 More LeetCode problems will be added soon...
