@@ -1,5 +1,5 @@
 # 674. Longest Continuous Increasing Subsequence
-LeetCode problem: [674. Longest Continuous Increasing Subsequence](https://leetcode.com/problems/longest-increasing-subsequence/)
+LeetCode problem: [674. Longest Continuous Increasing Subsequence](https://leetcode.com/problems/longest-continuous-increasing-subsequence/)
 
 ## LeetCode problem description
 Given an integer array `nums`, return the length of the **longest strictly increasing subsequence**.
@@ -26,7 +26,7 @@ Output: 1
 [Constraints]
 
 1 <= nums.length <= 2500
--104 <= nums[i] <= 10000
+-10000 <= nums[i] <= 10000
 ----------------------------------------------------------------------------------------------
 ```
 
@@ -54,7 +54,27 @@ public class Solution {
             }
         }
 
-        return dp.Max(); // If you want to beat 90%, change this line by using a local variable to record the max value in iteration.
+        return dp.Max(); // If you want to beat 90%, refer to Java code.
+    }
+}
+```
+
+## Java
+```java
+class Solution {
+    public int findLengthOfLCIS(int[] nums) {
+        var result = 1;
+        var dp = new int[nums.length];
+        Arrays.fill(dp, 1);
+
+        for (var i = 1; i < nums.length; i++) {
+            if (nums[i] > nums[i - 1]) {
+                dp[i] = dp[i - 1] + 1;
+                result = Math.max(result, dp[i]);
+            }
+        }
+
+        return result;
     }
 }
 ```
@@ -80,24 +100,6 @@ class Solution:
 // Welcome to create a PR to complete the code of this language, thanks!
 ```
 
-## Java
-```java
-class Solution {
-    public int findLengthOfLCIS(int[] nums) {
-        var dp = new int[nums.length];
-        Arrays.fill(dp, 1);
-
-        for (var i = 1; i < nums.length; i++) {
-            if (nums[i] > nums[i - 1]) {
-                dp[i] = dp[i - 1] + 1;
-            }
-        }
-
-        return IntStream.of(dp).max().getAsInt(); // If you want to beat 90%, refer to C#'s code comment.
-    }
-}
-```
-
 ## JavaScript
 ```javascript
 var findLengthOfLCIS = function (nums) {
@@ -111,7 +113,7 @@ var findLengthOfLCIS = function (nums) {
     }
   })
 
-  return Math.max(...dp) // If you want to beat 90%, refer to C#'s code comment.
+  return Math.max(...dp) // If you want to beat 90%, refer to Java code.
 };
 ```
 
