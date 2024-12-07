@@ -19,14 +19,13 @@ Generally speaking, the simple questions are placed at the front, and the depend
 After finishing one category of questions, you can study another category to improve your sense of achievement and learning speed.
 
 ## Dynamic Programming
+### Basics
+- [509. Fibonacci Number](problems/0509-fibonacci-number.md)
+
+### House Robber
 - [198. House Robber](problems/0198-house-robber.md)
 - [213. House Robber II](problems/0213-house-robber-ii.md)
 - [337. House Robber III](problems/0337-house-robber-iii.md)
-
-- [53. Maximum Subarray](problems/0053-maximum-subarray.md)
-- [392. Is Subsequence](problems/0392-is-subsequence.md)
-- [583. Delete Operation for Two Strings](problems/0583-delete-operation-for-two-strings.md)
-- [72. Edit Distance](problems/0072-edit-distance.md)
 
 ### Knapsack Problems
 #### 0/1 Knapsack
@@ -56,5 +55,9 @@ After finishing one category of questions, you can study another category to imp
 - [718. Maximum Length of Repeated Subarray](problems/0718-maximum-length-of-repeated-subarray.md)
 - [1143. Longest Common Subsequence](problems/1143-longest-common-subsequence.md)
 - [1035. Uncrossed Lines](problems/1035-uncrossed-lines.md)
+- [53. Maximum Subarray](problems/0053-maximum-subarray.md)
+- [392. Is Subsequence](problems/0392-is-subsequence.md)
+- [583. Delete Operation for Two Strings](problems/0583-delete-operation-for-two-strings.md)
+- [72. Edit Distance](problems/0072-edit-distance.md)
 
 More LeetCode problems will be added soon...
