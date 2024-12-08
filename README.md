@@ -60,4 +60,7 @@ After finishing one category of questions, you can study another category to imp
 - [583. Delete Operation for Two Strings](problems/0583-delete-operation-for-two-strings.md)
 - [72. Edit Distance](problems/0072-edit-distance.md)
 
+## Monotonic Stack
+- [739. Daily Temperatures](problems/0739-daily-temperatures.md)
+
 More LeetCode problems will be added soon...
