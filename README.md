@@ -18,6 +18,9 @@ Generally speaking, the simple questions are placed at the front, and the depend
 
 After finishing one category of questions, you can study another category to improve your sense of achievement and learning speed.
 
+## Brute Force
+- [503. Next Greater Element II](problems/0503-next-greater-element-ii.md)
+
 ## Dynamic Programming
 ### Basics
 - [509. Fibonacci Number](problems/0509-fibonacci-number.md)
