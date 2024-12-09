@@ -205,6 +205,50 @@ public:
 };
 ```
 
+## JavaScript
+### Brute force solution
+```javascript
+var nextGreaterElement = function (nums1, nums2) {
+  const results = Array(nums1.length).fill(-1)
+
+  nums1.forEach((num1, i) => {
+    let found = false
+
+    for (const num2 of nums2) {
+      if (found && num2 > num1) {
+        results[i] = num2
+        break
+      }    
+
+      if (num1 == num2) {
+        found = true
+      }
+    }
+  })
+
+  return results
+};
+```
+
+### Monotonic stack solution
+```javascript
+var nextGreaterElement = function (nums1, nums2) {
+  const numToGreater = {}
+  const indexStack = []
+
+  nums2.forEach((num, i) => {
+    while (indexStack.length > 0 && nums2[indexStack.at(-1)] < num) {
+      const index = indexStack.pop()
+      numToGreater[nums2[index]] = num
+    }
+
+    indexStack.push(i)
+  })
+
+  return nums1.map((num) => numToGreater[num] || -1)
+};
+```
+
 ## C#
 ### Brute force solution
 ```c#
@@ -258,50 +302,6 @@ public class Solution {
         return results;
     }
 }
-```
-
-## JavaScript
-### Brute force solution
-```javascript
-var nextGreaterElement = function (nums1, nums2) {
-  const results = Array(nums1.length).fill(-1)
-
-  nums1.forEach((num1, i) => {
-    let found = false
-
-    for (const num2 of nums2) {
-      if (found && num2 > num1) {
-        results[i] = num2
-        break
-      }    
-
-      if (num1 == num2) {
-        found = true
-      }
-    }
-  })
-
-  return results
-};
-```
-
-### Monotonic stack solution
-```javascript
-var nextGreaterElement = function (nums1, nums2) {
-  const numToGreater = {}
-  const indexStack = []
-
-  nums2.forEach((num, i) => {
-    while (indexStack.length > 0 && nums2[indexStack.at(-1)] < num) {
-      const index = indexStack.pop()
-      numToGreater[nums2[index]] = num
-    }
-
-    indexStack.push(i)
-  })
-
-  return nums1.map((num) => numToGreater[num] || -1)
-};
 ```
 
 ## Go
