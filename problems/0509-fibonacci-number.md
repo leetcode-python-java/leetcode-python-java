@@ -86,7 +86,7 @@ public class Solution {
 }
 ```
 
-### Solution 3: Dynamic programming ('dp.size' is 2)
+### Solution 3: Dynamic programming ('dp.length' is 2)
 ```c#
 public class Solution {
     public int Fib(int n) {
@@ -135,7 +135,7 @@ class Solution:
         return dp[-1]
 ```
 
-### Solution 3: Dynamic programming ('dp.size' is 2)
+### Solution 3: Dynamic programming ('dp.length' is 2)
 ```python
 class Solution:
     def fib(self, n: int) -> int:
@@ -197,7 +197,7 @@ public:
 };
 ```
 
-### Solution 3: Dynamic programming ('dp.size' is 2)
+### Solution 3: Dynamic programming ('dp.length' is 2)
 ```c++
 class Solution {
 public:
@@ -262,7 +262,7 @@ class Solution {
 }
 ```
 
-### Solution 3: Dynamic programming ('dp.size' is 2)
+### Solution 3: Dynamic programming ('dp.length' is 2)
 ```java
 class Solution {
     public int fib(int n) {
@@ -322,7 +322,7 @@ var fib = function (n) {
 };
 ```
 
-### Solution 3: Dynamic programming ('dp.size' is 2)
+### Solution 3: Dynamic programming ('dp.length' is 2)
 ```javascript
 var fib = function (n) {
     if (n <= 1) {
@@ -385,7 +385,7 @@ func fib(n int) int {
 }
 ```
 
-### Solution 3: Dynamic programming ('dp.size' is 2)
+### Solution 3: Dynamic programming ('dp.length' is 2)
 ```go
 func fib(n int) int {
     if n == 0 {
@@ -437,7 +437,7 @@ def fib(n)
 end
 ```
 
-### Solution 3: Dynamic programming ('dp.size' is 2)
+### Solution 3: Dynamic programming ('dp.length' is 2)
 ```ruby
 def fib(n)
   return 0 if n == 0
