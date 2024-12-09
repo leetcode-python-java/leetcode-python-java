@@ -99,18 +99,18 @@ public:
 
 ## JavaScript
 ```javascript
-var dailyTemperatures = function(temperatures) {
+var dailyTemperatures = function (temperatures) {
   const results = Array(temperatures.length).fill(0)
   const indexStack = []
 
-  for (let i = 0; i < temperatures.length; i++) {
-    while (indexStack.length > 0 && temperatures[indexStack.at(-1)] < temperatures[i]) {
+  temperatures.forEach((temperature, i) => {
+    while (indexStack.length > 0 && temperatures[indexStack.at(-1)] < temperature) {
       results[indexStack.at(-1)] = i - indexStack.at(-1)
       indexStack.pop()
     }
 
     indexStack.push(i)
-  }
+  })
 
   return results
 };
