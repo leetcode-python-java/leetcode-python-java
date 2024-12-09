@@ -82,7 +82,7 @@ class Solution {
 }
 ```
 
-#### Monotonic stack solution
+### Monotonic stack solution
 ```java
 class Solution {
     public int[] nextGreaterElement(int[] nums1, int[] nums2) {
@@ -175,7 +175,7 @@ public:
 };
 ```
 
-#### Monotonic stack solution
+### Monotonic stack solution
 ```cpp
 class Solution {
 public:
@@ -233,7 +233,7 @@ public class Solution {
 }
 ```
 
-#### Monotonic stack solution
+### Monotonic stack solution
 ```c#
 public class Solution {
     public int[] NextGreaterElement(int[] nums1, int[] nums2) {
@@ -285,7 +285,7 @@ var nextGreaterElement = function (nums1, nums2) {
 };
 ```
 
-#### Monotonic stack solution
+### Monotonic stack solution
 ```javascript
 var nextGreaterElement = function (nums1, nums2) {
   const numToGreater = {}
@@ -329,7 +329,7 @@ func nextGreaterElement(nums1 []int, nums2 []int) []int {
 }
 ```
 
-#### Monotonic stack solution
+### Monotonic stack solution
 ```go
 func nextGreaterElement(nums1 []int, nums2 []int) []int {
     numToGreater := map[int]int{}
@@ -382,7 +382,7 @@ def next_greater_element(nums1, nums2)
 end
 ```
 
-#### Monotonic stack solution
+### Monotonic stack solution
 ```ruby
 def next_greater_element(nums1, nums2)
   num_to_greater = {}
