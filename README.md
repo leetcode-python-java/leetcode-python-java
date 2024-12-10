@@ -67,5 +67,6 @@ After finishing one category of questions, you can study another category to imp
 - [739. Daily Temperatures](problems/0739-daily-temperatures.md)
 - [496. Next Greater Element I](problems/0496-next-greater-element-i.md)
 - [42. Trapping Rain Water](problems/0042-trapping-rain-water.md)
+- [84. Largest Rectangle in Histogram](0084-largest-rectangle-in-histogram.md)
 
 More LeetCode problems will be added soon...
