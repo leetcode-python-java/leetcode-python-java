@@ -124,12 +124,12 @@ public:
             auto previous_height = 0;
 
             while (!index_stack.empty() && heights[index_stack.top()] <= heights[i]) { // situation 1: right side (i) is no shorter
-                auto leftIndex = index_stack.top();
+                auto left_index = index_stack.top();
                 index_stack.pop();
-                auto height_gap = heights[leftIndex] - previous_height;
-                auto width = i - leftIndex - 1;
+                auto height_gap = heights[left_index] - previous_height;
+                auto width = i - left_index - 1;
                 result += height_gap * width;
-                previous_height = heights[leftIndex];
+                previous_height = heights[left_index];
             }
 
             if (!index_stack.empty()) { // situation 2: right side (i) is shorter

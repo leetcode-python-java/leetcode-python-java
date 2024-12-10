@@ -54,7 +54,7 @@ class Solution {
         var indexStack = new Stack<Integer>();
 
         for (var i = 0; i < heights.length; i++) {
-            while (!indexStack.empty() && heights[indexStack.peek()] < heights[i]) {
+            while (!indexStack.empty() && heights[indexStack.peek()] <= heights[i]) {
                 var poppedIndex = indexStack.pop();
 
                 if (indexStack.empty()) {
@@ -84,7 +84,7 @@ class Solution:
         index_stack = []
 
         for i, height in enumerate(heights):
-            while index_stack and heights[index_stack[-1]] < height:
+            while index_stack and heights[index_stack[-1]] <= height:
                 popped_index = index_stack.pop()
 
                 if not index_stack:
@@ -114,7 +114,7 @@ public:
         for (auto i = 0; i < heights.size(); i++) {
             auto previous_height = 0;
 
-            while (!index_stack.empty() && heights[index_stack.top()] < heights[i]) {
+            while (!index_stack.empty() && heights[index_stack.top()] <= heights[i]) {
                 auto popped_index = index_stack.top();
                 index_stack.pop();
 
@@ -144,7 +144,7 @@ var trap = function (heights) {
   const indexStack = []
 
   heights.forEach((height, i) => {
-    while (indexStack.length > 0 && heights[indexStack.at(-1)] < height) {
+    while (indexStack.length > 0 && heights[indexStack.at(-1)] <= height) {
       const poppedIndex = indexStack.pop()
 
       if (indexStack.length === 0) {
@@ -175,7 +175,7 @@ public class Solution {
         var indexStack = new Stack<int>();
 
         for (var i = 0; i < heights.Length; i++) {
-            while (indexStack.Count > 0 && heights[indexStack.Peek()] < heights[i]) {
+            while (indexStack.Count > 0 && heights[indexStack.Peek()] <= heights[i]) {
                 var poppedIndex = indexStack.Pop();
 
                 if (indexStack.Count == 0) {
@@ -204,7 +204,7 @@ func trap(heights []int) int {
     indexStack := []int{}
 
     for i, height := range heights {
-        for len(indexStack) > 0 && heights[indexStack[len(indexStack) - 1]] < height {
+        for len(indexStack) > 0 && heights[indexStack[len(indexStack) - 1]] <= height {
             poppedIndex := indexStack[len(indexStack) - 1]
             indexStack = indexStack[:len(indexStack) - 1]
 
