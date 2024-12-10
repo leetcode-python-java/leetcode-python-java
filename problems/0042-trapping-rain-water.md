@@ -30,14 +30,22 @@ n == height.length
 ## Thoughts
 This problem can be solved using **Monotonic Stack**.
 
-### Rules:
+### Solution 1
+#### Rules
 * Whenever there are area (rain) can be added, add it immediately.
 * The shorter side's height will be used to calculate the area.
 * There would be two situations:
     1. The left side (the top of stack) is taller than the right side (current item).
     2. The left side (the top of stack) is not taller than the right side (current item).
 
+![](../images/0042.png)
+
 Detailed solutions will be given later, and now only the best practices in 7 languages are given.
+
+### Solution 2
+The `solution 2` will follow **Monotonic Stack**'s common rule: **only calculating when `pop()` is happening**.
+
+Please click [42. Trapping Rain Water (solution 2)](./0042-trapping-rain-water-2.md) to see it.
 
 ### Complexity
 * Time: `O(n)`.
@@ -101,6 +109,8 @@ class Solution:
 
         return result
 ```
+
+![](../images/0042.png)
 
 ## C++
 ```cpp
@@ -166,6 +176,8 @@ var trap = function (heights) {
 };
 ```
 
+![](../images/0042.png)
+
 ## C#
 ```c#
 public class Solution {
@@ -228,6 +240,8 @@ func trap(heights []int) int {
     return result
 }
 ```
+
+![](../images/0042.png)
 
 ## Ruby
 ```ruby
