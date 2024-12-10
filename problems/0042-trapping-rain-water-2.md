@@ -33,9 +33,7 @@ This problem can be solved using **Monotonic Stack**.
 ### Solution 2
 This solution will follow **Monotonic Stack**'s common rule: **only calculating when `pop()` is happening**.
 
-This common rule can be applied to calculating result for most of the **Monotonic Stack** problems.
-
-Sometimes it could be hard to understand, but it does work.
+This common rule can be applied to calculating result for **most** of the **Monotonic Stack** problems.
 
 ![](../images/0042.png)
 
@@ -155,7 +153,7 @@ var trap = function (heights) {
       const rightHeight = heights[i]
       const heightGap = Math.min(leftHeight, rightHeight) - heights[poppedIndex]
       const width = i - indexStack.at(-1) - 1
-      result += heightGap * width;
+      result += heightGap * width
     }
 
     indexStack.push(i)
