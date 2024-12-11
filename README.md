@@ -18,33 +18,33 @@ Generally speaking, the simple questions are placed at the front, and the depend
 
 After finishing one category of questions, you can study another category to improve your sense of achievement and learning speed.
 
-## Brute Force
-- [503. Next Greater Element II](problems/0503-next-greater-element-ii.md)
+# Brute Force
+- [503. Next Greater Element II](problems/0503-next-greater-element-ii.md) was solved in Python, Java, C++, JavaScript, C#, Go, Ruby.
 
-## Dynamic Programming
-### Basics
-- [509. Fibonacci Number](problems/0509-fibonacci-number.md)
+# Dynamic Programming
+## Basics
+- [509. Fibonacci Number](problems/0509-fibonacci-number.md) solved in _Python, Java, C++, JavaScript, C#, Go, Ruby_.
 
-### House Robber
-- [198. House Robber](problems/0198-house-robber.md)
-- [213. House Robber II](problems/0213-house-robber-ii.md)
-- [337. House Robber III](problems/0337-house-robber-iii.md)
+## House Robber
+- [198. House Robber](problems/0198-house-robber.md) has been solved in _Python, Java, C++, JavaScript, C#, Go, Ruby_.
+- [213. House Robber II](problems/0213-house-robber-ii.md) solved in `Python, Java, C++, JavaScript, C#, Go, Ruby`.
+- [337. House Robber III](problems/0337-house-robber-iii.md) [Python, Java, C++, JavaScript, C#, Go, Ruby]
 
-### Knapsack Problems
-#### 0/1 Knapsack
+## Knapsack Problems
+### 0/1 Knapsack
 - [416. Partition Equal Subset Sum](problems/0416-partition-equal-subset-sum.md)
 - [1049. Last Stone Weight II](problems/1049-last-stone-weight-ii.md)
 - [494. Target Sum](problems/0494-target-sum.md)
 - [474. Ones and Zeroes](problems/0474-ones-and-zeroes.md)
 
-#### Unbounded Knapsack
+### Unbounded Knapsack
 - [518. Coin Change II](problems/0518-coin-change-ii.md)
 - [377. Combination Sum IV](problems/0377-combination-sum-iv.md)
 - [322. Coin Change](problems/0322-coin-change.md)
 - [279. Perfect Squares](problems/0279-perfect-squares.md)
 - [139. Word Break](problems/0139-word-break.md)
 
-### Stock Maximum Profit Problems
+## Stock Maximum Profit Problems
 - [121. Best Time to Buy and Sell Stock](problems/0121-best-time-to-buy-and-sell-stock.md)
 - [122. Best Time to Buy and Sell Stock II](problems/0122-best-time-to-buy-and-sell-stock-ii.md)
 - [714. Best Time to Buy and Sell Stock with Transaction Fee](problems/0714-best-time-to-buy-and-sell-stock-with-transaction-fee.md)
@@ -52,7 +52,7 @@ After finishing one category of questions, you can study another category to imp
 - [188. Best Time to Buy and Sell Stock IV](problems/0188-best-time-to-buy-and-sell-stock-iv.md)
 - [309. Best Time to Buy and Sell Stock with Cooldown](problems/0309-best-time-to-buy-and-sell-stock-with-cooldown.md)
 
-### Subsequence Problems
+## Subsequence Problems
 - [674. Longest Continuous Increasing Subsequence](problems/0674-longest-continuous-increasing-subsequence.md)
 - [300. Longest Increasing Subsequence](problems/0300-longest-increasing-subsequence.md)
 - [718. Maximum Length of Repeated Subarray](problems/0718-maximum-length-of-repeated-subarray.md)
@@ -63,10 +63,13 @@ After finishing one category of questions, you can study another category to imp
 - [583. Delete Operation for Two Strings](problems/0583-delete-operation-for-two-strings.md)
 - [72. Edit Distance](problems/0072-edit-distance.md)
 
-## Monotonic Stack
+# Monotonic Stack
 - [739. Daily Temperatures](problems/0739-daily-temperatures.md)
 - [496. Next Greater Element I](problems/0496-next-greater-element-i.md)
 - [42. Trapping Rain Water](problems/0042-trapping-rain-water.md)
 - [84. Largest Rectangle in Histogram](problems/0084-largest-rectangle-in-histogram.md)
+
+# Graph Theory
+- [797. All Paths From Source to Target](problems/0797-all-paths-from-source-to-target.md)
 
 More LeetCode problems will be added soon...
