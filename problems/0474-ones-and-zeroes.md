@@ -99,15 +99,20 @@ def count_zero_one(string):
 
 ## C#
 ```c#
-public class Solution {
-    public int FindMaxForm(string[] strs, int maxZeroCount, int maxOneCount) {
+public class Solution
+{
+    public int FindMaxForm(string[] strs, int maxZeroCount, int maxOneCount)
+    {
         var dp = new int[maxZeroCount + 1, maxOneCount + 1];
 
-        foreach (var str in strs) {
+        foreach (var str in strs)
+        {
             var (zeroCount, oneCount) = CountZeroOne(str);
 
-            for (var i = maxZeroCount; i >= zeroCount; i--) {
-                for (var j = maxOneCount; j >= oneCount; j--) {
+            for (var i = maxZeroCount; i >= zeroCount; i--)
+            {
+                for (var j = maxOneCount; j >= oneCount; j--)
+                {
                     dp[i, j] = Math.Max(dp[i, j], dp[i - zeroCount, j - oneCount] + 1);
                 }
             }
@@ -116,14 +121,19 @@ public class Solution {
         return dp[maxZeroCount, maxOneCount];
     }
 
-    (int, int) CountZeroOne(string str) {
+    (int, int) CountZeroOne(string str)
+    {
         var zeroCount = 0;
         var oneCount = 0;
 
-        foreach (var bit in str) {
-            if (bit == '0') {
+        foreach (var bit in str)
+        {
+            if (bit == '0')
+            {
                 zeroCount++;
-            } else {
+            }
+            else
+            {
                 oneCount++;
             }
         }

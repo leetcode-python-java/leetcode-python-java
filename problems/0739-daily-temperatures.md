@@ -118,14 +118,18 @@ var dailyTemperatures = function (temperatures) {
 
 ## C#
 ```c#
-public class Solution {
-    public int[] DailyTemperatures(int[] temperatures) {
+public class Solution
+{
+    public int[] DailyTemperatures(int[] temperatures)
+    {
         var results = new int[temperatures.Length];
         var indexStack = new Stack<int>();
 
-        for (var i = 0; i < temperatures.Length; i++) {
-            while (indexStack.Count > 0 && temperatures[indexStack.Peek()] < temperatures[i]) {
-                var index = indexStack.Pop();
+        for (var i = 0; i < temperatures.Length; i++)
+        {
+            while (indexStack.Count > 0 && temperatures[indexStack.Peek()] < temperatures[i])
+            {
+                int index = indexStack.Pop();
                 results[index] = i - index;
             }
 

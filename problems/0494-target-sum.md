@@ -130,17 +130,21 @@ These five steps are a pattern for solving `Dynamic Programming` problems.
 
 ## C#
 ```c#
-public class Solution {
-    public int FindTargetSumWays(int[] nums, int target) {
+public class Solution
+{
+    public int FindTargetSumWays(int[] nums, int target)
+    {
         target = Math.Abs(target);
 
         var dp = new int[Math.Max(nums.Sum(), target) + 1];
         dp[0] = 1;
 
-        foreach (var num in nums) {
-            var dc = (int[]) dp.Clone();
+        foreach (var num in nums)
+        {
+            var dc = (int[])dp.Clone();
 
-            for (var j = 0; j < dp.Length; j++) {
+            for (var j = 0; j < dp.Length; j++)
+            {
                 dp[j] = dc[Math.Abs(j - num)] + (j + num < dp.Length ? dc[j + num] : 0);
             }
         }

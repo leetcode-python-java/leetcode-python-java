@@ -68,16 +68,18 @@ public class Solution {
 
 ### Solution 2: Dynamic programming
 ```c#
-public class Solution {
-    public int Fib(int n) {
-        if (n <= 1) {
+public class Solution
+{
+    public int Fib(int n)
+    {
+        if (n <= 1)
             return n;
-        }
 
         var dp = new int[n + 1];
         dp[1] = 1;
 
-        for (var i = 2; i < dp.Length; i++) {
+        for (var i = 2; i < dp.Length; i++)
+        {
             dp[i] = dp[i - 1] + dp[i - 2];
         }
 
@@ -88,15 +90,18 @@ public class Solution {
 
 ### Solution 3: Dynamic programming ('dp.length' is 2)
 ```c#
-public class Solution {
-    public int Fib(int n) {
-        if (n <= 1) {
+public class Solution
+{
+    public int Fib(int n)
+    {
+        if (n <= 1)
             return n;
-        }
 
         int[] dp = [0, 1];
-        for (var i = 2; i <= n; i++) {
-            var dc = (int[]) dp.Clone();
+
+        for (var i = 2; i <= n; i++)
+        {
+            var dc = (int[])dp.Clone();
 
             dp[0] = dc[1];
             dp[1] = dc[0] + dc[1];

@@ -41,23 +41,28 @@ Detailed solutions will be given later, and now only the best practices in 7 lan
 
 ## C#
 ```c#
-public class Solution {
-    public int CoinChange(int[] coins, int amount) {
-        var defaultValue = amount + 2; // As long as the value is greater than 'amount', it doesn't matter how much it is.
-        var dp = Enumerable.Repeat(defaultValue, amount + 1).ToArray();
+public class Solution
+{
+    public int CoinChange(int[] coins, int amount)
+    {
+        int defaultValue = amount + 2; // As long as the value is greater than 'amount', it doesn't matter how much it is.
+        int[] dp = Enumerable.Repeat(defaultValue, amount + 1).ToArray();
         dp[0] = 0;
 
-        for (var i = 1; i < dp.Length; i++) {
-            foreach (var coin in coins) {
-                if (i >= coin) {
+        for (var i = 1; i < dp.Length; i++)
+        {
+            foreach (int coin in coins)
+            {
+                if (i >= coin)
+                {
                     dp[i] = Math.Min(dp[i], dp[i - coin] + 1);
                 }
             }
         }
 
-        if (dp.Last() == defaultValue) {
+        if (dp.Last() == defaultValue)
             return -1;
-        }
+
         return dp.Last();
     }
 }

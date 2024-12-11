@@ -41,15 +41,20 @@ Detailed solutions will be given later, and now only the best practices in 7 lan
 
 ## C#
 ```c#
-public class Solution {
-    public int[] NextGreaterElements(int[] nums) {
+public class Solution
+{
+    public int[] NextGreaterElements(int[] nums)
+    {
         int[] nums2 = [..nums, ..nums];
         var results = new int[nums.Length];
         Array.Fill(results, -1);
 
-        for (var i = 0; i < nums.Length; i++) {
-            for (var j = i + 1; j < nums2.Length; j++) {
-                if (nums2[j] > nums[i]) {
+        for (var i = 0; i < nums.Length; i++)
+        {
+            for (var j = i + 1; j < nums2.Length; j++)
+            {
+                if (nums2[j] > nums[i])
+                {
                     results[i] = nums2[j];
                     break;
                 }

@@ -86,11 +86,14 @@ These five steps are a pattern for solving `dynamic programming` problems.
 
 ## C#
 ```c#
-public class Solution {
-    public int MaxSubArray(int[] nums) {
-        var dp = (int[]) nums.Clone();
+public class Solution
+{
+    public int MaxSubArray(int[] nums)
+    {
+        var dp = (int[])nums.Clone();
 
-        for (var i = 1; i < dp.Length; i++) {
+        for (var i = 1; i < dp.Length; i++)
+        {
             dp[i] = Math.Max(nums[i], dp[i - 1] + nums[i]);
         }
 

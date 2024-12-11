@@ -252,21 +252,27 @@ var nextGreaterElement = function (nums1, nums2) {
 ## C#
 ### Brute force solution
 ```c#
-public class Solution {
-    public int[] NextGreaterElement(int[] nums1, int[] nums2) {
+public class Solution
+{
+    public int[] NextGreaterElement(int[] nums1, int[] nums2)
+    {
         var results = new int[nums1.Length];
         Array.Fill(results, -1);
 
-        for (var i = 0; i < nums1.Length; i++) {
-            var found = false;
+        for (var i = 0; i < nums1.Length; i++)
+        {
+            bool found = false;
 
-            foreach (var num2 in nums2) {
-                if (found && num2 > nums1[i]) {
+            foreach (var num2 in nums2)
+            {
+                if (found && num2 > nums1[i])
+                {
                     results[i] = num2;
                     break;
                 }    
 
-                if (nums1[i] == num2) {
+                if (nums1[i] == num2)
+                {
                     found = true;
                 }
             }

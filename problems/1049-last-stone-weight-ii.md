@@ -199,23 +199,29 @@ public class Solution {
 
 ### Solution 2: Iterate through knapsack size in any order (recommended)
 ```c#
-public class Solution {
-    public int LastStoneWeightII(int[] stones) {
-        var sum = stones.Sum();
+public class Solution
+{
+    public int LastStoneWeightII(int[] stones)
+    {
+        int sum = stones.Sum();
 
         var dp = new bool[sum / 2 + 1];
         dp[0] = true;
 
-        foreach (var stone in stones) {
+        foreach (int stone in stones)
+        {
             var dc = (bool[]) dp.Clone();
 
-            for (var j = stone; j < dp.Length; j++) {
+            for (var j = stone; j < dp.Length; j++)
+            {
                 dp[j] = dc[j] || dc[j - stone];
             }
         }
 
-        for (var j = dp.GetUpperBound(0); j >= 0; j--) {
-            if (dp[j]) {
+        for (var j = dp.GetUpperBound(0); j >= 0; j--)
+        {
+            if (dp[j])
+            {
                 return sum - j * 2;
             }
         }

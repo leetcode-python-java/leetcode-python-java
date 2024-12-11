@@ -166,19 +166,22 @@ and is more applicable (you will encounter many situations in the future where b
 ## C#
 ### Solution 1: Iterate through knapsack size in reverse order
 ```c#
-public class Solution {
-    public bool CanPartition(int[] nums) {
-        var sum = nums.Sum();
+public class Solution
+{
+    public bool CanPartition(int[] nums)
+    {
+        int sum = nums.Sum();
 
-        if (sum % 2 == 1) {
+        if (sum % 2 == 1)
             return false;
-        }
 
         var dp = new bool[sum / 2 + 1];
         dp[0] = true;
 
-        foreach (var num in nums) {
-            for (var j = dp.GetUpperBound(0); j >= num; j--) {
+        foreach (var num in nums)
+        {
+            for (var j = dp.GetUpperBound(0); j >= num; j--)
+            {
                 dp[j] = dp[j] || dp[j - num];
             }
         }
@@ -190,21 +193,24 @@ public class Solution {
 
 ### Solution 2: Iterate through knapsack size in any order (recommended)
 ```c#
-public class Solution {
-    public bool CanPartition(int[] nums) {
-        var sum = nums.Sum();
+public class Solution
+{
+    public bool CanPartition(int[] nums)
+    {
+        int sum = nums.Sum();
 
-        if (sum % 2 == 1) {
+        if (sum % 2 == 1)
             return false;
-        }
 
         var dp = new bool[sum / 2 + 1];
         dp[0] = true;
 
-        foreach (var num in nums) {
-            var dc = (bool[]) dp.Clone();
+        foreach (var num in nums)
+        {
+            var dc = (bool[])dp.Clone();
 
-            for (var j = num; j < dp.Length; j++) {
+            for (var j = num; j < dp.Length; j++)
+            {
                 dp[j] = dc[j] || dc[j - num];
             }
         }

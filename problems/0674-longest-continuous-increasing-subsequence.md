@@ -43,13 +43,17 @@ Detailed solutions will be given later, and now only the best practices in 4 to 
 ```c#
 // [1, 3, 5, 4, 3, 6, 2, 4, 5, 7, 4] # nums
 // [1, 2, 3, 1, 1, 2, 1, 2, 3, 4, 1] # dp
-public class Solution {
-    public int FindLengthOfLCIS(int[] nums) {
+public class Solution
+{
+    public int FindLengthOfLCIS(int[] nums)
+    {
         var dp = new int[nums.Length];
         Array.Fill(dp, 1);
 
-        for (var i = 1; i < nums.Length; i++) {
-            if (nums[i] > nums[i - 1]) {
+        for (var i = 1; i < nums.Length; i++)
+        {
+            if (nums[i] > nums[i - 1])
+            {
                 dp[i] = dp[i - 1] + 1;
             }
         }

@@ -22,11 +22,8 @@ Output: 4
 ```
 
 ### Constraints
-```
-1 <= heights.length <= 100000
-0 <= heights[i] <= 10000
-------------------------------------------------------------------------
-```
+- `1 <= heights.length <= 100000`
+- `0 <= heights[i] <= 10000`
 
 ## Thoughts
 This problem can be solved using **Monotonic Stack**.
@@ -167,23 +164,28 @@ var largestRectangleArea = function(heights) {
 
 ## C#
 ```c#
-public class Solution {
-    public int LargestRectangleArea(int[] heights) {
-        var maxArea = 0;
+public class Solution
+{
+    public int LargestRectangleArea(int[] heights)
+    {
+        int maxArea = 0;
         var indexStack = new Stack<int>();
         heights = [0, ..heights, 0];
 
-        for (var i = 0; i < heights.Length; i++) {
-            while (indexStack.Count > 0 && heights[i] < heights[indexStack.Peek()]) {
-                var poppedIndex = indexStack.Pop();
+        for (var i = 0; i < heights.Length; i++)
+        {
+            while (indexStack.Count > 0 && heights[i] < heights[indexStack.Peek()])
+            {
+                int poppedIndex = indexStack.Pop();
 
-                var poppedHeight = heights[poppedIndex];
-                var leftIndex = indexStack.Peek(); // poppedHeight's remaining left heights are all shorter than it, because when 'poppedHeight' itself was pushed into stack, it must have caused some (could be none) taller heights been popped out of the stack.
-                var rightIndex = i; // poppedHeight's right heights (which are all taller than 'poppedHeight') have been popped out of the stack (disappeared) when current `i` height is being pushed into stack.
-                var width = rightIndex - leftIndex - 1; // So in the range of 'width', they are all no shorter than `poppedHeight`, although they have been popped out of the stack (disappeared).
+                int poppedHeight = heights[poppedIndex];
+                int leftIndex = indexStack.Peek(); // poppedHeight's remaining left heights are all shorter than it, because when 'poppedHeight' itself was pushed into stack, it must have caused some (could be none) taller heights been popped out of the stack.
+                int rightIndex = i; // poppedHeight's right heights (which are all taller than 'poppedHeight') have been popped out of the stack (disappeared) when current `i` height is being pushed into stack.
+                int width = rightIndex - leftIndex - 1; // So in the range of 'width', they are all no shorter than `poppedHeight`, although they have been popped out of the stack (disappeared).
 
-                var area = poppedHeight * width;
-                if (area > maxArea) {
+                int area = poppedHeight * width;
+                if (area > maxArea)
+                {
                     maxArea = area;
                 }
             }
