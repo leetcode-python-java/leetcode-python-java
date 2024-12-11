@@ -4,28 +4,26 @@ LeetCode problem: [42. Trapping Rain Water](https://leetcode.com/problems/trappi
 ## LeetCode problem description
 Given `n` non-negative integers representing an elevation map where the width of each bar is `1`, compute how much water it can trap after raining.
 
+### Example 1
+![](../images/examples/0042_1.png)
 ```
------------------------------------------------------------------------------------------------------------
-[Example 1]
-
 Input: height = [0,1,0,2,1,0,1,3,2,1,2,1]
 Output: 6
 
 Explanation: The above elevation map (black section) is represented by array [0,1,0,2,1,0,1,3,2,1,2,1].
 In this case, 6 units of rain water (blue section) are being trapped.
------------------------------------------------------------------------------------------------------------
-[Example 2]
+```
 
+### Example 2
+```
 Input: height = [4,2,0,3,2,5]
 Output: 9
------------------------------------------------------------------------------------------------------------
-[Constraints]
-
-n == height.length
-1 <= n <= 2 * 10000
-0 <= height[i] <= 100000
------------------------------------------------------------------------------------------------------------
 ```
+
+### Constraints
+- `n == height.length`
+- `1 <= n <= 2 * 10000`
+- `0 <= height[i] <= 100000`
 
 ## Thoughts
 This problem can be solved using **Monotonic Stack**.
@@ -180,25 +178,32 @@ var trap = function (heights) {
 
 ## C#
 ```c#
-public class Solution {
-    public int Trap(int[] heights) {
-        var result = 0;
+public class Solution
+{
+    public int Trap(int[] heights)
+    {
+        int result = 0;
         var indexStack = new Stack<int>();
 
-        for (var i = 0; i < heights.Length; i++) {
-            var previousHeight = 0;
+        for (var i = 0; i < heights.Length; i++)
+        {
+            int previousHeight = 0;
 
-            while (indexStack.Count > 0 && heights[indexStack.Peek()] <= heights[i]) { // situation 1: right side (i) is no shorter
-                var leftIndex = indexStack.Pop();
-                var heightGap = heights[leftIndex] - previousHeight;
-                var width = i - leftIndex - 1;
+            // situation 1: right side (i) is no shorter
+            while (indexStack.Count > 0 && heights[indexStack.Peek()] <= heights[i])
+            {
+                int leftIndex = indexStack.Pop();
+                int heightGap = heights[leftIndex] - previousHeight;
+                int width = i - leftIndex - 1;
                 result += heightGap * width;
                 previousHeight = heights[leftIndex];
             }
 
-            if (indexStack.Count > 0) { // situation 2: right side (i) is shorter
-                var heightGap = heights[i] - previousHeight;
-                var width = i - indexStack.Peek() - 1;
+            // situation 2: right side (i) is shorter
+            if (indexStack.Count > 0)
+            {
+                int heightGap = heights[i] - previousHeight;
+                int width = i - indexStack.Peek() - 1;
                 result += heightGap * width;
             }
 

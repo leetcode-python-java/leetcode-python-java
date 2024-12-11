@@ -4,28 +4,26 @@ LeetCode problem: [42. Trapping Rain Water](https://leetcode.com/problems/trappi
 ## LeetCode problem description
 Given `n` non-negative integers representing an elevation map where the width of each bar is `1`, compute how much water it can trap after raining.
 
+### Example 1
+![](../images/examples/0042_1.png)
 ```
------------------------------------------------------------------------------------------------------------
-[Example 1]
-
 Input: height = [0,1,0,2,1,0,1,3,2,1,2,1]
 Output: 6
 
 Explanation: The above elevation map (black section) is represented by array [0,1,0,2,1,0,1,3,2,1,2,1].
 In this case, 6 units of rain water (blue section) are being trapped.
------------------------------------------------------------------------------------------------------------
-[Example 2]
+```
 
+### Example 2
+```
 Input: height = [4,2,0,3,2,5]
 Output: 9
------------------------------------------------------------------------------------------------------------
-[Constraints]
-
-n == height.length
-1 <= n <= 2 * 10000
-0 <= height[i] <= 100000
------------------------------------------------------------------------------------------------------------
 ```
+
+### Constraints
+- `n == height.length`
+- `1 <= n <= 2 * 10000`
+- `0 <= height[i] <= 100000`
 
 ## Thoughts
 This problem can be solved using **Monotonic Stack**.
@@ -167,23 +165,28 @@ var trap = function (heights) {
 
 ## C#
 ```c#
-public class Solution {
-    public int Trap(int[] heights) {
-        var result = 0;
+public class Solution
+{
+    public int Trap(int[] heights)
+    {
+        int result = 0;
         var indexStack = new Stack<int>();
 
-        for (var i = 0; i < heights.Length; i++) {
-            while (indexStack.Count > 0 && heights[indexStack.Peek()] <= heights[i]) {
-                var poppedIndex = indexStack.Pop();
+        for (var i = 0; i < heights.Length; i++)
+        {
+            while (indexStack.Count > 0 && heights[indexStack.Peek()] <= heights[i])
+            {
+                int poppedIndex = indexStack.Pop();
 
-                if (indexStack.Count == 0) {
+                if (indexStack.Count == 0)
+                {
                     break;
                 }
 
-                var leftHeight = heights[indexStack.Peek()];
-                var rightHeight = heights[i];
-                var heightGap = Math.Min(leftHeight, rightHeight) - heights[poppedIndex];
-                var width = i - indexStack.Peek() - 1;
+                int leftHeight = heights[indexStack.Peek()];
+                int rightHeight = heights[i];
+                int heightGap = Math.Min(leftHeight, rightHeight) - heights[poppedIndex];
+                int width = i - indexStack.Peek() - 1;
                 result += heightGap * width;
             }
 
