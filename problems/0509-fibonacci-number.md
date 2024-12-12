@@ -162,7 +162,8 @@ class Solution:
 ### Solution 1: Recursion
 ```cpp
 class Solution {
-    unordered_map<int, int> num_to_fib_num;
+private:
+    unordered_map<int, int> num_to_fib_num_;
 
 public:
     int fib(int n) {
@@ -170,13 +171,13 @@ public:
             return n;
         }
 
-        if (num_to_fib_num.contains(n)) {
-            return num_to_fib_num[n];
+        if (num_to_fib_num_.contains(n)) {
+            return num_to_fib_num_[n];
         }
 
-        num_to_fib_num[n] = fib(n - 1) + fib(n - 2);
+        num_to_fib_num_[n] = fib(n - 1) + fib(n - 2);
 
-        return num_to_fib_num[n];
+        return num_to_fib_num_[n];
     }
 };
 ```
@@ -229,7 +230,7 @@ public:
 ### Solution 1: Recursion
 ```java
 class Solution {
-    Map<Integer, Integer> numToFibNum = new HashMap<Integer, Integer>();
+    var numToFibNum = new HashMap<Integer, Integer>();
 
     public int fib(int n) {
         if (n <= 1) {

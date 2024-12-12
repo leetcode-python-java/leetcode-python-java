@@ -180,7 +180,7 @@ public class Solution {
         var dp = new bool[sum / 2 + 1];
         dp[0] = true;
 
-        foreach (var stone in stones) {
+        foreach (int stone in stones) {
             for (var j = dp.GetUpperBound(0); j >= stone; j--) {
                 dp[j] = dp[j] || dp[j - stone];
             }

@@ -105,7 +105,7 @@ class Solution {
 public:
     int largestRectangleArea(vector<int> heights) {
         heights.insert(heights.begin(), 0);
-        heights.emplace_back(0);
+        heights.push_back(0);
         auto max_area = 0;
         stack<int> index_stack;
 
