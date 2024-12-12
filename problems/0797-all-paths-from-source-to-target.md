@@ -192,12 +192,14 @@ function dfs(node) {
 
 ## C#
 ```c#
-public class Solution {
+public class Solution
+{
     IList<IList<int>> paths = new List<IList<int>>();
     IList<int> path = new List<int>();
     int[][] graph;
 
-    public IList<IList<int>> AllPathsSourceTarget(int[][] graph) {
+    public IList<IList<int>> AllPathsSourceTarget(int[][] graph)
+    {
         this.graph = graph;
         path.Add(0);
 
@@ -206,13 +208,16 @@ public class Solution {
         return paths;
     }
 
-    void dfs(int node) {
-        if (node == graph.Length - 1) {
+    void dfs(int node)
+    {
+        if (node == graph.Length - 1)
+        {
             paths.Add(path.ToList());
             return;
         }
 
-        foreach (int targetNode in graph[node]) {
+        foreach (int targetNode in graph[node])
+        {
             path.Add(targetNode);
 
             dfs(targetNode);
