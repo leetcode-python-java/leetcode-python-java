@@ -39,7 +39,7 @@ Detailed solutions will be given later, and now only the best practices in 7 lan
 * Space: `O(n)`.
 
 ## Python
-### Solution 1: New array as parameter
+### Solution 1: New array as 'path' parameter
 ```python
 class Solution:
     def __init__(self):
@@ -58,9 +58,7 @@ class Solution:
             self.paths.append(path.copy())
             return
 
-        target_nodes = self.graph[node]
-
-        for target_node in target_nodes:
+        for target_node in self.graph[node]:
             self.dfs(target_node, path + [target_node])
 ```
 
@@ -84,43 +82,207 @@ class Solution:
             self.paths.append(self.path.copy())
             return
 
-        target_nodes = self.graph[node]
-
-        for target_node in target_nodes:
+        for target_node in self.graph[node]:
             self.path.append(target_node)
+
             self.dfs(target_node)
+
             self.path.pop()
 ```
 
 ## Java
 ```java
+class Solution {
+    List<List<Integer>> paths = new ArrayList<>();
+    List<Integer> path = new ArrayList<>();
+    int[][] graph;
 
+    public List<List<Integer>> allPathsSourceTarget(int[][] graph) {
+        this.graph = graph;
+        path.add(0);
+
+        dfs(0);
+
+        return paths;
+    }
+
+    void dfs(int node) {
+        if (node == graph.length - 1) {
+            paths.add(new ArrayList<>(path));
+            return;
+        }
+
+        for (int targetNode : graph[node]) {
+            path.add(targetNode);
+
+            dfs(targetNode);
+
+            path.removeLast();
+        }
+    }
+}
 ```
 
 ## C++
 ```cpp
-// Welcome to create a PR to complete the code of this language, thanks!
+class Solution {
+private:
+    vector<vector<int>> paths_;
+    vector<int> path_;
+    vector<vector<int>> graph_;
+
+    void dfs(int node) {
+        if (node == graph_.size() - 1) {
+            paths_.push_back(path_);
+            return;
+        }
+
+        for (int target_node : graph_[node]) {
+            path_.push_back(target_node);
+
+            dfs(target_node);
+
+            path_.pop_back();
+        }
+    }
+
+public:
+    vector<vector<int>> allPathsSourceTarget(vector<vector<int>>& graph) {
+        graph_ = graph;
+        path_.push_back(0);
+
+        dfs(0);
+
+        return paths_;
+    }
+};
 ```
 
 ## JavaScript
 ```javascript
+let paths
+let path
+let graph
 
+var allPathsSourceTarget = function (graph_) {
+  graph = graph_
+  paths = []
+  path = [0]
+
+  dfs(0)
+
+  return paths
+};
+
+function dfs(node) {
+  if (node === graph.length - 1) {
+    paths.push([...path])
+    return
+  }
+
+  for (const targetNode of graph[node]) {
+    path.push(targetNode)
+
+    dfs(targetNode)
+
+    path.pop()
+  }
+}
 ```
 
 ## C#
 ```c#
+public class Solution {
+    IList<IList<int>> paths = new List<IList<int>>();
+    IList<int> path = new List<int>();
+    int[][] graph;
+
+    public IList<IList<int>> AllPathsSourceTarget(int[][] graph) {
+        this.graph = graph;
+        path.Add(0);
+
+        dfs(0);
+
+        return paths;
+    }
+
+    void dfs(int node) {
+        if (node == graph.Length - 1) {
+            paths.Add(path.ToList());
+            return;
+        }
+
+        foreach (int targetNode in graph[node]) {
+            path.Add(targetNode);
+
+            dfs(targetNode);
+
+            path.RemoveAt(path.Count - 1);
+        }
+    }
+}
 ```
 
 ## Go
 ```go
-// Original article is at https://github.com/gazeldx/leetcode-best-practice
-// Welcome to create a PR to complete the code of this language, thanks!
+var (
+    paths [][]int
+    path []int
+    graph [][]int
+)
+
+func allPathsSourceTarget(graph_ [][]int) [][]int {
+    graph = graph_
+    paths = nil
+    path = []int{0}
+
+    dfs(0)
+
+    return paths
+}
+
+func dfs(node int) {
+    if (node == len(graph) - 1) {
+        paths = append(paths, slices.Clone(path))
+        return
+    }
+
+    for _, targetNode := range graph[node] {
+        path = append(path, targetNode)
+
+        dfs(targetNode)
+
+        path = path[:len(path) - 1]
+    }
+}
 ```
 
 ## Ruby
 ```ruby
-# Original article is at https://github.com/gazeldx/leetcode-best-practice
-# Welcome to create a PR to complete the code of this language, thanks!
+def all_paths_source_target(graph)
+  @graph = graph
+  @paths = []
+  @path = [0]
+
+  dfs(0)
+
+  @paths
+end
+
+def dfs(node)
+  if node == @graph.size - 1
+    @paths.append(@path.clone)
+    return
+  end
+
+  @graph[node].each do |target_node|
+    @path << target_node
+
+    dfs(target_node)
+
+    @path.pop
+  end
+end
 ```
 
 ## C
