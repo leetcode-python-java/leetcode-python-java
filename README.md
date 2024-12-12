@@ -67,5 +67,6 @@ After finishing one category of questions, you can study another category to imp
 
 # Graph Theory
 - [797. All Paths From Source to Target](problems/0797-all-paths-from-source-to-target.md) was solved in _Python, Java, C++, JavaScript, C#, Go, Ruby_ and **2** solutions.
+- [200. Number of Islands](problems/0200-number-of-islands.md) was solved in _Python, Java, C++, JavaScript, C#, Go, Ruby_ and **2** solutions.
 
 More LeetCode problems will be added soon...
