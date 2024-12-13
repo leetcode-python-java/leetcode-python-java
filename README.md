@@ -1,18 +1,16 @@
-# A best practice for the LeetCode problems
-There are more than 3300 questions on LeetCode. If you do it without any choice, **you won't have that much time**.
-**You often find that you can't do the questions you did last time.** This is because you haven't mastered the problem-solving patterns.
-When you use several common problem-solving patterns to solve problems, you find that your problem-solving ability has risen to a new level.
+# Lane's best practice for the LeetCode problems
+Hi there! I'm Lane.
+Do you feel that there are too many problems (over 3,300) on the LeetCode and you can't finish them all?
+Or do you forget how to solve the problems you did last time? 
+If you can master some solution patterns, this will happen less often.
 
-Here, I will provide you with **common problem-solving patterns** so that you don't waste time on questions that are not often tested in interviews.
+Here, I will provide you with **common problem-solving patterns** so that you don't waste time on problems that are not often tested in interviews.
 
-I will also provide you with solutions for many common programming languages, such as **Python, C++, Java, JavaScript, C#, Go, Ruby**, etc.
-I have tried my best to write the most concise and efficient code, so I call it my best practice. If you have better solutions, welcome to create an issue or PR!
+Solutions for languages such as **Python, C++, Java, JavaScript, C#, Go, Ruby**, etc. will also be provided. If you have better solutions, welcome to create an issue or PR!
 
 ## How to use this repo?
-I have planned a learning route for you. You just need to do the questions in the order they are listed.
-
-Generally speaking, the simple questions are placed at the front, and the dependencies between the questions are also considered reasonably.
-After finishing one category of questions, you can study another category to improve your sense of achievement and learning speed.
+I have planned a learning route for you. You just need to do the problems in the order they are listed.
+You can skip the more difficult problems and do them later.
 
 # Brute Force
 - [503. Next Greater Element II](problems/0503-next-greater-element-ii.md) was solved in _Python, Java, C++, JavaScript, C#, Go, Ruby_.
