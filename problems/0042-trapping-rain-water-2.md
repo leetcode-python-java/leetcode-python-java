@@ -1,4 +1,4 @@
-# 42. Trapping Rain Water
+# 42. Trapping Rain Water (Monotonic Stack Solution 2)
 LeetCode problem link: [42. Trapping Rain Water](https://leetcode.com/problems/trapping-rain-water/)
 
 ## LeetCode problem description

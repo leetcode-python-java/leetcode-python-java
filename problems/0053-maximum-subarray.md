@@ -1,4 +1,4 @@
-# 53. Maximum Subarray
+# 53. Maximum Subarray (dynamic programming solution)
 LeetCode problem link: [53. Maximum Subarray](https://leetcode.com/problems/maximum-subarray/)
 
 ## LeetCode problem description

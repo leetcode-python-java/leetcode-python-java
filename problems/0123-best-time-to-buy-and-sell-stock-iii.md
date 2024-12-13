@@ -1,4 +1,4 @@
-# 123. Best Time to Buy and Sell Stock III
+# 123. Best Time to Buy and Sell Stock III (Dynamic Programming Solution)
 LeetCode problem link: [122. Best Time to Buy and Sell Stock III](https://leetcode.com/problems/best-time-to-buy-and-sell-stock-iii/)
 
 ## LeetCode problem description

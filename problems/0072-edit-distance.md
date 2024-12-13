@@ -1,4 +1,4 @@
-# 72. Edit Distance
+# 72. Edit Distance (Dynamic Programming Solution)
 LeetCode problem link: [72. Edit Distance](https://leetcode.com/problems/edit-distance/)
 
 ## LeetCode problem description

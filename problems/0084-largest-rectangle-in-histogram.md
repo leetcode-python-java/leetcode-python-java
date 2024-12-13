@@ -1,4 +1,4 @@
-# 84. Largest Rectangle in Histogram
+# 84. Largest Rectangle in Histogram (Monotonic Stack Solution)
 LeetCode problem link: [84. Largest Rectangle in Histogram](https://leetcode.com/problems/largest-rectangle-in-histogram/)
 
 ## LeetCode problem description
