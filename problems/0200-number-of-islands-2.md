@@ -49,17 +49,19 @@ Walk from one node to the adjacent node until all nodes on the island are visite
 
 ## Steps
 1. Find the first land.
-1. Find all the adjacent lands of it.
+1. Starting at the first land, find all the lands of the island.
     * There are two major ways to explore a `connected components` (island): **Breadth-First Search** and **Depth-First Search**.
     * For **Depth-First Search**, there are two ways to make it: `Recursive` and `Iterative`. So I will provide 3 solutions in total.
     * Mark each found land as `V` which represents `visited`. Visited lands don't need to be visited again.
 1. After all lands on an island have been visited, look for the next non-visited land.
-1. Repeat the above steps until all the lands have been `visited`.
+1. Repeat the above two steps until all the lands have been `visited`.
 
 ### Solution 1: 'Depth-First Search' by Recursion
 Please click [Depth-First Search by Recursion Solution](0200-number-of-islands.md) for `200. Number of Islands` to view.
 
 ## Solution 2: 'Depth-First Search' by Iteration
+![](../images/binary_tree_DFS_1.png)
+
 In solution 1, we have known how to traverse a graph by recursion. Computer language support for recursive calls is implemented through stacks.
 For every recursive solution, there is an iterative solution, which means the same problem can be solved using loops.
 The benefit of using iteration is better program performance. After all, recursive calls are expensive.
