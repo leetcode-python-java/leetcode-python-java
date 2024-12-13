@@ -1,5 +1,5 @@
 # 200. Number of Islands
-LeetCode problem: [200. Number of Islands](https://leetcode.com/problems/number-of-islands/)
+LeetCode problem link: [200. Number of Islands](https://leetcode.com/problems/number-of-islands/)
 
 ## LeetCode problem description
 Given an `m x n` 2D binary grid `grid` which represents a map of `'1'`s (land) and `'0'`s (water), return the number of islands.
@@ -35,17 +35,38 @@ Output: 3
 - `grid[i][j]` is `'0'` or `'1'`.
 
 ## Thoughts
-This problem can be solved using **[Breadth-First Search of a Graph](https://en.wikipedia.org/wiki/Breadth-first_search)**.
+The island problem can be abstracted into a graph theory problem. This is an undirected graph.
+![](../images/graph_undirected_1.svg)
+This graph may have multiple connected components (islands).
+![](../images/graph_undirected_2.png)
+Finding the number of islands is to find the number of connected components.
 
+Each island can be expanded from a point that is land until it cannot be expanded any further, and the island is traversed.
+Therefore, the visited land needs to be marked as visited and does not need to be visited again next time.
+
+### Steps
 1. Find the first land point.
-1. Use `Breadth-First Search` to find all the adjacent land points of the first land point.
-    * Will need to use a `queue` (or a `stack`) to process those points.
+1. Find all the adjacent land points of it.
+    * There are two major ways to explore the island: **Breadth-First Search** and **Depth-First Search**.
+    * For **Depth-First Search**, there are two ways to make it: `Recursive` and `Iterative`. So I will provide 3 solutions finally.
     * Mark each found land point as `V` which represents `visited`.
-1. When a round of `Breadth-First Search` is done (all surrounded by water), an island is found (`counter++`).
-1. Find another non-visited land point.
+1. After all lands of an island are explored, `island_count++` and find another non-visited land point.
 1. Repeat the above steps until all the land points have been `visited`.
 
-Detailed solutions will be given later, and now only the best practices in 7 languages are given.
+#### Solution 1: 'Depth-First Search' by Recursion
+From the sample code, you can see that starting from a node, through recursive calls, it goes up until it can't go any further, turns right, and continues up. The priority order of directions is up, right, down, and left.
+```python
+adjacent_points = [
+   (i - 1, j), (i, j + 1),
+   (i + 1, j), (i, j - 1),
+]
+```
+
+#### Solution 2: 'Depth-First Search' by Iteration
+Please click [Depth-First Search by Iteration Solution](0200-number-of-islands-2.md) for `200. Number of Islands` to view.
+
+#### Solution 3: Breadth-First Search
+Please click [Breadth-First Search Solution](0200-number-of-islands-3.md) for `200. Number of Islands` to view.
 
 ### Complexity
 * Time: `O(n * m)`.
@@ -56,50 +77,44 @@ Detailed solutions will be given later, and now only the best practices in 7 lan
 class Solution:
     def __init__(self):
         self.grid = None
-        self.point_queue = deque()
 
     def numIslands(self, grid: List[List[str]]) -> int:
-        island_count = 0
         self.grid = grid
+        island_count = 0
 
         for i, row in enumerate(grid):
-            for j, item in enumerate(row):
-                if item == '1':
+            for j, value in enumerate(row):
+                if value == '1':
                     island_count += 1
-                    self.breadth_first_search((i, j))
+
+                    self.depth_first_search((i, j))
 
         return island_count
 
-    def breadth_first_search(self, point):
-        self.point_queue.append(point)
+    def depth_first_search(self, point):
+        i, j = point
 
-        while self.point_queue:
-            i, j = self.point_queue.popleft()
+        if i < 0 or i >= len(self.grid):
+            return
 
-            if i < 0 or i >= len(self.grid):
-                continue
+        if j < 0 or j >= len(self.grid[0]):
+            return
 
-            if j < 0 or j >= len(self.grid[0]):
-                continue
+        if self.grid[i][j] != '1':
+            return
 
-            if self.grid[i][j] != '1':
-                continue
+        self.grid[i][j] = 'V'
 
-            self.grid[i][j] = 'V'
-
-            for adjacent_point in [
-                (i - 1, j),
-                (i + 1, j),
-                (i, j - 1),
-                (i, j + 1)
-            ]:
-                self.point_queue.append(adjacent_point)
+        for adjacent_point in [
+            (i - 1, j), (i, j + 1),
+            (i + 1, j), (i, j - 1),
+        ]:
+            self.depth_first_search(adjacent_point)
 ```
 
 ## Java
 ```java
 class Solution {
-    Stack<int[]> pointStack = new Stack<>();
     char[][] grid;
 
     public int numIslands(char[][] grid) {
@@ -111,7 +126,7 @@ class Solution {
                 if (grid[i][j] == '1') {
                     islandCount++;
 
-                    breadthFirstSearch(new int[]{i, j});
+                    depthFirstSearch(new int[]{i, j});
                 }
             }
         }
@@ -119,37 +134,31 @@ class Solution {
         return islandCount;
     }
 
-    void breadthFirstSearch(int[] point) {
-        pointStack.push(point);
+    void depthFirstSearch(int[] point) {
+        int i = point[0];
+        int j = point[1];
 
-        while (!pointStack.empty()) {
-            point = pointStack.pop();
-            int i = point[0];
-            int j = point[1];
+        if (i < 0 || i >= grid.length) {
+            return;
+        }
 
-            if (i < 0 || i >= grid.length) {
-                continue;
-            }
+        if (j < 0 || j >= grid[0].length) {
+            return;
+        }
 
-            if (j < 0 || j >= grid[0].length) {
-                continue;
-            }
+        if (grid[i][j] != '1') {
+            return;
+        }
 
-            if (grid[i][j] != '1') {
-                continue;
-            }
+        grid[i][j] = 'V';
 
-            grid[i][j] = 'V';
+        int[][] adjacentPoints = {
+            {i - 1, j}, {i, j + 1},
+            {i + 1, j}, {i, j - 1}
+        };
 
-            int[][] adjacentPoints = {
-                {i - 1, j},
-                {i + 1, j},
-                {i, j - 1},
-                {i, j + 1}
-            };
-            for (var adjacentPoint : adjacentPoints) {
-                pointStack.push(adjacentPoint);
-            }
+        for (var adjacentPoint : adjacentPoints) {
+            depthFirstSearch(adjacentPoint);
         }
     }
 }
@@ -157,59 +166,101 @@ class Solution {
 
 ## C++
 ```cpp
-// Welcome to create a PR to complete the code of this language, thanks!
+class Solution {
+private:
+    vector<vector<char>> grid_;
+
+    void depth_first_search(vector<int> point) {
+        int i = point[0];
+        int j = point[1];
+
+        if (i < 0 || i >= grid_.size()) {
+            return;
+        }
+
+        if (j < 0 || j >= grid_[0].size()) {
+            return;
+        }
+
+        if (grid_[i][j] != '1') {
+            return;
+        }
+
+        grid_[i][j] = 'V';
+
+        vector<vector<int>> adjacent_points = {
+            {i - 1, j}, {i, j + 1},
+            {i + 1, j}, {i, j - 1}
+        };
+        for (auto adjacent_point : adjacent_points) {
+            depth_first_search(adjacent_point);
+        }
+    }
+
+public:
+    int numIslands(vector<vector<char>>& grid) {
+        grid_ = grid;
+        auto island_count = 0;
+
+        for (auto i = 0; i < grid_.size(); i++) {
+            for (auto j = 0; j < grid_[0].size(); j++) {
+                if (grid_[i][j] == '1') {
+                    island_count++;
+
+                    depth_first_search({i, j});
+                }
+            }
+        }
+
+        return island_count;
+    }
+};
 ```
 
 ## JavaScript
 ```javascript
 let grid
-let pointStack
 
 var numIslands = function (grid_) {
-  grid = grid_
-  pointStack = []
-  let islandCount = 0
+   grid = grid_
+   let islandCount = 0
 
-  grid.forEach((row, i) => {
-    row.forEach((item, j) => {
-      if (item === '1') {
-        islandCount++
+   grid.forEach((row, i) => {
+      row.forEach((item, j) => {
+         if (item === '1') {
+            islandCount++
 
-        breadthFirstSearch([i, j])
-      }
-    })
-  })
+            depthFirstSearch([i, j])
+         }
+      })
+   })
 
-  return islandCount
+   return islandCount
 };
 
-function breadthFirstSearch(point) {
-  pointStack.push(point)
+function depthFirstSearch(point) {
+   const [i, j] = point
 
-  while (pointStack.length > 0) {
-    const [i, j] = pointStack.pop()
+   if (i < 0 || i >= grid.length) {
+      return
+   }
 
-    if (i < 0 || i >= grid.length) {
-      continue
-    }
+   if (j < 0 || j >= grid[0].length) {
+      return
+   }
 
-    if (j < 0 || j >= grid[0].length) {
-      continue
-    }
+   if (grid[i][j] != '1') {
+      return
+   }
 
-    if (grid[i][j] != '1') {
-      continue
-    }
+   grid[i][j] = 'V';
 
-    grid[i][j] = 'V';
-
-    [
+   [
       [i - 1, j],
       [i + 1, j],
       [i, j - 1],
       [i, j + 1]
-    ].forEach((adjacentPoint) => pointStack.push(adjacentPoint))
-  }
+   ].forEach((adjacentPoint) => depthFirstSearch(adjacentPoint))
 }
 ```
 
@@ -217,7 +268,6 @@ function breadthFirstSearch(point) {
 ```c#
 public class Solution
 {
-    Stack<int[]> pointStack = new Stack<int[]>();
     char[][] grid;
 
     public int NumIslands(char[][] grid)
@@ -233,7 +283,7 @@ public class Solution
                 {
                     islandCount++;
 
-                    breadthFirstSearch([i, j]);
+                    depthFirstSearch([i, j]);
                 }
             }
         }
@@ -241,39 +291,29 @@ public class Solution
         return islandCount;
     }
 
-    void breadthFirstSearch(int[] point)
+    void depthFirstSearch(int[] point)
     {
-        pointStack.Push(point);
+        int i = point[0];
+        int j = point[1];
 
-        while (pointStack.Count > 0)
-        {
-            point = pointStack.Pop();
-            int i = point[0];
-            int j = point[1];
+        if (i < 0 || i >= grid.Length)
+            return;
 
-            if (i < 0 || i >= grid.Length)
-            {
-                continue;
-            }
-            if (j < 0 || j >= grid[0].Length) {
-                continue;
-            }
-            if (grid[i][j] != '1')
-            {
-                continue;
-            }
+        if (j < 0 || j >= grid[0].Length)
+            return;
 
-            grid[i][j] = 'V';
+        if (grid[i][j] != '1')
+            return;
 
-            int[][] adjacentPoints = [
-                [i + 1, j],
-                [i - 1, j],
-                [i, j + 1],
-                [i, j - 1]
-            ];
-            foreach (var adjacentPoint in adjacentPoints) {
-                pointStack.Push(adjacentPoint);
-            }
+        grid[i][j] = 'V';
+
+        int[][] adjacentPoints = [
+            [i - 1, j], [i, j + 1],
+            [i + 1, j], [i, j - 1]
+        ];
+
+        foreach (var adjacentPoint in adjacentPoints) {
+            depthFirstSearch(adjacentPoint);
         }
     }
 }
@@ -281,14 +321,92 @@ public class Solution
 
 ## Go
 ```go
-// Best solutions are at https://github.com/gazeldx/leetcode-best-practice
-// Welcome to create a PR to complete the code of this language, thanks!
+var grid [][]byte
+
+func numIslands(grid_ [][]byte) int {
+    grid = grid_
+    islandCount := 0
+
+    for i, row := range grid {
+        for j, value := range row {
+            if value == '1' {
+                islandCount++
+
+                depthFirstSearch([]int{i, j})
+            }
+        }
+    }
+
+    return islandCount
+}
+
+func depthFirstSearch(point []int) {
+    i := point[0]
+    j := point[1]
+
+    if i < 0 || i >= len(grid) {
+        return
+    }
+
+    if j < 0 || j >= len(grid[0]) {
+        return
+    }
+
+    if grid[i][j] != '1' {
+        return
+    }
+
+    grid[i][j] = 'V'
+
+    adjacentPoints := [][]int{
+        {i - 1, j}, {i, j + 1},
+        {i + 1, j}, {i, j - 1},
+    }
+
+    for _, adjacentPoint := range adjacentPoints {
+        depthFirstSearch(adjacentPoint)
+    }
+}
 ```
 
 ## Ruby
 ```ruby
-# Best solutions are at https://github.com/gazeldx/leetcode-best-practice
-# Welcome to create a PR to complete the code of this language, thanks!
+def num_islands(grid)
+  @grid = grid
+  island_count = 0
+
+  @grid.each_with_index do |row, i|
+    row.each_with_index do |value, j|
+      if value == '1'
+        depth_first_search([i, j])
+
+        island_count += 1
+      end
+    end
+  end
+
+  island_count
+end
+
+def depth_first_search(point)
+  i = point[0]
+  j = point[1]
+
+  return if i < 0 || i >= @grid.size
+  
+  return if j < 0 || j >= @grid[0].size
+  
+  return if @grid[i][j] != '1'
+  
+  @grid[i][j] = 'V'
+
+  [
+    [i - 1, j], [i, j + 1],
+    [i + 1, j], [i, j - 1]
+  ].each do |point|
+    depth_first_search(point)
+  end
+end
 ```
 
 ## C
