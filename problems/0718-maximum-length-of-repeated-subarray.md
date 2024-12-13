@@ -1,5 +1,5 @@
 # 718. Maximum Length of Repeated Subarray
-LeetCode problem: [718. Maximum Length of Repeated Subarray](https://leetcode.com/problems/maximum-length-of-repeated-subarray/)
+LeetCode problem link: [718. Maximum Length of Repeated Subarray](https://leetcode.com/problems/maximum-length-of-repeated-subarray/)
 
 ## LeetCode problem description
 Given two integer arrays `nums1` and `nums2`, return the **maximum length of a subarray** that appears in **both** arrays.

@@ -1,5 +1,5 @@
 # 337. House Robber III
-LeetCode problem: [337. House Robber III](https://leetcode.com/problems/house-robber-iii/)
+LeetCode problem link: [337. House Robber III](https://leetcode.com/problems/house-robber-iii/)
 
 ## LeetCode problem description
 The thief has found himself a new place for his thievery again. There is only one entrance to this area, called `root`.

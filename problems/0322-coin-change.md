@@ -1,5 +1,5 @@
 # 322. Coin Change
-LeetCode problem: [322. Coin Change](https://leetcode.com/problems/coin-change/)
+LeetCode problem link: [322. Coin Change](https://leetcode.com/problems/coin-change/)
 
 ## LeetCode problem description
 > You are given an integer array `coins` representing coins of different denominations and an integer `amount` representing a total amount of money.

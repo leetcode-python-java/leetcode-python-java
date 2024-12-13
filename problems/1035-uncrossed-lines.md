@@ -1,5 +1,5 @@
 # 1035. Uncrossed Lines
-LeetCode problem: [1035. Uncrossed Lines](https://leetcode.com/problems/uncrossed-lines/)
+LeetCode problem link: [1035. Uncrossed Lines](https://leetcode.com/problems/uncrossed-lines/)
 
 ## LeetCode problem description
 You are given two integer arrays `nums1` and `nums2`. We write the integers of `nums1` and `nums2` (in the order they are given) on two separate horizontal lines.

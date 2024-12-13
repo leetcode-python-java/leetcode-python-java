@@ -1,5 +1,5 @@
 # 279. Perfect Squares
-LeetCode problem: [279. Perfect Squares](https://leetcode.com/problems/perfect-squares/)
+LeetCode problem link: [279. Perfect Squares](https://leetcode.com/problems/perfect-squares/)
 
 ## LeetCode problem description
 > Given an integer `n`, return the **least** number of perfect square numbers that sum to `n`.

@@ -1,5 +1,5 @@
 # 674. Longest Continuous Increasing Subsequence
-LeetCode problem: [674. Longest Continuous Increasing Subsequence](https://leetcode.com/problems/longest-continuous-increasing-subsequence/)
+LeetCode problem link: [674. Longest Continuous Increasing Subsequence](https://leetcode.com/problems/longest-continuous-increasing-subsequence/)
 
 ## LeetCode problem description
 Given an integer array `nums`, return the length of the **longest strictly increasing subsequence**.

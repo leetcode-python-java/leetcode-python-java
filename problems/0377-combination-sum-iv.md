@@ -1,5 +1,5 @@
 # 377. Combination Sum IV
-LeetCode problem: [377. Combination Sum IV](https://leetcode.com/problems/combination-sum-iv/)
+LeetCode problem link: [377. Combination Sum IV](https://leetcode.com/problems/combination-sum-iv/)
 
 ## LeetCode problem description
 > Given an array of **distinct** integers `nums` and a target integer `target`, return the number of possible combinations that add up to `target`.

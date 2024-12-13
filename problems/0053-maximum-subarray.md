@@ -1,5 +1,5 @@
 # 53. Maximum Subarray
-LeetCode problem: [53. Maximum Subarray](https://leetcode.com/problems/maximum-subarray/)
+LeetCode problem link: [53. Maximum Subarray](https://leetcode.com/problems/maximum-subarray/)
 
 ## LeetCode problem description
 > Given an integer array `nums`, find the `subarray` with the largest sum, and return its sum.

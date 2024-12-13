@@ -1,5 +1,5 @@
 # 72. Edit Distance
-LeetCode problem: [72. Edit Distance](https://leetcode.com/problems/edit-distance/)
+LeetCode problem link: [72. Edit Distance](https://leetcode.com/problems/edit-distance/)
 
 ## LeetCode problem description
 > Given two strings `word1` and `word2`, return the **minimum** number of operations required to convert `word1` to `word2`.

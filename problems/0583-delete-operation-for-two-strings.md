@@ -1,5 +1,5 @@
 # 583. Delete Operation for Two Strings
-LeetCode problem: [583. Delete Operation for Two Strings](https://leetcode.com/problems/delete-operation-for-two-strings/)
+LeetCode problem link: [583. Delete Operation for Two Strings](https://leetcode.com/problems/delete-operation-for-two-strings/)
 
 ## LeetCode problem description
 > Given two strings `word1` and `word2`, return the **minimum** number of **steps** required to make `word1` and `word2` the same.
