@@ -45,17 +45,16 @@ And this graph may have multiple **connected components** (islands):
 
 Finding the number of islands is to find the number of `connected components`.
 
-Each island can be expanded from a point that is land until it cannot be expanded any further, and the island is traversed.
-Therefore, the visited land needs to be marked as `visited` and does not need to be visited again next time.
+Walk from one node to the adjacent node until all nodes on the island are visited.
 
 ## Steps
-1. Find the first land point.
-1. Find all the adjacent land points of it.
+1. Find the first land.
+1. Find all the adjacent lands of it.
     * There are two major ways to explore a `connected components` (island): **Breadth-First Search** and **Depth-First Search**.
     * For **Depth-First Search**, there are two ways to make it: `Recursive` and `Iterative`. So I will provide 3 solutions in total.
-    * Mark each found land point as `V` which represents `visited`.
-1. After all lands on an island have been visited, look for the next non-visited land point.
-1. Repeat the above steps until all the land points have been `visited`.
+    * Mark each found land as `V` which represents `visited`. Visited lands don't need to be visited again.
+1. After all lands on an island have been visited, look for the next non-visited land.
+1. Repeat the above steps until all the lands have been `visited`.
 
 ## Solution 1: 'Depth-First Search' by Recursion
 From this sample code bellow, you can see that starting from a node, through recursive calls, it goes up until it can't go any further, turns right, and continues up. The priority order of directions is `up, right, down, and left`.
