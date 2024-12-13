@@ -1,4 +1,4 @@
-# 200. Number of Islands
+# 200. Number of Islands (Solution 1: 'Depth-First Search' by Recursion)
 LeetCode problem link: [200. Number of Islands](https://leetcode.com/problems/number-of-islands/)
 
 # LeetCode problem description
@@ -35,7 +35,7 @@ Output: 3
 - `grid[i][j]` is `'0'` or `'1'`.
 
 # Thoughts
-The island problem can be abstracted into a **graph theory** problem. This is an `undirected graph`:
+The island problem can be abstracted into a **graph theory** problem. This is an **undirected graph**:
 
 ![](../images/graph_undirected_1.svg)
 
@@ -57,19 +57,21 @@ Therefore, the visited land needs to be marked as `visited` and does not need to
 1. After all lands on an island have been visited, look for the next non-visited land point.
 1. Repeat the above steps until all the land points have been `visited`.
 
-### Solution 1: 'Depth-First Search' by Recursion
-From the sample code, you can see that starting from a node, through recursive calls, it goes up until it can't go any further, turns right, and continues up. The priority order of directions is up, right, down, and left.
+## Solution 1: 'Depth-First Search' by Recursion
+From this sample code bellow, you can see that starting from a node, through recursive calls, it goes up until it can't go any further, turns right, and continues up. The priority order of directions is `up, right, down, and left`.
 ```python
 adjacent_points = [
-   (i - 1, j), (i, j + 1),
-   (i + 1, j), (i, j - 1),
+   (i - 1, j), # up
+   (i, j + 1), # right
+   (i + 1, j), # down
+   (i, j - 1), # left
 ]
 ```
 
-### Solution 2: 'Depth-First Search' by Iteration
+## Solution 2: 'Depth-First Search' by Iteration
 Please click [Depth-First Search by Iteration Solution](0200-number-of-islands-2.md) for `200. Number of Islands` to view.
 
-### Solution 3: Breadth-First Search
+## Solution 3: Breadth-First Search
 Please click [Breadth-First Search Solution](0200-number-of-islands-3.md) for `200. Number of Islands` to view.
 
 ## Complexity
@@ -196,6 +198,7 @@ private:
             {i - 1, j}, {i, j + 1},
             {i + 1, j}, {i, j - 1}
         };
+
         for (auto adjacent_point : adjacent_points) {
             depth_first_search(adjacent_point);
         }
