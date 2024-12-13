@@ -140,7 +140,7 @@ class Solution {
                 if (grid[i][j] == '1') {
                     islandCount++;
 
-                    breadthFirstSearch(new int[]{i, j});
+                    depthFirstSearch(new int[]{i, j});
                 }
             }
         }
@@ -148,7 +148,7 @@ class Solution {
         return islandCount;
     }
 
-    void breadthFirstSearch(int[] point) {
+    void depthFirstSearch(int[] point) {
         pointStack.push(point);
 
         while (!pointStack.empty()) {
@@ -193,6 +193,7 @@ private:
         while (!point_stack.empty()) {
             point = point_stack.top();
             point_stack.pop();
+
             int i = point[0];
             int j = point[1];
 
@@ -253,7 +254,7 @@ var numIslands = function (grid_) {
       if (item === '1') {
         islandCount++
 
-        breadthFirstSearch([i, j])
+        depthFirstSearch([i, j])
       }
     })
   })
@@ -261,7 +262,7 @@ var numIslands = function (grid_) {
   return islandCount
 };
 
-function breadthFirstSearch(point) {
+function depthFirstSearch(point) {
   pointStack.push(point)
 
   while (pointStack.length > 0) {
@@ -308,7 +309,7 @@ public class Solution
                 {
                     islandCount++;
 
-                    breadthFirstSearch([i, j]);
+                    depthFirstSearch([i, j]);
                 }
             }
         }
@@ -316,7 +317,7 @@ public class Solution
         return islandCount;
     }
 
-    void breadthFirstSearch(int[] point)
+    void depthFirstSearch(int[] point)
     {
         pointStack.Push(point);
 

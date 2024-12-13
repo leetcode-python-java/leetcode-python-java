@@ -230,45 +230,42 @@ public:
 let grid
 
 var numIslands = function (grid_) {
-   grid = grid_
-   let islandCount = 0
+  grid = grid_
+  let islandCount = 0
 
-   grid.forEach((row, i) => {
-      row.forEach((item, j) => {
-         if (item === '1') {
-            islandCount++
+  grid.forEach((row, i) => {
+    row.forEach((item, j) => {
+      if (item === '1') {
+        islandCount++
 
-            depthFirstSearch([i, j])
-         }
-      })
-   })
+        depthFirstSearch([i, j])
+      }
+    })
+  })
 
-   return islandCount
+  return islandCount
 };
 
 function depthFirstSearch(point) {
-   const [i, j] = point
+  const [i, j] = point
 
-   if (i < 0 || i >= grid.length) {
-      return
-   }
+  if (i < 0 || i >= grid.length) {
+    return
+  }
 
-   if (j < 0 || j >= grid[0].length) {
-      return
-   }
+  if (j < 0 || j >= grid[0].length) {
+    return
+  }
 
-   if (grid[i][j] != '1') {
-      return
-   }
+  if (grid[i][j] != '1') {
+    return
+  }
 
-   grid[i][j] = 'V';
+  grid[i][j] = 'V';
 
-   [
-      [i - 1, j],
-      [i + 1, j],
-      [i, j - 1],
-      [i, j + 1]
-   ].forEach((adjacentPoint) => depthFirstSearch(adjacentPoint))
+  [[i - 1, j], [i, j + 1], [i + 1, j], [i, j - 1]].forEach(
+    (adjacentPoint) => depthFirstSearch(adjacentPoint)
+  )
 }
 ```
 
@@ -315,10 +312,7 @@ public class Solution
 
         grid[i][j] = 'V';
 
-        int[][] adjacentPoints = [
-            [i - 1, j], [i, j + 1],
-            [i + 1, j], [i, j - 1]
-        ];
+        int[][] adjacentPoints = [[i - 1, j], [i, j + 1], [i + 1, j], [i, j - 1]];
 
         foreach (var adjacentPoint in adjacentPoints) {
             depthFirstSearch(adjacentPoint);
