@@ -1,12 +1,12 @@
 # 200. Number of Islands
 LeetCode problem link: [200. Number of Islands](https://leetcode.com/problems/number-of-islands/)
 
-## LeetCode problem description
+# LeetCode problem description
 Given an `m x n` 2D binary grid `grid` which represents a map of `'1'`s (land) and `'0'`s (water), return the number of islands.
 
 An **island** is surrounded by water and is formed by connecting adjacent lands horizontally or vertically. You may assume all four edges of the grid are all surrounded by water.
 
-### Example 1
+## Example 1
 ```
 Input: grid = [
     ["1","1","1","1","0"],
@@ -17,7 +17,7 @@ Input: grid = [
 Output: 1
 ```
 
-### Example 2
+## Example 2
 ```
 Input: grid = [
     ["1","1","0","0","0"],
@@ -28,32 +28,36 @@ Input: grid = [
 Output: 3
 ```
 
-### Constraints
+## Constraints
 - `m == grid.length`
 - `n == grid[i].length`
 - `1 <= m, n <= 300`
 - `grid[i][j]` is `'0'` or `'1'`.
 
-## Thoughts
-The island problem can be abstracted into a graph theory problem. This is an undirected graph.
+# Thoughts
+The island problem can be abstracted into a **graph theory** problem. This is an `undirected graph`:
+
 ![](../images/graph_undirected_1.svg)
-This graph may have multiple connected components (islands).
+
+And this graph may have multiple **connected components** (islands):
+
 ![](../images/graph_undirected_2.png)
-Finding the number of islands is to find the number of connected components.
+
+Finding the number of islands is to find the number of `connected components`.
 
 Each island can be expanded from a point that is land until it cannot be expanded any further, and the island is traversed.
-Therefore, the visited land needs to be marked as visited and does not need to be visited again next time.
+Therefore, the visited land needs to be marked as `visited` and does not need to be visited again next time.
 
-### Steps
+## Steps
 1. Find the first land point.
 1. Find all the adjacent land points of it.
-    * There are two major ways to explore the island: **Breadth-First Search** and **Depth-First Search**.
-    * For **Depth-First Search**, there are two ways to make it: `Recursive` and `Iterative`. So I will provide 3 solutions finally.
+    * There are two major ways to explore a `connected components` (island): **Breadth-First Search** and **Depth-First Search**.
+    * For **Depth-First Search**, there are two ways to make it: `Recursive` and `Iterative`. So I will provide 3 solutions in total.
     * Mark each found land point as `V` which represents `visited`.
-1. After all lands of an island are explored, `island_count++` and find another non-visited land point.
+1. After all lands on an island have been visited, look for the next non-visited land point.
 1. Repeat the above steps until all the land points have been `visited`.
 
-#### Solution 1: 'Depth-First Search' by Recursion
+### Solution 1: 'Depth-First Search' by Recursion
 From the sample code, you can see that starting from a node, through recursive calls, it goes up until it can't go any further, turns right, and continues up. The priority order of directions is up, right, down, and left.
 ```python
 adjacent_points = [
@@ -62,17 +66,17 @@ adjacent_points = [
 ]
 ```
 
-#### Solution 2: 'Depth-First Search' by Iteration
+### Solution 2: 'Depth-First Search' by Iteration
 Please click [Depth-First Search by Iteration Solution](0200-number-of-islands-2.md) for `200. Number of Islands` to view.
 
-#### Solution 3: Breadth-First Search
+### Solution 3: Breadth-First Search
 Please click [Breadth-First Search Solution](0200-number-of-islands-3.md) for `200. Number of Islands` to view.
 
-### Complexity
+## Complexity
 * Time: `O(n * m)`.
 * Space: `O(n * m)`.
 
-## Python
+# Python
 ```python
 class Solution:
     def __init__(self):
@@ -112,7 +116,7 @@ class Solution:
             self.depth_first_search(adjacent_point)
 ```
 
-## Java
+# Java
 ```java
 class Solution {
     char[][] grid;
@@ -164,7 +168,7 @@ class Solution {
 }
 ```
 
-## C++
+# C++
 ```cpp
 class Solution {
 private:
@@ -217,7 +221,7 @@ public:
 };
 ```
 
-## JavaScript
+# JavaScript
 ```javascript
 let grid
 
@@ -264,7 +268,7 @@ function depthFirstSearch(point) {
 }
 ```
 
-## C#
+# C#
 ```c#
 public class Solution
 {
@@ -319,7 +323,7 @@ public class Solution
 }
 ```
 
-## Go
+# Go
 ```go
 var grid [][]byte
 
@@ -369,7 +373,7 @@ func depthFirstSearch(point []int) {
 }
 ```
 
-## Ruby
+# Ruby
 ```ruby
 def num_islands(grid)
   @grid = grid
@@ -409,27 +413,27 @@ def depth_first_search(point)
 end
 ```
 
-## C
+# C
 ```c
 // Welcome to create a PR to complete the code of this language, thanks!
 ```
 
-## Kotlin
+# Kotlin
 ```kotlin
 // Welcome to create a PR to complete the code of this language, thanks!
 ```
 
-## Swift
+# Swift
 ```swift
 // Welcome to create a PR to complete the code of this language, thanks!
 ```
 
-## Rust
+# Rust
 ```rust
 // Welcome to create a PR to complete the code of this language, thanks!
 ```
 
-## Other languages
+# Other languages
 ```
 // Welcome to create a PR to complete the code of this language, thanks!
 ```
