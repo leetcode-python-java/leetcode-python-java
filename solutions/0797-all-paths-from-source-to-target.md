@@ -29,12 +29,17 @@ Output: [[0,4],[0,3,4],[0,1,3,4],[0,1,2,3,4],[0,1,4]]
 - All the elements of `graph[i]` are **unique**.
 - The input graph is **guaranteed** to be a **DAG**.
 
-## Thoughts
+# Intuition
 This problem can be solved using **Depth-First Search of a Graph**.
 
-Detailed solutions will be given later, and now only the best practices in 7 languages are given.
+# Approach
+1. From node `0`, visit all of its neighbors `graph[node]` in an iteration.
+2. In the iteration, recursively call the `dfs` function to visit all the paths.
+3. Use an array `path` to save the path (node itself inclusive).
+4. Around the `dfs()` call code are the `path.push(node)` (use `node`) and `path.pop()` (undo use `node`).
+5. Use an array `paths` to save the results.
 
-### Complexity
+## Complexity
 * Time: `O(2**n)`.
 * Space: `O(n)`.
 
