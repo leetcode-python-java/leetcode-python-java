@@ -100,6 +100,7 @@ class Solution:
             for j, value in enumerate(row):
                 if value == '1':
                     island_count += 1
+
                     self.depth_first_search((i, j))
 
         return island_count
@@ -121,8 +122,10 @@ class Solution:
 
             self.grid[i][j] = 'V'
 
-            for adjacent_point in [(i, j - 1), (i + 1, j), (i, j + 1), (i - 1, j)]:
-                self.point_stack.append(adjacent_point)
+            self.point_stack.append((i, j - 1))
+            self.point_stack.append((i + 1, j))
+            self.point_stack.append((i, j + 1))
+            self.point_stack.append((i - 1, j))
 ```
 
 # Java
@@ -170,11 +173,10 @@ class Solution {
 
             grid[i][j] = 'V';
 
-            int[][] adjacentPoints = {{i, j - 1}, {i + 1, j}, {i, j + 1}, {i - 1, j}};
-
-            for (var adjacentPoint : adjacentPoints) {
-                pointStack.push(adjacentPoint);
-            }
+            pointStack.push(new int[]{i, j - 1});
+            pointStack.push(new int[]{i + 1, j});
+            pointStack.push(new int[]{i, j + 1});
+            pointStack.push(new int[]{i - 1, j});
         }
     }
 }
@@ -185,17 +187,17 @@ class Solution {
 class Solution {
 private:
     vector<vector<char>> grid_;
-    stack<vector<int>> point_stack;
+    stack<pair<int, int>> point_stack;
 
-    void depth_first_search(vector<int> point) {
-        point_stack.push(point);
+    void depth_first_search(int i1, int j1) {
+        point_stack.push({i1, j1});
 
         while (!point_stack.empty()) {
-            point = point_stack.top();
+            pair<int, int> point = point_stack.top();
             point_stack.pop();
 
-            int i = point[0];
-            int j = point[1];
+            int i = point.first;
+            int j = point.second;
 
             if (i < 0 || i >= grid_.size()) {
                 continue;
@@ -211,11 +213,10 @@ private:
 
             grid_[i][j] = 'V';
 
-            vector<vector<int>> adjacent_points = {{i, j - 1}, {i + 1, j}, {i, j + 1}, {i - 1, j}};
-
-            for (auto adjacent_point : adjacent_points) {
-                point_stack.push(adjacent_point);
-            }
+            point_stack.push({i, j - 1});
+            point_stack.push({i + 1, j});
+            point_stack.push({i, j + 1});
+            point_stack.push({i - 1, j});
         }
     }
 
@@ -229,7 +230,7 @@ public:
                 if (grid_[i][j] == '1') {
                     island_count++;
 
-                    depth_first_search({i, j});
+                    depth_first_search(i, j);
                 }
             }
         }
@@ -240,7 +241,7 @@ public:
 ```
 
 # JavaScript
-```javascript
+```JavaScript
 let grid
 let pointStack
 
@@ -282,9 +283,10 @@ function depthFirstSearch(point) {
 
     grid[i][j] = 'V';
 
-    [[i, j - 1], [i + 1, j], [i, j + 1], [i - 1, j]].forEach(
-      (adjacentPoint) => pointStack.push(adjacentPoint)
-    )
+    pointStack.push([i, j - 1])
+    pointStack.push([i + 1, j])
+    pointStack.push([i, j + 1])
+    pointStack.push([i - 1, j])
   }
 }
 ```
@@ -342,11 +344,10 @@ public class Solution
 
             grid[i][j] = 'V';
 
-            int[][] adjacentPoints = [[i, j - 1], [i + 1, j], [i, j + 1], [i - 1, j]];
-
-            foreach (var adjacentPoint in adjacentPoints) {
-                pointStack.Push(adjacentPoint);
-            }
+            pointStack.Push([i, j - 1]);
+            pointStack.Push([i + 1, j]);
+            pointStack.Push([i, j + 1]);
+            pointStack.Push([i - 1, j]);
         }
     }
 }
@@ -398,11 +399,10 @@ func depthFirstSearch(point []int) {
 
         grid[i][j] = 'V'
 
-        adjacentPoints := [][]int{{i, j - 1}, {i + 1, j}, {i, j + 1}, {i - 1, j}}
-
-        for _, adjacentPoint := range adjacentPoints {
-            pointStack.Push(adjacentPoint)
-        }
+        pointStack.Push([]int{i, j - 1})
+        pointStack.Push([]int{i + 1, j})
+        pointStack.Push([]int{i, j + 1})
+        pointStack.Push([]int{i - 1, j})
     }
 }
 ```
@@ -444,9 +444,10 @@ def depth_first_search(point)
 
     @grid[i][j] = 'V'
 
-    [[i, j - 1], [i + 1, j], [i, j + 1], [i - 1, j]].each do |point|
-      @point_stack << point
-    end
+    @point_stack << [i, j - 1]
+    @point_stack << [i + 1, j]
+    @point_stack << [i, j + 1]
+    @point_stack << [i - 1, j]
   end
 end
 ```

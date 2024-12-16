@@ -109,13 +109,10 @@ class Solution:
 
             self.grid[i][j] = 'V'
 
-            for adjacent_point in [
-                (i - 1, j),
-                (i, j + 1),
-                (i + 1, j),
-                (i, j - 1),
-            ]:
-                self.point_queue.append(adjacent_point)
+            self.point_queue.append((i - 1, j))
+            self.point_queue.append((i, j + 1))
+            self.point_queue.append((i + 1, j))
+            self.point_queue.append((i, j - 1))
 ```
 
 ## Java
@@ -163,11 +160,10 @@ class Solution {
 
             grid[i][j] = 'V';
 
-            int[][] adjacentPoints = {{i - 1, j}, {i, j + 1}, {i + 1, j}, {i, j - 1}};
-
-            for (var adjacentPoint : adjacentPoints) {
-                pointQueue.add(adjacentPoint);
-            }
+            pointQueue.add(new int[]{i - 1, j});
+            pointQueue.add(new int[]{i, j + 1});
+            pointQueue.add(new int[]{i + 1, j});
+            pointQueue.add(new int[]{i, j - 1});
         }
     }
 }
@@ -178,17 +174,17 @@ class Solution {
 class Solution {
 private:
     vector<vector<char>> grid_;
-    queue<vector<int>> point_queue;
+    queue<pair<int, int>> point_queue;
 
-    void breadth_first_search(vector<int> point) {
-        point_queue.push(point);
+    void breadth_first_search(int i1, int j1) {
+        point_queue.push({i1, j1});
 
         while (!point_queue.empty()) {
-            point = point_queue.front();
+            pair<int, int> point = point_queue.front();
             point_queue.pop();
 
-            int i = point[0];
-            int j = point[1];
+            int i = point.first;
+            int j = point.second;
 
             if (i < 0 || i >= grid_.size()) {
                 continue;
@@ -204,11 +200,10 @@ private:
 
             grid_[i][j] = 'V';
 
-            vector<vector<int>> adjacent_points = {{i - 1, j}, {i, j + 1}, {i + 1, j}, {i, j - 1}};
-
-            for (auto adjacent_point : adjacent_points) {
-                point_queue.push(adjacent_point);
-            }
+            point_queue.push({i - 1, j});
+            point_queue.push({i, j + 1});
+            point_queue.push({i + 1, j});
+            point_queue.push({i, j - 1});
         }
     }
 
@@ -222,7 +217,7 @@ public:
                 if (grid_[i][j] == '1') {
                     island_count++;
 
-                    breadth_first_search({i, j});
+                    breadth_first_search(i, j);
                 }
             }
         }
@@ -233,13 +228,13 @@ public:
 ```
 
 ## JavaScript
-```javascript
+```JavaScript
 let grid
 let pointQueue
 
 var numIslands = function (grid_) {
   grid = grid_
-  pointQueue = new Queue() // https://github.com/datastructures-js/queue
+  pointQueue = new Queue() // github.com/datastructures-js/queue
   let islandCount = 0
 
   grid.forEach((row, i) => {
@@ -275,9 +270,10 @@ function breadthFirstSearch(point) {
 
     grid[i][j] = 'V';
 
-    [[i - 1, j], [i, j + 1], [i + 1, j], [i, j - 1]].forEach(
-      (adjacentPoint) => pointQueue.enqueue(adjacentPoint)
-    )
+    pointQueue.enqueue([i - 1, j])
+    pointQueue.enqueue([i, j + 1])
+    pointQueue.enqueue([i + 1, j])
+    pointQueue.enqueue([i, j - 1])
   }
 }
 ```
@@ -324,10 +320,12 @@ public class Solution
             {
                 continue;
             }
+
             if (j < 0 || j >= grid[0].Length)
             {
                 continue;
             }
+
             if (grid[i][j] != '1')
             {
                 continue;
@@ -335,11 +333,10 @@ public class Solution
 
             grid[i][j] = 'V';
 
-            int[][] adjacentPoints = [[i - 1, j], [i, j + 1], [i + 1, j], [i, j - 1]];
-
-            foreach (var adjacentPoint in adjacentPoints) {
-                pointQueue.Enqueue(adjacentPoint);
-            }
+            pointQueue.Enqueue([i - 1, j]);
+            pointQueue.Enqueue([i, j + 1]);
+            pointQueue.Enqueue([i + 1, j]);
+            pointQueue.Enqueue([i, j - 1]);
         }
     }
 }
@@ -391,11 +388,10 @@ func breadthFirstSearch(point []int) {
 
         grid[i][j] = 'V'
 
-        adjacentPoints := [][]int{{i - 1, j}, {i, j + 1}, {i + 1, j}, {i, j - 1}}
-
-        for _, adjacentPoint := range adjacentPoints {
-            pointQueue.Enqueue(adjacentPoint)
-        }
+        pointQueue.Enqueue([]int{i - 1, j})
+        pointQueue.Enqueue([]int{i, j + 1})
+        pointQueue.Enqueue([]int{i + 1, j})
+        pointQueue.Enqueue([]int{i, j - 1})
     }
 }
 ```
@@ -437,9 +433,10 @@ def breadth_first_search(point)
 
     @grid[i][j] = 'V'
 
-    [[i - 1, j], [i, j + 1], [i + 1, j], [i, j - 1]].each do |point|
-      @point_queue << point
-    end
+    @point_queue << [i - 1, j]
+    @point_queue << [i, j + 1]
+    @point_queue << [i + 1, j]
+    @point_queue << [i, j - 1]
   end
 end
 ```
