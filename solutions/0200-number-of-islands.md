@@ -94,13 +94,11 @@ class Solution:
                 if value == '1':
                     island_count += 1
 
-                    self.depth_first_search((i, j))
+                    self.depth_first_search(i, j)
 
         return island_count
 
-    def depth_first_search(self, point):
-        i, j = point
-
+    def depth_first_search(self, i, j):
         if i < 0 or i >= len(self.grid):
             return
 
@@ -112,11 +110,10 @@ class Solution:
 
         self.grid[i][j] = 'V'
 
-        for adjacent_point in [
-            (i - 1, j), (i, j + 1),
-            (i + 1, j), (i, j - 1),
-        ]:
-            self.depth_first_search(adjacent_point)
+        self.depth_first_search(i - 1, j)
+        self.depth_first_search(i, j + 1)
+        self.depth_first_search(i + 1, j)
+        self.depth_first_search(i, j - 1)
 ```
 
 # Java
@@ -133,7 +130,7 @@ class Solution {
                 if (grid[i][j] == '1') {
                     islandCount++;
 
-                    depthFirstSearch(new int[]{i, j});
+                    depthFirstSearch(i, j);
                 }
             }
         }
@@ -141,10 +138,7 @@ class Solution {
         return islandCount;
     }
 
-    void depthFirstSearch(int[] point) {
-        int i = point[0];
-        int j = point[1];
-
+    void depthFirstSearch(int i, int j) {
         if (i < 0 || i >= grid.length) {
             return;
         }
@@ -159,14 +153,10 @@ class Solution {
 
         grid[i][j] = 'V';
 
-        int[][] adjacentPoints = {
-            {i - 1, j}, {i, j + 1},
-            {i + 1, j}, {i, j - 1}
-        };
-
-        for (var adjacentPoint : adjacentPoints) {
-            depthFirstSearch(adjacentPoint);
-        }
+        depthFirstSearch(i - 1, j);
+        depthFirstSearch(i, j + 1);
+        depthFirstSearch(i + 1, j);
+        depthFirstSearch(i, j - 1);
     }
 }
 ```
@@ -177,32 +167,19 @@ class Solution {
 private:
     vector<vector<char>> grid_;
 
-    void depth_first_search(vector<int> point) {
-        int i = point[0];
-        int j = point[1];
-
-        if (i < 0 || i >= grid_.size()) {
-            return;
-        }
-
-        if (j < 0 || j >= grid_[0].size()) {
-            return;
-        }
-
-        if (grid_[i][j] != '1') {
+    void depth_first_search(int i, int j) {
+        if (i < 0 || i >= grid_.size() || 
+            j < 0 || j >= grid_[0].size() || 
+            grid_[i][j] != '1') {
             return;
         }
 
         grid_[i][j] = 'V';
 
-        vector<vector<int>> adjacent_points = {
-            {i - 1, j}, {i, j + 1},
-            {i + 1, j}, {i, j - 1}
-        };
-
-        for (auto adjacent_point : adjacent_points) {
-            depth_first_search(adjacent_point);
-        }
+        depth_first_search(i - 1, j);
+        depth_first_search(i, j + 1);
+        depth_first_search(i + 1, j);
+        depth_first_search(i, j - 1);
     }
 
 public:
@@ -215,7 +192,7 @@ public:
                 if (grid_[i][j] == '1') {
                     island_count++;
 
-                    depth_first_search({i, j});
+                    depth_first_search(i, j);
                 }
             }
         }
@@ -230,42 +207,41 @@ public:
 let grid
 
 var numIslands = function (grid_) {
-  grid = grid_
-  let islandCount = 0
+   grid = grid_
+   let islandCount = 0
 
-  grid.forEach((row, i) => {
-    row.forEach((item, j) => {
-      if (item === '1') {
-        islandCount++
+   grid.forEach((row, i) => {
+      row.forEach((item, j) => {
+         if (item === '1') {
+            islandCount++
 
-        depthFirstSearch([i, j])
-      }
-    })
-  })
+            depthFirstSearch(i, j)
+         }
+      })
+   })
 
-  return islandCount
+   return islandCount
 };
 
-function depthFirstSearch(point) {
-  const [i, j] = point
+function depthFirstSearch(i, j) {
+   if (i < 0 || i >= grid.length) {
+      return
+   }
 
-  if (i < 0 || i >= grid.length) {
-    return
-  }
+   if (j < 0 || j >= grid[0].length) {
+      return
+   }
 
-  if (j < 0 || j >= grid[0].length) {
-    return
-  }
+   if (grid[i][j] != '1') {
+      return
+   }
 
-  if (grid[i][j] != '1') {
-    return
-  }
+   grid[i][j] = 'V';
 
-  grid[i][j] = 'V';
-
-  [[i - 1, j], [i, j + 1], [i + 1, j], [i, j - 1]].forEach(
-    (adjacentPoint) => depthFirstSearch(adjacentPoint)
-  )
+   depthFirstSearch(i - 1, j)
+   depthFirstSearch(i, j + 1)
+   depthFirstSearch(i + 1, j)
+   depthFirstSearch(i, j - 1)
 }
 ```
 
@@ -288,7 +264,7 @@ public class Solution
                 {
                     islandCount++;
 
-                    depthFirstSearch([i, j]);
+                    depthFirstSearch(i, j);
                 }
             }
         }
@@ -296,11 +272,8 @@ public class Solution
         return islandCount;
     }
 
-    void depthFirstSearch(int[] point)
+    void depthFirstSearch(int i, int j)
     {
-        int i = point[0];
-        int j = point[1];
-
         if (i < 0 || i >= grid.Length)
             return;
 
@@ -312,11 +285,10 @@ public class Solution
 
         grid[i][j] = 'V';
 
-        int[][] adjacentPoints = [[i - 1, j], [i, j + 1], [i + 1, j], [i, j - 1]];
-
-        foreach (var adjacentPoint in adjacentPoints) {
-            depthFirstSearch(adjacentPoint);
-        }
+        depthFirstSearch(i - 1, j);
+        depthFirstSearch(i, j + 1);
+        depthFirstSearch(i + 1, j);
+        depthFirstSearch(i, j - 1);
     }
 }
 ```
@@ -334,7 +306,7 @@ func numIslands(grid_ [][]byte) int {
             if value == '1' {
                 islandCount++
 
-                depthFirstSearch([]int{i, j})
+                depthFirstSearch(i, j)
             }
         }
     }
@@ -342,10 +314,7 @@ func numIslands(grid_ [][]byte) int {
     return islandCount
 }
 
-func depthFirstSearch(point []int) {
-    i := point[0]
-    j := point[1]
-
+func depthFirstSearch(i int, j int) {
     if i < 0 || i >= len(grid) {
         return
     }
@@ -360,54 +329,45 @@ func depthFirstSearch(point []int) {
 
     grid[i][j] = 'V'
 
-    adjacentPoints := [][]int{
-        {i - 1, j}, {i, j + 1},
-        {i + 1, j}, {i, j - 1},
-    }
-
-    for _, adjacentPoint := range adjacentPoints {
-        depthFirstSearch(adjacentPoint)
-    }
+    depthFirstSearch(i - 1, j)
+    depthFirstSearch(i, j + 1)
+    depthFirstSearch(i + 1, j)
+    depthFirstSearch(i, j - 1)
 }
 ```
 
 # Ruby
 ```ruby
 def num_islands(grid)
-  @grid = grid
-  island_count = 0
+   @grid = grid
+   island_count = 0
 
-  @grid.each_with_index do |row, i|
-    row.each_with_index do |value, j|
-      if value == '1'
-        depth_first_search([i, j])
+   @grid.each_with_index do |row, i|
+      row.each_with_index do |value, j|
+         if value == '1'
+            depth_first_search(i, j)
 
-        island_count += 1
+            island_count += 1
+         end
       end
-    end
-  end
+   end
 
-  island_count
+   island_count
 end
 
-def depth_first_search(point)
-  i = point[0]
-  j = point[1]
+def depth_first_search(i, j)
+   return if i < 0 || i >= @grid.size
 
-  return if i < 0 || i >= @grid.size
-  
-  return if j < 0 || j >= @grid[0].size
-  
-  return if @grid[i][j] != '1'
-  
-  @grid[i][j] = 'V'
+   return if j < 0 || j >= @grid[0].size
 
-  [
-    [i - 1, j], [i, j + 1],
-    [i + 1, j], [i, j - 1]
-  ].each do |point|
-    depth_first_search(point)
-  end
+   return if @grid[i][j] != '1'
+
+   @grid[i][j] = 'V'
+
+   depth_first_search(i - 1, j)
+   depth_first_search(i, j + 1)
+   depth_first_search(i + 1, j)
+   depth_first_search(i, j - 1)
 end
 ```
 
