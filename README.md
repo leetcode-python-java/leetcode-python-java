@@ -66,5 +66,6 @@ You can skip the more difficult problems and do them later.
 # Graph Theory
 - [797. All Paths From Source to Target](solutions/0797-all-paths-from-source-to-target.md) was solved in _Python, Java, C++, JavaScript, C#, Go, Ruby_ and **2** solutions.
 - [200. Number of Islands](solutions/0200-number-of-islands.md) was solved in _Python, Java, C++, JavaScript, C#, Go, Ruby_ and **3** solutions.
+- [695. Max Area of Island](solutions/0695-max-area-of-island.md) was solved in _Python, Java, C++, JavaScript, C#, Go, Ruby_.
 
 More LeetCode problems will be added soon...
