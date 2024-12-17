@@ -37,11 +37,11 @@ Output: 3
 # Thoughts
 The island problem can be abstracted into a **graph theory** problem. This is an **undirected graph**:
 
-![](../images/graph_undirected_1.svg)
+![](../../images/graph_undirected_1.svg)
 
 And this graph may have multiple **connected components** (islands):
 
-![](../images/graph_undirected_2.png)
+![](../../images/graph_undirected_2.png)
 
 Finding the number of islands is to find the number of `connected components`.
 
@@ -57,13 +57,13 @@ Walk from one node to the adjacent node until all nodes on the island are visite
 1. Repeat the above two steps until all the lands have been `visited`.
 
 ### Solution 1: 'Depth-First Search' by Recursion
-Please click [Depth-First Search by Recursion Solution](0200-number-of-islands.md) for `200. Number of Islands` to view.
+Please click [Depth-First Search by Recursion Solution](200-number-of-islands.md) for `200. Number of Islands` to view.
 
 ## Solution 2: 'Depth-First Search' by Iteration
-Please click [Depth-First Search by Iteration Solution](0200-number-of-islands-2.md) for `200. Number of Islands` to view.
+Please click [Depth-First Search by Iteration Solution](200-number-of-islands-2.md) for `200. Number of Islands` to view.
 
 ## Solution 3: Breadth-First Search
-![](../images/binary_tree_BFS_1.gif)
+![](../../images/binary_tree_BFS_1.gif)
 
 As shown in the figure above, **breadth-first search** can be thought of as visiting nodes in rounds and rounds.
 It emphasizes first-in-first-out, so a **queue** is needed.

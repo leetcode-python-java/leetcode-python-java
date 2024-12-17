@@ -9,7 +9,7 @@ The `area` of an island is the number of cells with a value `1` in the island.
 Return _the maximum area of an island_ in `grid`. If there is no island, return `0`.
 
 ## Example 1
-![](../images/examples/0695_1.jpg)
+![](../../images/examples/0695_1.jpg)
 ```
 Input: grid = [
     [0,0,1,0,0,0,0,1,0,0,0,0,0],
@@ -40,11 +40,11 @@ Output: 0
 ## Intuition
 The island problem can be abstracted into a **graph theory** problem. This is an **undirected graph**:
 
-![](../images/graph_undirected_1.svg)
+![](../../images/graph_undirected_1.svg)
 
 And this graph may have multiple **connected components** (islands):
 
-![](../images/graph_undirected_2.png)
+![](../../images/graph_undirected_2.png)
 
 Return _the maximum area of an island_ is to return the node count of the largest **connected component**.
 
@@ -61,23 +61,21 @@ Return _the maximum area of an island_ is to return the node count of the larges
 5. At last, return the max land count.
 
 ## Solution 1: 'Depth-First Search' by Recursion
-![](../images/binary_tree_DFS_1.png)
+![](../../images/binary_tree_DFS_1.png)
 
-From this sample code bellow, you can see that starting from a node, through recursive calls, it goes up until it can't go any further, turns right, and continues up. The priority order of directions is `up, right, down, and left`.
-```python
-adjacent_points = [
-   (i - 1, j), # up
-   (i, j + 1), # right
-   (i + 1, j), # down
-   (i, j - 1), # left
-]
+From this sample code bellow, you can see that starting from a node, through recursive calls, it goes up until it can't go any further, turns right, and continues up. The priority order of directions is `up, right, down, left`.
+```java
+depth_first_search(i - 1, j); // up
+depth_first_search(i, j + 1); // right
+depth_first_search(i + 1, j); // down
+depth_first_search(i, j - 1); // left
 ```
 
 ## Solution 2: 'Depth-First Search' by Iteration
-Similar problem is `200. Number of Islands`, please click [Depth-First Search by Iteration Solution](0200-number-of-islands-2.md) for to view.
+Similar problem is `200. Number of Islands`, please click [Depth-First Search by Iteration Solution](200-number-of-islands-2.md) to view.
 
 ## Solution 3: Breadth-First Search
-Similar problem is `200. Number of Islands`, please click [Breadth-First Search Solution](0200-number-of-islands-3.md) to view.
+Similar problem is `200. Number of Islands`, please click [Breadth-First Search Solution](200-number-of-islands-3.md) to view.
 
 ## Complexity
 * Time: `O(n * m)`.

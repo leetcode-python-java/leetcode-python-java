@@ -5,7 +5,7 @@ LeetCode problem link: [42. Trapping Rain Water](https://leetcode.com/problems/t
 Given `n` non-negative integers representing an elevation map where the width of each bar is `1`, compute how much water it can trap after raining.
 
 ### Example 1
-![](../images/examples/0042_1.png)
+![](../../images/examples/0042_1.png)
 ```
 Input: height = [0,1,0,2,1,0,1,3,2,1,2,1]
 Output: 6
@@ -36,14 +36,14 @@ This problem can be solved using **Monotonic Stack**.
     1) The right side (current item) is **no shorter** than the left side (the top of stack).
     2) The right side (current item) is **shorter** than the left side (the top of stack).
 
-![](../images/0042.png)
+![](../../images/0042.png)
 
 Detailed solutions will be given later, and now only the best practices in 7 languages are given.
 
 ### Solution 2
 The `solution 2` will follow **Monotonic Stack**'s common rule: **only calculating when `pop()` is happening**.
 
-Please click [42. Trapping Rain Water (solution 2)](./0042-trapping-rain-water-2.md) to see it.
+Please click [42. Trapping Rain Water (solution 2)](42-trapping-rain-water-2.md) to see it.
 
 ### Complexity
 * Time: `O(n)`.
@@ -108,7 +108,7 @@ class Solution:
         return result
 ```
 
-![](../images/0042.png)
+![](../../images/0042.png)
 
 ## C++
 ```cpp
@@ -174,7 +174,7 @@ var trap = function (heights) {
 };
 ```
 
-![](../images/0042.png)
+![](../../images/0042.png)
 
 ## C#
 ```c#
@@ -246,7 +246,7 @@ func trap(heights []int) int {
 }
 ```
 
-![](../images/0042.png)
+![](../../images/0042.png)
 
 ## Ruby
 ```ruby

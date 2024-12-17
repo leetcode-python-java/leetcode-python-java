@@ -38,7 +38,7 @@ Constraints:
 ```
 
 * This problem is quite difficult if you have not solved similar problems before. So before you start working on this question,
-it is recommended that you first work on another relatively simple question [416. Partition Equal Subset Sum](./0416-partition-equal-subset-sum.md) that is similar to this one.
+it is recommended that you first work on another relatively simple question [416. Partition Equal Subset Sum](416-partition-equal-subset-sum.md) that is similar to this one.
 
 ## Thoughts
 * When we see a set of numbers being used once to obtain another number through some calculation (just like this question), we can consider this to be a `0/1 Knapsack Problem`.

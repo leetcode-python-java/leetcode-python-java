@@ -1,1 +1,0 @@
-../0392-is-subsequence.md

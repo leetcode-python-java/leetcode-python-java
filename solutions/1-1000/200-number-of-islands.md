@@ -37,11 +37,11 @@ Output: 3
 # Thoughts
 The island problem can be abstracted into a **graph theory** problem. This is an **undirected graph**:
 
-![](../images/graph_undirected_1.svg)
+![](../../images/graph_undirected_1.svg)
 
 And this graph may have multiple **connected components** (islands):
 
-![](../images/graph_undirected_2.png)
+![](../../images/graph_undirected_2.png)
 
 Finding the number of islands is to find the number of `connected components`.
 
@@ -57,23 +57,21 @@ Walk from one node to the adjacent node until all nodes on the island are visite
 1. Repeat the above two steps until all the lands have been `visited`.
 
 ## Solution 1: 'Depth-First Search' by Recursion
-![](../images/binary_tree_DFS_1.png)
+![](../../images/binary_tree_DFS_1.png)
 
-From this sample code bellow, you can see that starting from a node, through recursive calls, it goes up until it can't go any further, turns right, and continues up. The priority order of directions is `up, right, down, and left`.
-```python
-adjacent_points = [
-   (i - 1, j), # up
-   (i, j + 1), # right
-   (i + 1, j), # down
-   (i, j - 1), # left
-]
+From this sample code bellow, you can see that starting from a node, through recursive calls, it goes up until it can't go any further, turns right, and continues up. The priority order of directions is `up, right, down, left`.
+```java
+depth_first_search(i - 1, j); // up
+depth_first_search(i, j + 1); // right
+depth_first_search(i + 1, j); // down
+depth_first_search(i, j - 1); // left
 ```
 
 ## Solution 2: 'Depth-First Search' by Iteration
-Please click [Depth-First Search by Iteration Solution](0200-number-of-islands-2.md) for `200. Number of Islands` to view.
+Please click [Depth-First Search by Iteration Solution](200-number-of-islands-2.md) for `200. Number of Islands` to view.
 
 ## Solution 3: Breadth-First Search
-Please click [Breadth-First Search Solution](0200-number-of-islands-3.md) for `200. Number of Islands` to view.
+Please click [Breadth-First Search Solution](200-number-of-islands-3.md) for `200. Number of Islands` to view.
 
 ## Complexity
 * Time: `O(n * m)`.

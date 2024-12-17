@@ -39,7 +39,7 @@ Constraints:
 1 <= stones[i] <= 100
 ```
 
-* Before you start working on this question, it is recommended that you first work on another relatively simple question [416. Partition Equal Subset Sum](./0416-partition-equal-subset-sum.md) that is very similar to this one.
+* Before you start working on this question, it is recommended that you first work on another relatively simple question [416. Partition Equal Subset Sum](../1-1000/416-partition-equal-subset-sum.md) that is very similar to this one.
 Once you have completed `416`, it will be effortless to complete this question.
 
 ## Thoughts
