@@ -203,45 +203,45 @@ public:
 ```
 
 # JavaScript
-```javascript
+```JavaScript
 let grid
 
 var numIslands = function (grid_) {
-   grid = grid_
-   let islandCount = 0
+  grid = grid_
+  let islandCount = 0
 
-   grid.forEach((row, i) => {
-      row.forEach((item, j) => {
-         if (item === '1') {
-            islandCount++
+  grid.forEach((row, i) => {
+    row.forEach((value, j) => {
+      if (value === '1') {
+        islandCount++
 
-            depthFirstSearch(i, j)
-         }
-      })
-   })
+        depthFirstSearch(i, j)
+      }
+    })
+  })
 
-   return islandCount
+  return islandCount
 };
 
 function depthFirstSearch(i, j) {
-   if (i < 0 || i >= grid.length) {
-      return
-   }
+  if (i < 0 || i >= grid.length) {
+    return
+  }
 
-   if (j < 0 || j >= grid[0].length) {
-      return
-   }
+  if (j < 0 || j >= grid[0].length) {
+    return
+  }
 
-   if (grid[i][j] != '1') {
-      return
-   }
+  if (grid[i][j] != '1') {
+    return
+  }
 
-   grid[i][j] = 'V';
+  grid[i][j] = 'V';
 
-   depthFirstSearch(i - 1, j)
-   depthFirstSearch(i, j + 1)
-   depthFirstSearch(i + 1, j)
-   depthFirstSearch(i, j - 1)
+  depthFirstSearch(i - 1, j)
+  depthFirstSearch(i, j + 1)
+  depthFirstSearch(i + 1, j)
+  depthFirstSearch(i, j - 1)
 }
 ```
 
@@ -337,37 +337,37 @@ func depthFirstSearch(i int, j int) {
 ```
 
 # Ruby
-```ruby
+```Ruby
 def num_islands(grid)
-   @grid = grid
-   island_count = 0
+  @grid = grid
+  island_count = 0
 
-   @grid.each_with_index do |row, i|
-      row.each_with_index do |value, j|
-         if value == '1'
-            depth_first_search(i, j)
+  @grid.each_with_index do |row, i|
+    row.each_with_index do |value, j|
+      if value == '1'
+        depth_first_search(i, j)
 
-            island_count += 1
-         end
+        island_count += 1
       end
-   end
+    end
+  end
 
-   island_count
+  island_count
 end
 
 def depth_first_search(i, j)
-   return if i < 0 || i >= @grid.size
+  return if i < 0 || i >= @grid.size
 
-   return if j < 0 || j >= @grid[0].size
+  return if j < 0 || j >= @grid[0].size
 
-   return if @grid[i][j] != '1'
+  return if @grid[i][j] != '1'
 
-   @grid[i][j] = 'V'
+  @grid[i][j] = 'V'
 
-   depth_first_search(i - 1, j)
-   depth_first_search(i, j + 1)
-   depth_first_search(i + 1, j)
-   depth_first_search(i, j - 1)
+  depth_first_search(i - 1, j)
+  depth_first_search(i, j + 1)
+  depth_first_search(i + 1, j)
+  depth_first_search(i, j - 1)
 end
 ```
 
