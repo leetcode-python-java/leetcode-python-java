@@ -67,5 +67,6 @@ You can skip the more difficult problems and do them later.
 - [797. All Paths From Source to Target](solutions/1-1000/797-all-paths-from-source-to-target.md) was solved in _Python, Java, C++, JavaScript, C#, Go, Ruby_ and **2** solutions.
 - [200. Number of Islands](solutions/1-1000/200-number-of-islands.md) was solved in _Python, Java, C++, JavaScript, C#, Go, Ruby_ and **3** solutions.
 - [695. Max Area of Island](solutions/1-1000/695-max-area-of-island.md) was solved in _Python, Java, C++, JavaScript, C#, Go, Ruby_.
+- [827. Making A Large Island](solutions/1-1000/827-making-a-large-island.md) was solved in _Python_.
 
 More LeetCode problems will be added soon...
