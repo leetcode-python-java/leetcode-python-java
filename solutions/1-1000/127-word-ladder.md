@@ -56,24 +56,24 @@ getting `shortest` or `least` of something of a graph, `breadth-first search` wo
 
 ## Complexity
 * Time: `O(n * n)`.
-* Space: `O(n * n)`.
+* Space: `O(n)`.
 
 ## Python
 ```python
 class Solution:
     def __init__(self):
         self.word_set = None
-        self.endWord = None
+        self.end_word = None
         self.queue = deque()
 
-    def ladderLength(self, beginWord: str, endWord: str, wordList: List[str]) -> int:
-        self.endWord = endWord
-        self.word_set = set(wordList)
+    def ladderLength(self, begin_word: str, end_word: str, word_list: List[str]) -> int:
+        self.end_word = end_word
+        self.word_set = set(word_list)
 
-        if endWord not in self.word_set:
+        if end_word not in self.word_set:
             return 0
         
-        self.queue.append((beginWord, 1))
+        self.queue.append((begin_word, 1))
 
         return self.breadth_first_search()
 
@@ -84,7 +84,7 @@ class Solution:
 
             for word in self.word_set:
                 if one_char_different(word, word0):
-                    if word == self.endWord:
+                    if word == self.end_word:
                         return circle + 1
 
                     self.queue.append((word, circle + 1))
