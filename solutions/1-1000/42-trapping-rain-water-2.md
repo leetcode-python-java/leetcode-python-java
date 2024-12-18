@@ -33,7 +33,7 @@ This solution will follow **Monotonic Stack**'s common rule: **only calculating 
 
 This common rule can be applied to calculating result for **most** of the **Monotonic Stack** problems.
 
-![](../../images/0042.png)
+![](../../images/42.png)
 
 ### Solution 1
 Please click [42. Trapping Rain Water (solution 1)](42-trapping-rain-water.md) to see it.
@@ -97,7 +97,7 @@ class Solution:
         return result
 ```
 
-![](../../images/0042.png)
+![](../../images/42.png)
 
 ## C++
 ```cpp
@@ -161,7 +161,7 @@ var trap = function (heights) {
 };
 ```
 
-![](../../images/0042.png)
+![](../../images/42.png)
 
 ## C#
 ```c#
@@ -228,7 +228,7 @@ func trap(heights []int) int {
 }
 ```
 
-![](../../images/0042.png)
+![](../../images/42.png)
 
 ## Ruby
 ```ruby

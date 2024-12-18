@@ -66,6 +66,7 @@ Please click [Depth-First Search by Iteration Solution](200-number-of-islands-2.
 ![](../../images/binary_tree_BFS_1.gif)
 
 As shown in the figure above, **breadth-first search** can be thought of as visiting nodes in rounds and rounds.
+
 It emphasizes first-in-first-out, so a **queue** is needed.
 
 ## Complexity

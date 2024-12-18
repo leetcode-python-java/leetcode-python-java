@@ -35,7 +35,7 @@ Explanation: Can't change any 0 to 1, only one island with area = 4.
 - `grid[i][j]` is either `0` or `1`.
 
 ## Intuition
-This problem is hard. Before solving this problem, you can do the following two problems first.
+This problem is hard. Before solving this problem, you can do the following two problems first:
 
 - [200. Number of Islands](200-number-of-islands.md)
 - [695. Max Area of Island](695-max-area-of-island.md)

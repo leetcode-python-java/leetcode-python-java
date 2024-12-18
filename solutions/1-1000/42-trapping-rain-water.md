@@ -36,7 +36,7 @@ This problem can be solved using **Monotonic Stack**.
     1) The right side (current item) is **no shorter** than the left side (the top of stack).
     2) The right side (current item) is **shorter** than the left side (the top of stack).
 
-![](../../images/0042.png)
+![](../../images/42.png)
 
 Detailed solutions will be given later, and now only the best practices in 7 languages are given.
 
@@ -108,7 +108,7 @@ class Solution:
         return result
 ```
 
-![](../../images/0042.png)
+![](../../images/42.png)
 
 ## C++
 ```cpp
@@ -174,7 +174,7 @@ var trap = function (heights) {
 };
 ```
 
-![](../../images/0042.png)
+![](../../images/42.png)
 
 ## C#
 ```c#
@@ -246,7 +246,7 @@ func trap(heights []int) int {
 }
 ```
 
-![](../../images/0042.png)
+![](../../images/42.png)
 
 ## Ruby
 ```ruby
