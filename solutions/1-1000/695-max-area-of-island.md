@@ -9,7 +9,7 @@ The `area` of an island is the number of cells with a value `1` in the island.
 Return _the maximum area of an island_ in `grid`. If there is no island, return `0`.
 
 ## Example 1
-![](../../images/examples/0695_1.jpg)
+![](../../images/examples/695_1.jpg)
 ```
 Input: grid = [
     [0,0,1,0,0,0,0,1,0,0,0,0,0],

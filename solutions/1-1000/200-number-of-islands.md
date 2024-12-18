@@ -34,7 +34,7 @@ Output: 3
 - `1 <= m, n <= 300`
 - `grid[i][j]` is `'0'` or `'1'`.
 
-# Thoughts
+# Intuition
 The island problem can be abstracted into a **graph theory** problem. This is an **undirected graph**:
 
 ![](../../images/graph_undirected_1.svg)
@@ -47,7 +47,7 @@ Finding the number of islands is to find the number of `connected components`.
 
 Walk from one node to the adjacent node until all nodes on the island are visited.
 
-## Steps
+## Approach
 1. Find the first land.
 1. Starting at the first land, find all the lands of the island.
     * There are two major ways to explore a `connected components` (island): **Breadth-First Search** and **Depth-First Search**.
