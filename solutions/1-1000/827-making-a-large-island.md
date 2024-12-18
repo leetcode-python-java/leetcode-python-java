@@ -49,10 +49,10 @@ And this graph may have multiple **connected components** (islands):
 ![](../../images/graph_undirected_2.png)
 
 ## Approach
-1. Change one node from `0` to `1` to make the largest island means combining the adjacent islands of a `0` nodes.
-1. We can mark an island's lands with one same id (`island_id`), and mark another island's lands with another same id. To mark a land, just change its value to the `island_id`.
-1. Use a `map` (or `array`) to map each `island_id` to its area (`land_count`).
-1. How to calculate the area of an island? See [695. Max Area of Island](695-max-area-of-island.md).
+1. Change one node from `0` to `1` to make the largest island means combining the adjacent islands of a `0` node.
+1. We can mark an island's lands with one same id (`island_id`), and mark another island's lands with another `island_id`. To mark a land, just change its value to the `island_id`.
+1. Use a `map` (or an `array`) to map each `island_id` to its area (`land_count`).
+1. How to calculate the area of an island? Using `Depth-First Search` or `Breadth-First Search`. See [695. Max Area of Island](695-max-area-of-island.md).
 1. Iterate through each `0` (water), then sum the areas (`land_count`) of neighboring islands.
 1. Record the max area and return it.
 
@@ -63,14 +63,12 @@ And this graph may have multiple **connected components** (islands):
 ## Python
 ```python
 class Solution:
-    ISLAND_BASE_ID = 1000000
-
     def __init__(self):
         self.result = 0
         self.grid = None
-        self.island_id = self.ISLAND_BASE_ID
         self.land_count = 0
-        self.land_counts = []
+        self.land_counts = [0, 0] # Since `island_id` starts from 2, the first two records will not be used
+        self.island_id = 2
 
     def largestIsland(self, grid: List[List[int]]) -> int:
         self.grid = grid
@@ -145,7 +143,7 @@ class Solution:
         
         used_island_ids.add(island_id)
         
-        return self.land_counts[island_id - self.ISLAND_BASE_ID]
+        return self.land_counts[island_id]
 ```
 
 ## Java
