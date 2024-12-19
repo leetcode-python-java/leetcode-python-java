@@ -54,7 +54,7 @@ And this graph has only one **connected components** (island).
 ## Approach 2: Depth-First Search the Island (complex way)
 1. Find the first land.
 1. Starting at the first land, find all the lands of the island.
-    * There are two major ways to explore a `connected components` (island): **Depth-First Search** (DFS) and **Breadth-First Search** (BFS).
+    * There are two major ways to explore a `connected component` (island): **Depth-First Search** (DFS) and **Breadth-First Search** (BFS).
     * For **Depth-First Search**, there are two ways to make it: `Recursive` and `Iterative`. Here I will provide the `Recursive` solution.
         * If you want to know **Depth-First Search** `Iterative` solution, please see [200. Number of Islands (Depth-First Search by Iteration)](200-number-of-islands-2.md).
         * If you want to know **Breadth-First Search** solution, please see [200. Number of Islands (Breadth-First Search)](200-number-of-islands-3.md).

@@ -51,7 +51,7 @@ Return _the maximum area of an island_ is to return the vertex count of the larg
 ## Approach
 1. Find the first land.
 2. Starting at the first land, find all the lands of the island.
-    * There are two major ways to explore a `connected components` (island): **Breadth-First Search** and **Depth-First Search**.
+    * There are two major ways to explore a `connected component` (island): **Breadth-First Search** and **Depth-First Search**.
     * For **Depth-First Search**, there are two ways to make it: `Recursive` and `Iterative`. So I will provide 3 solutions in total.
     * When we traverse each `connected components` (island), we can:
         * Mark each found land as `8` which represents `visited`. Visited lands don't need to be visited again.

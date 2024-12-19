@@ -50,7 +50,7 @@ Walk from one vertex (land) to the adjacent vertices until all vertices on the i
 ## Steps
 1. Find the first land.
 1. Starting at the first land, find all the lands of the island.
-    * There are two major ways to explore a `connected components` (island): **Breadth-First Search** and **Depth-First Search**.
+    * There are two major ways to explore a `connected component` (island): **Breadth-First Search** and **Depth-First Search**.
     * For **Depth-First Search**, there are two ways to make it: `Recursive` and `Iterative`. So I will provide 3 solutions in total.
     * Mark each found land as `V` which represents `visited`. Visited lands don't need to be visited again.
 1. After all lands on an island have been visited, look for the next non-visited land.
