@@ -108,7 +108,7 @@ class Solution:
             if self.grid[i][j] != '1':
                 continue
 
-            self.grid[i][j] = 'V'
+            self.grid[i][j] = 'V' # For island problems, its OK to mark visited at this place. For other graph problems, we need to use `visited_vertex_set` and mark visited as soon as enqueuing `vertex_queue`. Because the adjacent veticies could be a lot, and it will cause performance issue.
 
             self.vertex_queue.append((i - 1, j))
             self.vertex_queue.append((i, j + 1))
@@ -159,7 +159,7 @@ class Solution {
                 continue;
             }
 
-            grid[i][j] = 'V';
+            grid[i][j] = 'V'; // For island problems, its OK to mark visited at this place. For other graph problems, we need to use `visited_vertex_set` and mark visited as soon as enqueuing `vertex_queue`. Because the adjacent veticies could be a lot, and it will cause performance issue.
 
             vertexQueue.add(new int[]{i - 1, j});
             vertexQueue.add(new int[]{i, j + 1});
@@ -199,7 +199,7 @@ private:
                 continue;
             }
 
-            grid_[i][j] = 'V';
+            grid_[i][j] = 'V'; // For island problems, its OK to mark visited at this place. For other graph problems, we need to use `visited_vertex_set` and mark visited as soon as enqueuing `vertex_queue`. Because the adjacent veticies could be a lot, and it will cause performance issue.
 
             vertex_queue.push({i - 1, j});
             vertex_queue.push({i, j + 1});
@@ -269,7 +269,7 @@ function breadthFirstSearch(vertex) {
       continue
     }
 
-    grid[i][j] = 'V';
+    grid[i][j] = 'V'; // For island problems, its OK to mark visited at this place. For other graph problems, we need to use `visited_vertex_set` and mark visited as soon as enqueuing `vertex_queue`. Because the adjacent veticies could be a lot, and it will cause performance issue.
 
     vertexQueue.enqueue([i - 1, j])
     vertexQueue.enqueue([i, j + 1])
@@ -332,7 +332,7 @@ public class Solution
                 continue;
             }
 
-            grid[i][j] = 'V';
+            grid[i][j] = 'V'; // For island problems, its OK to mark visited at this place. For other graph problems, we need to use `visited_vertex_set` and mark visited as soon as enqueuing `vertex_queue`. Because the adjacent veticies could be a lot, and it will cause performance issue.
 
             vertexQueue.Enqueue([i - 1, j]);
             vertexQueue.Enqueue([i, j + 1]);
@@ -387,7 +387,7 @@ func breadthFirstSearch(vertex []int) {
             continue
         }
 
-        grid[i][j] = 'V'
+        grid[i][j] = 'V' // For island problems, its OK to mark visited at this place. For other graph problems, we need to use `visited_vertex_set` and mark visited as soon as enqueuing `vertex_queue`. Because the adjacent veticies could be a lot, and it will cause performance issue.
 
         vertexQueue.Enqueue([]int{i - 1, j})
         vertexQueue.Enqueue([]int{i, j + 1})
@@ -432,7 +432,7 @@ def breadth_first_search(vertex)
     
     next if @grid[i][j] != '1'
 
-    @grid[i][j] = 'V'
+    @grid[i][j] = 'V' # For island problems, its OK to mark visited at this place. For other graph problems, we need to use `visited_vertex_set` and mark visited as soon as enqueuing `vertex_queue`. Because the adjacent veticies could be a lot, and it will cause performance issue.
 
     @vertex_queue << [i - 1, j]
     @vertex_queue << [i, j + 1]

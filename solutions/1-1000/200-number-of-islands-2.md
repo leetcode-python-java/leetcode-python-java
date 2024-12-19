@@ -118,7 +118,7 @@ class Solution:
             if self.grid[i][j] != '1':
                 continue
 
-            self.grid[i][j] = 'V'
+            self.grid[i][j] = 'V' # For island problems, its OK to mark visited at this place. For other graph problems, we need to use `visited_vertex_set` and mark visited as soon as pushing `vertex_stack`. Because the adjacent veticies could be a lot, and it will cause performance issue.
 
             self.vertex_stack.append((i, j - 1))
             self.vertex_stack.append((i + 1, j))
@@ -169,7 +169,7 @@ class Solution {
                 continue;
             }
 
-            grid[i][j] = 'V';
+            grid[i][j] = 'V'; // For island problems, its OK to mark visited at this place. For other graph problems, we need to use `visited_vertex_set` and mark visited as soon as pushing `vertex_stack`. Because the adjacent veticies could be a lot, and it will cause performance issue.
 
             vertexStack.push(new int[]{i, j - 1});
             vertexStack.push(new int[]{i + 1, j});
@@ -209,7 +209,7 @@ private:
                 continue;
             }
 
-            grid_[i][j] = 'V';
+            grid_[i][j] = 'V'; // For island problems, its OK to mark visited at this place. For other graph problems, we need to use `visited_vertex_set` and mark visited as soon as pushing `vertex_stack`. Because the adjacent veticies could be a lot, and it will cause performance issue.
 
             vertex_stack.push({i, j - 1});
             vertex_stack.push({i + 1, j});
@@ -279,7 +279,7 @@ function depthFirstSearch(vertex) {
       continue
     }
 
-    grid[i][j] = 'V';
+    grid[i][j] = 'V'; // For island problems, its OK to mark visited at this place. For other graph problems, we need to use `visited_vertex_set` and mark visited as soon as pushing `vertex_stack`. Because the adjacent veticies could be a lot, and it will cause performance issue.
 
     vertexStack.push([i, j - 1])
     vertexStack.push([i + 1, j])
@@ -340,7 +340,7 @@ public class Solution
                 continue;
             }
 
-            grid[i][j] = 'V';
+            grid[i][j] = 'V'; // For island problems, its OK to mark visited at this place. For other graph problems, we need to use `visited_vertex_set` and mark visited as soon as pushing `vertex_stack`. Because the adjacent veticies could be a lot, and it will cause performance issue.
 
             vertexStack.Push([i, j - 1]);
             vertexStack.Push([i + 1, j]);
@@ -395,7 +395,7 @@ func depthFirstSearch(vertex []int) {
             continue
         }
 
-        grid[i][j] = 'V'
+        grid[i][j] = 'V' // For island problems, its OK to mark visited at this place. For other graph problems, we need to use `visited_vertex_set` and mark visited as soon as pushing `vertex_stack`. Because the adjacent veticies could be a lot, and it will cause performance issue.
 
         vertexStack.Push([]int{i, j - 1})
         vertexStack.Push([]int{i + 1, j})
@@ -440,7 +440,7 @@ def depth_first_search(vertex)
     
     next if @grid[i][j] != '1'
 
-    @grid[i][j] = 'V'
+    @grid[i][j] = 'V' # For island problems, its OK to mark visited at this place. For other graph problems, we need to use `visited_vertex_set` and mark visited as soon as pushing `vertex_stack`. Because the adjacent veticies could be a lot, and it will cause performance issue.
 
     @vertex_stack << [i, j - 1]
     @vertex_stack << [i + 1, j]
