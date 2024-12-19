@@ -58,7 +58,7 @@ And this graph may have multiple **connected components** (islands):
 ![](../../images/graph_undirected_2.png)
 
 ## Approach
-1. Change one node from `0` to `1` to make the largest island means combining the adjacent islands of a `0` node.
+1. Change one vertex from `0` to `1` to make the largest island means combining the adjacent islands of a `0` vertex.
 1. We can mark an island's lands with one same id (`island_id`), and mark another island's lands with another `island_id`. To mark a land, just change its value to the `island_id`.
 1. Use a `map` (or an `array`) to map each `island_id` to its area (`land_count`).
 1. How to calculate the area of an island? Using `Depth-First Search` or `Breadth-First Search`. See [695. Max Area of Island](695-max-area-of-island.md).

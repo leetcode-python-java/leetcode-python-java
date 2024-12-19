@@ -45,7 +45,7 @@ And this graph may have multiple **connected components** (islands):
 
 Finding the number of islands is to find the number of `connected components`.
 
-Walk from one node to the adjacent node until all nodes on the island are visited.
+Walk from one vertex (land) to the adjacent vertices until all vertices on the island are visited.
 
 ## Steps
 1. Find the first land.
@@ -65,7 +65,7 @@ Please click [Depth-First Search by Iteration Solution](200-number-of-islands-2.
 ## Solution 3: Breadth-First Search
 ![](../../images/binary_tree_BFS_1.gif)
 
-As shown in the figure above, **breadth-first search** can be thought of as visiting nodes in rounds and rounds.
+As shown in the figure above, **breadth-first search** can be thought of as visiting vertices in rounds and rounds.
 
 It emphasizes first-in-first-out, so a **queue** is needed.
 
@@ -78,7 +78,7 @@ It emphasizes first-in-first-out, so a **queue** is needed.
 class Solution:
     def __init__(self):
         self.grid = None
-        self.point_queue = deque()
+        self.vertex_queue = deque()
 
     def numIslands(self, grid: List[List[str]]) -> int:
         island_count = 0
@@ -93,11 +93,11 @@ class Solution:
 
         return island_count
 
-    def breadth_first_search(self, point):
-        self.point_queue.append(point)
+    def breadth_first_search(self, vertex):
+        self.vertex_queue.append(vertex)
 
-        while self.point_queue:
-            i, j = self.point_queue.popleft()
+        while self.vertex_queue:
+            i, j = self.vertex_queue.popleft()
 
             if i < 0 or i >= len(self.grid):
                 continue
@@ -110,16 +110,16 @@ class Solution:
 
             self.grid[i][j] = 'V'
 
-            self.point_queue.append((i - 1, j))
-            self.point_queue.append((i, j + 1))
-            self.point_queue.append((i + 1, j))
-            self.point_queue.append((i, j - 1))
+            self.vertex_queue.append((i - 1, j))
+            self.vertex_queue.append((i, j + 1))
+            self.vertex_queue.append((i + 1, j))
+            self.vertex_queue.append((i, j - 1))
 ```
 
 ## Java
 ```java
 class Solution {
-    Queue<int[]> pointQueue = new ArrayDeque<>();
+    Queue<int[]> vertexQueue = new ArrayDeque<>();
     char[][] grid;
 
     public int numIslands(char[][] grid) {
@@ -139,13 +139,13 @@ class Solution {
         return islandCount;
     }
 
-    void breadthFirstSearch(int[] point) {
-        pointQueue.add(point);
+    void breadthFirstSearch(int[] vertex) {
+        vertexQueue.add(vertex);
 
-        while (!pointQueue.isEmpty()) {
-            point = pointQueue.poll();
-            int i = point[0];
-            int j = point[1];
+        while (!vertexQueue.isEmpty()) {
+            vertex = vertexQueue.poll();
+            int i = vertex[0];
+            int j = vertex[1];
 
             if (i < 0 || i >= grid.length) {
                 continue;
@@ -161,10 +161,10 @@ class Solution {
 
             grid[i][j] = 'V';
 
-            pointQueue.add(new int[]{i - 1, j});
-            pointQueue.add(new int[]{i, j + 1});
-            pointQueue.add(new int[]{i + 1, j});
-            pointQueue.add(new int[]{i, j - 1});
+            vertexQueue.add(new int[]{i - 1, j});
+            vertexQueue.add(new int[]{i, j + 1});
+            vertexQueue.add(new int[]{i + 1, j});
+            vertexQueue.add(new int[]{i, j - 1});
         }
     }
 }
@@ -175,17 +175,17 @@ class Solution {
 class Solution {
 private:
     vector<vector<char>> grid_;
-    queue<pair<int, int>> point_queue;
+    queue<pair<int, int>> vertex_queue;
 
     void breadth_first_search(int i1, int j1) {
-        point_queue.push({i1, j1});
+        vertex_queue.push({i1, j1});
 
-        while (!point_queue.empty()) {
-            pair<int, int> point = point_queue.front();
-            point_queue.pop();
+        while (!vertex_queue.empty()) {
+            pair<int, int> vertex = vertex_queue.front();
+            vertex_queue.pop();
 
-            int i = point.first;
-            int j = point.second;
+            int i = vertex.first;
+            int j = vertex.second;
 
             if (i < 0 || i >= grid_.size()) {
                 continue;
@@ -201,10 +201,10 @@ private:
 
             grid_[i][j] = 'V';
 
-            point_queue.push({i - 1, j});
-            point_queue.push({i, j + 1});
-            point_queue.push({i + 1, j});
-            point_queue.push({i, j - 1});
+            vertex_queue.push({i - 1, j});
+            vertex_queue.push({i, j + 1});
+            vertex_queue.push({i + 1, j});
+            vertex_queue.push({i, j - 1});
         }
     }
 
@@ -231,11 +231,11 @@ public:
 ## JavaScript
 ```JavaScript
 let grid
-let pointQueue
+let vertexQueue
 
 var numIslands = function (grid_) {
   grid = grid_
-  pointQueue = new Queue() // github.com/datastructures-js/queue
+  vertexQueue = new Queue() // github.com/datastructures-js/queue
   let islandCount = 0
 
   grid.forEach((row, i) => {
@@ -251,11 +251,11 @@ var numIslands = function (grid_) {
   return islandCount
 };
 
-function breadthFirstSearch(point) {
-  pointQueue.enqueue(point)
+function breadthFirstSearch(vertex) {
+  vertexQueue.enqueue(vertex)
 
-  while (!pointQueue.isEmpty()) {
-    const [i, j] = pointQueue.dequeue()
+  while (!vertexQueue.isEmpty()) {
+    const [i, j] = vertexQueue.dequeue()
 
     if (i < 0 || i >= grid.length) {
       continue
@@ -271,10 +271,10 @@ function breadthFirstSearch(point) {
 
     grid[i][j] = 'V';
 
-    pointQueue.enqueue([i - 1, j])
-    pointQueue.enqueue([i, j + 1])
-    pointQueue.enqueue([i + 1, j])
-    pointQueue.enqueue([i, j - 1])
+    vertexQueue.enqueue([i - 1, j])
+    vertexQueue.enqueue([i, j + 1])
+    vertexQueue.enqueue([i + 1, j])
+    vertexQueue.enqueue([i, j - 1])
   }
 }
 ```
@@ -283,7 +283,7 @@ function breadthFirstSearch(point) {
 ```c#
 public class Solution
 {
-    Queue<int[]> pointQueue = new Queue<int[]>();
+    Queue<int[]> vertexQueue = new Queue<int[]>();
     char[][] grid;
 
     public int NumIslands(char[][] grid)
@@ -307,15 +307,15 @@ public class Solution
         return islandCount;
     }
 
-    void breadthFirstSearch(int[] point)
+    void breadthFirstSearch(int[] vertex)
     {
-        pointQueue.Enqueue(point);
+        vertexQueue.Enqueue(vertex);
 
-        while (pointQueue.Count > 0)
+        while (vertexQueue.Count > 0)
         {
-            point = pointQueue.Dequeue();
-            int i = point[0];
-            int j = point[1];
+            vertex = vertexQueue.Dequeue();
+            int i = vertex[0];
+            int j = vertex[1];
 
             if (i < 0 || i >= grid.Length)
             {
@@ -334,10 +334,10 @@ public class Solution
 
             grid[i][j] = 'V';
 
-            pointQueue.Enqueue([i - 1, j]);
-            pointQueue.Enqueue([i, j + 1]);
-            pointQueue.Enqueue([i + 1, j]);
-            pointQueue.Enqueue([i, j - 1]);
+            vertexQueue.Enqueue([i - 1, j]);
+            vertexQueue.Enqueue([i, j + 1]);
+            vertexQueue.Enqueue([i + 1, j]);
+            vertexQueue.Enqueue([i, j - 1]);
         }
     }
 }
@@ -346,11 +346,11 @@ public class Solution
 ## Go
 ```go
 var grid [][]byte
-var pointQueue = linkedlistqueue.New()
+var vertexQueue = linkedlistqueue.New()
 
 func numIslands(grid_ [][]byte) int {
     grid = grid_
-    pointQueue.Clear()
+    vertexQueue.Clear()
     islandCount := 0
 
     for i, row := range grid {
@@ -366,14 +366,14 @@ func numIslands(grid_ [][]byte) int {
     return islandCount
 }
 
-func breadthFirstSearch(point []int) {
-    pointQueue.Enqueue(point)
+func breadthFirstSearch(vertex []int) {
+    vertexQueue.Enqueue(vertex)
 
-    for !pointQueue.Empty() {
-        point, _ := pointQueue.Dequeue();
+    for !vertexQueue.Empty() {
+        vertex, _ := vertexQueue.Dequeue();
 
-        i := point.([]int)[0]
-        j := point.([]int)[1]
+        i := vertex.([]int)[0]
+        j := vertex.([]int)[1]
 
         if i < 0 || i >= len(grid) {
             continue
@@ -389,10 +389,10 @@ func breadthFirstSearch(point []int) {
 
         grid[i][j] = 'V'
 
-        pointQueue.Enqueue([]int{i - 1, j})
-        pointQueue.Enqueue([]int{i, j + 1})
-        pointQueue.Enqueue([]int{i + 1, j})
-        pointQueue.Enqueue([]int{i, j - 1})
+        vertexQueue.Enqueue([]int{i - 1, j})
+        vertexQueue.Enqueue([]int{i, j + 1})
+        vertexQueue.Enqueue([]int{i + 1, j})
+        vertexQueue.Enqueue([]int{i, j - 1})
     }
 }
 ```
@@ -401,7 +401,7 @@ func breadthFirstSearch(point []int) {
 ```ruby
 def num_islands(grid)
   @grid = grid
-  @point_queue = Containers::Queue.new
+  @vertex_queue = Containers::Queue.new
   island_count = 0
 
   @grid.each_with_index do |row, i|
@@ -417,14 +417,14 @@ def num_islands(grid)
   island_count
 end
 
-def breadth_first_search(point)
-  @point_queue.push(point)
+def breadth_first_search(vertex)
+  @vertex_queue.push(vertex)
 
-  while !@point_queue.empty?
-    point = @point_queue.pop
+  while !@vertex_queue.empty?
+    vertex = @vertex_queue.pop
 
-    i = point[0]
-    j = point[1]
+    i = vertex[0]
+    j = vertex[1]
 
     next if i < 0 || i >= @grid.size
     
@@ -434,10 +434,10 @@ def breadth_first_search(point)
 
     @grid[i][j] = 'V'
 
-    @point_queue << [i - 1, j]
-    @point_queue << [i, j + 1]
-    @point_queue << [i + 1, j]
-    @point_queue << [i, j - 1]
+    @vertex_queue << [i - 1, j]
+    @vertex_queue << [i, j + 1]
+    @vertex_queue << [i + 1, j]
+    @vertex_queue << [i, j - 1]
   end
 end
 ```

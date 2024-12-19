@@ -45,7 +45,7 @@ And this graph may have multiple **connected components** (islands):
 
 Finding the number of islands is to find the number of `connected components`.
 
-Walk from one node to the adjacent node until all nodes on the island are visited.
+Walk from one vertex (land) to the adjacent vertices until all vertices on the island are visited.
 
 ## Steps
 1. Find the first land.
@@ -68,12 +68,12 @@ The benefit of using iteration is better program performance. After all, recursi
 
 Maintaining a stack by yourself can accomplish the same function as recursive calls.
 
-From this sample code bellow, you can see that starting from a node, through recursive calls, it goes up until it can't go any further, turns right, and continues up. The priority order of directions is `up, right, down, left`.
+From this sample code bellow, you can see that starting from a vertex, through recursive calls, it goes up until it can't go any further, turns right, and continues up. The priority order of directions is `up, right, down, left`.
 ```java
-pointStack.push({i, j - 1}); // left
-pointStack.push({i + 1, j}); // down
-pointStack.push({i, j + 1}); // right
-pointStack.push({i - 1, j}); // up
+vertexStack.push({i, j - 1}); // left
+vertexStack.push({i + 1, j}); // down
+vertexStack.push({i, j + 1}); // right
+vertexStack.push({i - 1, j}); // up
 ```
 
 ## Solution 3: Breadth-First Search
@@ -88,7 +88,7 @@ Please click [Breadth-First Search Solution](200-number-of-islands-3.md) for `20
 class Solution:
     def __init__(self):
         self.grid = None
-        self.point_stack = []
+        self.vertex_stack = []
 
     def numIslands(self, grid: List[List[str]]) -> int:
         island_count = 0
@@ -103,11 +103,11 @@ class Solution:
 
         return island_count
 
-    def depth_first_search(self, point):
-        self.point_stack.append(point)
+    def depth_first_search(self, vertex):
+        self.vertex_stack.append(vertex)
 
-        while self.point_stack:
-            i, j = self.point_stack.pop()
+        while self.vertex_stack:
+            i, j = self.vertex_stack.pop()
 
             if i < 0 or i >= len(self.grid):
                 continue
@@ -120,16 +120,16 @@ class Solution:
 
             self.grid[i][j] = 'V'
 
-            self.point_stack.append((i, j - 1))
-            self.point_stack.append((i + 1, j))
-            self.point_stack.append((i, j + 1))
-            self.point_stack.append((i - 1, j))
+            self.vertex_stack.append((i, j - 1))
+            self.vertex_stack.append((i + 1, j))
+            self.vertex_stack.append((i, j + 1))
+            self.vertex_stack.append((i - 1, j))
 ```
 
 # Java
 ```java
 class Solution {
-    Stack<int[]> pointStack = new Stack<>();
+    Stack<int[]> vertexStack = new Stack<>();
     char[][] grid;
 
     public int numIslands(char[][] grid) {
@@ -149,13 +149,13 @@ class Solution {
         return islandCount;
     }
 
-    void depthFirstSearch(int[] point) {
-        pointStack.push(point);
+    void depthFirstSearch(int[] vertex) {
+        vertexStack.push(vertex);
 
-        while (!pointStack.empty()) {
-            point = pointStack.pop();
-            int i = point[0];
-            int j = point[1];
+        while (!vertexStack.empty()) {
+            vertex = vertexStack.pop();
+            int i = vertex[0];
+            int j = vertex[1];
 
             if (i < 0 || i >= grid.length) {
                 continue;
@@ -171,10 +171,10 @@ class Solution {
 
             grid[i][j] = 'V';
 
-            pointStack.push(new int[]{i, j - 1});
-            pointStack.push(new int[]{i + 1, j});
-            pointStack.push(new int[]{i, j + 1});
-            pointStack.push(new int[]{i - 1, j});
+            vertexStack.push(new int[]{i, j - 1});
+            vertexStack.push(new int[]{i + 1, j});
+            vertexStack.push(new int[]{i, j + 1});
+            vertexStack.push(new int[]{i - 1, j});
         }
     }
 }
@@ -185,17 +185,17 @@ class Solution {
 class Solution {
 private:
     vector<vector<char>> grid_;
-    stack<pair<int, int>> point_stack;
+    stack<pair<int, int>> vertex_stack;
 
     void depth_first_search(int i1, int j1) {
-        point_stack.push({i1, j1});
+        vertex_stack.push({i1, j1});
 
-        while (!point_stack.empty()) {
-            pair<int, int> point = point_stack.top();
-            point_stack.pop();
+        while (!vertex_stack.empty()) {
+            pair<int, int> vertex = vertex_stack.top();
+            vertex_stack.pop();
 
-            int i = point.first;
-            int j = point.second;
+            int i = vertex.first;
+            int j = vertex.second;
 
             if (i < 0 || i >= grid_.size()) {
                 continue;
@@ -211,10 +211,10 @@ private:
 
             grid_[i][j] = 'V';
 
-            point_stack.push({i, j - 1});
-            point_stack.push({i + 1, j});
-            point_stack.push({i, j + 1});
-            point_stack.push({i - 1, j});
+            vertex_stack.push({i, j - 1});
+            vertex_stack.push({i + 1, j});
+            vertex_stack.push({i, j + 1});
+            vertex_stack.push({i - 1, j});
         }
     }
 
@@ -241,11 +241,11 @@ public:
 # JavaScript
 ```JavaScript
 let grid
-let pointStack
+let vertexStack
 
 var numIslands = function (grid_) {
   grid = grid_
-  pointStack = []
+  vertexStack = []
   let islandCount = 0
 
   grid.forEach((row, i) => {
@@ -261,11 +261,11 @@ var numIslands = function (grid_) {
   return islandCount
 };
 
-function depthFirstSearch(point) {
-  pointStack.push(point)
+function depthFirstSearch(vertex) {
+  vertexStack.push(vertex)
 
-  while (pointStack.length > 0) {
-    const [i, j] = pointStack.pop()
+  while (vertexStack.length > 0) {
+    const [i, j] = vertexStack.pop()
 
     if (i < 0 || i >= grid.length) {
       continue
@@ -281,10 +281,10 @@ function depthFirstSearch(point) {
 
     grid[i][j] = 'V';
 
-    pointStack.push([i, j - 1])
-    pointStack.push([i + 1, j])
-    pointStack.push([i, j + 1])
-    pointStack.push([i - 1, j])
+    vertexStack.push([i, j - 1])
+    vertexStack.push([i + 1, j])
+    vertexStack.push([i, j + 1])
+    vertexStack.push([i - 1, j])
   }
 }
 ```
@@ -293,7 +293,7 @@ function depthFirstSearch(point) {
 ```c#
 public class Solution
 {
-    Stack<int[]> pointStack = new Stack<int[]>();
+    Stack<int[]> vertexStack = new Stack<int[]>();
     char[][] grid;
 
     public int NumIslands(char[][] grid)
@@ -317,15 +317,15 @@ public class Solution
         return islandCount;
     }
 
-    void depthFirstSearch(int[] point)
+    void depthFirstSearch(int[] vertex)
     {
-        pointStack.Push(point);
+        vertexStack.Push(vertex);
 
-        while (pointStack.Count > 0)
+        while (vertexStack.Count > 0)
         {
-            point = pointStack.Pop();
-            int i = point[0];
-            int j = point[1];
+            vertex = vertexStack.Pop();
+            int i = vertex[0];
+            int j = vertex[1];
 
             if (i < 0 || i >= grid.Length)
             {
@@ -342,10 +342,10 @@ public class Solution
 
             grid[i][j] = 'V';
 
-            pointStack.Push([i, j - 1]);
-            pointStack.Push([i + 1, j]);
-            pointStack.Push([i, j + 1]);
-            pointStack.Push([i - 1, j]);
+            vertexStack.Push([i, j - 1]);
+            vertexStack.Push([i + 1, j]);
+            vertexStack.Push([i, j + 1]);
+            vertexStack.Push([i - 1, j]);
         }
     }
 }
@@ -354,11 +354,11 @@ public class Solution
 # Go
 ```go
 var grid [][]byte
-var pointStack = arraystack.New()
+var vertexStack = arraystack.New()
 
 func numIslands(grid_ [][]byte) int {
     grid = grid_
-    pointStack.Clear()
+    vertexStack.Clear()
     islandCount := 0
 
     for i, row := range grid {
@@ -374,14 +374,14 @@ func numIslands(grid_ [][]byte) int {
     return islandCount
 }
 
-func depthFirstSearch(point []int) {
-    pointStack.Push(point)
+func depthFirstSearch(vertex []int) {
+    vertexStack.Push(vertex)
 
-    for !pointStack.Empty() {
-        point, _ := pointStack.Pop();
+    for !vertexStack.Empty() {
+        vertex, _ := vertexStack.Pop();
 
-        i := point.([]int)[0]
-        j := point.([]int)[1]
+        i := vertex.([]int)[0]
+        j := vertex.([]int)[1]
 
         if i < 0 || i >= len(grid) {
             continue
@@ -397,10 +397,10 @@ func depthFirstSearch(point []int) {
 
         grid[i][j] = 'V'
 
-        pointStack.Push([]int{i, j - 1})
-        pointStack.Push([]int{i + 1, j})
-        pointStack.Push([]int{i, j + 1})
-        pointStack.Push([]int{i - 1, j})
+        vertexStack.Push([]int{i, j - 1})
+        vertexStack.Push([]int{i + 1, j})
+        vertexStack.Push([]int{i, j + 1})
+        vertexStack.Push([]int{i - 1, j})
     }
 }
 ```
@@ -409,7 +409,7 @@ func depthFirstSearch(point []int) {
 ```ruby
 def num_islands(grid)
   @grid = grid
-  @point_stack = []
+  @vertex_stack = []
   island_count = 0
 
   @grid.each_with_index do |row, i|
@@ -425,14 +425,14 @@ def num_islands(grid)
   island_count
 end
 
-def depth_first_search(point)
-  @point_stack << point
+def depth_first_search(vertex)
+  @vertex_stack << vertex
 
-  while !@point_stack.empty?
-    point = @point_stack.pop
+  while !@vertex_stack.empty?
+    vertex = @vertex_stack.pop
 
-    i = point[0]
-    j = point[1]
+    i = vertex[0]
+    j = vertex[1]
 
     next if i < 0 || i >= @grid.size
     
@@ -442,10 +442,10 @@ def depth_first_search(point)
 
     @grid[i][j] = 'V'
 
-    @point_stack << [i, j - 1]
-    @point_stack << [i + 1, j]
-    @point_stack << [i, j + 1]
-    @point_stack << [i - 1, j]
+    @vertex_stack << [i, j - 1]
+    @vertex_stack << [i + 1, j]
+    @vertex_stack << [i, j + 1]
+    @vertex_stack << [i - 1, j]
   end
 end
 ```

@@ -46,7 +46,7 @@ And this graph may have multiple **connected components** (islands):
 
 ![](../../images/graph_undirected_2.png)
 
-Return _the maximum area of an island_ is to return the node count of the largest **connected component**.
+Return _the maximum area of an island_ is to return the vertex count of the largest **connected component**.
 
 ## Approach
 1. Find the first land.
@@ -63,7 +63,7 @@ Return _the maximum area of an island_ is to return the node count of the larges
 ## Solution 1: 'Depth-First Search' by Recursion
 ![](../../images/binary_tree_DFS_1.png)
 
-From this sample code bellow, you can see that starting from a node, through recursive calls, it goes up until it can't go any further, turns right, and continues up. The priority order of directions is `up, right, down, left`.
+From this sample code bellow, you can see that starting from a vertex, through recursive calls, it goes up until it can't go any further, turns right, and continues up. The priority order of directions is `up, right, down, left`.
 ```java
 depth_first_search(i - 1, j); // up
 depth_first_search(i, j + 1); // right

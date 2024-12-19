@@ -51,7 +51,7 @@ The island problem can be abstracted into a **graph theory** problem. This is an
 
 And this graph has only one **connected components** (island).
 
-## Approach 2: Depth-First Search the Island
+## Approach 2: Depth-First Search the Island (complex way)
 1. Find the first land.
 1. Starting at the first land, find all the lands of the island.
     * There are two major ways to explore a `connected components` (island): **Depth-First Search** (DFS) and **Breadth-First Search** (BFS).
@@ -105,7 +105,7 @@ class Solution:
         return 0
 ```
 
-### Solution 2: Depth-First Search the Island
+### Solution 2: Depth-First Search the Island (complex way)
 ```python
 class Solution:
     def __init__(self):

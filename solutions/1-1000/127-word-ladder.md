@@ -45,7 +45,7 @@ The **word transformation sequence** problem can be abstracted into a **graph th
 ### Breadth-First Search
 ![](../../images/binary_tree_BFS_1.gif)
 
-* As shown in the figure above, **breadth-first search** can be thought of as visiting nodes in rounds and rounds. Actually, whenever you see a question is about
+* As shown in the figure above, **breadth-first search** can be thought of as visiting vertices in rounds and rounds. Actually, whenever you see a question is about
 getting `shortest` or `least` of something of a graph, `breadth-first search` would probably help.
 
 * `breadth-first search` emphasizes first-in-first-out, so a **queue** is needed.

@@ -45,7 +45,7 @@ And this graph may have multiple **connected components** (islands):
 
 Finding the number of islands is to find the number of `connected components`.
 
-Walk from one node to the adjacent node until all nodes on the island are visited.
+Walk from one vertex (land) to the adjacent vertices until all vertices on the island are visited.
 
 ## Approach
 1. Find the first land.
@@ -59,7 +59,7 @@ Walk from one node to the adjacent node until all nodes on the island are visite
 ## Solution 1: 'Depth-First Search' by Recursion
 ![](../../images/binary_tree_DFS_1.png)
 
-From this sample code bellow, you can see that starting from a node, through recursive calls, it goes up until it can't go any further, turns right, and continues up. The priority order of directions is `up, right, down, left`.
+From this sample code bellow, you can see that starting from a vertex, through recursive calls, it goes up until it can't go any further, turns right, and continues up. The priority order of directions is `up, right, down, left`.
 ```java
 depth_first_search(i - 1, j); // up
 depth_first_search(i, j + 1); // right
