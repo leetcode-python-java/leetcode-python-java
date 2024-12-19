@@ -70,5 +70,6 @@ You can skip the more difficult problems and do them later.
 - [695. Max Area of Island](solutions/1-1000/695-max-area-of-island.md) was solved in _Python, Java, C++, JavaScript, C#, Go, Ruby_.
 - [827. Making A Large Island](solutions/1-1000/827-making-a-large-island.md) was solved in _Python_.
 - [127. Word Ladder](solutions/1-1000/127-word-ladder.md) was solved in _Python_.
+- [1971. Find if Path Exists in Graph](solutions/1001-2000/1971-find-if-path-exists-in-graph.md) was solved in _Python_.
 
 More LeetCode problems will be added soon...
