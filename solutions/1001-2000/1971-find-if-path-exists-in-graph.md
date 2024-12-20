@@ -40,14 +40,11 @@ Explanation: There is no path from vertex 0 to vertex 5.
 Please see [1971. Find if Path Exists in Graph (UnionFind Solution)](1971-find-if-path-exists-in-graph-2.md).
 
 ## Intuition
-The island problem can be abstracted into a **graph theory** problem. This is an **undirected graph**:
-
-![](../../images/graph_undirected_1.svg)
-
-And this graph may have multiple **connected components**. Initially, we start from `source` vertex which belongs to one of the `connected components`. 
+This graph may have multiple **connected components**. 
 
 ![](../../images/graph_undirected_2.png)
 
+Initially, we start from `source` vertex which belongs to one of the `connected components`.
 We need to find if there is a path from `source` to `destination`. This question is equivalent to determine if `source` and `destination` vertices belong to the same `connected component`.
 
 ### Breadth-First Search
