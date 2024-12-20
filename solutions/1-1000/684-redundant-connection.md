@@ -32,7 +32,9 @@ Output: [1,4]
 - The given graph is connected.
 
 ## Intuition
-- This undirected graph has only **one** **connected component**, which is a tree.
+- In graph theory, a tree is an _undirected graph_ in which any two vertices are connected by exactly one path, or equivalently a **connected acyclic undirected graph**. Like this:
+![A labeled tree with six vertices and five edges.](../../images/graph_tree_1.png)
+
 - When an edge is added to the graph, its two nodes are also added to the graph.
 - If the two nodes are already in the graph, then they must be on the same tree. At this time, a cycle is bound to be formed.
 
@@ -44,9 +46,9 @@ Output: [1,4]
 
 ### 'UnionFind' algorithm
 - `UnionFind` algorithm typically has three methods:
-    - The `unite(node1, node2)` operation can be used to merge two trees.
-    - The `find_root(node)` method can be used to return the root of a node.
-    - The `same_root(node1, node2)` method can be used to judge if two nodes are in the same tree.
+    - The `unite(node1, node2)` operation is used to merge two trees.
+    - The `find_root(node)` method is used to return the root of a node.
+    - The `same_root(node1, node2)` method is used to determine whether two nodes are in the same tree.
 
 ## Approach (UnionFind algorithm)
 1. Initially, each node is in its own group.

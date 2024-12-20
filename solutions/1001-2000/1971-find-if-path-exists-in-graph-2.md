@@ -54,7 +54,7 @@ This graph may have multiple **connected components**.
 - `UnionFind` algorithm typically has three methods:
     - The `unite(node1, node2)` operation can be used to merge two trees.
     - The `find_root(node)` method can be used to return the root of a node.
-    - The `same_root(node1, node2)` method can be used to judge if two nodes are in the same tree.
+    - The `same_root(node1, node2)` method is used to determine whether two nodes are in the same tree.
 
 ## Approach (UnionFind algorithm)
 1. Initially, each node is in its own group.
