@@ -50,7 +50,7 @@ And this graph may have multiple **connected components**. Initially, we start f
 
 - We need to find if there is a path from `source` to `destination`. This question is equivalent to determine if `source` and `destination` vertices belong to the same `connected component`.
 - A `tree` is a type of `graph`. If two nodes are in the same tree, then return `true`. So we need a method `in_same_tree(node1, node2)` to return a boolean value.
-- We are `edges` data and need to divide them into multiple groups, each group can be abstracted into a **tree**.
+- We are given `edges` data and need to divide them into multiple groups, each group can be abstracted into a **tree**.
 - `UnionFind` algorithm is designed for grouping and searching data.
 
 ### 'UnionFind' algorithm
@@ -60,12 +60,12 @@ And this graph may have multiple **connected components**. Initially, we start f
     - The `same_root(node1, node2)` method can be used to judge if two nodes are in the same tree.
 
 ## Approach (UnionFind algorithm)
-1. Initially, every node is in the group of itself.
+1. Initially, each node is in its own group.
 1. Iterate `edges` data and `unite(node1, node2)`.
 1. Return `same_root(source, destination)`.
 
 ## Complexity
-* Time: `O(n)`. 
+* Time: `O(n)`.
 * Space: `O(n)`.
 
 ## Python
@@ -144,32 +144,245 @@ class Solution:
 
 ## Java
 ```java
-// Welcome to create a PR to complete the code of this language, thanks!
+class Solution {
+    private int[] father;
+
+    public boolean validPath(int n, int[][] edges, int source, int destination) {
+        father = new int[n];
+        
+        for (var i = 0; i < n; i++) {
+            father[i] = i;
+        }
+
+        for (var edge : edges) {
+            unite(edge[0], edge[1]);
+        }
+
+        return sameRoot(source, destination);
+    }
+
+    private void unite(int x, int y) {
+        int rootX = findRoot(x);
+        int rootY = findRoot(y);
+
+        father[rootY] = rootX; // Error-prone point 1
+    }
+
+    private int findRoot(int x) {
+        if (x == father[x]) {
+            return x;
+        }
+
+        father[x] = findRoot(father[x]); // Error-prone point 2
+
+        return father[x];
+    }
+
+    private boolean sameRoot(int x, int y) {
+        return findRoot(x) == findRoot(y);
+    }
+}
 ```
 
 ## C++
 ```cpp
-// Welcome to create a PR to complete the code of this language, thanks!
+class Solution {
+private:
+    vector<int> father;
+
+    void unite(int x, int y) {
+        int root_x = findRoot(x);
+        int root_y = findRoot(y);
+
+        father[root_y] = root_x; // Error-prone point 1
+    }
+
+    int findRoot(int x) {
+        if (x == father[x]) {
+            return x;
+        }
+
+        father[x] = findRoot(father[x]); // Error-prone point 2
+
+        return father[x];
+    }
+
+    bool sameRoot(int x, int y) {
+        return findRoot(x) == findRoot(y);
+    }
+
+public:
+    bool validPath(int n, vector<vector<int>>& edges, int source, int destination) {
+        for (auto i = 0; i < n; i++) {
+            father.push_back(i);
+        }
+
+        for (auto& edge : edges) {
+            unite(edge[0], edge[1]);
+        }
+
+        return sameRoot(source, destination);
+    }
+};
 ```
 
 ## JavaScript
 ```javascript
-// Welcome to create a PR to complete the code of this language, thanks!
+let father
+
+var validPath = function (n, edges, source, destination) {
+  father = []
+  for (let i = 0; i < n; i++) {
+    father.push(i)
+  }
+
+  for (let [a, b] of edges) {
+    unite(a, b)
+  }
+
+  return sameRoot(source, destination)
+};
+
+function unite(x, y) {
+  rootX = findRoot(x)
+  rootY = findRoot(y)
+
+  father[rootY] = rootX // Error-prone point 1
+}
+
+function findRoot(x) {
+  if (x == father[x]) {
+    return x
+  }
+
+  father[x] = findRoot(father[x]) // Error-prone point 2
+
+  return father[x]
+}
+
+function sameRoot(x, y) {
+  return findRoot(x) == findRoot(y)
+}
 ```
 
 ## C#
 ```c#
-// Welcome to create a PR to complete the code of this language, thanks!
+public class Solution
+{
+    int[] father;
+
+    public bool ValidPath(int n, int[][] edges, int source, int destination)
+    {
+        father = new int[n];
+        
+        for (int i = 0; i < n; i++)
+            father[i] = i;
+
+        foreach (int[] edge in edges)
+        {
+            unite(edge[0], edge[1]);
+        }
+
+        return sameRoot(source, destination);
+    }
+
+    void unite(int x, int y)
+    {
+        int rootX = findRoot(x);
+        int rootY = findRoot(y);
+
+        father[rootY] = rootX; // Error-prone point 1
+    }
+
+    int findRoot(int x)
+    {
+        if (x == father[x])
+            return x;
+
+        father[x] = findRoot(father[x]); // Error-prone point 2
+
+        return father[x];
+    }
+
+    bool sameRoot(int x, int y)
+    {
+        return findRoot(x) == findRoot(y);
+    }
+}
 ```
 
 ## Go
 ```go
-// Welcome to create a PR to complete the code of this language, thanks!
+var father []int
+
+func validPath(n int, edges [][]int, source int, destination int) bool {
+    father = make([]int, n)
+    for i := 0; i < n; i++ {
+        father[i] = i
+    }
+
+    for _, edge := range edges {
+        unite(edge[0], edge[1])
+    }
+
+    return sameRoot(source, destination)
+}
+
+func unite(x, y int) {
+    rootX := findRoot(x)
+    rootY := findRoot(y)
+
+    father[rootY] = rootX // Error-prone point 1
+}
+
+func findRoot(x int) int {
+    if x == father[x] {
+        return x
+    }
+
+    father[x] = findRoot(father[x]) // Error-prone point 2
+
+    return father[x]
+}
+
+func sameRoot(x, y int) bool {
+    return findRoot(x) == findRoot(y)
+}
 ```
 
 ## Ruby
 ```ruby
-# Welcome to create a PR to complete the code of this language, thanks!
+def valid_path(n, edges, source, destination)
+  @father = []
+  (0...n).each { |i| @father << i }
+
+  edges.each do |edge|
+    unite(edge[0], edge[1])
+  end
+
+  same_root(source, destination)
+end
+
+def unite(x, y)
+  root_x = find_root(x)
+  root_y = find_root(y)
+
+  @father[root_y] = root_x # Error-prone point 1
+end
+
+def find_root(x)
+  if x == @father[x]
+    return x
+  end
+
+  @father[x] = find_root(@father[x]) # Error-prone point 2
+
+  @father[x]
+end
+
+def same_root(x, y)
+  find_root(x) == find_root(y)
+end
 ```
 
 ## C
