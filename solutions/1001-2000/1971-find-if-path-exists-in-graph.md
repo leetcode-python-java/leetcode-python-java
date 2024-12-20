@@ -36,6 +36,9 @@ Explanation: There is no path from vertex 0 to vertex 5.
 - There are no duplicate edges.
 - There are no self edges.
 
+## Another solution: UnionFind Algorithm
+Please see [1971. Find if Path Exists in Graph (UnionFind Solution)](1971-find-if-path-exists-in-graph-2.md).
+
 ## Intuition
 The island problem can be abstracted into a **graph theory** problem. This is an **undirected graph**:
 
