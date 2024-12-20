@@ -1,4 +1,4 @@
-# LeetCode 1971. Find if Path Exists in Graph's Solution
+# LeetCode 1971. Find if Path Exists in Graph's Solution (Breadth-First Search)
 LeetCode problem link: [1971. Find if Path Exists in Graph](https://leetcode.com/problems/find-if-path-exists-in-graph)
 
 ## LeetCode problem description
@@ -41,7 +41,7 @@ The island problem can be abstracted into a **graph theory** problem. This is an
 
 ![](../../images/graph_undirected_1.svg)
 
-And this graph may have multiple **connected components**. At first, we start from `source` vertex which belongs to one of the `connected components`. 
+And this graph may have multiple **connected components**. Initially, we start from `source` vertex which belongs to one of the `connected components`. 
 
 ![](../../images/graph_undirected_2.png)
 
@@ -53,12 +53,11 @@ We need to find if there is a path from `source` to `destination`. This question
 
 ![](../../images/binary_tree_BFS_1.gif)
 
-* As shown in the figure above, **breadth-first search** can be thought of as visiting vertices in rounds and rounds. Actually, whenever you see a question is about
-  getting `shortest` or `least` of something of a graph, `breadth-first search` would probably help.
+* As shown in the figure above, **breadth-first search** can be thought of as visiting vertices in rounds and rounds.
 
 * `breadth-first search` emphasizes first-in-first-out, so a **queue** is needed.
 
-## Approach
+## Approach (Breadth-First Search)
 1. Starting at the `source` vertex, find all the vertices of the `connected component` by `breadth-first search`.
 1. In order to conduct `breadth-first search`, we need to know the adjacent vertices of a vertex. So we need a `map` `vertex_to_adjacent_vertices`. We can initialize the `map` by transforming `edges`.
 1. We need to mark all vertices on the same connected component as vertex `source` as `visited` because visited vertices don't need to be visited again.
