@@ -183,6 +183,24 @@ class Solution {
 # C++
 ```cpp
 class Solution {
+public:
+    int numIslands(vector<vector<char>>& grid) {
+        grid_ = grid;
+        auto island_count = 0;
+
+        for (auto i = 0; i < grid_.size(); i++) {
+            for (auto j = 0; j < grid_[0].size(); j++) {
+                if (grid_[i][j] == '1') {
+                    island_count++;
+
+                    depth_first_search(i, j);
+                }
+            }
+        }
+
+        return island_count;
+    }
+
 private:
     vector<vector<char>> grid_;
     stack<pair<int, int>> vertex_stack;
@@ -216,24 +234,6 @@ private:
             vertex_stack.push({i, j + 1});
             vertex_stack.push({i - 1, j});
         }
-    }
-
-public:
-    int numIslands(vector<vector<char>>& grid) {
-        grid_ = grid;
-        auto island_count = 0;
-
-        for (auto i = 0; i < grid_.size(); i++) {
-            for (auto j = 0; j < grid_[0].size(); j++) {
-                if (grid_[i][j] == '1') {
-                    island_count++;
-
-                    depth_first_search(i, j);
-                }
-            }
-        }
-
-        return island_count;
     }
 };
 ```

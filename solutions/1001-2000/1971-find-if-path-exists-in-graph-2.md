@@ -187,6 +187,19 @@ class Solution {
 ## C++
 ```cpp
 class Solution {
+public:
+    bool validPath(int n, vector<vector<int>>& edges, int source, int destination) {
+        for (auto i = 0; i < n; i++) {
+            fathers.push_back(i);
+        }
+
+        for (auto& edge : edges) {
+            unite(edge[0], edge[1]);
+        }
+
+        return sameRoot(source, destination);
+    }
+
 private:
     vector<int> fathers;
 
@@ -209,19 +222,6 @@ private:
 
     bool sameRoot(int x, int y) {
         return findRoot(x) == findRoot(y);
-    }
-
-public:
-    bool validPath(int n, vector<vector<int>>& edges, int source, int destination) {
-        for (auto i = 0; i < n; i++) {
-            fathers.push_back(i);
-        }
-
-        for (auto& edge : edges) {
-            unite(edge[0], edge[1]);
-        }
-
-        return sameRoot(source, destination);
     }
 };
 ```

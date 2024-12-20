@@ -162,9 +162,6 @@ class Solution:
 ### Solution 1: Recursion
 ```cpp
 class Solution {
-private:
-    unordered_map<int, int> num_to_fib_num_;
-
 public:
     int fib(int n) {
         if (n <= 1) {
@@ -179,6 +176,9 @@ public:
 
         return num_to_fib_num_[n];
     }
+
+private:
+    unordered_map<int, int> num_to_fib_num_;
 };
 ```
 

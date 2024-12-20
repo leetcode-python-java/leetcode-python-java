@@ -131,6 +131,16 @@ class Solution {
 ## C++
 ```cpp
 class Solution {
+public:
+    vector<vector<int>> allPathsSourceTarget(vector<vector<int>>& graph) {
+        graph_ = graph;
+        path_.push_back(0);
+
+        dfs(0);
+
+        return paths_;
+    }
+
 private:
     vector<vector<int>> paths_;
     vector<int> path_;
@@ -149,16 +159,6 @@ private:
 
             path_.pop_back();
         }
-    }
-
-public:
-    vector<vector<int>> allPathsSourceTarget(vector<vector<int>>& graph) {
-        graph_ = graph;
-        path_.push_back(0);
-
-        dfs(0);
-
-        return paths_;
     }
 };
 ```

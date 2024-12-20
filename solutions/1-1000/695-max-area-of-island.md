@@ -179,6 +179,23 @@ class Solution {
 # C++
 ```cpp
 class Solution {
+public:
+    int maxAreaOfIsland(vector<vector<int>>& grid) {
+        grid_ = grid;
+
+        for (auto i = 0; i < grid_.size(); i++) {
+            for (auto j = 0; j < grid_[0].size(); j++) {
+                if (grid_[i][j] == 1) {
+                    land_count_ = 0;
+
+                    depth_first_search(i, j);
+                }
+            }
+        }
+
+        return max_land_count_;
+    }
+
 private:
     vector<vector<int>> grid_;
     int max_land_count_ = 0;
@@ -205,23 +222,6 @@ private:
         depth_first_search(i, j + 1);
         depth_first_search(i + 1, j);
         depth_first_search(i, j - 1);
-    }
-
-public:
-    int maxAreaOfIsland(vector<vector<int>>& grid) {
-        grid_ = grid;
-
-        for (auto i = 0; i < grid_.size(); i++) {
-            for (auto j = 0; j < grid_[0].size(); j++) {
-                if (grid_[i][j] == 1) {
-                    land_count_ = 0;
-
-                    depth_first_search(i, j);
-                }
-            }
-        }
-
-        return max_land_count_;
     }
 };
 ```

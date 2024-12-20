@@ -162,24 +162,6 @@ class Solution {
 # C++
 ```cpp
 class Solution {
-private:
-    vector<vector<char>> grid_;
-
-    void depth_first_search(int i, int j) {
-        if (i < 0 || i >= grid_.size() || 
-            j < 0 || j >= grid_[0].size() || 
-            grid_[i][j] != '1') {
-            return;
-        }
-
-        grid_[i][j] = 'V';
-
-        depth_first_search(i - 1, j);
-        depth_first_search(i, j + 1);
-        depth_first_search(i + 1, j);
-        depth_first_search(i, j - 1);
-    }
-
 public:
     int numIslands(vector<vector<char>>& grid) {
         grid_ = grid;
@@ -196,6 +178,24 @@ public:
         }
 
         return island_count;
+    }
+
+private:
+    vector<vector<char>> grid_;
+
+    void depth_first_search(int i, int j) {
+        if (i < 0 || i >= grid_.size() || 
+            j < 0 || j >= grid_[0].size() || 
+            grid_[i][j] != '1') {
+            return;
+        }
+
+        grid_[i][j] = 'V';
+
+        depth_first_search(i - 1, j);
+        depth_first_search(i, j + 1);
+        depth_first_search(i + 1, j);
+        depth_first_search(i, j - 1);
     }
 };
 ```
