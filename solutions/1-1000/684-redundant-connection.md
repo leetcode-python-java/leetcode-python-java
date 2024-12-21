@@ -63,10 +63,10 @@ Output: [1,4]
 ```python
 class Solution:
     def __init__(self):
-        self.fathers = None
+        self.parent = None
 
     def findRedundantConnection(self, edges: List[List[int]]) -> List[int]:
-        self.fathers = list(range(len(edges) + 1))
+        self.parent = list(range(len(edges) + 1))
 
         for x, y in edges:
             if self.same_root(x, y):
@@ -78,15 +78,15 @@ class Solution:
         root_x = self.find_root(x)
         root_y = self.find_root(y)
         
-        self.fathers[root_y] = root_x # Error-prone point
+        self.parent[root_y] = root_x # Error-prone point
 
     def find_root(self, x):
-        if x == self.fathers[x]:
+        if x == self.parent[x]:
             return x
 
-        self.fathers[x] = self.find_root(self.fathers[x])
+        self.parent[x] = self.find_root(self.parent[x])
 
-        return self.fathers[x]
+        return self.parent[x]
     
     def same_root(self, x, y):
         return self.find_root(x) == self.find_root(y)
@@ -95,13 +95,13 @@ class Solution:
 ## Java
 ```java
 class Solution {
-    private int[] fathers;
+    private int[] parent;
 
     public int[] findRedundantConnection(int[][] edges) {
-        fathers = new int[edges.length + 1];
+        parent = new int[edges.length + 1];
 
-        for (var i = 0; i < fathers.length; i++) {
-            fathers[i] = i;
+        for (var i = 0; i < parent.length; i++) {
+            parent[i] = i;
         }
 
         for (var edge : edges) {
@@ -119,17 +119,17 @@ class Solution {
         int rootX = findRoot(x);
         int rootY = findRoot(y);
 
-        fathers[rootY] = rootX; // Error-prone point 1
+        parent[rootY] = rootX; // Error-prone point 1
     }
 
     private int findRoot(int x) {
-        if (x == fathers[x]) {
+        if (x == parent[x]) {
             return x;
         }
 
-        fathers[x] = findRoot(fathers[x]); // Error-prone point 2
+        parent[x] = findRoot(parent[x]); // Error-prone point 2
 
-        return fathers[x];
+        return parent[x];
     }
 
     private boolean sameRoot(int x, int y) {
@@ -144,7 +144,7 @@ class Solution {
 public:
     vector<int> findRedundantConnection(vector<vector<int>>& edges) {
         for (auto i = 0; i <= edges.size(); i++) {
-            fathers.push_back(i);
+            parent.push_back(i);
         }
 
         for (auto& edge : edges) {
@@ -159,23 +159,23 @@ public:
     }
 
 private:
-    vector<int> fathers;
+    vector<int> parent;
 
     void unite(int x, int y) {
         int root_x = findRoot(x);
         int root_y = findRoot(y);
 
-        fathers[root_y] = root_x; // Error-prone point 1
+        parent[root_y] = root_x; // Error-prone point 1
     }
 
     int findRoot(int x) {
-        if (x == fathers[x]) {
+        if (x == parent[x]) {
             return x;
         }
 
-        fathers[x] = findRoot(fathers[x]); // Error-prone point 2
+        parent[x] = findRoot(parent[x]); // Error-prone point 2
 
-        return fathers[x];
+        return parent[x];
     }
 
     bool sameRoot(int x, int y) {
@@ -186,12 +186,12 @@ private:
 
 ## JavaScript
 ```javascript
-let fathers
+let parent
 
 var findRedundantConnection = function(edges) {
-  fathers = []
+  parent = []
   for (let i = 0; i <= edges.length; i++) {
-    fathers.push(i)
+    parent.push(i)
   }
 
   for (let [x, y] of edges) {
@@ -209,17 +209,17 @@ function unite(x, y) {
   rootX = findRoot(x)
   rootY = findRoot(y)
 
-  fathers[rootY] = rootX // Error-prone point 1
+  parent[rootY] = rootX // Error-prone point 1
 }
 
 function findRoot(x) {
-  if (x == fathers[x]) {
+  if (x == parent[x]) {
     return x
   }
 
-  fathers[x] = findRoot(fathers[x]) // Error-prone point 2
+  parent[x] = findRoot(parent[x]) // Error-prone point 2
 
-  return fathers[x]
+  return parent[x]
 }
 
 function sameRoot(x, y) {
@@ -231,14 +231,14 @@ function sameRoot(x, y) {
 ```c#
 public class Solution
 {
-    int[] fathers;
+    int[] parent;
 
     public int[] FindRedundantConnection(int[][] edges)
     {
-        fathers = new int[edges.Length + 1];
+        parent = new int[edges.Length + 1];
         
-        for (int i = 0; i < fathers.Length; i++)
-            fathers[i] = i;
+        for (int i = 0; i < parent.Length; i++)
+            parent[i] = i;
 
         foreach (int[] edge in edges)
         {
@@ -258,17 +258,17 @@ public class Solution
         int rootX = findRoot(x);
         int rootY = findRoot(y);
 
-        fathers[rootY] = rootX; // Error-prone point 1
+        parent[rootY] = rootX; // Error-prone point 1
     }
 
     int findRoot(int x)
     {
-        if (x == fathers[x])
+        if (x == parent[x])
             return x;
 
-        fathers[x] = findRoot(fathers[x]); // Error-prone point 2
+        parent[x] = findRoot(parent[x]); // Error-prone point 2
 
-        return fathers[x];
+        return parent[x];
     }
 
     bool sameRoot(int x, int y)
@@ -280,12 +280,12 @@ public class Solution
 
 ## Go
 ```go
-var fathers []int
+var parent []int
 
 func findRedundantConnection(edges [][]int) []int {
-    fathers = make([]int, len(edges) + 1)
-    for i := 0; i < len(fathers); i++ {
-        fathers[i] = i
+    parent = make([]int, len(edges) + 1)
+    for i := 0; i < len(parent); i++ {
+        parent[i] = i
     }
 
     for _, edge := range edges {
@@ -303,17 +303,17 @@ func unite(x, y int) {
     rootX := findRoot(x)
     rootY := findRoot(y)
 
-    fathers[rootY] = rootX // Error-prone point 1
+    parent[rootY] = rootX // Error-prone point 1
 }
 
 func findRoot(x int) int {
-    if x == fathers[x] {
+    if x == parent[x] {
         return x
     }
 
-    fathers[x] = findRoot(fathers[x]) // Error-prone point 2
+    parent[x] = findRoot(parent[x]) // Error-prone point 2
 
-    return fathers[x]
+    return parent[x]
 }
 
 func sameRoot(x, y int) bool {
@@ -324,8 +324,8 @@ func sameRoot(x, y int) bool {
 ## Ruby
 ```ruby
 def find_redundant_connection(edges)
-  @fathers = []
-  (0..edges.size).each { |i| @fathers << i }
+  @parent = []
+  (0..edges.size).each { |i| @parent << i }
 
   edges.each do |edge|
     if same_root(edge[0], edge[1])
@@ -340,17 +340,17 @@ def unite(x, y)
   root_x = find_root(x)
   root_y = find_root(y)
 
-  @fathers[root_y] = root_x # Error-prone point 1
+  @parent[root_y] = root_x # Error-prone point 1
 end
 
 def find_root(x)
-  if x == @fathers[x]
+  if x == @parent[x]
     return x
   end
 
-  @fathers[x] = find_root(@fathers[x]) # Error-prone point 2
+  @parent[x] = find_root(@parent[x]) # Error-prone point 2
 
-  @fathers[x]
+  @parent[x]
 end
 
 def same_root(x, y)
