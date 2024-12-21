@@ -48,12 +48,12 @@ Output: [1,4]
 - `UnionFind` algorithm typically has three methods:
     - The `unite(node1, node2)` operation is used to merge two trees.
     - The `find_root(node)` method is used to return the root of a node.
-    - The `same_root(node1, node2)` method is used to determine whether two nodes are in the same tree.
+    - The `same_root(node1, node2) == true` method is used to determine whether two nodes are in the same tree.
 
 ## Approach (UnionFind algorithm)
 1. Initially, each node is in its own group.
 1. Iterate `edges` data and `unite(node1, node2)`.
-1. As soon as `same_root(node1, node2)`, return `[node1, node2]`.
+1. As soon as `same_root(node1, node2) == true` (a cycle will be formed), return `[node1, node2]`.
 
 ## Complexity
 * Time: `O(n)`.
