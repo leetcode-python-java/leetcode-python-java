@@ -19,3 +19,6 @@ The principle of traversal (DFS or BFS) between `undirected graph` or `directed 
 * First rule: don't visited nodes again. This rule make starting from a node to traverse the `undirected graph` have a direction.
 * The adjacent nodes of `undirected graph` are its non-visited neighbors.
 * The adjacent nodes of `directed graph` are its targeted nodes.
+
+# Features
+* Add Google translate as a link. Link example: https://github-com.translate.goog/gazeldx/leetcode-solutions/blob/main/solutions/1-1000/122-best-time-to-buy-and-sell-stock-ii.md?_x_tr_sl=auto&_x_tr_tl=zh-CN&_x_tr_hl=en&_x_tr_pto=wapp

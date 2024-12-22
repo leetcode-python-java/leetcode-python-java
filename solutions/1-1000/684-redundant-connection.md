@@ -41,7 +41,7 @@ Output: [1,4]
 ![](../../images/684.png)
 
 - We are given `edges` data and need to divide them into multiple groups, each group can be abstracted into a **tree**.
-- Finally, those trees will be merged into one tree.
+- Finally, those trees can be merged into one tree if the redundant edge is removed.
 - `UnionFind` algorithm is designed for grouping and searching data.
 
 ### 'UnionFind' algorithm

@@ -12,14 +12,14 @@ Return _an edge that can be removed so that the resulting graph is a rooted tree
 
 ### Example 1
 ![](../../images/examples/685_1.jpg)
-```
+```java
 Input: edges = [[1,2],[1,3],[2,3]]
 Output: [2,3]
 ```
 
 ### Example 2
 ![](../../images/examples/685_2.jpg)
-```
+```java
 Input: edges = [[1,2],[2,3],[3,4],[4,1],[1,5]]
 Output: [4,1]
 ```
@@ -37,7 +37,7 @@ Output: [4,1]
     2. If there is no vertex with in-degree 2, once a cycle is formed, return the edge that causes the cycle.
 
 - We are given `edges` data and need to divide them into multiple groups, each group can be abstracted into a **tree**.
-- Finally, those trees will be merged into one tree.
+- Finally, those trees can be merged into one tree if the redundant edge is removed.
 - `UnionFind` algorithm is designed for grouping and searching data.
 
 ### 'UnionFind' algorithm
@@ -47,7 +47,7 @@ Output: [4,1]
     - The `same_root(node1, node2)` method is used to determine whether two nodes are in the same tree.
 
 ## Approach
-1. Iterate `edges` data to look for the `two_conflict_edges` (two edges caused a vertex with in-degree 2).
+1. Iterate `edges` data to look for the `two_conflict_edges` (the two edges caused a vertex with in-degree 2).
 1. Initially, each node is in its own group.
 1. Iterate `edges` data and `unite(node1, node2)`.
 1. If there is no vertex with in-degree 2, as soon as `same_root(node1, node2) == true` (a cycle will be formed), return `[node1, node2]`.
