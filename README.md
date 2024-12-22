@@ -73,5 +73,6 @@ You can skip the more difficult problems and do them later.
 - [1971. Find if Path Exists in Graph](solutions/1001-2000/1971-find-if-path-exists-in-graph.md) was solved in _Python, Java, C++, JavaScript, C#, Go, Ruby_ and 2 solutions.
 - [684. Redundant Connection](solutions/1-1000/684-redundant-connection.md) was solved in _Python, Java, C++, JavaScript, C#, Go, Ruby_.
 - [685. Redundant Connection II](solutions/1-1000/685-redundant-connection-ii.md) was solved in _Python_.
+- [1584. Min Cost to Connect All Points](solutions/1001-2000/1584-min-cost-to-connect-all-points.md) was solved in _Python, Java, C++, JavaScript, C#, Go, Ruby_.
 
 More LeetCode problems will be added soon...
