@@ -48,7 +48,7 @@ Output: 18
 * A connected graph without cycles is called a tree.
 * The problem is now the cost of **minimum spanning tree** in graph with above edges.
 * A minimum spanning tree (MST) or minimum weight spanning tree is a subset of the edges of a connected, edge-weighted undirected graph that connects all the vertices together, without any cycles and with the minimum possible total edge weight.
-* One of the solutions for `MST` is the **Prim algorithm**, which is a _greedy algorithm_ and a _dynamic programming algorithm_.
+* One of the solutions for `MST` is the **Prim algorithm**, which is a _greedy algorithm_ and also a _dynamic programming algorithm_.
 
 ### Prim algorithm
 - Initially, add any point to an empty graph, for example, the point with index 0.
@@ -80,7 +80,7 @@ Let us use the _common 5 steps_ to solve a _dynamic programming problem_.
    #   v  4 13  7  7 # min_distances. current_index will become 1 later becaue 4 is the closet. `v` reprents this point is 'visited', and its value is fixed.  
    #   v  v  9  3  7 # min_distances. current_index will become 3 later becaue 3 is the closet
    #   v  v  9  v  4 # min_distances. current_index will become 4 later becaue 4 is the closet
-   #   v  v  9  v  v # min_distances. current_index will become 2 later becaue its the last one
+   #   v  v  9  v  v # min_distances. current_index will become 2 later becaue it is the last one
    #   0  4  9  3  4 # min_distances: 0 + 4 + 9 + 3 + 4 = 20
    ```
     * We can derive the `Recurrence Formula`:
@@ -99,7 +99,7 @@ Let us use the _common 5 steps_ to solve a _dynamic programming problem_.
 ### The process of coding
 * Initialize `min_distances` and do the first iteration.
 ```python
-min_distances = [float('inf')] * len(points) # This is just the `dp` array.
+min_distances = [float('inf')] * len(points) # This is just the `dp` array
 min_distances[0] = 0
 
 for i, _ in enumerate(points):
@@ -113,7 +113,7 @@ for i, _ in enumerate(points):
     )
 ```
 
-* Use `current_index` to replace fixed index `0`:
+* Use `current_index` to replace the fixed index `0`:
 ```python
 min_distances = [float('inf')] * len(points) # This is just the `dp` array
 min_distances[0] = 0
@@ -130,7 +130,7 @@ for i, _ in enumerate(points):
     )
 ```
 
-* Find the `next_index` of the point which is **closest** to the existing tree.
+* Find the `next_index` of the point which is the **closest** to the existing tree.
 ```python
  class Solution:
     def minCostConnectPoints(self, points: List[List[int]]) -> int:
@@ -331,8 +331,10 @@ var minCostConnectPoints = function (points) {
 
 ## C#
 ```c#
-public class Solution {
-    public int MinCostConnectPoints(int[][] points) {
+public class Solution
+{
+    public int MinCostConnectPoints(int[][] points)
+    {
         var minDistances = new int[points.Length]; // This is just the `dp` array
         Array.Fill(minDistances, Int32.MaxValue);
         minDistances[0] = 0;
@@ -340,13 +342,16 @@ public class Solution {
         int currentIndex = 0;
         var visited = new bool[points.Length];
 
-        while (currentIndex != -1) {
+        while (currentIndex != -1)
+        {
             visited[currentIndex] = true;
             int nextIndex = -1;
             int minDistance = Int32.MaxValue;
 
-            for (int i = 0; i < points.Length; i++) {
-                if (visited[i]) {
+            for (int i = 0; i < points.Length; i++)
+            {
+                if (visited[i])
+                {
                     continue;
                 }
 
@@ -356,7 +361,8 @@ public class Solution {
                     Math.Abs(points[i][1] - points[currentIndex][1])
                 );
 
-                if (minDistances[i] < minDistance) {
+                if (minDistances[i] < minDistance)
+                {
                     minDistance = minDistances[i];
                     nextIndex = i;
                 }
