@@ -66,7 +66,7 @@ This graph may have multiple **connected components**.
 * Space: `O(n)`.
 
 ## Python
-### Standard UnionFind algorithm
+### Standard UnionFind algorithm (recommended)
 ```python
 class Solution:
     def __init__(self):

@@ -1,4 +1,4 @@
-# LeetCode 1584. Min Cost to Connect All Points' Solution
+# 1584. Min Cost to Connect All Points' LeetCode Solution (Prim's Algorithm)
 LeetCode problem link: [1584. Min Cost to Connect All Points](https://leetcode.com/problems/min-cost-to-connect-all-points)
 
 ## LeetCode problem description
@@ -50,7 +50,12 @@ Output: 18
 * A minimum spanning tree (MST) or minimum weight spanning tree is a subset of the edges of a connected, edge-weighted undirected graph that connects all the vertices together, without any cycles and with the minimum possible total edge weight.
 * One of the solutions for `MST` is the **Prim algorithm**, which is a _greedy algorithm_ and also a _dynamic programming algorithm_.
 
-### Prim algorithm
+### Another solution: Kruskal's Algorithm
+Please see [1584. Min Cost to Connect All Points (Kruskal's Algorithm)](1584-min-cost-to-connect-all-points-2.md).
+
+This page, I will only talk about the solution of **Prim's Algorithm**.
+
+### Prim's Algorithm
 - Initially, add any point to an empty graph, for example, the point with index 0.
 - Next, add the second point. This second point is the **closest** point to the first point.
 - An `min_distances` (or call it `dp`) array is needed to store the distances of other points to the first point.
@@ -172,10 +177,12 @@ for i, point in enumerate(points):
 * Return `sum(min_distances)`.
 
 ## Complexity
+`n` is the `points.length`.
 * Time: `O(n * n)`.
 * Space: `O(n)`.
 
 ## Python
+### Solution 1: Not use 'heap sort'
 ```python
 class Solution:
     def minCostConnectPoints(self, points: List[List[int]]) -> int:
@@ -207,6 +214,39 @@ class Solution:
             current_index = next_index
 
         return sum(min_distances)
+```
+
+### Solution 2: Use 'heap sort'
+* If you use `heap sort`, `current_index`, `next_index` is not needed, because heap sort knows which is the minimum value.
+* `visited` is also not needed, because each `heappop()` means that a point has been `visited`.
+
+```python
+class Solution:
+    def minCostConnectPoints(self, points: List[List[int]]) -> int:
+        result = 0
+        min_distances = []
+
+        for i in range(len(points)):
+            min_distances.append([float('inf'), i])
+
+        min_distances[0][0] = 0
+
+        while min_distances:
+            distance, index = heapq.heappop(min_distances)
+            result += distance
+
+            for min_distance in min_distances:
+                point = points[min_distance[1]]
+
+                min_distance[0] = min(
+                    min_distance[0],
+                    abs(point[0] - points[index][0]) + \
+                    abs(point[1] - points[index][1])
+                )
+
+            heapq.heapify(min_distances)
+
+        return result
 ```
 
 ## Java
