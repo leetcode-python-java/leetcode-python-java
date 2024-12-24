@@ -1,4 +1,4 @@
-# 1584. Min Cost to Connect All Points' LeetCode Solution (Prim's Algorithm)
+# 1584. Min Cost to Connect All Points - LeetCode Solution (Prim's Algorithm)
 LeetCode problem link: [1584. Min Cost to Connect All Points](https://leetcode.com/problems/min-cost-to-connect-all-points)
 
 ## LeetCode problem description
@@ -101,7 +101,8 @@ Let us use the _common 5 steps_ to solve a _dynamic programming problem_.
 5. Check the `min_distances` array's value
     * Print the `min_distances` to see if it is as expected.
 
-### The process of coding
+### Solution 1: Not use 'heap sort' 
+#### The process of coding
 * Initialize `min_distances` and do the first iteration.
 ```python
 min_distances = [float('inf')] * len(points) # This is just the `dp` array
@@ -176,6 +177,10 @@ for i, point in enumerate(points):
 
 * Return `sum(min_distances)`.
 
+### Solution 2: Use 'heap sort' (recommended)
+* If you use **heap sort**, `current_index`, `next_index`, `minimum_distance` is not needed, because _heap sort_ knows which is the minimum value.
+* `visited` is also not needed, because each `heappop()` means that a point has been `visited`.
+
 ## Complexity
 `n` is the `points.length`.
 * Time: `O(n * n)`.
@@ -195,7 +200,7 @@ class Solution:
         while current_index is not None:
             visited[current_index] = True
             next_index = None
-            min_distance = float('inf')
+            minimum_distance = float('inf')
 
             for i, point in enumerate(points):
                 if visited[i]:
@@ -207,8 +212,8 @@ class Solution:
                     abs(point[1] - points[current_index][1])    
                 )
 
-                if min_distances[i] < min_distance:
-                    min_distance = min_distances[i]
+                if min_distances[i] < minimum_distance:
+                    minimum_distance = min_distances[i]
                     next_index = i
             
             current_index = next_index
@@ -216,10 +221,7 @@ class Solution:
         return sum(min_distances)
 ```
 
-### Solution 2: Use 'heap sort'
-* If you use `heap sort`, `current_index`, `next_index` is not needed, because heap sort knows which is the minimum value.
-* `visited` is also not needed, because each `heappop()` means that a point has been `visited`.
-
+### Solution 2: Use 'heap sort' (recommended)
 ```python
 class Solution:
     def minCostConnectPoints(self, points: List[List[int]]) -> int:
@@ -249,6 +251,7 @@ class Solution:
         return result
 ```
 
+### Solution 1: Not use 'heap sort'
 ## Java
 ```java
 class Solution {
@@ -290,6 +293,12 @@ class Solution {
 }
 ```
 
+### Solution 2: Use 'heap sort' (recommended)
+```java
+// Welcome to create a PR to complete the code of this language, thanks!
+```
+
+### Solution 1: Not use 'heap sort'
 ## C++
 ```cpp
 class Solution {
@@ -331,6 +340,12 @@ public:
 };
 ```
 
+### Solution 2: Use 'heap sort' (recommended)
+```cpp
+// Welcome to create a PR to complete the code of this language, thanks!
+```
+
+### Solution 1: Not use 'heap sort'
 ## JavaScript
 ```javascript
 var minCostConnectPoints = function (points) {
@@ -369,6 +384,12 @@ var minCostConnectPoints = function (points) {
 };
 ```
 
+### Solution 2: Use 'heap sort' (recommended)
+```javascript
+// Welcome to create a PR to complete the code of this language, thanks!
+```
+
+### Solution 1: Not use 'heap sort'
 ## C#
 ```c#
 public class Solution
@@ -416,6 +437,12 @@ public class Solution
 }
 ```
 
+### Solution 2: Use 'heap sort' (recommended)
+```c#
+// Welcome to create a PR to complete the code of this language, thanks!
+```
+
+### Solution 1: Not use 'heap sort'
 ## Go
 ```go
 func minCostConnectPoints(points [][]int) int {
@@ -461,6 +488,12 @@ func minCostConnectPoints(points [][]int) int {
 }
 ```
 
+### Solution 2: Use 'heap sort' (recommended)
+```go
+// Welcome to create a PR to complete the code of this language, thanks!
+```
+
+### Solution 1: Not use 'heap sort'
 ## Ruby
 ```ruby
 def min_cost_connect_points(points)
@@ -495,6 +528,11 @@ def min_cost_connect_points(points)
 
   min_distances.sum
 end
+```
+
+### Solution 2: Use 'heap sort' (recommended)
+```ruby
+# Welcome to create a PR to complete the code of this language, thanks!
 ```
 
 ## C
