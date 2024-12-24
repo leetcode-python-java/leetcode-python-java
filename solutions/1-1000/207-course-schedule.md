@@ -32,19 +32,22 @@ To take course 1 you should have finished course 0, and to take course 0 you sho
 - All the pairs `prerequisites[i]` are **unique**.
 
 ## Intuition
-- Each course can be abstracted as a vertex in the graph.
+- Each course can be abstracted as a vertex in a graph.
 - The existence of a dependency relationship indicates that it is a directed graph.
 
-## Approach
+## Approach 1
 - Course A depends on course B, which can be abstracted as course A needs course B to unlock, and the in-degree of course A needs to be increased by 1.
 - So an `in_degrees` array is needed to save the in-degree of each course.
-- Courses with an in-degree of 0 can be studied first, so courses with an in-degree of 0 can be put into a **queue** and processed one by one.
-- After each course is completed, the in-degree of other courses that depend on it is reduced by 1. If it is found that the in-degree of the course is 0 after deducting 1, the course is added to the queue.
+- Courses with an in-degree of 0 can be studied first, so they can be put into a **queue** and processed one by one.
 - Courses with an in-degree of 0 unlock other courses. This is the direction of the directed graph. Don't get it wrong.
-- Which courses can be unlocked by a course need to be saved with a `course_map`.
+- After each course is completed, the in-degree of other courses that depend on it is reduced by 1. If it is found that the in-degree of the course is 0 after deducting 1, the course is added to the queue.
+- Which courses can be unlocked by a course need to be saved with a map or an array `courses_list`.
 - If the in-degree of all courses is 0 at the end, return `true`, otherwise it means that there is a **cycle** in the directed graph, and return `false`.
 - The above algorithm is a _breadth-first algorithm_.
-- You can also use a _depth-first algorithm_. Please think about it yourself. The answer will be given below.
+
+## Approach 2
+- Can you use a _depth-first algorithm_ to solve it?
+- Simply replacing the queue used in the _breadth-first_ algorithm with a **stack** will create a _depth-first_ algorithm.
 
 ## Complexity
 `V` is `vertices.length`.
@@ -54,37 +57,32 @@ To take course 1 you should have finished course 0, and to take course 0 you sho
 * Time: `O(V + E)`.
 * Space: `O(V + E)`.
 
-## Java
-```java
-// Solution is from Coding5DotCom
-```
-
 ## Python
 ### Solution 1: Breadth-First Search
-```pyhton
+```python
 class Solution:
     def canFinish(self, num_courses: int, prerequisites: List[List[int]]) -> bool:
         in_degrees = [0] * num_courses
-        course_map = collections.defaultdict(set) # {key: course, value: courses depending on key}
+        courses_list = [set() for _ in range(num_courses)] # index: course, value: courses depending on course
 
         for prerequisite in prerequisites:
             in_degrees[prerequisite[0]] += 1
-            course_map[prerequisite[1]].add(prerequisite[0])
+            courses_list[prerequisite[1]].add(prerequisite[0])
 
-        free_courses = collections.deque()
+        ok_courses = collections.deque()
 
         for course, in_degree in enumerate(in_degrees):
             if in_degree == 0:
-                free_courses.append(course)
+                ok_courses.append(course)
 
-        while free_courses:
-            free_course = free_courses.popleft()
+        while ok_courses:
+            ok_course = ok_courses.popleft()
 
-            for course in course_map[free_course]:
+            for course in courses_list[ok_course]:
                 in_degrees[course] -= 1
                 
                 if in_degrees[course] == 0:
-                    free_courses.append(course)
+                    ok_courses.append(course)
 
         return sum(in_degrees) == 0
 ```
@@ -94,33 +92,202 @@ class Solution:
 class Solution:
     def canFinish(self, num_courses: int, prerequisites: List[List[int]]) -> bool:
         in_degrees = [0] * num_courses
-        course_map = collections.defaultdict(set) # {key: course, value: courses depending on key}
+        courses_list = [set() for _ in range(num_courses)] # index: course, value: courses depending on course
 
         for prerequisite in prerequisites:
             in_degrees[prerequisite[0]] += 1
-            course_map[prerequisite[1]].add(prerequisite[0])
-        
-        free_courses = []
+            courses_list[prerequisite[1]].add(prerequisite[0])
+
+        ok_courses = []
 
         for course, in_degree in enumerate(in_degrees):
             if in_degree == 0:
-                free_courses.append(course)
+                ok_courses.append(course)
 
-        while free_courses:
-            free_course = free_courses.pop()
+        while ok_courses:
+            ok_course = ok_courses.pop()
 
-            for course in course_map[free_course]:
+            for course in courses_list[ok_course]:
                 in_degrees[course] -= 1
-                
+
                 if in_degrees[course] == 0:
-                    free_courses.append(course)
+                    ok_courses.append(course)
 
         return sum(in_degrees) == 0
 ```
 
+## Java
+### Solution 1: Breadth-First Search
+```java
+class Solution {
+    public boolean canFinish(int numCourses, int[][] prerequisites) {
+        var inDegrees = new int[numCourses];
+        var coursesList = new ArrayList<HashSet<Integer>>(); // index: course, value: courses depending on course
+        for (var i = 0; i < numCourses; i++) {
+            coursesList.add(new HashSet<Integer>());
+        }
+
+        for (var prerequisite : prerequisites) {
+            inDegrees[prerequisite[0]]++;
+
+            var courses = coursesList.get(prerequisite[1]);
+            courses.add(prerequisite[0]);
+        }
+
+        var okCourses = new ArrayDeque<Integer>();
+        var studiedCourseCount = 0;
+
+        for (var course = 0; course < inDegrees.length; course++) {
+            if (inDegrees[course] == 0) {
+                okCourses.add(course);
+            }
+        }
+
+        while (!okCourses.isEmpty()) {
+            var okCourse = okCourses.poll();
+            studiedCourseCount++;
+
+            for (var course : coursesList.get(okCourse)) {
+                inDegrees[course]--;
+                
+                if (inDegrees[course] == 0) {
+                    okCourses.add(course);
+                }
+            }
+        }
+
+        return studiedCourseCount == numCourses;
+    }
+}
+```
+
+### Solution 2: Depth-First Search
+```java
+class Solution {
+    public boolean canFinish(int numCourses, int[][] prerequisites) {
+        var inDegrees = new int[numCourses];
+        var coursesList = new ArrayList<HashSet<Integer>>(); // index: course, value: courses depending on course
+        for (var i = 0; i < numCourses; i++) {
+            coursesList.add(new HashSet<Integer>());
+        }
+
+        for (var prerequisite : prerequisites) {
+            inDegrees[prerequisite[0]]++;
+
+            var courses = coursesList.get(prerequisite[1]);
+            courses.add(prerequisite[0]);
+        }
+
+        var okCourses = new Stack<Integer>();
+        var studiedCourseCount = 0;
+
+        for (var course = 0; course < inDegrees.length; course++) {
+            if (inDegrees[course] == 0) {
+                okCourses.push(course);
+            }
+        }
+
+        while (!okCourses.isEmpty()) {
+            var okCourse = okCourses.pop();
+            studiedCourseCount++;
+
+            for (var course : coursesList.get(okCourse)) {
+                inDegrees[course]--;
+                
+                if (inDegrees[course] == 0) {
+                    okCourses.push(course);
+                }
+            }
+        }
+
+        return studiedCourseCount == numCourses;
+    }
+}
+```
+
 ## C++
+### Solution 1: Breadth-First Search
 ```cpp
-// Welcome to create a PR to complete the code of this language, thanks!
+class Solution {
+public:
+    bool canFinish(int num_courses, vector<vector<int>>& prerequisites) {
+        auto in_degrees = vector<int>(num_courses);
+        auto courses_vector = vector<set<int>>(num_courses); // index: course, value: courses depending on course
+
+        for (auto& prerequisite : prerequisites) {
+            in_degrees[prerequisite[0]]++;
+
+            courses_vector[prerequisite[1]].insert(prerequisite[0]);
+        }
+
+        queue<int> ok_courses;
+        auto studied_course_count = 0;
+
+        for (auto course = 0; course < in_degrees.size(); course++) {
+            if (in_degrees[course] == 0) {
+                ok_courses.push(course);
+            }
+        }
+
+        while (!ok_courses.empty()) {
+            auto okCourse = ok_courses.front();
+            ok_courses.pop();
+            studied_course_count++;
+
+            for (auto course : courses_vector[okCourse]) {
+                in_degrees[course]--;
+                
+                if (in_degrees[course] == 0) {
+                    ok_courses.push(course);
+                }
+            }
+        }
+
+        return studied_course_count == num_courses;
+    }
+};
+```
+
+### Solution 2: Depth-First Search
+```cpp
+class Solution {
+public:
+    bool canFinish(int num_courses, vector<vector<int>>& prerequisites) {
+        auto in_degrees = vector<int>(num_courses);
+        auto courses_vector = vector<set<int>>(num_courses); // index: course, value: courses depending on course
+
+        for (auto& prerequisite : prerequisites) {
+            in_degrees[prerequisite[0]]++;
+
+            courses_vector[prerequisite[1]].insert(prerequisite[0]);
+        }
+
+        stack<int> ok_courses;
+        auto studied_course_count = 0;
+
+        for (auto course = 0; course < in_degrees.size(); course++) {
+            if (in_degrees[course] == 0) {
+                ok_courses.push(course);
+            }
+        }
+
+        while (!ok_courses.empty()) {
+            auto okCourse = ok_courses.top();
+            ok_courses.pop();
+            studied_course_count++;
+
+            for (auto course : courses_vector[okCourse]) {
+                in_degrees[course]--;
+                
+                if (in_degrees[course] == 0) {
+                    ok_courses.push(course);
+                }
+            }
+        }
+
+        return studied_course_count == num_courses;
+    }
+};
 ```
 
 ## JavaScript
@@ -129,8 +296,106 @@ class Solution:
 ```
 
 ## C#
+### Solution 1: Breadth-First Search
 ```c#
-// Welcome to create a PR to complete the code of this language, thanks!
+public class Solution {
+    public bool CanFinish(int numCourses, int[][] prerequisites)
+    {
+        var inDegrees = new int[numCourses];
+        var coursesList = new List<HashSet<int>>(); // index: course, value: courses depending on course
+        
+        for (int i = 0; i < numCourses; i++)
+            coursesList.Add(new HashSet<int>());
+
+        foreach (int[] prerequisite in prerequisites)
+        {
+            inDegrees[prerequisite[0]]++;
+
+            var courses = coursesList[prerequisite[1]];
+            courses.Add(prerequisite[0]);
+        }
+
+        var okCourses = new Queue<int>();
+        int studiedCourseCount = 0;
+
+        for (int course = 0; course < inDegrees.Length; course++)
+        {
+            if (inDegrees[course] == 0)
+            {
+                okCourses.Enqueue(course);
+            }
+        }
+
+        while (okCourses.Count > 0)
+        {
+            int okCourse = okCourses.Dequeue();
+            studiedCourseCount++;
+
+            foreach (int course in coursesList[okCourse])
+            {
+                inDegrees[course]--;
+                
+                if (inDegrees[course] == 0)
+                {
+                    okCourses.Enqueue(course);
+                }
+            }
+        }
+
+        return studiedCourseCount == numCourses;
+    }
+}
+```
+
+### Solution 2: Depth-First Search
+```c#
+public class Solution {
+    public bool CanFinish(int numCourses, int[][] prerequisites)
+    {
+        var inDegrees = new int[numCourses];
+        var coursesList = new List<HashSet<int>>(); // index: course, value: courses depending on course
+
+        for (int i = 0; i < numCourses; i++)
+            coursesList.Add(new HashSet<int>());
+
+        foreach (int[] prerequisite in prerequisites)
+        {
+            inDegrees[prerequisite[0]]++;
+
+            var courses = coursesList[prerequisite[1]];
+            courses.Add(prerequisite[0]);
+        }
+
+        var okCourses = new Stack<int>();
+        int studiedCourseCount = 0;
+
+        for (int course = 0; course < inDegrees.Length; course++)
+        {
+            if (inDegrees[course] == 0)
+            {
+                okCourses.Push(course);
+            }
+        }
+
+        while (okCourses.Count > 0)
+        {
+            int okCourse = okCourses.Pop();
+            studiedCourseCount++;
+
+            foreach (int course in coursesList[okCourse])
+            {
+                inDegrees[course]--;
+                
+                if (inDegrees[course] == 0)
+                {
+                    okCourses.Push(course);
+                }
+            }
+        }
+
+        return studiedCourseCount == numCourses;
+    }
+}
 ```
 
 ## Go
