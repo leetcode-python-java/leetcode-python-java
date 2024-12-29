@@ -12,6 +12,9 @@ Solutions for languages such as **Python, C++, Java, JavaScript, C#, Go, Ruby**,
 I have planned a learning route for you. You just need to do the problems in the order they are listed.
 You can skip the more difficult problems and do them later.
 
+# Array
+- [704. Binary Search](solutions/1-1000/704-binary-search.md) was solved in _Python, Java, C++, JavaScript, C#, Go, Ruby_.
+
 # Brute Force
 - [503. Next Greater Element II](solutions/1-1000/503-next-greater-element-ii.md) was solved in _Python, Java, C++, JavaScript, C#, Go, Ruby_.
 
