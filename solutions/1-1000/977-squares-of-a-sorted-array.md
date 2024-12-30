@@ -176,7 +176,7 @@ var sortedSquares = function (nums) {
 ### Solution 2: not using `sort()`
 ```javascript
 var sortedSquares = function (nums) {
-  const results = Array(nums.length).fill(0)
+  const results = Array(nums.length).fill(null)
   let left = 0
   let right = nums.length - 1
   let index = right

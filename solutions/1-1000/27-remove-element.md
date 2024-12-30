@@ -98,7 +98,7 @@ class Solution {
     public int removeElement(int[] nums, int val) {
         var slowIndex = 0;
 
-        for (var num : nums) {
+        for (var num : nums) { // This line is the most important. You'd better memorize it.
             if (num != val) {
                 nums[slowIndex] = num;
                 slowIndex += 1;
@@ -140,7 +140,7 @@ class Solution:
     def removeElement(self, nums: List[int], val: int) -> int:
         slow_index = 0
 
-        for num in nums:
+        for num in nums: # This line is the most important. You'd better memorize it.
             if num != val:
                 nums[slow_index] = num
                 slow_index += 1
@@ -185,7 +185,7 @@ public:
     int removeElement(vector<int>& nums, int val) {
         auto slow_index = 0;
 
-        for (auto num : nums) {
+        for (auto num : nums) { // This line is the most important. You'd better memorize it.
             if (num != val) {
                 nums[slow_index] = num;
                 slow_index += 1;
@@ -229,7 +229,7 @@ var removeElement = function (nums, val) {
 var removeElement = function (nums, val) {
   let slowIndex = 0
 
-  nums.forEach((num) => {
+  nums.forEach((num) => { // This line is the most important. You'd better memorize it.
     if (num != val) {
       nums[slowIndex] = num
       slowIndex += 1
@@ -282,7 +282,7 @@ public class Solution
     {
         int slowIndex = 0;
 
-        foreach (int num in nums)
+        foreach (int num in nums) // This line is the most important. You'd better memorize it.
         {
             if (num != val)
             {
@@ -328,7 +328,7 @@ func removeElement(nums []int, val int) int {
 func removeElement(nums []int, val int) int {
     slowIndex := 0
 
-    for _, num := range nums {
+    for _, num := range nums { // This line is the most important. You'd better memorize it.
         if num != val {
             nums[slowIndex] = num
             slowIndex += 1
@@ -371,7 +371,7 @@ end
 def remove_element(nums, val)
   slow_index = 0
 
-  nums.each do |num|
+  nums.each do |num| # This line is the most important. You'd better memorize it.
     if num != val
       nums[slow_index] = num
       slow_index += 1

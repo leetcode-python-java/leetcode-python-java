@@ -34,7 +34,7 @@ Output: 0
 For **subarray** problems, you can consider using **Sliding Window Technique**, which belongs to the **Fast and Slow Pointers Technique**.
 
 ## Steps to the Solution
-* Traverse the `nums` array, the `index` of the element is named `fast_index`. This is a common method of the _Fast and Slow Pointers Technique_.
+* Traverse the `nums` array, the `index` of the element is named `fast_index`. This is the most important logic of _Fast and Slow Pointers Technique_. You'd better memorize it.
 * `sum += nums[fast_index]`.
 * If `sum >= target`, `sum -= nums[slow_index]; slow_index += 1`:
 ```python
@@ -56,7 +56,7 @@ class Solution {
         var sum = 0;
         var slowIndex = 0;
 
-        for (var fastIndex = 0; fastIndex < nums.length; fastIndex++) {
+        for (var fastIndex = 0; fastIndex < nums.length; fastIndex++) { // This line is the most important. You'd better memorize it.
             sum += nums[fastIndex];
 
             while (sum >= target) {
@@ -83,7 +83,7 @@ class Solution:
         sum_ = 0
         slow_index = 0
 
-        for fast_index, num in enumerate(nums):
+        for fast_index, num in enumerate(nums): # This line is the most important. You'd better memorize it.
             sum_ += num
 
             while sum_ >= target:
@@ -109,7 +109,7 @@ var minSubArrayLen = function(target, nums) {
   let sum = 0
   let slowIndex = 0
 
-  nums.forEach((num, fastIndex) => {
+  nums.forEach((num, fastIndex) => { // This line is the most important. You'd better memorize it.
     sum += num
 
     while (sum >= target) {
@@ -137,7 +137,7 @@ public class Solution
         int sum = 0;
         int slowIndex = 0;
 
-        for (int fastIndex = 0; fastIndex < nums.Length; fastIndex++)
+        for (int fastIndex = 0; fastIndex < nums.Length; fastIndex++) // This line is the most important. You'd better memorize it.
         {
             sum += nums[fastIndex];
 
