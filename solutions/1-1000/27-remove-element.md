@@ -31,14 +31,33 @@ It does not matter what you leave beyond the returned k (hence they are undersco
 - `0 <= nums[i] <= 50`
 - `0 <= val <= 100`
 
+<details>
+  <summary>Hint 1</summary>
+  The problem statement clearly asks us to modify the array in-place and it also says that the element beyond the new length of the array can be anything. Given an element, we need to remove all the occurrences of it from the array. We don't technically need to remove that element per-say, right?
+</details>
+
+<details>
+  <summary>Hint 2</summary>
+  We can move all the occurrences of this element to the end of the array. Use two pointers!
+</details>
+
+<details>
+  <summary>Hint 3</summary>
+  Yet another direction of thought is to consider the elements to be removed as non-existent. In a single pass, if we keep copying the visible elements in-place, that should also solve this problem for us.
+</details>
+
 ## Intuition behind the Solution
 The goal is to remove the elements in the array that are equal to `val`, and the order of the remaining elements is not important.
 
-### Solution 1
+### Solution 1 (easier to think of)
 Then we only need to use the following elements that are not equal to `val` to occupy the elements that are equal to `val`.
 
-### Solution 2
+![](../../images/examples/27_hint_2.png)
+
+### Solution 2 (more concise and easier to code)
 You only need to traverse the array once and keep all numbers that are not equal to `val` at the front of the array.
+
+`slowIndex` is used to save the current front position.
 
 ## Complexity
 * Time: `O(n)`.
@@ -73,7 +92,7 @@ class Solution {
 }
 ```
 
-### Solution 2: Fast and Slow Pointers (more concise)
+### Solution 2: Fast and Slow Pointers (more concise and easier to code)
 ```java
 class Solution {
     public int removeElement(int[] nums, int val) {
@@ -115,7 +134,7 @@ class Solution:
         return left
 ```
 
-### Solution 2: Fast and Slow Pointers (more concise)
+### Solution 2: Fast and Slow Pointers (more concise and easier to code)
 ```python
 class Solution:
     def removeElement(self, nums: List[int], val: int) -> int:
@@ -159,7 +178,7 @@ public:
 };
 ```
 
-### Solution 2: Fast and Slow Pointers (more concise)
+### Solution 2: Fast and Slow Pointers (more concise and easier to code)
 ```c++
 class Solution {
 public:
@@ -205,7 +224,7 @@ var removeElement = function (nums, val) {
 };
 ```
 
-### Solution 2: Fast and Slow Pointers (more concise)
+### Solution 2: Fast and Slow Pointers (more concise and easier to code)
 ```javascript
 var removeElement = function (nums, val) {
   let slowIndex = 0
@@ -255,7 +274,7 @@ public class Solution
 }
 ```
 
-### Solution 2: Fast and Slow Pointers (more concise)
+### Solution 2: Fast and Slow Pointers (more concise and easier to code)
 ```c#
 public class Solution
 {
@@ -304,7 +323,7 @@ func removeElement(nums []int, val int) int {
 }
 ```
 
-### Solution 2: Fast and Slow Pointers (more concise)
+### Solution 2: Fast and Slow Pointers (more concise and easier to code)
 ```go
 func removeElement(nums []int, val int) int {
     slowIndex := 0
@@ -347,7 +366,7 @@ def remove_element(nums, val)
 end
 ```
 
-### Solution 2: Fast and Slow Pointers (more concise)
+### Solution 2: Fast and Slow Pointers (more concise and easier to code)
 ```ruby
 def remove_element(nums, val)
   slow_index = 0

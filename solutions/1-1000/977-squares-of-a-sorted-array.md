@@ -200,11 +200,12 @@ var sortedSquares = function (nums) {
 ## C#
 ### Solution 1: using `sort()`
 ```c#
-public class Solution {
-    public int[] SortedSquares(int[] nums) {
-        for (int i = 0; i < nums.Length; i++) {
+public class Solution
+{
+    public int[] SortedSquares(int[] nums)
+    {
+        for (int i = 0; i < nums.Length; i++)
             nums[i] *= nums[i];
-        }
 
         Array.Sort(nums);
 
@@ -215,8 +216,10 @@ public class Solution {
 
 ### Solution 2: not using `sort()`
 ```c#
-public class Solution {
-    public int[] SortedSquares(int[] nums) {
+public class Solution
+{
+    public int[] SortedSquares(int[] nums)
+    {
         var results = new int[nums.Length];
         int left = 0;
         int right = nums.Length - 1;
