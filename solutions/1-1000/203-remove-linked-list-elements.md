@@ -1,11 +1,14 @@
 # 203. Remove Linked List Elements - LeetCode Solution
-LeetCode problem link: [203. Remove Linked List Elements](https://leetcode.com/problems/remove-linked-list-elements)
+LeetCode problem link: [203. Remove Linked List Elements](https://leetcode.com/problems/remove-linked-list-elements), [203. 移除链表元素](https://leetcode.cn/problems/remove-linked-list-elements)
+
+[中文题解](#中文题解)
 
 ## LeetCode problem description
 Given the `head` of a linked list and an integer `val`, remove all the nodes of the linked list that has `Node.val == val`, and return _the new head_.
 
 ### [Example 1]
 ![](../../images/examples/203_1.jpg)
+
 **Input**: `head = [1,2,6,3,4,5,6], val = 6`
 
 **Output**: `[1,2,3,4,5]`
@@ -26,12 +29,16 @@ Given the `head` of a linked list and an integer `val`, remove all the nodes of 
 - `0 <= val <= 50`
 
 ## Intuition behind the Solution
+[中文题解](#中文题解)
+
 Assume that the node to be deleted in the linked list is `d`, and the previous node of `d` is `p`, so `p.next` is `d`.
 
 To delete `d`, just set `p.next = p.next.next`.
 
 But there is no node before the `head` node, which means that the `head` node needs to be treated specially.
+
 Is there a way to make the `head` node no longer special? In this way, there is no need to treat the `head` specially.
+
 The way is to introduce a `dummy` node, `dummy.next = head`.
 
 ## Complexity
@@ -121,8 +128,6 @@ class Solution:
 
 但`head`节点前面没有节点，这就意味着需要对`head`节点进行特殊处理。
 
-是否有方法能够让`head`节点的不再特殊呢？
-
-这样就不需要特殊处理`head`了。
+是否有方法能够让`head`节点的不再特殊呢？这样就不需要特殊处理`head`了。
 
 办法是引入`dummy`节点，`dummy.next = head`。
