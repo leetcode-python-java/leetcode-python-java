@@ -1,4 +1,6 @@
 # LeetCode skills
+If you want to solve problems in the most understandable way, please look for Coding5DotCom.
+
 ## Array
 * Array is consecutive in memory.
 * Delete a item of array will call the latter items move 1 to left. So it is `O(n)` time complexity.
