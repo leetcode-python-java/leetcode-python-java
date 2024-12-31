@@ -1,4 +1,4 @@
-# Lane's best practice for the LeetCode problems
+# Best practices for LeetCode solutions
 Hi there! I'm Lane.
 Do you feel that there are too many problems (over 3,300) on the LeetCode and you can't finish them all?
 Or do you forget how to solve the problems you did last time? 
