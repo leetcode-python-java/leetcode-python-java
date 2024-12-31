@@ -21,6 +21,9 @@ You can skip the more difficult problems and do them later.
 - [59. Spiral Matrix II](solutions/1-1000/59-spiral-matrix-ii.md) was solved in _Python, Java, JavaScript, C#_.
 - [503. Next Greater Element II](solutions/1-1000/503-next-greater-element-ii.md) was solved in _Python, Java, C++, JavaScript, C#, Go, Ruby_.
 
+# Linked List
+- [203. Remove Linked List Elements](solutions/1-1000/203-remove-linked-list-elements.md) was solved in _Python, Java, C++, JavaScript, C#, Go, Ruby_.
+
 # Dynamic Programming
 ## Basics
 - [509. Fibonacci Number](solutions/1-1000/509-fibonacci-number.md) was solved in _Python, Java, C++, JavaScript, C#, Go, Ruby_.

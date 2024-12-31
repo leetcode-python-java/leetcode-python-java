@@ -3,7 +3,7 @@ If you want to solve problems in the most understandable way, please look for Co
 
 ## Array
 * Array is consecutive in memory.
-* Delete a item of array will call the latter items move 1 to left. So it is `O(n)` time complexity.
+* Cannot delete an item. Actually, it is overwrite. Delete a item of array will call the latter items move 1 to left. So it is `O(n)` time complexity.
 * C++ 2D array is also consecutive. But Java is not.
 
 ## Binary tree unified stack iteration
