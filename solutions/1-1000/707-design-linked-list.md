@@ -53,7 +53,7 @@ myLinkedList.get(1);              // return 3
 This question can comprehensively test the candidate's mastery of linked lists. The following points need to be paid attention to:
 
 1. It is best to use a `dummyHead` node as the entry of the linked list.
-2. It is best to use a new `LinkedNode` class, so that `dummyHead` does not need to be mixed with `val` and `next`.
+2. It is best to use a new `ListNode` class, so that `dummyHead` does not need to be mixed with `val` and `next`.
 3. Implement the easy methods first, in the order of `addAtHead`, `addAtTail`, `addAtIndex`, `deleteAtIndex`, `get`.
 
 ## Complexity
@@ -62,17 +62,17 @@ This question can comprehensively test the candidate's mastery of linked lists. 
 
 ## Java
 ```java
-class LinkedNode {
+class ListNode {
     int val;
-    LinkedNode next;
+    ListNode next;
 
-    LinkedNode(int val) {
+    ListNode(int val) {
         this.val = val;
     }
 }
 
 class MyLinkedList {
-    private LinkedNode dummyHead = new LinkedNode(0);
+    private ListNode dummyHead = new ListNode(0);
 
     public MyLinkedList() {}
 
@@ -93,7 +93,7 @@ class MyLinkedList {
     }
     
     public void addAtHead(int val) {
-        var node = new LinkedNode(val);
+        var node = new ListNode(val);
         node.next = dummyHead.next;
         dummyHead.next = node;
     }
@@ -105,7 +105,7 @@ class MyLinkedList {
             node = node.next;
         }
 
-        node.next = new LinkedNode(val);
+        node.next = new ListNode(val);
     }
     
     public void addAtIndex(int index, int val) {
@@ -118,7 +118,7 @@ class MyLinkedList {
         }
 
         if (i == index) {
-            var newNode = new LinkedNode(val);
+            var newNode = new ListNode(val);
             newNode.next = node.next;
             node.next = newNode;
         }
@@ -142,7 +142,7 @@ class MyLinkedList {
 
 ## Python
 ```python
-class LinkedNode:
+class ListNode:
     def __init__(self, val=None):
         self.val = val
         self.next = None
@@ -150,7 +150,7 @@ class LinkedNode:
 
 class MyLinkedList:
     def __init__(self):
-        self.dummy_head = LinkedNode()
+        self.dummy_head = ListNode()
 
     def get(self, index: int) -> int:
         node = self.dummy_head.next
@@ -166,7 +166,7 @@ class MyLinkedList:
         return -1
 
     def addAtHead(self, val: int) -> None:
-        node = LinkedNode(val)
+        node = ListNode(val)
         node.next = self.dummy_head.next
         self.dummy_head.next = node
 
@@ -176,7 +176,7 @@ class MyLinkedList:
         while node.next:
             node = node.next
 
-        node.next = LinkedNode(val)
+        node.next = ListNode(val)
 
     def addAtIndex(self, index: int, val: int) -> None:
         node = self.dummy_head
@@ -187,7 +187,7 @@ class MyLinkedList:
             i += 1
 
         if i == index:
-            new_node = LinkedNode(val)
+            new_node = ListNode(val)
             new_node.next = node.next
             node.next = new_node
         
@@ -210,7 +210,7 @@ class MyLinkedList:
 
 ## JavaScript
 ```javascript
-class LinkedNode {
+class ListNode {
   constructor(val) {
     this.val = val
     this.next = null
@@ -218,7 +218,7 @@ class LinkedNode {
 }
 
 var MyLinkedList = function () {
-  this.dummyHead = new LinkedNode(0)
+  this.dummyHead = new ListNode(0)
 };
 
 MyLinkedList.prototype.get = function (index) {
@@ -238,7 +238,7 @@ MyLinkedList.prototype.get = function (index) {
 };
 
 MyLinkedList.prototype.addAtHead = function (val) {
-  const node = new LinkedNode(val)
+  const node = new ListNode(val)
   node.next = this.dummyHead.next
   this.dummyHead.next = node
 };
@@ -250,7 +250,7 @@ MyLinkedList.prototype.addAtTail = function (val) {
     node = node.next
   }
 
-  node.next = new LinkedNode(val)
+  node.next = new ListNode(val)
 };
 
 MyLinkedList.prototype.addAtIndex = function (index, val) {
@@ -263,7 +263,7 @@ MyLinkedList.prototype.addAtIndex = function (index, val) {
   }
 
   if (i == index) {
-    const newNode = new LinkedNode(val);
+    const newNode = new ListNode(val);
     newNode.next = node.next;
     node.next = newNode;
   }
@@ -286,12 +286,12 @@ MyLinkedList.prototype.deleteAtIndex = function (index) {
 
 ## C#
 ```c#
-public class LinkedNode
+public class ListNode
 {
     public int val;
-    public LinkedNode next;
+    public ListNode next;
 
-    public LinkedNode(int val)
+    public ListNode(int val)
     {
         this.val = val;
     }
@@ -299,7 +299,7 @@ public class LinkedNode
 
 public class MyLinkedList
 {
-    LinkedNode dummyHead = new LinkedNode(0);
+    ListNode dummyHead = new ListNode(0);
 
     public MyLinkedList() {}
     
@@ -322,7 +322,7 @@ public class MyLinkedList
     
     public void AddAtHead(int val)
     {
-        var node = new LinkedNode(val);
+        var node = new ListNode(val);
         node.next = dummyHead.next;
         dummyHead.next = node;
     }
@@ -334,7 +334,7 @@ public class MyLinkedList
         while (node.next != null)
             node = node.next;
 
-        node.next = new LinkedNode(val);
+        node.next = new ListNode(val);
     }
     
     public void AddAtIndex(int index, int val)
@@ -349,7 +349,7 @@ public class MyLinkedList
         }
 
         if (i == index) {
-            var newNode = new LinkedNode(val);
+            var newNode = new ListNode(val);
             newNode.next = node.next;
             node.next = newNode;
         }
@@ -411,5 +411,5 @@ public class MyLinkedList
 本题可以全面考察候选人对链表的掌握程度，以下几点需要重视：
 
 1. 最好使用一个`dummyHead`节点做为链表入口。
-2. 最好使用一个新的`LinkedNode`类，这样，`dummyHead`就不用和`val`、`next`混在一起。
+2. 最好使用一个新的`ListNode`类，这样，`dummyHead`就不用和`val`、`next`混在一起。
 3. 先实现容易的方法，顺序为`addAtHead`, `addAtTail`, `addAtIndex`, `deleteAtIndex`, `get`。
