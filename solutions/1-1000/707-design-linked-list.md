@@ -50,13 +50,15 @@ myLinkedList.get(1);              // return 3
 - At most `2000` calls will be made to `get`, `addAtHead`, `addAtTail`, `addAtIndex` and `deleteAtIndex`.
 
 ## Intuition behind the Solution
+This question can comprehensively test the candidate's mastery of linked lists. The following points need to be paid attention to:
 
-## Steps to the Solution
-
+1. It is best to use a `dummyHead` node as the entry of the linked list.
+2. It is best to use a new `LinkedNode` class, so that `dummyHead` does not need to be mixed with `val` and `next`.
+3. Implement the easy methods first, in the order of `addAtHead`, `addAtTail`, `addAtIndex`, `deleteAtIndex`, `get`.
 
 ## Complexity
-* Time: `O()`.
-* Space: `O()`.
+* Time: `O(n * n)`.
+* Space: `O(n)`.
 
 ## Java
 ```java
@@ -208,12 +210,166 @@ class MyLinkedList:
 
 ## JavaScript
 ```javascript
-// Welcome to create a PR to complete the code of this language, thanks!
+class LinkedNode {
+  constructor(val) {
+    this.val = val
+    this.next = null
+  }
+}
+
+var MyLinkedList = function () {
+  this.dummyHead = new LinkedNode(0)
+};
+
+MyLinkedList.prototype.get = function (index) {
+  let node = this.dummyHead.next
+  let i = 0
+
+  while (node != null && i < index) {
+    node = node.next
+    i += 1
+  }
+
+  if (i == index && node != null) {
+    return node.val
+  }
+
+  return -1
+};
+
+MyLinkedList.prototype.addAtHead = function (val) {
+  const node = new LinkedNode(val)
+  node.next = this.dummyHead.next
+  this.dummyHead.next = node
+};
+
+MyLinkedList.prototype.addAtTail = function (val) {
+  let node = this.dummyHead
+
+  while (node.next != null) {
+    node = node.next
+  }
+
+  node.next = new LinkedNode(val)
+};
+
+MyLinkedList.prototype.addAtIndex = function (index, val) {
+  let node = this.dummyHead
+  let i = 0
+
+  while (node.next != null && i < index) {
+    node = node.next
+    i += 1
+  }
+
+  if (i == index) {
+    const newNode = new LinkedNode(val);
+    newNode.next = node.next;
+    node.next = newNode;
+  }
+};
+
+MyLinkedList.prototype.deleteAtIndex = function (index) {
+  let node = this.dummyHead
+  let i = 0
+
+  while (node.next != null && i < index) {
+    node = node.next
+    i += 1
+  }
+
+  if (i == index && node.next != null) {
+    node.next = node.next.next
+  }
+};
 ```
 
 ## C#
 ```c#
-// Welcome to create a PR to complete the code of this language, thanks!
+public class LinkedNode
+{
+    public int val;
+    public LinkedNode next;
+
+    public LinkedNode(int val)
+    {
+        this.val = val;
+    }
+}
+
+public class MyLinkedList
+{
+    LinkedNode dummyHead = new LinkedNode(0);
+
+    public MyLinkedList() {}
+    
+    public int Get(int index)
+    {
+        var node = dummyHead.next;
+        int i = 0;
+
+        while (node != null && i < index)
+        {
+            node = node.next;
+            i += 1;
+        }
+
+        if (i == index && node != null)
+            return node.val;
+
+        return -1;
+    }
+    
+    public void AddAtHead(int val)
+    {
+        var node = new LinkedNode(val);
+        node.next = dummyHead.next;
+        dummyHead.next = node;
+    }
+    
+    public void AddAtTail(int val)
+    {
+        var node = dummyHead;
+
+        while (node.next != null)
+            node = node.next;
+
+        node.next = new LinkedNode(val);
+    }
+    
+    public void AddAtIndex(int index, int val)
+    {
+        var node = dummyHead;
+        int i = 0;
+
+        while (node.next != null && i < index)
+        {
+            node = node.next;
+            i += 1;
+        }
+
+        if (i == index) {
+            var newNode = new LinkedNode(val);
+            newNode.next = node.next;
+            node.next = newNode;
+        }
+    }
+    
+    public void DeleteAtIndex(int index) 
+    {
+        var node = dummyHead;
+        int i = 0;
+
+        while (node.next != null && i < index)
+        {
+            node = node.next;
+            i += 1;
+        }
+
+        if (i == index && node.next != null)
+            node.next = node.next.next;
+    }
+}
 ```
 
 ## Go
@@ -251,15 +407,9 @@ class MyLinkedList:
 // Welcome to create a PR to complete the code of this language, thanks!
 ```
 
-## 问题描述
-
-
-### [Example 1]
-![](../../images/examples/-)
-
-**Input**: ``
-
-**Output**: ``
-
 ## 中文题解
+本题可以全面考察候选人对链表的掌握程度，以下几点需要重视：
 
+1. 最好使用一个`dummyHead`节点做为链表入口。
+2. 最好使用一个新的`LinkedNode`类，这样，`dummyHead`就不用和`val`、`next`混在一起。
+3. 先实现容易的方法，顺序为`addAtHead`, `addAtTail`, `addAtIndex`, `deleteAtIndex`, `get`。
