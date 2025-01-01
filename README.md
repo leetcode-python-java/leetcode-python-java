@@ -23,6 +23,7 @@ You can skip the more difficult problems and do them later.
 
 # Linked List
 - [203. Remove Linked List Elements](solutions/1-1000/203-remove-linked-list-elements.md) was solved in _Python, Java, C++, JavaScript, C#, Go, Ruby_.
+- [206. Reverse Linked List](solutions/1-1000/206-reverse-linked-list.md) was solved in _Python, Java, C++, JavaScript, C#, Go, Ruby_.
 - [707. Design Linked List](solutions/1-1000/707-design-linked-list.md) was solved in _Python, Java, JavaScript, C#_.
 
 # Dynamic Programming
