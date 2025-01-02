@@ -35,7 +35,7 @@ Given the `head` of a singly linked list, reverse the list, and return _the reve
 
 1. To solve this problem, we only need to define **two** variables: `current` and `previous`.
 2. `current.next = previous` is the inversion.
-3. The loop condition should be `while current != null` instead of `while current.next != null`, because the operation to be performed is `current.next = previous`.
+3. The loop condition should be `while (current != null)` instead of `while (current.next != null)`, because the operation to be performed is `current.next = previous`.
 
 ## Steps to the Solution
 1. Traverse all nodes.
@@ -299,7 +299,7 @@ end
 ### 思路
 1. 解决这个问题，只需要定义**两**个变量：`current`和`previous`。
 2. `current.next = previous`就是反转了。
-3. 循环条件应是`while current != null`，而不应该是`while current.next != null`，因为需要操作的是`current.next = previous`.
+3. 循环条件应是`while (current != null)`，而不应该是`while (current.next != null)`，因为需要操作的是`current.next = previous`.
 
 ### 步骤
 1. 遍历所有节点。
