@@ -24,6 +24,7 @@ You can skip the more difficult problems and do them later.
 # Linked List
 - [203. Remove Linked List Elements](solutions/1-1000/203-remove-linked-list-elements.md) was solved in _Python, Java, C++, JavaScript, C#, Go, Ruby_.
 - [206. Reverse Linked List](solutions/1-1000/206-reverse-linked-list.md) was solved in _Python, Java, C++, JavaScript, C#, Go, Ruby_.
+- [160. Intersection of Two Linked Lists](solutions/1-1000/160-intersection-of-two-linked-lists.md) was solved in _Python, Java, JavaScript, C#_.
 - [19. Remove Nth Node From End of List](solutions/1-1000/19-remove-nth-node-from-end-of-list.md) was solved in _Python, Java, C++, JavaScript, C#, Go, Ruby_.
 - [707. Design Linked List](solutions/1-1000/707-design-linked-list.md) was solved in _Python, Java, JavaScript, C#_.
 - [24. Swap Nodes in Pairs](solutions/1-1000/24-swap-nodes-in-pairs.md) was solved in _Python, Java, C++, JavaScript, C#, Go, Ruby_.
