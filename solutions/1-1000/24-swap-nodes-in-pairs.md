@@ -43,7 +43,7 @@ Before solving this problem, it is recommended to solve the simple problem [206.
 
 ## Steps to the Solution
 1. Traverse all nodes.
-```java
+```c#
 var previous = null;
 var current = head;
 
@@ -53,7 +53,7 @@ while (current != null) {
 ```
 
 2. Because every two nodes swap positions, it is necessary to change it to taking two steps at a time.
-```java
+```c#
 var previous = null;
 var current = head;
 
@@ -64,7 +64,7 @@ while (current != null && current.next != null) { // 1
 ```
 
 3. Swap the positions of `current` and `current.next`.
-```java
+```c#
 var previous = null;
 var current = head;
 
@@ -79,7 +79,7 @@ while (current != null && current.next != null) {
 ```
 
 4. Process `previous`.
-```java
+```c#
 var previous = null;
 var current = head;
 
@@ -96,7 +96,7 @@ while (current != null && current.next != null) {
 ```
 
 5. Determine the return value. Because the `head` node will be swapped to the second node when the number of nodes exceeds 1, it is best to add a `dummy_head` node for unified and convenient processing.
-```java
+```c#
 var dummyHead = new ListNode(); // 1
 dummyHead.next = head; // 2
 
@@ -330,7 +330,7 @@ def swap_pairs(head)
   previous = dummy_head
   current = head
 
-  while !current.nil? && !current.next.nil?
+  while current && current.next
     next_next = current.next.next
 
     previous.next = current.next
