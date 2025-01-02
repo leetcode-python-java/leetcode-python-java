@@ -30,6 +30,11 @@ Given the `head` of a linked list, remove the `n-th` node from the end of the li
 - `0 <= Node.val <= 100`
 - `1 <= n <= sz`
 
+<details>
+  <summary>Hint 1</summary>
+  Maintain two pointers and update one with a delay of n steps.
+</details>
+
 ## Intuition behind the Solution
 [中文题解](#中文题解)
 
