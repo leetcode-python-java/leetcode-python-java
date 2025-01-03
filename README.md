@@ -30,6 +30,7 @@ You can skip the more difficult problems and do them later.
 - [24. Swap Nodes in Pairs](solutions/1-1000/24-swap-nodes-in-pairs.md) was solved in _Python, Java, C++, JavaScript, C#, Go, Ruby_.
 
 # Hash Table
+- [349. Intersection of Two Arrays](solutions/1-1000/349-intersection-of-two-arrays.md) was solved in _Python, Java, C++, JavaScript, C#, Go, Ruby_.
 - [242. Valid Anagram](solutions/1-1000/242-valid-anagram.md) was solved in _Python, Java, JavaScript, C#_.
 
 # Dynamic Programming
