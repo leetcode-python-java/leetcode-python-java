@@ -6,6 +6,11 @@ If you want to solve problems in the most understandable way, please look for Co
 * Cannot delete an item. Actually, it is overwrite. Delete a item of array will call the latter items move 1 to left. So it is `O(n)` time complexity.
 * C++ 2D array is also consecutive. But Java is not.
 
+## Hash function
+You want to store students' information into a hash table. 
+You want to query information by a student's name.
+* `index = theHashFunction(student_name)` `the_information = the_hash_table[index]`.
+
 ## Binary tree unified stack iteration
 `boolean mark` solution.
 

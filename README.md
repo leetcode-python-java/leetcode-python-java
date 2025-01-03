@@ -29,6 +29,9 @@ You can skip the more difficult problems and do them later.
 - [707. Design Linked List](solutions/1-1000/707-design-linked-list.md) was solved in _Python, Java, JavaScript, C#_.
 - [24. Swap Nodes in Pairs](solutions/1-1000/24-swap-nodes-in-pairs.md) was solved in _Python, Java, C++, JavaScript, C#, Go, Ruby_.
 
+# Hash Table
+- [242. Valid Anagram](solutions/1-1000/242-valid-anagram.md) was solved in _Python, Java, JavaScript, C#_.
+
 # Dynamic Programming
 ## Basics
 - [509. Fibonacci Number](solutions/1-1000/509-fibonacci-number.md) was solved in _Python, Java, C++, JavaScript, C#, Go, Ruby_.
