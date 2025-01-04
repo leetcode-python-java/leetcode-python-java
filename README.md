@@ -34,6 +34,7 @@ You can skip the more difficult problems and do them later.
 - [242. Valid Anagram](solutions/1-1000/242-valid-anagram.md) was solved in _Python, Java, JavaScript, C#_.
 - [1. Two Sum](solutions/1-1000/1-two-sum.md) was solved in _Python, Java, C++, JavaScript, C#, Go, Ruby_.
 - [202. Happy Number](solutions/1-1000/202-happy-number.md) was solved in _Python, Java, JavaScript, C#_.
+- [454. 4Sum II](solutions/1-1000/454-4sum-ii.md) was solved in _Python, Java, JavaScript, C#, Ruby_.
 
 # Dynamic Programming
 ## Basics
