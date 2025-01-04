@@ -32,6 +32,7 @@ You can skip the more difficult problems and do them later.
 # Hash Table
 - [349. Intersection of Two Arrays](solutions/1-1000/349-intersection-of-two-arrays.md) was solved in _Python, Java, C++, JavaScript, C#, Go, Ruby_.
 - [242. Valid Anagram](solutions/1-1000/242-valid-anagram.md) was solved in _Python, Java, JavaScript, C#_.
+- [202. Happy Number](solutions/1-1000/202-happy-number.md) was solved in _Python, Java, JavaScript, C#_.
 
 # Dynamic Programming
 ## Basics
