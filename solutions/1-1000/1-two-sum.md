@@ -35,7 +35,7 @@ Difficulty: **Easy**
 [中文题解](#中文题解)
 
 1. The time complexity of the brute force solution is `O(n**2)`. To improve efficiency, you can sort the array, and then use **two pointers**, one pointing to the head of the array and the other pointing to the tail of the array, and decide `left += 1` or `right -= 1` according to the comparison of `sum` and `target`.
-2. After finding two values which `sum` is `target`, you can use the `index()` method to find the `index` corresponding to the value.
+2. After finding the two values which `sum` is `target`, you can use the `index()` method to find the `index` corresponding to the value.
 
 ### Complexity
 * Time: `O(N * log N)`.
@@ -259,7 +259,7 @@ end
 
 # 中文题解
 ## 思路1：双指针
-1. 暴力解法的时间复杂度为`O(n**2)`，想提升效率，可以对数组进行排序，然后用双指针，一个指向数组头，一个指向数组尾，根据和情况决定`left += 1`还是`right -= 1`。
+1. 暴力解法的时间复杂度为`O(n**2)`，想提升效率，可以对数组进行排序，然后用双指针，一个指向数组头，一个指向数组尾，根据**和**情况决定`left += 1`还是`right -= 1`。
 2. 找出了两个值后，需要用`index()`方法去找值对应的`index`。
 
 ## 思路2：使用Map提升查找一个值的效率
