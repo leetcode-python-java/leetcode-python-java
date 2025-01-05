@@ -31,7 +31,7 @@ Difficulty: **Easy**
 - `-10**9 <= target <= 10**9`
 - **Only one valid answer exists.**
 
-## Solution 1
+## Solution 1: Two pointers (should master)
 [中文题解](#中文题解)
 
 1. The time complexity of the brute force solution is `O(n**2)`. To improve efficiency, you can sort the array, and then use **two pointers**, one pointing to the head of the array and the other pointing to the tail of the array, and decide `left += 1` or `right -= 1` according to the comparison of `sum` and `target`.
@@ -41,7 +41,7 @@ Difficulty: **Easy**
 * Time: `O(N * log N)`.
 * Space: `O(N)`.
 
-## Solution 2
+## Solution 2: Use Map (also should master)
 1. In `Map`, `key` is `num`, and `value` is array `index`.
 2. Traverse the array, if `target - num` is in `Map`, return it. Otherwise, add `num` to `Map`.
 
@@ -73,6 +73,12 @@ for (let i = 0; i < nums.length; i++) {
 * Space: `O(n)`.
 
 ## Java
+### Solution 1: Two pointers
+```java
+// Welcome to create a PR to complete the code, thanks!
+```
+
+### Solution 2: Using Map
 ```java
 class Solution {
     public int[] twoSum(int[] nums, int target) {
@@ -92,19 +98,6 @@ class Solution {
 ```
 
 ## Python
-### Solution 2: Using Map
-```python
-class Solution:
-    def twoSum(self, nums: List[int], target: int) -> List[int]:
-        num_to_index = {}
-        
-        for i, num in enumerate(nums):
-            if target - num in num_to_index:
-                return [num_to_index[target - num], i]
-
-            num_to_index[num] = i
-```
-
 ### Solution 1: Two pointers
 ```python
 class Solution:
@@ -130,7 +123,26 @@ class Solution:
         return [original_nums.index(nums[left]), len(nums) - 1 - original_nums[::-1].index(nums[right])]
 ```
 
+### Solution 2: Using Map
+```python
+class Solution:
+    def twoSum(self, nums: List[int], target: int) -> List[int]:
+        num_to_index = {}
+        
+        for i, num in enumerate(nums):
+            if target - num in num_to_index:
+                return [num_to_index[target - num], i]
+
+            num_to_index[num] = i
+```
+
 ## C++
+### Solution 1: Two pointers
+```cpp
+// Welcome to create a PR to complete the code, thanks!
+```
+
+### Solution 2: Using Map
 ```cpp
 class Solution {
 public:
@@ -151,6 +163,12 @@ public:
 ```
 
 ## JavaScript
+### Solution 1: Two pointers
+```javascript
+// Welcome to create a PR to complete the code, thanks!
+```
+
+### Solution 2: Using Map
 ```javascript
 var twoSum = function (nums, target) {
   let numToIndex = new Map()
@@ -166,6 +184,12 @@ var twoSum = function (nums, target) {
 ```
 
 ## C#
+### Solution 1: Two pointers
+```c#
+// Welcome to create a PR to complete the code, thanks!
+```
+
+### Solution 2: Using Map
 ```c#
 public class Solution {
     public int[] TwoSum(int[] nums, int target) {
@@ -185,6 +209,12 @@ public class Solution {
 ```
 
 ## Go
+### Solution 1: Two pointers
+```go
+// Welcome to create a PR to complete the code, thanks!
+```
+
+### Solution 2: Using Map
 ```go
 func twoSum(nums []int, target int) []int {
     numToIndex := map[int]int{}
@@ -202,6 +232,12 @@ func twoSum(nums []int, target int) []int {
 ```
 
 ## Ruby
+### Solution 1: Two pointers
+```ruby
+# Welcome to create a PR to complete the code, thanks!
+```
+
+### Solution 2: Using Map
 ```ruby
 def two_sum(nums, target)
   num_to_index = {}

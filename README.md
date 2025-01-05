@@ -14,7 +14,7 @@ You can skip the more difficult problems and do them later.
 
 # Array
 - [704. Binary Search](solutions/1-1000/704-binary-search.md) was solved in _Python, Java, C++, JavaScript, C#, Go, Ruby_.
-- [27. Remove Element](solutions/1-1000/27-remove-element.md) was solved in _Python, Java, C++, JavaScript, C#, Go, Ruby_ and **2** solutions.
+- [27. Remove Element](solutions/1-1000/27-remove-element.md) was solved in _Python, Java, C++, JavaScript, C#, Go, Ruby_ and **2** ways.
 - [977. Squares of a Sorted Array](solutions/1-1000/977-squares-of-a-sorted-array.md) was solved in _Python, Java, C++, JavaScript, C#, Go, Ruby_.
 - [209. Minimum Size Subarray Sum](solutions/1-1000/209-minimum-size-subarray-sum.md) was solved in _Python, Java, JavaScript, C#_.
 - [303. Range Sum Query - Immutable](solutions/1-1000/303-range-sum-query-immutable.md) was solved in _Python, Java, C++, JavaScript, C#, Go, Ruby_.
@@ -35,6 +35,7 @@ You can skip the more difficult problems and do them later.
 - [1. Two Sum](solutions/1-1000/1-two-sum.md) was solved in _Python, Java, C++, JavaScript, C#, Go, Ruby_.
 - [202. Happy Number](solutions/1-1000/202-happy-number.md) was solved in _Python, Java, JavaScript, C#_.
 - [454. 4Sum II](solutions/1-1000/454-4sum-ii.md) was solved in _Python, Java, JavaScript, C#, Ruby_.
+- [15. 3Sum](solutions/1-1000/15-3sum.md) was solved in _Python_ and 2 ways.
 
 # Dynamic Programming
 ## Basics
@@ -43,12 +44,12 @@ You can skip the more difficult problems and do them later.
 ## House Robber
 - [198. House Robber](solutions/1-1000/198-house-robber.md) was solved in _Python, Java, C++, JavaScript, C#, Go, Ruby_.
 - [213. House Robber II](solutions/1-1000/213-house-robber-ii.md) was solved in _Python, JavaScript, Go_.
-- [337. House Robber III](solutions/1-1000/337-house-robber-iii.md) was solved in _Python, JavaScript, Go_ and **2** solutions.
+- [337. House Robber III](solutions/1-1000/337-house-robber-iii.md) was solved in _Python, JavaScript, Go_ and **2** ways.
 
 ## Knapsack Problems
 ### 0/1 Knapsack
-- [416. Partition Equal Subset Sum](solutions/1-1000/416-partition-equal-subset-sum.md) was solved in _Python, Java, C++, JavaScript, C#, Go, Ruby_ and **2** solutions.
-- [1049. Last Stone Weight II](solutions/1001-2000/1049-last-stone-weight-ii.md) was solved in _Python, Java, C++, JavaScript, C#, Go, Ruby_ and **2** solutions.
+- [416. Partition Equal Subset Sum](solutions/1-1000/416-partition-equal-subset-sum.md) was solved in _Python, Java, C++, JavaScript, C#, Go, Ruby_ and **2** ways.
+- [1049. Last Stone Weight II](solutions/1001-2000/1049-last-stone-weight-ii.md) was solved in _Python, Java, C++, JavaScript, C#, Go, Ruby_ and **2** ways.
 - [494. Target Sum](solutions/1-1000/494-target-sum.md) was solved in _Python, Java, C++, JavaScript, C#, Go, Ruby_.
 - [474. Ones and Zeroes](solutions/1-1000/474-ones-and-zeroes.md) was solved in _Python, Java, C++, JavaScript, C#, Go, Ruby_.
 
@@ -81,20 +82,20 @@ You can skip the more difficult problems and do them later.
 # Monotonic Stack
 - [739. Daily Temperatures](solutions/1-1000/739-daily-temperatures.md) was solved in _Python, Java, C++, JavaScript, C#, Go, Ruby_.
 - [496. Next Greater Element I](solutions/1-1000/496-next-greater-element-i.md) was solved in _Python, Java, C++, JavaScript, C#, Go, Ruby_.
-- [42. Trapping Rain Water](solutions/1-1000/42-trapping-rain-water.md) was solved in _Python, Java, C++, JavaScript, C#, Go, Ruby_ and **2** solutions.
+- [42. Trapping Rain Water](solutions/1-1000/42-trapping-rain-water.md) was solved in _Python, Java, C++, JavaScript, C#, Go, Ruby_ and **2** ways.
 - [84. Largest Rectangle in Histogram](solutions/1-1000/84-largest-rectangle-in-histogram.md) was solved in _Python, Java, C++, JavaScript, C#, Go, Ruby_.
 
 # Graph Theory
-- [797. All Paths From Source to Target](solutions/1-1000/797-all-paths-from-source-to-target.md) was solved in _Python, Java, C++, JavaScript, C#, Go, Ruby_ and **2** solutions.
-- [200. Number of Islands](solutions/1-1000/200-number-of-islands.md) was solved in _Python, Java, C++, JavaScript, C#, Go, Ruby_ and **3** solutions.
-- [463. Island Perimeter](solutions/1-1000/463-island-perimeter.md) was solved in _Python_ and **2** solutions.
+- [797. All Paths From Source to Target](solutions/1-1000/797-all-paths-from-source-to-target.md) was solved in _Python, Java, C++, JavaScript, C#, Go, Ruby_ and **2** ways.
+- [200. Number of Islands](solutions/1-1000/200-number-of-islands.md) was solved in _Python, Java, C++, JavaScript, C#, Go, Ruby_ and **3** ways.
+- [463. Island Perimeter](solutions/1-1000/463-island-perimeter.md) was solved in _Python_ and **2** ways.
 - [695. Max Area of Island](solutions/1-1000/695-max-area-of-island.md) was solved in _Python, Java, C++, JavaScript, C#, Go, Ruby_.
 - [827. Making A Large Island](solutions/1-1000/827-making-a-large-island.md) was solved in _Python_.
 - [127. Word Ladder](solutions/1-1000/127-word-ladder.md) was solved in _Python_.
-- [1971. Find if Path Exists in Graph](solutions/1001-2000/1971-find-if-path-exists-in-graph.md) was solved in _Python, Java, C++, JavaScript, C#, Go, Ruby_ and 2 solutions.
+- [1971. Find if Path Exists in Graph](solutions/1001-2000/1971-find-if-path-exists-in-graph.md) was solved in _Python, Java, C++, JavaScript, C#, Go, Ruby_ and 2 ways.
 - [684. Redundant Connection](solutions/1-1000/684-redundant-connection.md) was solved in _Python, Java, C++, JavaScript, C#, Go, Ruby_.
 - [685. Redundant Connection II](solutions/1-1000/685-redundant-connection-ii.md) was solved in _Python_.
-- [1584. Min Cost to Connect All Points](solutions/1001-2000/1584-min-cost-to-connect-all-points.md) was solved in _Python, Java, C++, JavaScript, C#, Go, Ruby_ and 2 solutions.
-- [207. Course Schedule](solutions/1-1000/207-course-schedule.md) was solved in _Python, Java, C++, C#_ and 2 solutions.
+- [1584. Min Cost to Connect All Points](solutions/1001-2000/1584-min-cost-to-connect-all-points.md) was solved in _Python, Java, C++, JavaScript, C#, Go, Ruby_ and 2 ways.
+- [207. Course Schedule](solutions/1-1000/207-course-schedule.md) was solved in _Python, Java, C++, C#_ and 2 ways.
 
 More LeetCode problems will be added soon...
