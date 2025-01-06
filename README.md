@@ -33,6 +33,7 @@ You can skip the more difficult problems and do them later.
 - [349. Intersection of Two Arrays](solutions/1-1000/349-intersection-of-two-arrays.md) was solved in _Python, Java, C++, JavaScript, C#, Go, Ruby_.
 - [242. Valid Anagram](solutions/1-1000/242-valid-anagram.md) was solved in _Python, Java, JavaScript, C#_.
 - [1. Two Sum](solutions/1-1000/1-two-sum.md) was solved in _Python, Java, C++, JavaScript, C#, Go, Ruby_.
+- [383. Ransom Note](solutions/1-1000/383-ransom-note.md) was solved in _Python, Java, JavaScript, C#_.
 - [202. Happy Number](solutions/1-1000/202-happy-number.md) was solved in _Python, Java, JavaScript, C#_.
 - [454. 4Sum II](solutions/1-1000/454-4sum-ii.md) was solved in _Python, Java, JavaScript, C#, Ruby_.
 - [15. 3Sum](solutions/1-1000/15-3sum.md) was solved in _Python_ and 2 ways.
