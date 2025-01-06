@@ -14,6 +14,14 @@ You want to query information by a student's name.
 ## Binary tree unified stack iteration
 `boolean mark` solution.
 
+## Other Algorithms
+### Binary Search Algorithm
+704
+
+### Fast and Slow Pointers
+27
+
+
 ## Dynamic programming
 - [647. Palindromic Substrings](https://leetcode.cn/problems/palindromic-substrings/)
 - [516. Longest Palindromic Subsequence](https://leetcode.cn/problems/longest-palindromic-subsequence/)
