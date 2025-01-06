@@ -28,16 +28,19 @@ Output: [2,3,4,-1,4]
 ------------------------------------------------------------------------------------
 ```
 
-## Thoughts
+## Solution 1
 This problem can be solved using **Brute Force**. But if the `nums.length` is much greater, the solution will time out.
 Then We need to use a more efficient algorithm.
-You can check [Next Greater Element I](496-next-greater-element-i.md) to see that more efficient algorithm.
 
 Detailed solutions will be given later, and now only the best practices in 7 languages are given.
 
 ### Complexity
 * Time: `O(n * n)`.
 * Space: `O(n)`.
+
+## Solution 2: More efficient algorithm
+This solution will reduce the time complexity to **O(n)**.
+Please read [Next Greater Element I](496-next-greater-element-i.md).  
 
 ## C#
 ```c#
