@@ -38,6 +38,9 @@ You can skip the more difficult problems and do them later.
 - [454. 4Sum II](solutions/1-1000/454-4sum-ii.md) was solved in _Python, Java, JavaScript, C#, Ruby_.
 - [15. 3Sum](solutions/1-1000/15-3sum.md) was solved in _Python_ and 2 ways.
 
+# Two Pointers
+- [18. 4Sum](solutions/1-1000/18-4sum.md) was solved in _Python_.
+
 # Dynamic Programming
 ## Basics
 - [509. Fibonacci Number](solutions/1-1000/509-fibonacci-number.md) was solved in _Python, Java, C++, JavaScript, C#, Go, Ruby_.
