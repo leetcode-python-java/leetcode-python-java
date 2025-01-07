@@ -13,6 +13,7 @@ I have planned a learning route for you. You just need to do the problems in the
 You can skip the more difficult problems and do them later.
 
 # Array
+- [344. Reverse String](solutions/1-1000/344-reverse-string.md) was solved in _Python, Java, C++, JavaScript, C#, Go, Ruby_.
 - [704. Binary Search](solutions/1-1000/704-binary-search.md) was solved in _Python, Java, C++, JavaScript, C#, Go, Ruby_.
 - [27. Remove Element](solutions/1-1000/27-remove-element.md) was solved in _Python, Java, C++, JavaScript, C#, Go, Ruby_ and **2** ways.
 - [977. Squares of a Sorted Array](solutions/1-1000/977-squares-of-a-sorted-array.md) was solved in _Python, Java, C++, JavaScript, C#, Go, Ruby_.
