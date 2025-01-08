@@ -14,8 +14,8 @@ You can skip the more difficult problems and do them later.
 
 # Array
 - [344. Reverse String](solutions/1-1000/344-reverse-string.md) was solved in _Python, Java, C++, JavaScript, C#, Go, Ruby_.
-- [704. Binary Search](solutions/1-1000/704-binary-search.md) was solved in _Python, Java, C++, JavaScript, C#, Go, Ruby_.
 - [27. Remove Element](solutions/1-1000/27-remove-element.md) was solved in _Python, Java, C++, JavaScript, C#, Go, Ruby_ and **2** ways.
+- [704. Binary Search](solutions/1-1000/704-binary-search.md) was solved in _Python, Java, C++, JavaScript, C#, Go, Ruby_.
 - [977. Squares of a Sorted Array](solutions/1-1000/977-squares-of-a-sorted-array.md) was solved in _Python, Java, C++, JavaScript, C#, Go, Ruby_.
 - [209. Minimum Size Subarray Sum](solutions/1-1000/209-minimum-size-subarray-sum.md) was solved in _Python, Java, JavaScript, C#_.
 - [303. Range Sum Query - Immutable](solutions/1-1000/303-range-sum-query-immutable.md) was solved in _Python, Java, C++, JavaScript, C#, Go, Ruby_.
@@ -38,6 +38,9 @@ You can skip the more difficult problems and do them later.
 - [202. Happy Number](solutions/1-1000/202-happy-number.md) was solved in _Python, Java, JavaScript, C#_.
 - [454. 4Sum II](solutions/1-1000/454-4sum-ii.md) was solved in _Python, Java, JavaScript, C#, Ruby_.
 - [15. 3Sum](solutions/1-1000/15-3sum.md) was solved in _Python_ and 2 ways.
+
+# String
+- [541. Reverse String II](solutions/1-1000/541-reverse-string-ii.md) was solved in _Python, Java, JavaScript, C#, Ruby_.
 
 # Two Pointers
 - [18. 4Sum](solutions/1-1000/18-4sum.md) was solved in _Python_.
