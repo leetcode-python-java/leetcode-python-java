@@ -40,6 +40,7 @@ You can skip the more difficult problems and do them later.
 - [15. 3Sum](solutions/1-1000/15-3sum.md) was solved in _Python_ and 2 ways.
 
 # String
+- [28. Find the Index of the First Occurrence in a String](solutions/1-1000/28-find-the-index-of-the-first-occurrence-in-a-string.md) was solved in _Python, JavaScript_.
 - [541. Reverse String II](solutions/1-1000/541-reverse-string-ii.md) was solved in _Python, Java, JavaScript, C#, Ruby_.
 
 # Two Pointers

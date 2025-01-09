@@ -1,29 +1,31 @@
 # 416. Partition Equal Subset Sum
 LeetCode problem link: [416. Partition Equal Subset Sum](https://leetcode.com/problems/partition-equal-subset-sum/)
+[416. 分割等和子集](https://leetcode.cn/problems/partition-equal-subset-sum)
+
+[中文题解](#中文题解)
 
 ## LeetCode problem description
-> Given an integer array `nums`, return `true` if you can partition the array into two subsets such that the sum of the elements in both subsets is equal or `false` otherwise.
+Given an integer array `nums`, return `true` if you can partition the array into two subsets such that the sum of the elements in both subsets is equal or `false` otherwise.
 
-```
-Example 1:
+Difficulty: **Medium**
 
-Input: nums = [1,5,11,5]
-Output: true
-Explanation: The array can be partitioned as [1, 5, 5] and [11].
-------------------------------------------------------------------------
+### [Example 1]
+**Input**: `nums = [1,5,11,5]`
 
-Example 2:
+**Output**: `true`
 
-Input: nums = [1,2,3,5]
-Output: false
-Explanation: The array cannot be partitioned into equal sum subsets.
+**Explanation**: `The array can be partitioned as [1, 5, 5] and [11].`
 
-------------------------------------------------------------------------
-Constraints:
+### [Example 2]
+**Input**: `nums = [1,2,3,5]`
 
-1 <= nums.length <= 200
-1 <= nums[i] <= 100
-```
+**Output**: `false`
+
+**Explanation**: `The array cannot be partitioned into equal sum subsets.`
+
+### [Constraints]
+- `1 <= nums.length <= 200`
+- `1 <= nums[i] <= 100`
 
 ## Thoughts
 * When we first see this problem, we might want to loop through all subsets of the array. If there is a subset whose sum is equal to `half of the sum`, then return `true`. This can be achieved with a `backtracking algorithm`, but after seeing the constraint `nums.length <= 200`, we can estimate that the program will time out.
@@ -467,12 +469,35 @@ def can_partition(nums)
 end
 ```
 
-## Rust
-```rust
+## C, Kotlin, Swift, Rust or other languages
+```
 // Welcome to create a PR to complete the code of this language, thanks!
 ```
 
-## Other languages
-```
-// Welcome to create a PR to complete the code of this language, thanks!
-```
+## 力扣“416. 分割等和子集”问题描述
+力扣链接：[416. 分割等和子集](https://leetcode.cn/problems/partition-equal-subset-sum), 难度: **中等**。
+
+给你一个 **只包含正整数** 的 **非空** 数组 `nums` 。请你判断是否可以将这个数组分割成两个子集，使得两个子集的元素和相等。
+
+
+
+### [示例 1]
+**输入**: `nums = [1,5,11,5]`
+
+**输出**: `true`
+
+**解释**: `数组可以分割成 [1, 5, 5] 和 [11] 。`
+
+### [示例 2]
+**输入**: `nums = [1,2,3,5]`
+
+**输出**: `false`
+
+**解释**: `数组不能分割成两个元素和相等的子集。`
+
+# 中文题解
+## 思路
+1. 请用浏览器的翻译功能把英文题解内容翻译为中文。
+
+## 步骤
+1. 请用浏览器的翻译功能把英文题解内容翻译为中文。
