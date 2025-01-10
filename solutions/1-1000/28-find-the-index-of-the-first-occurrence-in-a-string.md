@@ -1,8 +1,9 @@
 # 28. Find the Index of the First Occurrence in a String - LeetCode Solution
-LeetCode English link: [28. Find the Index of the First Occurrence in a String](https://leetcode.com/problems/find-the-index-of-the-first-occurrence-in-a-string),
+LeetCode English link: [28. Find the Index of the First Occurrence in a String](https://leetcode.com/problems/find-the-index-of-the-first-occurrence-in-a-string)
 
 LeetCode Chinese link: [28. 找出字符串中第一个匹配项的下标](https://leetcode.cn/problems/find-the-index-of-the-first-occurrence-in-a-string)
-([中文题解](#中文题解))
+
+[中文题解](#中文题解)
 
 ## LeetCode problem description
 Given two strings `needle` and `haystack`, return the **index** of the first occurrence of `needle` in `haystack`, or `-1` if `needle` is not part of `haystack`.

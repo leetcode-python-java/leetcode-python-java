@@ -42,6 +42,7 @@ You can skip the more difficult problems and do them later.
 # String
 - [28. Find the Index of the First Occurrence in a String](solutions/1-1000/28-find-the-index-of-the-first-occurrence-in-a-string.md) was solved in _Python, JavaScript_.
 - [541. Reverse String II](solutions/1-1000/541-reverse-string-ii.md) was solved in _Python, Java, JavaScript, C#, Ruby_.
+- [459. Repeated Substring Pattern](solutions/1-1000/459-repeated-substring-pattern.md)
 
 # Two Pointers
 - [18. 4Sum](solutions/1-1000/18-4sum.md) was solved in _Python_.
@@ -76,6 +77,8 @@ You can skip the more difficult problems and do them later.
 - [123. Best Time to Buy and Sell Stock III](solutions/1-1000/123-best-time-to-buy-and-sell-stock-iii.md) was solved in _Python, JavaScript, Go_.
 - [188. Best Time to Buy and Sell Stock IV](solutions/1-1000/188-best-time-to-buy-and-sell-stock-iv.md) was solved in _Python, JavaScript, Go_.
 - [309. Best Time to Buy and Sell Stock with Cooldown](solutions/1-1000/309-best-time-to-buy-and-sell-stock-with-cooldown.md) was solved in _Python, JavaScript, Go_.
+
+to here now
 
 ## Subsequence Problems
 - [674. Longest Continuous Increasing Subsequence](solutions/1-1000/674-longest-continuous-increasing-subsequence.md) was solved in _Python, Java, JavaScript, C#_.
