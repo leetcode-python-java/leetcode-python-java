@@ -36,7 +36,7 @@ Given a linked list, swap every two adjacent nodes and return its head. You must
 ## Intuition behind the Solution
 [中文题解](#中文题解)
 
-Before solving this problem, it is recommended to solve the simple problem [206. Reverse Linked List](./206-reverse-linked-list.md) first.
+Before solving this problem, it is recommended to solve the simple problem [206. Reverse Linked List](206-reverse-linked-list.md) first.
 
 1. To solve this problem, you still need to define at least two variables: `current` and `previous`.
 2. The loop condition should be `while (current.next != null)` instead of `while (current != null)`, because the operations that need to be performed include `current.next.next`.
@@ -382,7 +382,7 @@ end
 
 ## 中文题解
 ### 思路
-在做本题前，建议先完成简单题目[206. Reverse Linked List](./206-reverse-linked-list.md)。
+在做本题前，建议先完成简单题目[206. Reverse Linked List](206-reverse-linked-list.md)。
 
 1. 解决这个问题，依然至少需要定义两个变量：`current`和`previous`。
 2. 循环条件应是`while (current.next != null)`，而不应该是`while (current != null)`，因为需要操作`current.next.next`.

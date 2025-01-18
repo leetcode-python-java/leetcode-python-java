@@ -50,7 +50,7 @@ myLinkedList.get(1);              // return 3
 - At most `2000` calls will be made to `get`, `addAtHead`, `addAtTail`, `addAtIndex` and `deleteAtIndex`.
 
 ## Intuition behind the Solution
-Before solving this problem, it is recommended to solve the simple problem [19. Remove Nth Node From End of List](./19-remove-nth-node-from-end-of-list.md) first.
+Before solving this problem, it is recommended to solve the simple problem [19. Remove Nth Node From End of List](19-remove-nth-node-from-end-of-list.md) first.
 
 This question can comprehensively test the candidate's mastery of linked lists. The following points need to be paid attention to:
 
@@ -410,7 +410,7 @@ public class MyLinkedList
 ```
 
 ## 中文题解
-在做本题前，建议先完成较简单的相关题目 [19. 删除链表的倒数第 N 个结点](./19-remove-nth-node-from-end-of-list.md)。
+在做本题前，建议先完成较简单的相关题目 [19. 删除链表的倒数第 N 个结点](19-remove-nth-node-from-end-of-list.md)。
 
 本题可以全面考察候选人对链表的掌握程度，以下几点需要重视：
 

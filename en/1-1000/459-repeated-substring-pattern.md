@@ -1,7 +1,7 @@
 # 459. Repeated Substring Pattern - LeetCode Solution
 LeetCode English link: [459. Repeated Substring Pattern](https://leetcode.com/problems/repeated-substring-pattern)
 
-LeetCode Chinese link: [中文问题名称](https://leetcode.cn/problems/repeated-substring-pattern)
+LeetCode Chinese link: [459. 重复的子字符串](https://leetcode.cn/problems/repeated-substring-pattern)
 
 [中文题解](#中文题解)
 
