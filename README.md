@@ -48,7 +48,10 @@ You can skip the more difficult problems and do them later.
 - [18. 4Sum](en/1-1000/18-4sum.md) was solved in _Python_.
 
 # Stack
-- [232. Implement Queue using Stacks](en/1-1000/232-implement-queue-using-stacks.md)
+- [232. Implement Queue using Stacks](en/1-1000/232-implement-queue-using-stacks.md) was solved in _Python, JavaScript_.
+
+# Queue
+- [225. Implement Stack using Queues](en/1-1000/225-implement-stack-using-queues.md) was solved in _Python, JavaScript_ and 2 ways.
 
 # Dynamic Programming
 ## Basics
