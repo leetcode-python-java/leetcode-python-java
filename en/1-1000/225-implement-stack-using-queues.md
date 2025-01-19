@@ -169,7 +169,7 @@ class MyStack:
         return value
 
     def empty(self) -> bool:
-        return len(self.queue) == 0
+        return not self.queue
 ```
 
 ### Solution for option 2: It is short and easy to understand (recommended).
@@ -199,7 +199,7 @@ class MyStack:
         return self.queue[0]
 
     def empty(self) -> bool:
-        return len(self.queue) == 0
+        return not self.queue
 ```
 
 ## Java
