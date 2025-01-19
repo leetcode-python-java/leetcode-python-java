@@ -96,7 +96,7 @@ MyStack.prototype.empty = function () {
 ```
 
 ## Python
-### 方案一：不推荐，仅用于对比。
+### Solution 1: Not recommended, for comparison only.
 ```python
 class MyStack:
     def __init__(self):
@@ -139,7 +139,7 @@ class MyStack:
         return len(self.queue) == 0
 ```
 
-### 方案二：推荐的方案。既短，又好理解。
+### Solution 2: The recommended solution. It is short and easy to understand.
 ```python
 class MyStack:
     def __init__(self):
