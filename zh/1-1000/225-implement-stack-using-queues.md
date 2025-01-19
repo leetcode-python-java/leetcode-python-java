@@ -46,6 +46,15 @@ myStack.empty(); // 返回 False
 ### [进阶]
 你能否仅用一个队列来实现栈？
 
+<details>
+   <summary>解法提示</summary>
+可以只用一个队列。
+<br>
+改动只在`push`方法。只需要想办法不借助另一个`queue_temp`，把`x`插入到队列的头部。
+<br>
+在实现`push`方法时，先`queue.push(x)`，然后，执行`queue.length - 1`次`value = queue.pop(); queue.push(value)`即可。
+</details>
+
 # 中文题解
 ## 思路
 1. 使用的两个队列，一个队列用于输入和输出，另一个队列用于临时存储。
