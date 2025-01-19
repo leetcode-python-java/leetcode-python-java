@@ -44,9 +44,6 @@ myStack.empty(); // return False
 - At most `100` calls will be made to `push`, `pop`, `top`, and `empty`.
 - All the calls to `pop` and `top` are valid.
 
-### [Follow-up]
-Can you implement the stack using only one queue?
-
 ## Intuition
 1. Two queues are used, one for input and output, and the other for temporary storage.
 2. There are two options for using queues to simulate the functions of a stack:
@@ -60,11 +57,15 @@ Can you implement the stack using only one queue?
 * Space: `O(n)`.
 
 ## Follow-up
+Can you implement the stack using only one queue?
+
+### Follow-up Intuition
 - You can use only one queue to make it. The only change is in the `push` method. Just find a way to insert `x` to the front of the queue without using another `queue_temp`.
-- When implementing the `push` method, first `queue.push(x)`, then execute `queue.length - 1` times `queue.push(queue.pop())`. The complete code is attached in `JavaScript` section.
+- When implementing the `push` method, first `queue.push(x)`, so that `x` is inserted at the tail (back) of the queue, but we need to put `x` at the head (front) of the queue.
+- Execute `queue.length - 1` times `queue.push(queue.pop())` to move all the data before `x` to the back of `x`. The complete code is attached in the `JavaScript` section.
 
 ## JavaScript
-### Solution for option 2
+### "Option 2" solution
 ```javascript
 var MyStack = function () {
   this.queue = []
@@ -100,7 +101,7 @@ MyStack.prototype.empty = function () {
 };
 ```
 
-### Follow-up solution: use only one queue
+### "Follow-up" solution: use only one queue
 ```javascript
 var MyStack = function () {
   this.queue = []
@@ -129,7 +130,7 @@ MyStack.prototype.empty = function () {
 ```
 
 ## Python
-### Solution for option 1: Not recommended, for comparison only.
+### "Option 1" solution: Not recommended, for comparison only.
 ```python
 class MyStack:
     def __init__(self):
@@ -172,7 +173,7 @@ class MyStack:
         return not self.queue
 ```
 
-### Solution for option 2: It is short and easy to understand (recommended).
+### "Option 2" solution: It is short and easy to understand (recommended).
 ```python
 class MyStack:
     def __init__(self):

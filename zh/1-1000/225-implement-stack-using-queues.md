@@ -43,10 +43,6 @@ myStack.empty(); // 返回 False
 - 最多调用 `100` 次 `push`、`pop`、`top` 和 `empty`
 - 每次调用 `pop` 和 `top` 都保证栈不为空
 
-### [进阶]
-你能否仅用一个队列来实现栈？
-
-# 中文题解
 ## 思路
 1. 使用的两个队列，一个队列用于输入和输出，另一个队列用于临时存储。
 2. 用队列模拟栈的功能，有两种方案可供选择：
@@ -60,8 +56,13 @@ myStack.empty(); // 返回 False
 * 空间：`O(n)`。
 
 ## 进阶
+你能否仅用一个队列来实现栈？
+
+### 进阶思路
 - 可以只用一个队列实现栈。改动只在`push`方法。只需要想办法不借助另一个`queue_temp`，把`x`插入到队列的头部。
-- 在实现`push`方法时，先`queue.push(x)`，然后，执行`queue.length - 1`次`queue.push(queue.pop())`即可。完整代码附在`JavaScript`章节中。
+- 在实现`push`方法时，先`queue.push(x)`，这样，`x`就被插入到了队列尾部，但我们需要把`x`放到队列的头部。
+- 把`x`前面的所有数据依次出队列，再入队列，就可以了。
+- 执行`queue.length - 1`次`queue.push(queue.pop())`即可。完整代码附在`JavaScript`章节中。
 
 ## JavaScript
 ### 方案二
