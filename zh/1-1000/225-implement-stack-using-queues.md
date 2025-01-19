@@ -1,5 +1,5 @@
 # 225. 用队列实现栈 - 力扣题解最佳实践
-力扣问题链接：[225. 用队列实现栈](https://leetcode.cn/problems/implement-stack-using-queues), 难度: **简单**。
+力扣链接：[225. 用队列实现栈](https://leetcode.cn/problems/implement-stack-using-queues), 难度: **简单**。
 
 ## 力扣“225. 用队列实现栈”问题描述
 请你仅使用两个队列实现一个后入先出（LIFO）的栈，并支持普通栈的全部四种操作（`push`、`top`、`pop` 和 `empty`）。
@@ -46,15 +46,6 @@ myStack.empty(); // 返回 False
 ### [进阶]
 你能否仅用一个队列来实现栈？
 
-<details>
-   <summary>解法提示</summary>
-可以只用一个队列。
-<br>
-改动只在`push`方法。只需要想办法不借助另一个`queue_temp`，把`x`插入到队列的头部。
-<br>
-在实现`push`方法时，先`queue.push(x)`，然后，执行`queue.length - 1`次`value = queue.pop(); queue.push(value)`即可。
-</details>
-
 # 中文题解
 ## 思路
 1. 使用的两个队列，一个队列用于输入和输出，另一个队列用于临时存储。
@@ -62,13 +53,18 @@ myStack.empty(); // 返回 False
     1. 方案一：简化`push(x)`操作，复杂化`pop()`和`top()`操作。`pop()`或`top()`时，需要费力找到最后一个数据。
     2. 方案二：简化`pop()`和`top()`操作，复杂化`push(x)`操作。`push(x)`时，需要费力地把`x`插入到队列头部。
 3. 方案二优点：代码量更少；从逻辑上更容易理解，因为它把队列中的数据按`后入先出`的规则排好序了。
-4. 本文主要介绍`方案二`，`方案一`的代码附在`Python`中，方便读者对比这两个方案。
+4. 本文主要介绍`方案二`，`方案一`的代码附在`Python`章节中，方便读者对比这两个方案。
 
 ## 复杂度
 * 时间：`push O(n)`, `pop O(1)`, `top O(1)`, `empty O(1)`。
 * 空间：`O(n)`。
 
+## 进阶
+- 可以只用一个队列实现栈。改动只在`push`方法。只需要想办法不借助另一个`queue_temp`，把`x`插入到队列的头部。
+- 在实现`push`方法时，先`queue.push(x)`，然后，执行`queue.length - 1`次`queue.push(queue.pop())`即可。完整代码附在`JavaScript`章节中。
+
 ## JavaScript
+### 方案二
 ```javascript
 var MyStack = function () {
   this.queue = []
@@ -89,6 +85,34 @@ MyStack.prototype.push = function (x) {
       this.queueTemp.shift()
     )
   }
+};
+
+MyStack.prototype.pop = function () {
+  return this.queue.shift()
+};
+
+MyStack.prototype.top = function () {
+  return this.queue[0]
+};
+
+MyStack.prototype.empty = function () {
+  return this.queue.length === 0
+};
+```
+
+### 进阶方案：只使用一个队列
+```javascript
+var MyStack = function () {
+  this.queue = []
+};
+
+MyStack.prototype.push = function (x) {
+  this.queue.push(x)
+
+  _.times(
+    this.queue.length - 1,
+    () => this.queue.push(this.queue.shift())
+  )
 };
 
 MyStack.prototype.pop = function () {

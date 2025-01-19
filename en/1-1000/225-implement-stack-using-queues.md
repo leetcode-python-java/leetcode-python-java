@@ -53,13 +53,18 @@ Can you implement the stack using only one queue?
     1. Option 1: Simplify the `push(x)` operation and complicate the `pop()` and `top()` operations. When `pop()` or `top()`, you need to find the last data with effort.
     2. Option 2: Simplify the `pop()` and `top()` operations and complicate the `push(x)` operation. When `push(x)`, you need to insert `x` into the front of the queue with effort.
 3. Advantages of Option 2: Less code; easier to understand logically because it sorts the data in the queue according to the `last in, first out` rule.
-4. This article mainly introduces `Option 2`, and the code of `Option 1` is attached in `Python` to facilitate readers to compare the two solutions.
+4. This article mainly introduces `Option 2`, and the code of `Option 1` is attached in `Python` section to facilitate readers to compare the two solutions.
 
 ## Complexity
 * Time: `push O(n)`, `pop O(1)`, `top O(1)`, `empty O(1)`.
 * Space: `O(n)`.
 
+## Follow-up
+- You can use only one queue to make it. The only change is in the `push` method. Just find a way to insert `x` to the front of the queue without using another `queue_temp`.
+- When implementing the `push` method, first `queue.push(x)`, then execute `queue.length - 1` times `queue.push(queue.pop())`. The complete code is attached in `JavaScript` section.
+
 ## JavaScript
+### Solution for option 2
 ```javascript
 var MyStack = function () {
   this.queue = []
@@ -95,8 +100,36 @@ MyStack.prototype.empty = function () {
 };
 ```
 
+### Follow-up solution: use only one queue
+```javascript
+var MyStack = function () {
+  this.queue = []
+};
+
+MyStack.prototype.push = function (x) {
+  this.queue.push(x)
+
+  _.times(
+    this.queue.length - 1,
+    () => this.queue.push(this.queue.shift())
+  )
+};
+
+MyStack.prototype.pop = function () {
+  return this.queue.shift()
+};
+
+MyStack.prototype.top = function () {
+  return this.queue[0]
+};
+
+MyStack.prototype.empty = function () {
+  return this.queue.length === 0
+};
+```
+
 ## Python
-### Solution 1: Not recommended, for comparison only.
+### Solution for option 1: Not recommended, for comparison only.
 ```python
 class MyStack:
     def __init__(self):
@@ -139,7 +172,7 @@ class MyStack:
         return len(self.queue) == 0
 ```
 
-### Solution 2: The recommended solution. It is short and easy to understand.
+### Solution for option 2: It is short and easy to understand (recommended).
 ```python
 class MyStack:
     def __init__(self):
