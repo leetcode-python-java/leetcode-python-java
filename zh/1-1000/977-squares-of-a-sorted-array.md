@@ -25,7 +25,7 @@ Output: [4,9,9,49,121]
 
 **Follow up**: Squaring each element and sorting the new array is very trivial, could you find an `O(n)` solution using a different approach?
 
-## Intuition behind the Solution
+## Intuition
 ### Solution 1: using `sort()`
 * Square each number in the array.
 * Sort the new array.

@@ -30,7 +30,7 @@ Difficulty: **Easy**
 - `1 <= ransomNote.length, magazine.length <= 100000`
 - `ransomNote` and `magazine` consist of lowercase English letters.
 
-## Intuition behind the Solution
+## Intuition
 [中文题解](#中文题解)
 
 1. This question is equivalent to asking whether `magazine` can contain all the characters in `ransomNote`.

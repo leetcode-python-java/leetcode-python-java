@@ -20,7 +20,7 @@ Output: [[1]]
 ### Constraints
 - `1 <= n <= 20`
 
-## Intuition behind the Solution
+## Intuition
 * The difficulty of this question lies in the control of the two-dimensional array index.
 
 * You only need to use a `get_increment(i, j)` function to specifically control the index of the next two-dimensional array.

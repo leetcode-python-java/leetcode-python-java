@@ -35,7 +35,7 @@ Given the `head` of a linked list, remove the `n-th` node from the end of the li
   Maintain two pointers and update one with a delay of n steps.
 </details>
 
-## Intuition behind the Solution
+## Intuition
 [中文题解](#中文题解)
 
 1. Deleting the `N-th` to last node in a linked list is equivalent to deleting the `node_count - N`-th node in the linked list.

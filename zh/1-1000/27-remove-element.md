@@ -46,7 +46,7 @@ It does not matter what you leave beyond the returned k (hence they are undersco
   Yet another direction of thought is to consider the elements to be removed as non-existent. In a single pass, if we keep copying the visible elements in-place, that should also solve this problem for us.
 </details>
 
-## Intuition behind the Solution
+## Intuition
 The goal is to remove the elements in the array that are equal to `val`, and the order of the remaining elements is not important.
 
 ### Solution 1 (easier to think of)

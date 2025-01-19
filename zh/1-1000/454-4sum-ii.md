@@ -37,7 +37,7 @@ The two tuples are:
 - `1 <= n <= 200`
 - `-2**28 <= nums1[i], nums2[i], nums3[i], nums4[i] <= 2**28`
 
-## Intuition behind the Solution
+## Intuition
 [中文题解](#中文题解)
 
 1. Because the final requirement is to take one number from each group of numbers, the four groups of numbers can be split into **two groups of two**.

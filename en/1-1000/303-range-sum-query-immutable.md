@@ -37,7 +37,7 @@ numArray.sumRange(0, 5); // return (-2) + 0 + 3 + (-5) + 2 + (-1) = -3
 - `0 <= left <= right < nums.length`
 - At most `10000` calls will be made to `sumRange`.
 
-## Intuition behind the Solution
+## Intuition
 ### Solution 2
 Directly returning the sum of the array elements can pass the tests, but if the test case is more stringent, it will fail.
 So we still need to learn a more efficient solution.

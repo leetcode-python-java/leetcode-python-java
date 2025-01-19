@@ -31,7 +31,7 @@ Difficulty: **Easy**
   The entire logic for reversing a string is based on using the opposite directional two-pointer approach!
 </details>
 
-## Intuition behind the Solution
+## Intuition
 [中文题解](#中文题解)
 
 1. This problem can be solved in one line of code using the built-in `sort()` method of the programming language. If this question is asked in an interview, the questioner should be testing how to do it without the built-in method.

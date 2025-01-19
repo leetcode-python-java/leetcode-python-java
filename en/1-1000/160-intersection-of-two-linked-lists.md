@@ -39,7 +39,7 @@ Difficulty: **Easy**
 
 **Follow up**: Could you write a solution that runs in `O(m + n)` time and use only `O(1)` memory?
 
-## Intuition behind the Solution
+## Intuition
 [中文题解](#中文题解)
 
 1. First calculate the number of nodes in the two linked lists A and B. The number of nodes in linked list A is `node_count_a`, and the number of nodes in linked list B is `node_count_b`.

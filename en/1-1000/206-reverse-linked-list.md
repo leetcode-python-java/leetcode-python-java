@@ -30,7 +30,7 @@ Given the `head` of a singly linked list, reverse the list, and return _the reve
 - The number of nodes in the list is the range `[0, 5000]`.
 - `-5000 <= Node.val <= 5000`
 
-## Intuition behind the Solution
+## Intuition
 [中文题解](#中文题解)
 
 1. To solve this problem, we only need to define **two** variables: `current` and `previous`.

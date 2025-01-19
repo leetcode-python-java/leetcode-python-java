@@ -33,7 +33,7 @@ Difficulty: **Medium**
 - `1 <= nums.length <= 100000`
 - `1 <= nums[i] <= 10000`
 
-## Intuition behind the Solution
+## Intuition
 For **subarray** problems, you can consider using **Sliding Window Technique**, which is similar to the **Fast and Slow Pointers Technique**.
 
 ## Steps

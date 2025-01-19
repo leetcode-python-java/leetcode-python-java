@@ -26,7 +26,7 @@ Difficulty: **Easy**
 - `s` consists of only lowercase English letters.
 - `1 <= k <= 10000`
 
-## Intuition behind the Solution
+## Intuition
 [中文题解](#中文题解)
 
 1. The question does not require `reverse in place`, so using a new string `result` as the return value is easier to operate.

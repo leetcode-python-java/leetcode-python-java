@@ -29,7 +29,7 @@ Given the `head` of a linked list and an integer `val`, remove all the nodes of 
 - `1 <= Node.val <= 50`
 - `0 <= val <= 50`
 
-## Intuition behind the Solution
+## Intuition
 [中文题解](#中文题解)
 
 Assume that the node to be deleted in the linked list is `d`, and the previous node of `d` is `p`, so `p.next` is `d`.

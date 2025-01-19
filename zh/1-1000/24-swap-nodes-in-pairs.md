@@ -33,7 +33,7 @@ Given a linked list, swap every two adjacent nodes and return its head. You must
 - The number of nodes in the list is in the range `[0, 100]`.
 - `0 <= Node.val <= 100`
 
-## Intuition behind the Solution
+## Intuition
 [中文题解](#中文题解)
 
 Before solving this problem, it is recommended to solve the simple problem [206. Reverse Linked List](206-reverse-linked-list.md) first.

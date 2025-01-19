@@ -25,7 +25,7 @@ Difficulty: **Easy**
 - `1 <= s.length, t.length <= 5 * 10000`
 - `s` and `t` consist of lowercase English letters.
 
-## Intuition behind the Solution
+## Intuition
 [中文题解](#中文题解)
 
 1. If the lengths of the two strings are different, return `false` directly.

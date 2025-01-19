@@ -32,7 +32,7 @@ The first occurrence is at index 0, so we return 0.
 - `1 <= haystack.length, needle.length <= 10000`
 - `haystack` and `needle` consist of only lowercase English characters.
 
-## Intuition behind the Solution
+## Intuition
 [中文题解](#中文题解)
 
 Traverse the string once, and if the `needle.length` characters after the current position are equal to `needle`, return the current `index`.

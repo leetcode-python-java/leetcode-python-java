@@ -38,7 +38,7 @@ Difficulty: **Easy**
 ### [Constraints]
 - `1 <= n <= 2**31 - 1`
 
-## Intuition behind the Solution
+## Intuition
 [中文题解](#中文题解)
 
 1. It is more convenient to call `isHappy(n)` recursively. You only need to generate a new `n` as a parameter each time.

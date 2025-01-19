@@ -20,7 +20,7 @@ Given a string `s`, check if it can be constructed by taking a substring of it a
 - `1 <= s.length <= 10000`
 - `s` consists of lowercase English letters.
 
-## Intuition behind the Solution
+## Intuition
 The key to solving this problem is to see clearly that if `s` can be obtained by repeating the substring, then the starting letter of the substring must be `s[0]`.
 Once you understand this, the scope of substring investigation is greatly narrowed.
 

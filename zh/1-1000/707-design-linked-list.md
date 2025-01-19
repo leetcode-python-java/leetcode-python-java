@@ -49,7 +49,7 @@ myLinkedList.get(1);              // return 3
 - Please do not use the built-in LinkedList library.
 - At most `2000` calls will be made to `get`, `addAtHead`, `addAtTail`, `addAtIndex` and `deleteAtIndex`.
 
-## Intuition behind the Solution
+## Intuition
 Before solving this problem, it is recommended to solve the simple problem [19. Remove Nth Node From End of List](19-remove-nth-node-from-end-of-list.md) first.
 
 This question can comprehensively test the candidate's mastery of linked lists. The following points need to be paid attention to:
