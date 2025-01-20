@@ -94,11 +94,11 @@ var isAnagram = function (s, t) {
   const sCharToCount = new Map()
   const tCharToCount = new Map()
 
-  for (let char of s) {
+  for (const char of s) {
     sCharToCount.set(char, (sCharToCount.get(char) || 0) + 1)
   }
 
-  for (let char of t) {
+  for (const char of t) {
     tCharToCount.set(char, (tCharToCount.get(char) || 0) + 1)
   }
 

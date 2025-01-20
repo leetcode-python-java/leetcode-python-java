@@ -49,7 +49,7 @@ Difficulty: **Easy**
 ```javascript
 let sum = 0
 
-for (let digit of n.toString()) {
+for (const digit of n.toString()) {
   sum += Math.pow(Number(digit), 2)
 }
 
@@ -64,7 +64,7 @@ var isHappy = function (n, appearedNums) { // 0
   appearedNums ||= new Set() // 1
   let sum = 0
 
-  for (let digit of n.toString()) {
+  for (const digit of n.toString()) {
     sum += Math.pow(Number(digit), 2)
   }
 
@@ -144,7 +144,7 @@ var isHappy = function (n, appearedNums) {
   appearedNums ||= new Set()
   let sum = 0
 
-  for (let digit of n.toString()) {
+  for (const digit of n.toString()) {
     sum += Math.pow(Number(digit), 2)
   }
 
@@ -258,7 +258,7 @@ public class Solution
 ```javascript
 let sum = 0
 
-for (let digit of n.toString()) {
+for (const digit of n.toString()) {
   sum += Math.pow(Number(digit), 2)
 }
 
@@ -273,7 +273,7 @@ var isHappy = function (n, appearedNums) {
   appearedNums ||= new Set() // 1
   let sum = 0
 
-  for (let digit of n.toString()) {
+  for (const digit of n.toString()) {
     sum += Math.pow(Number(digit), 2)
   }
 

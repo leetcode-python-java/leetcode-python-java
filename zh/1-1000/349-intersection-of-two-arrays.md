@@ -96,7 +96,7 @@ var intersection = function (nums1, nums2) {
   let results = new Set()
   let num1Set = new Set(nums1)
 
-  for (let num of nums2) {
+  for (const num of nums2) {
     if (num1Set.has(num)) {
       results.add(num)
     }

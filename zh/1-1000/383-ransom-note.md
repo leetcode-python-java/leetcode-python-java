@@ -123,11 +123,11 @@ class Solution:
 var canConstruct = function (ransomNote, magazine) {
   const charToCount = new Map()
 
-  for (let character of magazine) {
+  for (const character of magazine) {
     charToCount.set(character, (charToCount.get(character) || 0) + 1)
   }
 
-  for (let character of ransomNote) {
+  for (const character of ransomNote) {
     charToCount.set(character, (charToCount.get(character) || 0) - 1)
 
     if (charToCount.get(character) < 0) {

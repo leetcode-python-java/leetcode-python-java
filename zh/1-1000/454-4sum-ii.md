@@ -128,16 +128,16 @@ class Solution:
 var fourSumCount = function (nums1, nums2, nums3, nums4) {
   const numToCount = new Map()
 
-  for (let num1 of nums1) {
-    for (let num2 of nums2) {
+  for (const num1 of nums1) {
+    for (const num2 of nums2) {
       numToCount.set(num1 + num2, (numToCount.get(num1 + num2) || 0) + 1)
     }
   }
 
   let result = 0
 
-  for (let num3 of nums3) {
-    for (let num4 of nums4) {
+  for (const num3 of nums3) {
+    for (const num4 of nums4) {
       result += numToCount.get(-(num3 + num4)) || 0
     }
   }

@@ -236,7 +236,7 @@ var validPath = function (n, edges, source, destination) {
     parent.push(i)
   }
 
-  for (let [a, b] of edges) {
+  for (const [a, b] of edges) {
     unite(a, b)
   }
 
