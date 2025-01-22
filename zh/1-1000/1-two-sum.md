@@ -1,52 +1,62 @@
-# 1. Two Sum - LeetCode Solution
-LeetCode problem link: [1. Two Sum](https://leetcode.com/problems/two-sum),
-[1. 两数之和](https://leetcode.cn/problems/two-sum)
+# 1. 两数之和 - 力扣题解最佳实践
+力扣链接：[1. 两数之和](https://leetcode.cn/problems/two-sum), 难度: **简单**。
 
-[中文题解](#中文题解)
+## 力扣“1. 两数之和”问题描述
+给定一个整数数组 `nums` 和一个整数目标值 `target`，请你在该数组中找出 **和为目标值** `target`  的那 **两个** 整数，并返回它们的数组下标。
 
-## LeetCode problem description
-Given an array of integers `nums` and an integer `target`, return _indices of the two numbers such that they add up to `target`_.
+你可以假设每种输入只会对应一个答案，并且你不能使用两次相同的元素。
 
-You may assume that each input would have **_exactly_ one solution**, and you may not use the same element twice.
+你可以按任意顺序返回答案。
 
-You can return the answer in any order.
+### [示例 1]
+**输入**: `nums = [2,7,11,15], target = 9`
 
-Difficulty: **Easy**
+**输出**: `[0,1]`
 
-### [Example 1]
-**Input**: `nums = [2,7,11,15], target = 9`
+**解释**: `因为 nums[0] + nums[1] == 9 ，返回 [0, 1] 。`
 
-**Output**: `[0,1]`
+### [示例 2]
+**输入**: `nums = [3,2,4], target = 6`
 
-**Explanation**： `Because nums[0] + nums[1] == 9, we return [0, 1].`
+**输出**: `[1,2]`
 
-### [Example 2]
-**Input**: `nums = [3,2,4], target = 6`
+### [示例 3]
+**输入**: `nums = [3,3], target = 6`
 
-**Output**: `[1,2]`
+**输出**: `[0,1]`
 
-### [Constraints]
-- `2 <= nums.length <= 10**4`
+### [约束]
+- `2 <= nums.length <= 10000`
 - `-10**9 <= nums[i] <= 10**9`
-- `-10**9 <= target <= 10**9`
-- **Only one valid answer exists.**
+- **只会存在一个有效答案**
 
-## Solution 1: Two pointers (should master)
-[中文题解](#中文题解)
+### [提示]
+<details>
+  <summary>提示 1</summary>
+A really brute force way would be to search for all possible pairs of numbers but that would be too slow. Again, it's best to try out brute force solutions for just for completeness. It is from these brute force solutions that you can come up with optimizations.
+</details>
 
-1. The time complexity of the brute force solution is `O(n**2)`. To improve efficiency, you can sort the array, and then use **two pointers**, one pointing to the head of the array and the other pointing to the tail of the array, and decide `left += 1` or `right -= 1` according to the comparison of `sum` and `target`.
-2. After finding the two values which `sum` is `target`, you can use the `index()` method to find the `index` corresponding to the value.
+<details>
+  <summary>提示 2</summary>
+So, if we fix one of the numbers, say `x`, we have to scan the entire array to find the next number `y` which is `value - x` where value is the input parameter. Can we change our array somehow so that this search becomes faster?
+</details>
 
-### Complexity
-* Time: `O(N * log N)`.
-* Space: `O(N)`.
+<details>
+  <summary>提示 3</summary>
+The second train of thought is, without changing the array, can we use additional space somehow? Like maybe a hash map to speed up the search?
+</details>
 
-## Solution 2: Use Map (also should master)
-1. In `Map`, `key` is `num`, and `value` is array `index`.
-2. Traverse the array, if `target - num` is in `Map`, return it. Otherwise, add `num` to `Map`.
+## 思路
+### 思路1：双指针
+1. 暴力解法的时间复杂度为`O(n**2)`，想提升效率，可以对数组进行排序，然后用双指针，一个指向数组头，一个指向数组尾，根据**和**情况决定`left += 1`还是`right -= 1`。
+2. 找出了两个值后，需要用`index()`方法去找值对应的`index`。
 
-### Steps
-1. In `Map`, `key` is `num`, and `value` is array `index`.
+### 思路2：使用 Map 提升查找一个值的效率
+1. `Map`中，`key`是`num`，`value`是数组`index`。
+2. 遍历数组，如果`target - num`在`Map`中，返回。反之，将`num`加入`Map`中。
+
+#### 步骤
+1. `Map`中，`key`是`num`，`value`是数组`index`。
 ```javascript
 let numToIndex = new Map()
 
@@ -55,7 +65,7 @@ for (let i = 0; i < nums.length; i++) {
 }
 ```
 
-2. Traverse the array, if `target - num` is in `Map`, return it. Otherwise, add `num` to `Map`.
+2. 遍历数组，如果`target - num`在`Map`中，返回。反之，将`num`加入`Map`中。
 ```javascript
 let numToIndex = new Map()
 
@@ -68,9 +78,9 @@ for (let i = 0; i < nums.length; i++) {
 }
 ```
 
-### Complexity
-* Time: `O(n)`.
-* Space: `O(n)`.
+## 复杂度
+* 时间：`O(n)`。
+* 空间：`O(n)`。
 
 ## Java
 ### Solution 1: Two pointers
@@ -275,52 +285,4 @@ end
 ## Other languages
 ```
 // Welcome to create a PR to complete the code of this language, thanks!
-```
-
-## 问题描述
-给定一个整数数组 `nums` 和一个整数目标值 `target`，请你在该数组中找出 **和为目标值** `target`  的那 **两个** 整数，并返回它们的数组下标。
-
-你可以假设每种输入只会对应一个答案，并且你不能使用两次相同的元素。
-
-你可以按任意顺序返回答案。
-
-难度: **容易**
-
-### [示例 1]
-**输入**: `nums = [2,7,11,15], target = 9`
-
-**输出**: `[0,1]`
-
-**解释**: `Because nums[0] + nums[1] == 9, we return [0, 1].`
-
-# 中文题解
-## 思路1：双指针
-1. 暴力解法的时间复杂度为`O(n**2)`，想提升效率，可以对数组进行排序，然后用双指针，一个指向数组头，一个指向数组尾，根据**和**情况决定`left += 1`还是`right -= 1`。
-2. 找出了两个值后，需要用`index()`方法去找值对应的`index`。
-
-## 思路2：使用Map提升查找一个值的效率
-1. `Map`中，`key`是`num`，`value`是数组`index`。
-2. 遍历数组，如果`target - num`在`Map`中，返回。反之，将`num`加入`Map`中。
-
-### 步骤
-1. `Map`中，`key`是`num`，`value`是数组`index`。
-```javascript
-let numToIndex = new Map()
-
-for (let i = 0; i < nums.length; i++) {
-  numToIndex.set(nums[i], i)
-}
-```
-
-2. 遍历数组，如果`target - num`在`Map`中，返回。反之，将`num`加入`Map`中。
-```javascript
-let numToIndex = new Map()
-
-for (let i = 0; i < nums.length; i++) {
-  if (numToIndex.has(target - nums[i])) { // 1
-    return [numToIndex.get(target - nums[i]), i] // 2
-  }
-
-  numToIndex.set(nums[i], i)
-}
 ```

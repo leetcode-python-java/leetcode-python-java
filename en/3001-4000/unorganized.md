@@ -63,9 +63,11 @@ The improved way with a queue is commonly more efficient. Relaxing **All Edges**
 * Find all the prime numbers within 1000000.
 
 ### Skipped problems/solutions
-- 383 https://leetcode.cn/problems/ransom-note/
+- 1047 https://leetcode.cn/problems/remove-all-adjacent-duplicates-in-string/
+- 150 https://leetcode.cn/problems/evaluate-reverse-polish-notation/
+- 239 https://leetcode.cn/problems/sliding-window-maximum/ tag `monotonic queue`
+- 347 https://leetcode.cn/problems/top-k-frequent-elements/ tag `heap sort`
 - 
-
 # Features
 * Add Google translate as a link. Link example: https://github-com.translate.goog/gazeldx/leetcode-solutions/blob/main/solutions/1-1000/122-best-time-to-buy-and-sell-stock-ii.md?_x_tr_sl=auto&_x_tr_tl=zh-CN&_x_tr_hl=en&_x_tr_pto=wapp
 
