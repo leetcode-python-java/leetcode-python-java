@@ -62,12 +62,37 @@ The improved way with a queue is commonly more efficient. Relaxing **All Edges**
 ## Others
 * Find all the prime numbers within 1000000.
 
-### Skipped problems/solutions
+## Skipped problems/solutions
 - 1047 https://leetcode.cn/problems/remove-all-adjacent-duplicates-in-string/
 - 150 https://leetcode.cn/problems/evaluate-reverse-polish-notation/
 - 239 https://leetcode.cn/problems/sliding-window-maximum/ tag `monotonic queue`
 - 347 https://leetcode.cn/problems/top-k-frequent-elements/ tag `heap sort`
-- 
-# Features
-* Add Google translate as a link. Link example: https://github-com.translate.goog/gazeldx/leetcode-solutions/blob/main/solutions/1-1000/122-best-time-to-buy-and-sell-stock-ii.md?_x_tr_sl=auto&_x_tr_tl=zh-CN&_x_tr_hl=en&_x_tr_pto=wapp
+
+### Binary Tree
+- 144 https://leetcode.cn/problems/binary-tree-preorder-traversal/
+- 94 https://leetcode.cn/problems/binary-tree-inorder-traversal/
+- 145 https://leetcode.cn/problems/binary-tree-postorder-traversal/
+- 102 https://leetcode.cn/problems/binary-tree-level-order-traversal/
+    - 107 https://leetcode.cn/problems/binary-tree-level-order-traversal-ii/
+    - 199 https://leetcode.cn/problems/binary-tree-right-side-view/
+    - 637 https://leetcode.cn/problems/average-of-levels-in-binary-tree/submissions/594783150/
+    - 429 https://leetcode.cn/problems/n-ary-tree-level-order-traversal/
+    - 515 https://leetcode.cn/problems/find-largest-value-in-each-tree-row/
+    - 116 https://leetcode.cn/problems/populating-next-right-pointers-in-each-node/
+    - 117 https://leetcode.cn/problems/populating-next-right-pointers-in-each-node-ii/
+    - 111 https://leetcode.cn/problems/minimum-depth-of-binary-tree/
+    
+- 104 https://leetcode.cn/problems/maximum-depth-of-binary-tree/
+- 226 https://leetcode.cn/problems/invert-binary-tree/
+- 101 https://leetcode.cn/problems/symmetric-tree/
+  - 100 https://leetcode.cn/problems/same-tree/description/
+  - 572 https://leetcode.cn/problems/subtree-of-another-tree/
+
+- 222 https://leetcode.cn/problems/count-complete-tree-nodes/
+- 110 https://leetcode.cn/problems/balanced-binary-tree/ 2 ways
+- 257 https://leetcode.cn/problems/binary-tree-paths/description/
+- 404 https://leetcode.cn/problems/sum-of-left-leaves/
+
+### Failed in 2 rounds
+- 222 https://leetcode.cn/problems/count-complete-tree-nodes/
 
