@@ -15,12 +15,12 @@ You want to query information by a student's name.
 `boolean mark` solution.
 
 ## Other Algorithms
-### Binary Search Algorithm
-704
-
-### Fast and Slow Pointers
-27
-
+### Recursion
+* Recursion steps:
+    1. Determine the parameters
+    2. Determine the recursion logic
+    3. Determine the return value
+    4. Determine the exit logic
 
 ## Dynamic programming
 - [647. Palindromic Substrings](https://leetcode.cn/problems/palindromic-substrings/)
@@ -63,12 +63,17 @@ The improved way with a queue is commonly more efficient. Relaxing **All Edges**
 * Find all the prime numbers within 1000000.
 
 ## Skipped problems/solutions
+- 704 Binary Search Algorithm 
+- 27 Fast and Slow Pointers
+
 - 1047 https://leetcode.cn/problems/remove-all-adjacent-duplicates-in-string/
 - 150 https://leetcode.cn/problems/evaluate-reverse-polish-notation/
 - 239 https://leetcode.cn/problems/sliding-window-maximum/ tag `monotonic queue`
 - 347 https://leetcode.cn/problems/top-k-frequent-elements/ tag `heap sort`
 
 ### Binary Tree
+* Remember to add the recursion steps (described above in this doc) first
+
 - 144 https://leetcode.cn/problems/binary-tree-preorder-traversal/
 - 94 https://leetcode.cn/problems/binary-tree-inorder-traversal/
 - 145 https://leetcode.cn/problems/binary-tree-postorder-traversal/
@@ -81,6 +86,7 @@ The improved way with a queue is commonly more efficient. Relaxing **All Edges**
     - 116 https://leetcode.cn/problems/populating-next-right-pointers-in-each-node/
     - 117 https://leetcode.cn/problems/populating-next-right-pointers-in-each-node-ii/
     - 111 https://leetcode.cn/problems/minimum-depth-of-binary-tree/
+    - 513 https://leetcode.cn/problems/find-bottom-left-tree-value
     
 - 104 https://leetcode.cn/problems/maximum-depth-of-binary-tree/
 - 226 https://leetcode.cn/problems/invert-binary-tree/
@@ -90,8 +96,14 @@ The improved way with a queue is commonly more efficient. Relaxing **All Edges**
 
 - 222 https://leetcode.cn/problems/count-complete-tree-nodes/
 - 110 https://leetcode.cn/problems/balanced-binary-tree/ 2 ways
-- 257 https://leetcode.cn/problems/binary-tree-paths/description/
+- 257 https://leetcode.cn/problems/binary-tree-paths/
 - 404 https://leetcode.cn/problems/sum-of-left-leaves/
+- 112 https://leetcode.cn/problems/path-sum/
+- 105 https://leetcode.cn/problems/construct-binary-tree-from-preorder-and-inorder-traversal/
+- 106 https://leetcode.cn/problems/construct-binary-tree-from-inorder-and-postorder-traversal/
+- 654 https://leetcode.cn/problems/maximum-binary-tree/
+- 617 https://leetcode.cn/problems/merge-two-binary-trees/
+- 700 https://leetcode.cn/problems/search-in-a-binary-search-tree/
 
 ### Failed in 2 rounds
 - 222 https://leetcode.cn/problems/count-complete-tree-nodes/
