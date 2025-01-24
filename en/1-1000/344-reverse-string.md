@@ -1,5 +1,5 @@
 # 344. Reverse String - Best Practices of LeetCode Solutions
-LeetCode problem link: [344. Reverse String](https://leetcode.com/problems/reverse-string),
+LeetCode link: [344. Reverse String](https://leetcode.com/problems/reverse-string),
 [344. 反转字符串](https://leetcode.cn/problems/reverse-string)
 
 [中文题解](#中文题解)

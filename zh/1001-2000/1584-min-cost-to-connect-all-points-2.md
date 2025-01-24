@@ -1,5 +1,5 @@
 # 1584. Min Cost to Connect All Points - Best Practices of LeetCode Solutions (Kruskal's Algorithm)
-LeetCode problem link: [1584. Min Cost to Connect All Points](https://leetcode.com/problems/min-cost-to-connect-all-points)
+LeetCode link: [1584. Min Cost to Connect All Points](https://leetcode.com/problems/min-cost-to-connect-all-points)
 
 ## LeetCode problem description
 You are given an array `points` representing integer coordinates of some points on a 2D-plane, where `points[i] = [xi, yi]`.

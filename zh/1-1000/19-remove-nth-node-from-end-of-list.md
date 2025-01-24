@@ -1,5 +1,5 @@
 # 19. Remove Nth Node From End of List - Best Practices of LeetCode Solutions
-LeetCode problem link: [19. Remove Nth Node From End of List](https://leetcode.com/problems/remove-nth-node-from-end-of-list),
+LeetCode link: [19. Remove Nth Node From End of List](https://leetcode.com/problems/remove-nth-node-from-end-of-list),
 [19. 删除链表的倒数第 N 个结点](https://leetcode.cn/problems/remove-nth-node-from-end-of-list)
 
 [中文题解](#中文题解)

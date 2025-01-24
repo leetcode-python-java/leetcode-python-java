@@ -1,5 +1,5 @@
 # 202. Happy Number - Best Practices of LeetCode Solutions
-LeetCode problem link: [202. Happy Number](https://leetcode.com/problems/happy-number),
+LeetCode link: [202. Happy Number](https://leetcode.com/problems/happy-number),
 [202. 快乐数](https://leetcode.cn/problems/happy-number)
 
 [中文题解](#中文题解)

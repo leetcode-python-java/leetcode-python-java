@@ -1,5 +1,5 @@
 # 207. Course Schedule - Best Practices of LeetCode Solutions
-LeetCode problem link: [207. Course Schedule](https://leetcode.com/problems/course-schedule)
+LeetCode link: [207. Course Schedule](https://leetcode.com/problems/course-schedule)
 
 ## LeetCode problem description
 There are a total of `numCourses` courses you have to take, labeled from `0` to `numCourses - 1`. You are given an array `prerequisites` where `prerequisites[i] = [ai, bi]` indicates that you **must** take course `bi` first if you want to take course `ai`.

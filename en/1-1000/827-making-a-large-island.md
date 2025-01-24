@@ -1,5 +1,5 @@
 # LeetCode 827. Making A Large Island's Solution
-LeetCode problem link: [827. Making A Large Island](https://leetcode.com/problems/making-a-large-island/)
+LeetCode link: [827. Making A Large Island](https://leetcode.com/problems/making-a-large-island/)
 
 ## LeetCode problem description
 You are given an `n x n` binary matrix `grid`. You are allowed to change at most one `0` to be `1`.

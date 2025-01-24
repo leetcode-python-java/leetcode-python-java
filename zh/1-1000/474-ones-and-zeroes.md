@@ -1,5 +1,5 @@
 # 474. Ones and Zeroes
-LeetCode problem link: [474. Ones and Zeroes](https://leetcode.com/problems/ones-and-zeroes/)
+LeetCode link: [474. Ones and Zeroes](https://leetcode.com/problems/ones-and-zeroes/)
 
 ## LeetCode problem description
 You are given an array of binary strings `strs` and two integers `m` and `n`.

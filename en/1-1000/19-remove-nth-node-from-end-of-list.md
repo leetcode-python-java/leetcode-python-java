@@ -1,8 +1,5 @@
 # 19. Remove Nth Node From End of List - Best Practices of LeetCode Solutions
-LeetCode problem link: [19. Remove Nth Node From End of List](https://leetcode.com/problems/remove-nth-node-from-end-of-list),
-[19. 删除链表的倒数第 N 个结点](https://leetcode.cn/problems/remove-nth-node-from-end-of-list)
-
-[中文题解](#中文题解)
+LeetCode link: [19. Remove Nth Node From End of List](https://leetcode.com/problems/remove-nth-node-from-end-of-list), difficulty: **Medium**
 
 ## LeetCode problem description
 Given the `head` of a linked list, remove the `n-th` node from the end of the list and return _its head_.
@@ -30,20 +27,19 @@ Given the `head` of a linked list, remove the `n-th` node from the end of the li
 - `0 <= Node.val <= 100`
 - `1 <= n <= sz`
 
+### [Hints]
 <details>
   <summary>Hint 1</summary>
   Maintain two pointers and update one with a delay of n steps.
 </details>
 
 ## Intuition
-[中文题解](#中文题解)
-
 1. Deleting the `N-th` to last node in a linked list is equivalent to deleting the `node_count - N`-th node in the linked list.
 2. First find out `node_count`.
 3. When `index == node_count - N`, delete the node by `node.next = node.next.next`.
 4. Since the deleted node may be `head`, a virtual node `dummy_node` is used to facilitate unified processing.
 
-## Steps to the Solution
+## Steps
 1. First find out `node_count`.
 ```ruby
 node_count = 0
@@ -379,60 +375,4 @@ end
 ## Other languages
 ```
 // Welcome to create a PR to complete the code of this language, thanks!
-```
-
-## 问题描述
-给你一个链表，删除链表的倒数第 `n` 个结点，并且返回链表的头结点。
-
-### [Example 1]
-![](../../images/examples/19_1.jpg)
-
-**输入**: `head = [1,2,3,4,5], n = 2`
-
-**输出**: `[1,2,3,5]`
-
-# 中文题解
-## 思路
-1. 删除链表的倒数第 `N` 个结点，等同于删除链表的第 `node_count - N` 个结点。
-2. 先求出`node_count`。
-3. 在 `index == node_count - N`时，进行删除节点操作：`node.next = node.next.next`。
-4. 由于删除的节点可能是`head`，所以使用虚拟节点`dummy_node`，方便统一处理。
-
-## 步骤
-1. 求出`node_count`。
-```ruby
-node_count = 0
-node = head
-
-while node
-  node_count += 1
-  node = node.next
-end
-```
-
-2. 在 `index == node_count - N`时，进行删除节点操作：`node.next = node.next.next`。
-```ruby
-index = 0
-node = head
-
-while node
-  if index == node_count - n
-    node.next = node.next.next
-    break
-  end
-
-  index += 1
-  node = node.next
-end
-```
-
-3. 由于删除的节点可能是`head`，所以使用虚拟节点`dummy_node`，方便统一处理。
-```ruby
-dummy_head = ListNode.new # 1
-dummy_head.next = head # 2
-node = dummy_head # 3
-
-# omitted code
-
-return dummy_head.next
 ```

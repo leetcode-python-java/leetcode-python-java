@@ -1,5 +1,5 @@
 # 416. Partition Equal Subset Sum
-LeetCode problem link: [416. Partition Equal Subset Sum](https://leetcode.com/problems/partition-equal-subset-sum/)
+LeetCode link: [416. Partition Equal Subset Sum](https://leetcode.com/problems/partition-equal-subset-sum/)
 [416. 分割等和子集](https://leetcode.cn/problems/partition-equal-subset-sum)
 
 [中文题解](#中文题解)

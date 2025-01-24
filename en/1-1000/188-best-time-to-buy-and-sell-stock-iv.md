@@ -1,5 +1,5 @@
 # 188. Best Time to Buy and Sell Stock IV
-LeetCode problem link: [188. Best Time to Buy and Sell Stock IV](https://leetcode.com/problems/best-time-to-buy-and-sell-stock-iv/)
+LeetCode link: [188. Best Time to Buy and Sell Stock IV](https://leetcode.com/problems/best-time-to-buy-and-sell-stock-iv/)
 
 ## LeetCode problem description
 You are given an integer array `prices` where `prices[i]` is the price of a given stock on the `i-th` day, and an integer `k`.

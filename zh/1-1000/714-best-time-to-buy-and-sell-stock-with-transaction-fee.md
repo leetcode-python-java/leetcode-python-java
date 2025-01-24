@@ -1,5 +1,5 @@
 # 714. Best Time to Buy and Sell Stock with Transaction Fee
-LeetCode problem link: [714. Best Time to Buy and Sell Stock with Transaction Fee](https://leetcode.com/problems/best-time-to-buy-and-sell-stock-with-transaction-fee/)
+LeetCode link: [714. Best Time to Buy and Sell Stock with Transaction Fee](https://leetcode.com/problems/best-time-to-buy-and-sell-stock-with-transaction-fee/)
 
 ## LeetCode problem description
 You are given an array `prices` where `prices[i]` is the price of a given stock on the `i-th` day, and an integer `fee` representing a transaction fee.

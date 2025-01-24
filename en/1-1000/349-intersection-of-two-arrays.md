@@ -1,5 +1,5 @@
 # 349. Intersection of Two Arrays - Best Practices of LeetCode Solutions
-LeetCode problem link: [349. Intersection of Two Arrays](https://leetcode.com/problems/intersection-of-two-arrays),
+LeetCode link: [349. Intersection of Two Arrays](https://leetcode.com/problems/intersection-of-two-arrays),
 [349. 两个数组的交集](https://leetcode.cn/problems/intersection-of-two-arrays)
 
 [中文题解](#中文题解)

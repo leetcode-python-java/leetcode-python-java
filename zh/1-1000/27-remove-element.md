@@ -1,5 +1,5 @@
 # 27. Remove Element - Best Practices of LeetCode Solutions
-LeetCode problem link: [27. Remove Element](https://leetcode.com/problems/remove-element)
+LeetCode link: [27. Remove Element](https://leetcode.com/problems/remove-element)
 
 ## LeetCode problem description
 Given an integer array `nums` and an integer `val`, remove all occurrences of `val` in `nums` [in-place](https://en.wikipedia.org/wiki/In-place_algorithm). The order of the elements may be changed. Then return _the number of elements in `nums` which are not equal to `val`_.

@@ -1,5 +1,5 @@
 # LeetCode 685. Redundant Connection II's Solution
-LeetCode problem link: [685. Redundant Connection II](https://leetcode.com/problems/redundant-connection-ii)
+LeetCode link: [685. Redundant Connection II](https://leetcode.com/problems/redundant-connection-ii)
 
 ## LeetCode problem description
 In this problem, a rooted tree is a **directed** graph such that, there is exactly one node (the root) for which all other nodes are descendants of this node, plus every node has exactly one parent, except for the root node which has no parents.

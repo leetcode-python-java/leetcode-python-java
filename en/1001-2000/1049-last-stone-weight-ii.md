@@ -1,5 +1,5 @@
 # 494. Target Sum
-LeetCode problem link: [494. Target Sum](https://leetcode.com/problems/last-stone-weight-ii/)
+LeetCode link: [494. Target Sum](https://leetcode.com/problems/last-stone-weight-ii/)
 
 ## LeetCode problem description
 You are given an array of integers `stones` where `stones[i]` is the weight of the `i-th` stone.

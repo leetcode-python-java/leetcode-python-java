@@ -1,5 +1,5 @@
 # 695. Max Area of Island (Solution 1: 'Depth-First Search' by Recursion)
-LeetCode problem link: [695. Max Area of Island](https://leetcode.com/problems/max-area-of-island/)
+LeetCode link: [695. Max Area of Island](https://leetcode.com/problems/max-area-of-island/)
 
 # LeetCode problem description
 You are given an `m x n` binary matrix `grid`. An island is a group of `1`'s (representing land) connected **4-directionally** (horizontal or vertical.) You may assume all four edges of the grid are surrounded by water.

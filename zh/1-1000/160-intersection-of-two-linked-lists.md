@@ -1,5 +1,5 @@
 # 160. Intersection of Two Linked Lists - Best Practices of LeetCode Solutions
-LeetCode problem link: [160. Intersection of Two Linked Lists](https://leetcode.com/problems/intersection-of-two-linked-lists),
+LeetCode link: [160. Intersection of Two Linked Lists](https://leetcode.com/problems/intersection-of-two-linked-lists),
 [160. 相交链表](https://leetcode.cn/problems/intersection-of-two-linked-lists)
 
 [中文题解](#中文题解)

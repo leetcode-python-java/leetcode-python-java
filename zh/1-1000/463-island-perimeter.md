@@ -1,5 +1,5 @@
 # LeetCode 463. Island Perimeter's Solution
-LeetCode problem link: [463. Island Perimeter](https://leetcode.com/problems/island-perimeter)
+LeetCode link: [463. Island Perimeter](https://leetcode.com/problems/island-perimeter)
 
 ## LeetCode problem description
 You are given `row x col` `grid` representing a map where `grid[i][j] = 1` represents land and `grid[i][j] = 0` represents water.

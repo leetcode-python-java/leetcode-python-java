@@ -1,5 +1,5 @@
 # 123. Best Time to Buy and Sell Stock III (Dynamic Programming Solution)
-LeetCode problem link: [122. Best Time to Buy and Sell Stock III](https://leetcode.com/problems/best-time-to-buy-and-sell-stock-iii/)
+LeetCode link: [122. Best Time to Buy and Sell Stock III](https://leetcode.com/problems/best-time-to-buy-and-sell-stock-iii/)
 
 ## LeetCode problem description
 You are given an array `prices` where `prices[i]` is the price of a given stock on the `i-th` day.

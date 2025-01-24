@@ -1,5 +1,5 @@
 # LeetCode 684. Redundant Connection's Solution
-LeetCode problem link: [684. Redundant Connection](https://leetcode.com/problems/redundant-connection)
+LeetCode link: [684. Redundant Connection](https://leetcode.com/problems/redundant-connection)
 
 ## LeetCode problem description
 In this problem, a tree is an **undirected graph** that is connected and has no cycles.

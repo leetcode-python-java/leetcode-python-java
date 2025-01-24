@@ -1,5 +1,5 @@
 # 392. Is Subsequence
-LeetCode problem link: [392. Is Subsequence](https://leetcode.com/problems/is-subsequence/)
+LeetCode link: [392. Is Subsequence](https://leetcode.com/problems/is-subsequence/)
 
 ## LeetCode problem description
 > Given two strings `s` and `t`, return `true` if `s` is a **subsequence** of `t`, or `false` otherwise.

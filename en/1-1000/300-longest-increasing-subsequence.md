@@ -1,5 +1,5 @@
 # 300. Longest Increasing Subsequence
-LeetCode problem link: [300. Longest Increasing Subsequence](https://leetcode.com/problems/longest-increasing-subsequence/)
+LeetCode link: [300. Longest Increasing Subsequence](https://leetcode.com/problems/longest-increasing-subsequence/)
 
 ## LeetCode problem description
 Given an integer array `nums`, return the length of the **longest strictly increasing subsequence**.

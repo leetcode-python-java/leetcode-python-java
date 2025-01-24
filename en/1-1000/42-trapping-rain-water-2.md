@@ -1,5 +1,5 @@
 # 42. Trapping Rain Water (Monotonic Stack Solution 2)
-LeetCode problem link: [42. Trapping Rain Water](https://leetcode.com/problems/trapping-rain-water/)
+LeetCode link: [42. Trapping Rain Water](https://leetcode.com/problems/trapping-rain-water/)
 
 ## LeetCode problem description
 Given `n` non-negative integers representing an elevation map where the width of each bar is `1`, compute how much water it can trap after raining.

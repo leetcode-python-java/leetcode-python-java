@@ -1,5 +1,5 @@
 # 704. Binary Search - Best Practices of LeetCode Solutions
-LeetCode problem link: [704. Binary Search](https://leetcode.com/problems/binary-search)
+LeetCode link: [704. Binary Search](https://leetcode.com/problems/binary-search)
 
 ## LeetCode problem description
 Given an array of integers `nums` which is sorted in ascending order, and an integer `target`, write a function to search `target` in `nums`. If `target` exists, then return its `index`. Otherwise, return `-1`.

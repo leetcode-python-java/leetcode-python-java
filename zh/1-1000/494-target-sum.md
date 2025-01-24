@@ -1,5 +1,5 @@
 # 494. Target Sum
-LeetCode problem link: [494. Target Sum](https://leetcode.com/problems/target-sum/)
+LeetCode link: [494. Target Sum](https://leetcode.com/problems/target-sum/)
 
 ## LeetCode problem description
 You are given an integer array `nums` and an integer `target`.

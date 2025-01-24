@@ -1,5 +1,5 @@
 # 541. Reverse String II - Best Practices of LeetCode Solutions
-LeetCode problem link: [541. Reverse String II](https://leetcode.com/problems/reverse-string-ii),
+LeetCode link: [541. Reverse String II](https://leetcode.com/problems/reverse-string-ii),
 [541. 反转字符串 II](https://leetcode.cn/problems/reverse-string-ii)
 
 [中文题解](#中文题解)

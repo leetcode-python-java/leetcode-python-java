@@ -1,5 +1,5 @@
 # 303. Range Sum Query - Immutable - Best Practices of LeetCode Solutions
-LeetCode problem link: [303. Range Sum Query - Immutable](https://leetcode.com/problems/range-sum-query-immutable)
+LeetCode link: [303. Range Sum Query - Immutable](https://leetcode.com/problems/range-sum-query-immutable)
 
 ## LeetCode problem description
 Given an integer array `nums`, handle multiple queries of the following type:

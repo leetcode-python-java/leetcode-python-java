@@ -1,5 +1,5 @@
 # 59. Spiral Matrix II - Best Practices of LeetCode Solutions
-LeetCode problem link: [59. Spiral Matrix II](https://leetcode.com/problems/spiral-matrix-ii)
+LeetCode link: [59. Spiral Matrix II](https://leetcode.com/problems/spiral-matrix-ii)
 
 ## LeetCode problem description
 Given a positive integer `n`, generate an `n x n` `matrix` filled with elements from `1` to `n * n` in spiral order.
