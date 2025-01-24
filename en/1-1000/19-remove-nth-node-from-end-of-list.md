@@ -79,7 +79,7 @@ return dummy_head.next
 ```
 
 ## Complexity
-* Time: `O(n)`.
+* Time: `O(N)`.
 * Space: `O(1)`.
 
 ## Java
