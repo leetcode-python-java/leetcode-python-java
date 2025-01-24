@@ -1,4 +1,4 @@
-# 203. Remove Linked List Elements - LeetCode Solution
+# 203. Remove Linked List Elements - Best Practices of LeetCode Solutions
 LeetCode problem link: [203. Remove Linked List Elements](https://leetcode.com/problems/remove-linked-list-elements),
 [203. 移除链表元素](https://leetcode.cn/problems/remove-linked-list-elements)
 

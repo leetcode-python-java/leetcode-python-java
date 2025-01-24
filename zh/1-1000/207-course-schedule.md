@@ -1,4 +1,4 @@
-# 207. Course Schedule - LeetCode Solution
+# 207. Course Schedule - Best Practices of LeetCode Solutions
 LeetCode problem link: [207. Course Schedule](https://leetcode.com/problems/course-schedule)
 
 ## LeetCode problem description

@@ -1,4 +1,4 @@
-# 28. Find the Index of the First Occurrence in a String - LeetCode Solution
+# 28. Find the Index of the First Occurrence in a String - Best Practices of LeetCode Solutions
 LeetCode English link: [28. Find the Index of the First Occurrence in a String](https://leetcode.com/problems/find-the-index-of-the-first-occurrence-in-a-string)
 
 LeetCode Chinese link: [28. 找出字符串中第一个匹配项的下标](https://leetcode.cn/problems/find-the-index-of-the-first-occurrence-in-a-string)

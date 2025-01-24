@@ -1,4 +1,4 @@
-# 20. Valid Parentheses - LeetCode Solution Best Practice
+# 20. Valid Parentheses - Best Practices of LeetCode Solutions
 LeetCode link: [20. Valid Parentheses](https://leetcode.com/problems/valid-parentheses), difficulty: **Easy**
 
 ## Description of "20. Valid Parentheses"

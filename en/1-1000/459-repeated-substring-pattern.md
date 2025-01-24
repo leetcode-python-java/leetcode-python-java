@@ -1,4 +1,4 @@
-# 459. Repeated Substring Pattern - LeetCode Solution Best Practice
+# 459. Repeated Substring Pattern - Best Practices of LeetCode Solutions
 LeetCode link: [459. Repeated Substring Pattern](https://leetcode.com/problems/repeated-substring-pattern), difficulty: **Easy**.
 
 ## Description of "459. Repeated Substring Pattern"

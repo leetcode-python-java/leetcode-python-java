@@ -1,4 +1,4 @@
-# 209. Minimum Size Subarray Sum - LeetCode Solution
+# 209. Minimum Size Subarray Sum - Best Practices of LeetCode Solutions
 LeetCode problem link: [209. Minimum Size Subarray Sum](https://leetcode.com/problems/minimum-size-subarray-sum),
 [209. 长度最小的子数组](https://leetcode.cn/problems/minimum-size-subarray-sum)
 

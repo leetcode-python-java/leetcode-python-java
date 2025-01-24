@@ -1,4 +1,4 @@
-# 225. Implement Stack using Queues - LeetCode Solution Best Practice
+# 225. Implement Stack using Queues - Best Practices of LeetCode Solutions
 LeetCode link: [225. Implement Stack using Queues](https://leetcode.com/problems/implement-stack-using-queues), difficulty: **Easy**
 
 ## Description of "225. Implement Stack using Queues"

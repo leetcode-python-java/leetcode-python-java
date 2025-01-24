@@ -1,4 +1,4 @@
-# 206. Reverse Linked List - LeetCode Solution
+# 206. Reverse Linked List - Best Practices of LeetCode Solutions
 LeetCode problem link: [206. Reverse Linked List](https://leetcode.com/problems/reverse-linked-list),
 [206. 反转链表](https://leetcode.cn/problems/reverse-linked-list)
 

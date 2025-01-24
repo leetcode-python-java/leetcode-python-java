@@ -1,4 +1,4 @@
-# 303. Range Sum Query - Immutable - LeetCode Solution
+# 303. Range Sum Query - Immutable - Best Practices of LeetCode Solutions
 LeetCode problem link: [303. Range Sum Query - Immutable](https://leetcode.com/problems/range-sum-query-immutable)
 
 ## LeetCode problem description

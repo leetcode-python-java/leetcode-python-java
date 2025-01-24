@@ -1,4 +1,4 @@
-# 59. Spiral Matrix II - LeetCode Solution
+# 59. Spiral Matrix II - Best Practices of LeetCode Solutions
 LeetCode problem link: [59. Spiral Matrix II](https://leetcode.com/problems/spiral-matrix-ii)
 
 ## LeetCode problem description

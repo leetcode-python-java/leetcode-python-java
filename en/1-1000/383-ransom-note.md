@@ -1,4 +1,4 @@
-# 383. Ransom Note - LeetCode Solution
+# 383. Ransom Note - Best Practices of LeetCode Solutions
 LeetCode problem link: [383. Ransom Note](https://leetcode.com/problems/ransom-note),
 [383. 赎金信](https://leetcode.cn/problems/ransom-note)
 

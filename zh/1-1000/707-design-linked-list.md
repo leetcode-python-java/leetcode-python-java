@@ -1,4 +1,4 @@
-# 707. Design Linked List - LeetCode Solution
+# 707. Design Linked List - Best Practices of LeetCode Solutions
 LeetCode problem link: [707. Design Linked List](https://leetcode.com/problems/design-linked-list),
 [707. 设计链表](https://leetcode.cn/problems/design-linked-list)
 

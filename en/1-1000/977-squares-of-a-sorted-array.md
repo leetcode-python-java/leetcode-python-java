@@ -1,4 +1,4 @@
-# 977. Squares of a Sorted Array - LeetCode Solution
+# 977. Squares of a Sorted Array - Best Practices of LeetCode Solutions
 LeetCode problem link: [977. Squares of a Sorted Array](https://leetcode.com/problems/squares-of-a-sorted-array)
 
 ## LeetCode problem description

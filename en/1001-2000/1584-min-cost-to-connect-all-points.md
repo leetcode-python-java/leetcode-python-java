@@ -1,4 +1,4 @@
-# 1584. Min Cost to Connect All Points - LeetCode Solution (Prim's Algorithm)
+# 1584. Min Cost to Connect All Points - Best Practices of LeetCode Solutions (Prim's Algorithm)
 LeetCode problem link: [1584. Min Cost to Connect All Points](https://leetcode.com/problems/min-cost-to-connect-all-points)
 
 ## LeetCode problem description

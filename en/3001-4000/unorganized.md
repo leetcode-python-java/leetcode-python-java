@@ -80,7 +80,7 @@ The improved way with a queue is commonly more efficient. Relaxing **All Edges**
 - 102 https://leetcode.cn/problems/binary-tree-level-order-traversal/
     - 107 https://leetcode.cn/problems/binary-tree-level-order-traversal-ii/
     - 199 https://leetcode.cn/problems/binary-tree-right-side-view/
-    - 637 https://leetcode.cn/problems/average-of-levels-in-binary-tree/submissions/594783150/
+    - 637 https://leetcode.cn/problems/average-of-levels-in-binary-tree/
     - 429 https://leetcode.cn/problems/n-ary-tree-level-order-traversal/
     - 515 https://leetcode.cn/problems/find-largest-value-in-each-tree-row/
     - 116 https://leetcode.cn/problems/populating-next-right-pointers-in-each-node/
@@ -104,7 +104,10 @@ The improved way with a queue is commonly more efficient. Relaxing **All Edges**
 - 654 https://leetcode.cn/problems/maximum-binary-tree/
 - 617 https://leetcode.cn/problems/merge-two-binary-trees/
 - 700 https://leetcode.cn/problems/search-in-a-binary-search-tree/
-
+- 530 https://leetcode.cn/problems/minimum-absolute-difference-in-bst/
+    783 https://leetcode.com/problems/minimum-distance-between-bst-nodes/ is the same
+- 501 https://leetcode.cn/problems/find-mode-in-binary-search-tree/
+- 
 ### Failed in 2 rounds
 - 222 https://leetcode.cn/problems/count-complete-tree-nodes/
-
+- 236 https://leetcode.cn/problems/lowest-common-ancestor-of-a-binary-tree/

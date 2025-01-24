@@ -1,4 +1,4 @@
-# 1. Two Sum - LeetCode Solution Best Practice
+# 1. Two Sum - Best Practices of LeetCode Solutions
 LeetCode link: [1. Two Sum](https://leetcode.com/problems/two-sum), difficulty: **Easy**
 
 ## Description of "1. Two Sum"

@@ -1,4 +1,4 @@
-# 27. Remove Element - LeetCode Solution
+# 27. Remove Element - Best Practices of LeetCode Solutions
 LeetCode problem link: [27. Remove Element](https://leetcode.com/problems/remove-element)
 
 ## LeetCode problem description

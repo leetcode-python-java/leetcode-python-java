@@ -1,4 +1,4 @@
-# 704. Binary Search - LeetCode Solution
+# 704. Binary Search - Best Practices of LeetCode Solutions
 LeetCode problem link: [704. Binary Search](https://leetcode.com/problems/binary-search)
 
 ## LeetCode problem description

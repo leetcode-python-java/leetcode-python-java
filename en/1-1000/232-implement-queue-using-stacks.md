@@ -1,4 +1,4 @@
-# 232. Implement Queue using Stacks - LeetCode Solution
+# 232. Implement Queue using Stacks - Best Practices of LeetCode Solutions
 LeetCode English link: [232. Implement Queue using Stacks](https://leetcode.com/problems/implement-queue-using-stacks)
 
 LeetCode Chinese link: [232. 用栈实现队列](https://leetcode.cn/problems/implement-queue-using-stacks)
