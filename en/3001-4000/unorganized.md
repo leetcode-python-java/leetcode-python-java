@@ -107,7 +107,19 @@ The improved way with a queue is commonly more efficient. Relaxing **All Edges**
 - 530 https://leetcode.cn/problems/minimum-absolute-difference-in-bst/
     783 https://leetcode.com/problems/minimum-distance-between-bst-nodes/ is the same
 - 501 https://leetcode.cn/problems/find-mode-in-binary-search-tree/
+- 701 https://leetcode.cn/problems/insert-into-a-binary-search-tree/ Carl's solution is shorter, but may hard to understand and think about
+- 450 https://leetcode.cn/problems/delete-node-in-a-bst/ Carl's solution is shorter
+- 669 https://leetcode.cn/problems/trim-a-binary-search-tree/description/
+- 108 https://leetcode.cn/problems/convert-sorted-array-to-binary-search-tree/
+- 538 https://leetcode.cn/problems/convert-bst-to-greater-tree/
+
+### Backtracking
+- 77 https://leetcode.cn/problems/combinations/description/
+- 216 https://leetcode.cn/problems/combination-sum-iii/
+- 17 https://leetcode.cn/problems/letter-combinations-of-a-phone-number/
+- 39 https://leetcode.cn/problems/combination-sum/
 - 
+
 ### Failed in 2 rounds
 - 222 https://leetcode.cn/problems/count-complete-tree-nodes/
 - 236 https://leetcode.cn/problems/lowest-common-ancestor-of-a-binary-tree/
