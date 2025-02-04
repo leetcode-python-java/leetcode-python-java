@@ -114,12 +114,33 @@ The improved way with a queue is commonly more efficient. Relaxing **All Edges**
 - 538 https://leetcode.cn/problems/convert-bst-to-greater-tree/
 
 ### Backtracking
-- 77 https://leetcode.cn/problems/combinations/description/
+- 77 https://leetcode.cn/problems/combinations/
 - 216 https://leetcode.cn/problems/combination-sum-iii/
-- 17 https://leetcode.cn/problems/letter-combinations-of-a-phone-number/
 - 39 https://leetcode.cn/problems/combination-sum/
-- 
+- 17 https://leetcode.cn/problems/letter-combinations-of-a-phone-number/
+- 78 https://leetcode.cn/problems/subsets/
+- 90 https://leetcode.cn/problems/subsets-ii/
+- 40 https://leetcode.cn/problems/combination-sum-ii/
+- 131 https://leetcode.cn/problems/palindrome-partitioning/
+- 93 https://leetcode.cn/problems/restore-ip-addresses/
+- 491 https://leetcode.cn/problems/non-decreasing-subsequences/
+- 46 https://leetcode.cn/problems/permutations/
+- 332 https://leetcode.cn/problems/reconstruct-itinerary/
+- 51 https://leetcode.cn/problems/n-queens/
+
+### Greedy Algorithm
+- 455 https://leetcode.cn/problems/assign-cookies/
+- 376 https://leetcode.cn/problems/wiggle-subsequence/
+- 53 https://leetcode.cn/problems/maximum-subarray/
+- 122 https://leetcode.cn/problems/best-time-to-buy-and-sell-stock-ii/
 
 ### Failed in 2 rounds
 - 222 https://leetcode.cn/problems/count-complete-tree-nodes/
 - 236 https://leetcode.cn/problems/lowest-common-ancestor-of-a-binary-tree/
+- 40 https://leetcode.cn/problems/combination-sum-ii/
+- 131 https://leetcode.cn/problems/palindrome-partitioning/
+- 332 https://leetcode.cn/problems/reconstruct-itinerary/
+- 51 https://leetcode.cn/problems/n-queens/
+- 37 https://leetcode.cn/problems/sudoku-solver
+
+2005-02-04 day 7
