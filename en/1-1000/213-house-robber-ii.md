@@ -52,7 +52,7 @@ class Solution:
 
         return max(
             max_money_robbed(nums[1:]),
-            max_money_robbed(nums[:len(nums) - 1])
+            max_money_robbed(nums[:-1])
         )
 
 def max_money_robbed(nums):

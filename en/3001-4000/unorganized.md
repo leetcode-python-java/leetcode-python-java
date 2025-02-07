@@ -133,6 +133,29 @@ The improved way with a queue is commonly more efficient. Relaxing **All Edges**
 - 376 https://leetcode.cn/problems/wiggle-subsequence/
 - 53 https://leetcode.cn/problems/maximum-subarray/
 - 122 https://leetcode.cn/problems/best-time-to-buy-and-sell-stock-ii/
+- 55 https://leetcode.cn/problems/jump-game/
+- 45 https://leetcode.cn/problems/jump-game-ii/
+- 1005 https://leetcode.cn/problems/maximize-sum-of-array-after-k-negations/
+- 135 https://leetcode.cn/problems/candy/
+- 860 https://leetcode.cn/problems/lemonade-change/
+- 406 https://leetcode.cn/problems/queue-reconstruction-by-height/
+- 452 https://leetcode.cn/problems/minimum-number-of-arrows-to-burst-balloons
+- 435 https://leetcode.cn/problems/non-overlapping-intervals/
+- 763 https://leetcode.cn/problems/partition-labels/
+- 56  https://leetcode.cn/problems/merge-intervals/
+- 738 https://leetcode.cn/problems/monotone-increasing-digits/
+- 968 https://leetcode.cn/problems/binary-tree-cameras/
+
+### Dynamic programming
+- 70 https://leetcode.cn/problems/climbing-stairs/
+- 746 https://leetcode.cn/problems/min-cost-climbing-stairs/
+- 62 https://leetcode.cn/problems/unique-paths/
+- 63 https://leetcode.cn/problems/unique-paths-ii/
+- 343 https://leetcode.cn/problems/integer-break/
+
+#### backpack problems
+- 279 https://leetcode.cn/problems/perfect-squares/ can have solution 2
+- 
 
 ### Failed in 2 rounds
 - 222 https://leetcode.cn/problems/count-complete-tree-nodes/
@@ -142,5 +165,6 @@ The improved way with a queue is commonly more efficient. Relaxing **All Edges**
 - 332 https://leetcode.cn/problems/reconstruct-itinerary/
 - 51 https://leetcode.cn/problems/n-queens/
 - 37 https://leetcode.cn/problems/sudoku-solver
+- 96 https://leetcode.cn/problems/unique-binary-search-trees/ Finished but slow.
 
-2005-02-04 day 7
+2005-02-07 day 4
