@@ -84,6 +84,7 @@ class Solution {
 ```
 
 ## Python
+### Solution 1
 ```python
 class Solution:
     def findLengthOfLCIS(self, nums: List[int]) -> int:
@@ -97,6 +98,25 @@ class Solution:
                 dp[i] = dp[i - 1] + 1
 
         return max(dp)
+```
+
+### Solution 2
+```python
+class Solution:
+    def findLengthOfLCIS(self, nums: List[int]) -> int:
+        result = 1
+        current_length = 1
+
+        for i in range(1, len(nums)):
+            if nums[i] > nums[i - 1]:
+                current_length += 1
+
+                if current_length > result:
+                    result = current_length
+            else:
+                current_length = 1
+
+        return result
 ```
 
 ## C++
