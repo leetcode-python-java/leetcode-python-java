@@ -51,6 +51,7 @@ Detailed solutions will be given later, and now only the best practices in 3 to 
 * Space: `O(n)`.
 
 ## Python
+### Solution 1
 ```python
 class Solution:
     def maxProfit(self, prices: List[int]) -> int:
@@ -70,6 +71,27 @@ class Solution:
             dp[1] = max(dc[1], dc[0] + price)
 
         return dp[1]
+```
+
+### Solution 2
+```python
+class Solution:
+    # 0: have stock
+    #   1) just bought
+    #   2) keep holding
+    # 1: have no stock
+    #   1) just sold
+    #   2) keep no stock
+    def maxProfit(self, prices: List[int]) -> int:
+        dp = [-prices[0], 0]
+
+        for price in prices[1:]:
+            dc = dp.copy()
+
+            dp[0] = -price
+            dp[1] = max(dc[1], dc[1] + dc[0] + price)
+
+        return dp[-1]
 ```
 
 ## C++
