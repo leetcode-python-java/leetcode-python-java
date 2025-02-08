@@ -52,11 +52,12 @@ class Solution:
         for price in prices[1:]:
             dc = dp.copy()
 
-            dp[0] = max(dc[0], -price)
-
-            for i in range(1, k * 2):
-                addition = price if i % 2 == 1 else -price
-                dp[i] = max(dc[i], dc[i - 1] + addition)
+            for i in range(0, 2 * k, 2):
+                dp[i] = max(
+                    dc[i],
+                    (0 if i == 0 else dc[i - 1]) - price
+                )
+                dp[i + 1] = max(dc[i + 1], dc[i] + price)
 
         return dp[-1]
 ```
