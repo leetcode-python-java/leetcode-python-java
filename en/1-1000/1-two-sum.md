@@ -1,7 +1,7 @@
 # 1. Two Sum - Best Practices of LeetCode Solutions
 LeetCode link: [1. Two Sum](https://leetcode.com/problems/two-sum), difficulty: **Easy**
 
-## Description of "1. Two Sum"
+## LeetCode description of "1. Two Sum"
 Given an array of integers `nums` and an integer `target`, return _indices of the two numbers such that they add up to `target`_.
 
 You may assume that each input would have **_exactly_ one solution**, and you may not use the same element twice.

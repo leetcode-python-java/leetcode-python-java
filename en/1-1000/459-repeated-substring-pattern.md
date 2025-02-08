@@ -1,7 +1,7 @@
 # 459. Repeated Substring Pattern - Best Practices of LeetCode Solutions
 LeetCode link: [459. Repeated Substring Pattern](https://leetcode.com/problems/repeated-substring-pattern), difficulty: **Easy**.
 
-## Description of "459. Repeated Substring Pattern"
+## LeetCode description of "459. Repeated Substring Pattern"
 Given a string `s`, check if it can be constructed by taking a substring of it and appending multiple copies of the substring together.
 
 ### [Example 1]

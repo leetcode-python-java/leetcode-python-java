@@ -1,7 +1,7 @@
 # 20. Valid Parentheses - Best Practices of LeetCode Solutions
 LeetCode link: [20. Valid Parentheses](https://leetcode.com/problems/valid-parentheses), difficulty: **Easy**
 
-## Description of "20. Valid Parentheses"
+## LeetCode description of "20. Valid Parentheses"
 Given a string `s` containing just the characters `(`, `)`, `{`, `}`, `[` and `]`, determine if the input string is valid.
 
 An input string is valid if:

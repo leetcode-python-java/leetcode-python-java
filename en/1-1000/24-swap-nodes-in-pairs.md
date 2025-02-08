@@ -1,7 +1,7 @@
 # 24. Swap Nodes in Pairs - Best Practices of LeetCode Solutions
 LeetCode link: [24. Swap Nodes in Pairs](https://leetcode.com/problems/swap-nodes-in-pairs), difficulty: **Medium**
 
-## Description of "24. Swap Nodes in Pairs"
+## LeetCode description of "24. Swap Nodes in Pairs"
 Given a linked list, swap every two adjacent nodes and return its head. You must solve the problem without modifying the values in the list's nodes (i.e., only nodes themselves may be changed.)
 
 ### [Example 1]

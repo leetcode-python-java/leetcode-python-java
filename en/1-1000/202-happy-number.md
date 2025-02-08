@@ -1,7 +1,7 @@
 # 202. Happy Number - Best Practices of LeetCode Solutions
 LeetCode link: [202. Happy Number](https://leetcode.com/problems/happy-number), difficulty: **Easy**.
 
-## Description of "202. Happy Number"
+## LeetCode description of "202. Happy Number"
 Write an algorithm to determine if a number `n` is happy.
 
 A **happy number** is a number defined by the following process:
