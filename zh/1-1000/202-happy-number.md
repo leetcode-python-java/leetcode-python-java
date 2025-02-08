@@ -1,28 +1,22 @@
-# 202. Happy Number - Best Practices of LeetCode Solutions
-LeetCode link: [202. Happy Number](https://leetcode.com/problems/happy-number),
-[202. 快乐数](https://leetcode.cn/problems/happy-number)
+# 202. 快乐数 - 力扣题解最佳实践
+力扣链接：[202. 快乐数](https://leetcode.cn/problems/happy-number), 难度: **简单**。
 
-[中文题解](#中文题解)
+## 力扣“202. 快乐数”问题描述
+编写一个算法来判断一个数 `n` 是不是快乐数。
 
-## LeetCode problem description
-Write an algorithm to determine if a number `n` is happy.
+「**快乐数**」 定义为：
 
-A **happy number** is a number defined by the following process:
+* 对于一个正整数，每一次将该数替换为它每个位置上的数字的平方和。
+* 然后重复这个过程直到这个数变为 `1`，也可能是 **无限循环** 但始终变不到 `1`。
+* 如果这个过程 **结果为** `1`，那么这个数就是快乐数。
+* 如果 `n` 是 _快乐数_ 就返回 `true` ；不是，则返回 `false` 。
 
-* Starting with any positive integer, replace the number by the sum of the squares of its digits.
-* Repeat the process until the number equals 1 (where it will stay), or it **loops endlessly in a cycle** which does not include 1.
-* Those numbers for which this process **ends in 1** are happy.
+### [示例 1]
+**输入**: `n = 19`
 
-Return `true` if `n` is _a happy number_, and `false` if not.
+**输出**: `true`
 
-Difficulty: **Easy**
-
-### [Example 1]
-**Input**: `n = 19`
-
-**Output**: `true`
-
-**Explanation**
+**解释**:
 ```
 1**2 + 9**2 = 82
 8**2 + 2**2 = 68
@@ -30,22 +24,28 @@ Difficulty: **Easy**
 1**2 + 0**2 + 0**2 = 1
 ```
 
-### [Example 2]
-**Input**: `n = 2`
+### [示例 2]
+**输入**: `k = 2, prices = [3,2,6,5,0,3]`
 
-**Output**: `false`
+**输出**: `7`
 
-### [Constraints]
-- `1 <= n <= 2**31 - 1`
+**解释**:
+```
+在第 2 天 (股票价格 = 2) 的时候买入，在第 3 天 (股票价格 = 6) 的时候卖出, 这笔交易所能获得利润 = 6-2 = 4 。
+随后，在第 5 天 (股票价格 = 0) 的时候买入，在第 6 天 (股票价格 = 3) 的时候卖出, 这笔交易所能获得利润 = 3-0 = 3 。
+```
 
-## Intuition
-[中文题解](#中文题解)
+### [约束]
+- `1 <= k <= 100`
+- `1 <= prices.length <= 1000`
+- `0 <= prices[i] <= 1000`
 
-1. It is more convenient to call `isHappy(n)` recursively. You only need to generate a new `n` as a parameter each time.
-2. If `n` has already appeared, it means that the loop has been entered, and `return false`. You can use `Set` to save the `n` that has appeared.
+## 思路
+1. 递归调用`isHappy(n)`比较方便，每次只需要生成新的`n`作为参数。
+2. 如果`n`已经出现过了，说明进入了循环，`return false`。可以用`Set`保存已经出现过的`n`。
 
-## Steps
-1. Generate a new `n` as the `isHappy(n)` parameter.
+## 步骤
+1. 生成新的`n`作为`isHappy()`的参数。
 ```javascript
 let sum = 0
 
@@ -58,9 +58,9 @@ for (const digit of n.toString()) {
 return isHappy(sum)
 ```
 
-2. If `n` has already appeared, it means that the loop has been entered, and `return false`. You can use `Set` to save the `n` that has appeared.
+2. 如果`n`已经出现过了，说明进入了循环，`return false`。可以用`Set`保存已经出现过的`n`。
 ```javascript
-var isHappy = function (n, appearedNums) { // 0
+var isHappy = function (n, appearedNums) {
   appearedNums ||= new Set() // 1
   let sum = 0
 
@@ -82,9 +82,9 @@ var isHappy = function (n, appearedNums) { // 0
 };
 ```
 
-## Complexity
-* Time: `O(log N)`.
-* Space: `O(log N)`.
+## 复杂度
+* 时间：`O(log N)`。
+* 空间：`O(log N)`。
 
 ## Java
 ```java
@@ -221,72 +221,4 @@ public class Solution
 ## Other languages
 ```
 // Welcome to create a PR to complete the code of this language, thanks!
-```
-
-## 问题描述
-编写一个算法来判断一个数 `n` 是不是快乐数。
-
-「**快乐数**」 定义为：
-
-* 对于一个正整数，每一次将该数替换为它每个位置上的数字的平方和。
-* 然后重复这个过程直到这个数变为 `1`，也可能是 **无限循环** 但始终变不到 `1`。
-* 如果这个过程 **结果为** `1`，那么这个数就是快乐数。
-* 如果 `n` 是 _快乐数_ 就返回 `true` ；不是，则返回 `false` 。
-
-难度: **容易**
-
-### [Example 1]
-**输入**: `n = 19`
-
-**输出**: `true`
-
-**解释**
-```
-1**2 + 9**2 = 82
-8**2 + 2**2 = 68
-6**2 + 8**2 = 100
-1**2 + 0**2 + 0**2 = 1
-```
-
-# 中文题解
-## 思路
-1. 递归调用`isHappy(n)`比较方便，每次只需要生成新的`n`作为参数。
-2. 如果`n`已经出现过了，说明进入了循环，`return false`。可以用`Set`保存已经出现过的`n`。
-
-## 步骤
-1. 生成新的`n`作为`isHappy()`的参数。
-```javascript
-let sum = 0
-
-for (const digit of n.toString()) {
-  sum += Math.pow(Number(digit), 2)
-}
-
-// omitted code
-
-return isHappy(sum)
-```
-
-2. 如果`n`已经出现过了，说明进入了循环，`return false`。可以用`Set`保存已经出现过的`n`。
-```javascript
-var isHappy = function (n, appearedNums) {
-  appearedNums ||= new Set() // 1
-  let sum = 0
-
-  for (const digit of n.toString()) {
-    sum += Math.pow(Number(digit), 2)
-  }
-
-  if (sum == 1) {
-    return true
-  }
-
-  if (appearedNums.has(sum)) { // 2
-    return false
-  }
-
-  appearedNums.add(sum) // 3
-
-  return isHappy(sum, appearedNums)
-};
 ```
