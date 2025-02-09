@@ -25,27 +25,57 @@ Output: 4
 - `1 <= heights.length <= 100000`
 - `0 <= heights[i] <= 10000`
 
-## Thoughts
+## Intuition
 This problem can be solved using **Monotonic Stack**.
 
 * The `heights` in the stack from bottom to top are in ascending order.
 * While `current_height < stack_top_height`, pop `stack_top_height`.
 * Follow **Monotonic Stack**'s common rule: **only calculating when `pop()` is happening**. This common rule can be applied to calculating result for **most** of the `Monotonic Stack` problems.
-* Disappeared heights (popped by `current_height` or popped by `stack_top_height`) are all taller than `stack_top_height`. This logic will be used to calculate the `width`.
+* To calculate the `width`, there are two ways:
 
-Detailed solutions will be given later, and now only the best practices in 7 languages are given.
+### Way 1
+* The last `popped_index` from stack should be kept since we need it to calculate the `width`.
+
+### Way 2
+* Disappeared heights (popped when `current_height < stack_top_height`) are all taller than `stack_top_height`. This logic will be used to calculate the `width`.
 
 ### Complexity
 * Time: `O(n)`.
 * Space: `O(n)`.
 
 ## Python
+### Way 1
 ```python
 class Solution:
     def largestRectangleArea(self, heights: List[int]) -> int:
-        heights = [0] + heights + [0]
         max_area = 0
         index_stack = []
+        heights.append(0) # different from way 2
+
+        for i, height in enumerate(heights):
+            popped_index = None # different from way 2 
+
+            while index_stack and height < heights[index_stack[-1]]:
+                popped_index = index_stack.pop()
+                area = heights[popped_index] * (i - popped_index) # different from way 2
+                max_area = max(max_area, area)
+
+            if popped_index is not None: # different from way 2
+                i = popped_index
+                heights[i] = height
+
+            index_stack.append(i)
+        
+        return max_area
+```
+
+### Way 2
+```python
+class Solution:
+    def largestRectangleArea(self, heights: List[int]) -> int:
+        max_area = 0
+        index_stack = []
+        heights = [0] + heights + [0] # different from way 1
 
         for i, height in enumerate(heights):
             while index_stack and height < heights[index_stack[-1]]:
@@ -53,9 +83,9 @@ class Solution:
 
                 popped_height = heights[popped_index]
                 
-                left_index = index_stack[-1] # popped_height's remaining left heights are all shorter than 'popped_height', because when 'popped_height' itself was pushed into stack, it must have caused some (could be none) taller heights been popped out of the stack.
-                right_index = i # popped_height's right heights (which are all taller than 'popped_height') have been popped out of the stack (disappeared) when current `i` height is being pushed into stack.
-                width = right_index - left_index - 1 # So in the range of 'width', they are all no shorter than `popped_height`, although they have been popped out of the stack (disappeared).
+                left_index = index_stack[-1] # Different from way 1. popped_height's remaining left heights are all shorter than 'popped_height', because when 'popped_height' itself was pushed into stack, it must have caused some (could be none) taller heights been popped out of the stack.
+                right_index = i # Different from way 1. popped_height's right heights (which are all taller than 'popped_height') have been popped out of the stack (disappeared) when current `i` height is being pushed into stack.
+                width = right_index - left_index - 1 # Different from way 1. So in the range of 'width', they are all no shorter than `popped_height`, although they have been popped out of the stack (disappeared).
 
                 area = popped_height * width
                 if area > max_area:
