@@ -86,25 +86,24 @@ class Solution {
 ```java
 class Solution {
     public int[] nextGreaterElement(int[] nums1, int[] nums2) {
-        var numToGreater = new HashMap<Integer, Integer>();
-        var indexStack = new Stack<Integer>();
+        var numToGreaterNum = new HashMap<Integer, Integer>();
+        var stack = new Stack<Integer>();
 
-        for (var i = 0; i < nums2.length; i++) {
-            while (!indexStack.empty() && nums2[indexStack.peek()] < nums2[i]) {
-                var index = indexStack.pop();
-                numToGreater.put(nums2[index], nums2[i]);
+        for (var num : nums2) {
+            while (!stack.empty() && stack.peek() < num) {
+                numToGreaterNum.put(stack.pop(), num);
             }
 
-            indexStack.push(i);
+            stack.push(num);
         }
 
-        var results = new int[nums1.length];
+        var result = new int[nums1.length];
 
         for (var i = 0; i < nums1.length; i++) {
-            results[i] = numToGreater.getOrDefault(nums1[i], -1);
+            result[i] = numToGreaterNum.getOrDefault(nums1[i], -1);
         }
 
-        return results;
+        return result;
     }
 }
 ```
@@ -134,17 +133,16 @@ class Solution:
 ```python
 class Solution:
     def nextGreaterElement(self, nums1: List[int], nums2: List[int]) -> List[int]:
-        num_to_greater = defaultdict(int)
-        index_stack = []
+        num_to_greater_num = defaultdict(int)
+        stack = []
 
-        for i, num in enumerate(nums2):
-            while index_stack and nums2[index_stack[-1]] < num:
-                index = index_stack.pop()
-                num_to_greater[nums2[index]] = num
+        for num in nums2:
+            while stack and num > stack[-1]:
+                num_to_greater_num[stack.pop()] = num
 
-            index_stack.append(i)
+            stack.append(num)
 
-        return [num_to_greater.get(num, -1) for num in nums1]
+        return [num_to_greater_num[num] or -1 for num in nums1]
 ```
 
 ## C++
@@ -180,27 +178,27 @@ public:
 class Solution {
 public:
     vector<int> nextGreaterElement(vector<int>& nums1, vector<int>& nums2) {
-        unordered_map<int, int> num_to_greater;
-        stack<int> index_stack;
+        unordered_map<int, int> num_to_greater_num;
+        stack<int> monotonic_stack;
 
-        for (auto i = 0; i < nums2.size(); i++) {
-            while (!index_stack.empty() && nums2[index_stack.top()] < nums2[i]) {
-                num_to_greater[nums2[index_stack.top()]] = nums2[i];
-                index_stack.pop();
+        for (auto num : nums2) {
+            while (!monotonic_stack.empty() && monotonic_stack.top() < num) {
+                num_to_greater_num[monotonic_stack.top()] = num;
+                monotonic_stack.pop();
             }
 
-            index_stack.push(i);
+            monotonic_stack.push(num);
         }
 
-        vector<int> results(nums1.size(), -1);
+        vector<int> result;
 
-        for (auto i = 0; i < nums1.size(); i++) {
-            if (num_to_greater.contains(nums1[i])) {
-                results[i] = num_to_greater[nums1[i]];
-            }
+        for (auto num : nums1) {
+            result.emplace_back(
+                num_to_greater_num.contains(num) ? num_to_greater_num[num] : -1
+            );
         }
 
-        return results;
+        return result;
     }
 };
 ```
@@ -233,19 +231,18 @@ var nextGreaterElement = function (nums1, nums2) {
 ### Monotonic stack solution
 ```javascript
 var nextGreaterElement = function (nums1, nums2) {
-  const numToGreater = {}
-  const indexStack = []
+  const numToGreaterNum = {}
+  const stack = []
 
-  nums2.forEach((num, i) => {
-    while (indexStack.length > 0 && nums2[indexStack.at(-1)] < num) {
-      const index = indexStack.pop()
-      numToGreater[nums2[index]] = num
+  nums2.forEach((num) => {
+    while (stack.length > 0 && stack.at(-1) < num) {
+      numToGreaterNum[stack.pop()] = num
     }
 
-    indexStack.push(i)
+    stack.push(num)
   })
 
-  return nums1.map((num) => numToGreater[num] || -1)
+  return nums1.map((num) => numToGreaterNum[num] || -1)
 };
 ```
 
@@ -285,27 +282,31 @@ public class Solution
 
 ### Monotonic stack solution
 ```c#
-public class Solution {
-    public int[] NextGreaterElement(int[] nums1, int[] nums2) {
+public class Solution
+{
+    public int[] NextGreaterElement(int[] nums1, int[] nums2)
+    {
         var numToGreater = new Dictionary<int, int>();
-        var indexStack = new Stack<int>();
+        var stack = new Stack<int>();
 
-        for (var i = 0; i < nums2.Length; i++) {
-            while (indexStack.Count > 0 && nums2[indexStack.Peek()] < nums2[i]) {
-                var index = indexStack.Pop();
-                numToGreater[nums2[index]] = nums2[i];
+        foreach (int num in nums2)
+        {
+            while (stack.Count > 0 && stack.Peek() < num)
+            {
+                numToGreater[stack.Pop()] = num;
             }
 
-            indexStack.Push(i);
+            stack.Push(num);
         }
 
-        var results = new int[nums1.Length];
+        var result = new int[nums1.Length];
 
-        for (var i = 0; i < nums1.Length; i++) {
-            results[i] = numToGreater.GetValueOrDefault(nums1[i], -1);
+        for (var i = 0; i < nums1.Length; i++)
+        {
+            result[i] = numToGreater.GetValueOrDefault(nums1[i], -1);
         }
 
-        return results;
+        return result;
     }
 }
 ```
@@ -338,27 +339,24 @@ func nextGreaterElement(nums1 []int, nums2 []int) []int {
 ### Monotonic stack solution
 ```go
 func nextGreaterElement(nums1 []int, nums2 []int) []int {
-    numToGreater := map[int]int{}
-    indexStack := []int{}
+    numToGreaterNum := map[int]int{}
+    stack := []int{}
 
-    for i, num2 := range nums2 {
-        for (len(indexStack) > 0 && nums2[indexStack[len(indexStack) - 1]] < num2) {
-            index := indexStack[len(indexStack) - 1]
-            numToGreater[nums2[index]] = num2
-            indexStack = indexStack[:len(indexStack) - 1]
+    for _, num := range nums2 {
+        for (len(stack) > 0 && stack[len(stack) - 1] < num) {
+            numToGreaterNum[stack[len(stack) - 1]] = num
+            stack = stack[:len(stack) - 1]
         }
 
-        indexStack = append(indexStack, i)
+        stack = append(stack, num)
     }
 
-    results := make([]int, len(nums1))
+    results := slices.Repeat([]int{-1}, len(nums1))
 
     for i, num1 := range nums1 {
-        if value, ok := numToGreater[num1]; ok {
+        if value, ok := numToGreaterNum[num1]; ok {
             results[i] = value
-            continue
         }
-        results[i] = -1
     }
 
     return results
@@ -391,19 +389,18 @@ end
 ### Monotonic stack solution
 ```ruby
 def next_greater_element(nums1, nums2)
-  num_to_greater = {}
-  index_stack = []
+  num_to_greater_num = {}
+  stack = []
 
-  nums2.each_with_index do |num, i|
-    while !index_stack.empty? && nums2[index_stack.last] < num
-      index = index_stack.pop
-      num_to_greater[nums2[index]] = num
+  nums2.each do |num|
+    while !stack.empty? && stack.last < num
+      num_to_greater_num[stack.pop] = num
     end
 
-    index_stack << i
+    stack << num
   end
 
-  nums1.map { |num| num_to_greater[num] || -1 }
+  nums1.map { |num| num_to_greater_num[num] || -1 }
 end
 ```
 
