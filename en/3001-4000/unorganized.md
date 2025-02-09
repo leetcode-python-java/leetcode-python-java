@@ -62,6 +62,9 @@ The improved way with a queue is commonly more efficient. Relaxing **All Edges**
 ## Others
 * Find all the prime numbers within 1000000.
 
+## Solutions which need a perfection
+- 583 https://leetcode.cn/problems/delete-operation-for-two-strings/ would be better use https://leetcode.cn/problems/delete-operation-for-two-strings/submissions/597725071/ as the first option.
+
 ## Skipped problems/solutions
 - 704 Binary Search Algorithm 
 - 27 Fast and Slow Pointers
@@ -152,10 +155,14 @@ The improved way with a queue is commonly more efficient. Relaxing **All Edges**
 - 62 https://leetcode.cn/problems/unique-paths/
 - 63 https://leetcode.cn/problems/unique-paths-ii/
 - 343 https://leetcode.cn/problems/integer-break/
+- 115 https://leetcode.cn/problems/distinct-subsequences/
 
 #### backpack problems
 - 279 https://leetcode.cn/problems/perfect-squares/ can have solution 2
-- 
+
+#### palindrome issue key: from middle, 2-d, +1 or +2, dp.size = len(s), do it on left-bottom side.
+- 647 https://leetcode.cn/problems/palindromic-substrings/ very hard
+- 516 https://leetcode.cn/problems/longest-palindromic-subsequence/
 
 ### Failed in 2 rounds
 - 222 https://leetcode.cn/problems/count-complete-tree-nodes/
@@ -166,5 +173,8 @@ The improved way with a queue is commonly more efficient. Relaxing **All Edges**
 - 51 https://leetcode.cn/problems/n-queens/
 - 37 https://leetcode.cn/problems/sudoku-solver
 - 96 https://leetcode.cn/problems/unique-binary-search-trees/ Finished but slow.
+- 115 https://leetcode.cn/problems/distinct-subsequences/
+- 647 https://leetcode.cn/problems/palindromic-substrings/ https://leetcode.cn/problems/palindromic-substrings/submissions/597748845/
+- 516 https://leetcode.cn/problems/longest-palindromic-subsequence/
 
-2005-02-07 day 4
+2005-02-09 day 2
