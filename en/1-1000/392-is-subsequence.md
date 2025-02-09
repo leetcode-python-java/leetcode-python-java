@@ -21,9 +21,29 @@ Constraints:
 3. `s` and `t` consist only of lowercase English letters.
 ```
 
+# Solution 1
+```python
+class Solution:
+    def isSubsequence(self, s: str, t: str) -> bool:
+        s_index = 0
+        t_index = 0
+
+        while True:
+            if s_index >= len(s):
+                return True
+            
+            if t_index >= len(t):
+                return False
+            
+            if s[s_index] == t[t_index]:
+                s_index += 1
+
+            t_index += 1
+```
+
+# Solution 2
 ## Thoughts
-* This problem can be solved by using `two pointers`, but here we will use another way.
-* It is a question of comparing two strings. After doing similar questions many times, we will develop an intuition to use dynamic programming with two-dimensional arrays.
+* It is a question of comparing two strings. After doing similar questions many times, we will develop an intuition to use `dynamic programming` with two-dimensional arrays.
 
 ### Common steps in dynamic programming
 These five steps are a pattern for solving `dynamic programming` problems.
