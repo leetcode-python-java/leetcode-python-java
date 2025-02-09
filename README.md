@@ -101,7 +101,7 @@ to here now
 # Monotonic Stack
 - [739. Daily Temperatures](en/1-1000/739-daily-temperatures.md) was solved in _Python, Java, C++, JavaScript, C#, Go, Ruby_.
 - [496. Next Greater Element I](en/1-1000/496-next-greater-element-i.md) was solved in _Python, Java, C++, JavaScript, C#, Go, Ruby_.
-- [42. Trapping Rain Water](en/1-1000/42-trapping-rain-water.md) was solved in _Python, Java, C++, JavaScript, C#, Go, Ruby_ and **2** ways.
+- [42. Trapping Rain Water](en/1-1000/42-trapping-rain-water.md) was solved in _Python, Java, C++, JavaScript, C#, Go, Ruby.
 - [84. Largest Rectangle in Histogram](en/1-1000/84-largest-rectangle-in-histogram.md) was solved in _Python, Java, C++, JavaScript, C#, Go, Ruby_.
 
 # Graph Theory

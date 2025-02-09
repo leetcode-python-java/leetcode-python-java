@@ -1,4 +1,4 @@
-# 42. Trapping Rain Water (Monotonic Stack Solution)
+# 42. Trapping Rain Water (Monotonic Stack)
 LeetCode link: [42. Trapping Rain Water](https://leetcode.com/problems/trapping-rain-water/)
 
 ## LeetCode problem description
@@ -28,22 +28,11 @@ Output: 9
 ## Thoughts
 This problem can be solved using **Monotonic Stack**.
 
-### Solution 1
-#### Rules
-* Whenever there are area (rain) can be added, add it immediately.
-* The shorter side's height will be used to calculate the area.
-* There would be **two situations**:
-    1) The right side (current item) is **no shorter** than the left side (the top of stack).
-    2) The right side (current item) is **shorter** than the left side (the top of stack).
+This solution will follow **Monotonic Stack**'s common rule: **only calculating when `pop()` is happening**.
+
+This common rule can be applied to calculating result for **most** of the **Monotonic Stack** problems.
 
 ![](../../images/42.png)
-
-Detailed solutions will be given later, and now only the best practices in 7 languages are given.
-
-### Solution 2
-The `solution 2` will follow **Monotonic Stack**'s common rule: **only calculating when `pop()` is happening**.
-
-Please click [42. Trapping Rain Water (solution 2)](42-trapping-rain-water-2.md) to see it.
 
 ### Complexity
 * Time: `O(n)`.
@@ -57,18 +46,16 @@ class Solution {
         var indexStack = new Stack<Integer>();
 
         for (var i = 0; i < heights.length; i++) {
-            var previousHeight = 0;
+            while (!indexStack.empty() && heights[indexStack.peek()] <= heights[i]) {
+                var poppedIndex = indexStack.pop();
 
-            while (!indexStack.empty() && heights[indexStack.peek()] <= heights[i]) { // situation 1: right side (i) is no shorter
-                var leftIndex = indexStack.pop();
-                var heightGap = heights[leftIndex] - previousHeight;
-                var width = i - leftIndex - 1;
-                result += heightGap * width;
-                previousHeight = heights[leftIndex];
-            }
+                if (indexStack.empty()) {
+                    break;
+                }
 
-            if (!indexStack.empty()) { // situation 2: right side (i) is shorter
-                var heightGap = heights[i] - previousHeight;
+                var leftHeight = heights[indexStack.peek()];
+                var rightHeight = heights[i];
+                var heightGap = Math.min(leftHeight, rightHeight) - heights[poppedIndex];
                 var width = i - indexStack.peek() - 1;
                 result += heightGap * width;
             }
@@ -89,17 +76,15 @@ class Solution:
         index_stack = []
 
         for i, height in enumerate(heights):
-            previous_height = 0
+            while index_stack and heights[index_stack[-1]] <= height:
+                popped_index = index_stack.pop()
 
-            while index_stack and heights[index_stack[-1]] <= height: # situation 1: right side (i) is no shorter
-                left_index = index_stack.pop()
-                height_gap = heights[left_index] - previous_height
-                width = i - left_index - 1
-                result += height_gap * width
-                previous_height = heights[left_index]
+                if not index_stack:
+                    break
 
-            if index_stack: # situation 2: right side (i) is shorter
-                height_gap = height - previous_height
+                left_height = heights[index_stack[-1]]
+                right_height = height
+                height_gap = min(left_height, right_height) - heights[popped_index]
                 width = i - index_stack[-1] - 1
                 result += height_gap * width
 
@@ -121,17 +106,17 @@ public:
         for (auto i = 0; i < heights.size(); i++) {
             auto previous_height = 0;
 
-            while (!index_stack.empty() && heights[index_stack.top()] <= heights[i]) { // situation 1: right side (i) is no shorter
-                auto left_index = index_stack.top();
+            while (!index_stack.empty() && heights[index_stack.top()] <= heights[i]) {
+                auto popped_index = index_stack.top();
                 index_stack.pop();
-                auto height_gap = heights[left_index] - previous_height;
-                auto width = i - left_index - 1;
-                result += height_gap * width;
-                previous_height = heights[left_index];
-            }
 
-            if (!index_stack.empty()) { // situation 2: right side (i) is shorter
-                auto height_gap = heights[i] - previous_height;
+                if (index_stack.empty()) {
+                    break;
+                }
+
+                auto left_height = heights[index_stack.top()];
+                auto right_height = heights[i];
+                auto height_gap = min(left_height, right_height) - heights[popped_index];
                 auto width = i - index_stack.top() - 1;
                 result += height_gap * width;
             }
@@ -151,18 +136,16 @@ var trap = function (heights) {
   const indexStack = []
 
   heights.forEach((height, i) => {
-    let previousHeight = 0
+    while (indexStack.length > 0 && heights[indexStack.at(-1)] <= height) {
+      const poppedIndex = indexStack.pop()
 
-    while (indexStack.length > 0 && heights[indexStack.at(-1)] <= height) { // situation 1: right side (i) is no shorter
-      const leftIndex = indexStack.pop()
-      const heightGap = heights[leftIndex] - previousHeight
-      const width = i - leftIndex - 1
-      result += heightGap * width
-      previousHeight = heights[leftIndex]
-    }
+      if (indexStack.length === 0) {
+        break
+      }
 
-    if (indexStack.length > 0) { // situation 2: right side (i) is shorter
-      const heightGap = height - previousHeight
+      const leftHeight = heights[indexStack.at(-1)]
+      const rightHeight = heights[i]
+      const heightGap = Math.min(leftHeight, rightHeight) - heights[poppedIndex]
       const width = i - indexStack.at(-1) - 1
       result += heightGap * width
     }
@@ -187,22 +170,18 @@ public class Solution
 
         for (var i = 0; i < heights.Length; i++)
         {
-            int previousHeight = 0;
-
-            // situation 1: right side (i) is no shorter
             while (indexStack.Count > 0 && heights[indexStack.Peek()] <= heights[i])
             {
-                int leftIndex = indexStack.Pop();
-                int heightGap = heights[leftIndex] - previousHeight;
-                int width = i - leftIndex - 1;
-                result += heightGap * width;
-                previousHeight = heights[leftIndex];
-            }
+                int poppedIndex = indexStack.Pop();
 
-            // situation 2: right side (i) is shorter
-            if (indexStack.Count > 0)
-            {
-                int heightGap = heights[i] - previousHeight;
+                if (indexStack.Count == 0)
+                {
+                    break;
+                }
+
+                int leftHeight = heights[indexStack.Peek()];
+                int rightHeight = heights[i];
+                int heightGap = Math.Min(leftHeight, rightHeight) - heights[poppedIndex];
                 int width = i - indexStack.Peek() - 1;
                 result += heightGap * width;
             }
@@ -222,20 +201,19 @@ func trap(heights []int) int {
     indexStack := []int{}
 
     for i, height := range heights {
-        previousHeight := 0
-
-        for len(indexStack) > 0 && heights[indexStack[len(indexStack) - 1]] <= height { // situation 1: right side (i) is no shorter
-            leftIndex := indexStack[len(indexStack) - 1]
-            heightGap := heights[leftIndex] - previousHeight
-            width := i - leftIndex - 1
-            result += heightGap * width
-            previousHeight = heights[leftIndex]
+        for len(indexStack) > 0 && heights[indexStack[len(indexStack) - 1]] <= height {
+            poppedIndex := indexStack[len(indexStack) - 1]
             indexStack = indexStack[:len(indexStack) - 1]
-        }
 
-        if len(indexStack) > 0 { // situation 2: right side (i) is shorter
-            heightGap := height - previousHeight
-            width := i - indexStack[len(indexStack) - 1] - 1
+            if len(indexStack) == 0 {
+                break
+            }
+
+            leftIndex := indexStack[len(indexStack) - 1]
+            leftHeight := heights[leftIndex]
+            rightHeight := heights[i]
+            heightGap := min(leftHeight, rightHeight) - heights[poppedIndex]
+            width := i - leftIndex - 1
             result += heightGap * width
         }
 
@@ -250,25 +228,20 @@ func trap(heights []int) int {
 
 ## Ruby
 ```ruby
-# Original article at https://github.com/gazeldx/leetcode-best-practice
 def trap(heights = [])
   result = 0
   index_stack = []
 
   heights.each_with_index do |height, i|
-    previous_height = 0
+    while !index_stack.empty? && heights[index_stack.last] <= height
+      popped_index = index_stack.pop
 
-    while !index_stack.empty? && heights[index_stack[-1]] <= height # situation 1: right side (i) is no shorter
-      left_index = index_stack.pop
-      height_gap = heights[left_index] - previous_height
-      width = i - left_index - 1
-      result += height_gap * width
-      previous_height = heights[left_index]
-    end
+      break if index_stack.empty?
 
-    if !index_stack.empty? # situation 2: right side (i) is shorter
-      height_gap = height - previous_height
-      width = i - index_stack[-1] - 1
+      left_height = heights[index_stack.last]
+      right_height = heights[i]
+      height_gap = [ left_height, right_height ].min - heights[popped_index]
+      width = i - index_stack.last - 1
       result += height_gap * width
     end
 
