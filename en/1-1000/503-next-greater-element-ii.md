@@ -38,9 +38,11 @@ Detailed solutions will be given later, and now only the best practices in 7 lan
 * Time: `O(n * n)`.
 * Space: `O(n)`.
 
-## Solution 2: More efficient algorithm
+## Solution 2: More efficient algorithm via "Monotonic Stack"
 This solution will reduce the time complexity to **O(n)**.
-Please read [Next Greater Element I](496-next-greater-element-i.md).  
+
+A similar issue is [Next Greater Element I](496-next-greater-element-i.md).
+You can read it first, then checkout the `Python` section for the code.
 
 ## C#
 ```c#
@@ -70,6 +72,7 @@ public class Solution
 ```
 
 ## Python
+### Solution 1: Brute Force
 ```python
 class Solution:
     def nextGreaterElements(self, nums: List[int]) -> List[int]:
@@ -83,6 +86,27 @@ class Solution:
                     break
 
         return results
+```
+
+### Solution 2: Monotonic Stack
+```python
+# This is a better test case:
+# [2, 5, 3, 2, 4, 1] for `nums`
+# [2, 5, 3, 2, 4, 1, 2, 5, 3, 2, 4] for `extended_nums`
+
+class Solution:
+    def nextGreaterElements(self, nums: List[int]) -> List[int]:
+        extended_nums = nums + nums[:-1]
+        index_stack = []
+        result = [-1] * len(extended_nums)
+
+        for i, num in enumerate(extended_nums):
+            while index_stack and extended_nums[index_stack[-1]] < num:
+                result[index_stack.pop()] = num
+
+            index_stack.append(i)
+
+        return result[:len(nums)]
 ```
 
 ## Java
