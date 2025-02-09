@@ -35,7 +35,7 @@ Constraints:
 ```
 
 ## Thoughts
-* This problem can be solved by using `greedy algorithm`, but here we will use another way.
+* This problem can be solved by using `greedy algorithm` (please see `solution 1` in Python), but here we will use another way.
 * Imagine the size of nums is `i`, let us consider if the same question is applied to the `subarray` of `nums` from index `0` to `i - 1`.
 * The answer is `yes`. Then let us think if the `i - 1`'s answer could impact the answer of `i`.
 * The answer is still `yes`. What would be the impact?
@@ -103,14 +103,29 @@ public class Solution
 ```
 
 ## Python
+### Solution 1: Greedy Algorithm
+```python
+class Solution:
+    def maxSubArray(self, nums: List[int]) -> int:
+        result = -float('inf')
+        pre_sum = 0
+
+        for num in nums:
+            pre_sum = max(pre_sum + num, num)
+            result = max(result, pre_sum)
+        
+        return result
+```
+
+### Solution 2: Dynamic Programming
 ```python
 class Solution:
     def maxSubArray(self, nums: List[int]) -> int:
         dp = nums.copy()
-        
+
         for i in range(1, len(dp)):
             dp[i] = max(nums[i], dp[i - 1] + nums[i])
-        
+
         return max(dp)
 ```
 

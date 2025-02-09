@@ -103,14 +103,29 @@ public class Solution
 ```
 
 ## Python
+### Solution 1: Greedy Algorithm
+```python
+class Solution:
+    def maxSubArray(self, nums: List[int]) -> int:
+        result = -float('inf')
+        pre_sum = 0
+
+        for num in nums:
+            pre_sum = max(pre_sum + num, num)
+            result = max(result, pre_sum)
+        
+        return result
+```
+
+### Solution 2: Dynamic Programming
 ```python
 class Solution:
     def maxSubArray(self, nums: List[int]) -> int:
         dp = nums.copy()
-        
+
         for i in range(1, len(dp)):
             dp[i] = max(nums[i], dp[i - 1] + nums[i])
-        
+
         return max(dp)
 ```
 
