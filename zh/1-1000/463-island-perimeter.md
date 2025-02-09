@@ -71,38 +71,35 @@ And this graph has only one **connected components** (island).
 ```python
 class Solution:
     def __init__(self):
-        self.perimeter = 0
         self.grid = None
 
     def islandPerimeter(self, grid: List[List[int]]) -> int:
         self.grid = grid
+        perimeter = 0
 
-        for i, row in enumerate(self.grid):
-            for j, value in enumerate(row):
-                if value == 1:
-                    self.perimeter += self.water_edges(i, j)
-                    
-        return self.perimeter
-    
-    def water_edges(self, i, j):
-        result = 0
-        result += self.water_edge(i - 1, j)
-        result += self.water_edge(i, j + 1)
-        result += self.water_edge(i + 1, j)
-        result += self.water_edge(i, j - 1)
-        return result
+        for i in range(len(grid)):
+            for j in range(len(grid[0])):
+                if grid[i][j] == 1:
+                    perimeter += self.water_side_count(i, j)
 
-    def water_edge(self, i, j):
-        if i < 0 or i >= len(self.grid):
-            return 1
+        return perimeter
 
-        if j < 0 or j >= len(self.grid[0]):
-            return 1
-        
-        if self.grid[i][j] == 0:
-            return 1
-        
-        return 0
+    def water_side_count(self, i, j):
+        side_count = 0
+
+        for a, b in [
+            (-1, 0),
+            (0, -1), (0, 1),
+            (1, 0),
+        ]:
+            m = i + a
+            n = j + b
+
+            if m < 0 or n < 0 or m >= len(self.grid) or n >= len(self.grid[0]) \
+                or self.grid[m][n] == 0:
+                side_count += 1
+
+        return side_count
 ```
 
 ### Solution 2: Depth-First Search the Island (complex way)
