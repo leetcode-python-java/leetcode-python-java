@@ -54,11 +54,11 @@ Return _the maximum area of an island_ is to return the vertex count of the larg
     * There are two major ways to explore a `connected component` (island): **Breadth-First Search** and **Depth-First Search**.
     * For **Depth-First Search**, there are two ways to make it: `Recursive` and `Iterative`. So I will provide 3 solutions in total.
     * When we traverse each `connected components` (island), we can:
-        * Mark each found land as `8` which represents `visited`. Visited lands don't need to be visited again.
+        * Mark each found land as `8` which represents `visited` (or `included` in `area`). Visited lands don't need to be visited again.
         * **count** the lands of the island.
 3. After all lands on an island have been visited, look for the next non-visited land.
 4. Repeat the above two steps until all the lands have been `visited`.
-5. At last, return the max land count.
+5. At last, return the `max_area`.
 
 ## Solution 1: 'Depth-First Search' by Recursion
 ![](../../images/binary_tree_DFS_1.png)
@@ -85,8 +85,8 @@ Similar problem is `200. Number of Islands`, please click [Breadth-First Search 
 ```python
 class Solution:
     def __init__(self):
-        self.max_land_count = 0
-        self.land_count = 0
+        self.max_area = 0
+        self.area = 0
         self.grid = None
 
     def maxAreaOfIsland(self, grid: List[List[int]]) -> int:
@@ -94,42 +94,37 @@ class Solution:
 
         for i in range(len(grid)):
             for j in range(len(grid[0])):
-                if self.grid[i][j] == 1:
-                    self.land_count = 0
-
+                if grid[i][j] == 1:
+                    self.area = 0
                     self.depth_first_search(i, j)
+                    self.max_area = max(self.max_area, self.area)
 
-        return self.max_land_count
-
+        return self.max_area
+    
     def depth_first_search(self, i, j):
-        if i < 0 or i >= len(self.grid):
-            return
-
-        if j < 0 or j >= len(self.grid[0]):
+        if i < 0 or j < 0 or i >= len(self.grid) or j >= len(self.grid[0]):
             return
 
         if self.grid[i][j] != 1:
             return
 
         self.grid[i][j] = 8
+        self.area += 1
 
-        self.land_count += 1
-
-        if self.land_count > self.max_land_count:
-            self.max_land_count = self.land_count
-
-        self.depth_first_search(i - 1, j)
-        self.depth_first_search(i, j + 1)
-        self.depth_first_search(i + 1, j)
-        self.depth_first_search(i, j - 1)
+        for m, n in [
+            (-1, 0),
+            (0, -1), (0, 1),
+            (1, 0),
+        ]:
+            self.depth_first_search(i + m, j + n)
 ```
 
 # Java
 ```java
 class Solution {
     int[][] grid;
-    int maxLandCount = 0;
-    int landCount = 0;
+    int maxArea = 0;
+    int area = 0;
 
     public int maxAreaOfIsland(int[][] grid) {
         this.grid = grid;
@@ -137,18 +132,18 @@ class Solution {
         for (var i = 0; i < grid.length; i++) {
             for (var j = 0; j < grid[0].length; j++) {
                 if (grid[i][j] == 1) {
-                    landCount = 0;
-
+                    area = 0;
                     depthFirstSearch(i, j);
+                    maxArea = Math.max(maxArea, area);
                 }
             }
         }
 
-        return maxLandCount;
+        return maxArea;
     }
 
     void depthFirstSearch(int i, int j) {
-        if (i < 0 || i >= grid.length) {
+        if (i < 0 || i >= grid.length) { 
             return;
         }
 
@@ -161,12 +156,7 @@ class Solution {
         }
 
         grid[i][j] = 8;
-
-        landCount++;
-
-        if (landCount > maxLandCount) {
-            maxLandCount = landCount;
-        }
+        area++;
 
         depthFirstSearch(i - 1, j);
         depthFirstSearch(i, j + 1);
@@ -186,20 +176,20 @@ public:
         for (auto i = 0; i < grid_.size(); i++) {
             for (auto j = 0; j < grid_[0].size(); j++) {
                 if (grid_[i][j] == 1) {
-                    land_count_ = 0;
-
+                    area_ = 0;
                     depth_first_search(i, j);
+                    max_area_ = max(max_area_, area_);
                 }
             }
         }
 
-        return max_land_count_;
+        return max_area_;
     }
 
 private:
     vector<vector<int>> grid_;
-    int max_land_count_ = 0;
-    int land_count_ = 0;
+    int max_area_ = 0;
+    int area_ = 0;
 
     void depth_first_search(int i, int j) {
         if (
@@ -211,12 +201,7 @@ private:
         }
 
         grid_[i][j] = 8;
-
-        land_count_++;
-
-        if (land_count_ > max_land_count_) {
-            max_land_count_ = land_count_;
-        }
+        area_++;
 
         depth_first_search(i - 1, j);
         depth_first_search(i, j + 1);
@@ -229,24 +214,24 @@ private:
 # JavaScript
 ```JavaScript
 let grid
-let maxLandCount = 0
-let landCount
+let maxArea = 0
+let area
 
 var maxAreaOfIsland = function (grid_) {
   grid = grid_
-  maxLandCount = 0
+  maxArea = 0
 
   grid.forEach((row, i) => {
     row.forEach((value, j) => {
       if (value === 1) {
-        landCount = 0
-
+        area = 0
         depthFirstSearch(i, j)
+        maxArea = Math.max(maxArea, area)
       }
     })
   })
 
-  return maxLandCount
+  return maxArea
 };
 
 
@@ -264,12 +249,7 @@ function depthFirstSearch(i, j) {
   }
 
   grid[i][j] = 8
-
-  landCount++
-
-  if (landCount > maxLandCount) {
-    maxLandCount = landCount
-  }
+  area++
 
   depthFirstSearch(i - 1, j)
   depthFirstSearch(i, j + 1)
@@ -280,12 +260,14 @@ function depthFirstSearch(i, j) {
 
 # C#
 ```c#
-public class Solution {
+public class Solution
+{
     int[][] grid;
-    int maxLandCount = 0;
-    int landCount = 0;
+    int maxArea = 0;
+    int area = 0;
 
-    public int MaxAreaOfIsland(int[][] grid) {
+    public int MaxAreaOfIsland(int[][] grid)
+    {
         this.grid = grid;
 
         for (var i = 0; i < grid.Length; i++)
@@ -294,14 +276,14 @@ public class Solution {
             {
                 if (grid[i][j] == 1)
                 {
-                    landCount = 0;
-
+                    area = 0;
                     depthFirstSearch(i, j);
+                    maxArea = Math.Max(maxArea, area);
                 }
             }
         }
 
-        return maxLandCount;
+        return maxArea;
     }
 
     void depthFirstSearch(int i, int j)
@@ -316,12 +298,7 @@ public class Solution {
             return;
 
         grid[i][j] = 8;
-
-        landCount++;
-
-        if (landCount > maxLandCount) {
-            maxLandCount = landCount;
-        }
+        area++;
 
         depthFirstSearch(i - 1, j);
         depthFirstSearch(i, j + 1);
@@ -335,25 +312,25 @@ public class Solution {
 ```go
 var (
     grid [][]int
-    maxLandCount int
-    landCount int
+    maxArea int
+    area int
 )
 
 func maxAreaOfIsland(grid_ [][]int) int {
     grid = grid_
-    maxLandCount = 0
+    maxArea = 0
 
     for i, row := range grid {
         for j, value := range row {
             if value == 1 {
-                landCount = 0
-
+                area = 0
                 depthFirstSearch(i, j)
+                maxArea = max(maxArea, area)
             }
         }
     }
 
-    return maxLandCount
+    return maxArea
 }
 
 func depthFirstSearch(i int, j int) {
@@ -370,12 +347,7 @@ func depthFirstSearch(i int, j int) {
     }
 
     grid[i][j] = 8
-
-    landCount++
-
-    if landCount > maxLandCount {
-        maxLandCount = landCount
-    }
+    area++
 
     depthFirstSearch(i - 1, j)
     depthFirstSearch(i, j + 1)
@@ -388,20 +360,20 @@ func depthFirstSearch(i int, j int) {
 ```Ruby
 def max_area_of_island(grid)
   @grid = grid
-  @max_land_count = 0
-  @land_count = 0
+  @max_area = 0
+  @area = 0
 
   @grid.each_with_index do |row, i|
     row.each_with_index do |value, j|
       if value == 1
-        @land_count = 0
-
+        @area = 0
         depth_first_search(i, j)
+        @max_area = [@max_area, @area].max
       end
     end
   end
 
-  @max_land_count
+  @max_area
 end
 
 def depth_first_search(i, j)
@@ -412,12 +384,7 @@ def depth_first_search(i, j)
   return if @grid[i][j] != 1
 
   @grid[i][j] = 8
-
-  @land_count += 1
-
-  if @land_count > @max_land_count
-    @max_land_count = @land_count
-  end
+  @area += 1
 
   depth_first_search(i - 1, j)
   depth_first_search(i, j + 1)
