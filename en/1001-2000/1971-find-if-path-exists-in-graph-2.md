@@ -54,12 +54,12 @@ This graph may have multiple **connected components**.
 - `UnionFind` algorithm typically has three methods:
     - The `unite(node1, node2)` operation can be used to merge two trees.
     - The `find_root(node)` method can be used to return the root of a node.
-    - The `same_root(node1, node2)` method is used to determine whether two nodes are in the same tree.
+    - The `is_same_root(node1, node2)` method is used to determine whether two nodes are in the same tree.
 
 ## Approach (UnionFind algorithm)
 1. Initially, each node is in its own group.
 1. Iterate `edges` data and `unite(node1, node2)`.
-1. Return `same_root(source, destination)`.
+1. Return `is_same_root(source, destination)`.
 
 ## Complexity
 * Time: `O(n)`.
@@ -69,32 +69,33 @@ This graph may have multiple **connected components**.
 ### Standard UnionFind algorithm (recommended)
 ```python
 class Solution:
-    def __init__(self):
-        self.parent = None
-
     def validPath(self, n: int, edges: List[List[int]], source: int, destination: int) -> bool:
-        self.parent = list(range(n))
+        self.parents = list(range(n))
 
         for x, y in edges:
             self.unite(x, y)
 
-        return self.same_root(source, destination)
+        return self.is_same_root(source, destination)
 
     def unite(self, x, y):
         root_x = self.find_root(x)
         root_y = self.find_root(y)
 
-        self.parent[root_y] = root_x # Error-prone point 1
+        self.parents[root_y] = root_x # Error-prone point 1
     
     def find_root(self, x):
-        if x == self.parent[x]:
+        parent = self.parents[x]
+
+        if x == parent:
             return x
 
-        self.parent[x] = self.find_root(self.parent[x]) # Error-prone point 2
+        root = self.find_root(parent) # Error-prone point 2
 
-        return self.parent[x]
+        self.parents[x] = root # Error-prone point 3
 
-    def same_root(self, x, y):
+        return root
+
+    def is_same_root(self, x, y):
         return self.find_root(x) == self.find_root(y)
 ```
 
@@ -145,40 +146,44 @@ class Solution:
 ## Java
 ```java
 class Solution {
-    private int[] parent;
+    private int[] parents;
 
     public boolean validPath(int n, int[][] edges, int source, int destination) {
-        parent = new int[n];
+        parents = new int[n];
         
         for (var i = 0; i < n; i++) {
-            parent[i] = i;
+            parents[i] = i;
         }
 
         for (var edge : edges) {
             unite(edge[0], edge[1]);
         }
 
-        return sameRoot(source, destination);
+        return isSameRoot(source, destination);
     }
 
     private void unite(int x, int y) {
         int rootX = findRoot(x);
         int rootY = findRoot(y);
 
-        parent[rootY] = rootX; // Error-prone point 1
+        parents[rootY] = rootX; // Error-prone point 1
     }
 
     private int findRoot(int x) {
-        if (x == parent[x]) {
+        var parent = parents[x];
+
+        if (x == parent) {
             return x;
         }
 
-        parent[x] = findRoot(parent[x]); // Error-prone point 2
+        var root = findRoot(parent); // Error-prone point 2
 
-        return parent[x];
+        parents[x] = root; // Error-prone point 3
+
+        return root;
     }
 
-    private boolean sameRoot(int x, int y) {
+    private boolean isSameRoot(int x, int y) {
         return findRoot(x) == findRoot(y);
     }
 }
@@ -190,37 +195,41 @@ class Solution {
 public:
     bool validPath(int n, vector<vector<int>>& edges, int source, int destination) {
         for (auto i = 0; i < n; i++) {
-            parent.push_back(i);
+            parents.push_back(i);
         }
 
         for (auto& edge : edges) {
             unite(edge[0], edge[1]);
         }
 
-        return sameRoot(source, destination);
+        return isSameRoot(source, destination);
     }
 
 private:
-    vector<int> parent;
+    vector<int> parents;
 
     void unite(int x, int y) {
         int root_x = findRoot(x);
         int root_y = findRoot(y);
 
-        parent[root_y] = root_x; // Error-prone point 1
+        parents[root_y] = root_x; // Error-prone point 1
     }
 
     int findRoot(int x) {
-        if (x == parent[x]) {
+        auto parent = parents[x];
+
+        if (x == parent) {
             return x;
         }
 
-        parent[x] = findRoot(parent[x]); // Error-prone point 2
+        auto root = findRoot(parent); // Error-prone point 2
 
-        return parent[x];
+        parents[x] = root; // Error-prone point 3
+
+        return root;
     }
 
-    bool sameRoot(int x, int y) {
+    bool isSameRoot(int x, int y) {
         return findRoot(x) == findRoot(y);
     }
 };
@@ -228,39 +237,43 @@ private:
 
 ## JavaScript
 ```javascript
-let parent
+let parents
 
 var validPath = function (n, edges, source, destination) {
-  parent = []
+  parents = []
   for (let i = 0; i < n; i++) {
-    parent.push(i)
+    parents.push(i)
   }
 
   for (const [a, b] of edges) {
     unite(a, b)
   }
 
-  return sameRoot(source, destination)
+  return isSameRoot(source, destination)
 };
 
 function unite(x, y) {
   rootX = findRoot(x)
   rootY = findRoot(y)
 
-  parent[rootY] = rootX // Error-prone point 1
+  parents[rootY] = rootX // Error-prone point 1
 }
 
 function findRoot(x) {
-  if (x == parent[x]) {
+  const parent = parents[x]
+
+  if (x == parent) {
     return x
   }
 
-  parent[x] = findRoot(parent[x]) // Error-prone point 2
+  const root = findRoot(parent) // Error-prone point 2
 
-  return parent[x]
+  parents[x] = root // Error-prone point 3
+
+  return root
 }
 
-function sameRoot(x, y) {
+function isSameRoot(x, y) {
   return findRoot(x) == findRoot(y)
 }
 ```
@@ -269,21 +282,21 @@ function sameRoot(x, y) {
 ```c#
 public class Solution
 {
-    int[] parent;
+    int[] parents;
 
     public bool ValidPath(int n, int[][] edges, int source, int destination)
     {
-        parent = new int[n];
+        parents = new int[n];
         
         for (int i = 0; i < n; i++)
-            parent[i] = i;
+            parents[i] = i;
 
         foreach (int[] edge in edges)
         {
             unite(edge[0], edge[1]);
         }
 
-        return sameRoot(source, destination);
+        return isSameRoot(source, destination);
     }
 
     void unite(int x, int y)
@@ -291,20 +304,24 @@ public class Solution
         int rootX = findRoot(x);
         int rootY = findRoot(y);
 
-        parent[rootY] = rootX; // Error-prone point 1
+        parents[rootY] = rootX; // Error-prone point 1
     }
 
     int findRoot(int x)
     {
-        if (x == parent[x])
+        int parent = parents[x];
+
+        if (x == parent)
             return x;
 
-        parent[x] = findRoot(parent[x]); // Error-prone point 2
+        int root = findRoot(parent); // Error-prone point 2
 
-        return parent[x];
+        parents[x] = root; // Error-prone point 3
+
+        return root;
     }
 
-    bool sameRoot(int x, int y)
+    bool isSameRoot(int x, int y)
     {
         return findRoot(x) == findRoot(y);
     }
@@ -313,39 +330,43 @@ public class Solution
 
 ## Go
 ```go
-var parent []int
+var parents []int
 
 func validPath(n int, edges [][]int, source int, destination int) bool {
-    parent = make([]int, n)
+    parents = make([]int, n)
     for i := 0; i < n; i++ {
-        parent[i] = i
+        parents[i] = i
     }
 
     for _, edge := range edges {
         unite(edge[0], edge[1])
     }
 
-    return sameRoot(source, destination)
+    return isSameRoot(source, destination)
 }
 
 func unite(x, y int) {
     rootX := findRoot(x)
     rootY := findRoot(y)
 
-    parent[rootY] = rootX // Error-prone point 1
+    parents[rootY] = rootX // Error-prone point 1
 }
 
 func findRoot(x int) int {
-    if x == parent[x] {
+    parent := parents[x];
+
+    if x == parent {
         return x
     }
 
-    parent[x] = findRoot(parent[x]) // Error-prone point 2
+    root := findRoot(parent) // Error-prone point 2
 
-    return parent[x]
+    parents[x] = root // Error-prone point 3
+
+    return root
 }
 
-func sameRoot(x, y int) bool {
+func isSameRoot(x, y int) bool {
     return findRoot(x) == findRoot(y)
 }
 ```
@@ -353,34 +374,37 @@ func sameRoot(x, y int) bool {
 ## Ruby
 ```ruby
 def valid_path(n, edges, source, destination)
-  @parent = []
-  (0...n).each { |i| @parent << i }
+  @parents = (0...n).to_a
 
   edges.each do |edge|
     unite(edge[0], edge[1])
   end
 
-  same_root(source, destination)
+  is_same_root(source, destination)
 end
 
 def unite(x, y)
   root_x = find_root(x)
   root_y = find_root(y)
 
-  @parent[root_y] = root_x # Error-prone point 1
+  @parents[root_y] = root_x # Error-prone point 1
 end
 
 def find_root(x)
-  if x == @parent[x]
+  parent = @parents[x] 
+
+  if x == parent
     return x
   end
 
-  @parent[x] = find_root(@parent[x]) # Error-prone point 2
+  root = find_root(parent) # Error-prone point 2
 
-  @parent[x]
+  @parents[x] = root # Error-prone point 3
+
+  root
 end
 
-def same_root(x, y)
+def is_same_root(x, y)
   find_root(x) == find_root(y)
 end
 ```
