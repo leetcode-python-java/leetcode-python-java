@@ -44,13 +44,13 @@ Output: [4,1]
 - `UnionFind` algorithm typically has three methods:
     - The `unite(node1, node2)` operation is used to merge two trees.
     - The `find_root(node)` method is used to return the root of a node.
-    - The `same_root(node1, node2)` method is used to determine whether two nodes are in the same tree.
+    - The `is_same_root(node1, node2)` method is used to determine whether two nodes are in the same tree.
 
 ## Approach
 1. Iterate `edges` data to look for the `two_conflict_edges` (the two edges caused a vertex with in-degree 2).
 1. Initially, each node is in its own group.
 1. Iterate `edges` data and `unite(node1, node2)`.
-1. If there is no vertex with in-degree 2, as soon as `same_root(node1, node2) == true` (a cycle will be formed), return `[node1, node2]`.
+1. If there is no vertex with in-degree 2, as soon as `is_same_root(node1, node2) == true` (a cycle will be formed), return `[node1, node2]`.
 1. If there is a vertex with in-degree 2, we need to determine which edge in `two_conflict_edges` should be returned.
 See if the graph can form a cycle by not adding the second edge to the graph. If so, return the first edge. Otherwise, return the second edge.
 
@@ -61,60 +61,65 @@ See if the graph can form a cycle by not adding the second edge to the graph. If
 ## Python
 ```python
 class Solution:
-    def __init__(self):
-        self.parent = None
-
     def findRedundantDirectedConnection(self, edges: List[List[int]]) -> List[int]:
-        self.parent = list(range(len(edges) + 1))
-        
-        conflict_edges = two_conflict_edges(edges)
+        self.parents = list(range(len(edges) + 1))
 
-        if not conflict_edges:
+        two_conflict_edges_ = self.two_conflict_edges(edges)
+
+        if not two_conflict_edges_:
             for x, y in edges:
-                if self.same_root(x, y):
+                if self.is_same_root(x, y):
                     return [x, y]
 
                 self.unite(x, y)
 
-            raise Exception('No suitable edge was returned')
+            raise Exception('No suitable edge was returned!')
 
         for x, y in edges:
-            if [x, y] == conflict_edges[1]:
+            if [x, y] == two_conflict_edges_[1]:
                 continue
 
-            if self.same_root(x, y):
-                return conflict_edges[0]
+            if self.is_same_root(x, y):
+                return two_conflict_edges_[0]
 
             self.unite(x, y)
-        
-        return conflict_edges[1]
+
+        return two_conflict_edges_[1]
+    
+    def two_conflict_edges(self, edges):
+        pointed_node_to_source_node = {}
+
+        for source_node, pointed_node in edges:
+            if pointed_node in pointed_node_to_source_node:
+                return [
+                    [pointed_node_to_source_node[pointed_node], pointed_node],
+                    [source_node, pointed_node],
+                ]
+
+            pointed_node_to_source_node[pointed_node] = source_node
+
+        return []
 
     def unite(self, x, y):
-        self.parent[y] = x
-    
-    def find_root(self, node):
-        if self.parent[node] == node:
-            return node
+        root_x = self.find_root(x)
+        root_y = self.find_root(y)
 
-        return self.find_root(self.parent[node])
+        self.parents[root_y] = root_x
     
-    def same_root(self, x, y):
+    def find_root(self, x):
+        parent = self.parents[x]
+
+        if x == parent:
+            return x
+        
+        root = self.find_root(parent)
+
+        self.parents[x] = root
+
+        return root
+    
+    def is_same_root(self, x, y):
         return self.find_root(x) == self.find_root(y)
-
-
-def two_conflict_edges(edges):
-    conflict_edges = []
-    child_to_parent = {}
-
-    for parent, child in edges:
-        if child in child_to_parent:
-            conflict_edges.append([child_to_parent[child], child])
-            conflict_edges.append([parent, child])
-            break
-
-        child_to_parent[child] = parent
-
-    return conflict_edges
 ```
 
 ## Java
