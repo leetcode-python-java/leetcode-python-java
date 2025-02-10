@@ -40,7 +40,7 @@ Explanation: There is no path from vertex 0 to vertex 5.
 Please see [1971. Find if Path Exists in Graph (UnionFind Solution)](1971-find-if-path-exists-in-graph-2.md).
 
 ## Intuition
-This graph may have multiple **connected components**. 
+This graph may have multiple **connected components**.
 
 ![](../../images/graph_undirected_2.png)
 
@@ -68,6 +68,7 @@ We need to find if there is a path from `source` to `destination`. This question
 * Space: `O(n)`.
 
 ## Python
+### Breadth-first search
 ```python
 class Solution:
     def validPath(self, n: int, edges: List[List[int]], source: int, destination: int) -> bool:
@@ -91,6 +92,44 @@ class Solution:
                     visited_vertices.add(adjacent_vertex) # Mark visited as soon as `vertex_queue.append(adjacent_vertex)`. Otherwise it may have performance issue!
 
         return False
+```
+
+### Depth-first search
+```python
+class Solution:
+    def __init__(self):
+        self.visited = set()
+        self.found = False
+
+    def validPath(self, n: int, edges: List[List[int]], source: int, destination: int) -> bool:
+        if source == destination:
+            return True
+
+        self.destination = destination
+        self.vertex_to_vertices = defaultdict(list)
+
+        for vertex1, vertex2 in edges:
+            self.vertex_to_vertices[vertex1].append(vertex2)
+            self.vertex_to_vertices[vertex2].append(vertex1)
+
+        self.depth_first_search(source)
+
+        return self.found
+
+    def depth_first_search(self, vertex_):
+        if self.found:
+            return
+
+        for vertex in self.vertex_to_vertices[vertex_]:
+            if vertex == self.destination:
+                self.found = True
+                return
+
+            if vertex in self.visited:
+                continue
+
+            self.visited.add(vertex)
+            self.depth_first_search(vertex)
 ```
 
 ## Java
