@@ -46,7 +46,7 @@ The **word transformation sequence** problem can be abstracted into a **graph th
 ![](../../images/binary_tree_BFS_1.gif)
 
 * As shown in the figure above, **breadth-first search** can be thought of as visiting vertices in rounds and rounds. Actually, whenever you see a question is about
-getting `shortest` or `least` of something of a graph, `breadth-first search` would probably help.
+  getting `shortest` or `least` of something of a graph, `breadth-first search` would probably help.
 
 * `breadth-first search` emphasizes first-in-first-out, so a **queue** is needed.
 
@@ -55,57 +55,57 @@ getting `shortest` or `least` of something of a graph, `breadth-first search` wo
 1. So through `Breadth-First Search`, when a word matches `endWord`, the game is over, and we can return the number of **circle** as a result.
 
 ## Complexity
-* Time: `O(n * n)`.
-* Space: `O(n)`.
+* Time: `O((26 * end_word.length) * N)`.
+* Space: `O(N)`.
 
 ## Python
 ```python
+from collections import deque
+
 class Solution:
-    def __init__(self):
-        self.word_set = None
-        self.end_word = None
-        self.queue = deque()
-
     def ladderLength(self, begin_word: str, end_word: str, word_list: List[str]) -> int:
-        self.end_word = end_word
-        self.word_set = set(word_list)
+        words = set(word_list)
 
-        if end_word not in self.word_set:
+        if end_word not in words:
             return 0
-        
-        self.queue.append((begin_word, 1))
 
-        return self.breadth_first_search()
+        if begin_word == end_word:
+            return 1
 
-    def breadth_first_search(self):
-        while self.queue:
-            word0, circle = self.queue.popleft()
-            removed_words = set()
+        queue = deque([begin_word])
 
-            for word in self.word_set:
-                if one_char_different(word, word0):
-                    if word == self.end_word:
-                        return circle + 1
+        if begin_word in words:
+            words.remove(begin_word)
 
-                    self.queue.append((word, circle + 1))
+        result = 0
 
-                    removed_words.add(word)
-            
-            self.word_set -= removed_words
+        while queue:
+            size = len(queue)
+            result += 1
+
+            for i in range(size):
+                current_word = queue.popleft()
+
+                for word in one_letter_changed_words(current_word):
+                    if word == end_word:
+                        return result + 1
+
+                    if word in words:
+                        queue.append(word)
+                        words.remove(word)
         
         return 0
 
 
-def one_char_different(word1, word2):
-    different_char_count = 0
+def one_letter_changed_words(word):
+    words = []
 
-    for i in range(len(word1)):
-        if word1[i] != word2[i]:
-            different_char_count += 1
-            if different_char_count > 1:
-                return False
-    
-    return True
+    for i in range(len(word)):
+        for letter in 'abcdefghijklmnopqrstuvwxyz':
+            if letter != word[i]:
+                words.append(word[:i] + letter + word[i + 1:])
+
+    return words
 ```
 
 ## Java
