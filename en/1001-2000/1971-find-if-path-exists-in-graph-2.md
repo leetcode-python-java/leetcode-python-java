@@ -101,8 +101,8 @@ class Solution:
 
 ### Another UnionFind algorithm (using a map and an array of set)
 * This solution is slower than the `standard UnionFind algorithm`, but it is straightforward.
-* The applicability of this solution is not as wide as the `standard UnionFind algorithm` because data in a set don't have association. 
-The `standard UnionFind algorithm` has a `parent` array with association of nodes.
+* The applicability of this solution is not as wide as the `standard UnionFind algorithm` because data in a set don't have association, yet the `standard UnionFind algorithm` has a `parents` array with association of nodes.
+* The `standard UnionFind algorithm` should be the first choice instead of this one.
 
 ```python
 class Solution:
