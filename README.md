@@ -85,8 +85,6 @@ You can skip the more difficult problems and do them later.
 - [188. Best Time to Buy and Sell Stock IV](en/1-1000/188-best-time-to-buy-and-sell-stock-iv.md) was solved in _Python, JavaScript, Go_.
 - [309. Best Time to Buy and Sell Stock with Cooldown](en/1-1000/309-best-time-to-buy-and-sell-stock-with-cooldown.md) was solved in _Python, JavaScript, Go_.
 
-to here now
-
 ## Subsequence Problems
 - [674. Longest Continuous Increasing Subsequence](en/1-1000/674-longest-continuous-increasing-subsequence.md) was solved in _Python, Java, JavaScript, C#_.
 - [300. Longest Increasing Subsequence](en/1-1000/300-longest-increasing-subsequence.md) was solved in _Python, Java, JavaScript, C#_.
