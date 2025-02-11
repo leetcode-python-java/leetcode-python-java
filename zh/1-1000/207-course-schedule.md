@@ -60,29 +60,29 @@ To take course 1 you should have finished course 0, and to take course 0 you sho
 ## Python
 ### Solution 1: Breadth-First Search
 ```python
+from collections import deque
+
 class Solution:
     def canFinish(self, num_courses: int, prerequisites: List[List[int]]) -> bool:
+        courses_list = [set() for _ in range(num_courses)] # index: course, value: courses depend on course
         in_degrees = [0] * num_courses
-        courses_list = [set() for _ in range(num_courses)] # index: course, value: courses depending on course
 
-        for prerequisite in prerequisites:
-            in_degrees[prerequisite[0]] += 1
-            courses_list[prerequisite[1]].add(prerequisite[0])
+        for course_item, course in prerequisites:
+            courses_list[course].add(course_item)
+            in_degrees[course_item] += 1
 
-        ok_courses = collections.deque()
+        ok_course_queue = deque(
+            [i for i, in_degree in enumerate(in_degrees) if in_degree == 0]
+        )
 
-        for course, in_degree in enumerate(in_degrees):
-            if in_degree == 0:
-                ok_courses.append(course)
-
-        while ok_courses:
-            ok_course = ok_courses.popleft()
+        while ok_course_queue:
+            ok_course = ok_course_queue.popleft()
 
             for course in courses_list[ok_course]:
                 in_degrees[course] -= 1
-                
+
                 if in_degrees[course] == 0:
-                    ok_courses.append(course)
+                    ok_course_queue.append(course)
 
         return sum(in_degrees) == 0
 ```
@@ -91,18 +91,14 @@ class Solution:
 ```python
 class Solution:
     def canFinish(self, num_courses: int, prerequisites: List[List[int]]) -> bool:
+        courses_list = [set() for _ in range(num_courses)] # index: course, value: courses depend on course
         in_degrees = [0] * num_courses
-        courses_list = [set() for _ in range(num_courses)] # index: course, value: courses depending on course
 
         for prerequisite in prerequisites:
-            in_degrees[prerequisite[0]] += 1
             courses_list[prerequisite[1]].add(prerequisite[0])
+            in_degrees[prerequisite[0]] += 1
 
-        ok_courses = []
-
-        for course, in_degree in enumerate(in_degrees):
-            if in_degree == 0:
-                ok_courses.append(course)
+        ok_courses = [i for i, in_degree in enumerate(in_degrees) if in_degree == 0]
 
         while ok_courses:
             ok_course = ok_courses.pop()
@@ -122,7 +118,7 @@ class Solution:
 class Solution {
     public boolean canFinish(int numCourses, int[][] prerequisites) {
         var inDegrees = new int[numCourses];
-        var coursesList = new ArrayList<HashSet<Integer>>(); // index: course, value: courses depending on course
+        var coursesList = new ArrayList<HashSet<Integer>>(); // index: course, value: courses depend on course
         for (var i = 0; i < numCourses; i++) {
             coursesList.add(new HashSet<Integer>());
         }
@@ -166,7 +162,7 @@ class Solution {
 class Solution {
     public boolean canFinish(int numCourses, int[][] prerequisites) {
         var inDegrees = new int[numCourses];
-        var coursesList = new ArrayList<HashSet<Integer>>(); // index: course, value: courses depending on course
+        var coursesList = new ArrayList<HashSet<Integer>>(); // index: course, value: courses depend on course
         for (var i = 0; i < numCourses; i++) {
             coursesList.add(new HashSet<Integer>());
         }
@@ -212,7 +208,7 @@ class Solution {
 public:
     bool canFinish(int num_courses, vector<vector<int>>& prerequisites) {
         auto in_degrees = vector<int>(num_courses);
-        auto courses_vector = vector<set<int>>(num_courses); // index: course, value: courses depending on course
+        auto courses_vector = vector<set<int>>(num_courses); // index: course, value: courses depend on course
 
         for (auto& prerequisite : prerequisites) {
             in_degrees[prerequisite[0]]++;
@@ -254,7 +250,7 @@ class Solution {
 public:
     bool canFinish(int num_courses, vector<vector<int>>& prerequisites) {
         auto in_degrees = vector<int>(num_courses);
-        auto courses_vector = vector<set<int>>(num_courses); // index: course, value: courses depending on course
+        auto courses_vector = vector<set<int>>(num_courses); // index: course, value: courses depend on course
 
         for (auto& prerequisite : prerequisites) {
             in_degrees[prerequisite[0]]++;
@@ -302,7 +298,7 @@ public class Solution {
     public bool CanFinish(int numCourses, int[][] prerequisites)
     {
         var inDegrees = new int[numCourses];
-        var coursesList = new List<HashSet<int>>(); // index: course, value: courses depending on course
+        var coursesList = new List<HashSet<int>>(); // index: course, value: courses depend on course
         
         for (int i = 0; i < numCourses; i++)
             coursesList.Add(new HashSet<int>());
@@ -353,7 +349,7 @@ public class Solution {
     public bool CanFinish(int numCourses, int[][] prerequisites)
     {
         var inDegrees = new int[numCourses];
-        var coursesList = new List<HashSet<int>>(); // index: course, value: courses depending on course
+        var coursesList = new List<HashSet<int>>(); // index: course, value: courses depend on course
 
         for (int i = 0; i < numCourses; i++)
             coursesList.Add(new HashSet<int>());
