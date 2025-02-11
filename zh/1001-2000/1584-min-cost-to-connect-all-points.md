@@ -163,8 +163,22 @@ for i, _ in enumerate(points):
         current_index = next_index
 ```
 
-* Use a loop to add each point. To do so, we need an array `visited` to record the indices of the points already added. 
+* Use a loop to add each point. To do so, there are two ways.
+
+Way 1: Use `pending_indexes` set and only process the indexes in it.
 ```python
+current_index = 0
+pending_indexes = set(range(len(points)))
+
+while pending_indexes:
+   pending_indexes.remove(current_index)
+
+   # ...
+```
+
+Way 2: We need an array named `visited` to record the indexes of the points already added. In the iteration, if a point has been added, just skip it.
+```python
+current_index = 0
 visited = [False] * len(points)
 visited[current_index] = True
 
@@ -175,19 +189,55 @@ for i, point in enumerate(points):
     # ...
 ```
 
+Which way do you prefer? I prefer `way 1` because it's easier to understand.
+
 * Return `sum(min_distances)`.
 
-### Solution 2: Use 'heap sort' (recommended)
+### Solution 2: Use 'heap sort'
 * If you use **heap sort**, `current_index`, `next_index`, `minimum_distance` is not needed, because _heap sort_ knows which is the minimum value.
 * `visited` is also not needed, because each `heappop()` means that a point has been `visited`.
 
 ## Complexity
 `n` is the `points.length`.
-* Time: `O(n * n)`.
+* Time: `O(n * n)`. All those solutions' time complexity are `O(n * n)`, because `heapq.heapify()` is `O(n)`.
 * Space: `O(n)`.
 
 ## Python
 ### Solution 1: Not use 'heap sort'
+#### Way 1: Use `pending_indexes` set
+```python
+class Solution:
+    def minCostConnectPoints(self, points: List[List[int]]) -> int:
+        min_distances = [float('inf') for _ in points]
+        min_distances[0] = 0
+        current_index = 0
+        pending_indexes = set(range(len(points)))
+
+        while pending_indexes:
+            pending_indexes.remove(current_index)
+            next_index = None
+            minimum_distance = float('inf')
+
+            for i in pending_indexes:
+                distance = get_distance(points[i], points[current_index])
+
+                if distance < min_distances[i]:
+                    min_distances[i] = distance
+
+                if min_distances[i] < minimum_distance:
+                    minimum_distance = min_distances[i]
+                    next_index = i
+
+            current_index = next_index
+
+        return sum(min_distances)
+
+
+def get_distance(point1, point2):
+    return abs(point2[0] - point1[0]) + abs(point2[1] - point1[1])
+```
+
+#### Way 2: Use `visited` array
 ```python
 class Solution:
     def minCostConnectPoints(self, points: List[List[int]]) -> int:
@@ -206,53 +256,96 @@ class Solution:
                 if visited[i]:
                     continue
 
-                min_distances[i] = min(
-                    min_distances[i],
+                distance = \
                     abs(point[0] - points[current_index][0]) + \
-                    abs(point[1] - points[current_index][1])    
-                )
+                    abs(point[1] - points[current_index][1])  
+
+                if distance < min_distances[i]:
+                    min_distances[i] = distance
 
                 if min_distances[i] < minimum_distance:
                     minimum_distance = min_distances[i]
                     next_index = i
-            
+
             current_index = next_index
 
         return sum(min_distances)
 ```
 
-### Solution 2: Use 'heap sort' (recommended)
+### Solution 2: Use 'heap sort'
 ```python
 class Solution:
     def minCostConnectPoints(self, points: List[List[int]]) -> int:
         result = 0
-        min_distances = []
-
-        for i in range(len(points)):
-            min_distances.append([float('inf'), i])
-
+        min_distances = [[float('inf'), i] for i in range(len(points))]
         min_distances[0][0] = 0
 
         while min_distances:
-            distance, index = heapq.heappop(min_distances)
-            result += distance
+            distance_, current_index = heapq.heappop(min_distances)
+            result += distance_
 
             for min_distance in min_distances:
                 point = points[min_distance[1]]
+                distance = get_distance(point, points[current_index])
 
-                min_distance[0] = min(
-                    min_distance[0],
-                    abs(point[0] - points[index][0]) + \
-                    abs(point[1] - points[index][1])
-                )
+                if distance < min_distance[0]:
+                    min_distance[0] = distance
 
             heapq.heapify(min_distances)
 
         return result
+
+
+def get_distance(point1, point2):
+    return abs(point2[0] - point1[0]) + abs(point2[1] - point1[1])
 ```
 
-### Solution 1: Not use 'heap sort'
 ## Java
+### Solution 1: Not use 'heap sort'
+#### Way 1: Use `pending_indexes` set
+```java
+class Solution {
+    public int minCostConnectPoints(int[][] points) {
+        var minDistances = new int[points.length]; // This is just the `dp` array
+        Arrays.fill(minDistances, Integer.MAX_VALUE);
+        minDistances[0] = 0;
+
+        var currentIndex = 0;
+        var pendingIndexes = new HashSet<Integer>();
+        for (var i = 0; i < points.length; i++) {
+            pendingIndexes.add(i);
+        }
+
+        while (!pendingIndexes.isEmpty()) {
+            pendingIndexes.remove(currentIndex);
+
+            var nextIndex = -1;
+            var minimumDistance = Integer.MAX_VALUE;
+
+            for (var i : pendingIndexes) {
+                var distance = 
+                    Math.abs(points[i][0] - points[currentIndex][0]) +
+                    Math.abs(points[i][1] - points[currentIndex][1]);
+
+                if (distance < minDistances[i]) {
+                    minDistances[i] = distance;
+                }
+
+                if (minDistances[i] < minimumDistance) {
+                    minimumDistance = minDistances[i];
+                    nextIndex = i;
+                }
+            }
+
+            currentIndex = nextIndex;
+        }
+
+        return IntStream.of(minDistances).sum();
+    }
+}
+```
+
+#### Way 2: Use `visited` array
 ```java
 class Solution {
     public int minCostConnectPoints(int[][] points) {
@@ -293,13 +386,14 @@ class Solution {
 }
 ```
 
-### Solution 2: Use 'heap sort' (recommended)
+### Solution 2: Use 'heap sort'
 ```java
 // Welcome to create a PR to complete the code of this language, thanks!
 ```
 
-### Solution 1: Not use 'heap sort'
 ## C++
+### Solution 1: Not use 'heap sort'
+#### Way 2: Use `visited` array
 ```cpp
 class Solution {
 public:
@@ -340,13 +434,14 @@ public:
 };
 ```
 
-### Solution 2: Use 'heap sort' (recommended)
+### Solution 2: Use 'heap sort'
 ```cpp
 // Welcome to create a PR to complete the code of this language, thanks!
 ```
 
-### Solution 1: Not use 'heap sort'
 ## JavaScript
+### Solution 1: Not use 'heap sort'
+#### Way 2: Use `visited` array
 ```javascript
 var minCostConnectPoints = function (points) {
   const minDistances = Array(points.length).fill(Number.MAX_SAFE_INTEGER) // This is just the `dp` array
@@ -384,13 +479,14 @@ var minCostConnectPoints = function (points) {
 };
 ```
 
-### Solution 2: Use 'heap sort' (recommended)
+### Solution 2: Use 'heap sort'
 ```javascript
 // Welcome to create a PR to complete the code of this language, thanks!
 ```
 
-### Solution 1: Not use 'heap sort'
 ## C#
+### Solution 1: Not use 'heap sort'
+#### Way 2: Use `visited` array
 ```c#
 public class Solution
 {
@@ -437,13 +533,14 @@ public class Solution
 }
 ```
 
-### Solution 2: Use 'heap sort' (recommended)
+### Solution 2: Use 'heap sort'
 ```c#
 // Welcome to create a PR to complete the code of this language, thanks!
 ```
 
-### Solution 1: Not use 'heap sort'
 ## Go
+### Solution 1: Not use 'heap sort'
+#### Way 2: Use `visited` array
 ```go
 func minCostConnectPoints(points [][]int) int {
     minDistances := slices.Repeat([]int{math.MaxInt32}, len(points)) // This is just the `dp` array
@@ -488,13 +585,14 @@ func minCostConnectPoints(points [][]int) int {
 }
 ```
 
-### Solution 2: Use 'heap sort' (recommended)
+### Solution 2: Use 'heap sort'
 ```go
 // Welcome to create a PR to complete the code of this language, thanks!
 ```
 
-### Solution 1: Not use 'heap sort'
 ## Ruby
+### Solution 1: Not use 'heap sort'
+#### Way 2: Use `visited` array
 ```ruby
 def min_cost_connect_points(points)
   min_distances = Array.new(points.size, Float::INFINITY) # This is just the `dp` array.
@@ -530,7 +628,7 @@ def min_cost_connect_points(points)
 end
 ```
 
-### Solution 2: Use 'heap sort' (recommended)
+### Solution 2: Use 'heap sort'
 ```ruby
 # Welcome to create a PR to complete the code of this language, thanks!
 ```
