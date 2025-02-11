@@ -73,10 +73,10 @@ This page, I will only talk about the solution of **Kruskal's Algorithm**.
 ```python
 class Solution:
     def __init__(self):
-        self.parent = []
+        self.parents = []
 
     def minCostConnectPoints(self, points: List[List[int]]) -> int:
-        self.parent = list(range(len(points)))
+        self.parents = list(range(len(points)))
         result = 0
         edged_points = []
 
@@ -85,43 +85,49 @@ class Solution:
                 distance = abs(point[0] - points[j][0]) + \
                            abs(point[1] - points[j][1])
                 heapq.heappush(edged_points, (distance, i, j))
-        
+
         while edged_points:
             distance, i, j = heapq.heappop(edged_points)
             
-            if self.same_root(i, j):
+            if self.is_same_root(i, j):
                 continue
             
             self.unite(i, j)
             
             result += distance
-            
+
         return result
     
     def unite(self, x, y):
         root_x = self.find_root(x)
         root_y = self.find_root(y)
-        self.parent[root_y] = root_x
+
+        self.parents[root_y] = root_x
 
     def find_root(self, x):
-        if x == self.parent[x]:
+        parent = self.parents[x]
+
+        if x == parent:
             return x
         
-        self.parent[x] = self.find_root(self.parent[x])
+        root = self.find_root(parent)
 
-        return self.parent[x]
+        self.parents[x] = root
 
-    def same_root(self, x, y):
+        return root
+
+    def is_same_root(self, x, y):
         return self.find_root(x) == self.find_root(y)
 ```
 
 ## Java
 ```java
+// Welcome to create a PR to complete the code of this language, thanks!
 ```
 
 ## Python
 ```python
-// Welcome to create a PR to complete the code of this language, thanks!
+# Welcome to create a PR to complete the code of this language, thanks!
 ```
 
 ## C++
