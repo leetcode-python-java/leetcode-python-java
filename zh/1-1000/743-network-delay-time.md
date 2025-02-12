@@ -43,7 +43,7 @@
 ## 思路
 本题可用 **Bellman-Ford算法** 或 **Dijkstra算法** 解决。
 
-`Bellman-Ford`算法代码量少，还能处理`边`权值为**负数**的情况，但较慢。
+`Bellman-Ford`算法代码量少，还能处理`边`权值为**负数**的情况，但如果没有被优化过，运行得比较慢。下文代码会介绍如何优化。
 
 `Dijkstra算法`因为始终走最短路径，所以执行**效率高**！但代码量大，无法处理`边`权值为**负数**的情况。
 
@@ -56,24 +56,38 @@
 * 时间: `O(V * E)`.
 * 空间: `O(V)`.
 
+### 列队（或集合）优化的 Bellman-Ford 算法 (又称 `最短路径快速算法`，缩写为 `SPFA`)
+* Time: `O(V * X)` (`X` < `E`).
+* Space: `O(V + E)`.
+
 ### Dijkstra 算法（采用`堆排序`）
 * 时间: `O(E * log(E))`.
 * 空间: `O(V + E)`.
 
 ## Python
-### Standard Bellman-Ford algorithm
+### Bellman-Ford 算法（较慢，后文介绍如何性能提升）
+一个与本题非常类似的题目: [787. K 站中转内最便宜的航班](./787-cheapest-flights-within-k-stops.md), 然而，如果你用上面同样的代码，会无法通过力扣测试。
+
+你可以先尝试解决`787. K 站中转内最便宜的航班`，然后再继续阅读下文。
+
 ```python
 class Solution:
-    def networkDelayTime(self, edges: List[List[int]], n: int, start: int) -> int:
+    def networkDelayTime(self, edges: List[List[int]], n: int, start_node: int) -> int:
         min_times = [float('inf')] * (n + 1)
-        min_times[start] = 0
+        min_times[start_node] = 0
 
         for _ in range(n - 1):
+            # 删除这一行，始终用`min_times`，也能通过，但`787. K 站中转内最便宜的航班` https://leetcode.cn/problems/cheapest-flights-within-k-stops/ 就通过不了了。
+            # 如果你打印`min_times`，很可能会发现结果不一样。请尝试下。
+            # 原因就是本轮循环中修改了的`min_times`的值，有可能在本轮循环中被使用到，对本轮后续的`min_times`产生影响。
+            # 为更好地理解本行代码，请做 `787. K 站中转内最便宜的航班`。  
+            min_times_clone = min_times.copy() # addition 1
+
             for source_node, target_node, time in edges: # process edges directly
-                if min_times[source_node] == float('inf'):
+                if min_times_clone[source_node] == float('inf'): # change 1
                     continue
 
-                target_time = time + min_times[source_node]
+                target_time = time + min_times_clone[source_node] # change 2
 
                 if target_time < min_times[target_node]:
                     min_times[target_node] = target_time
@@ -86,12 +100,12 @@ class Solution:
         return result
 ```
 
-### Algorithm similar to Bellman-Ford algorithm
+### Bellman-Ford 算法的变体，可用于后文的性能提升
 ```python
 class Solution:
-    def networkDelayTime(self, edges: List[List[int]], n: int, start: int) -> int:
+    def networkDelayTime(self, edges: List[List[int]], n: int, start_node: int) -> int:
         min_times = [float('inf')] * (n + 1)
-        min_times[start] = 0
+        min_times[start_node] = 0
         node_to_pairs = defaultdict(set)
 
         for source, target, time in edges: # process nodes first, then their edges
@@ -107,6 +121,40 @@ class Solution:
 
                     if target_time < min_times[target_node]:
                         min_times[target_node] = target_time
+
+        result = max(min_times[1:])
+
+        if result == float('inf'):
+            return -1
+
+        return result
+```
+
+### 列队（或集合）优化的 Bellman-Ford 算法 (Queue-improved Bellman-Ford)
+又称 `最短路径快速算法` (`Shortest Path Faster Algorithm` 缩写为 `SPFA`)。
+```python
+class Solution:
+    def networkDelayTime(self, edges: List[List[int]], n: int, start_node: int) -> int:
+        min_times = [float('inf')] * (n + 1)
+        min_times[start_node] = 0
+        node_to_pairs = defaultdict(set)
+
+        for source, target, time in edges: # process nodes first, then their edges
+            node_to_pairs[source].add((target, time))
+
+        updated_nodes = set([start_node]) # added 1
+
+        for _ in range(n - 1):
+            nodes = updated_nodes.copy() # added 3
+            updated_nodes.clear() # added 4
+
+            for node in nodes: # changed 1
+                for target_node, time in node_to_pairs[node]: # process edges of the node
+                    target_time = time + min_times[node]
+
+                    if target_time < min_times[target_node]:
+                        min_times[target_node] = target_time
+                        updated_nodes.add(target_node) # added 2
 
         result = max(min_times[1:])
 

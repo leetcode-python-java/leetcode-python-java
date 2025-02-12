@@ -41,7 +41,8 @@ We will send a signal from a given node `k`. Return _the **minimum** time it tak
 ## Intuition
 We can solve it via both **Bellman-Ford algorithm** and **Dijkstra's algorithm**.
 
-`Bellman-Ford algorithm` has less code and can handle the situation of **negative** edge weights, but it is slower than `Dijkstra's algorithm`.
+`Bellman-Ford algorithm` has less code and can handle the situation of **negative** edge weights, but it is slower than `Dijkstra's algorithm` if it is not optimized.
+The following code will introduce how to optimize.
 
 `Dijkstra's algorithm` always takes the shortest path, so it is more efficient, but it requires writing more code and it cannot handle the situation of **negative** edge weights.
 
@@ -54,17 +55,21 @@ For a detailed description of **Dijkstra's algorithm**, please refer to [1514. P
 * Time: `O(V * E)`.
 * Space: `O(V)`.
 
+### Queue-improved Bellman-Ford algorithm (also known as `Shortest Path Faster Algorithm` abbreviated as `SPFA`)
+* Time: `O(V * X)` (`X` < `E`).
+* Space: `O(V + E)`.
+
 ### Dijkstra's algorithm using `heap sort`
 * Time: `O(E * log(E))`.
 * Space: `O(V + E)`.
 
 ## Python
-### Standard Bellman-Ford algorithm
+### Bellman-Ford algorithm (slow, yet below, I will introduce how to improve its efficiency)
 ```python
 class Solution:
-    def networkDelayTime(self, edges: List[List[int]], n: int, start: int) -> int:
+    def networkDelayTime(self, edges: List[List[int]], n: int, start_node: int) -> int:
         min_times = [float('inf')] * (n + 1)
-        min_times[start] = 0
+        min_times[start_node] = 0
 
         for _ in range(n - 1):
             for source_node, target_node, time in edges: # process edges directly
@@ -84,12 +89,46 @@ class Solution:
         return result
 ```
 
-### Algorithm similar to Bellman-Ford algorithm
+A very similar question: [787. Cheapest Flights Within K Stops](./787-cheapest-flights-within-k-stops.md), but if you use the above code, it will not be accepted by LeetCode.
+
+You can try to solve `787. Cheapest Flights Within K Stops` first, then read on.
+
 ```python
 class Solution:
-    def networkDelayTime(self, edges: List[List[int]], n: int, start: int) -> int:
+    def networkDelayTime(self, edges: List[List[int]], n: int, start_node: int) -> int:
         min_times = [float('inf')] * (n + 1)
-        min_times[start] = 0
+        min_times[start_node] = 0
+
+        for _ in range(n - 1):
+            # If you remove the next line and always use `min_times`, it can also be accepted.
+            # But if you print `min_times`, you may see different result. Please try it.
+            # The values of `min_times` modified in this loop will affect the subsequent `min_times` items in the same loop.
+            # Please work on `problem 787`: https://leetcode.com/problems/cheapest-flights-within-k-stops/ to better understand this. 
+            min_times_clone = min_times.copy() # addition 1
+
+            for source_node, target_node, time in edges: # process edges directly
+                if min_times_clone[source_node] == float('inf'): # change 1
+                    continue
+
+                target_time = time + min_times_clone[source_node] # change 2
+
+                if target_time < min_times[target_node]:
+                    min_times[target_node] = target_time
+
+        result = max(min_times[1:])
+
+        if result == float('inf'):
+            return -1
+
+        return result
+```
+
+### A variant of Bellman-Ford algorithm, which can be used to improve the efficiency of Bellman-Ford algorithm below
+```python
+class Solution:
+    def networkDelayTime(self, edges: List[List[int]], n: int, start_node: int) -> int:
+        min_times = [float('inf')] * (n + 1)
+        min_times[start_node] = 0
         node_to_pairs = defaultdict(set)
 
         for source, target, time in edges: # process nodes first, then their edges
@@ -105,6 +144,39 @@ class Solution:
 
                     if target_time < min_times[target_node]:
                         min_times[target_node] = target_time
+
+        result = max(min_times[1:])
+
+        if result == float('inf'):
+            return -1
+
+        return result
+```
+
+### Queue-improved Bellman-Ford algorithm (also known as `Shortest Path Faster Algorithm` abbreviated as `SPFA`)
+```python
+class Solution:
+    def networkDelayTime(self, edges: List[List[int]], n: int, start_node: int) -> int:
+        min_times = [float('inf')] * (n + 1)
+        min_times[start_node] = 0
+        node_to_pairs = defaultdict(set)
+
+        for source, target, time in edges: # process nodes first, then their edges
+            node_to_pairs[source].add((target, time))
+
+        updated_nodes = set([start_node]) # added 1
+
+        for _ in range(n - 1):
+            nodes = updated_nodes.copy() # added 3
+            updated_nodes.clear() # added 4
+
+            for node in nodes: # changed 1
+                for target_node, time in node_to_pairs[node]: # process edges of the node
+                    target_time = time + min_times[node]
+
+                    if target_time < min_times[target_node]:
+                        min_times[target_node] = target_time
+                        updated_nodes.add(target_node) # added 2
 
         result = max(min_times[1:])
 
