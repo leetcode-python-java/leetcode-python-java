@@ -1,62 +1,64 @@
-# 743. Network Delay Time - Best Practices of LeetCode Solutions
-LeetCode link: [743. Network Delay Time](https://leetcode.com/problems/network-delay-time), difficulty: **Medium**.
+# 743. 网络延迟时间 - 力扣题解最佳实践
+力扣链接：[743. 网络延迟时间](https://leetcode.cn/problems/network-delay-time), 难度: **中等**。
 
-## LeetCode description of "743. Network Delay Time"
-You are given a network of `n` nodes, labeled from `1` to `n`. You are also given `times`, a list of travel times as directed edges `times[i] = (ui, vi, wi)`, where `ui` is the source node, `vi` is the target node, and `wi` is the time it takes for a signal to travel from source to target.
+## 力扣“743. 网络延迟时间”问题描述
+有 `n` 个网络节点，标记为 `1` 到 `n`。
 
-We will send a signal from a given node `k`. Return _the **minimum** time it takes for all the n nodes to receive the signal_. If it is impossible for all the `n` nodes to receive the signal, return `-1`.
+给你一个列表 `times`，表示信号经过 **有向** 边的传递时间。 `times[i] = (ui, vi, wi)`，其中 `ui` 是源节点，`vi` 是目标节点， `wi` 是一个信号从源节点传递到目标节点的时间。
 
-### [Example 1]
+现在，从某个节点 K 发出一个信号。需要多久才能使所有节点都收到信号？如果不能使所有节点收到信号，返回 `-1` 。
+
+### [示例 1]
 ![](../../images/examples/743_1.png)
 
-**Input**: `times = [[2,1,1],[2,3,1],[3,4,1]], n = 4, k = 2`
+**输入**: `times = [[2,1,1],[2,3,1],[3,4,1]], n = 4, k = 2`
 
-**Output**: `2`
+**输出**: `2`
 
-### [Example 2]
-**Input**: `times = [[1,2,1]], n = 2, k = 1`
+### [示例 2]
+**输入**: `times = [[1,2,1]], n = 2, k = 1`
 
-**Output**: `1`
+**输出**: `1`
 
-### [Example 3]
-**Input**: `times = [[1,2,1]], n = 2, k = 2`
+### [示例 3]
+**输入**: `times = [[1,2,1]], n = 2, k = 2`
 
-**Output**: `-1`
+**输出**: `-1`
 
-### [Constraints]
+### [约束]
 - `1 <= k <= n <= 100`
 - `1 <= times.length <= 6000`
 - `times[i].length == 3`
 - `1 <= ui, vi <= n`
 - `ui != vi`
 - `0 <= wi <= 100`
-- All the pairs `(ui, vi)` are **unique**. (i.e., no multiple edges.)
+- 所有 `(ui, vi)` 对都 **互不相同**（即，不含重复边）
 
-### [Hints]
+### [提示]
 <details>
-  <summary>Hint 1</summary>
+  <summary>提示 1</summary>
   We visit each node at some time, and if that time is better than the fastest time we've reached this node, we travel along outgoing edges in sorted order. Alternatively, we could use Dijkstra's algorithm.
 </details>
 
-## Intuition
-We can solve it via both **Bellman-Ford algorithm** and **Dijkstra's algorithm**.
+## 思路
+本题可用 **Bellman-Ford算法** 或 **Dijkstra算法** 解决。
 
-`Bellman-Ford algorithm` has less code and can handle the situation of **negative** edge weights, but it is slower than `Dijkstra's algorithm`.
+`Bellman-Ford`算法代码量少，还能处理`边`权值为**负数**的情况，但较慢。
 
-`Dijkstra's algorithm` always takes the shortest path, so it is more efficient, but it requires writing more code and it cannot handle the situation of **negative** edge weights.
+`Dijkstra算法`因为始终走最短路径，所以执行**效率高**！但代码量大，无法处理`边`权值为**负数**的情况。
 
-For a detailed description of **Dijkstra's algorithm**, please refer to [1514. Path with Maximum Probability](../1001-2000/1514-path-with-maximum-probability.md).
+**Dijkstra算法**的详细说明，请参考 [1514. 概率最大的路径](../1001-2000/1514-path-with-maximum-probability.md)。
 
-## Complexity
-**V**: vertex count, **E**: Edge count.
+## 复杂度
+**V**: 顶点数量，**E**: 边的数量。
 
-### Bellman-Ford algorithm
-* Time: `O(V * E)`.
-* Space: `O(V)`.
+### Bellman-Ford 算法
+* 时间: `O(V * E)`.
+* 空间: `O(V)`.
 
-### Dijkstra's algorithm using `heap sort`
-* Time: `O(E * log(E))`.
-* Space: `O(V + E)`.
+### Dijkstra 算法（采用`堆排序`）
+* 时间: `O(E * log(E))`.
+* 空间: `O(V + E)`.
 
 ## Python
 ### Standard Bellman-Ford algorithm

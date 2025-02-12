@@ -115,5 +115,6 @@ You can skip the more difficult problems and do them later.
 - [1584. Min Cost to Connect All Points](en/1001-2000/1584-min-cost-to-connect-all-points.md) was solved in _Python, Java, C++, JavaScript, C#, Go, Ruby_ and 2 ways.
 - [207. Course Schedule](en/1-1000/207-course-schedule.md) was solved in _Python, Java, C++, C#_ and 2 ways.
 - [1514. Path with Maximum Probability](en/1001-2000/1514-path-with-maximum-probability.md) was solved in _Python_ and 2 ways.
+- [743. Network Delay Time](en/1-1000/743-network-delay-time.md) was solved in _Python_ and 2 ways.
 
-More LeetCode problems will be added soon...
+More LeetCode problems will be added soon.
