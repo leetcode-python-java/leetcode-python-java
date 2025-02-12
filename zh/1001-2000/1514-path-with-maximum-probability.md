@@ -19,12 +19,14 @@ If there is no path from `start` to `end`, return 0. Your answer will be accepte
 
 ### [Example 2]
 ![](../../images/examples/1514_2.png)
+
 **Input**: `n = 3, edges = [[0,1],[1,2],[0,2]], succProb = [0.5,0.5,0.3], start = 0, end = 2`
 
 **Output**: `0.30000`
 
 ### [Example 3]
 ![](../../images/examples/1514_3.png)
+
 **Input**: `n = 3, edges = [[0,1]], succProb = [0.5], start = 0, end = 2`
 
 **Output**: `0.00000`
@@ -118,7 +120,7 @@ class Solution:
 ```
 
 ### Dijkstra's algorithm using `heap sort`
-#### `heap sort` without using `visited`
+#### 1. `heap sort` without using `visited`
 ```python
 import heapq
 
@@ -132,10 +134,10 @@ class Solution:
 
         max_probabilities = [0 for node in range(n)]
         max_probabilities[start_node] = 1
-        items = [(-1, start_node)]
+        priority_queue = [(-1, start_node)]
 
-        while items:
-            current_probability, current_node = heapq.heappop(items)
+        while priority_queue:
+            current_probability, current_node = heapq.heappop(priority_queue)
 
             if current_node == end_node:
                 return -current_probability
@@ -145,13 +147,13 @@ class Solution:
 
                 if probability_ > max_probabilities[target_node]:
                     max_probabilities[target_node] = probability_
-                    # It may cause the same `target_node` added into `items` more than once, but it doesn't matter. Because only the one `heappush`ed first may change the `max_probabilities` data.
-                    heapq.heappush(items, (-probability_, target_node))
+                    # It may cause the same `target_node` added into `priority_queue` more than once, but it doesn't matter. Because only the one `heappush`ed first may change the `max_probabilities` data.
+                    heapq.heappush(priority_queue, (-probability_, target_node))
 
         return 0
 ```
 
-#### `heap sort` using `visited`
+#### 2. `heap sort` using `visited`
 ```python
 import heapq
 
@@ -165,11 +167,11 @@ class Solution:
 
         max_probabilities = [0 for node in range(n)]
         max_probabilities[start_node] = 1
-        items = [(-1, start_node)]
+        priority_queue = [(-1, start_node)]
         visited = [False] * n # added 1
 
-        while items:
-            current_probability, current_node = heapq.heappop(items)
+        while priority_queue:
+            current_probability, current_node = heapq.heappop(priority_queue)
 
             if current_node == end_node:
                 return -current_probability
@@ -187,8 +189,8 @@ class Solution:
 
                 if probability_ > max_probabilities[target_node]:
                     max_probabilities[target_node] = probability_
-                    # It may cause the same `target_node` added into `items` more than once, but it doesn't matter. Because only the one `heappush`ed first may change the `max_probabilities` data.
-                    heapq.heappush(items, (-probability_, target_node))
+                    # It may cause the same `target_node` added into `priority_queue` more than once, but it doesn't matter. Because only the one `heappush`ed first may change the `max_probabilities` data.
+                    heapq.heappush(priority_queue, (-probability_, target_node))
 
         return 0
 ```

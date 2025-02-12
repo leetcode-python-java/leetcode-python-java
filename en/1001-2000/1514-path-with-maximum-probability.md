@@ -134,10 +134,10 @@ class Solution:
 
         max_probabilities = [0 for node in range(n)]
         max_probabilities[start_node] = 1
-        items = [(-1, start_node)]
+        priority_queue = [(-1, start_node)]
 
-        while items:
-            current_probability, current_node = heapq.heappop(items)
+        while priority_queue:
+            current_probability, current_node = heapq.heappop(priority_queue)
 
             if current_node == end_node:
                 return -current_probability
@@ -147,8 +147,8 @@ class Solution:
 
                 if probability_ > max_probabilities[target_node]:
                     max_probabilities[target_node] = probability_
-                    # It may cause the same `target_node` added into `items` more than once, but it doesn't matter. Because only the one `heappush`ed first may change the `max_probabilities` data.
-                    heapq.heappush(items, (-probability_, target_node))
+                    # It may cause the same `target_node` added into `priority_queue` more than once, but it doesn't matter. Because only the one `heappush`ed first may change the `max_probabilities` data.
+                    heapq.heappush(priority_queue, (-probability_, target_node))
 
         return 0
 ```
@@ -167,11 +167,11 @@ class Solution:
 
         max_probabilities = [0 for node in range(n)]
         max_probabilities[start_node] = 1
-        items = [(-1, start_node)]
+        priority_queue = [(-1, start_node)]
         visited = [False] * n # added 1
 
-        while items:
-            current_probability, current_node = heapq.heappop(items)
+        while priority_queue:
+            current_probability, current_node = heapq.heappop(priority_queue)
 
             if current_node == end_node:
                 return -current_probability
@@ -189,8 +189,8 @@ class Solution:
 
                 if probability_ > max_probabilities[target_node]:
                     max_probabilities[target_node] = probability_
-                    # It may cause the same `target_node` added into `items` more than once, but it doesn't matter. Because only the one `heappush`ed first may change the `max_probabilities` data.
-                    heapq.heappush(items, (-probability_, target_node))
+                    # It may cause the same `target_node` added into `priority_queue` more than once, but it doesn't matter. Because only the one `heappush`ed first may change the `max_probabilities` data.
+                    heapq.heappush(priority_queue, (-probability_, target_node))
 
         return 0
 ```
