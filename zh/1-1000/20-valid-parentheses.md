@@ -1,5 +1,5 @@
 # 20. 有效的括号 - 力扣题解最佳实践
-力扣链接：[20. 有效的括号](https://leetcode.cn/problems/valid-parentheses), 难度: **简单**。
+力扣链接：[20. 有效的括号](https://leetcode.cn/problems/valid-parentheses) ，难度：**简单**。
 
 ## 力扣“20. 有效的括号”问题描述
 给定一个只包括 `(`，`)`，`{`，`}`，`[`，`]` 的字符串 `s` ，判断字符串是否有效。

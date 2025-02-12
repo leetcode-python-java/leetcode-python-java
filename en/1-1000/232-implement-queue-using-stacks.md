@@ -151,7 +151,7 @@ MyQueue.prototype.fillOutIfEmpty = function () {
 ```
 
 ## 力扣“232. 用栈实现队列”问题描述
-力扣链接：[232. 用栈实现队列](https://leetcode.cn/problems/implement-queue-using-stacks), 难度: **简单**。
+力扣链接：[232. 用栈实现队列](https://leetcode.cn/problems/implement-queue-using-stacks) ，难度：**简单**。
 
 请你仅使用两个栈实现先入先出队列。队列应当支持一般队列支持的所有操作（`push`、`pop`、`peek`、`empty`）：
 

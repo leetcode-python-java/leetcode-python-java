@@ -1,5 +1,5 @@
 # 459. 重复的子字符串 - 力扣题解最佳实践
-力扣链接：[459. 重复的子字符串](https://leetcode.cn/problems/repeated-substring-pattern), 难度: **简单**。
+力扣链接：[459. 重复的子字符串](https://leetcode.cn/problems/repeated-substring-pattern) ，难度：**简单**。
 
 ## 力扣“459. 重复的子字符串”问题描述
 给定一个非空的字符串 `s` ，检查是否可以通过由它的一个子串重复多次构成。

@@ -1,5 +1,5 @@
 # 202. 快乐数 - 力扣题解最佳实践
-力扣链接：[202. 快乐数](https://leetcode.cn/problems/happy-number), 难度: **简单**。
+力扣链接：[202. 快乐数](https://leetcode.cn/problems/happy-number) ，难度：**简单**。
 
 ## 力扣“202. 快乐数”问题描述
 编写一个算法来判断一个数 `n` 是不是快乐数。

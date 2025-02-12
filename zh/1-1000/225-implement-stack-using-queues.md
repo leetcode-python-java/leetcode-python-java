@@ -1,5 +1,5 @@
 # 225. 用队列实现栈 - 力扣题解最佳实践
-力扣链接：[225. 用队列实现栈](https://leetcode.cn/problems/implement-stack-using-queues), 难度: **简单**。
+力扣链接：[225. 用队列实现栈](https://leetcode.cn/problems/implement-stack-using-queues) ，难度：**简单**。
 
 ## 力扣“225. 用队列实现栈”问题描述
 请你仅使用两个队列实现一个后入先出（LIFO）的栈，并支持普通栈的全部四种操作（`push`、`top`、`pop` 和 `empty`）。

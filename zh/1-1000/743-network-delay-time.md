@@ -1,5 +1,5 @@
 # 743. 网络延迟时间 - 力扣题解最佳实践
-力扣链接：[743. 网络延迟时间](https://leetcode.cn/problems/network-delay-time), 难度: **中等**。
+力扣链接：[743. 网络延迟时间](https://leetcode.cn/problems/network-delay-time) ，难度：**中等**。
 
 ## 力扣“743. 网络延迟时间”问题描述
 有 `n` 个网络节点，标记为 `1` 到 `n`。

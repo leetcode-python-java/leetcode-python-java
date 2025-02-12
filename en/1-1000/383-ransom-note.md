@@ -201,7 +201,7 @@ public class Solution
 ```
 
 ## 力扣问题描述
-[383. 赎金信](https://leetcode.cn/problems/ransom-note), 难度: **简单**。
+[383. 赎金信](https://leetcode.cn/problems/ransom-note) ，难度：**简单**。
 
 给你两个字符串：`ransomNote` 和 `magazine` ，判断 `ransomNote` 能不能由 `magazine` 里面的字符构成。
 
