@@ -198,9 +198,10 @@ Which way do you prefer? I prefer `way 1` because it's easier to understand.
 * `visited` is also not needed, because each `heappop()` means that a point has been `visited`.
 
 ## Complexity
-`n` is the `points.length`.
-* Time: `O(n * n)`. All those solutions' time complexity are `O(n * n)`, because `heapq.heapify()` is `O(n)`.
-* Space: `O(n)`.
+`V` is the `points.length`.
+
+* Time: `O(V * V)`. All those solutions' time complexity are `O(n * n)`, because `heapq.heapify()` is `O(n)`.
+* Space: `O(V)`.
 
 ## Python
 ### Solution 1: Not use 'heap sort'

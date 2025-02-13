@@ -61,16 +61,25 @@ This page, I will only talk about the solution of **Kruskal's Algorithm**.
 - Traverse all edges once, add up the lengths of the edges and return the sum as the result.
 - If you are familiar with the **Union-Find** algorithm, it is easy to solve the problem with _Kruskal's algorithm_. However, this problem does not directly give the `edges` information, and we need to calculate it through the vertex information, which is not difficult, but this causes the algorithm to run slower than _Prim's Algorithm_ because there are too many edges. The more edges, the slower _Kruskal's Algorithm_.
 
+#### Compare to Prim's Algorithm
+For this problem, `points` are given, so using `Prim's Algorithm` would be faster and easier to understand.
+
+Because if we use `Kruskal's Algorithm`, we have to convert `points` into `edges`, and we will get a fully dense graph.
+
+For sparse graphs, `Kruskal's Algorithm` is more efficient than `Prim's Algorithm`.
+
 ## Complexity
-`E` is the `edges.length`.
+- `V` is the `points.length`.
+- `E` is the `edges.length`. In this problem, the `E` is `V * V`.
 
-`N` is the `points.length`.
-
-* Time: `O(E * logE)`.
-* Space: `O(N * N)`.
+* Time: `O(E * log(E))`.
+* Space: `O(V * V)`.
 
 ## Python
+The following code can also be implemented by using `heap sort`, but it would be slower.
 ```python
+from collections import deque
+
 class Solution:
     def __init__(self):
         self.parents = []
@@ -78,26 +87,29 @@ class Solution:
     def minCostConnectPoints(self, points: List[List[int]]) -> int:
         self.parents = list(range(len(points)))
         result = 0
-        edged_points = []
+        edges = []
 
         for i, point in enumerate(points):
             for j in range(i + 1, len(points)):
                 distance = abs(point[0] - points[j][0]) + \
                            abs(point[1] - points[j][1])
-                heapq.heappush(edged_points, (distance, i, j))
+                edges.append((distance, i, j))
 
-        while edged_points:
-            distance, i, j = heapq.heappop(edged_points)
-            
+        edges.sort()
+        edges = deque(edges)
+
+        while edges:
+            distance, i, j = edges.popleft()
+
             if self.is_same_root(i, j):
                 continue
-            
+
             self.unite(i, j)
-            
+
             result += distance
 
         return result
-    
+
     def unite(self, x, y):
         root_x = self.find_root(x)
         root_y = self.find_root(y)
@@ -109,7 +121,7 @@ class Solution:
 
         if x == parent:
             return x
-        
+
         root = self.find_root(parent)
 
         self.parents[x] = root
