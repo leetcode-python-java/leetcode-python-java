@@ -59,11 +59,11 @@ The improved way with a queue is commonly more efficient. Relaxing **All Edges**
 * The time complexity of `Floyd–Warshall algorithm` is `V * V * V`. For a dense graph, `Floyd–Warshall algorithm` is still faster.
 * `A* algorithm` use a `priority queue`, `pop()` to get the vertex closest to the destination vertex. We need to choose **proper math formula** to determine which one is the closest. We to the very near place of destination vertex, we can use some special method to make it can handle the last part.  
 
-|Algorithm name|Key implementation methods|
-|Prim's algorithm||
-|Kruskal's algorithm|Union-Find|
-|Dijkstra's algorithm||
-|Bellman-Ford algorithm||
+|Algorithm name|Focus|Key implementation methods|
+|Prim's algorithm|Vertices||
+|Kruskal's algorithm|Edges|Union-Find|
+|Dijkstra's algorithm|Vertices||
+|Bellman-Ford algorithm|Edges(Vertices+Edges for SPFA)||
 
 ## Others
 * Find all the prime numbers within 1000000.
@@ -172,8 +172,8 @@ The improved way with a queue is commonly more efficient. Relaxing **All Edges**
 
 ### Graph
 - 417 https://leetcode.com/problems/pacific-atlantic-water-flow/
-- 
-
+- 399 https://leetcode.com/problems/evaluate-division/ union-find
+- 1976 https://leetcode.com/problems/number-of-ways-to-arrive-at-destination/ both use Dijkstra or Bellman-Ford can solve it.
 
 ### Failed in 2 rounds
 - 222 https://leetcode.cn/problems/count-complete-tree-nodes/
@@ -190,5 +190,6 @@ The improved way with a queue is commonly more efficient. Relaxing **All Edges**
 - 417 https://leetcode.com/problems/pacific-atlantic-water-flow/
 - 1584-min-cost-to-connect-all-points-2.md
 - 1514-path-with-maximum-probability.md
+- 1334 https://leetcode.com/problems/find-the-city-with-the-smallest-number-of-neighbors-at-a-threshold-distance
 
 2005-02-09 day 2
