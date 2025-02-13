@@ -65,9 +65,11 @@ The city 0 has 1 neighboring city at a distanceThreshold = 2.
 </details>
 
 ## Intuition
-Just like the `Hints` says, you can use **Floyd-Warshall algorithm** to compute any-point to any-point shortest distances.
+Just like the `Hints` says, you can use **Floyd-Warshall Algorithm** to compute any-point to any-point shortest distances.
 
-Or you can also do **Dijkstra algorithm** from every node due to the weights are non-negative.
+Or you can also do **Dijkstra Algorithm** from every node due to the weights are non-negative.
+
+Or you can also do **Queue-Improved Bellman-Ford Algorithm** from every node.
 
 ## Complexity
 * Time: `O(N^3)`.

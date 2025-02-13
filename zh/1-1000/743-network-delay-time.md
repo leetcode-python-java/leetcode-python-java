@@ -58,10 +58,11 @@
 
 |算法名称|主要的适用场景|优化方式|重要度|难度|min_<br>distances|负边权值|额外的适用场景|
 |-------|-----------|-------|-------|---|-------------|--------|------------|
-|[Prim算法](../1001-2000/1584-min-cost-to-connect-all-points.md)     |最小生成树  |堆排序简化       |重要   |中等|用到|能处理||
-|[Kruskal算法](../1001-2000/1584-min-cost-to-connect-all-points-2.md)|最小生成树  |无需优化         |重要   |较难|不用|能处理|相关：[无向图环检测](./684-redundant-connection.md), [有向图环检测](./685-redundant-connection-ii.md)|
-|[Dijkstra算法](../1001-2000/1514-path-with-maximum-probability.md)  |单源最短路径|堆排序优化       |很重要|较难|用到|不能处理||
-|[Bellman-Ford算法](./743-network-delay-time.md)                     |单源最短路径|集合优化|很重要|简单|用到|能处理|[负环检测](https://www.geeksforgeeks.org/detect-negative-cycle-graph-bellman-ford/), [限定步数最短路径](./787-cheapest-flights-within-k-stops.md)|
+|[Prim算法](../1001-2000/1584-min-cost-to-connect-all-points.md)                                                       |最小生成树  |堆排序简化|重要   |中等|用到|能处理||
+|[Kruskal算法](../1001-2000/1584-min-cost-to-connect-all-points-2.md)                                                  |最小生成树  |无需优化  |重要   |较难|不用|能处理|相关：[无向图环检测](./684-redundant-connection.md), [有向图环检测](./685-redundant-connection-ii.md)|
+|[Dijkstra算法](../1001-2000/1514-path-with-maximum-probability.md)                                                    |单源最短路径|堆排序优化 |很重要 |较难|用到|无能力||
+|[Bellman-Ford](./743-network-delay-time.md)                                                                       |单源最短路径|集合优化  |很重要  |简单|用到|能处理|[负环检测](https://www.geeksforgeeks.org/detect-negative-cycle-graph-bellman-ford/), [限定步数最短路径](./787-cheapest-flights-within-k-stops.md)|
+|[Floyd–Warshall](../1001-2000/1334-find-the-city-with-the-smallest-number-of-neighbors-at-a-threshold-distance.md)|多源最短路径|无需优化  |较不重要|较难|用到|能处理||
 
 ## 复杂度
 **V**: 顶点数量，**E**: 边的数量。
