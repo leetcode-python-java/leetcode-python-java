@@ -172,6 +172,8 @@ The improved way with a queue is commonly more efficient. Relaxing **All Edges**
 
 ### Graph
 - 417 https://leetcode.com/problems/pacific-atlantic-water-flow/
+- 
+
 
 ### Failed in 2 rounds
 - 222 https://leetcode.cn/problems/count-complete-tree-nodes/
@@ -186,5 +188,7 @@ The improved way with a queue is commonly more efficient. Relaxing **All Edges**
 - 647 https://leetcode.cn/problems/palindromic-substrings/ https://leetcode.cn/problems/palindromic-substrings/submissions/597748845/
 - 516 https://leetcode.cn/problems/longest-palindromic-subsequence/
 - 417 https://leetcode.com/problems/pacific-atlantic-water-flow/
+- 1584-min-cost-to-connect-all-points-2.md
+- 1514-path-with-maximum-probability.md
 
 2005-02-09 day 2

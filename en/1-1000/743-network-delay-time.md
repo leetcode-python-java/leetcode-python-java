@@ -56,10 +56,10 @@ For a detailed description of **Dijkstra's algorithm**, please refer to [1514. P
 ### Common graph theory algorithm comparison table
 |Algorithm name|Main application scenarios|Optimization methods|Importance|Difficulty|min_distances|Negative weights|Additional application scenarios|
 |--------------|--------------------------|--------------------|----------|----------|-------------|----------------|--------------------------------|
-|[Prim's algorithm](../1001-2000/1584-min-cost-to-connect-all-points.md)     |Minimum Spanning Tree       |Heap Sort     |Important     |Medium         |Used    |Able to handle||
-|[Kruskal's algorithm](../1001-2000/1584-min-cost-to-connect-all-points-2.md)|Minimum Spanning Tree       |Heap Sort     |important     |Relatively hard|Not used|Able to handle|Relative: [Undirected Graph Cycle Detection](./684-redundant-connection.md), [Directed Graph Cycle Detection](./685-redundant-connection-ii.md)|
-|[Dijkstra's algorithm](../1001-2000/1514-path-with-maximum-probability.md)  |Single-Source Shortest Path |Heap Sort     |Very important|Medium         |Used    |Unable to handle||
-|[Bellman-Ford algorithm](./743-network-delay-time.md)                       |Single-Source Shortest Path |Queue-Improved|Very Important|Easy           |Used    |Able to handle|[Detect Negative Cycles](https://www.geeksforgeeks.org/detect-negative-cycle-graph-bellman-ford/), <br>[Shortest Hop-Bounded Paths](./787-cheapest-flights-within-k-stops.md)|
+|[Prim's algorithm](../1001-2000/1584-min-cost-to-connect-all-points.md)     |Minimum Spanning Tree       |Heap Sort Simplify|Important     |Medium         |Used    |Can handle||
+|[Kruskal's algorithm](../1001-2000/1584-min-cost-to-connect-all-points-2.md)|Minimum Spanning Tree       |No need           |important     |Relatively hard|Not used|Can handle|Relative: [Undirected Graph Cycle Detection](./684-redundant-connection.md), [Directed Graph Cycle Detection](./685-redundant-connection-ii.md)|
+|[Dijkstra's algorithm](../1001-2000/1514-path-with-maximum-probability.md)  |Single-Source Shortest Path |Heap Sort         |Very important|Relatively hard|Used    |Cannot handle||
+|[Bellman-Ford algorithm](./743-network-delay-time.md)                       |Single-Source Shortest Path |Queue-Improved    |Very Important|Easy           |Used    |Can handle|[Detect Negative Cycles](https://www.geeksforgeeks.org/detect-negative-cycle-graph-bellman-ford/), <br>[Shortest Hop-Bounded Paths](./787-cheapest-flights-within-k-stops.md)|
 
 ## Complexity
 **V**: vertex count, **E**: Edge count.
