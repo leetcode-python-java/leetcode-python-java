@@ -54,14 +54,14 @@
 
 **Dijkstra算法**的详细说明，请参考 [1514. 概率最大的路径](../1001-2000/1514-path-with-maximum-probability.md)。
 
-* 常见图论算法对比表：
+### 常见图论算法对照表
 
-|算法名称|主要的适用场景|优化方式|重要程度|难度|min_distances|额外的适用场景|
-|-------|-----------|-------|-------|---|-------------|------------|
-|[Prim算法](../1001-2000/1584-min-cost-to-connect-all-points.md)     |最小生成树  |堆排序          |重要   |中等|用到||
-|[Kruskal算法](../1001-2000/1584-min-cost-to-connect-all-points-2.md)|最小生成树  |堆排序          |重要   |较难|不用|相关场景：[无向图环检测](./684-redundant-connection.md),<br>[有向图环检测](./685-redundant-connection-ii.md)|
-|[Dijkstra算法](../1001-2000/1514-path-with-maximum-probability.md)  |单源最短路径|堆排序          |非常重要|中等|用到||
-|[Bellman-Ford算法](./743-network-delay-time.md)                     |单源最短路径|~~队列~~`集合`优化|非常重要|简单|用到|负边权值，[负环检测](https://www.geeksforgeeks.org/detect-negative-cycle-graph-bellman-ford/),<br>[限定步数最短路径](./787-cheapest-flights-within-k-stops.md)|
+|算法名称|主要的适用场景|优化方式|重要度|难度|min_<br>distances|负边权值|额外的适用场景|
+|-------|-----------|-------|-------|---|-------------|--------|------------|
+|[Prim算法](../1001-2000/1584-min-cost-to-connect-all-points.md)     |最小生成树  |堆排序           |重要   |中等|用到|能处理||
+|[Kruskal算法](../1001-2000/1584-min-cost-to-connect-all-points-2.md)|最小生成树  |堆排序           |重要   |较难|不用|能处理|相关：[无向图环检测](./684-redundant-connection.md), [有向图环检测](./685-redundant-connection-ii.md)|
+|[Dijkstra算法](../1001-2000/1514-path-with-maximum-probability.md)  |单源最短路径|堆排序           |很重要|中等|用到|不能处理||
+|[Bellman-Ford算法](./743-network-delay-time.md)                     |单源最短路径|集合优化|很重要|简单|用到|能处理|[负环检测](https://www.geeksforgeeks.org/detect-negative-cycle-graph-bellman-ford/), [限定步数最短路径](./787-cheapest-flights-within-k-stops.md)|
 
 ## 复杂度
 **V**: 顶点数量，**E**: 边的数量。
