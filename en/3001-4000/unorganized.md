@@ -65,6 +65,8 @@ The improved way with a queue is commonly more efficient. Relaxing **All Edges**
 |Dijkstra's algorithm|Vertices||
 |Bellman-Ford algorithm|Edges(Vertices+Edges for SPFA)||
 
+Add a table to show the differences between A-Start and breadth-first search
+
 ## Others
 * Find all the prime numbers within 1000000.
 
@@ -174,6 +176,8 @@ The improved way with a queue is commonly more efficient. Relaxing **All Edges**
 - 417 https://leetcode.com/problems/pacific-atlantic-water-flow/
 - 399 https://leetcode.com/problems/evaluate-division/ union-find
 - 1976 https://leetcode.com/problems/number-of-ways-to-arrive-at-destination/ both use Dijkstra or Bellman-Ford can solve it.
+- 1263 https://leetcode.com/problems/minimum-moves-to-move-a-box-to-their-target-location/ A-star
+
 
 ### Failed in 2 rounds
 - 222 https://leetcode.cn/problems/count-complete-tree-nodes/
@@ -192,4 +196,6 @@ The improved way with a queue is commonly more efficient. Relaxing **All Edges**
 - 1514-path-with-maximum-probability.md
 - 1334 https://leetcode.com/problems/find-the-city-with-the-smallest-number-of-neighbors-at-a-threshold-distance
 
-2005-02-09 day 2
+## other finished problems
+- https://leetcode.com/problems/k-closest-points-to-origin/
+- 

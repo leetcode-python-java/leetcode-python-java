@@ -45,10 +45,10 @@ The **word transformation sequence** problem can be abstracted into a **graph th
 ### Breadth-First Search
 ![](../../images/binary_tree_BFS_1.gif)
 
-* As shown in the figure above, **breadth-first search** can be thought of as visiting vertices in rounds and rounds. Actually, whenever you see a question is about
-getting `shortest` or `least` of something of a graph, `breadth-first search` would probably help.
+* As shown in the figure above, **Breadth-First Search** can be thought of as visiting vertices in rounds and rounds. Actually, whenever you see a question is about
+  getting `minimum number` of something of a graph, `Breadth-First Search` would probably help.
 
-* `breadth-first search` emphasizes first-in-first-out, so a **queue** is needed.
+* `Breadth-First Search` emphasizes first-in-first-out, so a **queue** is needed.
 
 ## Approach
 1. `Breadth-First Search` a graph means traversing **from near to far**, from `circle 1` to `circle N`. Each `circle` is a round of iteration, but we can simplify it by using just 1 round.
