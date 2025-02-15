@@ -121,6 +121,6 @@ You can skip the more difficult problems and do them later.
 - [752. Open the Lock](en/1-1000/752-open-the-lock.md) was solved in _Python_ and 2 ways.
 
 # Others
-- [433. Minimum Genetic Mutation](en/1-1000/433-minimum-genetic-mutation.md) was solved in _Python_.
+- [433. Minimum Genetic Mutation](en/1-1000/433-minimum-genetic-mutation.md) was solved in _Python_ and 2 ways.
 
 More LeetCode problems will be added soon.

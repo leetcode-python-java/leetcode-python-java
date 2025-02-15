@@ -69,12 +69,12 @@ We can think of this problem as a shortest path problem on a graph: there are `1
 
 **Breadth-First Search** treats each vertex equally, which inevitably leads to poor performance.
 
-**A-Star Algorithm** calculates the **distance** between each `vertex` and the `target vertex`, and prioritizes vertices with close distances, which greatly improves performance.
+The `A* (A-Star) algorithm` calculates the **distance** between each `vertex` and the `target vertex`, and **prioritizes vertices with closer distances**, which is equivalent to indicating which vertex to process next, so the performance is greatly improved!
 
 #### A* (A-Star) Algorithm Has Two (or Three) Key Actions
 1. Use `priority_queue`.
 2. The function for calculating `distance` should be **carefully designed** (poor design will lead to **subtle** errors in the results).
-3. In special cases, simply using `distance` as the sorting basis for `priority_queue` is not enough, and you need to **make some adjustments**, such as adding it to the `step_count` variable value (not involved in this example).
+3. In special cases, simply using `distance` as the sorting basis of `priority_queue` is not enough, and it is also necessary to **adjust** (for example, add it to the `number of steps` variable value) to make the last few steps accurate (not involved in this example, yet in this one [1197. Minimum Knight Moves](https://leetcode.com/problems/minimum-knight-moves/)).
 
 ## Complexity
 > `N` is the length of `deadends`.
