@@ -115,10 +115,10 @@ You can skip the more difficult problems and do them later.
 - [1584. Min Cost to Connect All Points](en/1001-2000/1584-min-cost-to-connect-all-points.md) was solved in _Python, Java, C++, JavaScript, C#, Go, Ruby_ and 2 ways.
 - [207. Course Schedule](en/1-1000/207-course-schedule.md) was solved in _Python, Java, C++, C#_ and 2 ways.
 - [1514. Path with Maximum Probability](en/1001-2000/1514-path-with-maximum-probability.md) was solved in _Python_ and 2 ways.
+- [752. Open the Lock](en/1-1000/752-open-the-lock.md) was solved in _Python_ and 2 ways.
 - [743. Network Delay Time](en/1-1000/743-network-delay-time.md) was solved in _Python_ and 2 ways.
 - [787. Cheapest Flights Within K Stops](en/1-1000/787-cheapest-flights-within-k-stops.md) was solved in _Python_.
 - [1334. Find the City With the Smallest Number of Neighbors at a Threshold Distance](en/1001-2000/1334-find-the-city-with-the-smallest-number-of-neighbors-at-a-threshold-distance.md) was solved in _Python_.
-- [752. Open the Lock](en/1-1000/752-open-the-lock.md) was solved in _Python_ and 2 ways.
 
 # Others
 - [433. Minimum Genetic Mutation](en/1-1000/433-minimum-genetic-mutation.md) was solved in _Python_ and 2 ways.

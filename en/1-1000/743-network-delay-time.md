@@ -56,11 +56,12 @@ For a detailed description of **Dijkstra's algorithm**, please refer to [1514. P
 ### Common graph theory algorithm comparison table
 |Algorithm name|Main application scenarios|Optimization methods|Importance|Difficulty|min_<br>distances|Negative weights|Additional application scenarios|
 |--------------|--------------------------|--------------------|----------|----------|-------------|----------------|--------------------------------|
-|[Prim's algorithm](../1001-2000/1584-min-cost-to-connect-all-points.md)                                                     |Minimum Spanning Tree       |Heap Sort Simplify|Important     |Medium         |Used    |Can handle||
-|[Kruskal's algorithm](../1001-2000/1584-min-cost-to-connect-all-points-2.md)                                                |Minimum Spanning Tree       |No need           |important     |Relatively hard|Not used|Can handle|Relative: [Undirected Graph Cycle Detection](./684-redundant-connection.md), [Directed Graph Cycle Detection](./685-redundant-connection-ii.md)|
-|[Dijkstra's algorithm](../1001-2000/1514-path-with-maximum-probability.md)                                                  |Single-Source Shortest Path |Heap Sort         |Very important|Relatively hard|Used    |Cannot handle||
-|[Bellman-Ford algorithm](./743-network-delay-time.md)                                                                       |Single-Source Shortest Path |Queue-Improved    |Very Important|Easy           |Used    |Can handle|[Detect Negative Cycles](https://www.geeksforgeeks.org/detect-negative-cycle-graph-bellman-ford/), <br>[Shortest Hop-Bounded Paths](./787-cheapest-flights-within-k-stops.md)|
-|[Floyd–Warshall](../1001-2000/1334-find-the-city-with-the-smallest-number-of-neighbors-at-a-threshold-distance.md)|Multi-Source Shortest Path  |No need           |Less important|Relatively hard|Used    |Can handle||
+|[Prim's algorithm](../1001-2000/1584-min-cost-to-connect-all-points.md)                                           |Minimum Spanning Tree      |Heap Sort Simplify|Important     |Medium         |Used    |Can handle||
+|[Kruskal's algorithm](../1001-2000/1584-min-cost-to-connect-all-points-2.md)                                      |Minimum Spanning Tree      |No need           |important     |Relatively hard|Not used|Can handle|Relative: [Undirected Graph Cycle Detection](./684-redundant-connection.md), [Directed Graph Cycle Detection](./685-redundant-connection-ii.md)|
+|[Dijkstra's algorithm](../1001-2000/1514-path-with-maximum-probability.md)                                        |Single-Source Shortest Path|Heap Sort         |Very important|Relatively hard|Used    |Cannot handle||
+|[A* search algorithm](./752-open-the-lock.md)                                                                     |Single-Source Shortest Path|Built-in Heap Sort|Very important|Medium         |Not used|It depends||
+|[Bellman-Ford algorithm](./743-network-delay-time.md)                                                             |Single-Source Shortest Path|Queue-Improved    |Very Important|Easy           |Used    |Can handle|[Detect Negative Cycles](https://www.geeksforgeeks.org/detect-negative-cycle-graph-bellman-ford/), <br>[Shortest Hop-Bounded Paths](./787-cheapest-flights-within-k-stops.md)|
+|[Floyd–Warshall](../1001-2000/1334-find-the-city-with-the-smallest-number-of-neighbors-at-a-threshold-distance.md)|Multi-Source Shortest Path |No need           |Less important|Relatively hard|Used    |Can handle||
 
 ## Complexity
 **V**: vertex count, **E**: Edge count.

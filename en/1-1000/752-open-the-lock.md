@@ -69,7 +69,7 @@ We can think of this problem as a shortest path problem on a graph: there are `1
 
 **Breadth-First Search** treats each vertex equally, which inevitably leads to poor performance.
 
-The `A* (A-star) search algorithm` calculates the **distance** between each `vertex` and the `target vertex`, and **prioritizes vertices with closer distances**, which is equivalent to indicating which vertex to process next, so the performance is greatly improved!
+The _A* (A-star) search algorithm_ calculates the **distance** between each `vertex` and the `target vertex`, and **prioritizes vertices with closer distances**, which is equivalent to indicating which vertex to process next, so the performance is greatly improved!
 
 _A* (A-star) search algorithm_ is similar to _Dijkstra's algorithm_, but the `target vertex` of _A* (A-star) search algorithm_ is clear, while that of _Dijkstra's algorithm_ is not. _Dijkstra's algorithm_ calculates the `distance` from the `starting vertex` to the `vertex` it reaches.
 
