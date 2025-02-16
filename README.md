@@ -106,8 +106,8 @@ You can skip the more difficult problems and do them later.
 - [797. All Paths From Source to Target](en/1-1000/797-all-paths-from-source-to-target.md) was solved in _Python, Java, C++, JavaScript, C#, Go, Ruby_ and **2** ways.
 - [200. Number of Islands](en/1-1000/200-number-of-islands.md) was solved in _Python, Java, C++, JavaScript, C#, Go, Ruby_ and **3** ways.
 - [463. Island Perimeter](en/1-1000/463-island-perimeter.md) was solved in _Python_ and **2** ways.
-- [695. Max Area of Island](en/1-1000/695-max-area-of-island.md) was solved in _Python, Java, C++, JavaScript, C#, Go, Ruby_.
-- [827. Making A Large Island](en/1-1000/827-making-a-large-island.md) was solved in _Python_.
+- [695. Max Area of Island](en/1-1000/695-max-area-of-island.md) was solved in _Python, Java, C++, JavaScript, C#, Go, Ruby_ and **3** ways.
+- [827. Making A Large Island](en/1-1000/827-making-a-large-island.md) was solved in _Python_ and **2** ways.
 - [127. Word Ladder](en/1-1000/127-word-ladder.md) was solved in _Python_.
 - [1971. Find if Path Exists in Graph](en/1001-2000/1971-find-if-path-exists-in-graph.md) was solved in _Python, Java, C++, JavaScript, C#, Go, Ruby_ and 2 ways.
 - [684. Redundant Connection](en/1-1000/684-redundant-connection.md) was solved in _Python, Java, C++, JavaScript, C#, Go, Ruby_.
@@ -122,5 +122,7 @@ You can skip the more difficult problems and do them later.
 
 # Others
 - [433. Minimum Genetic Mutation](en/1-1000/433-minimum-genetic-mutation.md) was solved in _Python_ and 2 ways.
+
+TODO: Add A* for 433 and 127?
 
 More LeetCode problems will be added soon.

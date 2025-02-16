@@ -177,7 +177,8 @@ Add a table to show the differences between A-Start and breadth-first search
 - 399 https://leetcode.com/problems/evaluate-division/ union-find
 - 1976 https://leetcode.com/problems/number-of-ways-to-arrive-at-destination/ both use Dijkstra or Bellman-Ford can solve it.
 - 1263 https://leetcode.com/problems/minimum-moves-to-move-a-box-to-their-target-location/ A-star
-
+- 695. Max Area of Island 2 other ways should be added with code
+- 827 making-a-large-island breadth-first-search should be added with code
 
 ### Failed in 2 rounds
 - 222 https://leetcode.cn/problems/count-complete-tree-nodes/

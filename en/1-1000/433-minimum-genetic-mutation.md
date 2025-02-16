@@ -52,13 +52,13 @@ So this issue can be solved by **Breadth-First Search** on a undirected graph.
 * Time: `O((8 * 4) * N)`.
 * Space: `O(N)`.
 
-### Solution 2: A* (A-Star) Algorithm
+### Solution 2: A* (A-Star) Search Algorithm
 
-**A-Star Algorithm** can be used to improve the performance of **Breadth-First Search Algorithm**.
+**A-Star Search Algorithm** can be used to improve the performance of **Breadth-First Search Algorithm**.
 
 Please view **A-Star Algorithm** at [752. Open the Lock](./752-open-the-lock.md).
 
-Bellow is code using _A-Star Algorithm_ in Python.
+Bellow is code using _A-Star Search Algorithm_ in Python.
 
 ## Python
 ### Solution 1: Breadth-First Search
@@ -101,7 +101,7 @@ class Solution:
                     self.bank.remove(mutation)
 ```
 
-### Solution 2: A* (A-Star) Algorithm
+### Solution 2: A* (A-Star) Search Algorithm
 ```python
 
 ```
