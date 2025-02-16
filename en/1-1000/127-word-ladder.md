@@ -51,7 +51,7 @@ The **word transformation sequence** problem can be abstracted into a **graph th
 * `Breadth-First Search` emphasizes first-in-first-out, so a **queue** is needed.
 
 ## Approach
-1. `Breadth-First Search` a graph means traversing **from near to far**, from `circle 1` to `circle N`. Each `circle` is a round of iteration, but we can simplify it by using just 1 round.
+1. `Breadth-First Search` a graph means traversing **from near to far**, from `circle 1` to `circle N`. Each `circle` is a round of iteration.
 1. So through `Breadth-First Search`, when a word matches `endWord`, the game is over, and we can return the number of **circle** as a result.
 
 ## Complexity

@@ -29,12 +29,11 @@ Note that the starting point is assumed to be valid, so it might not be included
 - `startGene.length == endGene.length == bank[i].length == 8`
 - `startGene`, `endGene`, and `bank[i]` consist of only the characters `['A', 'C', 'G', 'T']`.
 
-## Intuition
+## Intuition 1
 We can think of this problem as a shortest path problem on a graph: there are `4^8` vertices (strings `'AAAAAAAA'` to `'TTTTTTTT'`), and there is an edge between two vertices if they differ in one character, and if *both* vertices are in `bank`.
 
 So this issue can be solved by **Breadth-First Search** on a undirected graph.
 
-### Solution 1: Breadth-First Search
 ![](../../images/binary_tree_BFS_1.gif)
 
 * As shown in the figure above, **Breadth-First Search** can be thought of as visiting vertices in rounds and rounds. Actually, whenever you see a question is about
@@ -42,26 +41,26 @@ So this issue can be solved by **Breadth-First Search** on a undirected graph.
 
 * `Breadth-First Search` emphasizes first-in-first-out, so a **queue** is needed.
 
-#### Approach
-1. `Breadth-First Search` a graph means traversing **from near to far**, from `circle 1` to `circle N`. Each `circle` is a round of iteration, but we can simplify it by using just 1 round.
-1. So through `Breadth-First Search`, when a word matches `endWord`, the game is over, and we can return the number of **circle** as a result.
+### Approach 1: Breadth-First Search Algorithm
+1. `Breadth-First Search` a graph means traversing **from near to far**, from `circle 1` to `circle N`. Each `circle` is a round of iteration.
+1. So through `Breadth-First Search`, when a word matches `endGene`, the game is over, and we can return the number of **circle** as a result.
 
-#### Complexity
+### Complexity
 > **N** is the length of `bank`.
 
 * Time: `O((8 * 4) * N)`.
 * Space: `O(N)`.
 
-### Solution 2: A* (A-Star) Search Algorithm
+## Approach 2: A* (A-Star) Search Algorithm
 
-**A-Star Search Algorithm** can be used to improve the performance of **Breadth-First Search Algorithm**.
+**A-Star Search Algorithm** can be used to greatly improve the performance of **Breadth-First Search Algorithm**.
 
-Please view **A-Star Algorithm** at [752. Open the Lock](./752-open-the-lock.md).
+Please view detailed **A-Star Algorithm** at [752. Open the Lock](./752-open-the-lock.md).
 
-Bellow is code using _A-Star Search Algorithm_ in Python.
+Bellow has code using _A-Star Search Algorithm_ in Python.
 
 ## Python
-### Solution 1: Breadth-First Search
+### Approach 1: Breadth-First Search (way 1)
 ```python
 class Solution:
     def minMutation(self, start_gene: str, end_gene: str, bank: List[str]) -> int:
@@ -70,14 +69,14 @@ class Solution:
 
         self.end_gene = end_gene
         self.bank = set(bank)
-        self.queue = deque([start_gene])
+        self.queue = deque([start_gene]) # difference 1
         result = 0
 
         while self.queue:
-            result += 1
+            result += 1 # difference 2
             queue_size = len(self.queue)
 
-            for i in range(queue_size):
+            for i in range(queue_size): # difference 3
                 gene = self.queue.popleft()
 
                 if self.mutate_one(gene):
@@ -85,7 +84,7 @@ class Solution:
 
         return -1
 
-    def mutate_one(self, gene):
+    def mutate_one(self, gene): # difference 4
         for i in range(len(gene)):
             for char in ['A', 'C', 'G', 'T']:
                 if gene[i] == char:
@@ -101,9 +100,85 @@ class Solution:
                     self.bank.remove(mutation)
 ```
 
-### Solution 2: A* (A-Star) Search Algorithm
+### Approach 1: Breadth-First Search (way 2 by adding `mutated_count` in queue's item)
 ```python
+class Solution:
+    def minMutation(self, start_gene: str, end_gene: str, bank: List[str]) -> int:
+        if not end_gene in bank:
+            return -1
 
+        self.bank = set(bank)
+        self.end_gene = end_gene
+        self.queue = deque([(start_gene, 0)]) # difference 1
+
+        while self.queue:
+            gene, mutated_count = self.queue.popleft() # difference 2
+
+            if self.mutate_one(gene, mutated_count):
+                return mutated_count + 1
+
+        return -1
+
+    def mutate_one(self, gene, mutated_count): # difference 3
+        for i in range(len(gene)):
+            for char in ['A', 'C', 'G', 'T']:
+                if gene[i] == char:
+                    continue
+
+                mutation = f'{gene[:i]}{char}{gene[i + 1:]}'
+
+                if mutation == self.end_gene:
+                    return True
+
+                if mutation in self.bank:
+                    self.queue.append((mutation, mutated_count + 1))
+                    self.bank.remove(mutation)
+```
+
+### Approach 2: A* (A-Star) Search Algorithm
+```python
+import heapq
+
+
+class Solution:
+    def minMutation(self, start_gene: str, end_gene: str, bank: List[str]) -> int:
+        if not end_gene in bank:
+            return -1
+
+        self.end_gene = end_gene
+        bank = set(bank)
+        priority_queue = [(self.distance(start_gene), start_gene, 0)] # difference 1
+
+        while priority_queue:
+            _, gene, mutated_count = heapq.heappop(priority_queue) # difference 2
+
+            for i in range(len(gene)):
+                for char in ['A', 'C', 'G', 'T']:
+                    if gene[i] == char:
+                        continue
+
+                    mutation = f'{gene[:i]}{char}{gene[i + 1:]}'
+
+                    if mutation == end_gene:
+                        return mutated_count + 1
+
+                    if mutation in bank:
+                        heapq.heappush(
+                            priority_queue,
+                            (self.distance(mutation), mutation, mutated_count + 1)
+                        ) # difference 3
+                        bank.remove(mutation)
+
+        return -1
+
+    def distance(self, gene): # difference 4
+        result = 0
+        
+        for i in range(8):
+            if gene[i] != self.end_gene[i]:
+                result += 1
+
+        return result
 ```
 
 ## JavaScript
