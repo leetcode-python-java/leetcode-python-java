@@ -63,17 +63,19 @@ We can think of this problem as a shortest path problem on a graph: there are `1
 
 * `Breadth-First Search` emphasizes first-in-first-out, so a **queue** is needed.
 
-### Solution 2: A* (A-Star) Algorithm
+### Solution 2: A* (A-Star) Search Algorithm
 
 **A-Star Algorithm** can be used to improve the performance of **Breadth-First Search Algorithm**.
 
 **Breadth-First Search** treats each vertex equally, which inevitably leads to poor performance.
 
-The `A* (A-Star) algorithm` calculates the **distance** between each `vertex` and the `target vertex`, and **prioritizes vertices with closer distances**, which is equivalent to indicating which vertex to process next, so the performance is greatly improved!
+The `A* (A-star) search algorithm` calculates the **distance** between each `vertex` and the `target vertex`, and **prioritizes vertices with closer distances**, which is equivalent to indicating which vertex to process next, so the performance is greatly improved!
 
-#### A* (A-Star) Algorithm Has Two (or Three) Key Actions
+_A* (A-star) search algorithm_ is similar to _Dijkstra's algorithm_, but the `target vertex` of _A* (A-star) search algorithm_ is clear, while that of _Dijkstra's algorithm_ is not. _Dijkstra's algorithm_ calculates the `distance` from the `starting vertex` to the `vertex` it reaches.
+
+#### A* (A-Star) Search Algorithm Has Two (or Three) Key Actions
 1. Use `priority_queue`.
-2. The function for calculating `distance` should be **carefully designed** (poor design will lead to **subtle** errors in the results).
+2. The **heuristic function** for calculating `distance` should be **carefully designed** (poor design will lead to **subtle** errors in the results).
 3. In special cases, simply using `distance` as the sorting basis of `priority_queue` is not enough, and it is also necessary to **adjust** (for example, add it to the `number of steps` variable value) to make the last few steps accurate (not involved in this example, yet in this one [1197. Minimum Knight Moves](https://leetcode.com/problems/minimum-knight-moves/)).
 
 ## Complexity
@@ -83,7 +85,7 @@ The `A* (A-Star) algorithm` calculates the **distance** between each `vertex` an
 * Time: `O(10^4)`.
 * Space: `O(N)`.
 
-### Solution 2: A* (A-Star) Algorithm
+### Solution 2: A* (A-Star) Search Algorithm
 * Time: `O(5 * 4 * 4 * 2 + N)`.
 * Space: `O(N)`.
 
@@ -141,7 +143,7 @@ def closest_digits(digit):
     return (digit - 1, digit + 1)
 ```
 
-### Solution 2: A* (A-Star) Algorithm
+### Solution 2: A* (A-Star) Search Algorithm
 ```python
 class Solution:
     def openLock(self, deadends: List[str], target_digits: str) -> int:
