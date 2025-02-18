@@ -121,8 +121,8 @@ You can skip the more difficult problems and do them later.
 - [1334. Find the City With the Smallest Number of Neighbors at a Threshold Distance](en/1001-2000/1334-find-the-city-with-the-smallest-number-of-neighbors-at-a-threshold-distance.md) was solved in _Python_.
 
 # Others
-- [433. Minimum Genetic Mutation](en/1-1000/433-minimum-genetic-mutation.md) was solved in _Python_ and 2 ways.
+- [433. Minimum Genetic Mutation](en/1-1000/433-minimum-genetic-mutation.md) was solved in _Python_ and 3 ways.
 
-TODO: Add A* for 433 and 127?
+TODO: Add A* for 127?
 
 More LeetCode problems will be added soon.

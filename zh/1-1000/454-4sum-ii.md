@@ -1,51 +1,44 @@
-# 454. 4Sum II - Best Practices of LeetCode Solutions
-LeetCode link: [454. 4Sum II](https://leetcode.com/problems/4sum-ii),
-[454. 四数相加 II](https://leetcode.cn/problems/4sum-ii)
+# 454. 四数相加 II - 力扣题解最佳实践
+力扣链接：[454. 四数相加 II](https://leetcode.cn/problems/4sum-ii) ，难度：**中等**。
 
-[中文题解](#中文题解)
-
-## LeetCode problem description
-Given four integer arrays `nums1`, `nums2`, `nums3`, and `nums4` all of length `n`, return the number of tuples` (i, j, k, l)` such that:
+## 力扣“454. 四数相加 II”问题描述
+给你四个整数数组 `nums1`、`nums2`、`nums3` 和 `nums4` ，数组长度都是 `n` ，请你计算有多少个元组 `(i, j, k, l)` 能满足：
 
 * `0 <= i, j, k, l < n`
 * `nums1[i] + nums2[j] + nums3[k] + nums4[l] == 0`
 
-Difficulty: **Medium**
+### [示例 1]
+**输入**: `nums1 = [1,2], nums2 = [-2,-1], nums3 = [-1,2], nums4 = [0,2]`
 
-### [Example 1]
-**Input**: `nums1 = [1,2], nums2 = [-2,-1], nums3 = [-1,2], nums4 = [0,2]`
+**输出**: `2`
 
-**Output**: `2`
-
-**Explanation**:
+**解释**:
 ```
-The two tuples are:
+两个元组如下：
 1. (0, 0, 0, 1) -> nums1[0] + nums2[0] + nums3[0] + nums4[1] = 1 + (-2) + (-1) + 2 = 0
 2. (1, 1, 0, 0) -> nums1[1] + nums2[1] + nums3[0] + nums4[0] = 2 + (-1) + (-1) + 0 = 0
 ```
 
-### [Example 2]
-**Input**: `nums1 = [0], nums2 = [0], nums3 = [0], nums4 = [0]`
+### [示例 2]
+**输入**: `nums1 = [0], nums2 = [0], nums3 = [0], nums4 = [0]`
 
-**Output**: `1`
+**输出**: `1`
 
-### [Constraints]
+### [约束]
 - `n == nums1.length`
 - `n == nums2.length`
 - `n == nums3.length`
 - `n == nums4.length`
 - `1 <= n <= 200`
-- `-2**28 <= nums1[i], nums2[i], nums3[i], nums4[i] <= 2**28`
+- `-2^28 <= nums1[i], nums2[i], nums3[i], nums4[i] <= 2^28`
 
-## Intuition
-[中文题解](#中文题解)
+## 思路
+1. 因为最终要求是每组数中各取一个数，所以可以把四组数拆分成两个两组数。
+2. 统计出每个`和`值对应的个数。使用`Map`储存，`key`为`和`，`value`为`count`。
+3. 遍历`nums3`和`nums4`，如果`-(num3 + num4)`存在于`Map`的`keys`中，则`count`计入总数。
 
-1. Because the final requirement is to take one number from each group of numbers, the four groups of numbers can be split into **two groups of two**.
-2. Count the number of each `sum`. Use `Map` to store, `key` is `sum`, `value` is `count`.
-3. Iterate over `nums3` and `nums4`, if `-(num3 + num4)` exists in `keys` of `Map`, then `count` is included in the total.
-
-## Steps
-1. Count the number of each `sum`. Use `Map` to store, `key` is `sum`, `value` is `count`.
+## 步骤
+1. 统计出每个`和`值对应的个数。使用`Map`储存，`key`为`和`，`value`为`count`。
 ```python
 num_to_count = defaultdict(int)
 
@@ -54,7 +47,7 @@ for num1 in nums1:
         num_to_count[num1 + num2] += 1
 ```
 
-2. Iterate over `nums3` and `nums4`, if `-(num3 + num4)` exists in `keys` of `Map`, then `count` is included in the total.
+2. 遍历`nums3`和`nums4`，如果`-(num3 + num4)`存在于`Map`的`keys`中，则`count`计入总数。
 ```python
 result = 0
 
@@ -65,9 +58,9 @@ for num3 in nums3:
 return result
 ```
 
-## Complexity
-* Time: `O(n * n)`.
-* Space: `O(n)`.
+## 复杂度
+* 时间: `O(n * n)`.
+* 空间: `O(n)`.
 
 ## Java
 ```java
@@ -228,51 +221,4 @@ end
 ## Other languages
 ```
 // Welcome to create a PR to complete the code of this language, thanks!
-```
-
-## 问题描述
-给你四个整数数组 `nums1`、`nums2`、`nums3` 和 `nums4` ，数组长度都是 `n` ，请你计算有多少个元组 `(i, j, k, l)` 能满足：
-
-* `0 <= i, j, k, l < n`
-* `nums1[i] + nums2[j] + nums3[k] + nums4[l] == 0`
-
-难度: **中等**
-
-### [示例 1]
-**输入**: `nums1 = [1,2], nums2 = [-2,-1], nums3 = [-1,2], nums4 = [0,2]`
-
-**输出**: `2`
-
-**解释**:
-```
-两个元组如下：
-1. (0, 0, 0, 1) -> nums1[0] + nums2[0] + nums3[0] + nums4[1] = 1 + (-2) + (-1) + 2 = 0
-2. (1, 1, 0, 0) -> nums1[1] + nums2[1] + nums3[0] + nums4[0] = 2 + (-1) + (-1) + 0 = 0
-```
-
-# 中文题解
-## 思路
-1. 因为最终要求是每组数中各取一个数，所以可以把四组数拆分成两个两组数。
-2. 统计出每个`和`值对应的个数。使用`Map`储存，`key`为`和`，`value`为`count`。
-3. 遍历`nums3`和`nums4`，如果`-(num3 + num4)`存在于`Map`的`keys`中，则`count`计入总数。
-
-## 步骤
-1. 统计出每个`和`值对应的个数。使用`Map`储存，`key`为`和`，`value`为`count`。
-```python
-num_to_count = defaultdict(int)
-
-for num1 in nums1:
-    for num2 in nums2:
-        num_to_count[num1 + num2] += 1
-```
-
-2. 遍历`nums3`和`nums4`，如果`-(num3 + num4)`存在于`Map`的`keys`中，则`count`计入总数。
-```python
-result = 0
-
-for num3 in nums3:
-    for num4 in nums4:
-        result += num_to_count[-(num3 + num4)]
-
-return result
 ```

@@ -1,16 +1,11 @@
 # 454. 4Sum II - Best Practices of LeetCode Solutions
-LeetCode link: [454. 4Sum II](https://leetcode.com/problems/4sum-ii),
-[454. 四数相加 II](https://leetcode.cn/problems/4sum-ii)
+LeetCode link: [454. 4Sum II](https://leetcode.com/problems/problem), difficulty: **Medium**.
 
-[中文题解](#中文题解)
-
-## LeetCode problem description
+## LeetCode description of "454. 4Sum II"
 Given four integer arrays `nums1`, `nums2`, `nums3`, and `nums4` all of length `n`, return the number of tuples` (i, j, k, l)` such that:
 
 * `0 <= i, j, k, l < n`
 * `nums1[i] + nums2[j] + nums3[k] + nums4[l] == 0`
-
-Difficulty: **Medium**
 
 ### [Example 1]
 **Input**: `nums1 = [1,2], nums2 = [-2,-1], nums3 = [-1,2], nums4 = [0,2]`
@@ -38,8 +33,6 @@ The two tuples are:
 - `-2**28 <= nums1[i], nums2[i], nums3[i], nums4[i] <= 2**28`
 
 ## Intuition
-[中文题解](#中文题解)
-
 1. Because the final requirement is to take one number from each group of numbers, the four groups of numbers can be split into **two groups of two**.
 2. Count the number of each `sum`. Use `Map` to store, `key` is `sum`, `value` is `count`.
 3. Iterate over `nums3` and `nums4`, if `-(num3 + num4)` exists in `keys` of `Map`, then `count` is included in the total.
@@ -228,51 +221,4 @@ end
 ## Other languages
 ```
 // Welcome to create a PR to complete the code of this language, thanks!
-```
-
-## 问题描述
-给你四个整数数组 `nums1`、`nums2`、`nums3` 和 `nums4` ，数组长度都是 `n` ，请你计算有多少个元组 `(i, j, k, l)` 能满足：
-
-* `0 <= i, j, k, l < n`
-* `nums1[i] + nums2[j] + nums3[k] + nums4[l] == 0`
-
-难度: **中等**
-
-### [示例 1]
-**输入**: `nums1 = [1,2], nums2 = [-2,-1], nums3 = [-1,2], nums4 = [0,2]`
-
-**输出**: `2`
-
-**解释**:
-```
-两个元组如下：
-1. (0, 0, 0, 1) -> nums1[0] + nums2[0] + nums3[0] + nums4[1] = 1 + (-2) + (-1) + 2 = 0
-2. (1, 1, 0, 0) -> nums1[1] + nums2[1] + nums3[0] + nums4[0] = 2 + (-1) + (-1) + 0 = 0
-```
-
-# 中文题解
-## 思路
-1. 因为最终要求是每组数中各取一个数，所以可以把四组数拆分成两个两组数。
-2. 统计出每个`和`值对应的个数。使用`Map`储存，`key`为`和`，`value`为`count`。
-3. 遍历`nums3`和`nums4`，如果`-(num3 + num4)`存在于`Map`的`keys`中，则`count`计入总数。
-
-## 步骤
-1. 统计出每个`和`值对应的个数。使用`Map`储存，`key`为`和`，`value`为`count`。
-```python
-num_to_count = defaultdict(int)
-
-for num1 in nums1:
-    for num2 in nums2:
-        num_to_count[num1 + num2] += 1
-```
-
-2. 遍历`nums3`和`nums4`，如果`-(num3 + num4)`存在于`Map`的`keys`中，则`count`计入总数。
-```python
-result = 0
-
-for num3 in nums3:
-    for num4 in nums4:
-        result += num_to_count[-(num3 + num4)]
-
-return result
 ```
