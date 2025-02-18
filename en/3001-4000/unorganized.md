@@ -59,11 +59,14 @@ The improved way with a queue is commonly more efficient. Relaxing **All Edges**
 * The time complexity of `Floyd–Warshall algorithm` is `V * V * V`. For a dense graph, `Floyd–Warshall algorithm` is still faster.
 * `A* algorithm` use a `priority queue`, `pop()` to get the vertex closest to the destination vertex. We need to choose **proper math formula** to determine which one is the closest. We to the very near place of destination vertex, we can use some special method to make it can handle the last part.  
 
-|Algorithm name|Focus|Key implementation methods|
+|Algorithm name|Focus|Key implementation methods|mark visited|
 |Prim's algorithm|Vertices||
 |Kruskal's algorithm|Edges|Union-Find|
 |Dijkstra's algorithm|Vertices||
 |Bellman-Ford algorithm|Edges(Vertices+Edges for SPFA)||
+|Dijkstra's by heap sort - min_distance = A*|
+UnionFind + Heap sort = Kruskal
+BFS + heap sort = A*
 
 Add a table to show the differences between A-Start and breadth-first search
 

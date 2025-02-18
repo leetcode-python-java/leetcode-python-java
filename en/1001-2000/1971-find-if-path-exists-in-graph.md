@@ -94,7 +94,7 @@ class Solution:
         return False
 ```
 
-### Depth-first search
+### Depth-first search (more complex)
 ```python
 class Solution:
     def __init__(self):
