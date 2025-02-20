@@ -1,39 +1,37 @@
-# 349. Intersection of Two Arrays - Best Practices of LeetCode Solutions
-LeetCode link: [349. Intersection of Two Arrays](https://leetcode.com/problems/intersection-of-two-arrays),
-[349. 两个数组的交集](https://leetcode.cn/problems/intersection-of-two-arrays)
+# 349. 两个数组的交集 - 力扣题解最佳实践
+力扣链接：[349. 两个数组的交集](https://leetcode.cn/problems/intersection-of-two-arrays) ，难度：**简单**。
 
-[中文题解](#中文题解)
+## 力扣“349. 两个数组的交集”问题描述
+给定两个数组 `nums1` 和 `nums2` ，返回 _它们的 **交集**_ 。输出结果中的每个元素一定是 **唯一** 的。我们可以 **不考虑输出结果的顺序**。
 
-## LeetCode problem description
-Given two integer arrays `nums1` and `nums2`, return _an array of their **intersection**_.
-Each element in the result must be **unique** and you may return the result in **any order**.
+> 数组的交集: The intersection of two arrays is defined as the set of elements that are present in both arrays.
 
-Difficulty: **Easy**
+### [示例 1]
 
-### [Example 1]
-**Input**: `nums1 = [1,2,2,1], nums2 = [2,2]`
+**输入**: `nums1 = [1,2,2,1], nums2 = [2,2]`
 
-**Output**: `[2]`
+**输出**: `[2]`
 
-### [Example 2]
-**Input**: `nums1 = [4,9,5], nums2 = [9,4,9,8,4]`
+### [示例 2]
 
-**Output**: `[9,4]` or `[4,9]`
+**输入**: `nums1 = [4,9,5], nums2 = [9,4,9,8,4]`
 
-### [Constraints]
+**输出**: `[9,4]`
+
+**解释**: `[4,9] 也是可通过的`
+
+### [约束]
 - `1 <= nums1.length, nums2.length <= 1000`
 - `0 <= nums1[i], nums2[i] <= 1000`
 
-## Intuition
-[中文题解](#中文题解)
+## 思路
+1. 把其中一个数组转为`set`，数据结构`set`的特点是元素不重复。
+2. 遍历另一个数组时，如果发现当前元素已经存在于`set`中，则说明该元素属于交集，将该元素加入结果集中。
+3. 结果集也采用`set`类型，因为需要去重。
 
-1. Convert one of the arrays to a `set`. The elements are unique in a `set`.
-2. When traversing the other array, if the an element is found to already exist in the `set`, it means that the element belongs to the intersection, and the element should be added to the `results`.
-3. The `results` is also of `set` type because duplicate removal is required.
-
-## Complexity
-* Time: `O(n)`.
-* Space: `O(n)`.
+## 复杂度
+* 时间：`O(N)`。
+* 空间：`O(N)`。
 
 ## Java
 ```java
@@ -167,48 +165,7 @@ def intersection(nums1, nums2)
 end
 ```
 
-## C
-```c
-// Welcome to create a PR to complete the code of this language, thanks!
-```
-
-## Kotlin
-```kotlin
-// Welcome to create a PR to complete the code of this language, thanks!
-```
-
-## Swift
-```swift
-// Welcome to create a PR to complete the code of this language, thanks!
-```
-
-## Rust
-```rust
-// Welcome to create a PR to complete the code of this language, thanks!
-```
-
-## Other languages
+## C, Kotlin, Swift, Rust or other languages
 ```
 // Welcome to create a PR to complete the code of this language, thanks!
 ```
-
-## 问题描述
-给定两个数组 `nums1` 和 `nums2` ，返回 _它们的 **交集**_ 。输出结果中的每个元素一定是 **唯一** 的。我们可以 **不考虑输出结果的顺序** 。
-
-难度: **容易**
-
-### [示例 1]
-**输入**: `nums1 = [1,2,2,1], nums2 = [2,2]`
-
-**输出**: `[2]`
-
-### [示例 2]
-**输入**: `nums1 = [4,9,5], nums2 = [9,4,9,8,4]`
-
-**输出**: `[9,4]` 或者 `[4,9]`
-
-# 中文题解
-## 思路
-1. 把其中一个数组转为`set`，数据结构`set`的特点是元素不重复。
-2. 遍历另一个数组时，如果发现当前元素已经存在于`set`中，则说明该元素属于交集，将该元素加入结果集中。
-3. 结果集也采用`set`类型，因为需要去重。

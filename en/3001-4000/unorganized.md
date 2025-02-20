@@ -203,4 +203,6 @@ Add a table to show the differences between A-Start and breadth-first search
 
 ## other finished problems
 - https://leetcode.com/problems/k-closest-points-to-origin/
+- https://leetcode.com/problems/find-special-substring-of-length-k/
+- https://leetcode.cn/problems/eat-pizzas/
 - 
