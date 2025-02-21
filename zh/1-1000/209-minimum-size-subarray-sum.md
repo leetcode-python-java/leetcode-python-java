@@ -1,57 +1,55 @@
-# 209. Minimum Size Subarray Sum - Best Practices of LeetCode Solutions
-LeetCode link: [209. Minimum Size Subarray Sum](https://leetcode.com/problems/minimum-size-subarray-sum),
-[209. 长度最小的子数组](https://leetcode.cn/problems/minimum-size-subarray-sum)
+# 209. 长度最小的子数组 - 力扣题解最佳实践
+力扣链接：[209. 长度最小的子数组](https://leetcode.cn/problems/minimum-size-subarray-sum) ，难度：**中等**。
 
-[中文题解](#中文题解)
+## 力扣“209. 长度最小的子数组”问题描述
+给定一个含有 `n` 个正整数的数组和一个正整数 `target` 。
 
-## LeetCode problem description
-Given an array of positive integers `nums` and a positive integer `target`, return _the **minimal length** of a **subarray** whose sum is greater than or equal to `target`_. If there is no such subarray, return `0` instead.
+找出该数组中满足其总和大于等于 `target` 的长度**最小的** **子数组** `[numsl, numsl+1, ..., numsr-1, numsr]` ，并返回*其长度*。如果不存在符合条件的子数组，返回 `0` 。
 
-* A **subarray** is a contiguous non-empty sequence of elements within an array.
+> **子数组** 是数组中连续的 **非空** 元素序列。
 
-Difficulty: **Medium**
+### [示例 1]
+**输入**: `target = 7, nums = [2,3,1,2,4,3]`
 
-### [Example 1]
-**Input**: `target = 7, nums = [2,3,1,2,4,3]`
+**输出**: `2`
 
-**Output**: `2`
+**解释**: `子数组 _[4,3]_ 是该条件下的长度最小的子数组。`
 
-**Explanation**: `The subarray [4,3] has the minimal length under the problem constraint.`
+### [示例 2]
+**输入**: `target = 4, nums = [1,4,4]`
 
-### [Example 2]
-**Input**: `target = 4, nums = [1,4,4]`
+**输出**: `1`
 
-**Output**: `1`
+### [示例 3]
+**输入**: `target = 11, nums = [1,1,1,1,1,1,1,1]`
 
-### [Example 3]
-**Input**: `target = 11, nums = [1,1,1,1,1,1,1,1]`
+**输出**: `0`
 
-**Output**: `0`
-
-### [Constraints]
-- `1 <= target <= 10 ** 9`
-- `1 <= nums.length <= 100000`
+### [约束]
+- `1 <= target <= 10^9`
+- `1 <= nums.length <= 10^5`
 - `1 <= nums[i] <= 10000`
 
-## Intuition
-For **subarray** problems, you can consider using **Sliding Window Technique**, which is similar to the **Fast and Slow Pointers Technique**.
+## 思路
+1. 对于**子数组**问题，可以考虑使用**滑动窗口技术**，它类似于**快速和慢速指针技术**。
 
-## Steps
-* Iterate over the `nums` array, the `index` of the element is named `fastIndex`. Although inconspicuous, this is the most important logic of the _Fast and Slow Pointers Technique_. Please memorize it.
-* `sum += nums[fast_index]`.
+
+## 步骤
+1. **遍历** `nums` 数组，元素的 `index` 可命名为 `fastIndex`。虽然不起眼，但这是 `快慢指针技术` **最重要**的逻辑。请最好记住它。
+2. `sum += nums[fast_index]`.
 ```java
 var minLength = Integer.MAX_VALUE;
 var sum = 0;
 var slowIndex = 0;
 
-for (var fastIndex = 0; fastIndex < nums.length; fastIndex++) { // This line the most important logic of the `Fast and Slow Pointers Technique`.
+for (var fastIndex = 0; fastIndex < nums.length; fastIndex++) { // 本行是`快慢指针技术`最重要的逻辑
     sum += nums[fastIndex]; // 1
 }
 
 return minLength;
 ```
 
-* Control of `slowIndex`:
+3. 控制`slowIndex`。
 ```java
 var minLength = Integer.MAX_VALUE;
 var sum = 0;
@@ -74,9 +72,9 @@ if (minLength == Integer.MAX_VALUE) { // 5
 return minLength;
 ```
 
-## Complexity
-* Time: `O(n)`.
-* Space: `O(1)`.
+## 复杂度
+* 时间: `O(n)`.
+* 空间: `O(1)`.
 
 ## Java
 ```java
@@ -220,62 +218,4 @@ public class Solution
 ## Other languages
 ```
 // Welcome to create a PR to complete the code of this language, thanks!
-```
-
-## 力扣问题描述
-给定一个含有 `n` 个正整数的数组和一个正整数 `target` 。
-
-找出该数组中满足其总和大于等于 `target` 的长度**最小的** **子数组** `[numsl, numsl+1, ..., numsr-1, numsr]` ，并返回*其长度*。如果不存在符合条件的子数组，返回 `0` 。
-
-**子数组** 是数组中连续的 **非空** 元素序列。
-
-难度: **中等**
-
-### [示例 1]
-**输入**: `target = 7, nums = [2,3,1,2,4,3]`
-
-**输出**: `2`
-
-**解释**: `子数组 [4,3] 是该条件下的长度最小的子数组。`
-
-# 中文题解
-## 思路
-1. 对于**子数组**问题，可以考虑使用**滑动窗口技术**，它类似于**快速和慢速指针技术**。
-
-## 步骤
-1. **遍历** `nums` 数组，元素的 `index` 可命名为 `fastIndex`。虽然不起眼，但这是 `快慢指针技术` **最重要**的逻辑。请最好记住它。
-2. `sum += nums[fast_index]`.
-```java
-var minLength = Integer.MAX_VALUE;
-var sum = 0;
-var slowIndex = 0;
-
-for (var fastIndex = 0; fastIndex < nums.length; fastIndex++) { // 本行是`快慢指针技术`最重要的逻辑
-    sum += nums[fastIndex]; // 1
-}
-
-return minLength;
-```
-
-3. 控制`slowIndex`。
-```java
-var minLength = Integer.MAX_VALUE;
-var sum = 0;
-var slowIndex = 0;
-
-for (var fastIndex = 0; fastIndex < nums.length; fastIndex++) {
-    sum += nums[fastIndex];
-
-    while (sum >= target) { // 1
-        minLength = Math.min(minLength, fastIndex - slowIndex + 1); // 2
-        sum -= nums[slowIndex]; // 3
-        slowIndex++; // 4
-    }
-}
-
-if (minLength == Integer.MAX_VALUE) { // 5
-    return 0; // 6
-}
-
-return minLength;
 ```
