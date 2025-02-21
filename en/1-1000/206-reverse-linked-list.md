@@ -1,10 +1,7 @@
 # 206. Reverse Linked List - Best Practices of LeetCode Solutions
-LeetCode link: [206. Reverse Linked List](https://leetcode.com/problems/reverse-linked-list),
-[206. 反转链表](https://leetcode.cn/problems/reverse-linked-list)
+LeetCode link: [206. Reverse Linked List](https://leetcode.com/problems/reverse-linked-list), difficulty: **Easy**.
 
-[中文题解](#中文题解)
-
-## LeetCode problem description
+## LeetCode description of "206. Reverse Linked List"
 Given the `head` of a singly linked list, reverse the list, and return _the reversed list_.
 
 ### [Example 1]
@@ -31,13 +28,11 @@ Given the `head` of a singly linked list, reverse the list, and return _the reve
 - `-5000 <= Node.val <= 5000`
 
 ## Intuition
-[中文题解](#中文题解)
-
 1. To solve this problem, we only need to define **two** variables: `current` and `previous`.
 2. `current.next = previous` is the inversion.
 3. The loop condition should be `while (current != null)` instead of `while (current.next != null)`, because the operation to be performed is `current.next = previous`.
 
-## Steps to the Solution
+## Steps
 1. Traverse all nodes.
 ```javascript
 previous = null
@@ -283,56 +278,4 @@ end
 ## Other languages
 ```
 // Welcome to create a PR to complete the code of this language, thanks!
-```
-
-## 问题描述
-
-
-### [Example 1]
-给你单链表的头节点 `head` ，请你反转链表，并返回反转后的链表。
-
-**输入**: `head = [1,2,3,4,5]`
-
-**输出**: `[5,4,3,2,1]`
-
-## 中文题解
-### 思路
-1. 解决这个问题，只需要定义**两**个变量：`current`和`previous`。
-2. `current.next = previous`就是反转了。
-3. 循环条件应是`while (current != null)`，而不应该是`while (current.next != null)`，因为需要操作的是`current.next = previous`.
-
-### 步骤
-1. 遍历所有节点。
-```javascript
-previous = null
-current = head
-
-while (current != null) {
-    current = current.next
-}
-```
-
-2. 加入`current.next = previous`。
-```javascript
-previous = null
-current = head
-
-while (current != null) {
-    tempNext = current.next
-    current.next = previous
-    current = tempNext
-}
-```
-
-3. `previous`目前始终是`null`，需要让它变化起来：`previous = current`。
-```javascript
-previous = null
-current = head
-
-while (current != null) {
-    tempNext = current.next
-    current.next = previous
-    previous = current
-    current = tempNext
-}
 ```

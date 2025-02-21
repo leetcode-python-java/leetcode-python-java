@@ -1,44 +1,39 @@
-# 206. Reverse Linked List - Best Practices of LeetCode Solutions
-LeetCode link: [206. Reverse Linked List](https://leetcode.com/problems/reverse-linked-list),
-[206. 反转链表](https://leetcode.cn/problems/reverse-linked-list)
+# 206. 反转链表 - 力扣题解最佳实践
+力扣链接：[206. 反转链表](https://leetcode.cn/problems/reverse-linked-list) ，难度：**简单**。
 
-[中文题解](#中文题解)
+## 力扣“206. 反转链表”问题描述
+给你单链表的头节点 `head` ，请你反转链表，并返回反转后的链表。
 
-## LeetCode problem description
-Given the `head` of a singly linked list, reverse the list, and return _the reversed list_.
-
-### [Example 1]
+### [示例 1]
 ![](../../images/examples/206_1.jpg)
 
-**Input**: `head = [1,2,3,4,5]`
+**输入**: `head = [1,2,3,4,5]`
 
-**Output**: `[5,4,3,2,1]`
+**输出**: `[5,4,3,2,1]`
 
-### [Example 2]
+### [示例 2]
 ![](../../images/examples/206_2.jpg)
 
-**Input**: `[1,2]`
+**输入**: `[1,2]`
 
-**Output**: `[2,1]`
+**输出**: `[2,1]`
 
-### [Example 3]
-**Input**: `[]`
+### [示例 3]
+**输入**: `[]`
 
-**Output**: `[]`
+**输出**: `[]`
 
-### [Constraints]
-- The number of nodes in the list is the range `[0, 5000]`.
+### [约束]
+- 链表中节点的数目范围是 `[0, 5000]`
 - `-5000 <= Node.val <= 5000`
 
-## Intuition
-[中文题解](#中文题解)
+## 思路
+1. 解决这个问题，只需要定义**两**个变量：`current`和`previous`。
+2. `current.next = previous`就是反转了。
+3. 循环条件应是`while (current != null)`，而不应该是`while (current.next != null)`，因为需要操作的是`current.next = previous`.
 
-1. To solve this problem, we only need to define **two** variables: `current` and `previous`.
-2. `current.next = previous` is the inversion.
-3. The loop condition should be `while (current != null)` instead of `while (current.next != null)`, because the operation to be performed is `current.next = previous`.
-
-## Steps to the Solution
-1. Traverse all nodes.
+## 步骤
+1. 遍历所有节点。
 ```javascript
 previous = null
 current = head
@@ -48,7 +43,7 @@ while (current != null) {
 }
 ```
 
-2. Add `current.next = previous`.
+2. 加入`current.next = previous`。
 ```javascript
 previous = null
 current = head
@@ -60,7 +55,7 @@ while (current != null) {
 }
 ```
 
-3. `previous` is always `null`, we need to change it: `previous = current`.
+3. `previous`目前始终是`null`，需要让它变化起来：`previous = current`。
 ```javascript
 previous = null
 current = head
@@ -73,9 +68,12 @@ while (current != null) {
 }
 ```
 
-## Complexity
-* Time: `O(n)`.
-* Space: `O(1)`.
+## 复杂度
+* 时间：`O(N)`。
+* 空间：`O(1)`。
+
+## 进阶
+链表可以选用迭代或递归方式完成反转。你能否用两种方法解决这道题？
 
 ## Java
 ```java
@@ -260,79 +258,7 @@ def reverse_list(head)
 end
 ```
 
-## C
-```c
-// Welcome to create a PR to complete the code of this language, thanks!
-```
-
-## Kotlin
-```kotlin
-// Welcome to create a PR to complete the code of this language, thanks!
-```
-
-## Swift
-```swift
-// Welcome to create a PR to complete the code of this language, thanks!
-```
-
-## Rust
-```rust
-// Welcome to create a PR to complete the code of this language, thanks!
-```
-
-## Other languages
+## C, Kotlin, Swift, Rust or other languages
 ```
 // Welcome to create a PR to complete the code of this language, thanks!
-```
-
-## 问题描述
-
-
-### [Example 1]
-给你单链表的头节点 `head` ，请你反转链表，并返回反转后的链表。
-
-**输入**: `head = [1,2,3,4,5]`
-
-**输出**: `[5,4,3,2,1]`
-
-## 中文题解
-### 思路
-1. 解决这个问题，只需要定义**两**个变量：`current`和`previous`。
-2. `current.next = previous`就是反转了。
-3. 循环条件应是`while (current != null)`，而不应该是`while (current.next != null)`，因为需要操作的是`current.next = previous`.
-
-### 步骤
-1. 遍历所有节点。
-```javascript
-previous = null
-current = head
-
-while (current != null) {
-    current = current.next
-}
-```
-
-2. 加入`current.next = previous`。
-```javascript
-previous = null
-current = head
-
-while (current != null) {
-    tempNext = current.next
-    current.next = previous
-    current = tempNext
-}
-```
-
-3. `previous`目前始终是`null`，需要让它变化起来：`previous = current`。
-```javascript
-previous = null
-current = head
-
-while (current != null) {
-    tempNext = current.next
-    current.next = previous
-    previous = current
-    current = tempNext
-}
 ```
