@@ -200,6 +200,7 @@ Add a table to show the differences between A-Start and breadth-first search
 - 1514-path-with-maximum-probability.md
 - 1334 https://leetcode.com/problems/find-the-city-with-the-smallest-number-of-neighbors-at-a-threshold-distance
 - 752 a star
+- 3464 https://leetcode.cn/problems/maximize-the-distance-between-points-on-a-square
 
 ## other finished problems
 - https://leetcode.com/problems/k-closest-points-to-origin/
