@@ -29,83 +29,88 @@
 在做本题前，建议先完成简单题目[206. Reverse Linked List](206-reverse-linked-list.md)。
 
 1. 解决这个问题，依然至少需要定义两个变量：`current`和`previous`。
-2. 循环条件应是`while (current.next != null)`，而不应该是`while (current != null)`，因为需要操作`current.next.next`.
+2. 循环条件应是`while (current.next != null)`，而不应该是`while (current != null)`，因为需要操作`current.next.next`。
 
 ## 步骤
 1. 遍历所有节点。
-```c#
-var previous = null;
-var current = head;
 
-while (current != null) {
-    current = current.next;
-}
-```
+    ```c#
+    var previous = null;
+    var current = head;
+	
+    while (current != null) {
+        current = current.next;
+    }
+    ```
 
 2. 因为每两个节点进行一次位置互换，所以需要改为一次走两步。
-```c#
-var previous = null;
-var current = head;
 
-while (current != null && current.next != null) { // 1
-    var nextNext = current.next.next; // 2
-    current = nextNext; // 3
-}
-```
+    ```c#
+    var previous = null;
+    var current = head;
+	
+    while (current != null && current.next != null) { // 1
+        var nextNext = current.next.next; // 2
+        current = nextNext; // 3
+    }
+    ```
 
 3. 交换 `current` 和 `current.next` 的位置。
-```c#
-var previous = null;
-var current = head;
 
-while (current != null && current.next != null) {
-    var nextNext = current.next.next;
-
-    current.next.next = current; // 1
-    current.next = nextNext; // 2
-
-    current = nextNext;
-}
-```
+	```c#
+	var previous = null;
+	var current = head;
+	
+	while (current != null && current.next != null) {
+	    var nextNext = current.next.next;
+	
+	    current.next.next = current; // 1
+	    current.next = nextNext; // 2
+	
+	    current = nextNext;
+	}
+	```
 
 4. 处理 `previous`。
-```c#
-var previous = null;
-var current = head;
 
-while (current != null && current.next != null) {
-    var nextNext = current.next.next;
-
-    previous.next = current.next; // 1
-    current.next.next = current;
-    current.next = nextNext;
-
-    previous = current; // 2
-    current = nextNext;
-}
-```
+	```c#
+	var previous = null;
+	var current = head;
+	
+	while (current != null && current.next != null) {
+	    var nextNext = current.next.next;
+	
+	    previous.next = current.next; // 1
+	    current.next.next = current;
+	    current.next = nextNext;
+	
+	    previous = current; // 2
+	    current = nextNext;
+	}
+	```
 
 5. 确定返回值。因为`head`节点在节点数量超过1时，会被交换到第二个节点的位置，为了统一方便处理，最好加入`dummy_head`节点。
-```c#
-var dummyHead = new ListNode(); // 1
-dummyHead.next = head; // 2
 
-var previous = dummyHead; // 3
-var current = head;
-
-while (current != null && current.next != null) {
-    var nextNext = current.next.next;
-
-    previous.next = current.next;
-    current.next.next = current;
-    current.next = nextNext;
-
-    previous = current;
-    current = nextNext;
-}
-
-return dummyHead.next; // 4
-```
+	```c#
+	var dummyHead = new ListNode(); // 1
+	dummyHead.next = head; // 2
+	
+	var previous = dummyHead; // 3
+	var current = head;
+	
+	while (current != null && current.next != null) {
+	    var nextNext = current.next.next;
+	
+	    previous.next = current.next;
+	    current.next.next = current;
+	    current.next = nextNext;
+	
+	    previous = current;
+	    current = nextNext;
+	}
+	
+	return dummyHead.next; // 4
+	```
 
 ## 复杂度
 * 时间: `O(n)`。

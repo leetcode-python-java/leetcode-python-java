@@ -2,9 +2,9 @@
 LeetCode link: [1. Two Sum](https://leetcode.com/problems/two-sum), difficulty: **Easy**
 
 ## LeetCode description of "1. Two Sum"
-Given an array of integers `nums` and an integer `target`, return _indices of the two numbers such that they add up to `target`_.
+Given an array of integers `nums` and an integer `target`, return *indices of the two numbers such that they add up to `target`*.
 
-You may assume that each input would have **_exactly_ one solution**, and you may not use the same element twice.
+You may assume that each input would have ***exactly* one solution**, and you may not use the same element twice.
 
 You can return the answer in any order.
 
@@ -21,9 +21,9 @@ You can return the answer in any order.
 **Output**: `[1,2]`
 
 ### [Constraints]
-- `2 <= nums.length <= 10**4`
-- `-10**9 <= nums[i] <= 10**9`
-- `-10**9 <= target <= 10**9`
+- `2 <= nums.length <= 10^4`
+- `-10^9 <= nums[i] <= 10^9`
+- `-10^9 <= target <= 10^9`
 - **Only one valid answer exists.**
 
 ### [Hints]
@@ -56,26 +56,28 @@ The second train of thought is, without changing the array, can we use additiona
 
 ### Steps
 1. In `Map`, `key` is `num`, and `value` is array `index`.
-```javascript
-let numToIndex = new Map()
 
-for (let i = 0; i < nums.length; i++) {
-  numToIndex.set(nums[i], i)
-}
-```
+    ```javascript
+    let numToIndex = new Map()
+    
+    for (let i = 0; i < nums.length; i++) {
+      numToIndex.set(nums[i], i)
+    }
+    ```
 
 2. Traverse the array, if `target - num` is in `Map`, return it. Otherwise, add `num` to `Map`.
-```javascript
-let numToIndex = new Map()
 
-for (let i = 0; i < nums.length; i++) {
-  if (numToIndex.has(target - nums[i])) { // 1
-    return [numToIndex.get(target - nums[i]), i] // 2
-  }
-
-  numToIndex.set(nums[i], i)
-}
-```
+    ```javascript
+    let numToIndex = new Map()
+    
+    for (let i = 0; i < nums.length; i++) {
+      if (numToIndex.has(target - nums[i])) { // 1
+        return [numToIndex.get(target - nums[i]), i] // 2
+      }
+    
+      numToIndex.set(nums[i], i)
+    }
+    ```
 
 ### Complexity
 * Time: `O(n)`.

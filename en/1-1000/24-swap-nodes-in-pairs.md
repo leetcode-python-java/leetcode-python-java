@@ -38,79 +38,84 @@ Before solving this problem, it is recommended to solve the simple problem [206.
 
 ## Steps
 1. Traverse all nodes.
-```c#
-var previous = null;
-var current = head;
 
-while (current != null) {
-    current = current.next;
-}
-```
+    ```c#
+    var previous = null;
+    var current = head;
+	
+    while (current != null) {
+        current = current.next;
+    }
+    ```
 
 2. Because every two nodes swap positions, it is necessary to change it to taking two steps at a time.
-```c#
-var previous = null;
-var current = head;
 
-while (current != null && current.next != null) { // 1
-    var nextNext = current.next.next; // 2
-    current = nextNext; // 3
-}
-```
+    ```c#
+    var previous = null;
+    var current = head;
+	
+    while (current != null && current.next != null) { // 1
+        var nextNext = current.next.next; // 2
+        current = nextNext; // 3
+    }
+    ```
 
 3. Swap the positions of `current` and `current.next`.
-```c#
-var previous = null;
-var current = head;
 
-while (current != null && current.next != null) {
-    var nextNext = current.next.next;
-
-    current.next.next = current; // 1
-    current.next = nextNext; // 2
-
-    current = nextNext;
-}
-```
+    ```c#
+    var previous = null;
+    var current = head;
+	
+    while (current != null && current.next != null) {
+        var nextNext = current.next.next;
+	
+        current.next.next = current; // 1
+        current.next = nextNext; // 2
+	
+        current = nextNext;
+    }
+    ```
 
 4. Process `previous`.
-```c#
-var previous = null;
-var current = head;
 
-while (current != null && current.next != null) {
-    var nextNext = current.next.next;
-
-    previous.next = current.next; // 1
-    current.next.next = current;
-    current.next = nextNext;
-
-    previous = current; // 2
-    current = nextNext;
-}
-```
+	```c#
+	var previous = null;
+	var current = head;
+	
+	while (current != null && current.next != null) {
+	    var nextNext = current.next.next;
+	
+	    previous.next = current.next; // 1
+	    current.next.next = current;
+	    current.next = nextNext;
+	
+	    previous = current; // 2
+	    current = nextNext;
+	}
+	```
 
 5. Determine the return value. Because the `head` node will be swapped to the second node when the number of nodes exceeds 1, it is best to add a `dummy_head` node for unified and convenient processing.
-```c#
-var dummyHead = new ListNode(); // 1
-dummyHead.next = head; // 2
 
-var previous = dummyHead; // 3
-var current = head;
-
-while (current != null && current.next != null) {
-    var nextNext = current.next.next;
-
-    previous.next = current.next;
-    current.next.next = current;
-    current.next = nextNext;
-
-    previous = current;
-    current = nextNext;
-}
-
-return dummyHead.next; // 4
-```
+	```c#
+	var dummyHead = new ListNode(); // 1
+	dummyHead.next = head; // 2
+	
+	var previous = dummyHead; // 3
+	var current = head;
+	
+	while (current != null && current.next != null) {
+	    var nextNext = current.next.next;
+	
+	    previous.next = current.next;
+	    current.next.next = current;
+	    current.next = nextNext;
+	
+	    previous = current;
+	    current = nextNext;
+	}
+	
+	return dummyHead.next; // 4
+	```
 
 ## Complexity
 * Time: `O(n)`.

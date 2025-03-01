@@ -41,42 +41,45 @@ Given the `head` of a linked list, remove the `n-th` node from the end of the li
 
 ## Steps
 1. First find out `node_count`.
-```ruby
-node_count = 0
-node = head
 
-while node
-  node_count += 1
-  node = node.next
-end
-```
+	```ruby
+	node_count = 0
+	node = head
+	
+	while node
+	  node_count += 1
+	  node = node.next
+	end
+	```
 
 2. When `index == node_count - N`, delete the node by `node.next = node.next.next`.
-```ruby
-index = 0
-node = head
 
-while node
-  if index == node_count - n
-    node.next = node.next.next
-    break
-  end
-
-  index += 1
-  node = node.next
-end
-```
+	```ruby
+	index = 0
+	node = head
+	
+	while node
+	  if index == node_count - n
+	    node.next = node.next.next
+	    break
+	  end
+	
+	  index += 1
+	  node = node.next
+	end
+	```
 
 3. Since the deleted node may be `head`, a virtual node `dummy_node` is used to facilitate unified processing.
-```ruby
-dummy_head = ListNode.new # 1
-dummy_head.next = head # 2
-node = dummy_head # 3
 
-# omitted code
-
-return dummy_head.next
-```
+	```ruby
+	dummy_head = ListNode.new # 1
+	dummy_head.next = head # 2
+	node = dummy_head # 3
+	
+	# omitted code
+	
+	return dummy_head.next
+	```
 
 ## Complexity
 * Time: `O(N)`.

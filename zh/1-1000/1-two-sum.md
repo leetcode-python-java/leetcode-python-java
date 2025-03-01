@@ -27,7 +27,7 @@
 
 ### [约束]
 - `2 <= nums.length <= 10000`
-- `-10**9 <= nums[i] <= 10**9`
+- `-10^9 <= nums[i] <= 10^9`
 - **只会存在一个有效答案**
 
 ### [提示]
@@ -57,26 +57,28 @@ The second train of thought is, without changing the array, can we use additiona
 
 #### 步骤
 1. `Map`中，`key`是`num`，`value`是数组`index`。
-```javascript
-let numToIndex = new Map()
 
-for (let i = 0; i < nums.length; i++) {
-  numToIndex.set(nums[i], i)
-}
-```
+    ```javascript
+    let numToIndex = new Map()
+    
+    for (let i = 0; i < nums.length; i++) {
+      numToIndex.set(nums[i], i)
+    }
+    ```
 
 2. 遍历数组，如果`target - num`在`Map`中，返回。反之，将`num`加入`Map`中。
-```javascript
-let numToIndex = new Map()
 
-for (let i = 0; i < nums.length; i++) {
-  if (numToIndex.has(target - nums[i])) { // 1
-    return [numToIndex.get(target - nums[i]), i] // 2
-  }
-
-  numToIndex.set(nums[i], i)
-}
-```
+    ```javascript
+    let numToIndex = new Map()
+    
+    for (let i = 0; i < nums.length; i++) {
+      if (numToIndex.has(target - nums[i])) { // 1
+        return [numToIndex.get(target - nums[i]), i] // 2
+      }
+    
+      numToIndex.set(nums[i], i)
+    }
+    ```
 
 ## 复杂度
 * 时间：`O(n)`。

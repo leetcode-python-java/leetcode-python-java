@@ -44,36 +44,36 @@
 
 1. 用**方向相对的两个指针**，最初时一个指针指向下标`0`，另一个指针指向下标`s.length - 1`。
 
-```ruby
-left = 0
-right = s.length - 1
-```
+    ```ruby
+    left = 0
+    right = s.length - 1
+    ```
 
 2. 遍历数组元素，循环条件为`while (left < right)`。在循环体内，`left += 1`, `right -= 1`。
 
-```ruby
-left = 0
-right = s.length - 1
-
-while left < right # 1
-  left += 1 # 2
-  right -= 1 # 3
-end
-```
+    ```ruby
+    left = 0
+    right = s.length - 1
+    
+    while left < right # 1
+      left += 1 # 2
+      right -= 1 # 3
+    end
+    ```
 
 3. 在循环体内，交换数组中两个下标对应的值。
 
-```ruby
-left = 0
-right = s.length - 1
-
-while left < right
-  s[left], s[right] = s[right], s[left] # 1
-
-  left += 1
-  right -= 1
-end
-```
+    ```ruby
+    left = 0
+    right = s.length - 1
+    
+    while left < right
+      s[left], s[right] = s[right], s[left] # 1
+    
+      left += 1
+      right -= 1
+    end
+    ```
 
 ## 复杂度
 

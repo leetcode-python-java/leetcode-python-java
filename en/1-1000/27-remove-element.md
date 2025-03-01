@@ -2,12 +2,12 @@
 LeetCode link: [27. Remove Element](https://leetcode.com/problems/remove-element)
 
 ## LeetCode problem description
-Given an integer array `nums` and an integer `val`, remove all occurrences of `val` in `nums` [in-place](https://en.wikipedia.org/wiki/In-place_algorithm). The order of the elements may be changed. Then return _the number of elements in `nums` which are not equal to `val`_.
+Given an integer array `nums` and an integer `val`, remove all occurrences of `val` in `nums` [in-place](https://en.wikipedia.org/wiki/In-place_algorithm). The order of the elements may be changed. Then return *the number of elements in `nums` which are not equal to `val`*.
 
 Consider the number of elements in `nums` which are not equal to `val` be `k`, to get accepted, you need to do the following things:
 
-* Change the array `nums` such that the first `k` elements of `nums` contain the elements which are not equal to `val`. The remaining elements of `nums` are not important as well as the size of `nums`.
-* Return `k`.
+- Change the array `nums` such that the first `k` elements of `nums` contain the elements which are not equal to `val`. The remaining elements of `nums` are not important as well as the size of `nums`.
+- Return `k`.
 
 ### Example 1
 ```ruby
@@ -39,6 +39,7 @@ It does not matter what you leave beyond the returned k (hence they are undersco
 <details>
   <summary>Hint 2</summary>
   We can move all the occurrences of this element to the end of the array. Use two pointers!
+  ![](../../images/hints/27_2.png)
 </details>
 
 <details>

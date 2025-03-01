@@ -27,8 +27,8 @@ Explanation: There is no path from vertex 0 to vertex 5.
 ```
 
 ### Constraints
-- `1 <= n <= 2 * 10**5`
-- `0 <= edges.length <= 2 * 10**5`
+- `1 <= n <= 2 * 10^5`
+- `0 <= edges.length <= 2 * 10^5`
 - `edges[i].length == 2`
 - `0 <= ui, vi <= n - 1`
 - `ui != vi`

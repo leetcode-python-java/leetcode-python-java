@@ -37,46 +37,49 @@ Maintain two pointers and update one with a delay of n steps.
 1. 删除链表的倒数第 `N` 个结点，等同于删除链表的第 `node_count - N` 个结点。
 2. 先求出`node_count`。
 3. 在 `index == node_count - N`时，进行删除节点操作：`node.next = node.next.next`。
-4. 由于删除的节点可能是`head`，所以使用虚拟节点`dummy_node`，方便统一处理。
+4. 由于删除的节点可能是 `head`，所以使用虚拟节点 `dummy_node`，方便统一处理。
 
 ## 步骤
 1. 求出`node_count`。
-```ruby
-node_count = 0
-node = head
 
-while node
-  node_count += 1
-  node = node.next
-end
-```
+    ```ruby
+    node_count = 0
+    node = head
+	
+    while node
+      node_count += 1
+      node = node.next
+    end
+    ```
 
 2. 在 `index == node_count - N`时，进行删除节点操作：`node.next = node.next.next`。
-```ruby
-index = 0
-node = head
 
-while node
-  if index == node_count - n
-    node.next = node.next.next
-    break
-  end
-
-  index += 1
-  node = node.next
-end
-```
+    ```ruby
+    index = 0
+    node = head
+	
+    while node
+      if index == node_count - n
+        node.next = node.next.next
+        break
+      end
+	
+      index += 1
+      node = node.next
+    end
+    ```
 
 3. 由于删除的节点可能是`head`，所以使用虚拟节点`dummy_node`，方便统一处理。
-```ruby
-dummy_head = ListNode.new # 1
-dummy_head.next = head # 2
-node = dummy_head # 3
 
-# omitted code
-
-return dummy_head.next
-```
+    ```ruby
+    dummy_head = ListNode.new # 1
+    dummy_head.next = head # 2
+    node = dummy_head # 3
+	
+    # omitted code
+	
+    return dummy_head.next
+    ```
 
 ## 复杂度
 * 时间：`O(N)`。

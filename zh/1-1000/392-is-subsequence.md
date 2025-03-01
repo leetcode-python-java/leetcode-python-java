@@ -17,7 +17,7 @@ Output: false
 
 Constraints:
 1. 0 <= s.length <= 100
-2. 0 <= t.length <= 10**4
+2. 0 <= t.length <= 10^4
 3. `s` and `t` consist only of lowercase English letters.
 ```
 

@@ -2,12 +2,12 @@
 LeetCode link: [27. Remove Element](https://leetcode.com/problems/remove-element)
 
 ## LeetCode problem description
-Given an integer array `nums` and an integer `val`, remove all occurrences of `val` in `nums` [in-place](https://en.wikipedia.org/wiki/In-place_algorithm). The order of the elements may be changed. Then return _the number of elements in `nums` which are not equal to `val`_.
+给你一个数组 `nums` 和一个值 `val`，你需要 [原地](https://en.wikipedia.org/wiki/In-place_algorithm) 移除所有数值等于 `val` 的元素。元素的顺序可能发生改变。然后返回 `nums` 中与 `val` 不同的元素的数量。
 
-Consider the number of elements in `nums` which are not equal to `val` be `k`, to get accepted, you need to do the following things:
+假设 `nums` 中不等于 `val` 的元素数量为 `k`，要通过此题，您需要执行以下操作：
 
-* Change the array `nums` such that the first `k` elements of `nums` contain the elements which are not equal to `val`. The remaining elements of `nums` are not important as well as the size of `nums`.
-* Return `k`.
+- 更改 `nums` 数组，使 `nums` 的前 `k` 个元素包含不等于 `val` 的元素。`nums` 的其余元素和 `nums` 的大小并不重要。
+- 返回 `k`。
 
 ### Example 1
 ```ruby
