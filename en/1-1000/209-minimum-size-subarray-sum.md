@@ -29,45 +29,48 @@ Given an array of positive integers `nums` and a positive integer `target`, retu
 - `1 <= nums[i] <= 10000`
 
 ## Intuition
-For **subarray** problems, you can consider using **Sliding Window Technique**, which is similar to the **Fast and Slow Pointers Technique**.
+For **subarray** problems, you can consider using **Sliding Window Technique**, which is similar to the **Fast & Slow Pointers Approach**.
 
 ## Steps
-1. Iterate over the `nums` array, the `index` of the element is named `fastIndex`. Although inconspicuous, this is the most important logic of the _Fast and Slow Pointers Technique_. Please memorize it.
+1. Iterate over the `nums` array, the `index` of the element is named `fastIndex`. Although inconspicuous, this is the most important logic of the *Fast & Slow Pointers Approach*. Please memorize it.
+
 2. `sum += nums[fast_index]`.
-```java
-var minLength = Integer.MAX_VALUE;
-var sum = 0;
-var slowIndex = 0;
 
-for (var fastIndex = 0; fastIndex < nums.length; fastIndex++) { // This line the most important logic of the `Fast and Slow Pointers Technique`.
-    sum += nums[fastIndex]; // 1
-}
-
-return minLength;
-```
+    ```java
+    var minLength = Integer.MAX_VALUE;
+    var sum = 0;
+    var slowIndex = 0;
+	
+    for (var fastIndex = 0; fastIndex < nums.length; fastIndex++) { // This line the most important logic of the `Fast and Slow Pointers Technique`.
+        sum += nums[fastIndex]; // 1
+    }
+	
+    return minLength;
+    ```
 
 3. Control of `slowIndex`:
-```java
-var minLength = Integer.MAX_VALUE;
-var sum = 0;
-var slowIndex = 0;
 
-for (var fastIndex = 0; fastIndex < nums.length; fastIndex++) {
-    sum += nums[fastIndex];
-
-    while (sum >= target) { // 1
-        minLength = Math.min(minLength, fastIndex - slowIndex + 1); // 2
-        sum -= nums[slowIndex]; // 3
-        slowIndex++; // 4
-    }
-}
-
-if (minLength == Integer.MAX_VALUE) { // 5
-    return 0; // 6
-}
-
-return minLength;
-```
+	```java
+	var minLength = Integer.MAX_VALUE;
+	var sum = 0;
+	var slowIndex = 0;
+	
+	for (var fastIndex = 0; fastIndex < nums.length; fastIndex++) {
+	    sum += nums[fastIndex];
+	
+	    while (sum >= target) { // 1
+	        minLength = Math.min(minLength, fastIndex - slowIndex + 1); // 2
+	        sum -= nums[slowIndex]; // 3
+	        slowIndex++; // 4
+	    }
+	}
+	
+	if (minLength == Integer.MAX_VALUE) { // 5
+	    return 0; // 6
+	}
+	
+	return minLength;
+	```
 
 ## Complexity
 * Time: `O(n)`.
@@ -129,7 +132,7 @@ class Solution:
 
 ## JavaScript
 ```javascript
-var minSubArrayLen = function(target, nums) {
+var minSubArrayLen = function (target, nums) {
   let minLength = Number.MAX_SAFE_INTEGER
   let sum = 0
   let slowIndex = 0

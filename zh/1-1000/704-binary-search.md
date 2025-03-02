@@ -2,9 +2,7 @@
 LeetCode link: [704. Binary Search](https://leetcode.com/problems/binary-search)
 
 ## LeetCode problem description
-Given an array of integers `nums` which is sorted in ascending order, and an integer `target`, write a function to search `target` in `nums`. If `target` exists, then return its `index`. Otherwise, return `-1`.
-
-You must write an algorithm with `O(log n)` runtime complexity.
+给定一个 `n` 个元素有序的（升序）整型数组 `nums` 和一个目标值 `target`  ，写一个函数搜索 `nums` 中的 `target`，如果目标值存在返回下标，否则返回 `-1`。
 
 ### Example 1
 ```ruby
@@ -21,10 +19,9 @@ Explanation: 2 does not exist in nums so return -1
 ```
 
 ### Constraints
-- `1 <= nums.length <= 10000`
-- `104 < nums[i], target < 10000`
-- All the integers in `nums` are **unique**.
-- `nums` is sorted in ascending order.
+- 你可以假设 `nums` 中的所有元素是不重复的。
+- `n` 将在 `[1, 10000]` 之间。
+- `nums` 的每个元素都将在 `[-9999, 9999]` 之间。
 
 ## Intuition
 Because it is an already sorted array, by using the middle value for comparison, half of the numbers can be eliminated each time.

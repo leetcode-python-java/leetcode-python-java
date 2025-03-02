@@ -31,46 +31,49 @@
 - `1 <= nums[i] <= 10000`
 
 ## 思路
-1. 对于**子数组**问题，可以考虑使用**滑动窗口技术**，它类似于**快速和慢速指针技术**。
+1. 对于**子数组**问题，可以考虑使用**滑动窗口技术**，它类似于**快慢双指针方法**。
 
 
 ## 步骤
 1. **遍历** `nums` 数组，元素的 `index` 可命名为 `fastIndex`。虽然不起眼，但这是 `快慢指针技术` **最重要**的逻辑。请最好记住它。
+
 2. `sum += nums[fast_index]`.
-```java
-var minLength = Integer.MAX_VALUE;
-var sum = 0;
-var slowIndex = 0;
 
-for (var fastIndex = 0; fastIndex < nums.length; fastIndex++) { // 本行是`快慢指针技术`最重要的逻辑
-    sum += nums[fastIndex]; // 1
-}
-
-return minLength;
-```
+    ```java
+    var minLength = Integer.MAX_VALUE;
+    var sum = 0;
+    var slowIndex = 0;
+	
+    for (var fastIndex = 0; fastIndex < nums.length; fastIndex++) { // 本行是`快慢指针技术`最重要的逻辑
+        sum += nums[fastIndex]; // 1
+    }
+	
+    return minLength;
+    ```
 
 3. 控制`slowIndex`。
-```java
-var minLength = Integer.MAX_VALUE;
-var sum = 0;
-var slowIndex = 0;
 
-for (var fastIndex = 0; fastIndex < nums.length; fastIndex++) {
-    sum += nums[fastIndex];
-
-    while (sum >= target) { // 1
-        minLength = Math.min(minLength, fastIndex - slowIndex + 1); // 2
-        sum -= nums[slowIndex]; // 3
-        slowIndex++; // 4
-    }
-}
-
-if (minLength == Integer.MAX_VALUE) { // 5
-    return 0; // 6
-}
-
-return minLength;
-```
+	```java
+	var minLength = Integer.MAX_VALUE;
+	var sum = 0;
+	var slowIndex = 0;
+	
+	for (var fastIndex = 0; fastIndex < nums.length; fastIndex++) {
+	    sum += nums[fastIndex];
+	
+	    while (sum >= target) { // 1
+	        minLength = Math.min(minLength, fastIndex - slowIndex + 1); // 2
+	        sum -= nums[slowIndex]; // 3
+	        slowIndex++; // 4
+	    }
+	}
+	
+	if (minLength == Integer.MAX_VALUE) { // 5
+	    return 0; // 6
+	}
+	
+	return minLength;
+	```
 
 ## 复杂度
 * 时间: `O(n)`.

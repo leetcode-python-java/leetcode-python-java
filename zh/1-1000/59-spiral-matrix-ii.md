@@ -26,13 +26,15 @@ Output: [[1]]
 * You only need to use a `get_increment(i, j)` function to specifically control the index of the next two-dimensional array.
 
 ## Steps to the Solution
-1. Initialize `increments` and `increment_index`:
+1. 初始化 `increments` 和 `increment_index`:
+
     ```python
     increments = [(0, 1), (1, 0), (0, -1), (-1, 0)] # (i, j) right, down, left, up
     increment_index = 0
     ```
 
-2. Core logic:
+2. 核心逻辑:
+
     ```python
     while num <= n * n:
         matrix[i][j] = num
@@ -43,9 +45,10 @@ Output: [[1]]
         j += increment[1]
     ```
 
-3. For function `get_increment(i, j)`, it should return a pair like `[0, 1]`. First verify whether the current increment is valid. If not, use the next increment.
-   ```python
-   def get_increment(i, j):
+3. 对于函数 `get_increment(i, j)`，它应该返回一对 `[0, 1]`。首先验证当前增量是否有效。如果无效，则使用下一个增量。
+
+    ```python
+    def get_increment(i, j):
         increment = increments[increment_index]
         i += increment[0]
         j += increment[1]
@@ -54,12 +57,12 @@ Output: [[1]]
             i < 0 or i >= len(matrix) or
             j < 0 or j >= len(matrix) or
             matrix[i][j] is not None
-        ): # not valid, use next increment
+        ): # 当前增量无效，使用下一个增量
             increment_index += 1
             increment_index %= len(self.increments)
 
         return increments[increment_index]
-   ```
+    ```
 
 ## Complexity
 * Time: `O(n * n)`.
