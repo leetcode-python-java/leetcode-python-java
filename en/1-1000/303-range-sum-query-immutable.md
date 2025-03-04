@@ -32,10 +32,10 @@ numArray.sumRange(0, 5); // return (-2) + 0 + 3 + (-5) + 2 + (-1) = -3
 ```
 
 ### Constraints
-- `1 <= nums.length <= 10000`
-- `-100000 <= nums[i] <= 100000`
+- `1 <= nums.length <= 10^4`
+- `-10^5 <= nums[i] <= 10^5`
 - `0 <= left <= right < nums.length`
-- At most `10000` calls will be made to `sumRange`.
+- At most `10^4` calls will be made to `sumRange`.
 
 ## Intuition
 ### Solution 2
@@ -43,9 +43,9 @@ Directly returning the sum of the array elements can pass the tests, but if the 
 So we still need to learn a more efficient solution.
 
 ### Solution 1: Prefix Sum
-* Use a new array `prefix_sums` to save the sum of the previous elements.
-* The first element of `prefix_sums` is `0` because the prefix sum **does not include the current element**.
-* To find the `sum` of the elements from index `left` to `right` (inclusive), just use `prefix_sums[right + 1] - prefix_sums[left]`.
+- Use a new array `prefix_sums` to save the sum of the previous elements.
+- The first element of `prefix_sums` is `0` because the prefix sum **does not include the current element**.
+- To find the `sum` of the elements from index `left` to `right` (inclusive), just use `prefix_sums[right + 1] - prefix_sums[left]`.
 
 ## Complexity
 * Time: `O(n)`.
