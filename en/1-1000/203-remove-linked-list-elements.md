@@ -27,17 +27,22 @@ Given the `head` of a linked list and an integer `val`, remove all the nodes of 
 - `0 <= val <= 50`
 
 ## Intuition
-Assume that the node to be deleted in the linked list is `d`, and the previous node of `d` is `p`, so `p.next` is `d`.
+- Assume that the node to be deleted in the linked list is `d`, and the previous node of `d` is `p`, so `p.next` is `d`.
 
-To delete `d`, just set `p.next = p.next.next`.
+	To delete `d`, just set `p.next = p.next.next`.
 
-Because `p.next.next` is used, the loop condition should be `while (p.next != null)` instead of `while (p != null)`.
+- Because `p.next.next` is used, the loop condition should be `while (p.next != null)` instead of `while (p != null)`.
 
-But there is no node before the `head` node, which means that the `head` node needs to be treated specially.
+- But there is no node before the `head` node, which means that the `head` node needs to be treated specially.
 
-Is there a way to make the `head` node no longer special? In this way, there is no need to treat the `head` specially.
+	Is there a way to make the `head` node no longer special? In this way, there is no need to treat the `head` specially.
 
-The way is to introduce a `dummy` node, `dummy.next = head`.
+	<details>
+	  <summary>
+	  Click to view the answer.
+	  </summary>
+	  <p>The way is to introduce a `dummy` node, `dummy.next = head`.</p>
+	</details>
 
 ## Complexity
 * Time: `O(n)`.
@@ -216,6 +221,7 @@ func removeElements(head *ListNode, val int) *ListNode {
 ```
 
 ## Ruby
+
 ```ruby
 # Definition for singly-linked list.
 # class ListNode

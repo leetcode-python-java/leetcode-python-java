@@ -27,15 +27,21 @@
 - `0 <= val <= 50`
 
 ## 思路
-假设链表中待删除的节点是`d`，`d`的前一个节点是`p`，所以`p.next`就是`d`。 删除`d`，只需要把`p.next = p.next.next`。
 
-因为用到了`p.next.next`，所以循环条件应为`while (p.next != null)`，而不是`while (p != null)`。
+- 假设链表中待删除的节点是`d`，`d`的前一个节点是`p`，所以`p.next`就是`d`。 删除`d`，只需要把`p.next = p.next.next`。
 
-但`head`节点前面没有节点，这就意味着需要对`head`节点进行特殊处理。
+- 因为用到了`p.next.next`，所以循环条件应为`while (p.next != null)`，而不是`while (p != null)`。
 
-是否有方法能够让`head`节点的不再特殊呢？这样就不需要特殊处理`head`了。
+- 但`head`节点前面没有节点，这就意味着需要对`head`节点进行特殊处理。
 
-办法是引入`dummy`节点，`dummy.next = head`。
+	是否有方法能够让`head`节点的不再特殊呢？这样就不需要特殊处理`head`了。
+
+	<details>
+	  <summary>
+	  点击查看答案
+	  </summary>
+	  <p>办法是引入`dummy`节点，`dummy.next = head`。</p>
+	</details>
 
 ## 复杂度
 * 时间：`O(N)`。
