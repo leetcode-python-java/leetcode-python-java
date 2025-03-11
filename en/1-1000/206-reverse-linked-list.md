@@ -28,45 +28,55 @@ Given the `head` of a singly linked list, reverse the list, and return _the reve
 - `-5000 <= Node.val <= 5000`
 
 ## Intuition
-1. To solve this problem, we only need to define **two** variables: `current` and `previous`.
-2. `current.next = previous` is the inversion.
-3. The loop condition should be `while (current != null)` instead of `while (current.next != null)`, because the operation to be performed is `current.next = previous`.
+1. To solve this problem, we only need to define **two** variables: `current` and `previous`. How do we inverse two node?
+
+	<details>
+	  <summary>
+	  Click to view the answer.
+	  </summary>
+	  <p>`current.next = previous` is the inversion.</p>
+	</details>
+
+2. The loop condition should be `while (current != null)` instead of `while (current.next != null)`, because the operation to be performed is `current.next = previous`.
 
 ## Steps
 1. Traverse all nodes.
-```javascript
-previous = null
-current = head
 
-while (current != null) {
-    current = current.next
-}
-```
+	```javascript
+	previous = null
+	current = head
+	
+	while (current != null) {
+	    current = current.next
+	}
+	```
 
 2. Add `current.next = previous`.
-```javascript
-previous = null
-current = head
 
-while (current != null) {
-    tempNext = current.next
-    current.next = previous
-    current = tempNext
-}
-```
+	```javascript
+	previous = null
+	current = head
+	
+	while (current != null) {
+	    tempNext = current.next
+	    current.next = previous
+	    current = tempNext
+	}
+	```
 
 3. `previous` is always `null`, we need to change it: `previous = current`.
-```javascript
-previous = null
-current = head
 
-while (current != null) {
-    tempNext = current.next
-    current.next = previous
-    previous = current
-    current = tempNext
-}
-```
+	```javascript
+	previous = null
+	current = head
+	
+	while (current != null) {
+	    tempNext = current.next
+	    current.next = previous
+	    previous = current
+	    current = tempNext
+	}
+	```
 
 ## Complexity
 * Time: `O(n)`.

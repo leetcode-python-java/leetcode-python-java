@@ -237,7 +237,7 @@ def remove_elements(head, val)
   dummy_head.next = head
   node = dummy_head
 
-  while !node.next.nil?
+  until node.next.nil?
     if node.next.val == val
       node.next = node.next.next
     else

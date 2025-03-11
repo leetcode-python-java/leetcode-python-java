@@ -29,44 +29,54 @@
 
 ## 思路
 1. 解决这个问题，只需要定义**两**个变量：`current`和`previous`。
-2. `current.next = previous`就是反转了。
-3. 循环条件应是`while (current != null)`，而不应该是`while (current.next != null)`，因为需要操作的是`current.next = previous`.
+
+	<details>
+	  <summary>
+	  点击查看答案
+	  </summary>
+	  <p>`current.next = previous`就是反转了。</p>
+	</details>
+
+2. 循环条件应是`while (current != null)`，而不应该是`while (current.next != null)`，因为需要操作的是`current.next = previous`.
 
 ## 步骤
 1. 遍历所有节点。
-```javascript
-previous = null
-current = head
 
-while (current != null) {
-    current = current.next
-}
-```
+	```javascript
+	previous = null
+	current = head
+	
+	while (current != null) {
+	    current = current.next
+	}
+	```
 
 2. 加入`current.next = previous`。
-```javascript
-previous = null
-current = head
 
-while (current != null) {
-    tempNext = current.next
-    current.next = previous
-    current = tempNext
-}
-```
+	```javascript
+	previous = null
+	current = head
+	
+	while (current != null) {
+	    tempNext = current.next
+	    current.next = previous
+	    current = tempNext
+	}
+	```
 
 3. `previous`目前始终是`null`，需要让它变化起来：`previous = current`。
-```javascript
-previous = null
-current = head
 
-while (current != null) {
-    tempNext = current.next
-    current.next = previous
-    previous = current
-    current = tempNext
-}
-```
+	```javascript
+	previous = null
+	current = head
+	
+	while (current != null) {
+	    tempNext = current.next
+	    current.next = previous
+	    previous = current
+	    current = tempNext
+	}
+	```
 
 ## 复杂度
 * 时间：`O(N)`。

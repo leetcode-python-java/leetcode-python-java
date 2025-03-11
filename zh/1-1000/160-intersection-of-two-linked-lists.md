@@ -42,46 +42,57 @@
 **进阶**：你能否设计一个时间复杂度 `O(m + n)` 、仅用 `O(1)` 内存的解决方案？
 
 ## 思路
+这是一个典型的“相遇”问题，最好转化为现实的场景去加强理解。
+
+假设你是A，B是你追求的对象，终点是学校。在上学的路上，靠后面的路程是你们都要经过的，靠前面的路程是各走各的。节点间距假定为一公里。
+
+现在，某个早晨，你们同时都吃完了早饭，要骑车去学校了。而你有个目标：和B相遇，聊上几句，你会怎么做？(以示例一为例)
+
+你一定是先测算出她家比你家到学校远多少公里，然后**等她走完这些公里后，再出发**。只要你们速度相同，就一定能相遇，而相遇的节点就是答案。
+
 1. 先把A, B两个链表的节点数计算出来。链表A的节点数为`node_count_a`，链表B的节点数为`node_count_b`。
 2. 假如`node_count_b > node_count_a`，那么对链表B做`node_count_b - node_count_a`次`node = node.next` 操作。
 3. 这时，两个链表同时重复进行`node = node.next`操作，直到找到相同的节点或者其中一个链表已经到尾部。
 
 ## 步骤
 1. 先把A, B两个链表的节点数计算出来。链表A的节点数为`node_count_a`，链表B的节点数为`node_count_b`。
-```python
-node_count_a = 0
-node_count_b = 0
 
-node = headA
-while node:
-    node_count_a += 1
-    node = node.next
-```
+	```python
+	node_count_a = 0
+	node_count_b = 0
+	
+	node = headA
+	while node:
+	    node_count_a += 1
+	    node = node.next
+	```
 
 2. 假如`node_count_b > node_count_a`，那么对链表B做`node_count_b - node_count_a`次`node = node.next` 操作。
-```python
-bigger = headA
-smaller = headB
 
-if node_count_b > node_count_a:
-    bigger = headB
-    smaller = headA
-
-for _ in range(abs(node_count_b - node_count_a)):
-    bigger = bigger.next
-```
+	```python
+	bigger = headA
+	smaller = headB
+	
+	if node_count_b > node_count_a:
+	    bigger = headB
+	    smaller = headA
+	
+	for _ in range(abs(node_count_b - node_count_a)):
+	    bigger = bigger.next
+	```
 
 3. 这时，两个链表同时重复进行`node = node.next`操作，直到找到相同的节点或者其中一个链表已经到尾部。
-```python
-while bigger and smaller:
-    if bigger == smaller:
-        return bigger
 
-    bigger = bigger.next
-    smaller = smaller.next
-
-return None
-```
+	```python
+	while bigger and smaller:
+	    if bigger == smaller:
+	        return bigger
+	
+	    bigger = bigger.next
+	    smaller = smaller.next
+	
+	return None
+	```
 
 ## 复杂度
 * 时间：`O(m + n)`。
