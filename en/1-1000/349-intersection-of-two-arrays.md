@@ -23,7 +23,7 @@ Each element in the result must be **unique** and you may return the result in *
 
 ## Intuition
 1. Convert one of the arrays to a `set`. The elements are unique in a `set`.
-2. When traversing the other array, if the an element is found to already exist in the `set`, it means that the element belongs to the intersection, and the element should be added to the `results`.
+2. When traversing the other array, if an element is found to already exist in the `set`, it means that the element belongs to the intersection, and the element should be added to the `results`.
 3. The `results` is also of `set` type because duplicate removal is required.
 
 ## Complexity
