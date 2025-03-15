@@ -44,7 +44,11 @@ The second train of thought is, without changing the array, can we use additiona
 
 ## Intuition
 1. The time complexity of the brute force solution is `O(n**2)`. To improve efficiency, you can sort the array, and then use **two pointers**, one pointing to the head of the array and the other pointing to the tail of the array, and decide `left += 1` or `right -= 1` according to the comparison of `sum` and `target`.
-2. After finding the two values which `sum` is `target`, you can use the `index()` method to find the `index` corresponding to the value.
+
+2. After sorting an array of numbers, if you want to know the original `index` corresponding to a certain value, there are two solutions:
+
+    - Solution 1: Use `index()` method to find it.
+    - Solution 2: Bring the `index` when sorting, that is, the object to be sorted is an array of tuples of `(num, index)`.
 
 ### Complexity
 * Time: `O(N * log N)`.

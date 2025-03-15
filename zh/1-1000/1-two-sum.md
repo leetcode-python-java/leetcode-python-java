@@ -49,7 +49,11 @@ The second train of thought is, without changing the array, can we use additiona
 ## 思路
 ### 思路1：双指针
 1. 暴力解法的时间复杂度为`O(n**2)`，想提升效率，可以对数组进行排序，然后用双指针，一个指向数组头，一个指向数组尾，根据**和**情况决定`left += 1`还是`right -= 1`。
-2. 找出了两个值后，需要用`index()`方法去找值对应的`index`。
+
+2. 对数值数组排序后，想知道某个数值对应的原来的索引下标，有两种方案：
+
+    - 方案1：使用index() 查找；
+    - 方案2：在排序时带上索引下标，即排序的对象是元组`(num, index)`的数组。
 
 ### 思路2：使用 Map 提升查找一个值的效率
 1. `Map`中，`key`是`num`，`value`是数组`index`。
