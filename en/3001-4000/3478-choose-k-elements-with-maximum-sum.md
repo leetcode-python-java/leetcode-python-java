@@ -70,7 +70,7 @@ Since all elements in `nums1` are equal, no indices satisfy the condition `nums1
 
 * Seeing this, everyone will definitely think of sorting `nums1` from small to large, so that the front is less than or equal to the back, but the indexes will be **messy** when sorting. If there is no good way to solve this problem, the whole question cannot be solved. Please think about it first.
 
-  ddd Bring the `index` when sorting, that is, the object to be sorted is an array of tuples of `(num, index)`. This technique **must be mastered**, as it will be used in many questions.ddd
+    <details><summary>Click to view the answer</summary><p> Bring the `index` when sorting, that is, the object to be sorted is an array of tuples of `(num, index)`. This technique **must be mastered**, as it will be used in many questions.</p></details>
 
   After solving the above problems, the indexes are all there, let's continue reading:
 
@@ -78,13 +78,13 @@ Since all elements in `nums1` are equal, no indices satisfy the condition `nums1
 
   After seeing this, have you thought of any good method?
 
-  ddd Heap sort, maintain a large root heap of size `k`. This is also a knowledge point that is often tested, **must be mastered**. ddd
+    <details><summary>Click to view the answer</summary><p> Heap sort, maintain a large root heap of size `k`. This is also a knowledge point that is often tested, **must be mastered**. </p></details>
 
   Seeing this, please implement the code according to the above prompts.
 
 * Finally, it is found that the repeated `num` that appear continuously should be specially processed, that is, the values ​​in `answer` corresponding to the same `num` should be the same. There are many ways to deal with it. What is the simplest way to deal with it?
 
-  ddd Use a `Map`, `key` is `num`, and the same `key` directly uses the `value` corresponding to `key`. ddd
+    <details><summary>Click to view the answer</summary><p> Use a `Map`, `key` is `num`, and the same `key` directly uses the `value` corresponding to `key`. </p></details>
 
 ## Complexity
 
