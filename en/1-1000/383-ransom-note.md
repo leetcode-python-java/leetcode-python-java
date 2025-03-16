@@ -38,33 +38,36 @@ Difficulty: **Easy**
 3. Then, traverse `ransomNote` and perform reverse operations on the data in `Map`. If the count of a character is less than 0, return `false`.
 
 ## Steps
-1. First count the characters in `magazine`, and store the results in `Map`.
-```javascript
-charToCount = new Map()
 
-for (character in magazine) {
-  charToCount[character] += 1
-}
-```
+1. First count the characters in `magazine`, and store the results in `Map`.
+
+	```javascript
+	charToCount = new Map()
+	
+	for (character in magazine) {
+	  charToCount[character] += 1
+	}
+	```
 
 2. Then, traverse `ransomNote` and perform reverse operations on the data in `Map`. If the count of a character is less than 0, return `false`.
-```javascript
-charToCount = new Map()
 
-for (character in magazine) {
-  charToCount[character] += 1
-}
-
-for (character in ransomNote) {
-  charToCount[character] -= 1
-
-  if (charToCount[character] < 0) {
-    return false
-  }
-}
-
-return true
-```
+	```javascript
+	charToCount = new Map()
+	
+	for (character in magazine) {
+	  charToCount[character] += 1
+	}
+	
+	for (character in ransomNote) {
+	  charToCount[character] -= 1
+	
+	  if (charToCount[character] < 0) {
+	    return false
+	  }
+	}
+	
+	return true
+	```
 
 ## Complexity
 * Time: `O(n)`.

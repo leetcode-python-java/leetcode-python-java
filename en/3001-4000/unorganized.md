@@ -207,3 +207,7 @@ Add a table to show the differences between A-Start and breadth-first search
 - https://leetcode.com/problems/find-special-substring-of-length-k/
 - https://leetcode.cn/problems/eat-pizzas/
 - https://leetcode.cn/problems/merge-intervals/
+
+## Other algorithm
+* 线段树 https://leetcode.cn/problems/fruits-into-baskets-iii
+* 

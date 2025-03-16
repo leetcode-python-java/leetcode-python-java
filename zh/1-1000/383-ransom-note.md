@@ -1,76 +1,83 @@
-# 383. Ransom Note - Best Practices of LeetCode Solutions
-LeetCode link: [383. Ransom Note](https://leetcode.com/problems/ransom-note),
-[383. 赎金信](https://leetcode.cn/problems/ransom-note)
+原文链接：[coding5.com - 力扣题解最佳实践](https://coding5.com/zh/leetcode/383-ransom-note)
 
-[中文题解](#中文题解)
+# 383. 赎金信 - 力扣题解最佳实践
 
-## LeetCode problem description
-Given two strings `ransomNote` and `magazine`, return `true` if `ransomNote` can be constructed by using the letters from `magazine` and `false` otherwise.
+力扣链接：[383. 赎金信](https://leetcode.cn/problems/ransom-note), 难度：**简单**。
 
-Each letter in `magazine` can only be used once in `ransomNote`.
+## 力扣“383. 赎金信”问题描述
 
-Difficulty: **Easy**
+给你两个字符串：`ransomNote` 和 `magazine` ，判断 `ransomNote` 能不能由 `magazine` 里面的字符构成。
 
-### [Example 1]
-**Input**: `ransomNote = "a", magazine = "b"`
+如果可以，返回 `true` ；否则返回 `false` 。
 
-**Output**: `false`
+`magazine` 中的每个字符只能在 `ransomNote` 中使用一次。
 
-### [Example 2]
-**Input**: `ransomNote = "aa", magazine = "ab"`
+### [示例 1]
 
-**Output**: `false`
+**输入**: `ransomNote = "a", magazine = "b"`
 
-### [Example 3]
-**Input**: `ransomNote = "aa", magazine = "aab"`
+**输出**: `false`
+### [示例 2]
 
-**Output**: `true`
+**输入**: `ransomNote = "aa", magazine = "ab"`
 
-### [Constraints]
-- `1 <= ransomNote.length, magazine.length <= 100000`
-- `ransomNote` and `magazine` consist of lowercase English letters.
+**输出**: `false`
+### [示例 3]
 
-## Intuition
-[中文题解](#中文题解)
+**输入**: `ransomNote = "aa", magazine = "aab"`
 
-1. This question is equivalent to asking whether `magazine` can contain all the characters in `ransomNote`.
-2. First count the characters in `magazine`, and store the results in `Map`.
-3. Then, traverse `ransomNote` and perform reverse operations on the data in `Map`. If the count of a character is less than 0, return `false`.
+**输出**: `true`
+### [约束]
 
-## Steps
-1. First count the characters in `magazine`, and store the results in `Map`.
-```javascript
-charToCount = new Map()
+- `1 <= ransomNote.length, magazine.length <= 10^5`
+- `ransomNote` 和 `magazine` 由小写英文字母组成
 
-for (character in magazine) {
-  charToCount[character] += 1
-}
-```
+## 思路
 
-2. Then, traverse `ransomNote` and perform reverse operations on the data in `Map`. If the count of a character is less than 0, return `false`.
-```javascript
-charToCount = new Map()
+1. 本题等同于求`magazine`是否能包含`ransomNote`中的所有字符。
+2. 先对`magazine`进行统计，得出每个字符对应的字数，结果存储在`Map`中。每一次都是一个加一的操作。
+3. 下一步做什么？
+    <details><summary>点击查看答案</summary><p>遍历`ransomNote`，对当前字符对应的数量进行减一操作（反向操作）。如果某个字符的数量小于0，则返回`false`。</p></details>
 
-for (character in magazine) {
-  charToCount[character] += 1
-}
+## 步骤
 
-for (character in ransomNote) {
-  charToCount[character] -= 1
+1. 先对`magazine`进行字符和字数统计，结果存储在`Map`中。
 
-  if (charToCount[character] < 0) {
-    return false
-  }
-}
+	```javascript
+	charToCount = new Map()
 
-return true
-```
+	for (character in magazine) {
+	  charToCount[character] += 1
+	}
+	```
 
-## Complexity
-* Time: `O(n)`.
-* Space: `O(n)`.
+2. 然后，遍历`ransomNote`，并对`Map`中的数据进行反向操作。如果某个字符的字数小于0，则返回`false`。
+
+	```javascript
+	charToCount = new Map()
+
+	for (character in magazine) {
+	  charToCount[character] += 1
+	}
+
+	for (character in ransomNote) {
+	  charToCount[character] -= 1
+
+	  if (charToCount[character] < 0) {
+	    return false
+	  }
+	}
+
+	return true
+	```
+
+## 复杂度
+
+- 时间复杂度: `O(N)`.
+- 空间复杂度: `O(N)`.
 
 ## Java
+
 ```java
 class Solution {
     public boolean canConstruct(String ransomNote, String magazine) {
@@ -94,6 +101,7 @@ class Solution {
 ```
 
 ## Python
+
 ```python
 # from collections import defaultdict
 
@@ -113,12 +121,8 @@ class Solution:
         return True
 ```
 
-## C++
-```cpp
-// Welcome to create a PR to complete the code of this language, thanks!
-```
-
 ## JavaScript
+
 ```javascript
 var canConstruct = function (ransomNote, magazine) {
   const charToCount = new Map()
@@ -140,6 +144,7 @@ var canConstruct = function (ransomNote, magazine) {
 ```
 
 ## C#
+
 ```c#
 public class Solution
 {
@@ -165,91 +170,8 @@ public class Solution
 }
 ```
 
-## Go
-```go
-// Welcome to create a PR to complete the code of this language, thanks!
-```
-
-## Ruby
-```ruby
-# Welcome to create a PR to complete the code of this language, thanks!
-```
-
-## C
-```c
-// Welcome to create a PR to complete the code of this language, thanks!
-```
-
-## Kotlin
-```kotlin
-// Welcome to create a PR to complete the code of this language, thanks!
-```
-
-## Swift
-```swift
-// Welcome to create a PR to complete the code of this language, thanks!
-```
-
-## Rust
-```rust
-// Welcome to create a PR to complete the code of this language, thanks!
-```
-
 ## Other languages
-```
+
+```java
 // Welcome to create a PR to complete the code of this language, thanks!
-```
-
-## 力扣问题描述
-[383. 赎金信](https://leetcode.cn/problems/ransom-note) ，难度：**简单**。
-
-给你两个字符串：`ransomNote` 和 `magazine` ，判断 `ransomNote` 能不能由 `magazine` 里面的字符构成。
-
-如果可以，返回 `true` ；否则返回 `false` 。
-
-`magazine` 中的每个字符只能在 `ransomNote` 中使用一次。
-
-### [示例 2]
-**输入**: `ransomNote = "aa", magazine = "ab"`
-
-**输出**: `false`
-
-### [示例 3]
-**输入**: `ransomNote = "aa", magazine = "aab"`
-
-**输出**: `true`
-
-# 中文题解
-## 思路
-1. 本题等同于求`magazine`是否能包含`ransomNote`中的所有字符。
-2. 先对`magazine`进行字符和字数统计，结果存储在`Map`中。
-3. 然后，遍历`ransomNote`，并对`Map`中的数据进行反向操作。如果某个字符的字数小于0，则返回`false`。
-
-## 步骤
-1. 先对`magazine`进行字符和字数统计，结果存储在`Map`中。
-```javascript
-charToCount = new Map()
-
-for (character in magazine) {
-  charToCount[character] += 1
-}
-```
-
-2. 然后，遍历`ransomNote`，并对`Map`中的数据进行反向操作。如果某个字符的字数小于0，则返回`false`。
-```javascript
-charToCount = new Map()
-
-for (character in magazine) {
-  charToCount[character] += 1
-}
-
-for (character in ransomNote) {
-  charToCount[character] -= 1
-
-  if (charToCount[character] < 0) {
-    return false
-  }
-}
-
-return true
 ```
