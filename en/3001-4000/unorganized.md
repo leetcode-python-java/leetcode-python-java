@@ -199,7 +199,7 @@ Add a table to show the differences between A-Start and breadth-first search
 - 1584-min-cost-to-connect-all-points-2.md
 - 1514-path-with-maximum-probability.md
 - 1334 https://leetcode.com/problems/find-the-city-with-the-smallest-number-of-neighbors-at-a-threshold-distance
-- 752 a star
+- 752 a star Add A* for 127?
 - 3464 https://leetcode.cn/problems/maximize-the-distance-between-points-on-a-square
 - https://leetcode.cn/problems/closest-equal-element-queries/
 - https://leetcode.cn/problems/rotate-array
@@ -232,7 +232,8 @@ Add a table to show the differences between A-Start and breadth-first search
 
 ## Other algorithm
 * 线段树 https://leetcode.cn/problems/fruits-into-baskets-iii
-* 
+
+
 
 
 https://leetcode.cn/problems/closest-equal-element-queries

@@ -127,6 +127,4 @@ You can skip the more difficult problems and do them later.
 # Others
 - [433. Minimum Genetic Mutation](en/1-1000/433-minimum-genetic-mutation.md) was solved in _Python_ and 3 ways.
 
-TODO: Add A* for 127?
-
 More LeetCode problems will be added soon.
