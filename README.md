@@ -1,4 +1,5 @@
-# Best practices for LeetCode solutions
+# Fuck LeetCode: Best practices for LeetCode solutions
+
 Hi there! I'm Lane.
 Do you feel that there are too many problems (over 3,300) on the LeetCode and you can't finish them all?
 Or do you forget how to solve the problems you did last time? 
@@ -9,6 +10,7 @@ Here, I will provide you with **common problem-solving patterns** so that you do
 Solutions for languages such as **Python, C++, Java, JavaScript, C#, Go, Ruby**, etc. will also be provided. If you have better solutions, welcome to create an issue or PR!
 
 ## How to use this repo?
+
 I have planned a learning route for you. You just need to do the problems in the order they are listed.
 You can skip the more difficult problems and do them later.
 

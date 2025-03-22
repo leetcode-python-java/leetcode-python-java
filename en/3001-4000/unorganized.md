@@ -201,13 +201,65 @@ Add a table to show the differences between A-Start and breadth-first search
 - 1334 https://leetcode.com/problems/find-the-city-with-the-smallest-number-of-neighbors-at-a-threshold-distance
 - 752 a star
 - 3464 https://leetcode.cn/problems/maximize-the-distance-between-points-on-a-square
+- https://leetcode.cn/problems/closest-equal-element-queries/
+- https://leetcode.cn/problems/rotate-array
 
 ## other finished problems
 - https://leetcode.com/problems/k-closest-points-to-origin/
 - https://leetcode.com/problems/find-special-substring-of-length-k/
 - https://leetcode.cn/problems/eat-pizzas/
 - https://leetcode.cn/problems/merge-intervals/
+- https://leetcode.cn/problems/longest-consecutive-sequence
+- https://leetcode.cn/problems/container-with-most-water
+- https://leetcode.cn/problems/longest-substring-without-repeating-characters
+- https://leetcode.cn/problems/product-of-array-except-self/
+- https://leetcode.cn/problems/set-matrix-zeroes/
+- https://leetcode.cn/problems/copy-list-with-random-pointer/
+- https://leetcode.cn/problems/sort-list/
+- https://leetcode.cn/problems/maximum-depth-of-binary-tree/
+- https://leetcode.cn/problems/invert-binary-tree/
+- https://leetcode.cn/problems/symmetric-tree/
+- https://leetcode.cn/problems/binary-tree-level-order-traversal
+- https://leetcode.cn/problems/convert-sorted-array-to-binary-search-tree
+- https://leetcode.cn/problems/validate-binary-search-tree
+- https://leetcode.cn/problems/kth-smallest-element-in-a-bst
+- https://leetcode.cn/problems/binary-tree-right-side-view/
+- https://leetcode.cn/problems/flatten-binary-tree-to-linked-list/
+- https://leetcode.cn/problems/positions-of-large-groups/
+- https://leetcode.cn/problems/masking-personal-information
+- https://leetcode.cn/problems/flipping-an-image/
+- 
 
 ## Other algorithm
 * 线段树 https://leetcode.cn/problems/fruits-into-baskets-iii
 * 
+
+
+https://leetcode.cn/problems/closest-equal-element-queries
+# Timeout1
+# class Solution:
+#   def solveQueries(self, nums: List[int], queries: List[int]) -> List[int]:
+#     n = len(nums)
+#   answer = []
+#
+#   for i in range(len(queries)):
+#     index = queries[i]
+#     num = nums[index]
+#
+#     k = 1
+#
+#     while k < n:
+#       if num == nums[(index + k) % n]:
+#         answer.append(k)
+#       break
+#
+#       if num == nums[index - k]:
+#         answer.append(k)
+#       break
+#
+#       k += 1
+#
+#       if k == n:
+#         answer.append(-1)
+#
+#       return answer
