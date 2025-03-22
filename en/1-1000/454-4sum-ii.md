@@ -2,10 +2,10 @@
 LeetCode link: [454. 4Sum II](https://leetcode.com/problems/problem), difficulty: **Medium**.
 
 ## LeetCode description of "454. 4Sum II"
-Given four integer arrays `nums1`, `nums2`, `nums3`, and `nums4` all of length `n`, return the number of tuples` (i, j, k, l)` such that:
+Given four integer arrays `nums1`, `nums2`, `nums3`, and `nums4` all of length `n`, return the number of tuples `(i, j, k, l)` such that:
 
-* `0 <= i, j, k, l < n`
-* `nums1[i] + nums2[j] + nums3[k] + nums4[l] == 0`
+- `0 <= i, j, k, l < n`
+- `nums1[i] + nums2[j] + nums3[k] + nums4[l] == 0`
 
 ### [Example 1]
 **Input**: `nums1 = [1,2], nums2 = [-2,-1], nums3 = [-1,2], nums4 = [0,2]`
@@ -30,7 +30,7 @@ The two tuples are:
 - `n == nums3.length`
 - `n == nums4.length`
 - `1 <= n <= 200`
-- `-2**28 <= nums1[i], nums2[i], nums3[i], nums4[i] <= 2**28`
+- `-2^28 <= nums1[i], nums2[i], nums3[i], nums4[i] <= 2^28`
 
 ## Intuition
 1. Because the final requirement is to take one number from each group of numbers, the four groups of numbers can be split into **two groups of two**.
@@ -38,25 +38,28 @@ The two tuples are:
 3. Iterate over `nums3` and `nums4`, if `-(num3 + num4)` exists in `keys` of `Map`, then `count` is included in the total.
 
 ## Steps
-1. Count the number of each `sum`. Use `Map` to store, `key` is `sum`, `value` is `count`.
-```python
-num_to_count = defaultdict(int)
 
-for num1 in nums1:
-    for num2 in nums2:
-        num_to_count[num1 + num2] += 1
-```
+1. Count the number of each `sum`. Use `Map` to store, `key` is `sum`, `value` is `count`.
+
+	```python
+	num_to_count = defaultdict(int)
+	
+	for num1 in nums1:
+	    for num2 in nums2:
+	        num_to_count[num1 + num2] += 1
+	```
 
 2. Iterate over `nums3` and `nums4`, if `-(num3 + num4)` exists in `keys` of `Map`, then `count` is included in the total.
-```python
-result = 0
 
-for num3 in nums3:
-    for num4 in nums4:
-        result += num_to_count[-(num3 + num4)]
-
-return result
-```
+	```python
+	result = 0
+	
+	for num3 in nums3:
+	    for num4 in nums4:
+	        result += num_to_count[-(num3 + num4)]
+	
+	return result
+	```
 
 ## Complexity
 * Time: `O(n * n)`.

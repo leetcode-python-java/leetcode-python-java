@@ -4,8 +4,8 @@
 ## 力扣“454. 四数相加 II”问题描述
 给你四个整数数组 `nums1`、`nums2`、`nums3` 和 `nums4` ，数组长度都是 `n` ，请你计算有多少个元组 `(i, j, k, l)` 能满足：
 
-* `0 <= i, j, k, l < n`
-* `nums1[i] + nums2[j] + nums3[k] + nums4[l] == 0`
+- `0 <= i, j, k, l < n`
+- `nums1[i] + nums2[j] + nums3[k] + nums4[l] == 0`
 
 ### [示例 1]
 **输入**: `nums1 = [1,2], nums2 = [-2,-1], nums3 = [-1,2], nums4 = [0,2]`
@@ -38,25 +38,28 @@
 3. 遍历`nums3`和`nums4`，如果`-(num3 + num4)`存在于`Map`的`keys`中，则`count`计入总数。
 
 ## 步骤
-1. 统计出每个`和`值对应的个数。使用`Map`储存，`key`为`和`，`value`为`count`。
-```python
-num_to_count = defaultdict(int)
 
-for num1 in nums1:
-    for num2 in nums2:
-        num_to_count[num1 + num2] += 1
-```
+1. 统计出每个`和`值对应的个数。使用`Map`储存，`key`为`和`，`value`为`count`。
+
+	```python
+	num_to_count = defaultdict(int)
+	
+	for num1 in nums1:
+	    for num2 in nums2:
+	        num_to_count[num1 + num2] += 1
+	```
 
 2. 遍历`nums3`和`nums4`，如果`-(num3 + num4)`存在于`Map`的`keys`中，则`count`计入总数。
-```python
-result = 0
 
-for num3 in nums3:
-    for num4 in nums4:
-        result += num_to_count[-(num3 + num4)]
-
-return result
-```
+	```python
+	result = 0
+	
+	for num3 in nums3:
+	    for num4 in nums4:
+	        result += num_to_count[-(num3 + num4)]
+	
+	return result
+	```
 
 ## 复杂度
 * 时间: `O(n * n)`.
