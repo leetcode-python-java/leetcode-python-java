@@ -6,11 +6,11 @@ Write an algorithm to determine if a number `n` is happy.
 
 A **happy number** is a number defined by the following process:
 
-* Starting with any positive integer, replace the number by the sum of the squares of its digits.
-* Repeat the process until the number equals 1 (where it will stay), or it **loops endlessly in a cycle** which does not include 1.
-* Those numbers for which this process **ends in 1** are happy.
+- Starting with any positive integer, replace the number by the sum of the squares of its digits.
+- Repeat the process until the number equals 1 (where it will stay), or it **loops endlessly in a cycle** which does not include 1.
+- Those numbers for which this process **ends in 1** are happy.
 
-Return `true` if `n` is _a happy number_, and `false` if not.
+Return `true` if `n` is *a happy number*, and `false` if not.
 
 ### [Example 1]
 **Input**: `n = 19`
@@ -19,10 +19,10 @@ Return `true` if `n` is _a happy number_, and `false` if not.
 
 **Explanation**
 ```
-1**2 + 9**2 = 82
-8**2 + 2**2 = 68
-6**2 + 8**2 = 100
-1**2 + 0**2 + 0**2 = 1
+1^2 + 9^2 = 82
+8^2 + 2^2 = 68
+6^2 + 8^2 = 100
+1^2 + 0^2 + 0^2 = 1
 ```
 
 ### [Example 2]
@@ -31,49 +31,52 @@ Return `true` if `n` is _a happy number_, and `false` if not.
 **Output**: `false`
 
 ### [Constraints]
-- `1 <= n <= 2**31 - 1`
+- `1 <= n <= 2^31 - 1`
 
 ## Intuition
 1. It is more convenient to call `isHappy(n)` recursively. You only need to generate a new `n` as a parameter each time.
 2. If `n` has already appeared, it means that the loop has been entered, and `return false`. You can use `Set` to save the `n` that has appeared.
 
 ## Steps
+
 1. Generate a new `n` as the `isHappy(n)` parameter.
-```javascript
-let sum = 0
 
-for (const digit of n.toString()) {
-  sum += Math.pow(Number(digit), 2)
-}
-
-// omitted code
-
-return isHappy(sum)
-```
+	```javascript
+	let sum = 0
+	
+	for (const digit of n.toString()) {
+	  sum += Math.pow(Number(digit), 2)
+	}
+	
+	// omitted code
+	
+	return isHappy(sum)
+	```
 
 2. If `n` has already appeared, it means that the loop has been entered, and `return false`. You can use `Set` to save the `n` that has appeared.
-```javascript
-var isHappy = function (n, appearedNums) { // 0
-  appearedNums ||= new Set() // 1
-  let sum = 0
 
-  for (const digit of n.toString()) {
-    sum += Math.pow(Number(digit), 2)
-  }
-
-  if (sum == 1) {
-    return true
-  }
-
-  if (appearedNums.has(sum)) { // 2
-    return false
-  }
-
-  appearedNums.add(sum) // 3
-
-  return isHappy(sum, appearedNums)
-};
-```
+	```javascript
+	var isHappy = function (n, appearedNums) { // 0
+	  appearedNums ||= new Set() // 1
+	  let sum = 0
+	
+	  for (const digit of n.toString()) {
+	    sum += Math.pow(Number(digit), 2)
+	  }
+	
+	  if (sum == 1) {
+	    return true
+	  }
+	
+	  if (appearedNums.has(sum)) { // 2
+	    return false
+	  }
+	
+	  appearedNums.add(sum) // 3
+	
+	  return isHappy(sum, appearedNums)
+	};
+	```
 
 ## Complexity
 * Time: `O(log N)`.

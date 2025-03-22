@@ -6,10 +6,10 @@
 
 「**快乐数**」 定义为：
 
-* 对于一个正整数，每一次将该数替换为它每个位置上的数字的平方和。
-* 然后重复这个过程直到这个数变为 `1`，也可能是 **无限循环** 但始终变不到 `1`。
-* 如果这个过程 **结果为** `1`，那么这个数就是快乐数。
-* 如果 `n` 是 _快乐数_ 就返回 `true` ；不是，则返回 `false` 。
+- 对于一个正整数，每一次将该数替换为它每个位置上的数字的平方和。
+- 然后重复这个过程直到这个数变为 `1`，也可能是 **无限循环** 但始终变不到 `1`。
+- 如果这个过程 **结果为** `1`，那么这个数就是快乐数。
+- 如果 `n` 是 *快乐数* 就返回 `true` ；不是，则返回 `false` 。
 
 ### [示例 1]
 **输入**: `n = 19`
@@ -37,42 +37,45 @@
 2. 如果`n`已经出现过了，说明进入了循环，`return false`。可以用`Set`保存已经出现过的`n`。
 
 ## 步骤
+
 1. 生成新的`n`作为`isHappy()`的参数。
-```javascript
-let sum = 0
 
-for (const digit of n.toString()) {
-  sum += Math.pow(Number(digit), 2)
-}
-
-// omitted code
-
-return isHappy(sum)
-```
+	```javascript
+	let sum = 0
+	
+	for (const digit of n.toString()) {
+	  sum += Math.pow(Number(digit), 2)
+	}
+	
+	// omitted code
+	
+	return isHappy(sum)
+	```
 
 2. 如果`n`已经出现过了，说明进入了循环，`return false`。可以用`Set`保存已经出现过的`n`。
-```javascript
-var isHappy = function (n, appearedNums) {
-  appearedNums ||= new Set() // 1
-  let sum = 0
 
-  for (const digit of n.toString()) {
-    sum += Math.pow(Number(digit), 2)
-  }
-
-  if (sum == 1) {
-    return true
-  }
-
-  if (appearedNums.has(sum)) { // 2
-    return false
-  }
-
-  appearedNums.add(sum) // 3
-
-  return isHappy(sum, appearedNums)
-};
-```
+	```javascript
+	var isHappy = function (n, appearedNums) {
+	  appearedNums ||= new Set() // 1
+	  let sum = 0
+	
+	  for (const digit of n.toString()) {
+	    sum += Math.pow(Number(digit), 2)
+	  }
+	
+	  if (sum == 1) {
+	    return true
+	  }
+	
+	  if (appearedNums.has(sum)) { // 2
+	    return false
+	  }
+	
+	  appearedNums.add(sum) // 3
+	
+	  return isHappy(sum, appearedNums)
+	};
+	```
 
 ## 复杂度
 * 时间：`O(log N)`。
