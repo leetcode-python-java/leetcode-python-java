@@ -27,10 +27,17 @@ The first occurrence is at index 0, so we return 0.
 - `haystack` and `needle` consist of only lowercase English characters.
 
 ## Intuition
-Traverse the string once, and if the `needle.length` characters after the current position are equal to `needle`, return the current `index`.
+
+- This kind of question can be solved with one line of code using the built-in `index()`. Obviously, the questioner wants to test our ability to control the loop.
+
+- For `heystack`, traverse each character in turn. There may be two situations:
+    1. First, the character is not equal to the first letter of `needle`. Then process the next character.
+    2. Second, if the character is equal to the first letter of `needle`, continue to compare the next character of `heystack` and `needle` in an internal loop until they are not equal or `needle` has completely matched.
+
+- This question is easier to understand by looking at the code directly.
 
 ## Complexity
-* Time: `O(m * n)`.
+* Time: `O(m + n)`.
 * Space: `O(n)`.
 
 ## Python
@@ -38,8 +45,13 @@ Traverse the string once, and if the `needle.length` characters after the curren
 class Solution:
     def strStr(self, haystack: str, needle: str) -> int:
         for i in range(len(haystack)):
-            if haystack[i:i + len(needle)] == needle:
-                return i
+            j = 0
+            
+            while i + j < len(haystack) and haystack[i + j] == needle[j]:
+                j += 1
+
+                if j == len(needle):
+                    return i
 
         return -1
 ```
@@ -48,8 +60,14 @@ class Solution:
 ```javascript
 var strStr = function (haystack, needle) {
   for (let i = 0; i < haystack.length; i++) {
-    if (haystack.slice(i, i + needle.length) == needle) {
-      return i
+    let j = 0
+
+    while (i + j < haystack.length && haystack[i + j] == needle[j]) {
+      j += 1
+
+      if (j == needle.length) {
+        return i
+      }
     }
   }
 
