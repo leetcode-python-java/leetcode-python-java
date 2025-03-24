@@ -1,4 +1,5 @@
-# 383. Ransom Note - Best Practices of LeetCode Solutions
+# 383. Ransom Note - Fucking Good LeetCode Solutions
+
 LeetCode link: [383. Ransom Note](https://leetcode.com/problems/ransom-note),
 [383. 赎金信](https://leetcode.cn/problems/ransom-note)
 
@@ -256,3 +257,104 @@ for (character in ransomNote) {
 
 return true
 ```
+
+## 复杂度
+* 时间：`O(n)`。
+* 空间：`O(n)`。
+
+## Java
+```java
+class Solution {
+    public boolean canConstruct(String ransomNote, String magazine) {
+        var charToCount = new HashMap<Character, Integer>();
+
+        for (var character : magazine.toCharArray()) {
+            charToCount.put(character, charToCount.getOrDefault(character, 0) + 1);
+        }
+
+        for (var character : ransomNote.toCharArray()) {
+            charToCount.put(character, charToCount.getOrDefault(character, 0) - 1);
+
+            if (charToCount.get(character) < 0) {
+                return false;
+            }
+        }
+
+        return true;
+    }
+}
+```
+
+## Python
+```python
+# from collections import defaultdict
+
+class Solution:
+    def canConstruct(self, ransomNote: str, magazine: str) -> bool:
+        char_to_count = defaultdict(int)
+
+        for char in magazine:
+            char_to_count[char] += 1
+
+        for char in ransomNote:
+            char_to_count[char] -= 1
+
+            if char_to_count[char] < 0:
+                return False
+
+        return True
+```
+
+## JavaScript
+```javascript
+var canConstruct = function (ransomNote, magazine) {
+  const charToCount = new Map()
+
+  for (const character of magazine) {
+    charToCount.set(character, (charToCount.get(character) || 0) + 1)
+  }
+
+  for (const character of ransomNote) {
+    charToCount.set(character, (charToCount.get(character) || 0) - 1)
+
+    if (charToCount.get(character) < 0) {
+      return false
+    }
+  }
+
+  return true
+};
+```
+
+## C#
+```c#
+public class Solution
+{
+    public bool CanConstruct(string ransomNote, string magazine)
+    {
+        var charToCount = new Dictionary<char, int>();
+
+        foreach (char character in magazine)
+            charToCount[character] = charToCount.GetValueOrDefault(character, 0) + 1;
+
+        foreach (char character in ransomNote)
+        {
+            charToCount[character] = charToCount.GetValueOrDefault(character, 0) - 1;
+
+            if (charToCount[character] < 0)
+            {
+                return false;
+            }
+        }
+
+        return true;
+    }
+}
+```
+
+## Other languages
+```java
+// Welcome to create a PR to complete the code of this language, thanks!
+```
+
+原文链接：[leetcoder.net - Fucking Good LeetCode Solutions](https://leetcoder.net/en/leetcode/383-ransom-note)

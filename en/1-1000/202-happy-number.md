@@ -1,4 +1,6 @@
-# 202. Happy Number - Best Practices of LeetCode Solutions
+Original link: [leetcoder.net - Fucking Good LeetCode Solutions](https://leetcoder.net/en/leetcode/202-happy-number)
+
+# 202. Happy Number - Fucking Good LeetCode Solutions
 LeetCode link: [202. Happy Number](https://leetcode.com/problems/happy-number), difficulty: **Easy**.
 
 ## LeetCode description of "202. Happy Number"

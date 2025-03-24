@@ -2,9 +2,9 @@
 
 # 383. 赎金信 - 力扣题解最佳实践
 
-力扣链接：[383. 赎金信](https://leetcode.cn/problems/ransom-note), 难度：**简单**。
+力扣链接：[383. 赎金信](https://leetcode.cn/problems/ransom-note) ，难度：**简单**。
 
-## 力扣“383. 赎金信”问题描述
+## 力扣"383. 赎金信"问题描述
 
 给你两个字符串：`ransomNote` 和 `magazine` ，判断 `ransomNote` 能不能由 `magazine` 里面的字符构成。
 
@@ -29,15 +29,14 @@
 **输出**: `true`
 ### [约束]
 
-- `1 <= ransomNote.length, magazine.length <= 10^5`
+- `1 <= ransomNote.length, magazine.length <= 100000`
 - `ransomNote` 和 `magazine` 由小写英文字母组成
 
 ## 思路
 
 1. 本题等同于求`magazine`是否能包含`ransomNote`中的所有字符。
-2. 先对`magazine`进行统计，得出每个字符对应的字数，结果存储在`Map`中。每一次都是一个加一的操作。
-3. 下一步做什么？
-    <details><summary>点击查看答案</summary><p>遍历`ransomNote`，对当前字符对应的数量进行减一操作（反向操作）。如果某个字符的数量小于0，则返回`false`。</p></details>
+2. 先对`magazine`进行字符和字数统计，结果存储在`Map`中。
+3. 然后，遍历`ransomNote`，并对`Map`中的数据进行反向操作。如果某个字符的字数小于0，则返回`false`。
 
 ## 步骤
 
@@ -73,8 +72,8 @@
 
 ## 复杂度
 
-- 时间复杂度: `O(N)`.
-- 空间复杂度: `O(N)`.
+- 时间复杂度: `O(n)`.
+- 空间复杂度: `O(n)`.
 
 ## Java
 
@@ -170,8 +169,50 @@ public class Solution
 }
 ```
 
+## C++
+
+```cpp
+// Welcome to create a PR to complete the code of this language, thanks!
+```
+
+## Go
+
+```go
+// Welcome to create a PR to complete the code of this language, thanks!
+```
+
+## Ruby
+
+```ruby
+# Welcome to create a PR to complete the code of this language, thanks!
+```
+
+## C
+
+```c
+// Welcome to create a PR to complete the code of this language, thanks!
+```
+
+## Kotlin
+
+```kotlin
+// Welcome to create a PR to complete the code of this language, thanks!
+```
+
+## Swift
+
+```swift
+// Welcome to create a PR to complete the code of this language, thanks!
+```
+
+## Rust
+
+```rust
+// Welcome to create a PR to complete the code of this language, thanks!
+```
+
 ## Other languages
 
-```java
+```
 // Welcome to create a PR to complete the code of this language, thanks!
 ```

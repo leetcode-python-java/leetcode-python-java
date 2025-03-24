@@ -1,5 +1,7 @@
-# 454. 4Sum II - Best Practices of LeetCode Solutions
-LeetCode link: [454. 4Sum II](https://leetcode.com/problems/problem), difficulty: **Medium**.
+原文链接：[leetcoder.net - Fucking Good LeetCode Solutions](https://leetcoder.net/en/leetcode/454-4sum-ii)
+
+# 454. 4Sum II - Fucking Good LeetCode Solutions
+LeetCode link: [454. 4Sum II](https://leetcode.com/problems/4sum-ii), difficulty: **Medium**.
 
 ## LeetCode description of "454. 4Sum II"
 Given four integer arrays `nums1`, `nums2`, `nums3`, and `nums4` all of length `n`, return the number of tuples `(i, j, k, l)` such that:

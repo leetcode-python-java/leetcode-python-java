@@ -1,4 +1,6 @@
-# 28. Find the Index of the First Occurrence in a String - Best Practices of LeetCode Solutions
+Original link: [leetcoder.net - Fucking Good LeetCode Solutions](https://leetcoder.net/en/leetcode/28-find-the-index-of-the-first-occurrence-in-a-string)
+
+# 28. Find the Index of the First Occurrence in a String - Fucking Good LeetCode Solutions
 LeetCode link: [28. Find the Index of the First Occurrence in a String](https://leetcode.com/problems/find-the-index-of-the-first-occurrence-in-a-string), difficulty: **Easy**.
 
 ## LeetCode description of "28. Find the Index of the First Occurrence in a String"
@@ -100,7 +102,27 @@ var strStr = function (haystack, needle) {
 # Welcome to create a PR to complete the code of this language, thanks!
 ```
 
-## C, Kotlin, Swift, Rust or other languages
+## C
+```c
+// Welcome to create a PR to complete the code of this language, thanks!
+```
+
+## Kotlin
+```kotlin
+// Welcome to create a PR to complete the code of this language, thanks!
+```
+
+## Swift
+```swift
+// Welcome to create a PR to complete the code of this language, thanks!
+```
+
+## Rust
+```rust
+// Welcome to create a PR to complete the code of this language, thanks!
+```
+
+## Other languages
 ```
 // Welcome to create a PR to complete the code of this language, thanks!
 ```
