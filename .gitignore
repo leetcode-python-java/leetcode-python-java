@@ -3,3 +3,13 @@ temp/
 en/empty-template-en.md
 zh/empty-template-zh.md
 /.ruby-version
+
+# Clacky-related configuration
+.1024*
+!.1024
+.breakpoints
+
+# Node.js related
+node_modules/
+npm-debug.log
+yarn-error.log
