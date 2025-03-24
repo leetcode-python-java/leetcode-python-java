@@ -1,7 +1,11 @@
-# 349. 两个数组的交集 - 力扣题解最佳实践
-力扣链接：[349. 两个数组的交集](https://leetcode.cn/problems/intersection-of-two-arrays) ，难度：**简单**。
+原文链接：[leetcoder.net - 力扣题解最佳实践 - 力扣人](https://leetcoder.net/zh/leetcode/349-intersection-of-two-arrays)
+
+# 349. 两个数组的交集 - 力扣题解最佳实践 - 力扣人
+
+力扣链接：[349. 两个数组的交集](https://leetcode.cn/problems/intersection-of-two-arrays), 难度：**简单**。
 
 ## 力扣“349. 两个数组的交集”问题描述
+
 给定两个数组 `nums1` 和 `nums2` ，返回 _它们的 **交集**_ 。输出结果中的每个元素一定是 **唯一** 的。我们可以 **不考虑输出结果的顺序**。
 
 > 数组的交集: The intersection of two arrays is defined as the set of elements that are present in both arrays.
@@ -21,19 +25,23 @@
 **解释**: `[4,9] 也是可通过的`
 
 ### [约束]
+
 - `1 <= nums1.length, nums2.length <= 1000`
 - `0 <= nums1[i], nums2[i] <= 1000`
 
 ## 思路
+
 1. 把其中一个数组转为`set`，数据结构`set`的特点是元素不重复。
 2. 遍历另一个数组时，如果发现当前元素已经存在于`set`中，则说明该元素属于交集，将该元素加入结果集中。
 3. 结果集也采用`set`类型，因为需要去重。
 
 ## 复杂度
-* 时间：`O(N)`。
-* 空间：`O(N)`。
+
+- 时间复杂度: `O(N)`.
+- 空间复杂度: `O(N)`.
 
 ## Java
+
 ```java
 class Solution {
     public int[] intersection(int[] nums1, int[] nums2) {
@@ -56,6 +64,7 @@ class Solution {
 ```
 
 ## Python
+
 ```python
 class Solution:
     def intersection(self, nums1: List[int], nums2: List[int]) -> List[int]:
@@ -70,7 +79,8 @@ class Solution:
 ```
 
 ## C++
-```cpp
+
+```c++
 class Solution {
 public:
     vector<int> intersection(vector<int>& nums1, vector<int>& nums2) {
@@ -89,6 +99,7 @@ public:
 ```
 
 ## JavaScript
+
 ```javascript
 var intersection = function (nums1, nums2) {
   let results = new Set()
@@ -105,6 +116,7 @@ var intersection = function (nums1, nums2) {
 ```
 
 ## C#
+
 ```c#
 public class Solution
 {
@@ -130,6 +142,7 @@ public class Solution
 ```
 
 ## Go
+
 ```go
 func intersection(nums1 []int, nums2 []int) []int {
     results := map[int]bool{}
@@ -150,13 +163,14 @@ func intersection(nums1 []int, nums2 []int) []int {
 ```
 
 ## Ruby
+
 ```ruby
 def intersection(nums1, nums2)
-  set_of_nums1 = Set.new(nums1)
+  nums1_set = Set.new(nums1)
   results = Set.new
 
   nums2.each do |num|
-    if set_of_nums1.include?(num)
+    if nums1_set.include?(num)
       results << num
     end
   end
@@ -165,7 +179,9 @@ def intersection(nums1, nums2)
 end
 ```
 
-## C, Kotlin, Swift, Rust or other languages
-```
+## Other languages
+
+```java
 // Welcome to create a PR to complete the code of this language, thanks!
 ```
+

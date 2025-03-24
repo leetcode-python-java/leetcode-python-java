@@ -1,66 +1,54 @@
-# 977. Squares of a Sorted Array - Best Practices of LeetCode Solutions
-LeetCode link: [977. Squares of a Sorted Array](https://leetcode.com/problems/squares-of-a-sorted-array)
+原文链接：[leetcoder.net - 力扣题解最佳实践 - 力扣人](https://leetcoder.net/zh/leetcode/977-squares-of-a-sorted-array)
 
-## LeetCode problem description
-Given an integer array `nums` sorted in **non-decreasing** order, return _an array of **the squares of each number** sorted in non-decreasing order._
+# 977. 有序数组的平方 - 力扣题解最佳实践 - 力扣人
 
-### Example 1
-```ruby
-Input: nums = [-4,-1,0,3,10]
-Output: [0,1,9,16,100]
-Explanation: After squaring, the array becomes [16,1,0,9,100].
-After sorting, it becomes [0,1,9,16,100].
+力扣链接：[977. 有序数组的平方](https://leetcode.cn/problems/squares-of-a-sorted-array), 难度：**简单**。
+
+## 力扣“977. 有序数组的平方”问题描述
+
+给你一个按 **非递减顺序** 排序的整数数组 `nums`，返回 **每个数字的平方** 组成的新数组，要求也按 **非递减顺序** 排序。
+
+**进阶**：请你设计时间复杂度为 O(n) 的算法解决本问题。
+
+### [示例 1]
+
+**输入**: `nums = [-4,-1,0,3,10]`
+
+**输出**: `[0,1,9,16,100]`
+
+**解释**: 
+
+```
+平方后，数组变为 [16,1,0,9,100]
+排序后，数组变为 [0,1,9,16,100]
 ```
 
-### Example 2
-```ruby
-Input: nums = [-7,-3,2,3,11]
-Output: [4,9,9,49,121]
-```
+### [示例 2]
 
-### Constraints
-- `1 <= nums.length <= 10000`
-- `10000 <= nums[i] <= 10000`
-- `nums` is sorted in **non-decreasing** order.
+**输入**: `nums = [-7,-3,2,3,11]`
 
-**Follow up**: Squaring each element and sorting the new array is very trivial, could you find an `O(n)` solution using a different approach?
+**输出**: `[4,9,9,49,121]`
 
-## Intuition
-### Solution 1: using `sort()`
-* Square each number in the array.
-* Sort the new array.
+### [约束]
 
-### Solution 2: not using `sort()` (important)
-* The smallest number in the array is located inside the array, and you need to traverse to find it.
-* But if you think in reverse and give priority to the certain ones, the program will become simple.
-* The largest number in the array is located at the two ends. So, deal with the largest number first.
+- `1 <= nums.length <= 10^4`
+- `-10^4 <= nums[i] <= 10^4`
+- `nums` 已按 **非递减顺序** 排序
 
-## Complexity
-### Solution 1: using `sort()`
-* Time: `O(n * log n)`.
-* Space: `O(n)`.
+## 思路 1
 
-### Solution 2: not using `sort()`
-* Time: `O(n)`.
-* Space: `O(n)`.
+- 数组中最小的数位于数组内部，需要遍历才能找到，不太方便。
+- 但如果反向思考，能否更加方便地优先处理另外一些数呢？那么优先处理哪些数呢？
+
+    <details><summary>点击查看答案</summary><p>答案是优先处理数组**两端**的数，因为它们最大。</p></details>
+
+## 复杂度
+
+- 时间复杂度: `O(N)`.
+- 空间复杂度: `O(N)`.
 
 ## Java
-### Solution 1: using `sort()`
-```java
-class Solution {
-    public int[] sortedSquares(int[] nums) {
-        for (var i = 0; i < nums.length; i++) {
-            nums[i] *= nums[i];
-        }
 
-        Arrays.sort(nums);
-
-        return nums;
-    }
-}
-```
-
-### Solution 2: not using `sort()`
 ```java
 class Solution {
     public int[] sortedSquares(int[] nums) {
@@ -87,18 +75,7 @@ class Solution {
 ```
 
 ## Python
-### Solution 1: using `sort()`
-```python
-class Solution:
-    def sortedSquares(self, nums: List[int]) -> List[int]:
-        results = [num ** 2 for num in nums]
 
-        results.sort()
-
-        return results
-```
-
-### Solution 2: not using `sort()`
 ```python
 class Solution:
     def sortedSquares(self, nums: List[int]) -> List[int]:
@@ -120,24 +97,8 @@ class Solution:
 ```
 
 ## C++
-### Solution 1: using `sort()`
-```cpp
-class Solution {
-public:
-    vector<int> sortedSquares(vector<int>& nums) {
-        for (auto i = 0; i < nums.size(); i++) {
-            nums[i] *= nums[i];
-        }
 
-        sort(nums.begin(), nums.end());
-
-        return nums;
-    }
-};
-```
-
-### Solution 2: not using `sort()`
-```cpp
+```c++
 class Solution {
 public:
     vector<int> sortedSquares(vector<int>& nums) {
@@ -164,16 +125,7 @@ public:
 ```
 
 ## JavaScript
-### Solution 1: using `sort()`
-```javascript
-var sortedSquares = function (nums) {
-  return _.sortBy(
-    nums.map((num) => num * num)
-  )
-};
-```
 
-### Solution 2: not using `sort()`
 ```javascript
 var sortedSquares = function (nums) {
   const results = Array(nums.length).fill(null)
@@ -198,23 +150,7 @@ var sortedSquares = function (nums) {
 ```
 
 ## C#
-### Solution 1: using `sort()`
-```c#
-public class Solution
-{
-    public int[] SortedSquares(int[] nums)
-    {
-        for (int i = 0; i < nums.Length; i++)
-            nums[i] *= nums[i];
 
-        Array.Sort(nums);
-
-        return nums;
-    }
-}
-```
-
-### Solution 2: not using `sort()`
 ```c#
 public class Solution
 {
@@ -247,20 +183,7 @@ public class Solution
 ```
 
 ## Go
-### Solution 1: using `sort()`
-```go
-func sortedSquares(nums []int) []int {
-    for i, _ := range nums {
-        nums[i] *= nums[i]
-    }
 
-    sort.Sort(sort.IntSlice(nums))
-
-    return nums
-}
-```
-
-### Solution 2: not using `sort()`
 ```go
 func sortedSquares(nums []int) []int {
     results := make([]int, len(nums))
@@ -285,14 +208,7 @@ func sortedSquares(nums []int) []int {
 ```
 
 ## Ruby
-### Solution 1: using `sort()`
-```ruby
-def sorted_squares(nums)
-  nums.map { |num| num ** 2 }.sort
-end
-```
 
-### Solution 2: not using `sort()`
 ```ruby
 def sorted_squares(nums)
   results = Array.new(nums.length)
@@ -316,27 +232,118 @@ def sorted_squares(nums)
 end
 ```
 
-## C
-```c
+## Other languages
+
+```java
 // Welcome to create a PR to complete the code of this language, thanks!
 ```
 
-## Kotlin
-```kotlin
-// Welcome to create a PR to complete the code of this language, thanks!
+## 思路 2
+
+
+
+## 复杂度
+
+- 时间复杂度: `O(N * log N)`.
+- 空间复杂度: `O(N)`.
+
+## Java
+
+```java
+class Solution {
+    public int[] sortedSquares(int[] nums) {
+        for (var i = 0; i < nums.length; i++) {
+            nums[i] *= nums[i];
+        }
+
+        Arrays.sort(nums);
+
+        return nums;
+    }
+}
 ```
 
-## Swift
-```swift
-// Welcome to create a PR to complete the code of this language, thanks!
+## Python
+
+```python
+class Solution:
+    def sortedSquares(self, nums: List[int]) -> List[int]:
+        results = [num ** 2 for num in nums]
+
+        results.sort()
+
+        return results
 ```
 
-## Rust
-```rust
-// Welcome to create a PR to complete the code of this language, thanks!
+## C++
+
+```c++
+class Solution {
+public:
+    vector<int> sortedSquares(vector<int>& nums) {
+        for (auto i = 0; i < nums.size(); i++) {
+            nums[i] *= nums[i];
+        }
+
+        sort(nums.begin(), nums.end());
+
+        return nums;
+    }
+};
+```
+
+## JavaScript
+
+```javascript
+var sortedSquares = function (nums) {
+  return _.sortBy(
+    nums.map((num) => num * num)
+  )
+};
+```
+
+## C#
+
+```c#
+public class Solution
+{
+    public int[] SortedSquares(int[] nums)
+    {
+        for (int i = 0; i < nums.Length; i++)
+            nums[i] *= nums[i];
+
+        Array.Sort(nums);
+
+        return nums;
+    }
+}
+```
+
+## Go
+
+```go
+func sortedSquares(nums []int) []int {
+    for i, _ := range nums {
+        nums[i] *= nums[i]
+    }
+
+    sort.Sort(sort.IntSlice(nums))
+
+    return nums
+}
+```
+
+## Ruby
+
+```ruby
+def sorted_squares(nums)
+  nums.map { |num| num ** 2 }.sort
+end
 ```
 
 ## Other languages
-```
+
+```java
 // Welcome to create a PR to complete the code of this language, thanks!
 ```
+

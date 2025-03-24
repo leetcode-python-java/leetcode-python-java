@@ -1,6 +1,8 @@
-# 344. Reverse String - Best Practices of LeetCode Solutions
+Original link: [leetcoder.net - LeetCoder: Fucking Good LeetCode Solutions](https://leetcoder.net/en/leetcode/344-reverse-string)
 
-LeetCode link: [344. Reverse String](https://leetcode.com/problems/reverse-string), difficulty: **Easy**.
+# 344. Reverse String - LeetCoder: Fucking Good LeetCode Solutions
+
+LeetCode link: [344. Reverse String](https://leetcode.com/problems/reverse-string), Difficulty: **Easy**.
 
 ## LeetCode description of "344. Reverse String"
 
@@ -30,6 +32,8 @@ You must do this by modifying the input array [in-place](https://en.wikipedia.or
 <details>
   <summary>Hint 1</summary>
   The entire logic for reversing a string is based on using the opposite directional two-pointer approach!
+
+  
 </details>
 
 ## Intuition
@@ -41,43 +45,44 @@ You must do this by modifying the input array [in-place](https://en.wikipedia.or
 5. The above is the template for `two pointers` in `opposite directions`.
 
 ## Steps
+
 1. Use two pointers with **opposite directions**, initially one pointer points to the index `0` and the other pointer points to the index `s.length - 1`.
 
-```ruby
-left = 0
-right = s.length - 1
-```
+    ```ruby
+    left = 0
+    right = s.length - 1
+    ```
 
 2. Traverse the elements of the array, and the loop condition is `while (left < right)`. In the loop body, `left += 1`, `right -= 1`.
 
-```ruby
-left = 0
-right = s.length - 1
-
-while left < right # 1
-  left += 1 # 2
-  right -= 1 # 3
-end
-```
+    ```ruby
+    left = 0
+    right = s.length - 1
+    
+    while left < right # 1
+      left += 1 # 2
+      right -= 1 # 3
+    end
+    ```
 
 3. In the loop body, swap the two values.
 
-```ruby
-left = 0
-right = s.length - 1
-
-while left < right
-  s[left], s[right] = s[right], s[left] # 1
-
-  left += 1
-  right -= 1
-end
-```
+    ```ruby
+    left = 0
+    right = s.length - 1
+    
+    while left < right
+      s[left], s[right] = s[right], s[left] # 1
+    
+      left += 1
+      right -= 1
+    end
+    ```
 
 ## Complexity
 
-* Time: `O(n)`.
-* Space: `O(1)`.
+- Time complexity: `O(N)`.
+- Space complexity: `O(1)`.
 
 ## Java
 
@@ -115,7 +120,7 @@ class Solution:
 
 ## C++
 
-```cpp
+```c++
 class Solution {
 public:
     void reverseString(vector<char>& s) {
@@ -201,32 +206,9 @@ def reverse_string(s)
 end
 ```
 
-## C
-
-```c
-// Welcome to create a PR to complete the code of this language, thanks!
-```
-
-## Kotlin
-
-```kotlin
-// Welcome to create a PR to complete the code of this language, thanks!
-```
-
-## Swift
-
-```swift
-// Welcome to create a PR to complete the code of this language, thanks!
-```
-
-## Rust
-
-```rust
-// Welcome to create a PR to complete the code of this language, thanks!
-```
-
 ## Other languages
 
-```
+```java
 // Welcome to create a PR to complete the code of this language, thanks!
 ```
+

@@ -1,42 +1,45 @@
-# 242. Valid Anagram - Best Practices of LeetCode Solutions
-LeetCode link: [242. Valid Anagram](https://leetcode.com/problems/valid-anagram),
-[242. 有效的字母异位词](https://leetcode.cn/problems/valid-anagram)
+原文链接：[leetcoder.net - 力扣题解最佳实践 - 力扣人](https://leetcoder.net/zh/leetcode/242-valid-anagram)
 
-[中文题解](#中文题解)
+# 242. 有效的字母异位词 - 力扣题解最佳实践 - 力扣人
 
-## LeetCode problem description
-Given two strings `s` and `t`, return `true` if `t` is an **anagram** of `s`, and `false` otherwise.
+力扣链接：[242. 有效的字母异位词](https://leetcode.cn/problems/valid-anagram), 难度：**简单**。
 
-An **anagram** is a word or phrase formed by rearranging the letters of a different word or phrase, using all the original letters exactly once.
+## 力扣“242. 有效的字母异位词”问题描述
 
-Difficulty: **Easy**
+给定两个字符串 `s` 和 `t` ，编写一个函数来判断 `t` 是否是 `s` 的 **字母异位词**。
 
-### [Example 1]
-**Input**: `s = "anagram", t = "nagaram"`
+> *字母异位词*是通过重新排列不同单词或短语的字母而形成的单词或短语，并使用所有原字母一次。
 
-**Output**: `true`
+### [示例 1]
 
-### [Example 2]
-**Input**: `s = "rat", t = "car"`
+**输入**: `s = "anagram", t = "nagaram"`
 
-**Output**: `false`
+**输出**: `true`
 
-### [Constraints]
-- `1 <= s.length, t.length <= 5 * 10000`
-- `s` and `t` consist of lowercase English letters.
+### [示例 2]
 
-## Intuition
-[中文题解](#中文题解)
+**输入**: `s = "rat", t = "car"`
 
-1. If the lengths of the two strings are different, return `false` directly.
-2. Use two `hash tables` to store the statistics of the two strings respectively, with the `key` being the character and the `value` being the number of characters.
-3. Compare the two `hash tables` to see if they are equal.
+**输出**: `false`
 
-## Complexity
-* Time: `O(n)`.
-* Space: `O(n)`.
+### [约束]
+
+- `1 <= s.length, t.length <= 5 * 10^4`
+- `s` 和 `t` 仅包含小写字母
+
+## 思路
+
+1. 如果两个字符串长度不同，直接返回`false`。
+2. 用两个`Hash tables`分别存储对两个字符串的统计数据，`key`为字符，`value`为该字符出现次数。
+3. 比较这两个`Hash tables`，看它们是否相等。
+
+## 复杂度
+
+- 时间复杂度: `O(N)`.
+- 空间复杂度: `O(N)`.
 
 ## Java
+
 ```java
 class Solution {
     public boolean isAnagram(String s, String t) {
@@ -60,6 +63,7 @@ class Solution {
 ```
 
 ## Python
+
 ```python
 # from collections import defaultdict
 
@@ -79,12 +83,8 @@ class Solution:
         return s_char_to_count == t_char_to_count
 ```
 
-## C++
-```cpp
-// Welcome to create a PR to complete the code of this language, thanks!
-```
-
 ## JavaScript
+
 ```javascript
 var isAnagram = function (s, t) {
   if (s.length != t.length) {
@@ -107,6 +107,7 @@ var isAnagram = function (s, t) {
 ```
 
 ## C#
+
 ```c#
 public class Solution
 {
@@ -137,60 +138,9 @@ public class Solution
 }
 ```
 
-## Go
-```go
-// Welcome to create a PR to complete the code of this language, thanks!
-```
-
-## Ruby
-```ruby
-# Welcome to create a PR to complete the code of this language, thanks!
-```
-
-## C
-```c
-// Welcome to create a PR to complete the code of this language, thanks!
-```
-
-## Kotlin
-```kotlin
-// Welcome to create a PR to complete the code of this language, thanks!
-```
-
-## Swift
-```swift
-// Welcome to create a PR to complete the code of this language, thanks!
-```
-
-## Rust
-```rust
-// Welcome to create a PR to complete the code of this language, thanks!
-```
-
 ## Other languages
-```
+
+```java
 // Welcome to create a PR to complete the code of this language, thanks!
 ```
 
-## 问题描述
-给定两个字符串 `s` 和 `t` ，编写一个函数来判断 `t` 是否是 `s` 的 **字母异位词** 。
-
-**字母异位词**是通过重新排列不同单词或短语的字母而形成的单词或短语，并使用所有原字母一次。
-
-难度: **容易**
-
-### [Example 1]
-**输入**: `s = "anagram", t = "nagaram"`
-
-**输出**: `true`
-
-### [Example 2]
-**输入**: `s = "rat", t = "car"`
-
-**输出**: `false`
-
-# 中文题解
-## 思路
-1. 如果两个字符串长度不同，直接返回`false`。
-2. 用两个`Hash tables`分别存储对两个字符串的统计数据，`key`为字符，`value`为该字符出现次数。
-3. 比较这两个`Hash tables`，看它们是否相等。

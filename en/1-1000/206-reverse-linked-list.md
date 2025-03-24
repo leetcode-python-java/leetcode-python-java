@@ -1,10 +1,15 @@
-# 206. Reverse Linked List - Best Practices of LeetCode Solutions
-LeetCode link: [206. Reverse Linked List](https://leetcode.com/problems/reverse-linked-list), difficulty: **Easy**.
+Original link: [leetcoder.net - LeetCoder: Fucking Good LeetCode Solutions](https://leetcoder.net/en/leetcode/206-reverse-linked-list)
+
+# 206. Reverse Linked List - LeetCoder: Fucking Good LeetCode Solutions
+
+LeetCode link: [206. Reverse Linked List](https://leetcode.com/problems/reverse-linked-list), Difficulty: **Easy**.
 
 ## LeetCode description of "206. Reverse Linked List"
+
 Given the `head` of a singly linked list, reverse the list, and return _the reversed list_.
 
 ### [Example 1]
+
 ![](../../images/examples/206_1.jpg)
 
 **Input**: `head = [1,2,3,4,5]`
@@ -12,6 +17,7 @@ Given the `head` of a singly linked list, reverse the list, and return _the reve
 **Output**: `[5,4,3,2,1]`
 
 ### [Example 2]
+
 ![](../../images/examples/206_2.jpg)
 
 **Input**: `[1,2]`
@@ -19,27 +25,28 @@ Given the `head` of a singly linked list, reverse the list, and return _the reve
 **Output**: `[2,1]`
 
 ### [Example 3]
+
 **Input**: `[]`
 
 **Output**: `[]`
 
 ### [Constraints]
+
 - The number of nodes in the list is the range `[0, 5000]`.
 - `-5000 <= Node.val <= 5000`
 
 ## Intuition
+
 1. To solve this problem, we only need to define **two** variables: `current` and `previous`. How do we inverse two node?
 
-	<details>
-	  <summary>
-	  Click to view the answer.
-	  </summary>
-	  <p>`current.next = previous` is the inversion.</p>
-	</details>
+    <details><summary>Click to view the answer</summary><p>`current.next = previous` is the inversion.</p></details>
 
-2. The loop condition should be `while (current != null)` instead of `while (current.next != null)`, because the operation to be performed is `current.next = previous`.
+2. Which should be the loop condition? `while (current != null)` or `while (current.next != null)`?
+
+	<details><summary>Click to view the answer</summary><p>It is `while (current != null)`, because the operation to be performed is `current.next = previous`.</p></details>
 
 ## Steps
+
 1. Traverse all nodes.
 
 	```javascript
@@ -64,7 +71,7 @@ Given the `head` of a singly linked list, reverse the list, and return _the reve
 	}
 	```
 
-3. `previous` is always `null`, we need to change it: `previous = current`.
+3. Currently `previous` is always `null`, we need to change it: `previous = current`.
 
 	```javascript
 	previous = null
@@ -78,11 +85,14 @@ Given the `head` of a singly linked list, reverse the list, and return _the reve
 	}
 	```
 
+
 ## Complexity
-* Time: `O(n)`.
-* Space: `O(1)`.
+
+- Time complexity: `O(N)`.
+- Space complexity: `O(1)`.
 
 ## Java
+
 ```java
 /**
  * public class ListNode {
@@ -111,6 +121,7 @@ class Solution {
 ```
 
 ## Python
+
 ```python
 # class ListNode:
 #     def __init__(self, val=0, next=None):
@@ -132,7 +143,8 @@ class Solution:
 ```
 
 ## C++
-```cpp
+
+```c++
 /**
  * struct ListNode {
  *     int val;
@@ -161,6 +173,7 @@ public:
 ```
 
 ## JavaScript
+
 ```javascript
 /**
  * function ListNode(val, next) {
@@ -184,6 +197,7 @@ var reverseList = function (head) {
 ```
 
 ## C#
+
 ```c#
 /**
  * public class ListNode {
@@ -216,6 +230,7 @@ public class Solution
 ```
 
 ## Go
+
 ```go
 /**
  * Definition for singly-linked list.
@@ -240,6 +255,7 @@ func reverseList(head *ListNode) *ListNode {
 ```
 
 ## Ruby
+
 ```ruby
 # class ListNode
 #     attr_accessor :val, :next
@@ -265,27 +281,9 @@ def reverse_list(head)
 end
 ```
 
-## C
-```c
-// Welcome to create a PR to complete the code of this language, thanks!
-```
-
-## Kotlin
-```kotlin
-// Welcome to create a PR to complete the code of this language, thanks!
-```
-
-## Swift
-```swift
-// Welcome to create a PR to complete the code of this language, thanks!
-```
-
-## Rust
-```rust
-// Welcome to create a PR to complete the code of this language, thanks!
-```
-
 ## Other languages
-```
+
+```java
 // Welcome to create a PR to complete the code of this language, thanks!
 ```
+

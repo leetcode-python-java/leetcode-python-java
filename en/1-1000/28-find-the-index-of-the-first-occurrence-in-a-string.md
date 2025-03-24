@@ -16,8 +16,10 @@ Given two strings `needle` and `haystack`, return the **index** of the first occ
 
 **Explanation**: 
 
+```
 "sad" occurs at index 0 and 6.
 The first occurrence is at index 0, so we return 0.
+```
 
 ### [Example 2]
 
@@ -27,7 +29,9 @@ The first occurrence is at index 0, so we return 0.
 
 **Explanation**: 
 
+```
 "leeto" did not occur in "leetcode", so we return -1.
+```
 
 ### [Constraints]
 
@@ -91,3 +95,4 @@ var strStr = function (haystack, needle) {
 ```java
 // Welcome to create a PR to complete the code of this language, thanks!
 ```
+

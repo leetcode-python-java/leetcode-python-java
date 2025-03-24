@@ -1,10 +1,15 @@
-# 19. 删除链表的倒数第 N 个结点 - 力扣题解最佳实践
-力扣链接：[19. 删除链表的倒数第 N 个结点](https://leetcode.cn/problems/remove-nth-node-from-end-of-list) ，难度：**中等**。
+原文链接：[leetcoder.net - 力扣题解最佳实践 - 力扣人](https://leetcoder.net/zh/leetcode/19-remove-nth-node-from-end-of-list)
+
+# 19. 删除链表的倒数第 N 个结点 - 力扣题解最佳实践 - 力扣人
+
+力扣链接：[19. 删除链表的倒数第 N 个结点](https://leetcode.cn/problems/remove-nth-node-from-end-of-list), 难度：**中等**。
 
 ## 力扣“19. 删除链表的倒数第 N 个结点”问题描述
+
 给你一个链表，删除链表的倒数第 `n` 个结点，并且返回链表的头结点。
 
 ### [示例 1]
+
 ![](../../images/examples/19_1.jpg)
 
 **输入**: `head = [1,2,3,4,5], n = 2`
@@ -12,34 +17,42 @@
 **输出**: `[1,2,3,5]`
 
 ### [示例 2]
+
 **输入**: `head = [1], n = 1`
 
 **输出**: `[]`
 
 ### [示例 3]
+
 **输入**: `head = [1,2], n = 1`
 
 **输出**: `[1]`
 
 ### [约束]
+
 - 链表中结点的数目为 `sz`
 - `1 <= sz <= 30`
 - `0 <= Node.val <= 100`
 - `1 <= n <= sz`
 
-### [提示]
+### [Hints]
+
 <details>
   <summary>提示 1</summary>
-Maintain two pointers and update one with a delay of n steps.
+  Maintain two pointers and update one with a delay of n steps.
+
+  
 </details>
 
 ## 思路
-1. 删除链表的倒数第 `N` 个结点，等同于删除链表的第 `node_count - N` 个结点。
+
+1. 删除链表的倒数第 `N` 个结点，等同于删除链表的正数第 `node_count - N` 个结点。
 2. 先求出`node_count`。
-3. 在 `index == node_count - N`时，进行删除节点操作：`node.next = node.next.next`。
+3. 在 `index == node_count - N` 时，进行删除节点操作：`node.next = node.next.next`。
 4. 由于删除的节点可能是 `head`，所以使用虚拟节点 `dummy_node`，方便统一处理。
 
 ## 步骤
+
 1. 求出`node_count`。
 
     ```ruby
@@ -82,10 +95,12 @@ Maintain two pointers and update one with a delay of n steps.
     ```
 
 ## 复杂度
-* 时间：`O(N)`。
-* 空间：`O(1)`。
+
+- 时间复杂度: `O(N)`.
+- 空间复杂度: `O(1)`.
 
 ## Java
+
 ```java
 /**
  * public class ListNode {
@@ -126,6 +141,7 @@ class Solution {
 ```
 
 ## Python
+
 ```python
 # Definition for singly-linked list.
 # class ListNode:
@@ -158,7 +174,8 @@ class Solution:
 ```
 
 ## C++
-```cpp
+
+```c++
 /**
  * Definition for singly-linked list.
  * struct ListNode {
@@ -200,6 +217,7 @@ public:
 ```
 
 ## JavaScript
+
 ```javascript
 /**
  * function ListNode(val, next) {
@@ -235,6 +253,7 @@ var removeNthFromEnd = function (head, n) {
 ```
 
 ## C#
+
 ```c#
 /**
  * Definition for singly-linked list.
@@ -282,6 +301,7 @@ public class Solution
 ```
 
 ## Go
+
 ```go
 /**
  * Definition for singly-linked list.
@@ -318,6 +338,7 @@ func removeNthFromEnd(head *ListNode, n int) *ListNode {
 ```
 
 ## Ruby
+
 ```ruby
 # class ListNode
 #     attr_accessor :val, :next
@@ -355,27 +376,9 @@ def remove_nth_from_end(head, n)
 end
 ```
 
-## C
-```c
-// Welcome to create a PR to complete the code of this language, thanks!
-```
-
-## Kotlin
-```kotlin
-// Welcome to create a PR to complete the code of this language, thanks!
-```
-
-## Swift
-```swift
-// Welcome to create a PR to complete the code of this language, thanks!
-```
-
-## Rust
-```rust
-// Welcome to create a PR to complete the code of this language, thanks!
-```
-
 ## Other languages
-```
+
+```java
 // Welcome to create a PR to complete the code of this language, thanks!
 ```
+

@@ -1,7 +1,11 @@
-# 160. 相交链表 - 力扣题解最佳实践
-力扣链接：[160. 相交链表](https://leetcode.cn/problems/intersection-of-two-linked-lists) ，难度：**简单**。
+原文链接：[leetcoder.net - 力扣题解最佳实践 - 力扣人](https://leetcoder.net/zh/leetcode/160-intersection-of-two-linked-lists)
+
+# 160. 相交链表 - 力扣题解最佳实践 - 力扣人
+
+力扣链接：[160. 相交链表](https://leetcode.cn/problems/intersection-of-two-linked-lists), 难度：**简单**。
 
 ## 力扣“160. 相交链表”问题描述
+
 给你两个单链表的头节点 `headA` 和 `headB` ，请你找出并返回两个单链表相交的起始节点。如果两个链表不存在相交节点，返回 `null` 。
 
 图示两个链表在节点 `c1` 开始相交：
@@ -13,6 +17,7 @@
 **注意**，函数返回结果后，链表必须 **保持其原始结构** 。
 
 ### [示例 1]
+
 ![](../../images/examples/160_1.png)
 
 **输入**: `listA = [4,1,8,4,5], listB = [5,6,1,8,4,5]`
@@ -20,6 +25,7 @@
 **输出**: `Intersected at '8'`
 
 ### [示例 2]
+
 ![](../../images/examples/160_2.png)
 
 **输入**: `intersectVal = 2, listA = [1,9,1,2,4], listB = [3,2,4]`
@@ -27,6 +33,7 @@
 **输出**: `Intersected at '2'`
 
 ### [示例 3]
+
 ![](../../images/examples/160_3.png)
 
 **输入**: `listA = [2,6,4], listB = [1,5]`
@@ -34,27 +41,32 @@
 **输出**: `No intersection`
 
 ### [约束]
+
 - `listA` 中节点数目为 `m`
 - `listB` 中节点数目为 `n`
 - `1 <= m, n <= 3 * 10^4`
 - `1 <= Node.val <= 10^5`
 
+ <br>
 **进阶**：你能否设计一个时间复杂度 `O(m + n)` 、仅用 `O(1)` 内存的解决方案？
 
 ## 思路
+
 这是一个典型的“相遇”问题，最好转化为现实的场景去加强理解。
 
 假设你是A，B是你追求的对象，终点是学校。在上学的路上，靠后面的路程是你们都要经过的，靠前面的路程是各走各的。节点间距假定为一公里。
 
 现在，某个早晨，你们同时都吃完了早饭，要骑车去学校了。而你有个目标：和B相遇，聊上几句，你会怎么做？(以示例一为例)
 
-你一定是先测算出她家比你家到学校远多少公里，然后**等她走完这些公里后，再出发**。只要你们速度相同，就一定能相遇，而相遇的节点就是答案。
+<details><summary>点击查看答案</summary><p>你一定是先测算出她家比你家到学校远多少公里，然后**等她走完这些公里后，再出发**。这样就一定能相遇。相遇的节点就是答案。
 
 1. 先把A, B两个链表的节点数计算出来。链表A的节点数为`node_count_a`，链表B的节点数为`node_count_b`。
 2. 假如`node_count_b > node_count_a`，那么对链表B做`node_count_b - node_count_a`次`node = node.next` 操作。
 3. 这时，两个链表同时重复进行`node = node.next`操作，直到找到相同的节点或者其中一个链表已经到尾部。
+</p></details>
 
 ## 步骤
+
 1. 先把A, B两个链表的节点数计算出来。链表A的节点数为`node_count_a`，链表B的节点数为`node_count_b`。
 
 	```python
@@ -95,10 +107,12 @@
 	```
 
 ## 复杂度
-* 时间：`O(m + n)`。
-* 空间：`O(1)`。
+
+- 时间复杂度: `O(m + n)`.
+- 空间复杂度: `O(1)`.
 
 ## Java
+
 ```java
 /**
  * public class ListNode {
@@ -154,6 +168,7 @@ public class Solution {
 ```
 
 ## Python
+
 ```python
 # class ListNode:
 #     def __init__(self, x):
@@ -195,12 +210,8 @@ class Solution:
         return None
 ```
 
-## C++
-```cpp
-// Welcome to create a PR to complete the code of this language, thanks!
-```
-
 ## JavaScript
+
 ```javascript
 /**
  * Definition for singly-linked list.
@@ -251,6 +262,7 @@ var getIntersectionNode = function (headA, headB) {
 ```
 
 ## C#
+
 ```c#
 /**
  * public class ListNode {
@@ -310,37 +322,9 @@ public class Solution
 }
 ```
 
-## Go
-```go
-// Welcome to create a PR to complete the code of this language, thanks!
-```
-
-## Ruby
-```ruby
-# Welcome to create a PR to complete the code of this language, thanks!
-```
-
-## C
-```c
-// Welcome to create a PR to complete the code of this language, thanks!
-```
-
-## Kotlin
-```kotlin
-// Welcome to create a PR to complete the code of this language, thanks!
-```
-
-## Swift
-```swift
-// Welcome to create a PR to complete the code of this language, thanks!
-```
-
-## Rust
-```rust
-// Welcome to create a PR to complete the code of this language, thanks!
-```
-
 ## Other languages
-```
+
+```java
 // Welcome to create a PR to complete the code of this language, thanks!
 ```
+

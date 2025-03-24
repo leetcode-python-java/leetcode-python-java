@@ -1,57 +1,54 @@
-# 303. Range Sum Query - Immutable - Best Practices of LeetCode Solutions
-LeetCode link: [303. Range Sum Query - Immutable](https://leetcode.com/problems/range-sum-query-immutable)
+原文链接：[leetcoder.net - 力扣题解最佳实践 - 力扣人](https://leetcoder.net/zh/leetcode/303-range-sum-query-immutable)
 
-## LeetCode problem description
-Given an integer array `nums`, handle multiple queries of the following type:
+# 303. 区域和检索 - 数组不可变 - 力扣题解最佳实践 - 力扣人
 
-1. Calculate the sum of the elements of `nums` between indices `left` and `right` inclusive where `left <= right`.
+力扣链接：[303. 区域和检索 - 数组不可变](https://leetcode.cn/problems/range-sum-query-immutable), 难度：**简单**。
 
-Implement the `NumArray` class:
+## 力扣“303. 区域和检索 - 数组不可变”问题描述
 
-* `NumArray(int[] nums)` Initializes the object with the integer array `nums`.
-* `int sumRange(int left, int right)` Returns the **sum** of the elements of `nums` between indices `left` and `right` **inclusive** (i.e. `nums[left] + nums[left + 1] + ... + nums[right]`).
+给定一个整数数组  `nums`，处理以下类型的多个查询:
 
-### Example 1
-**Input**
-```ruby
-["NumArray", "sumRange", "sumRange", "sumRange"]
-[[[-2, 0, 3, -5, 2, -1]], [0, 2], [2, 5], [0, 5]]
+计算索引 `left` 和 `right` （包含 `left` 和 `right`）之间的 `nums` 元素的 **和** ，其中 `left <= right`
+实现 `NumArray` 类：
+
+- `NumArray(int[] nums)` 使用数组 `nums` 初始化对象
+- `int sumRange(int i, int j)` 返回数组 `nums` 中索引 `left` 和 `right` 之间的元素的 **总和** ，包含 `left` 和 `right` 两点（也就是 `nums[left] + nums[left + 1] + ... + nums[right]` )
+
+### [示例 1]
+
+**输入**: `["NumArray", "sumRange", "sumRange", "sumRange"] [[[-2, 0, 3, -5, 2, -1]], [0, 2], [2, 5], [0, 5]]`
+
+**输出**: `[null, 1, -1, -3]`
+
+**解释**: 
+
 ```
-
-**Output**
-```ruby
-[null, 1, -1, -3]
-```
-
-**Explanation**
-```java
 NumArray numArray = new NumArray([-2, 0, 3, -5, 2, -1]);
 numArray.sumRange(0, 2); // return (-2) + 0 + 3 = 1
 numArray.sumRange(2, 5); // return 3 + (-5) + 2 + (-1) = -1
 numArray.sumRange(0, 5); // return (-2) + 0 + 3 + (-5) + 2 + (-1) = -3
 ```
 
-### Constraints
-- `1 <= nums.length <= 10000`
-- `-100000 <= nums[i] <= 100000`
+### [约束]
+
+- `1 <= nums.length <= 10^4`
+- `-10^5 <= nums[i] <= 10^5`
 - `0 <= left <= right < nums.length`
-- At most `10000` calls will be made to `sumRange`.
+- 最多调用 `10^4` 次 `sumRange` 方法
 
-## Intuition
-### Solution 2
-Directly returning the sum of the array elements can pass the tests, but if the test case is more stringent, it will fail.
-So we still need to learn a more efficient solution.
+## 思路 1
 
-### Solution 1: Prefix Sum
-* Use a new array `prefix_sums` to save the sum of the previous elements.
-* The first element of `prefix_sums` is `0` because the prefix sum **does not include the current element**.
-* To find the `sum` of the elements from index `left` to `right` (inclusive), just use `prefix_sums[right + 1] - prefix_sums[left]`.
+- 使用新数组 `prefix_sums` 保存前面元素的总和。
+- `prefix_sums` 的第一个元素为 `0`，因为前缀和 **不包含当前元素**。
+- 要查找从索引 `left` 到 `right`（含）元素的总和，只需使用 `prefix_sums[right + 1] - prefix_sums[left]`。
 
-## Complexity
-* Time: `O(n)`.
-* Space: `O(n)`.
+## 复杂度
+
+- 时间复杂度: `O(N)`.
+- 空间复杂度: `O(N)`.
 
 ## Java
+
 ```java
 class NumArray {
     private int[] prefixSums;
@@ -73,7 +70,7 @@ class NumArray {
 ```
 
 ## Python
-### Solution 1: Prefix Sum
+
 ```python
 class NumArray:
     def __init__(self, nums: List[int]):
@@ -88,18 +85,9 @@ class NumArray:
         return self.prefix_sums[right + 1] - self.prefix_sums[left]
 ```
 
-### Solution 2
-```python
-class NumArray:
-    def __init__(self, nums: List[int]):
-        self.nums = nums
-
-    def sumRange(self, left: int, right: int) -> int:
-        return sum(self.nums[left:right + 1])
-```
-
 ## C++
-```cpp
+
+```c++
 class NumArray {
 private:
     vector<int> prefixSums;
@@ -122,6 +110,7 @@ public:
 ```
 
 ## JavaScript
+
 ```javascript
 let prefixSums
 
@@ -141,6 +130,7 @@ NumArray.prototype.sumRange = function (left, right) {
 ```
 
 ## C#
+
 ```c#
 public class NumArray
 {
@@ -166,6 +156,7 @@ public class NumArray
 ```
 
 ## Go
+
 ```go
 type NumArray struct {
     prefixSums []int
@@ -189,6 +180,7 @@ func (this *NumArray) SumRange(left int, right int) int {
 ```
 
 ## Ruby
+
 ```ruby
 class NumArray
   def initialize(nums)
@@ -207,27 +199,36 @@ class NumArray
 end
 ```
 
-## C
-```c
+## Other languages
+
+```java
 // Welcome to create a PR to complete the code of this language, thanks!
 ```
 
-## Kotlin
-```kotlin
-// Welcome to create a PR to complete the code of this language, thanks!
-```
+## 思路 2
 
-## Swift
-```swift
-// Welcome to create a PR to complete the code of this language, thanks!
-```
+直接返回数组区域内值之和，虽然可以通过测试，但是如果测试用例更严格的话就会失败。
+所以我们还需要学习一种更有效的解决方案：`前缀和`方案。
 
-## Rust
-```rust
-// Welcome to create a PR to complete the code of this language, thanks!
+## 复杂度
+
+- 时间复杂度: `O(M * N)`.
+- 空间复杂度: `O(M * N)`.
+
+## Python
+
+```python
+class NumArray:
+    def __init__(self, nums: List[int]):
+        self.nums = nums
+
+    def sumRange(self, left: int, right: int) -> int:
+        return sum(self.nums[left:right + 1])
 ```
 
 ## Other languages
-```
+
+```java
 // Welcome to create a PR to complete the code of this language, thanks!
 ```
+

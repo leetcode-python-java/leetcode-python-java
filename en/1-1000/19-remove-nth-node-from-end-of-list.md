@@ -1,10 +1,15 @@
-# 19. Remove Nth Node From End of List - Best Practices of LeetCode Solutions
-LeetCode link: [19. Remove Nth Node From End of List](https://leetcode.com/problems/remove-nth-node-from-end-of-list), difficulty: **Medium**
+Original link: [leetcoder.net - LeetCoder: Fucking Good LeetCode Solutions](https://leetcoder.net/en/leetcode/19-remove-nth-node-from-end-of-list)
 
-## LeetCode problem description
-Given the `head` of a linked list, remove the `n-th` node from the end of the list and return _its head_.
+# 19. Remove Nth Node From End of List - LeetCoder: Fucking Good LeetCode Solutions
+
+LeetCode link: [19. Remove Nth Node From End of List](https://leetcode.com/problems/remove-nth-node-from-end-of-list), Difficulty: **Medium**.
+
+## LeetCode description of "19. Remove Nth Node From End of List"
+
+Given the `head` of a linked list, remove the *n<sup>th</sup>* node from the end of the list and return *its head*.
 
 ### [Example 1]
+
 ![](../../images/examples/19_1.jpg)
 
 **Input**: `head = [1,2,3,4,5], n = 2`
@@ -12,34 +17,42 @@ Given the `head` of a linked list, remove the `n-th` node from the end of the li
 **Output**: `[1,2,3,5]`
 
 ### [Example 2]
+
 **Input**: `head = [1], n = 1`
 
 **Output**: `[]`
 
 ### [Example 3]
+
 **Input**: `head = [1,2], n = 1`
 
 **Output**: `[1]`
 
 ### [Constraints]
+
 - The number of nodes in the list is `sz`.
 - `1 <= sz <= 30`
 - `0 <= Node.val <= 100`
 - `1 <= n <= sz`
 
 ### [Hints]
+
 <details>
   <summary>Hint 1</summary>
   Maintain two pointers and update one with a delay of n steps.
+
+  
 </details>
 
 ## Intuition
-1. Deleting the `N-th` to last node in a linked list is equivalent to deleting the `node_count - N`-th node in the linked list.
+
+1. Deleting the *n<sup>th</sup>* to last node in the linked list is equivalent to deleting the (node_count - n)<sup>th</sup> node in the linked list.
 2. First find out `node_count`.
-3. When `index == node_count - N`, delete the node by `node.next = node.next.next`.
+3. When `index == node_count - n`, delete the node by `node.next = node.next.next`.
 4. Since the deleted node may be `head`, a virtual node `dummy_node` is used to facilitate unified processing.
 
 ## Steps
+
 1. First find out `node_count`.
 
 	```ruby
@@ -82,10 +95,12 @@ Given the `head` of a linked list, remove the `n-th` node from the end of the li
 	```
 
 ## Complexity
-* Time: `O(N)`.
-* Space: `O(1)`.
+
+- Time complexity: `O(N)`.
+- Space complexity: `O(1)`.
 
 ## Java
+
 ```java
 /**
  * public class ListNode {
@@ -126,6 +141,7 @@ class Solution {
 ```
 
 ## Python
+
 ```python
 # Definition for singly-linked list.
 # class ListNode:
@@ -158,7 +174,8 @@ class Solution:
 ```
 
 ## C++
-```cpp
+
+```c++
 /**
  * Definition for singly-linked list.
  * struct ListNode {
@@ -200,6 +217,7 @@ public:
 ```
 
 ## JavaScript
+
 ```javascript
 /**
  * function ListNode(val, next) {
@@ -235,6 +253,7 @@ var removeNthFromEnd = function (head, n) {
 ```
 
 ## C#
+
 ```c#
 /**
  * Definition for singly-linked list.
@@ -282,6 +301,7 @@ public class Solution
 ```
 
 ## Go
+
 ```go
 /**
  * Definition for singly-linked list.
@@ -318,6 +338,7 @@ func removeNthFromEnd(head *ListNode, n int) *ListNode {
 ```
 
 ## Ruby
+
 ```ruby
 # class ListNode
 #     attr_accessor :val, :next
@@ -355,27 +376,9 @@ def remove_nth_from_end(head, n)
 end
 ```
 
-## C
-```c
-// Welcome to create a PR to complete the code of this language, thanks!
-```
-
-## Kotlin
-```kotlin
-// Welcome to create a PR to complete the code of this language, thanks!
-```
-
-## Swift
-```swift
-// Welcome to create a PR to complete the code of this language, thanks!
-```
-
-## Rust
-```rust
-// Welcome to create a PR to complete the code of this language, thanks!
-```
-
 ## Other languages
-```
+
+```java
 // Welcome to create a PR to complete the code of this language, thanks!
 ```
+

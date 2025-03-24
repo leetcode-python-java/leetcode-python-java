@@ -1,42 +1,54 @@
-# 704. Binary Search - Best Practices of LeetCode Solutions
-LeetCode link: [704. Binary Search](https://leetcode.com/problems/binary-search)
+Original link: [leetcoder.net - LeetCoder: Fucking Good LeetCode Solutions](https://leetcoder.net/en/leetcode/704-binary-search)
 
-## LeetCode problem description
+# 704. Binary Search - LeetCoder: Fucking Good LeetCode Solutions
+
+LeetCode link: [704. Binary Search](https://leetcode.com/problems/binary-search), Difficulty: **Easy**.
+
+## LeetCode description of "704. Binary Search"
+
 Given an array of integers `nums` which is sorted in ascending order, and an integer `target`, write a function to search `target` in `nums`. If `target` exists, then return its `index`. Otherwise, return `-1`.
 
 You must write an algorithm with `O(log n)` runtime complexity.
 
-### Example 1
-```ruby
-Input: nums = [-1,0,3,5,9,12], target = 9
-Output: 4
-Explanation: 9 exists in nums and its index is 4
-```
+### [Example 1]
 
-### Example 2
-```ruby
-Input: nums = [-1,0,3,5,9,12], target = 2
-Output: -1
-Explanation: 2 does not exist in nums so return -1
-```
+**Input**: `nums = [-1,0,3,5,9,12], target = 9`
 
-### Constraints
+**Output**: `4`
+
+**Explanation**: `9 exists in `nums` and its index is 4`
+
+### [Example 2]
+
+**Input**: `nums = [-1,0,3,5,9,12], target = 2`
+
+**Output**: `-1`
+
+**Explanation**: `2 does not exist in `nums` so return -1`
+
+### [Constraints]
+
 - `1 <= nums.length <= 10000`
 - `104 < nums[i], target < 10000`
 - All the integers in `nums` are **unique**.
 - `nums` is sorted in ascending order.
 
 ## Intuition
+
 Because it is an already sorted array, by using the middle value for comparison, half of the numbers can be eliminated each time.
 
-## Approach
-The fastest and easiest way is to use the three indices `left`, `right`, and `middle`. If `nums[middle] > target`, then `right = middle - 1`, otherwise, `left = middle + 1`.
+## Steps
+
+The fastest and easiest way is to use the three indices `left`, `right`, and `middle`.
+If `nums[middle] > target`, then `right = middle - 1`, otherwise, `left = middle + 1`.
 
 ## Complexity
-* Time: `O(log n)`.
-* Space: `O(1)`.
+
+- Time complexity: `O(log N)`.
+- Space complexity: `O(1)`.
 
 ## Java
+
 ```java
 class Solution {
     public int search(int[] nums, int target) {
@@ -63,6 +75,7 @@ class Solution {
 ```
 
 ## Python
+
 ```python
 class Solution:
     def search(self, nums: List[int], target: int) -> int:
@@ -84,7 +97,8 @@ class Solution:
 ```
 
 ## C++
-```cpp
+
+```c++
 class Solution {
 public:
     int search(vector<int>& nums, int target) {
@@ -111,6 +125,7 @@ public:
 ```
 
 ## JavaScript
+
 ```javascript
 var search = function (nums, target) {
   let left = 0
@@ -135,6 +150,7 @@ var search = function (nums, target) {
 ```
 
 ## C#
+
 ```c#
 public class Solution
 {
@@ -168,6 +184,7 @@ public class Solution
 ```
 
 ## Go
+
 ```go
 func search(nums []int, target int) int {
     left := 0
@@ -192,6 +209,7 @@ func search(nums []int, target int) int {
 ```
 
 ## Ruby
+
 ```ruby
 def search(nums, target)
   left = 0
@@ -213,27 +231,9 @@ def search(nums, target)
 end
 ```
 
-## C
-```c
-// Welcome to create a PR to complete the code of this language, thanks!
-```
-
-## Kotlin
-```kotlin
-// Welcome to create a PR to complete the code of this language, thanks!
-```
-
-## Swift
-```swift
-// Welcome to create a PR to complete the code of this language, thanks!
-```
-
-## Rust
-```rust
-// Welcome to create a PR to complete the code of this language, thanks!
-```
-
 ## Other languages
-```
+
+```java
 // Welcome to create a PR to complete the code of this language, thanks!
 ```
+

@@ -1,60 +1,49 @@
-Original link: [leetcoder.net - Fucking Good LeetCode Solutions](https://leetcoder.net/en/leetcode/349-intersection-of-two-arrays)
+Original link: [leetcoder.net - LeetCoder: Fucking Good LeetCode Solutions](https://leetcoder.net/en/leetcode/349-intersection-of-two-arrays)
 
-# 349. Intersection of Two Arrays - Fucking Good LeetCode Solutions
-LeetCode link: [349. Intersection of Two Arrays](https://leetcode.com/problems/intersection-of-two-arrays), difficulty: **Easy**.
+# 349. Intersection of Two Arrays - LeetCoder: Fucking Good LeetCode Solutions
+
+LeetCode link: [349. Intersection of Two Arrays](https://leetcode.com/problems/intersection-of-two-arrays), Difficulty: **Easy**.
 
 ## LeetCode description of "349. Intersection of Two Arrays"
+
 Given two integer arrays `nums1` and `nums2`, return _an array of their **intersection**_.
 Each element in the result must be **unique** and you may return the result in **any order**.
 
 > Array Intersection: The intersection of two arrays is defined as the set of elements that are present in both arrays.
 
+
 ### [Example 1]
+
 **Input**: `nums1 = [1,2,2,1], nums2 = [2,2]`
 
 **Output**: `[2]`
 
 ### [Example 2]
+
 **Input**: `nums1 = [4,9,5], nums2 = [9,4,9,8,4]`
 
-**Output**: `[9,4]` or `[4,9]`
+**Output**: `[9,4]`
+
+**Explanation**: `[4,9] is also accepted.`
 
 ### [Constraints]
+
 - `1 <= nums1.length, nums2.length <= 1000`
 - `0 <= nums1[i], nums2[i] <= 1000`
 
 ## Intuition
+
 1. Convert one of the arrays to a `set`. The elements are unique in a `set`.
 2. When traversing the other array, if an element is found to already exist in the `set`, it means that the element belongs to the intersection, and the element should be added to the `results`.
 3. The `results` is also of `set` type because duplicate removal is required.
 
-## Steps
-
-1. Convert one of the arrays to a `set`. The elements are unique in a `set`.
-
-	```javascript
-	let num1Set = new Set(nums1)
-	```
-
-2. When traversing the other array, if an element is found to already exist in the `set`, it means that the element belongs to the intersection, and the element should be added to the `results`.
-
-	```javascript
-	let results = new Set()
-	
-	for (const num of nums2) {
-	  if (num1Set.has(num)) {
-	    results.add(num)
-	  }
-	}
-	
-	return Array.from(results)
-	```
-
 ## Complexity
-* Time: `O(n)`.
-* Space: `O(n)`.
+
+- Time complexity: `O(N)`.
+- Space complexity: `O(N)`.
 
 ## Java
+
 ```java
 class Solution {
     public int[] intersection(int[] nums1, int[] nums2) {
@@ -77,6 +66,7 @@ class Solution {
 ```
 
 ## Python
+
 ```python
 class Solution:
     def intersection(self, nums1: List[int], nums2: List[int]) -> List[int]:
@@ -91,7 +81,8 @@ class Solution:
 ```
 
 ## C++
-```cpp
+
+```c++
 class Solution {
 public:
     vector<int> intersection(vector<int>& nums1, vector<int>& nums2) {
@@ -110,6 +101,7 @@ public:
 ```
 
 ## JavaScript
+
 ```javascript
 var intersection = function (nums1, nums2) {
   let results = new Set()
@@ -126,6 +118,7 @@ var intersection = function (nums1, nums2) {
 ```
 
 ## C#
+
 ```c#
 public class Solution
 {
@@ -151,6 +144,7 @@ public class Solution
 ```
 
 ## Go
+
 ```go
 func intersection(nums1 []int, nums2 []int) []int {
     results := map[int]bool{}
@@ -171,13 +165,14 @@ func intersection(nums1 []int, nums2 []int) []int {
 ```
 
 ## Ruby
+
 ```ruby
 def intersection(nums1, nums2)
-  set_of_nums1 = Set.new(nums1)
+  nums1_set = Set.new(nums1)
   results = Set.new
 
   nums2.each do |num|
-    if set_of_nums1.include?(num)
+    if nums1_set.include?(num)
       results << num
     end
   end
@@ -186,27 +181,9 @@ def intersection(nums1, nums2)
 end
 ```
 
-## C
-```c
-// Welcome to create a PR to complete the code of this language, thanks!
-```
-
-## Kotlin
-```kotlin
-// Welcome to create a PR to complete the code of this language, thanks!
-```
-
-## Swift
-```swift
-// Welcome to create a PR to complete the code of this language, thanks!
-```
-
-## Rust
-```rust
-// Welcome to create a PR to complete the code of this language, thanks!
-```
-
 ## Other languages
-```
+
+```java
 // Welcome to create a PR to complete the code of this language, thanks!
 ```
+

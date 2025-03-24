@@ -1,10 +1,15 @@
-# 203. 移除链表元素 - 力扣题解最佳实践
-力扣链接：[203. 移除链表元素](https://leetcode.cn/problems/remove-linked-list-elements) ，难度：**简单**。
+原文链接：[leetcoder.net - 力扣题解最佳实践 - 力扣人](https://leetcoder.net/zh/leetcode/203-remove-linked-list-elements)
+
+# 203. 移除链表元素 - 力扣题解最佳实践 - 力扣人
+
+力扣链接：[203. 移除链表元素](https://leetcode.cn/problems/remove-linked-list-elements), 难度：**简单**。
 
 ## 力扣“203. 移除链表元素”问题描述
+
 给你一个链表的头节点 `head` 和一个整数 `val` ，请你删除链表中所有满足 `Node.val == val` 的节点，并返回 **新的头节点** 。
 
 ### [示例 1]
+
 ![](../../images/examples/203_1.jpg)
 
 **输入**: `head = [1,2,6,3,4,5,6], val = 6`
@@ -12,16 +17,19 @@
 **输出**: `[1,2,3,4,5]`
 
 ### [示例 2]
+
 **输入**: `head = [], val = 1`
 
 **输出**: `[]`
 
 ### [示例 3]
+
 **输入**: `head = [7,7,7,7], val = 7`
 
 **输出**: `[]`
 
 ### [约束]
+
 - 列表中的节点数目在范围 `[0, 10000]` 内
 - `1 <= Node.val <= 50`
 - `0 <= val <= 50`
@@ -36,18 +44,15 @@
 
 	是否有方法能够让`head`节点的不再特殊呢？这样就不需要特殊处理`head`了。
 
-	<details>
-	  <summary>
-	  点击查看答案
-	  </summary>
-	  <p>办法是引入`dummy`节点，`dummy.next = head`。</p>
-	</details>
+	<details><summary>点击查看答案</summary><p>办法是引入`dummy`节点，`dummy.next = head`。</p></details>
 
 ## 复杂度
-* 时间：`O(N)`。
-* 空间：`O(1)`。
+
+- 时间复杂度: `O(N)`.
+- 空间复杂度: `O(1)`.
 
 ## Java
+
 ```java
 /**
  * Definition for singly-linked list.
@@ -79,6 +84,7 @@ class Solution {
 ```
 
 ## Python
+
 ```python
 # Definition for singly-linked list.
 # class ListNode:
@@ -102,7 +108,8 @@ class Solution:
 ```
 
 ## C++
-```cpp
+
+```c++
 /**
  * Definition for singly-linked list.
  * struct ListNode {
@@ -136,6 +143,7 @@ public:
 ```
 
 ## JavaScript
+
 ```javascript
 /**
  * Definition for singly-linked list.
@@ -162,6 +170,7 @@ var removeElements = function (head, val) {
 ```
 
 ## C#
+
 ```c#
 /**
  * Definition for singly-linked list.
@@ -194,6 +203,7 @@ public class Solution {
 ```
 
 ## Go
+
 ```go
 /**
  * Definition for singly-linked list.
@@ -220,6 +230,7 @@ func removeElements(head *ListNode, val int) *ListNode {
 ```
 
 ## Ruby
+
 ```ruby
 # Definition for singly-linked list.
 # class ListNode
@@ -247,27 +258,9 @@ def remove_elements(head, val)
 end
 ```
 
-## C
-```c
-// Welcome to create a PR to complete the code of this language, thanks!
-```
-
-## Kotlin
-```kotlin
-// Welcome to create a PR to complete the code of this language, thanks!
-```
-
-## Swift
-```swift
-// Welcome to create a PR to complete the code of this language, thanks!
-```
-
-## Rust
-```rust
-// Welcome to create a PR to complete the code of this language, thanks!
-```
-
 ## Other languages
-```
+
+```java
 // Welcome to create a PR to complete the code of this language, thanks!
 ```
+

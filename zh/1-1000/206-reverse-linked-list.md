@@ -1,10 +1,15 @@
-# 206. 反转链表 - 力扣题解最佳实践
-力扣链接：[206. 反转链表](https://leetcode.cn/problems/reverse-linked-list) ，难度：**简单**。
+原文链接：[leetcoder.net - 力扣题解最佳实践 - 力扣人](https://leetcoder.net/zh/leetcode/206-reverse-linked-list)
+
+# 206. 反转链表 - 力扣题解最佳实践 - 力扣人
+
+力扣链接：[206. 反转链表](https://leetcode.cn/problems/reverse-linked-list), 难度：**简单**。
 
 ## 力扣“206. 反转链表”问题描述
+
 给你单链表的头节点 `head` ，请你反转链表，并返回反转后的链表。
 
 ### [示例 1]
+
 ![](../../images/examples/206_1.jpg)
 
 **输入**: `head = [1,2,3,4,5]`
@@ -12,6 +17,7 @@
 **输出**: `[5,4,3,2,1]`
 
 ### [示例 2]
+
 ![](../../images/examples/206_2.jpg)
 
 **输入**: `[1,2]`
@@ -19,27 +25,28 @@
 **输出**: `[2,1]`
 
 ### [示例 3]
+
 **输入**: `[]`
 
 **输出**: `[]`
 
 ### [约束]
+
 - 链表中节点的数目范围是 `[0, 5000]`
 - `-5000 <= Node.val <= 5000`
 
 ## 思路
+
 1. 解决这个问题，只需要定义**两**个变量：`current`和`previous`。
 
-	<details>
-	  <summary>
-	  点击查看答案
-	  </summary>
-	  <p>`current.next = previous`就是反转了。</p>
-	</details>
+	<details><summary>点击查看答案</summary><p>`current.next = previous` 就是反转了。</p></details>
 
-2. 循环条件应是`while (current != null)`，而不应该是`while (current.next != null)`，因为需要操作的是`current.next = previous`.
+2. 循环条件是`while (current != null)`，还是`while (current.next != null)`？
+
+	<details><summary>点击查看答案</summary><p>是 `while (current != null)`，因为需要操作的是 `current.next = previous`。</p></details>
 
 ## 步骤
+
 1. 遍历所有节点。
 
 	```javascript
@@ -79,13 +86,12 @@
 	```
 
 ## 复杂度
-* 时间：`O(N)`。
-* 空间：`O(1)`。
 
-## 进阶
-链表可以选用迭代或递归方式完成反转。你能否用两种方法解决这道题？
+- 时间复杂度: `O(N)`.
+- 空间复杂度: `O(1)`.
 
 ## Java
+
 ```java
 /**
  * public class ListNode {
@@ -114,6 +120,7 @@ class Solution {
 ```
 
 ## Python
+
 ```python
 # class ListNode:
 #     def __init__(self, val=0, next=None):
@@ -135,7 +142,8 @@ class Solution:
 ```
 
 ## C++
-```cpp
+
+```c++
 /**
  * struct ListNode {
  *     int val;
@@ -164,6 +172,7 @@ public:
 ```
 
 ## JavaScript
+
 ```javascript
 /**
  * function ListNode(val, next) {
@@ -187,6 +196,7 @@ var reverseList = function (head) {
 ```
 
 ## C#
+
 ```c#
 /**
  * public class ListNode {
@@ -219,6 +229,7 @@ public class Solution
 ```
 
 ## Go
+
 ```go
 /**
  * Definition for singly-linked list.
@@ -243,6 +254,7 @@ func reverseList(head *ListNode) *ListNode {
 ```
 
 ## Ruby
+
 ```ruby
 # class ListNode
 #     attr_accessor :val, :next
@@ -268,7 +280,9 @@ def reverse_list(head)
 end
 ```
 
-## C, Kotlin, Swift, Rust or other languages
-```
+## Other languages
+
+```java
 // Welcome to create a PR to complete the code of this language, thanks!
 ```
+

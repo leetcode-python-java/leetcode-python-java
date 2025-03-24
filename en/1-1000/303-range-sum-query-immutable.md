@@ -1,57 +1,55 @@
-# 303. Range Sum Query - Immutable - Best Practices of LeetCode Solutions
-LeetCode link: [303. Range Sum Query - Immutable](https://leetcode.com/problems/range-sum-query-immutable)
+Original link: [leetcoder.net - LeetCoder: Fucking Good LeetCode Solutions](https://leetcoder.net/en/leetcode/303-range-sum-query-immutable)
 
-## LeetCode problem description
+# 303. Range Sum Query - Immutable - LeetCoder: Fucking Good LeetCode Solutions
+
+LeetCode link: [303. Range Sum Query - Immutable](https://leetcode.com/problems/range-sum-query-immutable), Difficulty: **Easy**.
+
+## LeetCode description of "303. Range Sum Query - Immutable"
+
 Given an integer array `nums`, handle multiple queries of the following type:
 
 1. Calculate the sum of the elements of `nums` between indices `left` and `right` inclusive where `left <= right`.
 
 Implement the `NumArray` class:
 
-* `NumArray(int[] nums)` Initializes the object with the integer array `nums`.
-* `int sumRange(int left, int right)` Returns the **sum** of the elements of `nums` between indices `left` and `right` **inclusive** (i.e. `nums[left] + nums[left + 1] + ... + nums[right]`).
+- `NumArray(int[] nums)` Initializes the object with the integer array `nums`.
+- `int sumRange(int left, int right)` Returns the **sum** of the elements of `nums` between indices `left` and `right` **inclusive** (i.e. `nums[left] + nums[left + 1] + ... + nums[right]`).
 
-### Example 1
-**Input**
-```ruby
-["NumArray", "sumRange", "sumRange", "sumRange"]
-[[[-2, 0, 3, -5, 2, -1]], [0, 2], [2, 5], [0, 5]]
+### [Example 1]
+
+**Input**: `["NumArray", "sumRange", "sumRange", "sumRange"] [[[-2, 0, 3, -5, 2, -1]], [0, 2], [2, 5], [0, 5]]`
+
+**Output**: `[null, 1, -1, -3]`
+
+**Explanation**: 
+
 ```
-
-**Output**
-```ruby
-[null, 1, -1, -3]
-```
-
-**Explanation**
-```java
 NumArray numArray = new NumArray([-2, 0, 3, -5, 2, -1]);
 numArray.sumRange(0, 2); // return (-2) + 0 + 3 = 1
 numArray.sumRange(2, 5); // return 3 + (-5) + 2 + (-1) = -1
 numArray.sumRange(0, 5); // return (-2) + 0 + 3 + (-5) + 2 + (-1) = -3
 ```
 
-### Constraints
+### [Constraints]
+
 - `1 <= nums.length <= 10^4`
 - `-10^5 <= nums[i] <= 10^5`
 - `0 <= left <= right < nums.length`
 - At most `10^4` calls will be made to `sumRange`.
 
-## Intuition
-### Solution 2
-Directly returning the sum of the array elements can pass the tests, but if the test case is more stringent, it will fail.
-So we still need to learn a more efficient solution.
+## Intuition 1
 
-### Solution 1: Prefix Sum
 - Use a new array `prefix_sums` to save the sum of the previous elements.
 - The first element of `prefix_sums` is `0` because the prefix sum **does not include the current element**.
 - To find the `sum` of the elements from index `left` to `right` (inclusive), just use `prefix_sums[right + 1] - prefix_sums[left]`.
 
 ## Complexity
-* Time: `O(n)`.
-* Space: `O(n)`.
+
+- Time complexity: `O(N)`.
+- Space complexity: `O(N)`.
 
 ## Java
+
 ```java
 class NumArray {
     private int[] prefixSums;
@@ -73,7 +71,7 @@ class NumArray {
 ```
 
 ## Python
-### Solution 1: Prefix Sum
+
 ```python
 class NumArray:
     def __init__(self, nums: List[int]):
@@ -88,18 +86,9 @@ class NumArray:
         return self.prefix_sums[right + 1] - self.prefix_sums[left]
 ```
 
-### Solution 2
-```python
-class NumArray:
-    def __init__(self, nums: List[int]):
-        self.nums = nums
-
-    def sumRange(self, left: int, right: int) -> int:
-        return sum(self.nums[left:right + 1])
-```
-
 ## C++
-```cpp
+
+```c++
 class NumArray {
 private:
     vector<int> prefixSums;
@@ -122,6 +111,7 @@ public:
 ```
 
 ## JavaScript
+
 ```javascript
 let prefixSums
 
@@ -141,6 +131,7 @@ NumArray.prototype.sumRange = function (left, right) {
 ```
 
 ## C#
+
 ```c#
 public class NumArray
 {
@@ -166,6 +157,7 @@ public class NumArray
 ```
 
 ## Go
+
 ```go
 type NumArray struct {
     prefixSums []int
@@ -189,6 +181,7 @@ func (this *NumArray) SumRange(left int, right int) int {
 ```
 
 ## Ruby
+
 ```ruby
 class NumArray
   def initialize(nums)
@@ -207,27 +200,36 @@ class NumArray
 end
 ```
 
-## C
-```c
+## Other languages
+
+```java
 // Welcome to create a PR to complete the code of this language, thanks!
 ```
 
-## Kotlin
-```kotlin
-// Welcome to create a PR to complete the code of this language, thanks!
-```
+## Intuition 2
 
-## Swift
-```swift
-// Welcome to create a PR to complete the code of this language, thanks!
-```
+Directly returning the sum of the values ​​in the array range can pass the test, but it will fail if the test case is stricter.
+So we still need to learn a more efficient solution: `Prefix Sum` solution.
 
-## Rust
-```rust
-// Welcome to create a PR to complete the code of this language, thanks!
+## Complexity
+
+- Time complexity: `O(M * N)`.
+- Space complexity: `O(M * N)`.
+
+## Python
+
+```python
+class NumArray:
+    def __init__(self, nums: List[int]):
+        self.nums = nums
+
+    def sumRange(self, left: int, right: int) -> int:
+        return sum(self.nums[left:right + 1])
 ```
 
 ## Other languages
-```
+
+```java
 // Welcome to create a PR to complete the code of this language, thanks!
 ```
+

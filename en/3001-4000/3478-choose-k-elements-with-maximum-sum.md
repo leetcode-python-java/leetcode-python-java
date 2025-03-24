@@ -1,6 +1,6 @@
-Original link: [leetcoder.net - Best practices of LeetCode solutions](https://leetcoder.net/en/leetcode/3478-choose-k-elements-with-maximum-sum)
+Original link: [leetcoder.net - LeetCoder: Fucking Good LeetCode Solutions](https://leetcoder.net/en/leetcode/3478-choose-k-elements-with-maximum-sum)
 
-# 3478. Choose K Elements With Maximum Sum - Best practices of LeetCode solutions
+# 3478. Choose K Elements With Maximum Sum - LeetCoder: Fucking Good LeetCode Solutions
 
 LeetCode link: [3478. Choose K Elements With Maximum Sum](https://leetcode.com/problems/choose-k-elements-with-maximum-sum), Difficulty: **Medium**.
 
@@ -21,7 +21,7 @@ Return an array `answer` of size `n`, where `answer[i]` represents the result fo
 
 **Output**: `[80,30,0,80,50]`
 
-**Explanation**:
+**Explanation**: 
 
 ```
 - For `i = 0`: Select the 2 largest values from `nums2` at indices `[1, 2, 4]` where `nums1[j] < nums1[0]`, resulting in `50 + 30 = 80`.
@@ -37,7 +37,7 @@ Return an array `answer` of size `n`, where `answer[i]` represents the result fo
 
 **Output**: `[0,0,0,0]`
 
-**Explanation**:
+**Explanation**: 
 
 ```
 Since all elements in `nums1` are equal, no indices satisfy the condition `nums1[j] < nums1[i]` for any `i`, resulting in `0` for all positions.
@@ -56,14 +56,14 @@ Since all elements in `nums1` are equal, no indices satisfy the condition `nums1
   <summary>Hint 1</summary>
   Sort `nums1` and its corresponding `nums2` values together based on `nums1`.
 
-
+  
 </details>
 
 <details>
   <summary>Hint 2</summary>
   Use a max heap to track the top `k` values of `nums2` as you process each element in the sorted order.
 
-
+  
 </details>
 
 ## Intuition
@@ -72,15 +72,15 @@ Since all elements in `nums1` are equal, no indices satisfy the condition `nums1
 
     <details><summary>Click to view the answer</summary><p> Bring the `index` when sorting, that is, the object to be sorted is an array of tuples of `(num, index)`. This technique **must be mastered**, as it will be used in many questions.</p></details>
 
-  After solving the above problems, the indexes are all there, let's continue reading:
+    After solving the above problems, the indexes are all there, let's continue reading:
 
 * Requirement 2: Choose at most `k` values of `nums2[j]` at these indices to **maximize** the total sum.
 
-  After seeing this, have you thought of any good method?
+    After seeing this, have you thought of any good method?
 
     <details><summary>Click to view the answer</summary><p> Heap sort, maintain a large root heap of size `k`. This is also a knowledge point that is often tested, **must be mastered**. </p></details>
 
-  Seeing this, please implement the code according to the above prompts.
+    Seeing this, please implement the code according to the above prompts.
 
 * Finally, it is found that the repeated `num` that appear continuously should be specially processed, that is, the values ​​in `answer` corresponding to the same `num` should be the same. There are many ways to deal with it. What is the simplest way to deal with it?
 
@@ -128,3 +128,4 @@ class Solution:
 ```java
 // Welcome to create a PR to complete the code of this language, thanks!
 ```
+

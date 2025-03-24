@@ -1,32 +1,39 @@
-原文链接：[leetcoder.net - Fucking Good LeetCode Solutions](https://leetcoder.net/en/leetcode/454-4sum-ii)
+Original link: [leetcoder.net - LeetCoder: Fucking Good LeetCode Solutions](https://leetcoder.net/en/leetcode/454-4sum-ii)
 
-# 454. 4Sum II - Fucking Good LeetCode Solutions
-LeetCode link: [454. 4Sum II](https://leetcode.com/problems/4sum-ii), difficulty: **Medium**.
+# 454. 4Sum II - LeetCoder: Fucking Good LeetCode Solutions
+
+LeetCode link: [454. 4Sum II](https://leetcode.com/problems/4sum-ii), Difficulty: **Medium**.
 
 ## LeetCode description of "454. 4Sum II"
+
 Given four integer arrays `nums1`, `nums2`, `nums3`, and `nums4` all of length `n`, return the number of tuples `(i, j, k, l)` such that:
 
 - `0 <= i, j, k, l < n`
 - `nums1[i] + nums2[j] + nums3[k] + nums4[l] == 0`
 
 ### [Example 1]
+
 **Input**: `nums1 = [1,2], nums2 = [-2,-1], nums3 = [-1,2], nums4 = [0,2]`
 
 **Output**: `2`
 
-**Explanation**:
+**Explanation**: 
+
 ```
 The two tuples are:
+
 1. (0, 0, 0, 1) -> nums1[0] + nums2[0] + nums3[0] + nums4[1] = 1 + (-2) + (-1) + 2 = 0
 2. (1, 1, 0, 0) -> nums1[1] + nums2[1] + nums3[0] + nums4[0] = 2 + (-1) + (-1) + 0 = 0
 ```
 
 ### [Example 2]
+
 **Input**: `nums1 = [0], nums2 = [0], nums3 = [0], nums4 = [0]`
 
 **Output**: `1`
 
 ### [Constraints]
+
 - `n == nums1.length`
 - `n == nums2.length`
 - `n == nums3.length`
@@ -35,6 +42,7 @@ The two tuples are:
 - `-2^28 <= nums1[i], nums2[i], nums3[i], nums4[i] <= 2^28`
 
 ## Intuition
+
 1. Because the final requirement is to take one number from each group of numbers, the four groups of numbers can be split into **two groups of two**.
 2. Count the number of each `sum`. Use `Map` to store, `key` is `sum`, `value` is `count`.
 3. Iterate over `nums3` and `nums4`, if `-(num3 + num4)` exists in `keys` of `Map`, then `count` is included in the total.
@@ -64,10 +72,12 @@ The two tuples are:
 	```
 
 ## Complexity
-* Time: `O(n * n)`.
-* Space: `O(n)`.
+
+- Time complexity: `O(N * N)`.
+- Space complexity: `O(N)`.
 
 ## Java
+
 ```java
 class Solution {
     public int fourSumCount(int[] nums1, int[] nums2, int[] nums3, int[] nums4) {
@@ -96,6 +106,7 @@ class Solution {
 ```
 
 ## Python
+
 ```python
 # from collections import defaultdict
 
@@ -116,12 +127,8 @@ class Solution:
         return result
 ```
 
-## C++
-```cpp
-// Welcome to create a PR to complete the code of this language, thanks!
-```
-
 ## JavaScript
+
 ```javascript
 var fourSumCount = function (nums1, nums2, nums3, nums4) {
   const numToCount = new Map()
@@ -145,6 +152,7 @@ var fourSumCount = function (nums1, nums2, nums3, nums4) {
 ```
 
 ## C#
+
 ```c#
 public class Solution
 {
@@ -175,12 +183,8 @@ public class Solution
 }
 ```
 
-## Go
-```go
-// Welcome to create a PR to complete the code of this language, thanks!
-```
-
 ## Ruby
+
 ```ruby
 def four_sum_count(nums1, nums2, nums3, nums4)
   num_to_count = Hash.new(0)
@@ -203,27 +207,9 @@ def four_sum_count(nums1, nums2, nums3, nums4)
 end
 ```
 
-## C
-```c
-// Welcome to create a PR to complete the code of this language, thanks!
-```
-
-## Kotlin
-```kotlin
-// Welcome to create a PR to complete the code of this language, thanks!
-```
-
-## Swift
-```swift
-// Welcome to create a PR to complete the code of this language, thanks!
-```
-
-## Rust
-```rust
-// Welcome to create a PR to complete the code of this language, thanks!
-```
-
 ## Other languages
-```
+
+```java
 // Welcome to create a PR to complete the code of this language, thanks!
 ```
+

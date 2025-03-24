@@ -1,7 +1,11 @@
-# 27. Remove Element - Best Practices of LeetCode Solutions
-LeetCode link: [27. Remove Element](https://leetcode.com/problems/remove-element)
+原文链接：[leetcoder.net - 力扣题解最佳实践 - 力扣人](https://leetcoder.net/zh/leetcode/27-remove-element)
 
-## LeetCode problem description
+# 27. 移除元素 - 力扣题解最佳实践 - 力扣人
+
+力扣链接：[27. 移除元素](https://leetcode.cn/problems/remove-element), 难度：**简单**。
+
+## 力扣“27. 移除元素”问题描述
+
 给你一个数组 `nums` 和一个值 `val`，你需要 [原地](https://en.wikipedia.org/wiki/In-place_algorithm) 移除所有数值等于 `val` 的元素。元素的顺序可能发生改变。然后返回 `nums` 中与 `val` 不同的元素的数量。
 
 假设 `nums` 中不等于 `val` 的元素数量为 `k`，要通过此题，您需要执行以下操作：
@@ -9,62 +13,75 @@ LeetCode link: [27. Remove Element](https://leetcode.com/problems/remove-element
 - 更改 `nums` 数组，使 `nums` 的前 `k` 个元素包含不等于 `val` 的元素。`nums` 的其余元素和 `nums` 的大小并不重要。
 - 返回 `k`。
 
-### Example 1
-```ruby
-Input: nums = [3,2,2,3], val = 3
-Output: 2, nums = [2,2,_,_]
-Explanation: Your function should return k = 2, with the first two elements of nums being 2.
-It does not matter what you leave beyond the returned k (hence they are underscores).
+### [示例 1]
+
+**输入**: `nums = [3,2,2,3], val = 3`
+
+**输出**: `2, nums = [2,2,_,_]`
+
+**解释**: 
+
+```
+你的函数函数应该返回 k = 2, 并且 nums 中的前两个元素均为 2。
+你在返回的 k 个元素之外留下了什么并不重要（因此它们并不计入评测）。
 ```
 
-### Example 2
-```ruby
-Input: nums = [0,1,2,2,3,0,4,2], val = 2
-Output: 5, nums = [0,1,4,0,3,_,_,_]
-Explanation: Your function should return k = 5, with the first five elements of nums containing 0, 0, 1, 3, and 4.
-Note that the five elements can be returned in any order.
-It does not matter what you leave beyond the returned k (hence they are underscores).
+### [示例 2]
+
+**输入**: `nums = [0,1,2,2,3,0,4,2], val = 2`
+
+**输出**: `5, nums = [0,1,4,0,3,_,_,_]`
+
+**解释**: 
+
+```
+你的函数应该返回 k = 5，并且 nums 中的前五个元素为 0,0,1,3,4。
+注意这五个元素可以任意顺序返回。
+你在返回的 k 个元素之外留下了什么并不重要（因此它们并不计入评测）。
 ```
 
-### Constraints
+### [约束]
+
 - `0 <= nums.length <= 100`
 - `0 <= nums[i] <= 50`
 - `0 <= val <= 100`
 
+### [Hints]
+
 <details>
-  <summary>Hint 1</summary>
-  The problem statement clearly asks us to modify the array in-place and it also says that the element beyond the new length of the array can be anything. Given an element, we need to remove all the occurrences of it from the array. We don't technically need to remove that element per-say, right?
+  <summary>提示 1</summary>
+  The problem statement clearly asks us to modify the array in-place and it also says that the element beyond the new length of the array can be anything. Given an element, we need to remove all the occurrences of it from the array. We don't technically need to **remove** that element per-say, right?
+
+  
 </details>
 
 <details>
-  <summary>Hint 2</summary>
+  <summary>提示 2</summary>
   We can move all the occurrences of this element to the end of the array. Use two pointers!
+
+  ![](../../images/hints/27_2.png)
 </details>
 
 <details>
-  <summary>Hint 3</summary>
+  <summary>提示 3</summary>
   Yet another direction of thought is to consider the elements to be removed as non-existent. In a single pass, if we keep copying the visible elements in-place, that should also solve this problem for us.
+
+  
 </details>
 
-## Intuition
-The goal is to remove the elements in the array that are equal to `val`, and the order of the remaining elements is not important.
+## 思路 1
 
-### Solution 1 (easier to think of)
-Then we only need to use the following elements that are not equal to `val` to occupy the elements that are equal to `val`.
+- `双指针`，一左一右，左侧的指向数组头部，右侧的指向数组尾部。
+- 如果发现左侧指针对应的数值等于*val*，并且右侧指针对应的数值不等于*val*，就进行值交换。
+- 这种手段容易想到，但代码量比起`快慢指针`要多。
 
-![](../../images/examples/27_hint_2.png)
+## 复杂度
 
-### Solution 2 (more concise and easier to code)
-You only need to traverse the array once and keep all numbers that are not equal to `val` at the front of the array.
-
-`slowIndex` is used to save the current front position.
-
-## Complexity
-* Time: `O(n)`.
-* Space: `O(1)`.
+- 时间复杂度: `O(N)`.
+- 空间复杂度: `O(1)`.
 
 ## Java
-### Solution 1: Two pointers (easier to think of)
+
 ```java
 class Solution {
     public int removeElement(int[] nums, int val) {
@@ -92,26 +109,8 @@ class Solution {
 }
 ```
 
-### Solution 2: Fast and Slow Pointers (more concise and easier to code)
-```java
-class Solution {
-    public int removeElement(int[] nums, int val) {
-        var slowIndex = 0;
-
-        for (var num : nums) { // This line is the most important. You'd better memorize it.
-            if (num != val) {
-                nums[slowIndex] = num;
-                slowIndex += 1;
-            }
-        }
-
-        return slowIndex;
-    }
-}
-```
-
 ## Python
-### Solution 1: Two pointers (easier to think of)
+
 ```python
 class Solution:
     def removeElement(self, nums: List[int], val: int) -> int:
@@ -134,23 +133,9 @@ class Solution:
         return left
 ```
 
-### Solution 2: Fast and Slow Pointers (more concise and easier to code)
-```python
-class Solution:
-    def removeElement(self, nums: List[int], val: int) -> int:
-        slow_index = 0
-
-        for num in nums: # This line is the most important. You'd better memorize it.
-            if num != val:
-                nums[slow_index] = num
-                slow_index += 1
-
-        return slow_index
-```
-
 ## C++
-### Solution 1: Two pointers (easier to think of)
-```cpp
+
+```c++
 class Solution {
 public:
     int removeElement(vector<int>& nums, int val) {
@@ -178,27 +163,8 @@ public:
 };
 ```
 
-### Solution 2: Fast and Slow Pointers (more concise and easier to code)
-```c++
-class Solution {
-public:
-    int removeElement(vector<int>& nums, int val) {
-        auto slow_index = 0;
-
-        for (auto num : nums) { // This line is the most important. You'd better memorize it.
-            if (num != val) {
-                nums[slow_index] = num;
-                slow_index += 1;
-            }
-        }
-
-        return slow_index;
-    }
-};
-```
-
 ## JavaScript
-### Solution 1: Two pointers (easier to think of)
+
 ```javascript
 var removeElement = function (nums, val) {
   let left = 0
@@ -224,24 +190,8 @@ var removeElement = function (nums, val) {
 };
 ```
 
-### Solution 2: Fast and Slow Pointers (more concise and easier to code)
-```javascript
-var removeElement = function (nums, val) {
-  let slowIndex = 0
-
-  nums.forEach((num) => { // This line is the most important. You'd better memorize it.
-    if (num != val) {
-      nums[slowIndex] = num
-      slowIndex += 1
-    }
-  })
-
-  return slowIndex
-};
-```
-
 ## C#
-### Solution 1: Two pointers (easier to think of)
+
 ```c#
 public class Solution
 {
@@ -274,30 +224,8 @@ public class Solution
 }
 ```
 
-### Solution 2: Fast and Slow Pointers (more concise and easier to code)
-```c#
-public class Solution
-{
-    public int RemoveElement(int[] nums, int val)
-    {
-        int slowIndex = 0;
-
-        foreach (int num in nums) // This line is the most important. You'd better memorize it.
-        {
-            if (num != val)
-            {
-                nums[slowIndex] = num;
-                slowIndex += 1;
-            }
-        }
-
-        return slowIndex;
-    }
-}
-```
-
 ## Go
-### Solution 1: Two pointers (easier to think of)
+
 ```go
 func removeElement(nums []int, val int) int {
     left := 0
@@ -323,24 +251,8 @@ func removeElement(nums []int, val int) int {
 }
 ```
 
-### Solution 2: Fast and Slow Pointers (more concise and easier to code)
-```go
-func removeElement(nums []int, val int) int {
-    slowIndex := 0
-
-    for _, num := range nums { // This line is the most important. You'd better memorize it.
-        if num != val {
-            nums[slowIndex] = num
-            slowIndex += 1
-        }
-    }
-
-    return slowIndex
-}
-```
-
 ## Ruby
-### Solution 1: Two pointers (easier to think of)
+
 ```ruby
 def remove_element(nums, val)
   left = 0
@@ -366,7 +278,137 @@ def remove_element(nums, val)
 end
 ```
 
-### Solution 2: Fast and Slow Pointers (more concise and easier to code)
+## Other languages
+
+```java
+// Welcome to create a PR to complete the code of this language, thanks!
+```
+
+## 思路 2
+
+- `快慢指针方法`，指两个指针起初都指向数组头部，后来一个指针走得更快些。
+- 对于本题，什么情况下需要让快指针走快？就是快指针对应的值等于*val*时。而慢指针要保证走过的每个值都不等于*val*。
+- 值的交换就发生在快指针对应的值不等于*val*，慢指针对应的值等于*val*的时候。
+- 这种手段不容易想到，但比`左右双指针技术`更简洁。
+
+## 复杂度
+
+- 时间复杂度: `O(N)`.
+- 空间复杂度: `O(1)`.
+
+## Java
+
+```java
+class Solution {
+    public int removeElement(int[] nums, int val) {
+        var slowIndex = 0;
+
+        for (var num : nums) { // This line is the most important. You'd better memorize it.
+            if (num != val) {
+                nums[slowIndex] = num;
+                slowIndex += 1;
+            }
+        }
+
+        return slowIndex;
+    }
+}
+```
+
+## Python
+
+```python
+class Solution:
+    def removeElement(self, nums: List[int], val: int) -> int:
+        slow_index = 0
+
+        for num in nums: # This line is the most important. You'd better memorize it.
+            if num != val:
+                nums[slow_index] = num
+                slow_index += 1
+
+        return slow_index
+```
+
+## C++
+
+```c++
+class Solution {
+public:
+    int removeElement(vector<int>& nums, int val) {
+        auto slow_index = 0;
+
+        for (auto num : nums) { // This line is the most important. You'd better memorize it.
+            if (num != val) {
+                nums[slow_index] = num;
+                slow_index += 1;
+            }
+        }
+
+        return slow_index;
+    }
+};
+```
+
+## JavaScript
+
+```javascript
+var removeElement = function (nums, val) {
+  let slowIndex = 0
+
+  nums.forEach((num) => { // This line is the most important. You'd better memorize it.
+    if (num != val) {
+      nums[slowIndex] = num
+      slowIndex += 1
+    }
+  })
+
+  return slowIndex
+};
+```
+
+## C#
+
+```c#
+public class Solution
+{
+    public int RemoveElement(int[] nums, int val)
+    {
+        int slowIndex = 0;
+
+        foreach (int num in nums) // This line is the most important. You'd better memorize it.
+        {
+            if (num != val)
+            {
+                nums[slowIndex] = num;
+                slowIndex += 1;
+            }
+        }
+
+        return slowIndex;
+    }
+}
+```
+
+## Go
+
+```go
+func removeElement(nums []int, val int) int {
+    slowIndex := 0
+
+    for _, num := range nums { // This line is the most important. You'd better memorize it.
+        if num != val {
+            nums[slowIndex] = num
+            slowIndex += 1
+        }
+    }
+
+    return slowIndex
+}
+```
+
+## Ruby
+
 ```ruby
 def remove_element(nums, val)
   slow_index = 0
@@ -382,27 +424,9 @@ def remove_element(nums, val)
 end
 ```
 
-## C
-```c
-// Welcome to create a PR to complete the code of this language, thanks!
-```
-
-## Kotlin
-```kotlin
-// Welcome to create a PR to complete the code of this language, thanks!
-```
-
-## Swift
-```swift
-// Welcome to create a PR to complete the code of this language, thanks!
-```
-
-## Rust
-```rust
-// Welcome to create a PR to complete the code of this language, thanks!
-```
-
 ## Other languages
-```
+
+```java
 // Welcome to create a PR to complete the code of this language, thanks!
 ```
+

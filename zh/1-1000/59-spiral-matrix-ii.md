@@ -1,31 +1,39 @@
-# 59. Spiral Matrix II - Best Practices of LeetCode Solutions
-LeetCode link: [59. Spiral Matrix II](https://leetcode.com/problems/spiral-matrix-ii)
+原文链接：[leetcoder.net - 力扣题解最佳实践 - 力扣人](https://leetcoder.net/zh/leetcode/59-spiral-matrix-ii)
 
-## LeetCode problem description
-Given a positive integer `n`, generate an `n x n` `matrix` filled with elements from `1` to `n * n` in spiral order.
+# 59. 螺旋矩阵 II - 力扣题解最佳实践 - 力扣人
 
-### Example 1
+力扣链接：[59. 螺旋矩阵 II](https://leetcode.cn/problems/spiral-matrix-ii), 难度：**中等**。
+
+## 力扣“59. 螺旋矩阵 II”问题描述
+
+给你一个正整数 `n` ，生成一个包含 *1* 到 *n<sup>2</sup>* 所有元素，且元素按顺时针顺序螺旋排列的 `n x n` 正方形矩阵 `matrix` 。
+
+### [示例 1]
+
 ![](../../images/examples/59_1.jpg)
-```ruby
-Input: n = 3
-Output: [[1,2,3],[8,9,4],[7,6,5]]
-```
 
-### Example 2
-```ruby
-Input: n = 1
-Output: [[1]]
-```
+**输入**: `n = 3`
 
-### Constraints
+**输出**: `[[1,2,3],[8,9,4],[7,6,5]]`
+
+### [示例 2]
+
+**输入**: `n = 1`
+
+**输出**: `[[1]]`
+
+### [约束]
+
 - `1 <= n <= 20`
 
-## Intuition
-* The difficulty of this question lies in the control of the two-dimensional array index.
+## 思路
 
-* You only need to use a `get_increment(i, j)` function to specifically control the index of the next two-dimensional array.
+- 本题的难点在于在二维数组中，如何获得当前位置的下一个位置。
 
-## Steps to the Solution
+- 可以写一个方法`get_increment(i, j)`，专门用于获得下一个位置与当前位置相比的变化量。
+
+## 步骤
+
 1. 初始化 `increments` 和 `increment_index`:
 
     ```python
@@ -64,11 +72,13 @@ Output: [[1]]
         return increments[increment_index]
     ```
 
-## Complexity
-* Time: `O(n * n)`.
-* Space: `O(n * n)`.
+## 复杂度
+
+- 时间复杂度: `O(N * N)`.
+- 空间复杂度: `O(N * N)`.
 
 ## Java
+
 ```java
 class Solution {
     private int[][] matrix;
@@ -113,6 +123,7 @@ class Solution {
 ```
 
 ## Python
+
 ```python
 class Solution:
     def __init__(self):
@@ -152,12 +163,8 @@ class Solution:
         return self.increments[self.increment_index]
 ```
 
-## C++
-```cpp
-// Welcome to create a PR to complete the code of this language, thanks!
-```
-
 ## JavaScript
+
 ```javascript
 let matrix
 const increments = [[0, 1], [1, 0], [0, -1], [-1, 0]]
@@ -202,6 +209,7 @@ function getIncrement(i, j) {
 ```
 
 ## C#
+
 ```c#
 public class Solution
 {
@@ -254,37 +262,9 @@ public class Solution
 }
 ```
 
-## Go
-```go
-// Welcome to create a PR to complete the code of this language, thanks!
-```
-
-## Ruby
-```ruby
-# Welcome to create a PR to complete the code of this language, thanks!
-```
-
-## C
-```c
-// Welcome to create a PR to complete the code of this language, thanks!
-```
-
-## Kotlin
-```kotlin
-// Welcome to create a PR to complete the code of this language, thanks!
-```
-
-## Swift
-```swift
-// Welcome to create a PR to complete the code of this language, thanks!
-```
-
-## Rust
-```rust
-// Welcome to create a PR to complete the code of this language, thanks!
-```
-
 ## Other languages
-```
+
+```java
 // Welcome to create a PR to complete the code of this language, thanks!
 ```
+

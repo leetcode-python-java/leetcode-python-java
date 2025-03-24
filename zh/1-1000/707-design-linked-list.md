@@ -1,10 +1,11 @@
-# 707. Design Linked List - Best Practices of LeetCode Solutions
-LeetCode link: [707. Design Linked List](https://leetcode.com/problems/design-linked-list),
-[707. 设计链表](https://leetcode.cn/problems/design-linked-list)
+原文链接：[leetcoder.net - 力扣题解最佳实践 - 力扣人](https://leetcoder.net/zh/leetcode/707-design-linked-list)
 
-[中文题解](#中文题解)
+# 707. 设计链表 - 力扣题解最佳实践 - 力扣人
 
-## LeetCode problem description
+力扣链接：[707. 设计链表](https://leetcode.cn/problems/design-linked-list), 难度：**中等**。
+
+## 力扣“707. 设计链表”问题描述
+
 你可以选择使用单链表或者双链表，设计并实现自己的链表。
 
 单链表中的节点应该具备两个属性：`val` 和 `next` 。`val` 是当前节点的值，`next` 是指向下一个节点的指针/引用。
@@ -20,20 +21,15 @@ LeetCode link: [707. Design Linked List](https://leetcode.com/problems/design-li
 - `void addAtIndex(int index, int val)` 将一个值为 `val` 的节点插入到链表中下标为 `index` 的节点之前。如果 `index` 等于链表的长度，那么该节点会被追加到链表的末尾。如果 index 比长度更大，该节点将 不会插入 到链表中。
 - `void deleteAtIndex(int index)` 如果下标有效，则删除链表中下标为 `index` 的节点。
 
-### [Example 1]
-**Input**
-```ruby
-["MyLinkedList", "addAtHead", "addAtTail", "addAtIndex", "get", "deleteAtIndex", "get"]
-[[], [1], [3], [1, 2], [1], [1], [1]]
-```
+### [示例 1]
 
-**Output**
-```ruby
-[null, null, null, null, 2, null, 3]
-```
+**输入**: `["MyLinkedList", "addAtHead", "addAtTail", "addAtIndex", "get", "deleteAtIndex", "get"] [[], [1], [3], [1, 2], [1], [1], [1]]`
 
-**Explanation**
-```java
+**输出**: `[null, null, null, null, 2, null, 3]`
+
+**解释**: 
+
+```
 MyLinkedList myLinkedList = new MyLinkedList();
 myLinkedList.addAtHead(1);
 myLinkedList.addAtTail(3);
@@ -43,25 +39,29 @@ myLinkedList.deleteAtIndex(1);    // 现在，链表变为 1->3
 myLinkedList.get(1);              // 返回 3
 ```
 
-### [Constraints]
+### [约束]
+
 - `0 <= index, val <= 1000`
 - 请不要使用内置的 LinkedList 库。
 - 调用 `get`、`addAtHead`、`addAtTail`、`addAtIndex` 和 `deleteAtIndex` 的次数不超过 `2000` 。
 
-## Intuition
-Before solving this problem, it is recommended to solve the simple problem [19. Remove Nth Node From End of List](19-remove-nth-node-from-end-of-list.md) first.
+## 思路
 
-This question can comprehensively test the candidate's mastery of linked lists. The following points need to be paid attention to:
+在做本题前，建议先完成较简单的相关题目 [19. 删除链表的倒数第 N 个结点](19-remove-nth-node-from-end-of-list.md)。
 
-1. It is best to use a `dummyHead` node as the entry of the linked list.
-2. It is best to use a new `ListNode` class, so that `dummyHead` does not need to be mixed with `val` and `next`.
-3. Implement the easy methods first, in the order of `addAtHead`, `addAtTail`, `addAtIndex`, `deleteAtIndex`, `get`.
+本题可以全面考察候选人对链表的掌握程度，以下几点需要重视：
 
-## Complexity
-* Time: `O(n * n)`.
-* Space: `O(n)`.
+1. 最好使用一个`dummyHead`节点做为链表入口。
+2. 最好使用一个新的`ListNode`类，这样，`dummyHead`就不用和`val`、`next`混在一起。
+3. 先实现容易的方法，顺序为`addAtHead`, `addAtTail`, `addAtIndex`, `deleteAtIndex`, `get`。
+
+## 复杂度
+
+- 时间复杂度: `O(N * N)`.
+- 空间复杂度: `O(N)`.
 
 ## Java
+
 ```java
 class ListNode {
     int val;
@@ -142,6 +142,7 @@ class MyLinkedList {
 ```
 
 ## Python
+
 ```python
 class ListNode:
     def __init__(self, val=None):
@@ -204,12 +205,8 @@ class MyLinkedList:
             node.next = node.next.next
 ```
 
-## C++
-```cpp
-// Welcome to create a PR to complete the code of this language, thanks!
-```
-
 ## JavaScript
+
 ```javascript
 class ListNode {
   constructor(val) {
@@ -286,6 +283,7 @@ MyLinkedList.prototype.deleteAtIndex = function (index) {
 ```
 
 ## C#
+
 ```c#
 public class ListNode
 {
@@ -373,46 +371,9 @@ public class MyLinkedList
 }
 ```
 
-## Go
-```go
-// Welcome to create a PR to complete the code of this language, thanks!
-```
-
-## Ruby
-```ruby
-# Welcome to create a PR to complete the code of this language, thanks!
-```
-
-## C
-```c
-// Welcome to create a PR to complete the code of this language, thanks!
-```
-
-## Kotlin
-```kotlin
-// Welcome to create a PR to complete the code of this language, thanks!
-```
-
-## Swift
-```swift
-// Welcome to create a PR to complete the code of this language, thanks!
-```
-
-## Rust
-```rust
-// Welcome to create a PR to complete the code of this language, thanks!
-```
-
 ## Other languages
-```
+
+```java
 // Welcome to create a PR to complete the code of this language, thanks!
 ```
 
-## 中文题解
-在做本题前，建议先完成较简单的相关题目 [19. 删除链表的倒数第 N 个结点](19-remove-nth-node-from-end-of-list.md)。
-
-本题可以全面考察候选人对链表的掌握程度，以下几点需要重视：
-
-1. 最好使用一个`dummyHead`节点做为链表入口。
-2. 最好使用一个新的`ListNode`类，这样，`dummyHead`就不用和`val`、`next`混在一起。
-3. 先实现容易的方法，顺序为`addAtHead`, `addAtTail`, `addAtIndex`, `deleteAtIndex`, `get`。

@@ -1,10 +1,15 @@
-# 203. Remove Linked List Elements - Best Practices of LeetCode Solutions
-LeetCode link: [203. Remove Linked List Elements](https://leetcode.com/problems/remove-linked-list-elements), difficulty: **Easy**.
+Original link: [leetcoder.net - LeetCoder: Fucking Good LeetCode Solutions](https://leetcoder.net/en/leetcode/203-remove-linked-list-elements)
+
+# 203. Remove Linked List Elements - LeetCoder: Fucking Good LeetCode Solutions
+
+LeetCode link: [203. Remove Linked List Elements](https://leetcode.com/problems/remove-linked-list-elements), Difficulty: **Easy**.
 
 ## LeetCode description of "203. Remove Linked List Elements"
+
 Given the `head` of a linked list and an integer `val`, remove all the nodes of the linked list that has `Node.val == val`, and return _the new head_.
 
 ### [Example 1]
+
 ![](../../images/examples/203_1.jpg)
 
 **Input**: `head = [1,2,6,3,4,5,6], val = 6`
@@ -12,21 +17,25 @@ Given the `head` of a linked list and an integer `val`, remove all the nodes of 
 **Output**: `[1,2,3,4,5]`
 
 ### [Example 2]
+
 **Input**: `head = [], val = 1`
 
 **Output**: `[]`
 
 ### [Example 3]
+
 **Input**: `head = [7,7,7,7], val = 7`
 
 **Output**: `[]`
 
 ### [Constraints]
+
 - The number of nodes in the list is in the range `[0, 10000]`.
 - `1 <= Node.val <= 50`
 - `0 <= val <= 50`
 
 ## Intuition
+
 - Assume that the node to be deleted in the linked list is `d`, and the previous node of `d` is `p`, so `p.next` is `d`.
 
 	To delete `d`, just set `p.next = p.next.next`.
@@ -37,18 +46,15 @@ Given the `head` of a linked list and an integer `val`, remove all the nodes of 
 
 	Is there a way to make the `head` node no longer special? In this way, there is no need to treat the `head` specially.
 
-	<details>
-	  <summary>
-	  Click to view the answer.
-	  </summary>
-	  <p>The way is to introduce a `dummy` node, `dummy.next = head`.</p>
-	</details>
+	<details><summary>Click to view the answer</summary><p>The way is to introduce a `dummy` node, `dummy.next = head`.</p></details>
 
 ## Complexity
-* Time: `O(n)`.
-* Space: `O(1)`.
+
+- Time complexity: `O(N)`.
+- Space complexity: `O(1)`.
 
 ## Java
+
 ```java
 /**
  * Definition for singly-linked list.
@@ -80,6 +86,7 @@ class Solution {
 ```
 
 ## Python
+
 ```python
 # Definition for singly-linked list.
 # class ListNode:
@@ -103,7 +110,8 @@ class Solution:
 ```
 
 ## C++
-```cpp
+
+```c++
 /**
  * Definition for singly-linked list.
  * struct ListNode {
@@ -137,6 +145,7 @@ public:
 ```
 
 ## JavaScript
+
 ```javascript
 /**
  * Definition for singly-linked list.
@@ -163,6 +172,7 @@ var removeElements = function (head, val) {
 ```
 
 ## C#
+
 ```c#
 /**
  * Definition for singly-linked list.
@@ -195,6 +205,7 @@ public class Solution {
 ```
 
 ## Go
+
 ```go
 /**
  * Definition for singly-linked list.
@@ -249,27 +260,9 @@ def remove_elements(head, val)
 end
 ```
 
-## C
-```c
-// Welcome to create a PR to complete the code of this language, thanks!
-```
-
-## Kotlin
-```kotlin
-// Welcome to create a PR to complete the code of this language, thanks!
-```
-
-## Swift
-```swift
-// Welcome to create a PR to complete the code of this language, thanks!
-```
-
-## Rust
-```rust
-// Welcome to create a PR to complete the code of this language, thanks!
-```
-
 ## Other languages
-```
+
+```java
 // Welcome to create a PR to complete the code of this language, thanks!
 ```
+

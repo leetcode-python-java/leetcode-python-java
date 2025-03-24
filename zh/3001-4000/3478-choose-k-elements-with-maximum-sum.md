@@ -1,6 +1,6 @@
-原文链接：[leetcoder.net - 力扣题解最佳实践](https://leetcoder.net/zh/leetcode/3478-choose-k-elements-with-maximum-sum)
+原文链接：[leetcoder.net - 力扣题解最佳实践 - 力扣人](https://leetcoder.net/zh/leetcode/3478-choose-k-elements-with-maximum-sum)
 
-# 3478. 选出和最大的 K 个元素 - 力扣题解最佳实践
+# 3478. 选出和最大的 K 个元素 - 力扣题解最佳实践 - 力扣人
 
 力扣链接：[3478. 选出和最大的 K 个元素](https://leetcode.cn/problems/choose-k-elements-with-maximum-sum), 难度：**中等**。
 
@@ -22,7 +22,7 @@
 
 **输出**: `[80,30,0,80,50]`
 
-**解释**:
+**解释**: 
 
 ```
 - 对于 `i = 0` ：满足 `nums1[j] < nums1[0]` 的下标为 `[1, 2, 4]` ，选出其中值最大的两个，结果为 `50 + 30 = 80` 。
@@ -38,7 +38,7 @@
 
 **输出**: `[0,0,0,0]`
 
-**解释**:
+**解释**: 
 
 ```
 由于 `nums1` 中的所有元素相等，不存在满足条件 `nums1[j] < nums1[i]`，所有位置的结果都是 `0` 。
@@ -57,32 +57,32 @@
   <summary>提示 1</summary>
   Sort `nums1` and its corresponding `nums2` values together based on `nums1`.
 
-
+  
 </details>
 
 <details>
   <summary>提示 2</summary>
   Use a max heap to track the top `k` values of `nums2` as you process each element in the sorted order.
 
-
+  
 </details>
 
 ## 思路
 
 - 要求1：找出所有满足 `nums1[j]` 小于 `nums1[i]` 的下标 `j` 。
-  看到这个，大家一定会想到把 `nums1` 按从小到大排序，这样，前面的小于等于后面的，但一排序下标就**乱**了。如果对这个问题没有好办法解决，整个题目就做不出来。先请思考下。
+    看到这个，大家一定会想到把 `nums1` 按从小到大排序，这样，前面的小于等于后面的，但一排序下标就**乱**了。如果对这个问题没有好办法解决，整个题目就做不出来。先请思考下。
 
     <details><summary>点击查看答案</summary><p>在排序时带上索引下标，即排序的对象是元组`(num, index)`的数组。这个技术**一定要掌握**，许多题目都会用到。</p></details>
 
-  解决了上面的问题，下标就都有了，我们再看：
+    解决了上面的问题，下标就都有了，我们再看：
 
 - 要求2：从这些下标对应的 `nums2[j]` 中选出 至多 `k` 个，并 **最大化** 这些值的总和作为结果。
 
-  看到这个，你想到用什么好方法了吗？
+    看到这个，你想到用什么好方法了吗？
 
     <details><summary>点击查看答案</summary><p>堆排序，维护一个大小为 `k` 的大根堆。这也是经常考察的知识点，**一定要掌握**哦。</p></details>
 
-  看到这，请你先按上文提示把代码实现一下。
+    看到这，请你先按上文提示把代码实现一下。
 
 - 最后，发现还要对连续出现的重复的 `num` 进行特别处理，即相同的 `num` 对应的 `answer` 中的值应该是一样的。处理方法有多种，怎么处理最简单呢？
 
@@ -130,3 +130,4 @@ class Solution:
 ```java
 // Welcome to create a PR to complete the code of this language, thanks!
 ```
+

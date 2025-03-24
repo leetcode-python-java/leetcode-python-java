@@ -1,10 +1,15 @@
-# 24. Swap Nodes in Pairs - Best Practices of LeetCode Solutions
-LeetCode link: [24. Swap Nodes in Pairs](https://leetcode.com/problems/swap-nodes-in-pairs), difficulty: **Medium**
+Original link: [leetcoder.net - LeetCoder: Fucking Good LeetCode Solutions](https://leetcoder.net/en/leetcode/24-swap-nodes-in-pairs)
+
+# 24. Swap Nodes in Pairs - LeetCoder: Fucking Good LeetCode Solutions
+
+LeetCode link: [24. Swap Nodes in Pairs](https://leetcode.com/problems/swap-nodes-in-pairs), Difficulty: **Medium**.
 
 ## LeetCode description of "24. Swap Nodes in Pairs"
+
 Given a linked list, swap every two adjacent nodes and return its head. You must solve the problem without modifying the values in the list's nodes (i.e., only nodes themselves may be changed.)
 
 ### [Example 1]
+
 ![](../../images/examples/24_1.jpg)
 
 **Input**: `head = [1,2,3,4]`
@@ -12,34 +17,40 @@ Given a linked list, swap every two adjacent nodes and return its head. You must
 **Output**: `[2,1,4,3]`
 
 ### [Example 2]
+
 **Input**: `head = []`
 
 **Output**: `[]`
 
 ### [Example 3]
+
 **Input**: `head = [1]`
 
 **Output**: `[1]`
 
 ### [Example 4]
+
 **Input**: `head = [1,2,3]`
 
 **Output**: `[2,1,3]`
 
 ### [Constraints]
+
 - The number of nodes in the list is in the range `[0, 100]`.
 - `0 <= Node.val <= 100`
 
 ## Intuition
+
 Before solving this problem, it is recommended to solve the simple problem [206. Reverse Linked List](206-reverse-linked-list.md) first.
 
 1. To solve this problem, you still need to define at least two variables: `current` and `previous`.
 2. The loop condition should be `while (current.next != null)` instead of `while (current != null)`, because the operations that need to be performed include `current.next.next`.
 
 ## Steps
+
 1. Traverse all nodes.
 
-    ```c#
+    ```java
     var previous = null;
     var current = head;
 	
@@ -50,7 +61,7 @@ Before solving this problem, it is recommended to solve the simple problem [206.
 
 2. Because every two nodes swap positions, it is necessary to change it to taking two steps at a time.
 
-    ```c#
+    ```java
     var previous = null;
     var current = head;
 	
@@ -62,7 +73,7 @@ Before solving this problem, it is recommended to solve the simple problem [206.
 
 3. Swap the positions of `current` and `current.next`.
 
-    ```c#
+    ```java
     var previous = null;
     var current = head;
 	
@@ -78,7 +89,7 @@ Before solving this problem, it is recommended to solve the simple problem [206.
 
 4. Process `previous`.
 
-	```c#
+	```java
 	var previous = null;
 	var current = head;
 	
@@ -96,7 +107,7 @@ Before solving this problem, it is recommended to solve the simple problem [206.
 
 5. Determine the return value. Because the `head` node will be swapped to the second node when the number of nodes exceeds 1, it is best to add a `dummy_head` node for unified and convenient processing.
 
-	```c#
+	```java
 	var dummyHead = new ListNode(); // 1
 	dummyHead.next = head; // 2
 	
@@ -118,10 +129,12 @@ Before solving this problem, it is recommended to solve the simple problem [206.
 	```
 
 ## Complexity
-* Time: `O(n)`.
-* Space: `O(1)`.
+
+- Time complexity: `O(N)`.
+- Space complexity: `O(1)`.
 
 ## Java
+
 ```java
 /**
  * public class ListNode {
@@ -156,6 +169,7 @@ class Solution {
 ```
 
 ## Python
+
 ```python
 # class ListNode:
 #     def __init__(self, val=0, next=None):
@@ -182,7 +196,8 @@ class Solution:
 ```
 
 ## C++
-```cpp
+
+```c++
 /**
  * struct ListNode {
  *     int val;
@@ -218,6 +233,7 @@ public:
 ```
 
 ## JavaScript
+
 ```javascript
 /**
  * function ListNode(val, next) {
@@ -247,6 +263,7 @@ var swapPairs = function (head) {
 ```
 
 ## C#
+
 ```c#
 /**
  * public class ListNode {
@@ -284,6 +301,7 @@ public class Solution
 ```
 
 ## Go
+
 ```go
 /**
  * type ListNode struct {
@@ -313,6 +331,7 @@ func swapPairs(head *ListNode) *ListNode {
 ```
 
 ## Ruby
+
 ```ruby
 # class ListNode
 #     attr_accessor :val, :next
@@ -345,27 +364,9 @@ def swap_pairs(head)
 end
 ```
 
-## C
-```c
-// Welcome to create a PR to complete the code of this language, thanks!
-```
-
-## Kotlin
-```kotlin
-// Welcome to create a PR to complete the code of this language, thanks!
-```
-
-## Swift
-```swift
-// Welcome to create a PR to complete the code of this language, thanks!
-```
-
-## Rust
-```rust
-// Welcome to create a PR to complete the code of this language, thanks!
-```
-
 ## Other languages
-```
+
+```java
 // Welcome to create a PR to complete the code of this language, thanks!
 ```
+

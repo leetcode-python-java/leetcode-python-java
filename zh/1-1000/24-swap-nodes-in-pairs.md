@@ -1,10 +1,15 @@
-# 24. 两两交换链表中的节点 - 力扣题解最佳实践
-力扣链接：[24. 两两交换链表中的节点](https://leetcode.cn/problems/swap-nodes-in-pairs) ，难度：**中等**。
+原文链接：[leetcoder.net - 力扣题解最佳实践 - 力扣人](https://leetcoder.net/zh/leetcode/24-swap-nodes-in-pairs)
+
+# 24. 两两交换链表中的节点 - 力扣题解最佳实践 - 力扣人
+
+力扣链接：[24. 两两交换链表中的节点](https://leetcode.cn/problems/swap-nodes-in-pairs), 难度：**中等**。
 
 ## 力扣“24. 两两交换链表中的节点”问题描述
+
 给你一个链表，两两交换其中相邻的节点，并返回交换后链表的头节点。你必须在不修改节点内部的值的情况下完成本题（即，只能进行节点交换）。
 
 ### [示例 1]
+
 ![](../../images/examples/24_1.jpg)
 
 **输入**: `head = [1,2,3,4]`
@@ -12,29 +17,40 @@
 **输出**: `[2,1,4,3]`
 
 ### [示例 2]
+
 **输入**: `head = []`
 
 **输出**: `[]`
 
 ### [示例 3]
+
 **输入**: `head = [1]`
 
 **输出**: `[1]`
 
+### [示例 4]
+
+**输入**: `head = [1,2,3]`
+
+**输出**: `[2,1,3]`
+
 ### [约束]
+
 - 链表中节点的数目在范围 `[0, 100]` 内
 - `0 <= Node.val <= 100`
 
 ## 思路
+
 在做本题前，建议先完成简单题目[206. Reverse Linked List](206-reverse-linked-list.md)。
 
 1. 解决这个问题，依然至少需要定义两个变量：`current`和`previous`。
 2. 循环条件应是`while (current.next != null)`，而不应该是`while (current != null)`，因为需要操作`current.next.next`。
 
 ## 步骤
+
 1. 遍历所有节点。
 
-    ```c#
+    ```java
     var previous = null;
     var current = head;
 	
@@ -45,7 +61,7 @@
 
 2. 因为每两个节点进行一次位置互换，所以需要改为一次走两步。
 
-    ```c#
+    ```java
     var previous = null;
     var current = head;
 	
@@ -57,7 +73,7 @@
 
 3. 交换 `current` 和 `current.next` 的位置。
 
-	```c#
+	```java
 	var previous = null;
 	var current = head;
 	
@@ -73,7 +89,7 @@
 
 4. 处理 `previous`。
 
-	```c#
+	```java
 	var previous = null;
 	var current = head;
 	
@@ -91,7 +107,7 @@
 
 5. 确定返回值。因为`head`节点在节点数量超过1时，会被交换到第二个节点的位置，为了统一方便处理，最好加入`dummy_head`节点。
 
-	```c#
+	```java
 	var dummyHead = new ListNode(); // 1
 	dummyHead.next = head; // 2
 	
@@ -113,10 +129,12 @@
 	```
 
 ## 复杂度
-* 时间: `O(n)`。
-* 空间: `O(1)`。
+
+- 时间复杂度: `O(N)`.
+- 空间复杂度: `O(1)`.
 
 ## Java
+
 ```java
 /**
  * public class ListNode {
@@ -151,6 +169,7 @@ class Solution {
 ```
 
 ## Python
+
 ```python
 # class ListNode:
 #     def __init__(self, val=0, next=None):
@@ -177,7 +196,8 @@ class Solution:
 ```
 
 ## C++
-```cpp
+
+```c++
 /**
  * struct ListNode {
  *     int val;
@@ -213,6 +233,7 @@ public:
 ```
 
 ## JavaScript
+
 ```javascript
 /**
  * function ListNode(val, next) {
@@ -242,6 +263,7 @@ var swapPairs = function (head) {
 ```
 
 ## C#
+
 ```c#
 /**
  * public class ListNode {
@@ -279,6 +301,7 @@ public class Solution
 ```
 
 ## Go
+
 ```go
 /**
  * type ListNode struct {
@@ -308,6 +331,7 @@ func swapPairs(head *ListNode) *ListNode {
 ```
 
 ## Ruby
+
 ```ruby
 # class ListNode
 #     attr_accessor :val, :next
@@ -340,27 +364,9 @@ def swap_pairs(head)
 end
 ```
 
-## C
-```c
-// Welcome to create a PR to complete the code of this language, thanks!
-```
-
-## Kotlin
-```kotlin
-// Welcome to create a PR to complete the code of this language, thanks!
-```
-
-## Swift
-```swift
-// Welcome to create a PR to complete the code of this language, thanks!
-```
-
-## Rust
-```rust
-// Welcome to create a PR to complete the code of this language, thanks!
-```
-
 ## Other languages
-```
+
+```java
 // Welcome to create a PR to complete the code of this language, thanks!
 ```
+

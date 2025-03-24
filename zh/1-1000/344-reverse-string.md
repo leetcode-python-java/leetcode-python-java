@@ -1,6 +1,8 @@
-# 344. 反转字符串 - 力扣题解最佳实践
+原文链接：[leetcoder.net - 力扣题解最佳实践 - 力扣人](https://leetcoder.net/zh/leetcode/344-reverse-string)
 
-力扣链接：[344. 反转字符串](https://leetcode.cn/problems/reverse-string) ，难度：**简单**。
+# 344. 反转字符串 - 力扣题解最佳实践 - 力扣人
+
+力扣链接：[344. 反转字符串](https://leetcode.cn/problems/reverse-string), 难度：**简单**。
 
 ## 力扣“344. 反转字符串”问题描述
 
@@ -25,11 +27,13 @@
 - `1 <= s.length <= 10^5`
 - `s[i]` 都是 ASCII 码表中的可打印字符
 
-### [提示]
+### [Hints]
 
 <details>
   <summary>提示 1</summary>
   The entire logic for reversing a string is based on using the opposite directional two-pointer approach!
+
+  
 </details>
 
 ## 思路
@@ -77,8 +81,8 @@
 
 ## 复杂度
 
-* 时间：`O(n)`。
-* 空间：`O(1)`。
+- 时间复杂度: `O(N)`.
+- 空间复杂度: `O(1)`.
 
 ## Java
 
@@ -116,7 +120,7 @@ class Solution:
 
 ## C++
 
-```cpp
+```c++
 class Solution {
 public:
     void reverseString(vector<char>& s) {
@@ -202,8 +206,9 @@ def reverse_string(s)
 end
 ```
 
-## C, Kotlin, Swift, Rust or other languages
+## Other languages
 
-```
+```java
 // Welcome to create a PR to complete the code of this language, thanks!
 ```
+

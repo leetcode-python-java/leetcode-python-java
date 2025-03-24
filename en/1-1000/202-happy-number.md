@@ -1,9 +1,11 @@
-Original link: [leetcoder.net - Fucking Good LeetCode Solutions](https://leetcoder.net/en/leetcode/202-happy-number)
+Original link: [leetcoder.net - LeetCoder: Fucking Good LeetCode Solutions](https://leetcoder.net/en/leetcode/202-happy-number)
 
-# 202. Happy Number - Fucking Good LeetCode Solutions
-LeetCode link: [202. Happy Number](https://leetcode.com/problems/happy-number), difficulty: **Easy**.
+# 202. Happy Number - LeetCoder: Fucking Good LeetCode Solutions
+
+LeetCode link: [202. Happy Number](https://leetcode.com/problems/happy-number), Difficulty: **Easy**.
 
 ## LeetCode description of "202. Happy Number"
+
 Write an algorithm to determine if a number `n` is happy.
 
 A **happy number** is a number defined by the following process:
@@ -15,11 +17,13 @@ A **happy number** is a number defined by the following process:
 Return `true` if `n` is *a happy number*, and `false` if not.
 
 ### [Example 1]
+
 **Input**: `n = 19`
 
 **Output**: `true`
 
-**Explanation**
+**Explanation**: 
+
 ```
 1^2 + 9^2 = 82
 8^2 + 2^2 = 68
@@ -28,14 +32,17 @@ Return `true` if `n` is *a happy number*, and `false` if not.
 ```
 
 ### [Example 2]
+
 **Input**: `n = 2`
 
 **Output**: `false`
 
 ### [Constraints]
+
 - `1 <= n <= 2^31 - 1`
 
 ## Intuition
+
 1. It is more convenient to call `isHappy(n)` recursively. You only need to generate a new `n` as a parameter each time.
 2. If `n` has already appeared, it means that the loop has been entered, and `return false`. You can use `Set` to save the `n` that has appeared.
 
@@ -81,10 +88,12 @@ Return `true` if `n` is *a happy number*, and `false` if not.
 	```
 
 ## Complexity
-* Time: `O(log N)`.
-* Space: `O(log N)`.
+
+- Time complexity: `O(log N)`.
+- Space complexity: `O(log N)`.
 
 ## Java
+
 ```java
 class Solution {
     private HashSet<Integer> appearedNums = new HashSet<>();
@@ -112,6 +121,7 @@ class Solution {
 ```
 
 ## Python
+
 ```python
 class Solution:
     def __init__(self):
@@ -131,12 +141,9 @@ class Solution:
         return self.isHappy(number)
 ```
 
-## C++
-```cpp
-// Welcome to create a PR to complete the code of this language, thanks!
-```
-
 ## JavaScript
+
+```javascript
 ```javascript
 var isHappy = function (n, appearedNums) {
   appearedNums ||= new Set()
@@ -159,8 +166,10 @@ var isHappy = function (n, appearedNums) {
   return isHappy(sum, appearedNums)
 };
 ```
+```
 
 ## C#
+
 ```c#
 public class Solution
 {
@@ -186,37 +195,9 @@ public class Solution
 }
 ```
 
-## Go
-```go
-// Welcome to create a PR to complete the code of this language, thanks!
-```
-
-## Ruby
-```ruby
-# Welcome to create a PR to complete the code of this language, thanks!
-```
-
-## C
-```c
-// Welcome to create a PR to complete the code of this language, thanks!
-```
-
-## Kotlin
-```kotlin
-// Welcome to create a PR to complete the code of this language, thanks!
-```
-
-## Swift
-```swift
-// Welcome to create a PR to complete the code of this language, thanks!
-```
-
-## Rust
-```rust
-// Welcome to create a PR to complete the code of this language, thanks!
-```
-
 ## Other languages
-```
+
+```java
 // Welcome to create a PR to complete the code of this language, thanks!
 ```
+

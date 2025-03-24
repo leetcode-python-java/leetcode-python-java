@@ -1,31 +1,39 @@
-# 59. Spiral Matrix II - Best Practices of LeetCode Solutions
-LeetCode link: [59. Spiral Matrix II](https://leetcode.com/problems/spiral-matrix-ii)
+Original link: [leetcoder.net - LeetCoder: Fucking Good LeetCode Solutions](https://leetcoder.net/en/leetcode/59-spiral-matrix-ii)
 
-## LeetCode problem description
-Given a positive integer `n`, generate an `n x n` `matrix` filled with elements from `1` to `n * n` in spiral order.
+# 59. Spiral Matrix II - LeetCoder: Fucking Good LeetCode Solutions
 
-### Example 1
+LeetCode link: [59. Spiral Matrix II](https://leetcode.com/problems/spiral-matrix-ii), Difficulty: **Medium**.
+
+## LeetCode description of "59. Spiral Matrix II"
+
+Given a positive integer `n`, generate an `n x n` matrix filled with elements from *1* to *n<sup>2</sup>* in spiral order.
+
+### [Example 1]
+
 ![](../../images/examples/59_1.jpg)
-```ruby
-Input: n = 3
-Output: [[1,2,3],[8,9,4],[7,6,5]]
-```
 
-### Example 2
-```ruby
-Input: n = 1
-Output: [[1]]
-```
+**Input**: `n = 3`
 
-### Constraints
+**Output**: `[[1,2,3],[8,9,4],[7,6,5]]`
+
+### [Example 2]
+
+**Input**: `n = 1`
+
+**Output**: `[[1]]`
+
+### [Constraints]
+
 - `1 <= n <= 20`
 
 ## Intuition
-* The difficulty of this question lies in the control of the two-dimensional array index.
 
-* You only need to use a `get_increment(i, j)` function to specifically control the index of the next two-dimensional array.
+- The difficulty of this question lies in how to get the next position of the current position in a two-dimensional array.
 
-## Steps to the Solution
+- You can write a method `get_increment(i, j)`, which is specifically used to get the change between the next position and the current position.
+
+## Steps
+
 1. Initialize `increments` and `increment_index`:
 
     ```python
@@ -47,12 +55,12 @@ Output: [[1]]
 
 3. For function `get_increment(i, j)`, it should return a pair like `[0, 1]`. First verify whether the current increment is valid. If not, use the next increment.
 
-   ```python
-   def get_increment(i, j):
+    ```python
+    def get_increment(i, j):
         increment = increments[increment_index]
         i += increment[0]
         j += increment[1]
-   
+
         if (
             i < 0 or i >= len(matrix) or
             j < 0 or j >= len(matrix) or
@@ -60,15 +68,17 @@ Output: [[1]]
         ): # not valid, use next increment
             increment_index += 1
             increment_index %= len(self.increments)
-   
+
         return increments[increment_index]
-   ```
+    ```
 
 ## Complexity
-* Time: `O(n * n)`.
-* Space: `O(n * n)`.
+
+- Time complexity: `O(N * N)`.
+- Space complexity: `O(N * N)`.
 
 ## Java
+
 ```java
 class Solution {
     private int[][] matrix;
@@ -113,6 +123,7 @@ class Solution {
 ```
 
 ## Python
+
 ```python
 class Solution:
     def __init__(self):
@@ -152,12 +163,8 @@ class Solution:
         return self.increments[self.increment_index]
 ```
 
-## C++
-```cpp
-// Welcome to create a PR to complete the code of this language, thanks!
-```
-
 ## JavaScript
+
 ```javascript
 let matrix
 const increments = [[0, 1], [1, 0], [0, -1], [-1, 0]]
@@ -202,6 +209,7 @@ function getIncrement(i, j) {
 ```
 
 ## C#
+
 ```c#
 public class Solution
 {
@@ -254,37 +262,9 @@ public class Solution
 }
 ```
 
-## Go
-```go
-// Welcome to create a PR to complete the code of this language, thanks!
-```
-
-## Ruby
-```ruby
-# Welcome to create a PR to complete the code of this language, thanks!
-```
-
-## C
-```c
-// Welcome to create a PR to complete the code of this language, thanks!
-```
-
-## Kotlin
-```kotlin
-// Welcome to create a PR to complete the code of this language, thanks!
-```
-
-## Swift
-```swift
-// Welcome to create a PR to complete the code of this language, thanks!
-```
-
-## Rust
-```rust
-// Welcome to create a PR to complete the code of this language, thanks!
-```
-
 ## Other languages
-```
+
+```java
 // Welcome to create a PR to complete the code of this language, thanks!
 ```
+
