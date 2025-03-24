@@ -197,7 +197,7 @@ class Solution:
 
 ## C++
 
-```c++
+```cpp
 /**
  * struct ListNode {
  *     int val;
@@ -264,7 +264,7 @@ var swapPairs = function (head) {
 
 ## C#
 
-```c#
+```csharp
 /**
  * public class ListNode {
  *     public int val;

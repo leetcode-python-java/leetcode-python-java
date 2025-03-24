@@ -85,7 +85,7 @@ class NumArray:
 
 ## C++
 
-```c++
+```cpp
 class NumArray {
 private:
     vector<int> prefixSums;
@@ -129,7 +129,7 @@ NumArray.prototype.sumRange = function (left, right) {
 
 ## C#
 
-```c#
+```csharp
 public class NumArray
 {
     int[] prefixSums;

@@ -95,7 +95,7 @@ class Solution:
 
 ## C++
 
-```c++
+```cpp
 class Solution {
 public:
     int search(vector<int>& nums, int target) {
@@ -148,7 +148,7 @@ var search = function (nums, target) {
 
 ## C#
 
-```c#
+```csharp
 public class Solution
 {
     public int Search(int[] nums, int target)

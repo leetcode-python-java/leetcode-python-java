@@ -96,7 +96,7 @@ class Solution:
 
 ## C++
 
-```c++
+```cpp
 class Solution {
 public:
     vector<int> sortedSquares(vector<int>& nums) {
@@ -149,7 +149,7 @@ var sortedSquares = function (nums) {
 
 ## C#
 
-```c#
+```csharp
 public class Solution
 {
     public int[] SortedSquares(int[] nums)
@@ -275,7 +275,7 @@ class Solution:
 
 ## C++
 
-```c++
+```cpp
 class Solution {
 public:
     vector<int> sortedSquares(vector<int>& nums) {
@@ -302,7 +302,7 @@ var sortedSquares = function (nums) {
 
 ## C#
 
-```c#
+```csharp
 public class Solution
 {
     public int[] SortedSquares(int[] nums)

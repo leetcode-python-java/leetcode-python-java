@@ -131,7 +131,7 @@ class Solution:
 
 ## C++
 
-```c++
+```cpp
 class Solution {
 public:
     int removeElement(vector<int>& nums, int val) {
@@ -188,7 +188,7 @@ var removeElement = function (nums, val) {
 
 ## C#
 
-```c#
+```csharp
 public class Solution
 {
     public int RemoveElement(int[] nums, int val)
@@ -328,7 +328,7 @@ class Solution:
 
 ## C++
 
-```c++
+```cpp
 class Solution {
 public:
     int removeElement(vector<int>& nums, int val) {
@@ -365,7 +365,7 @@ var removeElement = function (nums, val) {
 
 ## C#
 
-```c#
+```csharp
 public class Solution
 {
     public int RemoveElement(int[] nums, int val)

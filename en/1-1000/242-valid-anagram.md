@@ -108,7 +108,7 @@ var isAnagram = function (s, t) {
 
 ## C#
 
-```c#
+```csharp
 public class Solution
 {
     public bool IsAnagram(string s, string t)

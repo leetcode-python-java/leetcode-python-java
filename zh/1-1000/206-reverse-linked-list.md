@@ -143,7 +143,7 @@ class Solution:
 
 ## C++
 
-```c++
+```cpp
 /**
  * struct ListNode {
  *     int val;
@@ -197,7 +197,7 @@ var reverseList = function (head) {
 
 ## C#
 
-```c#
+```csharp
 /**
  * public class ListNode {
  *     public int val;

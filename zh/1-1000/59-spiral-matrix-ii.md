@@ -210,7 +210,7 @@ function getIncrement(i, j) {
 
 ## C#
 
-```c#
+```csharp
 public class Solution
 {
     int[][] matrix;

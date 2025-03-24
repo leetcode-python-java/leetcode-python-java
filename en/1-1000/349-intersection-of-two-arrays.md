@@ -82,7 +82,7 @@ class Solution:
 
 ## C++
 
-```c++
+```cpp
 class Solution {
 public:
     vector<int> intersection(vector<int>& nums1, vector<int>& nums2) {
@@ -119,7 +119,7 @@ var intersection = function (nums1, nums2) {
 
 ## C#
 
-```c#
+```csharp
 public class Solution
 {
     public int[] Intersection(int[] nums1, int[] nums2)

@@ -175,7 +175,7 @@ class Solution:
 
 ## C++
 
-```c++
+```cpp
 /**
  * Definition for singly-linked list.
  * struct ListNode {
@@ -254,7 +254,7 @@ var removeNthFromEnd = function (head, n) {
 
 ## C#
 
-```c#
+```csharp
 /**
  * Definition for singly-linked list.
  * public class ListNode {

@@ -171,7 +171,7 @@ var minSubArrayLen = function (target, nums) {
 
 ## C#
 
-```c#
+```csharp
 public class Solution
 {
     public int MinSubArrayLen(int target, int[] nums)

@@ -181,7 +181,7 @@ class Solution:
 
 ## C++
 
-```c++
+```cpp
 class Solution {
 public:
     vector<int> twoSum(vector<int>& nums, int target) {
@@ -218,7 +218,7 @@ var twoSum = function (nums, target) {
 
 ## C#
 
-```c#
+```csharp
 public class Solution {
     public int[] TwoSum(int[] nums, int target) {
         var numToIndex = new Dictionary<int, int>();

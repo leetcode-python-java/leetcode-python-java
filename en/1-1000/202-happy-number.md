@@ -168,7 +168,7 @@ var isHappy = function (n, appearedNums) {
 
 ## C#
 
-```c#
+```csharp
 public class Solution
 {
     HashSet<int> appearedNums = new HashSet<int>();

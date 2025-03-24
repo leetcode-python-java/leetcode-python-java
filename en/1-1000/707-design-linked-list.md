@@ -283,7 +283,7 @@ MyLinkedList.prototype.deleteAtIndex = function (index) {
 
 ## C#
 
-```c#
+```csharp
 public class ListNode
 {
     public int val;

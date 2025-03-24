@@ -120,7 +120,7 @@ class Solution:
 
 ## C++
 
-```c++
+```cpp
 class Solution {
 public:
     void reverseString(vector<char>& s) {
@@ -155,7 +155,7 @@ var reverseString = function (s) {
 
 ## C#
 
-```c#
+```csharp
 public class Solution
 {
     public void ReverseString(char[] s)

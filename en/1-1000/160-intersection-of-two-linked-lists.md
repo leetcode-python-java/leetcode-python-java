@@ -264,7 +264,7 @@ var getIntersectionNode = function (headA, headB) {
 
 ## C#
 
-```c#
+```csharp
 /**
  * public class ListNode {
  *     public int val;

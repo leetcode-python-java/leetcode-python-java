@@ -111,7 +111,7 @@ class Solution:
 
 ## C++
 
-```c++
+```cpp
 /**
  * Definition for singly-linked list.
  * struct ListNode {
@@ -173,7 +173,7 @@ var removeElements = function (head, val) {
 
 ## C#
 
-```c#
+```csharp
 /**
  * Definition for singly-linked list.
  * public class ListNode {

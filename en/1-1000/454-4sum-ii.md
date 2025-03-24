@@ -151,7 +151,7 @@ var fourSumCount = function (nums1, nums2, nums3, nums4) {
 
 ## C#
 
-```c#
+```csharp
 public class Solution
 {
     public int FourSumCount(int[] nums1, int[] nums2, int[] nums3, int[] nums4)
