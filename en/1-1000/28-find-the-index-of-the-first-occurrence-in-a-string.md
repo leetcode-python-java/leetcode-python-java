@@ -47,13 +47,8 @@ The first occurrence is at index 0, so we return 0.
 class Solution:
     def strStr(self, haystack: str, needle: str) -> int:
         for i in range(len(haystack)):
-            j = 0
-            
-            while i + j < len(haystack) and haystack[i + j] == needle[j]:
-                j += 1
-
-                if j == len(needle):
-                    return i
+            if haystack[i:i + len(needle)] == needle:
+                return i
 
         return -1
 ```
@@ -62,14 +57,8 @@ class Solution:
 ```javascript
 var strStr = function (haystack, needle) {
   for (let i = 0; i < haystack.length; i++) {
-    let j = 0
-
-    while (i + j < haystack.length && haystack[i + j] == needle[j]) {
-      j += 1
-
-      if (j == needle.length) {
-        return i
-      }
+    if (haystack.slice(i, i + needle.length) == needle) {
+      return i
     }
   }
 
@@ -102,27 +91,7 @@ var strStr = function (haystack, needle) {
 # Welcome to create a PR to complete the code of this language, thanks!
 ```
 
-## C
-```c
-// Welcome to create a PR to complete the code of this language, thanks!
-```
-
-## Kotlin
-```kotlin
-// Welcome to create a PR to complete the code of this language, thanks!
-```
-
-## Swift
-```swift
-// Welcome to create a PR to complete the code of this language, thanks!
-```
-
-## Rust
-```rust
-// Welcome to create a PR to complete the code of this language, thanks!
-```
-
-## Other languages
+## C, Kotlin, Swift, Rust or other languages
 ```
 // Welcome to create a PR to complete the code of this language, thanks!
 ```
