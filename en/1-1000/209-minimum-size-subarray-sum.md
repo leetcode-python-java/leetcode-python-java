@@ -18,9 +18,7 @@ Given an array of positive integers `nums` and a positive integer `target`, retu
 
 **Explanation**: 
 
-```
 The subarray [4,3] has the minimal length under the problem constraint.
-```
 
 ### [Example 2]
 

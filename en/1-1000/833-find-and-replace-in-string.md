@@ -34,10 +34,8 @@ A **substring** is a contiguous sequence of characters in a string.
 
 **Explanation**: 
 
-```
 "a" occurs at index 0 in s, so we replace it with "eee".
 "cd" occurs at index 2 in s, so we replace it with "ffff".
-```
 
 ### [Example 2]
 
@@ -49,10 +47,8 @@ A **substring** is a contiguous sequence of characters in a string.
 
 **Explanation**: 
 
-```
 "ab" occurs at index 0 in s, so we replace it with "eee".
 "ec" does not occur at index 2 in s, so we do nothing.
-```
 
 ### [Constraints]
 

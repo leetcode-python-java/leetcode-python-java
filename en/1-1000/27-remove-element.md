@@ -21,10 +21,8 @@ Consider the number of elements in `nums` which are not equal to `val` be `k`, t
 
 **Explanation**: 
 
-```
 Your function should return k = 2, with the first two elements of nums being 2.
 It does not matter what you leave beyond the returned k (hence they are underscores).
-```
 
 ### [Example 2]
 
@@ -34,11 +32,9 @@ It does not matter what you leave beyond the returned k (hence they are undersco
 
 **Explanation**: 
 
-```
 Your function should return k = 5, with the first five elements of nums containing 0, 0, 1, 3, and 4.
 Note that the five elements can be returned in any order.
 It does not matter what you leave beyond the returned k (hence they are underscores).
-```
 
 ### [Constraints]
 

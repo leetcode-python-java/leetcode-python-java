@@ -18,10 +18,8 @@ Given an integer array `nums` sorted in **non-decreasing** order, return *an arr
 
 **Explanation**: 
 
-```
 After squaring, the array becomes [16,1,0,9,100].
 After sorting, it becomes [0,1,9,16,100].
-```
 
 ### [Example 2]
 
