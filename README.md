@@ -1,6 +1,6 @@
 # Fuck LeetCode: Best practices for LeetCode solutions
 
-Dear LeetCoders! For a better LeetCode problem-solving experience, please visit website [coding5.com](https://coding5.com): Dare to claim the best practices of LeetCode solutions! Will save you a lot of time!
+Dear LeetCoders! For a better LeetCode problem-solving experience, please visit website [leetcoder.net](https://leetcoder.net): Dare to claim the best practices of LeetCode solutions! Will save you a lot of time!
 
 Hi there! I'm Lane.
 Do you feel that there are too many problems (over 3,450) on the LeetCode and you can't finish them all?

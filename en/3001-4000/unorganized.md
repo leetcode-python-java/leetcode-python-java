@@ -228,6 +228,7 @@ Add a table to show the differences between A-Start and breadth-first search
 - https://leetcode.cn/problems/positions-of-large-groups/
 - https://leetcode.cn/problems/masking-personal-information
 - https://leetcode.cn/problems/flipping-an-image/
+- https://leetcode.cn/contest/weekly-contest-442/problems/maximum-containers-on-a-ship
 - 
 
 ## Other algorithm

@@ -1,4 +1,4 @@
-Original link: [coding5.com - Best practices of LeetCode solutions](https://coding5.com/en/leetcode/3478-choose-k-elements-with-maximum-sum)
+Original link: [leetcoder.net - Best practices of LeetCode solutions](https://leetcoder.net/en/leetcode/3478-choose-k-elements-with-maximum-sum)
 
 # 3478. Choose K Elements With Maximum Sum - Best practices of LeetCode solutions
 

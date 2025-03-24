@@ -1,4 +1,4 @@
-原文链接：[coding5.com - 力扣题解最佳实践](https://coding5.com/zh/leetcode/3478-choose-k-elements-with-maximum-sum)
+原文链接：[leetcoder.net - 力扣题解最佳实践](https://leetcoder.net/zh/leetcode/3478-choose-k-elements-with-maximum-sum)
 
 # 3478. 选出和最大的 K 个元素 - 力扣题解最佳实践
 

@@ -1,4 +1,4 @@
-原文链接：[coding5.com - 力扣题解最佳实践](https://coding5.com/zh/leetcode/383-ransom-note)
+原文链接：[leetcoder.net - 力扣题解最佳实践](https://leetcoder.net/zh/leetcode/383-ransom-note)
 
 # 383. 赎金信 - 力扣题解最佳实践
 
