@@ -142,7 +142,6 @@ class Solution:
 ## JavaScript
 
 ```javascript
-```javascript
 var isHappy = function (n, appearedNums) {
   appearedNums ||= new Set()
   let sum = 0
@@ -164,9 +163,8 @@ var isHappy = function (n, appearedNums) {
   return isHappy(sum, appearedNums)
 };
 ```
-```
 
-## CSharp
+## C#
 
 ```csharp
 public class Solution
