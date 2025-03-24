@@ -166,7 +166,7 @@ var isHappy = function (n, appearedNums) {
 ```
 ```
 
-## C#
+## CSharp
 
 ```csharp
 public class Solution
