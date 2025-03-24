@@ -18,7 +18,9 @@ You can return the answer in any order.
 
 **Output**: `[0,1]`
 
-**Explanation**: Because nums[0] + nums[1] == 9, we return [0, 1].
+**Explanation**: 
+
+Because nums[0] + nums[1] == 9, we return [0, 1].
 
 ### [Example 2]
 
@@ -41,21 +43,26 @@ You can return the answer in any order.
 
 ### [Hints]
 
-Hint 1
+<details>
+  <summary>Hint 1</summary>
+  A really brute force way would be to search for all possible pairs of numbers but that would be too slow. Again, it's best to try out brute force solutions for just for completeness. It is from these brute force solutions that you can come up with optimizations.
 
-A really brute force way would be to search for all possible pairs of numbers but that would be too slow. Again, it's best to try out brute force solutions for just for completeness. It is from these brute force solutions that you can come up with optimizations.
+  
+</details>
 
----
+<details>
+  <summary>Hint 2</summary>
+  So, if we fix one of the numbers, say `x`, we have to scan the entire array to find the next number `y` which is `value - x` where value is the input parameter. Can we change our array somehow so that this search becomes faster?
 
-Hint 2
+  
+</details>
 
-So, if we fix one of the numbers, say `x`, we have to scan the entire array to find the next number `y` which is `value - x` where value is the input parameter. Can we change our array somehow so that this search becomes faster?
+<details>
+  <summary>Hint 3</summary>
+  The second train of thought is, without changing the array, can we use additional space somehow? Like maybe a hash map to speed up the search?
 
----
-
-Hint 3
-
-The second train of thought is, without changing the array, can we use additional space somehow? Like maybe a hash map to speed up the search?
+  
+</details>
 
 ## Intuition 1
 
@@ -63,8 +70,10 @@ The second train of thought is, without changing the array, can we use additiona
 
 2. After sorting an array of numbers, if you want to know the original `index` corresponding to a certain value, there are two solutions:
 
-   - Solution 1: Bring the `index` when sorting, that is, the object to be sorted is an array of tuples of `(num, index)`. This technique **must be mastered**, as it will be used in many questions.
-   - Solution 2: Use `index()` method to find it. I have discussed this in another solution.
+<details><summary>Click to view the answer</summary><p>
+    - Solution 1: Bring the `index` when sorting, that is, the object to be sorted is an array of tuples of `(num, index)`. This technique **must be mastered**, as it will be used in many questions.
+    - Solution 2: Use `index()` method to find it. I have discussed this in another solution.
+</p></details>
 
 ## Complexity
 
@@ -84,7 +93,7 @@ class Solution:
 
         while left < right:
             sum_ = num_index_list[left][0] + num_index_list[right][0]
-
+            
             if sum_ == target:
                 return [num_index_list[left][1], num_index_list[right][1]]
 
@@ -110,24 +119,27 @@ class Solution:
 
 1. In `Map`, `key` is `num`, and `value` is array `index`.
 
-```javascript
-let numToIndex = new Map()
-for (let i = 0; i < nums.length; i++) {
-  numToIndex.set(nums[i], i)
-}
-```
+    ```javascript
+    let numToIndex = new Map()
+    
+    for (let i = 0; i < nums.length; i++) {
+      numToIndex.set(nums[i], i)
+    }
+    ```
 
 2. Traverse the array, if `target - num` is in `Map`, return it. Otherwise, add `num` to `Map`.
 
-```javascript
-let numToIndex = new Map()
-for (let i = 0; i < nums.length; i++) {
-  if (numToIndex.has(target - nums[i])) { // 1
-    return [numToIndex.get(target - nums[i]), i] // 2
-  }
-  numToIndex.set(nums[i], i)
-}
-```
+    ```javascript
+    let numToIndex = new Map()
+    
+    for (let i = 0; i < nums.length; i++) {
+      if (numToIndex.has(target - nums[i])) { // 1
+        return [numToIndex.get(target - nums[i]), i] // 2
+      }
+    
+      numToIndex.set(nums[i], i)
+    }
+    ```
 
 ## Complexity
 
@@ -140,7 +152,7 @@ for (let i = 0; i < nums.length; i++) {
 class Solution {
     public int[] twoSum(int[] nums, int target) {
         var numToIndex = new HashMap<Integer, Integer>();
-
+  
         for (var i = 0; i < nums.length; i++) {
             if (numToIndex.containsKey(target - nums[i])) {
                 return new int[]{numToIndex.get(target - nums[i]), i};
@@ -160,7 +172,7 @@ class Solution {
 class Solution:
     def twoSum(self, nums: List[int], target: int) -> List[int]:
         num_to_index = {}
-
+        
         for i, num in enumerate(nums):
             if target - num in num_to_index:
                 return [num_to_index[target - num], i]
@@ -170,12 +182,12 @@ class Solution:
 
 ## C++
 
-```cpp
+```c++
 class Solution {
 public:
     vector<int> twoSum(vector<int>& nums, int target) {
         unordered_map<int, int> num_to_index;
-
+  
         for (auto i = 0; i < nums.size(); i++) {
             if (num_to_index.contains(target - nums[i])) {
                 return {num_to_index[target - nums[i]], i};
@@ -194,7 +206,7 @@ public:
 ```javascript
 var twoSum = function (nums, target) {
   let numToIndex = new Map()
-
+  
   for (let i = 0; i < nums.length; i++) {
     if (numToIndex.has(target - nums[i])) {
       return [numToIndex.get(target - nums[i]), i]
@@ -211,7 +223,7 @@ var twoSum = function (nums, target) {
 public class Solution {
     public int[] TwoSum(int[] nums, int target) {
         var numToIndex = new Dictionary<int, int>();
-
+  
         for (int i = 0; i < nums.Length; i++) {
             if (numToIndex.ContainsKey(target - nums[i])) {
                 return [numToIndex[target - nums[i]], i];
@@ -268,7 +280,6 @@ end
 ## Intuition 3
 
 1. The time complexity of the brute force solution is `O(n^2)`. To improve efficiency, you can sort the array, and then use **two pointers**, one pointing to the head of the array and the other pointing to the tail of the array, and decide `left += 1` or `right -= 1` according to the comparison of `sum` and `target`.
-
 2. After finding the two values which `sum` is `target`, you can use the `index()` method to find the `index` corresponding to the value.
 
 ## Complexity
