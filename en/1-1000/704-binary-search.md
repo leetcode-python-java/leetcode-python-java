@@ -2,7 +2,7 @@ Original link: [leetcoder.net - LeetCoder: Fucking Good LeetCode Solutions](http
 
 # 704. Binary Search - LeetCoder: Fucking Good LeetCode Solutions
 
-LeetCode link: [704. Binary Search](https://leetcode.com/problems/binary-search), Difficulty: **Easy**.
+LeetCode link: [704. Binary Search](https://leetcode.com/problems/binary-search), difficulty: **Easy**.
 
 ## LeetCode description of "704. Binary Search"
 

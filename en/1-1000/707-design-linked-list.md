@@ -2,7 +2,7 @@ Original link: [leetcoder.net - LeetCoder: Fucking Good LeetCode Solutions](http
 
 # 707. Design Linked List - LeetCoder: Fucking Good LeetCode Solutions
 
-LeetCode link: [707. Design Linked List](https://leetcode.com/problems/design-linked-list), Difficulty: **Medium**.
+LeetCode link: [707. Design Linked List](https://leetcode.com/problems/design-linked-list), difficulty: **Medium**.
 
 ## LeetCode description of "707. Design Linked List"
 
@@ -368,6 +368,262 @@ public class MyLinkedList
             node.next = node.next.next;
     }
 }
+```
+
+## Go
+
+```go
+// ListNode represents a node in the singly-linked list
+// type ListNode struct {
+//     Val  int
+//     Next *ListNode
+// }
+
+// MyLinkedList implements linked list operations using a dummy head node
+type MyLinkedList struct {
+    dummyHead *ListNode
+}
+
+// Constructor initializes a new linked list
+func Constructor() MyLinkedList {
+    return MyLinkedList{
+        dummyHead: &ListNode{}, // Initialize dummy head with zero value
+    }
+}
+
+// Get retrieves the value at specified index, returns -1 for invalid indices
+func (ll *MyLinkedList) Get(index int) int {
+    current := ll.dummyHead.Next
+    count := 0
+    
+    // Traverse until reaching desired index or end of list
+    for current != nil && count < index {
+        current = current.Next
+        count++
+    }
+    
+    // Validate index and return value if found
+    if current != nil && count == index {
+        return current.Val
+    }
+    return -1
+}
+
+// AddAtHead inserts new node at beginning of the list
+func (ll *MyLinkedList) AddAtHead(val int) {
+    newNode := &ListNode{Val: val}
+    newNode.Next = ll.dummyHead.Next
+    ll.dummyHead.Next = newNode
+}
+
+// AddAtTail appends new node at end of the list
+func (ll *MyLinkedList) AddAtTail(val int) {
+    current := ll.dummyHead
+    // Traverse to last node
+    for current.Next != nil {
+        current = current.Next
+    }
+    current.Next = &ListNode{Val: val}
+}
+
+// AddAtIndex inserts node at specified position if valid
+func (ll *MyLinkedList) AddAtIndex(index int, val int) {
+    prev := ll.dummyHead
+    count := 0
+    
+    // Find insertion point
+    for prev.Next != nil && count < index {
+        prev = prev.Next
+        count++
+    }
+    
+    // Only insert if index matches traversal count
+    if count == index {
+        newNode := &ListNode{Val: val}
+        newNode.Next = prev.Next
+        prev.Next = newNode
+    }
+}
+
+// DeleteAtIndex removes node at specified position if valid
+func (ll *MyLinkedList) DeleteAtIndex(index int) {
+    prev := ll.dummyHead
+    count := 0
+    
+    // Find node preceding the deletion target
+    for prev.Next != nil && count < index {
+        prev = prev.Next
+        count++
+    }
+    
+    // Perform deletion if index is valid and node exists
+    if prev.Next != nil && count == index {
+        prev.Next = prev.Next.Next
+    }
+}
+```
+
+## C++
+
+```cpp
+class MyLinkedList {
+private:
+    struct ListNode {
+        int val;
+        ListNode* next;
+        ListNode(int x) : val(x), next(nullptr) {}
+    };
+    
+    ListNode* dummy_head_;
+    
+public:
+    MyLinkedList() {
+        dummy_head_ = new ListNode(0);
+    }
+    
+    int get(int index) {
+        auto node = dummy_head_->next;
+        auto i = 0;
+        
+        while (node && i < index) {
+            node = node->next;
+            i++;
+        }
+        
+        return (i == index && node) ? node->val : -1;
+    }
+    
+    void addAtHead(int val) {
+        auto node = new ListNode(val);
+        node->next = dummy_head_->next;
+        dummy_head_->next = node;
+    }
+    
+    void addAtTail(int val) {
+        auto node = dummy_head_;
+        while (node->next) {
+            node = node->next;
+        }
+        node->next = new ListNode(val);
+    }
+    
+    void addAtIndex(int index, int val) {
+        auto node = dummy_head_;
+        auto i = 0;
+        
+        while (node->next && i < index) {
+            node = node->next;
+            i++;
+        }
+        
+        if (i == index) {
+            auto new_node = new ListNode(val);
+            new_node->next = node->next;
+            node->next = new_node;
+        }
+    }
+    
+    void deleteAtIndex(int index) {
+        auto node = dummy_head_;
+        auto i = 0;
+        
+        while (node->next && i < index) {
+            node = node->next;
+            i++;
+        }
+        
+        if (i == index && node->next) {
+            auto to_delete = node->next;
+            node->next = node->next->next;
+            delete to_delete;
+        }
+    }
+};
+
+```
+
+## Ruby
+
+```ruby
+# ListNode class with val and next_node (since 'next' is reserved in some languages)
+class ListNode
+  attr_accessor :val, :next_node
+
+  def initialize(val = nil)
+    @val = val
+    @next_node = nil
+  end
+end
+
+# MyLinkedList implementation with dummy head
+class MyLinkedList
+  def initialize
+    @dummy_head = ListNode.new  # Dummy head node
+  end
+
+  # Get value at index, return -1 if invalid
+  def get(index)
+    current = @dummy_head.next_node
+    count = 0
+    
+    while current && count < index
+      current = current.next_node
+      count += 1
+    end
+    
+    current && count == index ? current.val : -1
+  end
+
+  # Add node at head
+  def add_at_head(val)
+    new_node = ListNode.new(val)
+    new_node.next_node = @dummy_head.next_node
+    @dummy_head.next_node = new_node
+  end
+
+  # Add node at tail
+  def add_at_tail(val)
+    current = @dummy_head
+    
+    while current.next_node
+      current = current.next_node
+    end
+    
+    current.next_node = ListNode.new(val)
+  end
+
+  # Add node at index if valid
+  def add_at_index(index, val)
+    prev = @dummy_head
+    count = 0
+    
+    while prev.next_node && count < index
+      prev = prev.next_node
+      count += 1
+    end
+    
+    if count == index
+      new_node = ListNode.new(val)
+      new_node.next_node = prev.next_node
+      prev.next_node = new_node
+    end
+  end
+
+  # Delete node at index if valid
+  def delete_at_index(index)
+    prev = @dummy_head
+    count = 0
+    
+    while prev.next_node && count < index
+      prev = prev.next_node
+      count += 1
+    end
+    
+    if prev.next_node && count == index
+      prev.next_node = prev.next_node.next_node
+    end
+  end
+end
 ```
 
 ## Other languages

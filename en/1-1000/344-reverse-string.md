@@ -2,7 +2,7 @@ Original link: [leetcoder.net - LeetCoder: Fucking Good LeetCode Solutions](http
 
 # 344. Reverse String - LeetCoder: Fucking Good LeetCode Solutions
 
-LeetCode link: [344. Reverse String](https://leetcode.com/problems/reverse-string), Difficulty: **Easy**.
+LeetCode link: [344. Reverse String](https://leetcode.com/problems/reverse-string), difficulty: **Easy**.
 
 ## LeetCode description of "344. Reverse String"
 

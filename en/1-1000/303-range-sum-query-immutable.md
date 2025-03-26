@@ -2,7 +2,7 @@ Original link: [leetcoder.net - LeetCoder: Fucking Good LeetCode Solutions](http
 
 # 303. Range Sum Query - Immutable - LeetCoder: Fucking Good LeetCode Solutions
 
-LeetCode link: [303. Range Sum Query - Immutable](https://leetcode.com/problems/range-sum-query-immutable), Difficulty: **Easy**.
+LeetCode link: [303. Range Sum Query - Immutable](https://leetcode.com/problems/range-sum-query-immutable), difficulty: **Easy**.
 
 ## LeetCode description of "303. Range Sum Query - Immutable"
 

@@ -2,7 +2,7 @@ Original link: [leetcoder.net - LeetCoder: Fucking Good LeetCode Solutions](http
 
 # 1. Two Sum - LeetCoder: Fucking Good LeetCode Solutions
 
-LeetCode link: [1. Two Sum](https://leetcode.com/problems/two-sum), Difficulty: **Easy**.
+LeetCode link: [1. Two Sum](https://leetcode.com/problems/two-sum), difficulty: **Easy**.
 
 ## LeetCode description of "1. Two Sum"
 

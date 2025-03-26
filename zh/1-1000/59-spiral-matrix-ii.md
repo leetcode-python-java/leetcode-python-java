@@ -262,6 +262,146 @@ public class Solution
 }
 ```
 
+## Ruby
+
+```ruby
+def generate_matrix(n)
+  @matrix = Array.new(n) { Array.new(n) }
+  @increments = [[0, 1], [1, 0], [0, -1], [-1, 0]]
+  @increment_index = 0
+
+  i = 0
+  j = 0
+  num = 1
+
+  while num <= n * n
+    @matrix[i][j] = num
+    num += 1
+
+    increment = get_increment(i, j)
+    i += increment[0]
+    j += increment[1]
+  end
+
+  @matrix
+end
+
+private
+
+def get_increment(i, j)
+  increment = @increments[@increment_index]
+  next_i = i + increment[0]
+  next_j = j + increment[1]
+
+  if next_i < 0 || next_i >= @matrix.size ||
+    next_j < 0 || next_j >= @matrix.size ||
+    @matrix[next_i][next_j]
+    @increment_index += 1
+    @increment_index %= @increments.size
+  end
+
+  @increments[@increment_index]
+end
+```
+
+## Go
+
+```go
+type spiralMatrix struct {
+    matrix        [][]int
+    increments    [][2]int
+    incrementIndex int
+}
+
+func (sm *spiralMatrix) getIncrement(i, j int) [2]int {
+    currentIncrement := sm.increments[sm.incrementIndex]
+    nextI := i + currentIncrement[0]
+    nextJ := j + currentIncrement[1]
+
+    if nextI < 0 || nextI >= len(sm.matrix) || 
+       nextJ < 0 || nextJ >= len(sm.matrix) || 
+       sm.matrix[nextI][nextJ] != 0 {
+        sm.incrementIndex = (sm.incrementIndex + 1) % len(sm.increments)
+    }
+    return sm.increments[sm.incrementIndex]
+}
+
+func generateMatrix(n int) [][]int {
+    sm := &spiralMatrix{
+        matrix: make([][]int, n),
+        increments: [][2]int{{0, 1}, {1, 0}, {0, -1}, {-1, 0}},
+        incrementIndex: 0,
+    }
+
+    for i := range sm.matrix {
+        sm.matrix[i] = make([]int, n)
+    }
+
+    i, j, num := 0, 0, 1
+
+    for num <= n * n {
+        sm.matrix[i][j] = num
+        num++
+
+        increment := sm.getIncrement(i, j)
+        i += increment[0]
+        j += increment[1]
+    }
+
+    return sm.matrix
+}
+```
+
+## C++
+
+```cpp
+class Solution {
+public:
+    vector<vector<int>> generateMatrix(int n) {
+        matrix_ = vector<vector<int>>(n, vector<int>(n, 0));
+        increments_ = {{0, 1}, {1, 0}, {0, -1}, {-1, 0}};
+        increment_index_ = 0;
+        
+        int i = 0;
+        int j = 0;
+        int num = 1;
+        
+        while (num <= n * n) {
+            matrix_[i][j] = num;
+            num++;
+            
+            vector<int> increment = getIncrement(i, j);
+            i += increment[0];
+            j += increment[1];
+        }
+        
+        return matrix_;
+    }
+
+private:
+    vector<vector<int>> matrix_;
+    vector<vector<int>> increments_;
+    int increment_index_;
+    
+    vector<int> getIncrement(int i, int j) {
+        vector<int> increment = increments_[increment_index_];
+        int next_i = i + increment[0];
+        int next_j = j + increment[1];
+        
+        if (
+            next_i < 0 || next_i >= matrix_.size() ||
+            next_j < 0 || next_j >= matrix_.size() ||
+            matrix_[next_i][next_j] > 0
+        ) {
+            increment_index_++;
+            increment_index_ %= increments_.size();
+        }
+        
+        return increments_[increment_index_];
+    }
+};
+```
+
 ## Other languages
 
 ```java

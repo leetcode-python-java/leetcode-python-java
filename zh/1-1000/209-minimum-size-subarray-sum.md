@@ -199,6 +199,93 @@ public class Solution
 }
 ```
 
+## Go
+
+```go
+func minSubArrayLen(target int, nums []int) int {
+    minLength := math.MaxInt32
+    sum := 0
+    slowIndex := 0
+
+    for fastIndex := 0; fastIndex < len(nums); fastIndex++ { // This line is the most important. You'd better memorize it.
+        sum += nums[fastIndex]
+
+        for sum >= target {
+            minLength = min(minLength, fastIndex - slowIndex + 1)
+            sum -= nums[slowIndex]
+            slowIndex++
+        }
+    }
+
+    if minLength == math.MaxInt32 {
+        return 0
+    }
+
+    return minLength
+}
+
+func min(a, b int) int {
+    if a < b {
+        return a
+    }
+    return b
+}
+```
+
+## Ruby
+
+```ruby
+# @param {Integer} target
+# @param {Integer[]} nums
+# @return {Integer}
+def min_sub_array_len(target, nums)
+  min_length = Float::INFINITY
+  sum = 0
+  slow_index = 0
+
+  nums.each_with_index do |num, fast_index| # This line is the most important. You'd better memorize it.
+    sum += num
+
+    while sum >= target
+      min_length = [min_length, fast_index - slow_index + 1].min
+      sum -= nums[slow_index]
+      slow_index += 1
+    end
+  end
+
+  min_length == Float::INFINITY ? 0 : min_length
+end
+```
+
+## C++
+
+```cpp
+class Solution {
+public:
+    int minSubArrayLen(int target, vector<int>& nums) {
+        int min_length = INT_MAX;
+        int sum = 0;
+        int slow_index = 0;
+        
+        for (int fast_index = 0; fast_index < nums.size(); fast_index++) {
+            sum += nums[fast_index];
+            
+            while (sum >= target) {
+                min_length = min(min_length, fast_index - slow_index + 1);
+                sum -= nums[slow_index];
+                slow_index++;
+            }
+        }
+        
+        if (min_length == INT_MAX) {
+            return 0;
+        }
+        
+        return min_length;
+    }
+};
+```
+
 ## Other languages
 
 ```java

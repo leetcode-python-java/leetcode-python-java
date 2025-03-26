@@ -2,7 +2,7 @@ Original link: [leetcoder.net - LeetCoder: Fucking Good LeetCode Solutions](http
 
 # 202. Happy Number - LeetCoder: Fucking Good LeetCode Solutions
 
-LeetCode link: [202. Happy Number](https://leetcode.com/problems/happy-number), Difficulty: **Easy**.
+LeetCode link: [202. Happy Number](https://leetcode.com/problems/happy-number), difficulty: **Easy**.
 
 ## LeetCode description of "202. Happy Number"
 
@@ -43,6 +43,7 @@ Return `true` if `n` is *a happy number*, and `false` if not.
 
 1. It is more convenient to call `isHappy(n)` recursively. You only need to generate a new `n` as a parameter each time.
 2. If `n` has already appeared, it means that the loop has been entered, and `return false`. You can use `Set` to save the `n` that has appeared.
+3. Go is the iterative solution, other languages are the recursive solution.
 
 ## Steps
 
@@ -189,6 +190,79 @@ public class Solution
         return IsHappy(sum);
     }
 }
+```
+
+## Go
+
+```go
+func isHappy(n int) bool {
+    // Use map to track seen numbers
+    seen := make(map[int]bool)
+    
+    for n != 1 && !seen[n] {
+        seen[n] = true
+        n = sumOfSquaredDigits(n)
+    }
+    
+    return n == 1
+}
+
+func sumOfSquaredDigits(n int) int {
+    sum := 0
+    nStr := strconv.Itoa(n)
+    for i := 0; i < len(nStr); i++ {
+        digit := int(nStr[i] - '0')
+        sum += digit * digit
+    }
+    return sum
+}
+```
+
+## C++
+
+```cpp
+class Solution {
+public:
+    bool isHappy(int n) {
+        if (n == 1) {
+            return true;
+        }
+        
+        if (appeared_nums_.count(n)) {
+            return false;
+        }
+
+        appeared_nums_.insert(n);
+        
+        return isHappy(getSum(n));
+    }
+
+private:
+    unordered_set<int> appeared_nums_;
+    
+    int getSum(int n) {
+        string n_str = to_string(n);
+        int sum = 0;
+        for (char digit : n_str) {
+            sum += (digit - '0') * (digit - '0');
+        }
+        return sum;
+    }
+};
+```
+
+## Ruby
+
+```ruby
+def is_happy(n, appeared_nums = Set.new)
+  return true if n == 1
+  return false if appeared_nums.include?(n)
+
+  appeared_nums.add(n)
+  sum = n.to_s.chars.map { |digit| digit.to_i ** 2 }.sum
+
+  is_happy(sum, appeared_nums)
+end
 ```
 
 ## Other languages

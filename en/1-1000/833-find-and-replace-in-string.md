@@ -2,7 +2,7 @@ Original link: [leetcoder.net - LeetCoder: Fucking Good LeetCode Solutions](http
 
 # 833. Find And Replace in String - LeetCoder: Fucking Good LeetCode Solutions
 
-LeetCode link: [833. Find And Replace in String](https://leetcode.com/problems/find-and-replace-in-string), Difficulty: **Easy**.
+LeetCode link: [833. Find And Replace in String](https://leetcode.com/problems/find-and-replace-in-string), difficulty: **Easy**.
 
 ## LeetCode description of "833. Find And Replace in String"
 

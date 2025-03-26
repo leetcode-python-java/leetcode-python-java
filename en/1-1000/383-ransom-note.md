@@ -2,7 +2,7 @@ Original link: [leetcoder.net - LeetCoder: Fucking Good LeetCode Solutions](http
 
 # 383. Ransom Note - LeetCoder: Fucking Good LeetCode Solutions
 
-LeetCode link: [383. Ransom Note](https://leetcode.com/problems/ransom-note), Difficulty: **Easy**.
+LeetCode link: [383. Ransom Note](https://leetcode.com/problems/ransom-note), difficulty: **Easy**.
 
 ## LeetCode description of "383. Ransom Note"
 
@@ -172,6 +172,70 @@ public class Solution
         return true;
     }
 }
+```
+
+## Ruby
+
+```ruby
+def can_construct(ransom_note, magazine)
+  char_to_count = Hash.new(0)
+
+  magazine.each_char { |c| char_to_count[c] += 1 }
+
+  ransom_note.each_char do |c|
+    char_to_count[c] -= 1
+    return false if char_to_count[c] < 0
+  end
+
+  true
+end
+```
+
+## Go
+
+```go
+func canConstruct(ransomNote string, magazine string) bool {
+    charToCount := make(map[rune]int)
+    
+    for _, char := range magazine {
+        charToCount[char]++
+    }
+    
+    for _, char := range ransomNote {
+        charToCount[char]--
+        
+        if charToCount[char] < 0 {
+            return false
+        }
+    }
+    
+    return true
+}
+```
+
+## C++
+
+```cpp
+class Solution {
+public:
+    bool canConstruct(string ransomNote, string magazine) {
+        unordered_map<char, int> char_to_count;
+        
+        for (char character : magazine) {
+            char_to_count[character]++;
+        }
+        
+        for (char character : ransomNote) {
+            char_to_count[character]--;
+            
+            if (char_to_count[character] < 0) {
+                return false;
+            }
+        }
+        
+        return true;
+    }
+};
 ```
 
 ## Other languages

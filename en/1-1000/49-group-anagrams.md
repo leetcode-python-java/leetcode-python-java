@@ -2,7 +2,7 @@ Original link: [leetcoder.net - LeetCoder: Fucking Good LeetCode Solutions](http
 
 # 49. Group Anagrams - LeetCoder: Fucking Good LeetCode Solutions
 
-LeetCode link: [49. Group Anagrams](https://leetcode.com/problems/group-anagrams), Difficulty: **Medium**.
+LeetCode link: [49. Group Anagrams](https://leetcode.com/problems/group-anagrams), difficulty: **Medium**.
 
 ## LeetCode description of "49. Group Anagrams"
 

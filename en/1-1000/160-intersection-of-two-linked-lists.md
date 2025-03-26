@@ -2,7 +2,7 @@ Original link: [leetcoder.net - LeetCoder: Fucking Good LeetCode Solutions](http
 
 # 160. Intersection of Two Linked Lists - LeetCoder: Fucking Good LeetCode Solutions
 
-LeetCode link: [160. Intersection of Two Linked Lists](https://leetcode.com/problems/intersection-of-two-linked-lists), Difficulty: **Easy**.
+LeetCode link: [160. Intersection of Two Linked Lists](https://leetcode.com/problems/intersection-of-two-linked-lists), difficulty: **Easy**.
 
 ## LeetCode description of "160. Intersection of Two Linked Lists"
 
@@ -320,6 +320,170 @@ public class Solution
 
         return null;
     }
+}
+```
+
+## Ruby
+
+```ruby
+# Definition for singly-linked list.
+# class ListNode
+#   attr_accessor :val, :next
+#   def initialize(val)
+#     @val = val
+#     @next = nil
+#   end
+# end
+
+# @param {ListNode} head_a
+# @param {ListNode} head_b
+# @return {ListNode}
+def getIntersectionNode(head_a, head_b)
+  node_count_a = 0
+  node_count_b = 0
+
+  node = head_a
+  while node
+    node_count_a += 1
+    node = node.next
+  end
+
+  node = head_b
+  while node
+    node_count_b += 1
+    node = node.next
+  end
+
+  bigger = head_a
+  smaller = head_b
+
+  if node_count_b > node_count_a
+    bigger = head_b
+    smaller = head_a
+  end
+
+  (node_count_b - node_count_a).abs.times do
+    bigger = bigger.next
+  end
+
+  while bigger && smaller
+    return bigger if bigger == smaller
+
+    bigger = bigger.next
+    smaller = smaller.next
+  end
+
+  nil
+end
+```
+
+## C++
+
+```cpp
+/**
+ * Definition for singly-linked list.
+ * struct ListNode {
+ *     int val;
+ *     ListNode *next;
+ *     ListNode(int x) : val(x), next(NULL) {}
+ * };
+ */
+class Solution {
+public:
+    ListNode *getIntersectionNode(ListNode *head_a, ListNode *head_b) {
+        int node_count_a = 0;
+        int node_count_b = 0;
+        
+        ListNode *node = head_a;
+        while (node) {
+            node_count_a += 1;
+            node = node->next;
+        }
+        
+        node = head_b;
+        while (node) {
+            node_count_b += 1;
+            node = node->next;
+        }
+        
+        ListNode *bigger = head_a;
+        ListNode *smaller = head_b;
+        
+        if (node_count_b > node_count_a) {
+            bigger = head_b;
+            smaller = head_a;
+        }
+        
+        for (int i = 0; i < abs(node_count_b - node_count_a); i++) {
+            bigger = bigger->next;
+        }
+        
+        while (bigger && smaller) {
+            if (bigger == smaller) {
+                return bigger;
+            }
+            
+            bigger = bigger->next;
+            smaller = smaller->next;
+        }
+        
+        return nullptr;
+    }
+};
+```
+
+## Go
+
+```go
+/**
+ * Definition for singly-linked list.
+ * type ListNode struct {
+ *     Val int
+ *     Next *ListNode
+ * }
+ */
+func getIntersectionNode(headA, headB *ListNode) *ListNode {
+    nodeCountA := 0
+    nodeCountB := 0
+
+    node := headA
+    for node != nil {
+        nodeCountA++
+        node = node.Next
+    }
+
+    node = headB
+    for node != nil {
+        nodeCountB++
+        node = node.Next
+    }
+
+    bigger := headA
+    smaller := headB
+
+    if nodeCountB > nodeCountA {
+        bigger = headB
+        smaller = headA
+    }
+
+    difference := nodeCountB - nodeCountA
+    if difference < 0 {
+        difference = -difference
+    }
+
+    for i := 0; i < difference; i++ {
+        bigger = bigger.Next
+    }
+
+    for bigger != nil && smaller != nil {
+        if bigger == smaller {
+            return bigger
+        }
+        bigger = bigger.Next
+        smaller = smaller.Next
+    }
+
+    return nil
 }
 ```
 

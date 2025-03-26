@@ -2,7 +2,7 @@ Original link: [leetcoder.net - LeetCoder: Fucking Good LeetCode Solutions](http
 
 # 454. 4Sum II - LeetCoder: Fucking Good LeetCode Solutions
 
-LeetCode link: [454. 4Sum II](https://leetcode.com/problems/4sum-ii), Difficulty: **Medium**.
+LeetCode link: [454. 4Sum II](https://leetcode.com/problems/4sum-ii), difficulty: **Medium**.
 
 ## LeetCode description of "454. 4Sum II"
 
@@ -203,6 +203,63 @@ def four_sum_count(nums1, nums2, nums3, nums4)
 
   result
 end
+```
+
+## Go
+
+```go
+func fourSumCount(nums1 []int, nums2 []int, nums3 []int, nums4 []int) int {
+    // Create map to store sum frequencies from first two arrays
+    sumCount := make(map[int]int)
+    
+    // Calculate all possible sums from nums1 and nums2
+    for _, num1 := range nums1 {
+        for _, num2 := range nums2 {
+            sumCount[num1 + num2]++
+        }
+    }
+
+    result := 0
+    // Check complementary sums from nums3 and nums4
+    for _, num3 := range nums3 {
+        for _, num4 := range nums4 {
+            // Add count of complementary sum that would make total zero
+            result += sumCount[-(num3 + num4)]
+        }
+    }
+
+    return result
+}
+```
+
+## C++
+
+```cpp
+class Solution {
+public:
+    int fourSumCount(vector<int>& nums1, vector<int>& nums2, vector<int>& nums3, vector<int>& nums4) {
+        // Store sum frequencies from first two arrays
+        unordered_map<int, int> sumCount;
+        
+        // Calculate all possible sums from nums1 and nums2
+        for (int num1 : nums1) {
+            for (int num2 : nums2) {
+                sumCount[num1 + num2]++;
+            }
+        }
+
+        int result = 0;
+        // Check complementary sums from nums3 and nums4
+        for (int num3 : nums3) {
+            for (int num4 : nums4) {
+                // Add occurrences of required complement sum
+                result += sumCount[-(num3 + num4)];
+            }
+        }
+
+        return result;
+    }
+};
 ```
 
 ## Other languages

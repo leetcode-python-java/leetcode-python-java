@@ -2,7 +2,7 @@ Original link: [leetcoder.net - LeetCoder: Fucking Good LeetCode Solutions](http
 
 # 206. Reverse Linked List - LeetCoder: Fucking Good LeetCode Solutions
 
-LeetCode link: [206. Reverse Linked List](https://leetcode.com/problems/reverse-linked-list), Difficulty: **Easy**.
+LeetCode link: [206. Reverse Linked List](https://leetcode.com/problems/reverse-linked-list), difficulty: **Easy**.
 
 ## LeetCode description of "206. Reverse Linked List"
 

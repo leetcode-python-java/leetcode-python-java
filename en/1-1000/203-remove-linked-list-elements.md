@@ -2,7 +2,7 @@ Original link: [leetcoder.net - LeetCoder: Fucking Good LeetCode Solutions](http
 
 # 203. Remove Linked List Elements - LeetCoder: Fucking Good LeetCode Solutions
 
-LeetCode link: [203. Remove Linked List Elements](https://leetcode.com/problems/remove-linked-list-elements), Difficulty: **Easy**.
+LeetCode link: [203. Remove Linked List Elements](https://leetcode.com/problems/remove-linked-list-elements), difficulty: **Easy**.
 
 ## LeetCode description of "203. Remove Linked List Elements"
 

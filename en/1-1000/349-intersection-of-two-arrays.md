@@ -2,7 +2,7 @@ Original link: [leetcoder.net - LeetCoder: Fucking Good LeetCode Solutions](http
 
 # 349. Intersection of Two Arrays - LeetCoder: Fucking Good LeetCode Solutions
 
-LeetCode link: [349. Intersection of Two Arrays](https://leetcode.com/problems/intersection-of-two-arrays), Difficulty: **Easy**.
+LeetCode link: [349. Intersection of Two Arrays](https://leetcode.com/problems/intersection-of-two-arrays), difficulty: **Easy**.
 
 ## LeetCode description of "349. Intersection of Two Arrays"
 

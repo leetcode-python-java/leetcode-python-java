@@ -42,6 +42,7 @@
 
 1. 递归调用`isHappy(n)`比较方便，每次只需要生成新的`n`作为参数。
 2. 如果`n`已经出现过了，说明进入了循环，`return false`。可以用`Set`保存已经出现过的`n`。
+3. Go是迭代解法，其他语言都是递归解法。
 
 ## 步骤
 
@@ -141,7 +142,6 @@ class Solution:
 ## JavaScript
 
 ```javascript
-```javascript
 var isHappy = function (n, appearedNums) {
   appearedNums ||= new Set()
   let sum = 0
@@ -162,7 +162,6 @@ var isHappy = function (n, appearedNums) {
 
   return isHappy(sum, appearedNums)
 };
-```
 ```
 
 ## C#
@@ -190,6 +189,79 @@ public class Solution
         return IsHappy(sum);
     }
 }
+```
+
+## Go
+
+```go
+func isHappy(n int) bool {
+    // Use map to track seen numbers
+    seen := make(map[int]bool)
+    
+    for n != 1 && !seen[n] {
+        seen[n] = true
+        n = sumOfSquaredDigits(n)
+    }
+    
+    return n == 1
+}
+
+func sumOfSquaredDigits(n int) int {
+    sum := 0
+    nStr := strconv.Itoa(n)
+    for i := 0; i < len(nStr); i++ {
+        digit := int(nStr[i] - '0')
+        sum += digit * digit
+    }
+    return sum
+}
+```
+
+## C++
+
+```cpp
+class Solution {
+public:
+    bool isHappy(int n) {
+        if (n == 1) {
+            return true;
+        }
+        
+        if (appeared_nums_.count(n)) {
+            return false;
+        }
+
+        appeared_nums_.insert(n);
+        
+        return isHappy(getSum(n));
+    }
+
+private:
+    unordered_set<int> appeared_nums_;
+    
+    int getSum(int n) {
+        string n_str = to_string(n);
+        int sum = 0;
+        for (char digit : n_str) {
+            sum += (digit - '0') * (digit - '0');
+        }
+        return sum;
+    }
+};
+```
+
+## Ruby
+
+```ruby
+def is_happy(n, appeared_nums = Set.new)
+  return true if n == 1
+  return false if appeared_nums.include?(n)
+
+  appeared_nums.add(n)
+  sum = n.to_s.chars.map { |digit| digit.to_i ** 2 }.sum
+
+  is_happy(sum, appeared_nums)
+end
 ```
 
 ## Other languages

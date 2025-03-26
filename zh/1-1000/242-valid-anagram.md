@@ -138,6 +138,77 @@ public class Solution
 }
 ```
 
+## Go
+
+```go
+import "reflect"
+
+func isAnagram(s string, t string) bool {
+    if len(s) != len(t) {
+        return false
+    }
+
+    // Create frequency maps for both strings
+    sCharCount := make(map[rune]int)
+    for _, char := range s {
+        sCharCount[char]++
+    }
+
+    tCharCount := make(map[rune]int)
+    for _, char := range t {
+        tCharCount[char]++
+    }
+
+    return reflect.DeepEqual(sCharCount, tCharCount)
+}
+```
+
+## Ruby
+
+```ruby
+def is_anagram(s, t)
+  return false if s.length != t.length
+
+  s_char_to_count = Hash.new(0)
+  t_char_to_count = Hash.new(0)
+
+  s.each_char do |char|
+    s_char_to_count[char] += 1
+  end
+
+  t.each_char do |char|
+    t_char_to_count[char] += 1
+  end
+
+  s_char_to_count == t_char_to_count
+end
+```
+
+## C++
+
+```cpp
+class Solution {
+public:
+    bool isAnagram(string s, string t) {
+        if (s.length() != t.length()) {
+            return false;
+        }
+
+        unordered_map<char, int> s_char_to_count;
+        for (char character : s) {
+            s_char_to_count[character]++;
+        }
+
+        unordered_map<char, int> t_char_to_count;
+        for (char character : t) {
+            t_char_to_count[character]++;
+        }
+
+        return s_char_to_count == t_char_to_count;
+    }
+};
+```
+
 ## Other languages
 
 ```java

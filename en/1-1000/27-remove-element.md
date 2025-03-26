@@ -2,7 +2,7 @@ Original link: [leetcoder.net - LeetCoder: Fucking Good LeetCode Solutions](http
 
 # 27. Remove Element - LeetCoder: Fucking Good LeetCode Solutions
 
-LeetCode link: [27. Remove Element](https://leetcode.com/problems/remove-element), Difficulty: **Easy**.
+LeetCode link: [27. Remove Element](https://leetcode.com/problems/remove-element), difficulty: **Easy**.
 
 ## LeetCode description of "27. Remove Element"
 

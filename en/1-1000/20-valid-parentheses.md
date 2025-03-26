@@ -2,7 +2,7 @@ Original link: [leetcoder.net - LeetCoder: Fucking Good LeetCode Solutions](http
 
 # 20. Valid Parentheses - LeetCoder: Fucking Good LeetCode Solutions
 
-LeetCode link: [20. Valid Parentheses](https://leetcode.com/problems/valid-parentheses), Difficulty: **Easy**.
+LeetCode link: [20. Valid Parentheses](https://leetcode.com/problems/valid-parentheses), difficulty: **Easy**.
 
 ## LeetCode description of "20. Valid Parentheses"
 

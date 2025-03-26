@@ -2,7 +2,7 @@ Original link: [leetcoder.net - LeetCoder: Fucking Good LeetCode Solutions](http
 
 # 24. Swap Nodes in Pairs - LeetCoder: Fucking Good LeetCode Solutions
 
-LeetCode link: [24. Swap Nodes in Pairs](https://leetcode.com/problems/swap-nodes-in-pairs), Difficulty: **Medium**.
+LeetCode link: [24. Swap Nodes in Pairs](https://leetcode.com/problems/swap-nodes-in-pairs), difficulty: **Medium**.
 
 ## LeetCode description of "24. Swap Nodes in Pairs"
 

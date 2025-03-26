@@ -2,7 +2,7 @@ Original link: [leetcoder.net - LeetCoder: Fucking Good LeetCode Solutions](http
 
 # 3478. Choose K Elements With Maximum Sum - LeetCoder: Fucking Good LeetCode Solutions
 
-LeetCode link: [3478. Choose K Elements With Maximum Sum](https://leetcode.com/problems/choose-k-elements-with-maximum-sum), Difficulty: **Medium**.
+LeetCode link: [3478. Choose K Elements With Maximum Sum](https://leetcode.com/problems/choose-k-elements-with-maximum-sum), difficulty: **Medium**.
 
 ## LeetCode description of "3478. Choose K Elements With Maximum Sum"
 

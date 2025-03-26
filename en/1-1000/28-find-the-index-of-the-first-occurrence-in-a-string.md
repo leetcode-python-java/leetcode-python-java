@@ -2,7 +2,7 @@ Original link: [leetcoder.net - LeetCoder: Fucking Good LeetCode Solutions](http
 
 # 28. Find the Index of the First Occurrence in a String - LeetCoder: Fucking Good LeetCode Solutions
 
-LeetCode link: [28. Find the Index of the First Occurrence in a String](https://leetcode.com/problems/find-the-index-of-the-first-occurrence-in-a-string), Difficulty: **Easy**.
+LeetCode link: [28. Find the Index of the First Occurrence in a String](https://leetcode.com/problems/find-the-index-of-the-first-occurrence-in-a-string), difficulty: **Easy**.
 
 ## LeetCode description of "28. Find the Index of the First Occurrence in a String"
 
@@ -84,6 +84,114 @@ var strStr = function (haystack, needle) {
 
   return -1
 };
+```
+
+## Ruby
+
+```ruby
+# @param {String} haystack
+# @param {String} needle
+# @return {Integer}
+def str_str(haystack, needle)
+  (0...haystack.length).each do |i|
+    j = 0
+    
+    while i + j < haystack.length && haystack[i + j] == needle[j]
+      j += 1
+      
+      return i if j == needle.length
+    end
+  end
+  
+  -1
+end
+```
+
+## C++
+
+```cpp
+class Solution {
+public:
+    int strStr(string haystack, string needle) {
+        for (int i = 0; i < haystack.length(); i++) {
+            int j = 0;
+            
+            while (i + j < haystack.length() && haystack[i + j] == needle[j]) {
+                j++;
+                
+                if (j == needle.length()) {
+                    return i;
+                }
+            }
+        }
+        
+        return -1;
+    }
+};
+```
+
+## Java
+
+```java
+class Solution {
+    public int strStr(String haystack, String needle) {
+        for (int i = 0; i < haystack.length(); i++) {
+            int j = 0;
+
+            while (i + j < haystack.length() && haystack.charAt(i + j) == needle.charAt(j)) {
+                j++;
+
+                if (j == needle.length()) {
+                    return i;
+                }
+            }
+        }
+
+        return -1;
+    }
+}
+```
+
+## Go
+
+```go
+func strStr(haystack string, needle string) int {
+    for i := 0; i < len(haystack); i++ {
+        j := 0
+
+        for i+j < len(haystack) && haystack[i+j] == needle[j] {
+            j++
+
+            if j == len(needle) {
+                return i
+            }
+        }
+    }
+
+    return -1
+}
+```
+
+## C#
+
+```csharp
+public class Solution {
+    public int StrStr(string haystack, string needle) {
+        for (int i = 0; i < haystack.Length; i++) {
+            int j = 0;
+
+            while (i + j < haystack.Length && haystack[i + j] == needle[j]) {
+                j++;
+
+                if (j == needle.Length) {
+                    return i;
+                }
+            }
+        }
+
+        return -1;
+    }
+}
 ```
 
 ## Other languages

@@ -2,7 +2,7 @@ Original link: [leetcoder.net - LeetCoder: Fucking Good LeetCode Solutions](http
 
 # 977. Squares of a Sorted Array - LeetCoder: Fucking Good LeetCode Solutions
 
-LeetCode link: [977. Squares of a Sorted Array](https://leetcode.com/problems/squares-of-a-sorted-array), Difficulty: **Easy**.
+LeetCode link: [977. Squares of a Sorted Array](https://leetcode.com/problems/squares-of-a-sorted-array), difficulty: **Easy**.
 
 ## LeetCode description of "977. Squares of a Sorted Array"
 

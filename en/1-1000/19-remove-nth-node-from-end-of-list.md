@@ -2,7 +2,7 @@ Original link: [leetcoder.net - LeetCoder: Fucking Good LeetCode Solutions](http
 
 # 19. Remove Nth Node From End of List - LeetCoder: Fucking Good LeetCode Solutions
 
-LeetCode link: [19. Remove Nth Node From End of List](https://leetcode.com/problems/remove-nth-node-from-end-of-list), Difficulty: **Medium**.
+LeetCode link: [19. Remove Nth Node From End of List](https://leetcode.com/problems/remove-nth-node-from-end-of-list), difficulty: **Medium**.
 
 ## LeetCode description of "19. Remove Nth Node From End of List"
 
