@@ -1,4 +1,4 @@
-Original link: [leetcoder.net - LeetCoder: Fucking Good LeetCode Solutions](https://leetcoder.net/en/leetcode/454-4sum-ii)
+Visit original link: [leetcoder.net - LeetCoder: Fucking Good LeetCode Solutions](https://leetcoder.net/en/leetcode/454-4sum-ii) for a better experience!
 
 # 454. 4Sum II - LeetCoder: Fucking Good LeetCode Solutions
 
@@ -19,10 +19,13 @@ Given four integer arrays `nums1`, `nums2`, `nums3`, and `nums4` all of length `
 
 **Explanation**: 
 
-The two tuples are:
+<p>The two tuples are:</p>
 
-1. (0, 0, 0, 1) -> nums1[0] + nums2[0] + nums3[0] + nums4[1] = 1 + (-2) + (-1) + 2 = 0
-2. (1, 1, 0, 0) -> nums1[1] + nums2[1] + nums3[0] + nums4[0] = 2 + (-1) + (-1) + 0 = 0
+<ol>
+<li>(0, 0, 0, 1) -&gt; nums1[0] + nums2[0] + nums3[0] + nums4[1] = 1 + (-2) + (-1) + 2 = 0</li>
+<li>(1, 1, 0, 0) -&gt; nums1[1] + nums2[1] + nums3[0] + nums4[0] = 2 + (-1) + (-1) + 0 = 0</li>
+</ol>
+
 
 ### [Example 2]
 
@@ -268,3 +271,6 @@ public:
 // Welcome to create a PR to complete the code of this language, thanks!
 ```
 
+Dear LeetCoders! For a better LeetCode problem-solving experience, please visit website [leetcoder.net](https://leetcoder.net): Dare to claim the best practices of LeetCode solutions! Will save you a lot of time!
+
+Original link: [leetcoder.net - LeetCoder: Fucking Good LeetCode Solutions](https://leetcoder.net/en/leetcode/454-4sum-ii).

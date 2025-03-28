@@ -1,4 +1,4 @@
-原文链接：[leetcoder.net - 力扣题解最佳实践 - 力扣人](https://leetcoder.net/zh/leetcode/707-design-linked-list)
+Visit 原文链接：[leetcoder.net - 力扣题解最佳实践 - 力扣人](https://leetcoder.net/zh/leetcode/707-design-linked-list) for a better experience!
 
 # 707. 设计链表 - 力扣题解最佳实践 - 力扣人
 
@@ -29,13 +29,14 @@
 
 **解释**: 
 
-MyLinkedList myLinkedList = new MyLinkedList();
-myLinkedList.addAtHead(1);
-myLinkedList.addAtTail(3);
-myLinkedList.addAtIndex(1, 2);    // 链表变为 1->2->3
-myLinkedList.get(1);              // 返回 2
-myLinkedList.deleteAtIndex(1);    // 现在，链表变为 1->3
-myLinkedList.get(1);              // 返回 3
+<p>MyLinkedList myLinkedList = new MyLinkedList();<br>
+myLinkedList.addAtHead(1);<br>
+myLinkedList.addAtTail(3);<br>
+myLinkedList.addAtIndex(1, 2);    // 链表变为 1-&gt;2-&gt;3<br>
+myLinkedList.get(1);              // 返回 2<br>
+myLinkedList.deleteAtIndex(1);    // 现在，链表变为 1-&gt;3<br>
+myLinkedList.get(1);              // 返回 3</p>
+
 
 ### [约束]
 
@@ -631,3 +632,6 @@ end
 // Welcome to create a PR to complete the code of this language, thanks!
 ```
 
+Dear LeetCoders! For a better LeetCode problem-solving experience, please visit website [leetcoder.net](https://leetcoder.net): Dare to claim the best practices of LeetCode solutions! Will save you a lot of time!
+
+原文链接：[leetcoder.net - 力扣题解最佳实践 - 力扣人](https://leetcoder.net/zh/leetcode/707-design-linked-list).

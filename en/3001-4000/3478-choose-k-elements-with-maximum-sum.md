@@ -1,4 +1,4 @@
-Original link: [leetcoder.net - LeetCoder: Fucking Good LeetCode Solutions](https://leetcoder.net/en/leetcode/3478-choose-k-elements-with-maximum-sum)
+Visit original link: [leetcoder.net - LeetCoder: Fucking Good LeetCode Solutions](https://leetcoder.net/en/leetcode/3478-choose-k-elements-with-maximum-sum) for a better experience!
 
 # 3478. Choose K Elements With Maximum Sum - LeetCoder: Fucking Good LeetCode Solutions
 
@@ -23,11 +23,14 @@ Return an array `answer` of size `n`, where `answer[i]` represents the result fo
 
 **Explanation**: 
 
-- For `i = 0`: Select the 2 largest values from `nums2` at indices `[1, 2, 4]` where `nums1[j] < nums1[0]`, resulting in `50 + 30 = 80`.
-- For `i = 1`: Select the 2 largest values from `nums2` at index `[2]` where `nums1[j] < nums1[1]`, resulting in `30`.
-- For `i = 2`: No indices satisfy `nums1[j] < nums1[2]`, resulting in `0`.
-- For `i = 3`: Select the 2 largest values from `nums2` at indices `[0, 1, 2, 4]` where `nums1[j] < nums1[3]`, resulting in `50 + 30 = 80`.
-- For `i = 4`: Select the 2 largest values from `nums2` at indices `[1, 2]` where `nums1[j] < nums1[4]`, resulting in `30 + 20 = 50`.
+<ul>
+<li>For <code>i = 0</code>: Select the 2 largest values from <code>nums2</code> at indices <code>[1, 2, 4]</code> where <code>nums1[j] &lt; nums1[0]</code>, resulting in <code>50 + 30 = 80</code>.</li>
+<li>For <code>i = 1</code>: Select the 2 largest values from <code>nums2</code> at index <code>[2]</code> where <code>nums1[j] &lt; nums1[1]</code>, resulting in <code>30</code>.</li>
+<li>For <code>i = 2</code>: No indices satisfy <code>nums1[j] &lt; nums1[2]</code>, resulting in <code>0</code>.</li>
+<li>For <code>i = 3</code>: Select the 2 largest values from <code>nums2</code> at indices <code>[0, 1, 2, 4]</code> where <code>nums1[j] &lt; nums1[3]</code>, resulting in <code>50 + 30 = 80</code>.</li>
+<li>For <code>i = 4</code>: Select the 2 largest values from <code>nums2</code> at indices <code>[1, 2]</code> where <code>nums1[j] &lt; nums1[4]</code>, resulting in <code>30 + 20 = 50</code>.</li>
+</ul>
+
 
 ### [Example 2]
 
@@ -37,7 +40,8 @@ Return an array `answer` of size `n`, where `answer[i]` represents the result fo
 
 **Explanation**: 
 
-Since all elements in `nums1` are equal, no indices satisfy the condition `nums1[j] < nums1[i]` for any `i`, resulting in `0` for all positions.
+<p>Since all elements in <code>nums1</code> are equal, no indices satisfy the condition <code>nums1[j] &lt; nums1[i]</code> for any <code>i</code>, resulting in <code>0</code> for all positions.</p>
+
 
 ### [Constraints]
 
@@ -125,3 +129,6 @@ class Solution:
 // Welcome to create a PR to complete the code of this language, thanks!
 ```
 
+Dear LeetCoders! For a better LeetCode problem-solving experience, please visit website [leetcoder.net](https://leetcoder.net): Dare to claim the best practices of LeetCode solutions! Will save you a lot of time!
+
+Original link: [leetcoder.net - LeetCoder: Fucking Good LeetCode Solutions](https://leetcoder.net/en/leetcode/3478-choose-k-elements-with-maximum-sum).

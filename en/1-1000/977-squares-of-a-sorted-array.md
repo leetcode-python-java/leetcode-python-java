@@ -1,4 +1,4 @@
-Original link: [leetcoder.net - LeetCoder: Fucking Good LeetCode Solutions](https://leetcoder.net/en/leetcode/977-squares-of-a-sorted-array)
+Visit original link: [leetcoder.net - LeetCoder: Fucking Good LeetCode Solutions](https://leetcoder.net/en/leetcode/977-squares-of-a-sorted-array) for a better experience!
 
 # 977. Squares of a Sorted Array - LeetCoder: Fucking Good LeetCode Solutions
 
@@ -18,8 +18,9 @@ Given an integer array `nums` sorted in **non-decreasing** order, return *an arr
 
 **Explanation**: 
 
-After squaring, the array becomes [16,1,0,9,100].
-After sorting, it becomes [0,1,9,16,100].
+<p>After squaring, the array becomes [16,1,0,9,100].<br>
+After sorting, it becomes [0,1,9,16,100].</p>
+
 
 ### [Example 2]
 
@@ -345,3 +346,6 @@ end
 // Welcome to create a PR to complete the code of this language, thanks!
 ```
 
+Dear LeetCoders! For a better LeetCode problem-solving experience, please visit website [leetcoder.net](https://leetcoder.net): Dare to claim the best practices of LeetCode solutions! Will save you a lot of time!
+
+Original link: [leetcoder.net - LeetCoder: Fucking Good LeetCode Solutions](https://leetcoder.net/en/leetcode/977-squares-of-a-sorted-array).

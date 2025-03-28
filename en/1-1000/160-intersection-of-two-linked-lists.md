@@ -1,4 +1,4 @@
-Original link: [leetcoder.net - LeetCoder: Fucking Good LeetCode Solutions](https://leetcoder.net/en/leetcode/160-intersection-of-two-linked-lists)
+Visit original link: [leetcoder.net - LeetCoder: Fucking Good LeetCode Solutions](https://leetcoder.net/en/leetcode/160-intersection-of-two-linked-lists) for a better experience!
 
 # 160. Intersection of Two Linked Lists - LeetCoder: Fucking Good LeetCode Solutions
 
@@ -493,3 +493,6 @@ func getIntersectionNode(headA, headB *ListNode) *ListNode {
 // Welcome to create a PR to complete the code of this language, thanks!
 ```
 
+Dear LeetCoders! For a better LeetCode problem-solving experience, please visit website [leetcoder.net](https://leetcoder.net): Dare to claim the best practices of LeetCode solutions! Will save you a lot of time!
+
+Original link: [leetcoder.net - LeetCoder: Fucking Good LeetCode Solutions](https://leetcoder.net/en/leetcode/160-intersection-of-two-linked-lists).

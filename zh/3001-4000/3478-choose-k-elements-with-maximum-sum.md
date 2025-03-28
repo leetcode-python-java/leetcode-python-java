@@ -1,4 +1,4 @@
-原文链接：[leetcoder.net - 力扣题解最佳实践 - 力扣人](https://leetcoder.net/zh/leetcode/3478-choose-k-elements-with-maximum-sum)
+Visit 原文链接：[leetcoder.net - 力扣题解最佳实践 - 力扣人](https://leetcoder.net/zh/leetcode/3478-choose-k-elements-with-maximum-sum) for a better experience!
 
 # 3478. 选出和最大的 K 个元素 - 力扣题解最佳实践 - 力扣人
 
@@ -24,11 +24,14 @@
 
 **解释**: 
 
-- 对于 `i = 0` ：满足 `nums1[j] < nums1[0]` 的下标为 `[1, 2, 4]` ，选出其中值最大的两个，结果为 `50 + 30 = 80` 。
-- 对于 `i = 1` ：满足 `nums1[j] < nums1[1]` 的下标为 `[2]` ，只能选择这个值，结果为 `30` 。
-- 对于 `i = 2` ：不存在满足 `nums1[j] < nums1[2]` 的下标，结果为 `0` 。
-- 对于 `i = 3` ：满足 `nums1[j] < nums1[3]` 的下标为 `[0, 1, 2, 4]` ，选出其中值最大的两个，结果为 `50 + 30 = 80` 。
-- 对于 `i = 4` ：满足 `nums1[j] < nums1[4]` 的下标为 `[1, 2]` ，选出其中值最大的两个，结果为 `30 + 20 = 50` 。
+<ul>
+<li>对于 <code>i = 0</code> ：满足 <code>nums1[j] &lt; nums1[0]</code> 的下标为 <code>[1, 2, 4]</code> ，选出其中值最大的两个，结果为 <code>50 + 30 = 80</code> 。</li>
+<li>对于 <code>i = 1</code> ：满足 <code>nums1[j] &lt; nums1[1]</code> 的下标为 <code>[2]</code> ，只能选择这个值，结果为 <code>30</code> 。</li>
+<li>对于 <code>i = 2</code> ：不存在满足 <code>nums1[j] &lt; nums1[2]</code> 的下标，结果为 <code>0</code> 。</li>
+<li>对于 <code>i = 3</code> ：满足 <code>nums1[j] &lt; nums1[3]</code> 的下标为 <code>[0, 1, 2, 4]</code> ，选出其中值最大的两个，结果为 <code>50 + 30 = 80</code> 。</li>
+<li>对于 <code>i = 4</code> ：满足 <code>nums1[j] &lt; nums1[4]</code> 的下标为 <code>[1, 2]</code> ，选出其中值最大的两个，结果为 <code>30 + 20 = 50</code> 。</li>
+</ul>
+
 
 ### [示例 2]
 
@@ -38,7 +41,8 @@
 
 **解释**: 
 
-由于 `nums1` 中的所有元素相等，不存在满足条件 `nums1[j] < nums1[i]`，所有位置的结果都是 `0` 。
+<p>由于 <code>nums1</code> 中的所有元素相等，不存在满足条件 <code>nums1[j] &lt; nums1[i]</code>，所有位置的结果都是 <code>0</code> 。</p>
+
 
 ### [约束]
 
@@ -127,3 +131,6 @@ class Solution:
 // Welcome to create a PR to complete the code of this language, thanks!
 ```
 
+Dear LeetCoders! For a better LeetCode problem-solving experience, please visit website [leetcoder.net](https://leetcoder.net): Dare to claim the best practices of LeetCode solutions! Will save you a lot of time!
+
+原文链接：[leetcoder.net - 力扣题解最佳实践 - 力扣人](https://leetcoder.net/zh/leetcode/3478-choose-k-elements-with-maximum-sum).

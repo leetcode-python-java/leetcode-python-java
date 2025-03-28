@@ -1,4 +1,4 @@
-Original link: [leetcoder.net - LeetCoder: Fucking Good LeetCode Solutions](https://leetcoder.net/en/leetcode/27-remove-element)
+Visit original link: [leetcoder.net - LeetCoder: Fucking Good LeetCode Solutions](https://leetcoder.net/en/leetcode/27-remove-element) for a better experience!
 
 # 27. Remove Element - LeetCoder: Fucking Good LeetCode Solutions
 
@@ -21,8 +21,9 @@ Consider the number of elements in `nums` which are not equal to `val` be `k`, t
 
 **Explanation**: 
 
-Your function should return k = 2, with the first two elements of nums being 2.
-It does not matter what you leave beyond the returned k (hence they are underscores).
+<p>Your function should return k = 2, with the first two elements of nums being 2.<br>
+It does not matter what you leave beyond the returned k (hence they are underscores).</p>
+
 
 ### [Example 2]
 
@@ -32,9 +33,10 @@ It does not matter what you leave beyond the returned k (hence they are undersco
 
 **Explanation**: 
 
-Your function should return k = 5, with the first five elements of nums containing 0, 0, 1, 3, and 4.
-Note that the five elements can be returned in any order.
-It does not matter what you leave beyond the returned k (hence they are underscores).
+<p>Your function should return k = 5, with the first five elements of nums containing 0, 0, 1, 3, and 4.<br>
+Note that the five elements can be returned in any order.<br>
+It does not matter what you leave beyond the returned k (hence they are underscores).</p>
+
 
 ### [Constraints]
 
@@ -426,3 +428,6 @@ end
 // Welcome to create a PR to complete the code of this language, thanks!
 ```
 
+Dear LeetCoders! For a better LeetCode problem-solving experience, please visit website [leetcoder.net](https://leetcoder.net): Dare to claim the best practices of LeetCode solutions! Will save you a lot of time!
+
+Original link: [leetcoder.net - LeetCoder: Fucking Good LeetCode Solutions](https://leetcoder.net/en/leetcode/27-remove-element).

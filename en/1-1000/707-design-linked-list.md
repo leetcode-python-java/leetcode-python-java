@@ -1,4 +1,4 @@
-Original link: [leetcoder.net - LeetCoder: Fucking Good LeetCode Solutions](https://leetcoder.net/en/leetcode/707-design-linked-list)
+Visit original link: [leetcoder.net - LeetCoder: Fucking Good LeetCode Solutions](https://leetcoder.net/en/leetcode/707-design-linked-list) for a better experience!
 
 # 707. Design Linked List - LeetCoder: Fucking Good LeetCode Solutions
 
@@ -30,13 +30,14 @@ Implement the `MyLinkedList` class:
 
 **Explanation**: 
 
-MyLinkedList myLinkedList = new MyLinkedList();
-myLinkedList.addAtHead(1);
-myLinkedList.addAtTail(3);
-myLinkedList.addAtIndex(1, 2);    // linked list becomes 1->2->3
-myLinkedList.get(1);              // return 2
-myLinkedList.deleteAtIndex(1);    // now the linked list is 1->3
-myLinkedList.get(1);              // return 3
+<p>MyLinkedList myLinkedList = new MyLinkedList();<br>
+myLinkedList.addAtHead(1);<br>
+myLinkedList.addAtTail(3);<br>
+myLinkedList.addAtIndex(1, 2);    // linked list becomes 1-&gt;2-&gt;3<br>
+myLinkedList.get(1);              // return 2<br>
+myLinkedList.deleteAtIndex(1);    // now the linked list is 1-&gt;3<br>
+myLinkedList.get(1);              // return 3</p>
+
 
 ### [Constraints]
 
@@ -632,3 +633,6 @@ end
 // Welcome to create a PR to complete the code of this language, thanks!
 ```
 
+Dear LeetCoders! For a better LeetCode problem-solving experience, please visit website [leetcoder.net](https://leetcoder.net): Dare to claim the best practices of LeetCode solutions! Will save you a lot of time!
+
+Original link: [leetcoder.net - LeetCoder: Fucking Good LeetCode Solutions](https://leetcoder.net/en/leetcode/707-design-linked-list).

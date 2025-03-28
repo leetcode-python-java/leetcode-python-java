@@ -1,4 +1,4 @@
-Original link: [leetcoder.net - LeetCoder: Fucking Good LeetCode Solutions](https://leetcoder.net/en/leetcode/833-find-and-replace-in-string)
+Visit original link: [leetcoder.net - LeetCoder: Fucking Good LeetCode Solutions](https://leetcoder.net/en/leetcode/833-find-and-replace-in-string) for a better experience!
 
 # 833. Find And Replace in String - LeetCoder: Fucking Good LeetCode Solutions
 
@@ -34,8 +34,9 @@ A **substring** is a contiguous sequence of characters in a string.
 
 **Explanation**: 
 
-"a" occurs at index 0 in s, so we replace it with "eee".
-"cd" occurs at index 2 in s, so we replace it with "ffff".
+<p>&quot;a&quot; occurs at index 0 in s, so we replace it with &quot;eee&quot;.<br>
+&quot;cd&quot; occurs at index 2 in s, so we replace it with &quot;ffff&quot;.</p>
+
 
 ### [Example 2]
 
@@ -47,8 +48,9 @@ A **substring** is a contiguous sequence of characters in a string.
 
 **Explanation**: 
 
-"ab" occurs at index 0 in s, so we replace it with "eee".
-"ec" does not occur at index 2 in s, so we do nothing.
+<p>&quot;ab&quot; occurs at index 0 in s, so we replace it with &quot;eee&quot;.<br>
+&quot;ec&quot; does not occur at index 2 in s, so we do nothing.</p>
+
 
 ### [Constraints]
 
@@ -103,3 +105,6 @@ class Solution:
 // Welcome to create a PR to complete the code of this language, thanks!
 ```
 
+Dear LeetCoders! For a better LeetCode problem-solving experience, please visit website [leetcoder.net](https://leetcoder.net): Dare to claim the best practices of LeetCode solutions! Will save you a lot of time!
+
+Original link: [leetcoder.net - LeetCoder: Fucking Good LeetCode Solutions](https://leetcoder.net/en/leetcode/833-find-and-replace-in-string).

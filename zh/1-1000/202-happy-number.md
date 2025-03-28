@@ -1,4 +1,4 @@
-原文链接：[leetcoder.net - 力扣题解最佳实践 - 力扣人](https://leetcoder.net/zh/leetcode/202-happy-number)
+Visit 原文链接：[leetcoder.net - 力扣题解最佳实践 - 力扣人](https://leetcoder.net/zh/leetcode/202-happy-number) for a better experience!
 
 # 202. 快乐数 - 力扣题解最佳实践 - 力扣人
 
@@ -23,10 +23,11 @@
 
 **解释**: 
 
-1^2 + 9^2 = 82
-8^2 + 2^2 = 68
-6^2 + 8^2 = 100
-1^2 + 0^2 + 0^2 = 1
+<p>1<sup>2</sup> + 9<sup>2</sup> = 82<br>
+8<sup>2</sup> + 2<sup>2</sup> = 68<br>
+6<sup>2</sup> + 8<sup>2</sup> = 100<br>
+1<sup>2</sup> + 0<sup>2</sup> + 0<sup>2</sup> = 1</p>
+
 
 ### [示例 2]
 
@@ -270,3 +271,6 @@ end
 // Welcome to create a PR to complete the code of this language, thanks!
 ```
 
+Dear LeetCoders! For a better LeetCode problem-solving experience, please visit website [leetcoder.net](https://leetcoder.net): Dare to claim the best practices of LeetCode solutions! Will save you a lot of time!
+
+原文链接：[leetcoder.net - 力扣题解最佳实践 - 力扣人](https://leetcoder.net/zh/leetcode/202-happy-number).

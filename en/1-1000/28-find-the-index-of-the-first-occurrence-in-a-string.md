@@ -1,4 +1,4 @@
-Original link: [leetcoder.net - LeetCoder: Fucking Good LeetCode Solutions](https://leetcoder.net/en/leetcode/28-find-the-index-of-the-first-occurrence-in-a-string)
+Visit original link: [leetcoder.net - LeetCoder: Fucking Good LeetCode Solutions](https://leetcoder.net/en/leetcode/28-find-the-index-of-the-first-occurrence-in-a-string) for a better experience!
 
 # 28. Find the Index of the First Occurrence in a String - LeetCoder: Fucking Good LeetCode Solutions
 
@@ -16,8 +16,9 @@ Given two strings `needle` and `haystack`, return the **index** of the first occ
 
 **Explanation**: 
 
-"sad" occurs at index 0 and 6.
-The first occurrence is at index 0, so we return 0.
+<p>&quot;sad&quot; occurs at index 0 and 6.<br>
+The first occurrence is at index 0, so we return 0.</p>
+
 
 ### [Example 2]
 
@@ -27,7 +28,8 @@ The first occurrence is at index 0, so we return 0.
 
 **Explanation**: 
 
-"leeto" did not occur in "leetcode", so we return -1.
+<p>&quot;leeto&quot; did not occur in &quot;leetcode&quot;, so we return -1.</p>
+
 
 ### [Constraints]
 
@@ -200,3 +202,6 @@ public class Solution {
 // Welcome to create a PR to complete the code of this language, thanks!
 ```
 
+Dear LeetCoders! For a better LeetCode problem-solving experience, please visit website [leetcoder.net](https://leetcoder.net): Dare to claim the best practices of LeetCode solutions! Will save you a lot of time!
+
+Original link: [leetcoder.net - LeetCoder: Fucking Good LeetCode Solutions](https://leetcoder.net/en/leetcode/28-find-the-index-of-the-first-occurrence-in-a-string).

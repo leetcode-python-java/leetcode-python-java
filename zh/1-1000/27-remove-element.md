@@ -1,4 +1,4 @@
-原文链接：[leetcoder.net - 力扣题解最佳实践 - 力扣人](https://leetcoder.net/zh/leetcode/27-remove-element)
+Visit 原文链接：[leetcoder.net - 力扣题解最佳实践 - 力扣人](https://leetcoder.net/zh/leetcode/27-remove-element) for a better experience!
 
 # 27. 移除元素 - 力扣题解最佳实践 - 力扣人
 
@@ -21,8 +21,9 @@
 
 **解释**: 
 
-你的函数函数应该返回 k = 2, 并且 nums 中的前两个元素均为 2。
-你在返回的 k 个元素之外留下了什么并不重要（因此它们并不计入评测）。
+<p>你的函数函数应该返回 k = 2, 并且 nums 中的前两个元素均为 2。<br>
+你在返回的 k 个元素之外留下了什么并不重要（因此它们并不计入评测）。</p>
+
 
 ### [示例 2]
 
@@ -32,9 +33,10 @@
 
 **解释**: 
 
-你的函数应该返回 k = 5，并且 nums 中的前五个元素为 0,0,1,3,4。
-注意这五个元素可以任意顺序返回。
-你在返回的 k 个元素之外留下了什么并不重要（因此它们并不计入评测）。
+<p>你的函数应该返回 k = 5，并且 nums 中的前五个元素为 0,0,1,3,4。<br>
+注意这五个元素可以任意顺序返回。<br>
+你在返回的 k 个元素之外留下了什么并不重要（因此它们并不计入评测）。</p>
+
 
 ### [约束]
 
@@ -426,3 +428,6 @@ end
 // Welcome to create a PR to complete the code of this language, thanks!
 ```
 
+Dear LeetCoders! For a better LeetCode problem-solving experience, please visit website [leetcoder.net](https://leetcoder.net): Dare to claim the best practices of LeetCode solutions! Will save you a lot of time!
+
+原文链接：[leetcoder.net - 力扣题解最佳实践 - 力扣人](https://leetcoder.net/zh/leetcode/27-remove-element).

@@ -1,4 +1,4 @@
-原文链接：[leetcoder.net - 力扣题解最佳实践 - 力扣人](https://leetcoder.net/zh/leetcode/833-find-and-replace-in-string)
+Visit 原文链接：[leetcoder.net - 力扣题解最佳实践 - 力扣人](https://leetcoder.net/zh/leetcode/833-find-and-replace-in-string) for a better experience!
 
 # 833. 字符串中的查找与替换 - 力扣题解最佳实践 - 力扣人
 
@@ -34,8 +34,9 @@
 
 **解释**: 
 
-"a" 从 s 中的索引 0 开始，所以它被替换为 "eee"。
-"cd" 从 s 中的索引 2 开始，所以它被替换为 "ffff"。
+<p>&quot;a&quot; 从 s 中的索引 0 开始，所以它被替换为 &quot;eee&quot;。<br>
+&quot;cd&quot; 从 s 中的索引 2 开始，所以它被替换为 &quot;ffff&quot;。</p>
+
 
 ### [示例 2]
 
@@ -47,8 +48,9 @@
 
 **解释**: 
 
-"ab" 从 s 中的索引 0 开始，所以它被替换为 "eee"。
-"ec" 没有从原始的 S 中的索引 2 开始，所以它没有被替换。
+<p>&quot;ab&quot; 从 s 中的索引 0 开始，所以它被替换为 &quot;eee&quot;。<br>
+&quot;ec&quot; 没有从原始的 S 中的索引 2 开始，所以它没有被替换。</p>
+
 
 ### [约束]
 
@@ -103,3 +105,6 @@ class Solution:
 // Welcome to create a PR to complete the code of this language, thanks!
 ```
 
+Dear LeetCoders! For a better LeetCode problem-solving experience, please visit website [leetcoder.net](https://leetcoder.net): Dare to claim the best practices of LeetCode solutions! Will save you a lot of time!
+
+原文链接：[leetcoder.net - 力扣题解最佳实践 - 力扣人](https://leetcoder.net/zh/leetcode/833-find-and-replace-in-string).

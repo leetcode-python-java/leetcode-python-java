@@ -1,4 +1,4 @@
-Original link: [leetcoder.net - LeetCoder: Fucking Good LeetCode Solutions](https://leetcoder.net/en/leetcode/303-range-sum-query-immutable)
+Visit original link: [leetcoder.net - LeetCoder: Fucking Good LeetCode Solutions](https://leetcoder.net/en/leetcode/303-range-sum-query-immutable) for a better experience!
 
 # 303. Range Sum Query - Immutable - LeetCoder: Fucking Good LeetCode Solutions
 
@@ -23,10 +23,11 @@ Implement the `NumArray` class:
 
 **Explanation**: 
 
-NumArray numArray = new NumArray([-2, 0, 3, -5, 2, -1]);
-numArray.sumRange(0, 2); // return (-2) + 0 + 3 = 1
-numArray.sumRange(2, 5); // return 3 + (-5) + 2 + (-1) = -1
-numArray.sumRange(0, 5); // return (-2) + 0 + 3 + (-5) + 2 + (-1) = -3
+<p>NumArray numArray = new NumArray([-2, 0, 3, -5, 2, -1]);<br>
+numArray.sumRange(0, 2); // return (-2) + 0 + 3 = 1<br>
+numArray.sumRange(2, 5); // return 3 + (-5) + 2 + (-1) = -1<br>
+numArray.sumRange(0, 5); // return (-2) + 0 + 3 + (-5) + 2 + (-1) = -3</p>
+
 
 ### [Constraints]
 
@@ -231,3 +232,6 @@ class NumArray:
 // Welcome to create a PR to complete the code of this language, thanks!
 ```
 
+Dear LeetCoders! For a better LeetCode problem-solving experience, please visit website [leetcoder.net](https://leetcoder.net): Dare to claim the best practices of LeetCode solutions! Will save you a lot of time!
+
+Original link: [leetcoder.net - LeetCoder: Fucking Good LeetCode Solutions](https://leetcoder.net/en/leetcode/303-range-sum-query-immutable).

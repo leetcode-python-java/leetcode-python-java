@@ -1,4 +1,4 @@
-原文链接：[leetcoder.net - 力扣题解最佳实践 - 力扣人](https://leetcoder.net/zh/leetcode/977-squares-of-a-sorted-array)
+Visit 原文链接：[leetcoder.net - 力扣题解最佳实践 - 力扣人](https://leetcoder.net/zh/leetcode/977-squares-of-a-sorted-array) for a better experience!
 
 # 977. 有序数组的平方 - 力扣题解最佳实践 - 力扣人
 
@@ -18,8 +18,9 @@
 
 **解释**: 
 
-平方后，数组变为 [16,1,0,9,100]
-排序后，数组变为 [0,1,9,16,100]
+<p>平方后，数组变为 [16,1,0,9,100]<br>
+排序后，数组变为 [0,1,9,16,100]</p>
+
 
 ### [示例 2]
 
@@ -345,3 +346,6 @@ end
 // Welcome to create a PR to complete the code of this language, thanks!
 ```
 
+Dear LeetCoders! For a better LeetCode problem-solving experience, please visit website [leetcoder.net](https://leetcoder.net): Dare to claim the best practices of LeetCode solutions! Will save you a lot of time!
+
+原文链接：[leetcoder.net - 力扣题解最佳实践 - 力扣人](https://leetcoder.net/zh/leetcode/977-squares-of-a-sorted-array).
