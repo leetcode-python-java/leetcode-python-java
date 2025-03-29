@@ -19,7 +19,7 @@ Here, I will provide you with **common problem-solving patterns** so that you do
 I have planned a learning route for you. You just need to do the problems in the order they are listed.
 You can skip the more difficult problems and do them later.
 
-# Array
+## Array
 - [344. Reverse String](en/1-1000/344-reverse-string.md) Python, Java, C++, JavaScript, C#, Go, Ruby.
 - [27. Remove Element](en/1-1000/27-remove-element.md) Python, Java, C++, JavaScript, C#, Go, Ruby, **2** ways.
 - [704. Binary Search](en/1-1000/704-binary-search.md) Python, Java, C++, JavaScript, C#, Go, Ruby.
@@ -30,7 +30,7 @@ You can skip the more difficult problems and do them later.
 - [503. Next Greater Element II](en/1-1000/503-next-greater-element-ii.md) Python, Java, C++, JavaScript, C#, Go, Ruby.
 - [3478. Choose K Elements With Maximum Sum](https://leetcoder.net/en/leetcode/3478-choose-k-elements-with-maximum-sum) Python.
 
-# Linked List
+## Linked List
 - [203. Remove Linked List Elements](en/1-1000/203-remove-linked-list-elements.md) Python, Java, C++, JavaScript, C#, Go, Ruby.
 - [206. Reverse Linked List](en/1-1000/206-reverse-linked-list.md) Python, Java, C++, JavaScript, C#, Go, Ruby.
 - [160. Intersection of Two Linked Lists](en/1-1000/160-intersection-of-two-linked-lists.md) Python, Java, C++, JavaScript, C#, Go, Ruby.
@@ -38,7 +38,7 @@ You can skip the more difficult problems and do them later.
 - [707. Design Linked List](en/1-1000/707-design-linked-list.md) Python, Java, C++, JavaScript, C#, Go, Ruby.
 - [24. Swap Nodes in Pairs](en/1-1000/24-swap-nodes-in-pairs.md) Python, Java, C++, JavaScript, C#, Go, Ruby.
 
-# Hash Table
+## Hash Table
 - [349. Intersection of Two Arrays](en/1-1000/349-intersection-of-two-arrays.md) Python, Java, C++, JavaScript, C#, Go, Ruby.
 - [242. Valid Anagram](en/1-1000/242-valid-anagram.md) Python, Java, C++, JavaScript, C#, Go, Ruby.
 - [1. Two Sum](en/1-1000/1-two-sum.md) Python, Java, C++, JavaScript, C#, Go, Ruby.
@@ -47,48 +47,48 @@ You can skip the more difficult problems and do them later.
 - [454. 4Sum II](en/1-1000/454-4sum-ii.md) Python, Java, C++, JavaScript, C#, Go, Ruby.
 - [49. Group Anagrams](https://leetcoder.net/en/leetcode/49-group-anagrams) Python, Ruby.
 
-# String
+## String
 - [28. Find the Index of the First Occurrence in a String](en/1-1000/28-find-the-index-of-the-first-occurrence-in-a-string.md) Python, Java, C++, JavaScript, C#, Go, Ruby.
 - [541. Reverse String II](en/1-1000/541-reverse-string-ii.md) Python, Java, C++, JavaScript, C#, Go, Ruby.
 - [459. Repeated Substring Pattern](en/1-1000/459-repeated-substring-pattern.md) Python, Java, C++, JavaScript, C#, Go, Ruby.
 - [833. Find, Replace in String](https://leetcoder.net/en/leetcode/833-find-and-replace-in-string) Python.
 
-# Two Pointers
+## Two Pointers
 - [15. 3Sum](en/1-1000/15-3sum.md) Python, Java, C++, JavaScript, C#, Go, Ruby, 2 ways.
 - [18. 4Sum](en/1-1000/18-4sum.md) Python, Java, C++, JavaScript, C#, Go, Ruby.
 
-# Stack & Queue
+## Stack & Queue
 - [20. Valid Parentheses](en/1-1000/20-valid-parentheses.md) Python, Java, C++, JavaScript, C#, Go, Ruby.
 - [232. Implement Queue using Stacks](en/1-1000/232-implement-queue-using-stacks.md) Python, Java, C++, JavaScript, C#, Go, Ruby.
 - [225. Implement Stack using Queues](en/1-1000/225-implement-stack-using-queues.md) Python, Java, C++, JavaScript, C#, Go, Ruby, 3 ways.
 
-# Binary Tree
+## Binary Tree
 - [144. Binary Tree Preorder Traversal](en/1-1000/144-binary-tree-preorder-traversal.md) Python, 2 ways.
 
-# Dynamic Programming
-## Easy Problems
+## Dynamic Programming
+### Easy Problems
 - [509. Fibonacci Number](en/1-1000/509-fibonacci-number.md) Python, Java, C++, JavaScript, C#, Go, Ruby.
 
-## House Robber
+### House Robber
 - [198. House Robber](en/1-1000/198-house-robber.md) Python, Java, C++, JavaScript, C#, Go, Ruby.
 - [213. House Robber II](en/1-1000/213-house-robber-ii.md) Python, Java, C++, JavaScript, C#, Go, Ruby.
 - [337. House Robber III](en/1-1000/337-house-robber-iii.md) Python, Java, C++, JavaScript, C#, Go, Ruby, **2** ways.
 
-## Knapsack Problems
-### 0/1 Knapsack
+### Knapsack Problems
+#### 0/1 Knapsack
 - [416. Partition Equal Subset Sum](en/1-1000/416-partition-equal-subset-sum.md) Python, Java, C++, JavaScript, C#, Go, Ruby, **2** ways.
 - [1049. Last Stone Weight II](en/1001-2000/1049-last-stone-weight-ii.md) Python, Java, C++, JavaScript, C#, Go, Ruby, **2** ways.
 - [494. Target Sum](en/1-1000/494-target-sum.md) Python, Java, C++, JavaScript, C#, Go, Ruby.
 - [474. Ones and Zeroes](en/1-1000/474-ones-and-zeroes.md) Python, Java, C++, JavaScript, C#, Go, Ruby.
 
-### Unbounded Knapsack
+#### Unbounded Knapsack
 - [518. Coin Change II](en/1-1000/518-coin-change-ii.md) Python, Java, C++, JavaScript, C#, Go, Ruby.
 - [377. Combination Sum IV](en/1-1000/377-combination-sum-iv.md) Python, Java, C++, JavaScript, C#, Go, Ruby.
 - [322. Coin Change](en/1-1000/322-coin-change.md) Python, Java, C++, JavaScript, C#, Go, Ruby.
 - [279. Perfect Squares](en/1-1000/279-perfect-squares.md) Python, Java, C++, JavaScript, C#, Go, Ruby.
 - [139. Word Break](en/1-1000/139-word-break.md) Python, Java, C++, JavaScript, C#, Go, Ruby.
 
-## Stock Maximum Profit Problems
+### Stock Maximum Profit Problems
 - [121. Best Time to Buy and Sell Stock](en/1-1000/121-best-time-to-buy-and-sell-stock.md) Python, JavaScript, Go.
 - [122. Best Time to Buy and Sell Stock II](en/1-1000/122-best-time-to-buy-and-sell-stock-ii.md) Python, JavaScript, Go.
 - [714. Best Time to Buy and Sell Stock with Transaction Fee](en/1-1000/714-best-time-to-buy-and-sell-stock-with-transaction-fee.md) Python, JavaScript, Go.
@@ -96,7 +96,7 @@ You can skip the more difficult problems and do them later.
 - [188. Best Time to Buy and Sell Stock IV](en/1-1000/188-best-time-to-buy-and-sell-stock-iv.md) Python, JavaScript, Go.
 - [309. Best Time to Buy and Sell Stock with Cooldown](en/1-1000/309-best-time-to-buy-and-sell-stock-with-cooldown.md) Python, JavaScript, Go.
 
-## Subsequence Problems
+### Subsequence Problems
 - [674. Longest Continuous Increasing Subsequence](en/1-1000/674-longest-continuous-increasing-subsequence.md) Python, Java, JavaScript, C#.
 - [300. Longest Increasing Subsequence](en/1-1000/300-longest-increasing-subsequence.md) Python, Java, JavaScript, C#.
 - [718. Maximum Length of Repeated Subarray](en/1-1000/718-maximum-length-of-repeated-subarray.md) Python, Java, JavaScript, C#.
@@ -107,16 +107,16 @@ You can skip the more difficult problems and do them later.
 - [583. Delete Operation for Two Strings](en/1-1000/583-delete-operation-for-two-strings.md) Python, Java, C++, JavaScript, C#, Go, Ruby.
 - [72. Edit Distance](en/1-1000/72-edit-distance.md) Python, Java, C++, JavaScript, C#, Go, Ruby.
 
-## Hard Problems
+### Hard Problems
 - [3494. Find the Minimum Amount of Time to Brew Potions](https://leetcoder.net/en/leetcode/3494-find-the-minimum-amount-of-time-to-brew-potions) Python, Java, C++, JavaScript, C#, Go, Ruby.
 
-# Monotonic Stack
+## Monotonic Stack
 - [739. Daily Temperatures](en/1-1000/739-daily-temperatures.md) Python, Java, C++, JavaScript, C#, Go, Ruby.
 - [496. Next Greater Element I](en/1-1000/496-next-greater-element-i.md) Python, Java, C++, JavaScript, C#, Go, Ruby.
 - [42. Trapping Rain Water](en/1-1000/42-trapping-rain-water.md) Python, Java, C++, JavaScript, C#, Go, Ruby.
 - [84. Largest Rectangle in Histogram](en/1-1000/84-largest-rectangle-in-histogram.md) Python, Java, C++, JavaScript, C#, Go, Ruby.
 
-# Graph Theory
+## Graph Theory
 - [797. All Paths From Source to Target](en/1-1000/797-all-paths-from-source-to-target.md) Python, Java, C++, JavaScript, C#, Go, Ruby, **2** ways.
 - [200. Number of Islands](en/1-1000/200-number-of-islands.md) Python, Java, C++, JavaScript, C#, Go, Ruby, **3** ways.
 - [463. Island Perimeter](en/1-1000/463-island-perimeter.md) Python, **2** ways.
@@ -134,7 +134,7 @@ You can skip the more difficult problems and do them later.
 - [787. Cheapest Flights Within K Stops](en/1-1000/787-cheapest-flights-within-k-stops.md) Python.
 - [1334. Find the City With the Smallest Number of Neighbors at a Threshold Distance](en/1001-2000/1334-find-the-city-with-the-smallest-number-of-neighbors-at-a-threshold-distance.md) Python.
 
-# Other Algorithms
+## Other Algorithms
 - [433. Minimum Genetic Mutation](en/1-1000/433-minimum-genetic-mutation.md) Python, 3 ways.
 
 # Fuck LeetCode
