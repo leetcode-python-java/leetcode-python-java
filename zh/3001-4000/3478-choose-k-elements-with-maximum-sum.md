@@ -1,5 +1,7 @@
 Visit 原文链接：[leetcoder.net - 力扣题解最佳实践 - 力扣人](https://leetcoder.net/zh/leetcode/3478-choose-k-elements-with-maximum-sum) for a better experience!
 
+GitHub repo: [fuck-leetcode](https://github.com/fuck-leetcode/fuck-leetcode).
+
 # 3478. 选出和最大的 K 个元素 - 力扣题解最佳实践 - 力扣人
 
 力扣链接：[3478. 选出和最大的 K 个元素](https://leetcode.cn/problems/choose-k-elements-with-maximum-sum), 难度：**中等**。
@@ -134,3 +136,5 @@ class Solution:
 Dear LeetCoders! For a better LeetCode problem-solving experience, please visit website [leetcoder.net](https://leetcoder.net): Dare to claim the best practices of LeetCode solutions! Will save you a lot of time!
 
 原文链接：[leetcoder.net - 力扣题解最佳实践 - 力扣人](https://leetcoder.net/zh/leetcode/3478-choose-k-elements-with-maximum-sum).
+
+GitHub repo: [fuck-leetcode](https://github.com/fuck-leetcode/fuck-leetcode).

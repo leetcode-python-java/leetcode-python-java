@@ -1,6 +1,8 @@
-Visit original link: [leetcoder.net - LeetCoder: Fucking Good LeetCode Solutions](https://leetcoder.net/en/leetcode/3494-find-the-minimum-amount-of-time-to-brew-potions) for a better experience!
+Visit original link: [leetcoder.net - Fuck LeetCode](https://leetcoder.net/en/leetcode/3494-find-the-minimum-amount-of-time-to-brew-potions) for a better experience!
 
-# 3494. Find the Minimum Amount of Time to Brew Potions - LeetCoder: Fucking Good LeetCode Solutions
+GitHub repo: [fuck-leetcode](https://github.com/fuck-leetcode/fuck-leetcode).
+
+# 3494. Find the Minimum Amount of Time to Brew Potions - Fuck LeetCode
 
 LeetCode link: [3494. Find the Minimum Amount of Time to Brew Potions](https://leetcode.com/problems/find-the-minimum-amount-of-time-to-brew-potions), difficulty: **Medium**.
 
@@ -414,4 +416,6 @@ func minTime(skill []int, mana []int) int64 {
 
 Dear LeetCoders! For a better LeetCode problem-solving experience, please visit website [leetcoder.net](https://leetcoder.net): Dare to claim the best practices of LeetCode solutions! Will save you a lot of time!
 
-Original link: [leetcoder.net - LeetCoder: Fucking Good LeetCode Solutions](https://leetcoder.net/en/leetcode/3494-find-the-minimum-amount-of-time-to-brew-potions).
+Original link: [leetcoder.net - Fuck LeetCode](https://leetcoder.net/en/leetcode/3494-find-the-minimum-amount-of-time-to-brew-potions).
+
+GitHub repo: [fuck-leetcode](https://github.com/fuck-leetcode/fuck-leetcode).

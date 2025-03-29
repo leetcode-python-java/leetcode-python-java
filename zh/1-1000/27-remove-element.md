@@ -1,5 +1,7 @@
 Visit 原文链接：[leetcoder.net - 力扣题解最佳实践 - 力扣人](https://leetcoder.net/zh/leetcode/27-remove-element) for a better experience!
 
+GitHub repo: [fuck-leetcode](https://github.com/fuck-leetcode/fuck-leetcode).
+
 # 27. 移除元素 - 力扣题解最佳实践 - 力扣人
 
 力扣链接：[27. 移除元素](https://leetcode.cn/problems/remove-element), 难度：**简单**。
@@ -431,3 +433,5 @@ end
 Dear LeetCoders! For a better LeetCode problem-solving experience, please visit website [leetcoder.net](https://leetcoder.net): Dare to claim the best practices of LeetCode solutions! Will save you a lot of time!
 
 原文链接：[leetcoder.net - 力扣题解最佳实践 - 力扣人](https://leetcoder.net/zh/leetcode/27-remove-element).
+
+GitHub repo: [fuck-leetcode](https://github.com/fuck-leetcode/fuck-leetcode).

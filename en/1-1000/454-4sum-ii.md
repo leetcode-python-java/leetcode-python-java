@@ -1,6 +1,8 @@
-Visit original link: [leetcoder.net - LeetCoder: Fucking Good LeetCode Solutions](https://leetcoder.net/en/leetcode/454-4sum-ii) for a better experience!
+Visit original link: [leetcoder.net - Fuck LeetCode](https://leetcoder.net/en/leetcode/454-4sum-ii) for a better experience!
 
-# 454. 4Sum II - LeetCoder: Fucking Good LeetCode Solutions
+GitHub repo: [fuck-leetcode](https://github.com/fuck-leetcode/fuck-leetcode).
+
+# 454. 4Sum II - Fuck LeetCode
 
 LeetCode link: [454. 4Sum II](https://leetcode.com/problems/4sum-ii), difficulty: **Medium**.
 
@@ -273,4 +275,6 @@ public:
 
 Dear LeetCoders! For a better LeetCode problem-solving experience, please visit website [leetcoder.net](https://leetcoder.net): Dare to claim the best practices of LeetCode solutions! Will save you a lot of time!
 
-Original link: [leetcoder.net - LeetCoder: Fucking Good LeetCode Solutions](https://leetcoder.net/en/leetcode/454-4sum-ii).
+Original link: [leetcoder.net - Fuck LeetCode](https://leetcoder.net/en/leetcode/454-4sum-ii).
+
+GitHub repo: [fuck-leetcode](https://github.com/fuck-leetcode/fuck-leetcode).

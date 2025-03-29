@@ -1,5 +1,7 @@
 Visit 原文链接：[leetcoder.net - 力扣题解最佳实践 - 力扣人](https://leetcoder.net/zh/leetcode/541-reverse-string-ii) for a better experience!
 
+GitHub repo: [fuck-leetcode](https://github.com/fuck-leetcode/fuck-leetcode).
+
 # 541. 反转字符串 II - 力扣题解最佳实践 - 力扣人
 
 力扣链接：[541. 反转字符串 II](https://leetcode.cn/problems/reverse-string-ii), 难度：**简单**。
@@ -279,3 +281,5 @@ func reverseStr(s string, k int) string {
 Dear LeetCoders! For a better LeetCode problem-solving experience, please visit website [leetcoder.net](https://leetcoder.net): Dare to claim the best practices of LeetCode solutions! Will save you a lot of time!
 
 原文链接：[leetcoder.net - 力扣题解最佳实践 - 力扣人](https://leetcoder.net/zh/leetcode/541-reverse-string-ii).
+
+GitHub repo: [fuck-leetcode](https://github.com/fuck-leetcode/fuck-leetcode).

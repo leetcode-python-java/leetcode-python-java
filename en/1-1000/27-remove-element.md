@@ -1,6 +1,8 @@
-Visit original link: [leetcoder.net - LeetCoder: Fucking Good LeetCode Solutions](https://leetcoder.net/en/leetcode/27-remove-element) for a better experience!
+Visit original link: [leetcoder.net - Fuck LeetCode](https://leetcoder.net/en/leetcode/27-remove-element) for a better experience!
 
-# 27. Remove Element - LeetCoder: Fucking Good LeetCode Solutions
+GitHub repo: [fuck-leetcode](https://github.com/fuck-leetcode/fuck-leetcode).
+
+# 27. Remove Element - Fuck LeetCode
 
 LeetCode link: [27. Remove Element](https://leetcode.com/problems/remove-element), difficulty: **Easy**.
 
@@ -430,4 +432,6 @@ end
 
 Dear LeetCoders! For a better LeetCode problem-solving experience, please visit website [leetcoder.net](https://leetcoder.net): Dare to claim the best practices of LeetCode solutions! Will save you a lot of time!
 
-Original link: [leetcoder.net - LeetCoder: Fucking Good LeetCode Solutions](https://leetcoder.net/en/leetcode/27-remove-element).
+Original link: [leetcoder.net - Fuck LeetCode](https://leetcoder.net/en/leetcode/27-remove-element).
+
+GitHub repo: [fuck-leetcode](https://github.com/fuck-leetcode/fuck-leetcode).

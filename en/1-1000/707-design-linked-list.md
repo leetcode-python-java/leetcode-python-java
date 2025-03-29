@@ -1,6 +1,8 @@
-Visit original link: [leetcoder.net - LeetCoder: Fucking Good LeetCode Solutions](https://leetcoder.net/en/leetcode/707-design-linked-list) for a better experience!
+Visit original link: [leetcoder.net - Fuck LeetCode](https://leetcoder.net/en/leetcode/707-design-linked-list) for a better experience!
 
-# 707. Design Linked List - LeetCoder: Fucking Good LeetCode Solutions
+GitHub repo: [fuck-leetcode](https://github.com/fuck-leetcode/fuck-leetcode).
+
+# 707. Design Linked List - Fuck LeetCode
 
 LeetCode link: [707. Design Linked List](https://leetcode.com/problems/design-linked-list), difficulty: **Medium**.
 
@@ -635,4 +637,6 @@ end
 
 Dear LeetCoders! For a better LeetCode problem-solving experience, please visit website [leetcoder.net](https://leetcoder.net): Dare to claim the best practices of LeetCode solutions! Will save you a lot of time!
 
-Original link: [leetcoder.net - LeetCoder: Fucking Good LeetCode Solutions](https://leetcoder.net/en/leetcode/707-design-linked-list).
+Original link: [leetcoder.net - Fuck LeetCode](https://leetcoder.net/en/leetcode/707-design-linked-list).
+
+GitHub repo: [fuck-leetcode](https://github.com/fuck-leetcode/fuck-leetcode).

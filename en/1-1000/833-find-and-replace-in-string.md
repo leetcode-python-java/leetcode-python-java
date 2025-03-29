@@ -1,8 +1,10 @@
-Visit original link: [leetcoder.net - LeetCoder: Fucking Good LeetCode Solutions](https://leetcoder.net/en/leetcode/833-find-and-replace-in-string) for a better experience!
+Visit original link: [leetcoder.net - Fuck LeetCode](https://leetcoder.net/en/leetcode/833-find-and-replace-in-string) for a better experience!
 
-# 833. Find And Replace in String - LeetCoder: Fucking Good LeetCode Solutions
+GitHub repo: [fuck-leetcode](https://github.com/fuck-leetcode/fuck-leetcode).
 
-LeetCode link: [833. Find And Replace in String](https://leetcode.com/problems/find-and-replace-in-string), difficulty: **Easy**.
+# 833. Find And Replace in String - Fuck LeetCode
+
+LeetCode link: [833. Find And Replace in String](https://leetcode.com/problems/find-and-replace-in-string), difficulty: **Medium**.
 
 ## LeetCode description of "833. Find And Replace in String"
 
@@ -107,4 +109,6 @@ class Solution:
 
 Dear LeetCoders! For a better LeetCode problem-solving experience, please visit website [leetcoder.net](https://leetcoder.net): Dare to claim the best practices of LeetCode solutions! Will save you a lot of time!
 
-Original link: [leetcoder.net - LeetCoder: Fucking Good LeetCode Solutions](https://leetcoder.net/en/leetcode/833-find-and-replace-in-string).
+Original link: [leetcoder.net - Fuck LeetCode](https://leetcoder.net/en/leetcode/833-find-and-replace-in-string).
+
+GitHub repo: [fuck-leetcode](https://github.com/fuck-leetcode/fuck-leetcode).

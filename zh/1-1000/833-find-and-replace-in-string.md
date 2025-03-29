@@ -1,8 +1,10 @@
 Visit 原文链接：[leetcoder.net - 力扣题解最佳实践 - 力扣人](https://leetcoder.net/zh/leetcode/833-find-and-replace-in-string) for a better experience!
 
+GitHub repo: [fuck-leetcode](https://github.com/fuck-leetcode/fuck-leetcode).
+
 # 833. 字符串中的查找与替换 - 力扣题解最佳实践 - 力扣人
 
-力扣链接：[833. 字符串中的查找与替换](https://leetcode.cn/problems/find-and-replace-in-string), 难度：**简单**。
+力扣链接：[833. 字符串中的查找与替换](https://leetcode.cn/problems/find-and-replace-in-string), 难度：**中等**。
 
 ## 力扣“833. 字符串中的查找与替换”问题描述
 
@@ -108,3 +110,5 @@ class Solution:
 Dear LeetCoders! For a better LeetCode problem-solving experience, please visit website [leetcoder.net](https://leetcoder.net): Dare to claim the best practices of LeetCode solutions! Will save you a lot of time!
 
 原文链接：[leetcoder.net - 力扣题解最佳实践 - 力扣人](https://leetcoder.net/zh/leetcode/833-find-and-replace-in-string).
+
+GitHub repo: [fuck-leetcode](https://github.com/fuck-leetcode/fuck-leetcode).

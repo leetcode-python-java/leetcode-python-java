@@ -1,6 +1,8 @@
-Visit original link: [leetcoder.net - LeetCoder: Fucking Good LeetCode Solutions](https://leetcoder.net/en/leetcode/20-valid-parentheses) for a better experience!
+Visit original link: [leetcoder.net - Fuck LeetCode](https://leetcoder.net/en/leetcode/20-valid-parentheses) for a better experience!
 
-# 20. Valid Parentheses - LeetCoder: Fucking Good LeetCode Solutions
+GitHub repo: [fuck-leetcode](https://github.com/fuck-leetcode/fuck-leetcode).
+
+# 20. Valid Parentheses - Fuck LeetCode
 
 LeetCode link: [20. Valid Parentheses](https://leetcode.com/problems/valid-parentheses), difficulty: **Easy**.
 
@@ -83,8 +85,12 @@ An input string is valid if:
 ## JavaScript
 
 ```javascript
+/**
+ * @param {string} s
+ * @return {boolean}
+ */
 var isValid = function (s) {
-  const rightToLeft = new Map([
+  const closeToOpen = new Map([
     [')', '('],
     ['}', '{'],
     [']', '['],
@@ -92,10 +98,20 @@ var isValid = function (s) {
   const stack = []
 
   for (const char of s) {
-    if (!rightToLeft.has(char)) {
-      stack.push(char)
-    } else if (stack.length === 0 || stack.pop() != rightToLeft.get(char)) {
-      return false
+    if (!closeToOpen.has(char)) {
+        // is open bracket
+        stack.push(char)
+        continue
+    }
+    // is close bracket
+
+    if (stack.length === 0) {
+        return false
+    }
+
+    // stack top value doesn't match the expected value
+    if (stack.pop() != closeToOpen.get(char)) {
+        return false
     }
   }
 
@@ -108,7 +124,8 @@ var isValid = function (s) {
 ```python
 class Solution:
     def isValid(self, s: str) -> bool:
-        right_to_left = {
+        # Map closing brackets to their opening brackets
+        close_to_open = {
             ')': '(',
             '}': '{',
             ']': '[',
@@ -116,12 +133,215 @@ class Solution:
         stack = []
 
         for char in s:
-            if char not in right_to_left:
+            if char not in close_to_open:
+                # is open bracket
                 stack.append(char)
-            elif not stack or stack.pop() != right_to_left[char]:
+                continue
+            # is close bracket
+
+            if not stack:
+                return False
+
+            # stack top value doesn't match the expected value
+            if stack.pop() != close_to_open[char]:
                 return False
 
         return not stack
+```
+
+## Java
+
+```java
+class Solution {
+    public boolean isValid(String s) {
+        // Map closing brackets to their opening brackets
+        var closeToOpen = new HashMap<Character, Character>();
+        closeToOpen.put(')', '(');
+        closeToOpen.put('}', '{');
+        closeToOpen.put(']', '[');
+
+        var stack = new Stack<Character>();
+
+        for (char c : s.toCharArray()) {
+            if (!closeToOpen.containsKey(c)) {
+                // is open bracket
+                stack.push(c);
+                continue;
+            }
+            // is close bracket
+
+            if (stack.isEmpty()) {
+                return false;
+            }
+
+            // stack top value doesn't match the expected value
+            if (stack.pop() != closeToOpen.get(c)) {
+                return false;
+            }
+        }
+
+        return stack.isEmpty();
+    }
+}
+```
+
+## C++
+
+```cpp
+class Solution {
+public:
+    bool isValid(string s) {
+        // Map closing brackets to their opening brackets
+        unordered_map<char, char> closeToOpen = {
+            {')', '('},
+            {'}', '{'},
+            {']', '['}
+        };
+        
+        stack<char> st;
+        
+        for (char c : s) {
+            if (closeToOpen.find(c) == closeToOpen.end()) {
+                // is open bracket
+                st.push(c);
+                continue;
+            }
+            // is close bracket
+            
+            if (st.empty()) {
+                return false;
+            }
+            
+            // stack top value doesn't match the expected value
+            if (st.top() != closeToOpen[c]) {
+                return false;
+            }
+            
+            st.pop();
+        }
+        
+        return st.empty();
+    }
+};
+```
+
+## C#
+
+```csharp
+public class Solution
+{
+    public bool IsValid(string s)
+    {
+        // Map closing brackets to their opening brackets
+        var closeToOpen = new Dictionary<char, char>()
+        {
+            {')', '('},
+            {'}', '{'},
+            {']', '['}
+        };
+
+        var stack = new Stack<char>();
+
+        foreach (char c in s) {
+            if (!closeToOpen.ContainsKey(c))
+            {
+                // is open bracket
+                stack.Push(c);
+                continue;
+            }
+            // is close bracket
+
+            if (stack.Count == 0)
+            {
+                return false;
+            }
+
+            // stack top value doesn't match the expected value
+            if (stack.Pop() != closeToOpen[c])
+            {
+                return false;
+            }
+        }
+
+        return stack.Count == 0;
+    }
+}
+```
+
+## Go
+
+```go
+func isValid(s string) bool {
+    // Map closing brackets to their opening brackets
+    closeToOpen := map[rune]rune{
+        ')': '(',
+        '}': '{',
+        ']': '[',
+    }
+
+    stack := []rune{}
+
+    for _, char := range s {
+        if _, isClose := closeToOpen[char]; !isClose {
+            // is open bracket
+            stack = append(stack, char)
+            continue
+        }
+        // is close bracket
+
+        if len(stack) == 0 {
+            return false
+        }
+
+        lastChar := stack[len(stack) - 1]
+
+        // stack top value doesn't match the expected value
+        if lastChar != closeToOpen[char] {
+            return false
+        }
+
+        stack = stack[:len(stack) - 1] // pop operation
+    }
+
+    return len(stack) == 0
+}
+```
+
+## Ruby
+
+```ruby
+# @param {String} s
+# @return {Boolean}
+def is_valid(s)
+  # Map closing brackets to their opening brackets
+  close_to_open = {
+    ')' => '(',
+    '}' => '{',
+    ']' => '['
+  }
+
+  stack = []
+
+  s.each_char do |char|
+    if !close_to_open.key?(char)
+      # is open bracket
+      stack.push(char)
+      next
+    end
+    # is close bracket
+
+    if stack.empty?
+      return false
+    end
+
+    # stack top value doesn't match the expected value
+    if stack.pop != close_to_open[char]
+      return false
+    end
+  end
+
+  stack.empty?
+end
 ```
 
 ## Other languages
@@ -132,4 +352,6 @@ class Solution:
 
 Dear LeetCoders! For a better LeetCode problem-solving experience, please visit website [leetcoder.net](https://leetcoder.net): Dare to claim the best practices of LeetCode solutions! Will save you a lot of time!
 
-Original link: [leetcoder.net - LeetCoder: Fucking Good LeetCode Solutions](https://leetcoder.net/en/leetcode/20-valid-parentheses).
+Original link: [leetcoder.net - Fuck LeetCode](https://leetcoder.net/en/leetcode/20-valid-parentheses).
+
+GitHub repo: [fuck-leetcode](https://github.com/fuck-leetcode/fuck-leetcode).

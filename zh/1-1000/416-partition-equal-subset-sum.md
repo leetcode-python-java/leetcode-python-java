@@ -1,115 +1,127 @@
-# 416. Partition Equal Subset Sum
-LeetCode link: [416. Partition Equal Subset Sum](https://leetcode.com/problems/partition-equal-subset-sum/)
-[416. 分割等和子集](https://leetcode.cn/problems/partition-equal-subset-sum)
+Visit 原文链接：[leetcoder.net - 力扣题解最佳实践 - 力扣人](https://leetcoder.net/zh/leetcode/416-partition-equal-subset-sum) for a better experience!
 
-[中文题解](#中文题解)
+GitHub repo: [fuck-leetcode](https://github.com/fuck-leetcode/fuck-leetcode).
 
-## LeetCode problem description
-Given an integer array `nums`, return `true` if you can partition the array into two subsets such that the sum of the elements in both subsets is equal or `false` otherwise.
+# 416. 分割等和子集 - 力扣题解最佳实践 - 力扣人
 
-Difficulty: **Medium**
+力扣链接：[416. 分割等和子集](https://leetcode.cn/problems/partition-equal-subset-sum), 难度：**中等**。
 
-### [Example 1]
-**Input**: `nums = [1,5,11,5]`
+## 力扣“416. 分割等和子集”问题描述
 
-**Output**: `true`
+给你一个 **只包含正整数** 的 **非空** 数组 `nums` 。请你判断是否可以将这个数组分割成两个子集，使得两个子集的元素和相等。
 
-**Explanation**: `The array can be partitioned as [1, 5, 5] and [11].`
+### [示例 1]
 
-### [Example 2]
-**Input**: `nums = [1,2,3,5]`
+**输入**: `nums = [1,5,11,5]`
 
-**Output**: `false`
+**输出**: `true`
 
-**Explanation**: `The array cannot be partitioned into equal sum subsets.`
+**解释**: `数组可以分割成 [1, 5, 5] 和 [11] 。`
 
-### [Constraints]
+### [示例 2]
+
+**输入**: `nums = [1,2,3,5]`
+
+**输出**: `false`
+
+**解释**: `数组不能分割成两个元素和相等的子集。`
+
+### [约束]
+
 - `1 <= nums.length <= 200`
 - `1 <= nums[i] <= 100`
 
-## Thoughts
-* When we first see this problem, we might want to loop through all subsets of the array. If there is a subset whose sum is equal to `half of the sum`, then return `true`. This can be achieved with a `backtracking algorithm`, but after seeing the constraint `nums.length <= 200`, we can estimate that the program will time out.
-* This is actually a `0/1 Knapsack Problem` which belongs to `Dynamic Programming`. `Dynamic programming` means that the answer to the current problem can be derived from the previous similar problem. Therefore, the `dp` array is used to record all the answers.
+## 思路 1
 
-* The core logic of the `0/1 Knapsack Problem` uses a two-dimensional `dp` array or a one-dimensional `dp` **rolling array**, first **iterate through the items**, then **iterate through the knapsack size** (`in reverse order` or use `dp.clone`), then **reference the previous value corresponding to the size of current 'item'**.
-* There are many things to remember when using a two-dimensional `dp` array, and it is difficult to write it right at once during an interview, so I won't describe it here.
+- 第一次看到这道题，我们可能想循环遍历数组的所有子集，如果有一个子集的和等于`和的一半`，就返回`true`。这可以用`回溯算法`来实现，但是看到`nums.length <= 200`这个约束，我们估计程序会超时。
+- 这其实是一个`0/1背包问题`，属于`动态规划`。`动态规划`是指当前问题的答案可以从上一个类似的问题中推导出来。因此，`dp`数组用于记录所有答案。
+- `0/1背包问题`的核心逻辑是使用二维`dp`数组或者一维`dp`**滚动数组**，先**遍历物品**，再**遍历背包大小**（`逆序`或者使用`dp.clone`），然后**引用当前'物品'大小对应的前一个值**。
+- 使用二维`dp`数组需要记住的东西很多，面试的时候很难一下子就写对，这里就不描述了。
 
-### Common steps in '0/1 Knapsack Problem'
-These five steps are a pattern for solving `Dynamic Programming` problems.
+## 步骤
 
-1. Determine the **meaning** of the `dp[j]`
-    * We can use a one-dimensional `dp` **rolling array**. Rolling an array means that the values of the array are overwritten each time through the iteration. 
-    * At first, try to use the problem's `return` value as the value of `dp[j]` to determine the meaning of `dp[j]`. If it doesn't work, try another way.
-    * So, `dp[j]` represents whether it is possible to `sum` the first `i` `nums` to get `j`.
-    * `dp[j]` is a boolean.
-2. Determine the `dp` array's initial value
-    * Use an example:
-   ```
-   nums = [1,5,11,5], so 'half of the sum' is 11.
-   The `size` of the knapsack is `half of the sum`, and the `items` are `nums`.
-   So after initialization, the 'dp' array would be:
-   #    0 1 2 3 4 5 6 7 8 9 10 11
-   #    T F F F F F F F F F F  F  # dp
-   # 1  
-   # 5  
-   # 11 
-   # 5  
-   ```
-    * You can see the `dp` array size is one greater than the knapsack size. In this way, the knapsack size and index value are equal, which helps to understand.
-    * `dp[0]` is set to `true`, indicating that an empty knapsack can be achieved by not putting any items in it. In addition, it is used as the starting value, and the subsequent `dp[j]` will depend on it. If it is `false`, all values of `dp[j]` will be `false`.
-    * `dp[j] = false (j != 0)`, indicating that it is impossible to get `j` with no `nums`.
-    
-3. Determine the `dp` array's recurrence formula
-    * Try to complete the grid. In the process, you will get inspiration to derive the formula.
-   ```
-   1. Use the first num '1'.
-   #    0 1 2 3 4 5 6 7 8 9 10 11
-   #    T F F F F F F F F F F  F
-   # 1  T T F F F F F F F F F  F # dp
-   ```
-   ```
-   2. Use the second num '5'.
-   #    0 1 2 3 4 5 6 7 8 9 10 11
-   #    T F F F F F F F F F F  F
-   # 1  T T F F F F F F F F F  F
-   # 5  T T F F F T T F F F F  F
-   ```
-   ```
-   3. Use the third num '11'.
-   #    0 1 2 3 4 5 6 7 8 9 10 11
-   #    T F F F F F F F F F F  F
-   # 1  T T F F F F F F F F F  F
-   # 5  T T F F F T T F F F F  F
-   # 11 T T F F F T T F F F F  T
-   ```
-   ```
-   3. Use the last num '5'.
-   #    0 1 2 3 4 5 6 7 8 9 10 11
-   #    T F F F F F F F F F F  F
-   # 1  T T F F F F F F F F F  F
-   # 5  T T F F F T T F F F F  F
-   # 11 T T F F F T T F F F F  T
-   # 5  T T F F F T T F F F T  T # dp
-   ```
-    * After analyzing the sample `dp` grid, we can derive the `Recurrence Formula`:
-   ```cpp
-   dp[j] = dp[j] || dp[j - nums[i]]
-   ```
-4. Determine the `dp` array's traversal order
-    * First **iterate through the items**, then **iterate through the knapsack size** (`in reverse order` or use `dp.clone`).
-    * When iterating through the knapsack size, since `dp[j]` depends on `dp[j]` and `dp[j - nums[i]]`, we should traverse the `dp` array **from right to left**.
-    * Please think if we can iterate through the `dp` array from `from left to right`? In the `Python` solution's code comments, I will answer this question.
-5. Check the `dp` array's value
-    * Print the `dp` to see if it is as expected.
+### '0/1背包问题' 中的常用步骤
 
-### Complexity
-* Time: `O(n * sum/2)`.
-* Space:
-    * Solution 1: `O(sum/2)`.
-    * Solution 2: `O(n * sum/2)`.
+这五个步骤是解决`动态规划`问题的模式。
+
+1. 确定`dp[j]`的**含义**
+    - 我们可以使用一维`dp`**滚动数组**。滚动数组意味着每次迭代时都会覆盖数组的值。
+    - 首先，尝试使用问题的`return`值作为`dp[j]`的值来确定`dp[j]`的含义。如果不行，请尝试另一种方法。
+    - 所以，`dp[j]`表示是否可以`sum`前`i`个`nums`得到`j`。
+    - `dp[j]`是一个布尔值。
+2. 确定 `dp` 数组的初始值
+    - 举个例子：
+
+        ```ruby
+        nums = [1,5,11,5]，所以 '和的一半' 是 11。
+        背包的 `size` 是 '和的一半'，`items` 是 `nums`。
+        所以初始化后，'dp' 数组将是：
+        # 0 1 2 3 4 5 6 7 8 9 10 11
+        # T F F F F F F F F F F F F F # dp
+        # 1
+        # 5
+        # 11
+        # 5
+        ```
+    - 可以看到 `dp` 数组大小比背包大小大一。这样，背包大小和索引值就相等了，有助于理解。
+    - `dp[0]` 设置为 `true`，表示不放任何物品即可得到空背包，另外，它作为起始值，后面的 `dp[j]` 将依赖它。如果为 `false`，则 `dp[j]` 的所有值都将为 `false`。
+    - `dp[j] = false (j != 0)`，表示没有 `nums` 就不可能得到 `j`。
+
+3. 确定 `dp` 数组的递归公式
+    - 尝试完成网格。在此过程中，你会得到推导公式的灵感。
+
+        ```ruby
+        1. 使用第一个数字 '1'。
+        # 0 1 2 3 4 5 6 7 8 9 10 11
+        # T F F F F F F F F F F F F
+        # 1 T T F F F F F F F F F F # dp
+        ```
+
+        ```ruby
+        2. 使用第二个数字 '5'。
+        # 0 1 2 3 4 5 6 7 8 9 10 11
+        # T F F F F F F F F F F F
+        # 1 T T F F F F F F F F F F
+        # 5 T T F F F T T F F F F F
+        ```
+
+        ```ruby
+        3. 使用第三个数字 '11'。
+        # 0  1 2 3 4 5 6 7 8 9 10 11
+        # T  F F F F F F F F F F F F
+        # 1  T T F F F F F F F F F F
+        # 5  T T F F F T T F F F F F
+        # 11 T T F F F T T F F F F F T
+        ```
+
+        ```ruby
+        3. 使用最后一个数字“5”。
+        # 0  1 2 3 4 5 6 7 8 9 10 11
+        # T  F F F F F F F F F F F F
+        # 1  T T F F F F F F F F F
+        # 5  T T F F F T T F F F F
+        # 11 T T F F F T T F F F F F T
+        # 5  T T F F F T T F F F F T T # dp
+        ```
+    - 分析示例 `dp` 网格后，我们可以得出 `递归公式`：
+
+        ```cpp
+        dp[j] = dp[j] || dp[j - nums[i]]
+        ```
+4. 确定 `dp` 数组的遍历顺序
+    - 首先 **遍历项目**，然后 **遍历背包大小**（`以相反顺序` 或使用 `dp.clone`）。
+    - 在遍历背包大小时，由于 `dp[j]` 取决于 `dp[j]` 和 `dp[j - nums[i]]`，因此我们应该 **从右到左** 遍历 `dp` 数组。
+    - 请思考是否可以从 `从左到右` 遍历 `dp` 数组？在 `Python` 解决方案的代码注释中，我将回答这个问题。
+5. 检查 `dp` 数组的值
+    - 打印 `dp` 以查看它是否符合预期。
+
+## 复杂度
+
+- 时间复杂度: `O(n * sum/2)`.
+- 空间复杂度: `O(sum/2)`.
 
 ## Python
-### Solution 1: Iterate through knapsack size in reverse order
+
 ```python
 class Solution:
     def canPartition(self, nums: List[int]) -> bool:
@@ -132,42 +144,9 @@ class Solution:
         return dp[-1]
 ```
 
-As in the comment above, `for j in range(len(dp) - 1, 0, -1):`'s traversal order is **from right to left** which really matters.
-
-During the interview, you need to remember it. Is there any way to not worry about the traversal order?
-
-Please think about it.
-
-Below, I will give you a solution without worrying about the traversal order problem.
-
-### Solution 2: Iterate through knapsack size in any order (recommended)
-```python
-class Solution:
-    def canPartition(self, nums: List[int]) -> bool:
-        sum_ = sum(nums)
-
-        if sum_ % 2 == 1:
-            return False
-
-        dp = [False] * ((sum_ // 2) + 1)
-        dp[0] = True
-
-        for num in nums:
-            # Make a copy of the 'dp' that has not been modified to eliminate distractions.
-            dc = dp.copy()
-
-            for j in range(num, len(dp)): # any order is fine
-                dp[j] = dc[j] or dc[j - num] # Use 'dc' instead of 'dp' because 'dp' will be modified.
-
-        return dp[-1]
-```
-
-* Personally, I like this approach because it makes the code logic clearer, does not need to consider the traversal direction,
-and is more applicable (you will encounter many situations in the future where backward iteration does not work).
-
 ## C#
-### Solution 1: Iterate through knapsack size in reverse order
-```c#
+
+```csharp
 public class Solution
 {
     public bool CanPartition(int[] nums)
@@ -193,8 +172,172 @@ public class Solution
 }
 ```
 
-### Solution 2: Iterate through knapsack size in any order (recommended)
-```c#
+## C++
+
+```cpp
+class Solution {
+public:
+    bool canPartition(vector<int>& nums) {
+        auto sum = reduce(nums.begin(), nums.end());
+
+        if (sum % 2 == 1) {
+            return false;
+        }
+
+        auto dp = vector<bool>(sum / 2 + 1);
+        dp[0] = true;
+
+        for (auto num : nums) {
+            for (auto j = dp.size() - 1; j >= num; j--) {
+                dp[j] = dp[j] || dp[j - num];
+            }
+        }
+
+        return dp.back();
+    }
+};
+```
+
+## Java
+
+```java
+class Solution {
+    public boolean canPartition(int[] nums) {
+        var sum = IntStream.of(nums).sum();
+        
+        if (sum % 2 == 1) {
+            return false;
+        }
+
+        var dp = new boolean[sum / 2 + 1];
+        dp[0] = true;
+
+        for (var num : nums) {
+            for (var j = dp.length - 1; j >= num; j--) {
+                dp[j] = dp[j] || dp[j - num];
+            }
+        }
+
+        return dp[dp.length - 1];
+    }
+}
+```
+
+## JavaScript
+
+```javascript
+var canPartition = function (nums) {
+  const sum = _.sum(nums)
+
+  if (sum % 2 == 1) {
+    return false
+  }
+
+  const dp = Array(sum / 2 + 1).fill(false)
+  dp[0] = true
+
+  for (const num of nums) {
+    for (let j = dp.length - 1; j >= num; j--) {
+      dp[j] = dp[j] || dp[j - num]
+    }
+  }
+
+  return dp.at(-1)
+};
+```
+
+## Go
+
+```go
+func canPartition(nums []int) bool {
+    sum := 0
+    for _, num := range nums {
+        sum += num
+    }
+
+    if sum % 2 == 1 {
+        return false
+    }
+
+    dp := make([]bool, sum / 2 + 1)
+    dp[0] = true
+
+    for _, num := range nums {
+        for j := len(dp) - 1; j >= num; j-- {
+            dp[j] = dp[j] || dp[j - num]
+        }
+    }
+
+    return dp[len(dp) - 1]
+}
+```
+
+## Ruby
+
+```ruby
+def can_partition(nums)
+  sum = nums.sum
+
+  return false if sum % 2 == 1
+
+  dp = Array.new(sum / 2 + 1, false)
+  dp[0] = true
+
+  nums.each do |num|
+    (num...dp.size).reverse_each do |j|
+      dp[j] = dp[j] || dp[j - num]
+    end
+  end
+
+  dp[-1]
+end
+```
+
+## Other languages
+
+```java
+// Welcome to create a PR to complete the code of this language, thanks!
+```
+
+## 思路 2
+
+在*方案 1*中，遍历顺序是 **从右到左**，这真的很重要。
+
+面试的时候，你需要记住它。有什么办法可以不用担心遍历顺序？
+
+<details><summary>点击查看答案</summary><p> 只要把原`dp`复制一份，并引用复制品的值，就不用担心原`dp`值被修改了。</p></details>
+
+## 复杂度
+
+- 时间复杂度: `O(n * sum/2)`.
+- 空间复杂度: `O(n * sum/2)`.
+
+## Python
+
+```python
+class Solution:
+    def canPartition(self, nums: List[int]) -> bool:
+        sum_ = sum(nums)
+
+        if sum_ % 2 == 1:
+            return False
+
+        dp = [False] * ((sum_ // 2) + 1)
+        dp[0] = True
+
+        for num in nums:
+            # Make a copy of the 'dp' that has not been modified to eliminate distractions.
+            dc = dp.copy()
+
+            for j in range(num, len(dp)): # any order is fine
+                dp[j] = dc[j] or dc[j - num] # Use 'dc' instead of 'dp' because 'dp' will be modified.
+
+        return dp[-1]
+```
+
+## C#
+
+```csharp
 public class Solution
 {
     public bool CanPartition(int[] nums)
@@ -223,32 +366,7 @@ public class Solution
 ```
 
 ## C++
-### Solution 1: Iterate through knapsack size in reverse order
-```cpp
-class Solution {
-public:
-    bool canPartition(vector<int>& nums) {
-        auto sum = reduce(nums.begin(), nums.end());
 
-        if (sum % 2 == 1) {
-            return false;
-        }
-
-        auto dp = vector<bool>(sum / 2 + 1);
-        dp[0] = true;
-
-        for (auto num : nums) {
-            for (auto j = dp.size() - 1; j >= num; j--) {
-                dp[j] = dp[j] || dp[j - num];
-            }
-        }
-
-        return dp.back();
-    }
-};
-```
-
-### Solution 2: Iterate through knapsack size in any order (recommended)
 ```cpp
 class Solution {
 public:
@@ -276,31 +394,7 @@ public:
 ```
 
 ## Java
-### Solution 1: Iterate through knapsack size in reverse order
-```java
-class Solution {
-    public boolean canPartition(int[] nums) {
-        var sum = IntStream.of(nums).sum();
-        
-        if (sum % 2 == 1) {
-            return false;
-        }
 
-        var dp = new boolean[sum / 2 + 1];
-        dp[0] = true;
-
-        for (var num : nums) {
-            for (var j = dp.length - 1; j >= num; j--) {
-                dp[j] = dp[j] || dp[j - num];
-            }
-        }
-
-        return dp[dp.length - 1];
-    }
-}
-```
-
-### Solution 2: Iterate through knapsack size in any order (recommended)
 ```java
 class Solution {
     public boolean canPartition(int[] nums) {
@@ -327,29 +421,7 @@ class Solution {
 ```
 
 ## JavaScript
-### Solution 1: Iterate through knapsack size in reverse order
-```javascript
-var canPartition = function (nums) {
-  const sum = _.sum(nums)
 
-  if (sum % 2 == 1) {
-    return false
-  }
-
-  const dp = Array(sum / 2 + 1).fill(false)
-  dp[0] = true
-
-  for (const num of nums) {
-    for (let j = dp.length - 1; j >= num; j--) {
-      dp[j] = dp[j] || dp[j - num]
-    }
-  }
-
-  return dp.at(-1)
-};
-```
-
-### Solution 2: Iterate through knapsack size in any order (recommended)
 ```javascript
 var canPartition = function (nums) {
   const sum = _.sum(nums)
@@ -374,32 +446,7 @@ var canPartition = function (nums) {
 ```
 
 ## Go
-### Solution 1: Iterate through knapsack size in reverse order
-```go
-func canPartition(nums []int) bool {
-    sum := 0
-    for _, num := range nums {
-        sum += num
-    }
 
-    if sum % 2 == 1 {
-        return false
-    }
-
-    dp := make([]bool, sum / 2 + 1)
-    dp[0] = true
-
-    for _, num := range nums {
-        for j := len(dp) - 1; j >= num; j-- {
-            dp[j] = dp[j] || dp[j - num]
-        }
-    }
-
-    return dp[len(dp) - 1]
-}
-```
-
-### Solution 2: Iterate through knapsack size in any order (recommended)
 ```go
 func canPartition(nums []int) bool {
     sum := 0
@@ -427,27 +474,7 @@ func canPartition(nums []int) bool {
 ```
 
 ## Ruby
-### Solution 1: Iterate through knapsack size in reverse order
-```ruby
-def can_partition(nums)
-  sum = nums.sum
 
-  return false if sum % 2 == 1
-
-  dp = Array.new(sum / 2 + 1, false)
-  dp[0] = true
-
-  nums.each do |num|
-    (num...dp.size).reverse_each do |j|
-      dp[j] = dp[j] || dp[j - num]
-    end
-  end
-
-  dp[-1]
-end
-```
-
-### Solution 2: Iterate through knapsack size in any order (recommended)
 ```ruby
 def can_partition(nums)
   sum = nums.sum
@@ -469,35 +496,14 @@ def can_partition(nums)
 end
 ```
 
-## C, Kotlin, Swift, Rust or other languages
-```
+## Other languages
+
+```java
 // Welcome to create a PR to complete the code of this language, thanks!
 ```
 
-## 力扣“416. 分割等和子集”问题描述
-力扣链接：[416. 分割等和子集](https://leetcode.cn/problems/partition-equal-subset-sum) ，难度：**中等**。
+Dear LeetCoders! For a better LeetCode problem-solving experience, please visit website [leetcoder.net](https://leetcoder.net): Dare to claim the best practices of LeetCode solutions! Will save you a lot of time!
 
-给你一个 **只包含正整数** 的 **非空** 数组 `nums` 。请你判断是否可以将这个数组分割成两个子集，使得两个子集的元素和相等。
+原文链接：[leetcoder.net - 力扣题解最佳实践 - 力扣人](https://leetcoder.net/zh/leetcode/416-partition-equal-subset-sum).
 
-
-
-### [示例 1]
-**输入**: `nums = [1,5,11,5]`
-
-**输出**: `true`
-
-**解释**: `数组可以分割成 [1, 5, 5] 和 [11] 。`
-
-### [示例 2]
-**输入**: `nums = [1,2,3,5]`
-
-**输出**: `false`
-
-**解释**: `数组不能分割成两个元素和相等的子集。`
-
-# 中文题解
-## 思路
-1. 请用浏览器的翻译功能把英文题解内容翻译为中文。
-
-## 步骤
-1. 请用浏览器的翻译功能把英文题解内容翻译为中文。
+GitHub repo: [fuck-leetcode](https://github.com/fuck-leetcode/fuck-leetcode).

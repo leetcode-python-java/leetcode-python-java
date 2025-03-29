@@ -1,6 +1,8 @@
-Visit original link: [leetcoder.net - LeetCoder: Fucking Good LeetCode Solutions](https://leetcoder.net/en/leetcode/160-intersection-of-two-linked-lists) for a better experience!
+Visit original link: [leetcoder.net - Fuck LeetCode](https://leetcoder.net/en/leetcode/160-intersection-of-two-linked-lists) for a better experience!
 
-# 160. Intersection of Two Linked Lists - LeetCoder: Fucking Good LeetCode Solutions
+GitHub repo: [fuck-leetcode](https://github.com/fuck-leetcode/fuck-leetcode).
+
+# 160. Intersection of Two Linked Lists - Fuck LeetCode
 
 LeetCode link: [160. Intersection of Two Linked Lists](https://leetcode.com/problems/intersection-of-two-linked-lists), difficulty: **Easy**.
 
@@ -495,4 +497,6 @@ func getIntersectionNode(headA, headB *ListNode) *ListNode {
 
 Dear LeetCoders! For a better LeetCode problem-solving experience, please visit website [leetcoder.net](https://leetcoder.net): Dare to claim the best practices of LeetCode solutions! Will save you a lot of time!
 
-Original link: [leetcoder.net - LeetCoder: Fucking Good LeetCode Solutions](https://leetcoder.net/en/leetcode/160-intersection-of-two-linked-lists).
+Original link: [leetcoder.net - Fuck LeetCode](https://leetcoder.net/en/leetcode/160-intersection-of-two-linked-lists).
+
+GitHub repo: [fuck-leetcode](https://github.com/fuck-leetcode/fuck-leetcode).

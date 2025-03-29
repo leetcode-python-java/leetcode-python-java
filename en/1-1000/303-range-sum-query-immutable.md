@@ -1,6 +1,8 @@
-Visit original link: [leetcoder.net - LeetCoder: Fucking Good LeetCode Solutions](https://leetcoder.net/en/leetcode/303-range-sum-query-immutable) for a better experience!
+Visit original link: [leetcoder.net - Fuck LeetCode](https://leetcoder.net/en/leetcode/303-range-sum-query-immutable) for a better experience!
 
-# 303. Range Sum Query - Immutable - LeetCoder: Fucking Good LeetCode Solutions
+GitHub repo: [fuck-leetcode](https://github.com/fuck-leetcode/fuck-leetcode).
+
+# 303. Range Sum Query - Immutable - Fuck LeetCode
 
 LeetCode link: [303. Range Sum Query - Immutable](https://leetcode.com/problems/range-sum-query-immutable), difficulty: **Easy**.
 
@@ -234,4 +236,6 @@ class NumArray:
 
 Dear LeetCoders! For a better LeetCode problem-solving experience, please visit website [leetcoder.net](https://leetcoder.net): Dare to claim the best practices of LeetCode solutions! Will save you a lot of time!
 
-Original link: [leetcoder.net - LeetCoder: Fucking Good LeetCode Solutions](https://leetcoder.net/en/leetcode/303-range-sum-query-immutable).
+Original link: [leetcoder.net - Fuck LeetCode](https://leetcoder.net/en/leetcode/303-range-sum-query-immutable).
+
+GitHub repo: [fuck-leetcode](https://github.com/fuck-leetcode/fuck-leetcode).
