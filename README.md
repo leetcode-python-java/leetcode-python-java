@@ -137,6 +137,6 @@ You can skip the more difficult problems and do them later.
 ## Other Algorithms
 - [433. Minimum Genetic Mutation](en/1-1000/433-minimum-genetic-mutation.md) Python, 3 ways.
 
-# Fuck LeetCode
+## Fuck LeetCode More Problems
 
 More LeetCode problems and solutions will be added soon. Updated every day. 
