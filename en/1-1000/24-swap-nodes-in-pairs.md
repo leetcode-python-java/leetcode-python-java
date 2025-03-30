@@ -1,8 +1,8 @@
-Visit original link: [leetcoder.net - Fuck LeetCode](https://leetcoder.net/en/leetcode/24-swap-nodes-in-pairs) for a better experience!
+# 24. Swap Nodes in Pairs - Fuck LeetCode
+
+Visit original link: [24. Swap Nodes in Pairs - Fuck LeetCode](https://leetcoder.net/en/leetcode/24-swap-nodes-in-pairs) for a better experience!
 
 GitHub repo: [fuck-leetcode](https://github.com/fuck-leetcode/fuck-leetcode).
-
-# 24. Swap Nodes in Pairs - Fuck LeetCode
 
 LeetCode link: [24. Swap Nodes in Pairs](https://leetcode.com/problems/swap-nodes-in-pairs), difficulty: **Medium**.
 
@@ -374,6 +374,6 @@ end
 
 Dear LeetCoders! For a better LeetCode problem-solving experience, please visit website [leetcoder.net](https://leetcoder.net): Dare to claim the best practices of LeetCode solutions! Will save you a lot of time!
 
-Original link: [leetcoder.net - Fuck LeetCode](https://leetcoder.net/en/leetcode/24-swap-nodes-in-pairs).
+Original link: [24. Swap Nodes in Pairs - Fuck LeetCode](https://leetcoder.net/en/leetcode/24-swap-nodes-in-pairs).
 
 GitHub repo: [fuck-leetcode](https://github.com/fuck-leetcode/fuck-leetcode).

@@ -1,135 +1,150 @@
-# 494. Target Sum
-LeetCode link: [494. Target Sum](https://leetcode.com/problems/target-sum/)
+# 494. 目标和 - 力扣题解最佳实践
 
-## LeetCode problem description
-You are given an integer array `nums` and an integer `target`.
+访问 原文链接：[494. 目标和 - 力扣题解最佳实践](https://leetcoder.net/zh/leetcode/494-target-sum) 体验更佳！
 
-You want to build an **expression** out of nums by adding one of the symbols `+` and `-` before each integer in nums and then concatenate all the integers.
+GitHub 仓库: [fuck-leetcode](https://github.com/fuck-leetcode/fuck-leetcode).
 
-* For example, if `nums = [2, 1]`, you can add a `+` before 2 and a `-` before `1` and concatenate them to build the expression `+2-1`.
+力扣链接：[494. 目标和](https://leetcode.cn/problems/target-sum), 难度：**中等**。
 
-Return the number of different **expressions** that you can build, which evaluates to `target`.
-```
-Example 1:
+## 力扣“494. 目标和”问题描述
 
-Input: nums = [1,1,1,1,1], target = 3
-Output: 5
+给你一个非负整数数组 `nums` 和一个整数 `target` 。
 
-Explanation: There are 5 ways to assign symbols to make the sum of nums be target 3.
--1 + 1 + 1 + 1 + 1 = 3
-+1 - 1 + 1 + 1 + 1 = 3
-+1 + 1 - 1 + 1 + 1 = 3
-+1 + 1 + 1 - 1 + 1 = 3
-+1 + 1 + 1 + 1 - 1 = 3
---------------------------------------------------------------------------------------------------
+向数组中的每个整数前添加 `'+'` 或 `'-'` ，然后串联起所有整数，可以构造一个 **表达式** ：
 
-Example 2:
+- 例如，`nums = [2, 1]` ，可以在 `2` 之前添加 `'+'` ，在 `1` 之前添加 `'-'` ，然后串联起来得到表达式 `"+2-1"` 。
 
-Input: nums = [1], target = 1
-Output: 1
---------------------------------------------------------------------------------------------------
+返回可以通过上述方法构造的、运算结果等于 `target` 的不同 **表达式** 的数目。
 
-Constraints:
+### [示例 1]
 
-1 <= nums.length <= 20
-0 <= nums[i] <= 1000
-0 <= sum(nums[i]) <= 1000
--1000 <= target <= 1000
-```
+**输入**: `nums = [1,1,1,1,1], target = 3`
 
-* This problem is quite difficult if you have not solved similar problems before. So before you start working on this question,
-it is recommended that you first work on another relatively simple question [416. Partition Equal Subset Sum](416-partition-equal-subset-sum.md) that is similar to this one.
+**输出**: `5`
 
-## Thoughts
-* When we see a set of numbers being used once to obtain another number through some calculation (just like this question), we can consider this to be a `0/1 Knapsack Problem`.
-* `0/1 Knapsack Problem` belongs to `Dynamic Programming`. `Dynamic programming` means that the answer to the current problem can be derived from the previous similar problem. Therefore, the `dp` array is used to record all the answers.
-* The core logic of the `0/1 Knapsack Problem` uses a two-dimensional `dp` array or a one-dimensional `dp` **rolling array**, first **traverses the items**, then **traverses the knapsack size** (`in reverse order` or use `dp.clone`), then **reference the previous value corresponding to the size of current 'item'**.
-* There are many things to remember when using a two-dimensional `dp` array, and it is difficult to write it right at once during an interview, so I won't describe it here.
+**解释**: 
 
-### Common steps in '0/1 Knapsack Problem'
-These five steps are a pattern for solving `Dynamic Programming` problems.
+<p>-1 + 1 + 1 + 1 + 1 = 3<br>
++1 - 1 + 1 + 1 + 1 = 3<br>
++1 + 1 - 1 + 1 + 1 = 3<br>
++1 + 1 + 1 - 1 + 1 = 3<br>
++1 + 1 + 1 + 1 - 1 = 3</p>
 
-1. Determine the **meaning** of the `dp[j]`
-    * We can use a one-dimensional `dp` **rolling array**. Rolling an array means that the values of the array are overwritten each time through the iteration. 
-    * At first, try to use the problem's `return` value as the value of `dp[j]` to determine the meaning of `dp[j]`. If it doesn't work, try another way.
-    * So, `dp[j]` represents that by using the **first** `i` nums, the **number** of different **expressions** that you can build, which evaluates to `j`.
-    * `dp[j]` is an **integer**.
-2. Determine the `dp` array's initial value
-    * Use an example. We didn't use the `Example 1: Input: nums = [1,1,1,1,1], target = 3` because it is too special and is not a good example for deriving a formula.
-    * I made up an example: `nums = [1,2,1,2], target = 4`. The example must be simple, otherwise it would take too long to complete the grid.
-    * First, determine the `size` of the knapsack.
-    * The `target` value may be very small, such as `0`, so it alone cannot determine the `size` of the knapsack.
-    * The sum of `nums` should also be taken into account to fully cover all knapsack sizes.
-    * `target` may be negative, but considering that `+` and `-` are added to `num` arbitrarily, the `dp[j]` should be symmetrical around `0`. So the result of negative `target` `dp[target]` is equal to `dp[abs(target)]`.
-    * So the `size` of the knapsack can be `max(sum(nums), target) + 1`.
-    * The `items` are the `nums`.
-    ```
-    So after initialization, the 'dp' array would be:
-    #    0  1  2  3  4  5  6
-    #    1  0  0  0  0  0  0 # dp
-    # 1  
-    # 2  
-    # 1  
-    # 2  
-    ```
-    * You can see the `dp` array size is **one** greater than the knapsack size. In this way, the knapsack size and index value are equal, which helps to understand.
-    * `dp[0]` is set to `1`, indicating that an empty knapsack can be achieved by not using any `nums`. In addition, it is used as the starting value, and the subsequent `dp[j]` will depend on it. If it is `0`, all values of `dp[j]` will be `0`.
-    * `dp[j] = 0 (j != 0)`, indicating that it is impossible to get `j` with no `nums`.
-3. Determine the `dp` array's recurrence formula
-    * Try to complete the grid. In the process, you will get inspiration to derive the formula.
-   ```
-   1. Use the first num '1'.
-   #    0  1  2  3  4  5  6
-   #    1  0  0  0  0  0  0
-   # 1  0  1  0  0  0  0  0 # dp
-   # 2
-   # 1
-   # 2
-   ```
-   ```
-   2. Use the second num '2'.
-   #    0  1  2  3  4  5  6
-   #    1  0  0  0  0  0  0
-   # 1  0  1  0  0  0  0  0
-   # 2  0  1  0  1  0  0  0
-   # 1  
-   # 2  
-   ```
-   ```
-   3. Use the third num '1'.
-   #    0  1  2  3  4  5  6
-   #    1  0  0  0  0  0  0
-   # 1  0  1  0  0  0  0  0
-   # 2  0  1  0  1  0  0  0
-   # 1  2  0  2  0  1  0  0
-   # 2  
-   ```
-   ```
-   4. Use the fourth num '2'.
-   #    0  1  2  3  4  5  6
-   #    1  0  0  0  0  0  0
-   # 1  0  1  0  0  0  0  0
-   # 2  0  1  0  1  0  0  0
-   # 1  2  0  2  0  1  0  0
-   # 2  4  0  3  0  2  0  1 # dp
-   ```
-    * After analyzing the sample `dp` grid, we can derive the `Recurrence Formula`:
-   ```java
-   dp[j] = dp[abs(j - nums[i])] + dp[j + nums[i]]
-   ```
-    * If `j < nums[i]`, `dp[j - nums[i]]` will raise `array index out of range` exception. So we use the `dp[abs(j - num)]` which is equal to it, because the `dp[j]` are symmetrical around `0`, such as `dp[-j]` equals to `dp[j]` (`-j` is an imaginary index).
-4. Determine the `dp` array's traversal order
-    * `dp[j]` depends on `dp[abs(j - nums[i])]` and `dp[j + nums[i]]`, so we can traverse the `dp` array in any order, but must reference the clone of `dp` to prevent the referenced value from being modified during the iteration.
-    * For `j + nums[i] >= dp.length`, `dp[j + nums[i]]` must be `0` because their values are too large and exceed the maximum sum of `nums`.
-5. Check the `dp` array's value
-    * Print the `dp` to see if it is as expected.
 
-### Complexity
-* Time: `O(n * sum)`.
-* Space: `O(n * sum)`.
+### [示例 2]
+
+**输入**: `nums = [1], target = 1`
+
+**输出**: `1`
+
+### [约束]
+
+- `1 <= nums.length <= 20`
+- `0 <= nums[i] <= 1000`
+- `0 <= sum(nums[i]) <= 1000`
+- `-1000 <= target <= 1000`
+
+## 思路
+
+如果你以前没有解决过类似的问题，那么这个问题相当难。所以在开始做这道题之前，建议你先做另一道与这道题类似的相对简单的题目[416. 分割相等子集和](416-partition-equal-subset-sum.md)。
+
+- 当我们看到**一组数字**被使用一次通过某种计算得到**另一个数字**（就像这道题一样）时，我们可以认为这是一个`0/1背包问题`。
+- `0/1背包问题`属于`动态规划`。`动态规划`意味着当前问题的答案可以从上一个类似的问题中推导出来。因此，`dp`数组用于记录所有答案。
+- `0/1背包问题`的核心逻辑是使用二维`dp`数组或者一维`dp`**滚动数组**，先**遍历物品**，再**遍历背包大小**（[逆序](416-partition-equal-subset-sum.md) 或者 使用`dp.clone`），然后**引用当前'物品'大小对应的前一个值**。
+- 使用二维`dp`数组需要记住的东西很多，面试的时候很难一次性写对，这里就不描述了。
+
+## 步骤
+
+### '0/1背包问题' 的常用步骤
+
+这五个步骤是解决`动态规划`问题的模式。
+
+1. 确定`dp[j]`的**含义**
+    - 我们可以使用一维`dp`**滚动数组**。滚动数组意味着每次迭代时都会覆盖数组的值。
+    - 首先，尝试使用问题的`return`值作为`dp[j]`的值来确定`dp[j]`的含义。如果不行，请尝试另一种方法。
+    - 所以，`dp[j]`表示通过使用**前**个`i`个数字，您可以构建的不同**表达式**的数量，其计算结果为`j`。
+    - `dp[j]`是一个**整数**。
+2. 确定`dp`数组的初始值
+    - 使用一个例子。我们没有使用`示例1：输入：nums = [1,1,1,1,1], target = 3`，因为它太特殊，不是推导公式的好例子。
+    - 我编了一个例子：`nums = [1,2,1,2], target = 4`。例子一定要简单，否则完成网格会花太长时间。
+    - 首先，确定背包的`size`。
+    - `target`值可能很小，比如`0`，所以单独它不能确定背包的`size`。
+    - 还应该考虑`nums`的总和，以完全覆盖所有背包尺寸。
+    - `target`可以是负数，但考虑到`+`和`-`是任意添加到`num`的，`dp[j]`应该围绕`0`对称。所以负数 `target` 的结果 `dp[target]` 等于 `dp[abs(target)]`。
+    - 所以背包的 `size` 可以是 `max(sum(nums), target) + 1`。
+    - `物品` 就是 `nums`。
+
+        ```ruby
+        所以初始化后，`dp` 数组将是：
+        # 0 1 2 3 4 5 6
+        # 1 0 0 0 0 0 0 # dp
+        # 1
+        # 2
+        # 1
+        # 2
+        ```
+    - 可以看到 `dp` 数组大小比背包大小大**一**。这样，背包大小和索引值就相等了，有助于理解。
+    - `dp[0]` 设置为 `1`，表示不使用任何 `nums` 就可以实现空背包。另外，它作为起始值，后面的`dp[j]`都会依赖它，如果为`0`，则`dp[j]`的所有值都为`0`。
+    - `dp[j] = 0 (j != 0)`，说明没有`nums`是不可能得到`j`的。
+3. 确定`dp`数组的递归公式
+    - 尝试完成网格，在这个过程中，你会得到推导公式的灵感。
+
+        ```ruby
+        1. 使用第一个数字'1'。
+        # 0 1 2 3 4 5 6
+        # 1 0 0 0 0 0 0
+        # 1 0 1 0 0 0 0 0 # dp
+        # 2
+        # 1
+        # 2
+        ```
+        ```ruby
+        2. 使用第二个数字'2'。
+        # 0 1 2 3 4 5 6
+        # 1 0 0 0 0 0 0
+        # 1 0 1 0 0 0 0 0
+        # 2 0 1 0 1 0 0 0
+        # 1
+        # 2
+        ```
+        ```ruby
+        3. 使用第三个数字 '1'。
+        # 0 1 2 3 4 5 6
+        # 1 0 0 0 0 0 0
+        # 1 0 1 0 0 0 0 0
+        # 2 0 1 0 1 0 0 0
+        # 1 2 0 2 0 1 0 0
+        # 2
+        ```
+        ```ruby
+        4. 使用第四个数字 '2'。
+        # 0 1 2 3 4 5 6
+        # 1 0 0 0 0 0 0
+        # 1 0 1 0 0 0 0 0
+        # 2 0 1 0 1 0 0 0
+        # 1 2 0 2 0 1 0 0
+        # 2 4 0 3 0 2 0 1 # dp
+        ```
+    - 分析示例 `dp` 网格后，我们可以得出 `递归公式`：
+
+        ```java
+        dp[j] = dp[abs(j - nums[i])] + dp[j + nums[i]]
+        ```
+    - 如果 `j < nums[i]`，`dp[j - nums[i]]` 将引发 `数组索引超出范围` 异常。因此我们使用等于它的 `dp[abs(j - num)]`，因为 `dp[j]` 是围绕 `0` 对称的，比如 `dp[-j]` 等于 `dp[j]`（`-j` 是虚数索引）。
+4. 确定 `dp` 数组的遍历顺序
+    - `dp[j]` 依赖于 `dp[abs(j - nums[i])]` 和 `dp[j + nums[i]]`，因此我们可以按任意顺序遍历 `dp` 数组，但必须引用 `dp` 的克隆，以防止在迭代过程中修改引用的值。
+    - 对于 `j + nums[i] >= dp.length`，`dp[j + nums[i]]` 必须为 `0`，因为它们的值太大，超过了 `nums` 的最大和。
+5. 检查 `dp` 数组的值
+    - 打印 `dp` 以查看其是否符合预期。
+
+## 复杂度
+
+- 时间复杂度: `O(n * sum)`.
+- 空间复杂度: `O(n * sum)`.
 
 ## C#
-```c#
+
+```csharp
 public class Solution
 {
     public int FindTargetSumWays(int[] nums, int target)
@@ -155,6 +170,7 @@ public class Solution
 ```
 
 ## Python
+
 ```python
 class Solution:
     def findTargetSumWays(self, nums: List[int], target: int) -> int:
@@ -173,6 +189,7 @@ class Solution:
 ```
 
 ## C++
+
 ```cpp
 class Solution {
 public:
@@ -197,6 +214,7 @@ public:
 ```
 
 ## Java
+
 ```java
 class Solution {
     public int findTargetSumWays(int[] nums, int target) {
@@ -220,6 +238,7 @@ class Solution {
 ```
 
 ## JavaScript
+
 ```javascript
 var findTargetSumWays = function (nums, target) {
    target = Math.abs(target)
@@ -240,6 +259,7 @@ var findTargetSumWays = function (nums, target) {
 ```
 
 ## Go
+
 ```go
 func findTargetSumWays(nums []int, target int) int {
     sum := 0
@@ -268,6 +288,7 @@ func findTargetSumWays(nums []int, target int) int {
 ```
 
 ## Ruby
+
 ```ruby
 def find_target_sum_ways(nums, target)
   target = target.abs
@@ -287,12 +308,15 @@ def find_target_sum_ways(nums, target)
 end
 ```
 
-## Rust
-```rust
+## Other languages
+
+```java
 // Welcome to create a PR to complete the code of this language, thanks!
 ```
 
-## Other languages
-```
-// Welcome to create a PR to complete the code of this language, thanks!
-```
+亲爱的力扣人，为了您更好的刷题体验，请访问 [leetcoder.net](https://leetcoder.net)。
+本站敢称力扣题解最佳实践，终将省你大量刷题时间！
+
+原文链接：[494. 目标和 - 力扣题解最佳实践](https://leetcoder.net/zh/leetcode/494-target-sum).
+
+GitHub 仓库: [fuck-leetcode](https://github.com/fuck-leetcode/fuck-leetcode).

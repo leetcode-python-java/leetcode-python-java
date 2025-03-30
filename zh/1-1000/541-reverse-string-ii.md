@@ -1,8 +1,8 @@
-Visit 原文链接：[leetcoder.net - 力扣题解最佳实践 - 力扣人](https://leetcoder.net/zh/leetcode/541-reverse-string-ii) for a better experience!
+# 541. 反转字符串 II - 力扣题解最佳实践
 
-GitHub repo: [fuck-leetcode](https://github.com/fuck-leetcode/fuck-leetcode).
+访问 原文链接：[541. 反转字符串 II - 力扣题解最佳实践](https://leetcoder.net/zh/leetcode/541-reverse-string-ii) 体验更佳！
 
-# 541. 反转字符串 II - 力扣题解最佳实践 - 力扣人
+GitHub 仓库: [fuck-leetcode](https://github.com/fuck-leetcode/fuck-leetcode).
 
 力扣链接：[541. 反转字符串 II](https://leetcode.cn/problems/reverse-string-ii), 难度：**简单**。
 
@@ -278,8 +278,9 @@ func reverseStr(s string, k int) string {
 // Welcome to create a PR to complete the code of this language, thanks!
 ```
 
-Dear LeetCoders! For a better LeetCode problem-solving experience, please visit website [leetcoder.net](https://leetcoder.net): Dare to claim the best practices of LeetCode solutions! Will save you a lot of time!
+亲爱的力扣人，为了您更好的刷题体验，请访问 [leetcoder.net](https://leetcoder.net)。
+本站敢称力扣题解最佳实践，终将省你大量刷题时间！
 
-原文链接：[leetcoder.net - 力扣题解最佳实践 - 力扣人](https://leetcoder.net/zh/leetcode/541-reverse-string-ii).
+原文链接：[541. 反转字符串 II - 力扣题解最佳实践](https://leetcoder.net/zh/leetcode/541-reverse-string-ii).
 
-GitHub repo: [fuck-leetcode](https://github.com/fuck-leetcode/fuck-leetcode).
+GitHub 仓库: [fuck-leetcode](https://github.com/fuck-leetcode/fuck-leetcode).

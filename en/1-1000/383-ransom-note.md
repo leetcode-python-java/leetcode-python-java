@@ -1,8 +1,8 @@
-Visit original link: [leetcoder.net - Fuck LeetCode](https://leetcoder.net/en/leetcode/383-ransom-note) for a better experience!
+# 383. Ransom Note - Fuck LeetCode
+
+Visit original link: [383. Ransom Note - Fuck LeetCode](https://leetcoder.net/en/leetcode/383-ransom-note) for a better experience!
 
 GitHub repo: [fuck-leetcode](https://github.com/fuck-leetcode/fuck-leetcode).
-
-# 383. Ransom Note - Fuck LeetCode
 
 LeetCode link: [383. Ransom Note](https://leetcode.com/problems/ransom-note), difficulty: **Easy**.
 
@@ -248,6 +248,6 @@ public:
 
 Dear LeetCoders! For a better LeetCode problem-solving experience, please visit website [leetcoder.net](https://leetcoder.net): Dare to claim the best practices of LeetCode solutions! Will save you a lot of time!
 
-Original link: [leetcoder.net - Fuck LeetCode](https://leetcoder.net/en/leetcode/383-ransom-note).
+Original link: [383. Ransom Note - Fuck LeetCode](https://leetcoder.net/en/leetcode/383-ransom-note).
 
 GitHub repo: [fuck-leetcode](https://github.com/fuck-leetcode/fuck-leetcode).

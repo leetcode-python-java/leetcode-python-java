@@ -1,8 +1,8 @@
-Visit 原文链接：[leetcoder.net - 力扣题解最佳实践 - 力扣人](https://leetcoder.net/zh/leetcode/3494-find-the-minimum-amount-of-time-to-brew-potions) for a better experience!
+# 3494. 酿造药水需要的最少总时间 - 力扣题解最佳实践
 
-GitHub repo: [fuck-leetcode](https://github.com/fuck-leetcode/fuck-leetcode).
+访问 原文链接：[3494. 酿造药水需要的最少总时间 - 力扣题解最佳实践](https://leetcoder.net/zh/leetcode/3494-find-the-minimum-amount-of-time-to-brew-potions) 体验更佳！
 
-# 3494. 酿造药水需要的最少总时间 - 力扣题解最佳实践 - 力扣人
+GitHub 仓库: [fuck-leetcode](https://github.com/fuck-leetcode/fuck-leetcode).
 
 力扣链接：[3494. 酿造药水需要的最少总时间](https://leetcode.cn/problems/find-the-minimum-amount-of-time-to-brew-potions), 难度：**中等**。
 
@@ -135,8 +135,8 @@ GitHub repo: [fuck-leetcode](https://github.com/fuck-leetcode/fuck-leetcode).
 - “动态规划”分为五步。请严格按这五步操作。
     1. 确定每一个值代表什么含义。
     2. 初始化数组值。
-    3. 填入一些数据。
-    4. 根据填入的数据，推导出“递推公式”。
+    3. 填入一些数据。根据填入的数据，推导出“递推公式”。
+    4. 确定遍历顺序。可能是从前向后，也可能是从后向前，还可能是都有。
     5. 写出程序，并打印数组，看是否合乎预期。不合乎预期就继续调整程序。
 
 ## 步骤
@@ -155,10 +155,10 @@ GitHub repo: [fuck-leetcode](https://github.com/fuck-leetcode/fuck-leetcode).
 
 - 根据以上的三个条件，请写出代码，并打印数组，看是否合乎预期。
 - 结果你发现某些数值比预期值小了。这时，就要根据那些“异常”的数值，思考是否存在逻辑漏洞了。漏洞在哪？
-    mark-detail逻辑漏洞就是：一些巫师依然过早地开始工作，导致药水在等人。mark-detail
+    mark-detail 逻辑漏洞就是：一些巫师依然过早地开始工作，导致药水在等人。mark-detail
 
 - 如何修复逻辑漏洞？
-    mark-detail**从后往前**再处理一遍，因为最后一个巫师此时已经不存在过早开始工作的问题。mark-detail
+    mark-detail**从后往前**再处理一遍，因为最后一个巫师此时已经不存在过早开始工作的问题。由此可见遍历顺序的重要性。可能是从前向后，也可能是从后向前，还可能是都有。mark-detail
 
 ## 复杂度
 
@@ -414,8 +414,9 @@ func minTime(skill []int, mana []int) int64 {
 // Welcome to create a PR to complete the code of this language, thanks!
 ```
 
-Dear LeetCoders! For a better LeetCode problem-solving experience, please visit website [leetcoder.net](https://leetcoder.net): Dare to claim the best practices of LeetCode solutions! Will save you a lot of time!
+亲爱的力扣人，为了您更好的刷题体验，请访问 [leetcoder.net](https://leetcoder.net)。
+本站敢称力扣题解最佳实践，终将省你大量刷题时间！
 
-原文链接：[leetcoder.net - 力扣题解最佳实践 - 力扣人](https://leetcoder.net/zh/leetcode/3494-find-the-minimum-amount-of-time-to-brew-potions).
+原文链接：[3494. 酿造药水需要的最少总时间 - 力扣题解最佳实践](https://leetcoder.net/zh/leetcode/3494-find-the-minimum-amount-of-time-to-brew-potions).
 
-GitHub repo: [fuck-leetcode](https://github.com/fuck-leetcode/fuck-leetcode).
+GitHub 仓库: [fuck-leetcode](https://github.com/fuck-leetcode/fuck-leetcode).

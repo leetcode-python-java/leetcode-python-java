@@ -1,8 +1,8 @@
-Visit 原文链接：[leetcoder.net - 力扣题解最佳实践 - 力扣人](https://leetcoder.net/zh/leetcode/203-remove-linked-list-elements) for a better experience!
+# 203. 移除链表元素 - 力扣题解最佳实践
 
-GitHub repo: [fuck-leetcode](https://github.com/fuck-leetcode/fuck-leetcode).
+访问 原文链接：[203. 移除链表元素 - 力扣题解最佳实践](https://leetcoder.net/zh/leetcode/203-remove-linked-list-elements) 体验更佳！
 
-# 203. 移除链表元素 - 力扣题解最佳实践 - 力扣人
+GitHub 仓库: [fuck-leetcode](https://github.com/fuck-leetcode/fuck-leetcode).
 
 力扣链接：[203. 移除链表元素](https://leetcode.cn/problems/remove-linked-list-elements), 难度：**简单**。
 
@@ -266,8 +266,9 @@ end
 // Welcome to create a PR to complete the code of this language, thanks!
 ```
 
-Dear LeetCoders! For a better LeetCode problem-solving experience, please visit website [leetcoder.net](https://leetcoder.net): Dare to claim the best practices of LeetCode solutions! Will save you a lot of time!
+亲爱的力扣人，为了您更好的刷题体验，请访问 [leetcoder.net](https://leetcoder.net)。
+本站敢称力扣题解最佳实践，终将省你大量刷题时间！
 
-原文链接：[leetcoder.net - 力扣题解最佳实践 - 力扣人](https://leetcoder.net/zh/leetcode/203-remove-linked-list-elements).
+原文链接：[203. 移除链表元素 - 力扣题解最佳实践](https://leetcoder.net/zh/leetcode/203-remove-linked-list-elements).
 
-GitHub repo: [fuck-leetcode](https://github.com/fuck-leetcode/fuck-leetcode).
+GitHub 仓库: [fuck-leetcode](https://github.com/fuck-leetcode/fuck-leetcode).

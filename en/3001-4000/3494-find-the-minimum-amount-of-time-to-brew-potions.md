@@ -1,8 +1,8 @@
-Visit original link: [leetcoder.net - Fuck LeetCode](https://leetcoder.net/en/leetcode/3494-find-the-minimum-amount-of-time-to-brew-potions) for a better experience!
+# 3494. Find the Minimum Amount of Time to Brew Potions - Fuck LeetCode
+
+Visit original link: [3494. Find the Minimum Amount of Time to Brew Potions - Fuck LeetCode](https://leetcoder.net/en/leetcode/3494-find-the-minimum-amount-of-time-to-brew-potions) for a better experience!
 
 GitHub repo: [fuck-leetcode](https://github.com/fuck-leetcode/fuck-leetcode).
-
-# 3494. Find the Minimum Amount of Time to Brew Potions - Fuck LeetCode
 
 LeetCode link: [3494. Find the Minimum Amount of Time to Brew Potions](https://leetcode.com/problems/find-the-minimum-amount-of-time-to-brew-potions), difficulty: **Medium**.
 
@@ -135,8 +135,8 @@ Return the **minimum** amount of time required for the potions to be brewed prop
 - "Dynamic programming" is divided into five steps. Please follow these five steps strictly.
     1. Determine what each value represents.
     2. Initialize the array value.
-    3. Fill in some data.
-    4. Based on the filled data, derive the "recursive formula".
+    3. Fill in some data. Based on the filled data, derive the "recursive formula".
+    4. Determine the traversal order. It may be from front to back, from back to front, or both.
     5. Write out the program and print the array to see if it is as expected. If not, continue to adjust the program.
 
 ## Steps
@@ -158,7 +158,7 @@ Return the **minimum** amount of time required for the potions to be brewed prop
     mark-detail The logical loophole is: some wizards still start working too early, causing the potion to wait for people. mark-detail
 
 - How to fix the logic loophole?
-    mark-detail **Process again from the back to the front**, because the last wizard no longer has the problem of starting work too early. mark-detail
+    mark-detail **Process again from the back to the front**, because the last wizard no longer has the problem of starting work too early. This shows the importance of traversal order. It may be from front to back, or from back to front, or both. mark-detail
 
 ## Complexity
 
@@ -416,6 +416,6 @@ func minTime(skill []int, mana []int) int64 {
 
 Dear LeetCoders! For a better LeetCode problem-solving experience, please visit website [leetcoder.net](https://leetcoder.net): Dare to claim the best practices of LeetCode solutions! Will save you a lot of time!
 
-Original link: [leetcoder.net - Fuck LeetCode](https://leetcoder.net/en/leetcode/3494-find-the-minimum-amount-of-time-to-brew-potions).
+Original link: [3494. Find the Minimum Amount of Time to Brew Potions - Fuck LeetCode](https://leetcoder.net/en/leetcode/3494-find-the-minimum-amount-of-time-to-brew-potions).
 
 GitHub repo: [fuck-leetcode](https://github.com/fuck-leetcode/fuck-leetcode).

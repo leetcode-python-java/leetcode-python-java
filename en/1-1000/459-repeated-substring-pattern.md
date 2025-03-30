@@ -1,8 +1,8 @@
-Visit original link: [leetcoder.net - Fuck LeetCode](https://leetcoder.net/en/leetcode/459-repeated-substring-pattern) for a better experience!
+# 459. Repeated Substring Pattern - Fuck LeetCode
+
+Visit original link: [459. Repeated Substring Pattern - Fuck LeetCode](https://leetcoder.net/en/leetcode/459-repeated-substring-pattern) for a better experience!
 
 GitHub repo: [fuck-leetcode](https://github.com/fuck-leetcode/fuck-leetcode).
-
-# 459. Repeated Substring Pattern - Fuck LeetCode
 
 LeetCode link: [459. Repeated Substring Pattern](https://leetcode.com/problems/repeated-substring-pattern), difficulty: **Easy**.
 
@@ -228,6 +228,6 @@ end
 
 Dear LeetCoders! For a better LeetCode problem-solving experience, please visit website [leetcoder.net](https://leetcoder.net): Dare to claim the best practices of LeetCode solutions! Will save you a lot of time!
 
-Original link: [leetcoder.net - Fuck LeetCode](https://leetcoder.net/en/leetcode/459-repeated-substring-pattern).
+Original link: [459. Repeated Substring Pattern - Fuck LeetCode](https://leetcoder.net/en/leetcode/459-repeated-substring-pattern).
 
 GitHub repo: [fuck-leetcode](https://github.com/fuck-leetcode/fuck-leetcode).

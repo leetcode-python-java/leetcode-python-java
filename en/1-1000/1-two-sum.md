@@ -1,8 +1,8 @@
-Visit original link: [leetcoder.net - Fuck LeetCode](https://leetcoder.net/en/leetcode/1-two-sum) for a better experience!
+# 1. Two Sum - Fuck LeetCode
+
+Visit original link: [1. Two Sum - Fuck LeetCode](https://leetcoder.net/en/leetcode/1-two-sum) for a better experience!
 
 GitHub repo: [fuck-leetcode](https://github.com/fuck-leetcode/fuck-leetcode).
-
-# 1. Two Sum - Fuck LeetCode
 
 LeetCode link: [1. Two Sum](https://leetcode.com/problems/two-sum), difficulty: **Easy**.
 
@@ -327,6 +327,6 @@ class Solution:
 
 Dear LeetCoders! For a better LeetCode problem-solving experience, please visit website [leetcoder.net](https://leetcoder.net): Dare to claim the best practices of LeetCode solutions! Will save you a lot of time!
 
-Original link: [leetcoder.net - Fuck LeetCode](https://leetcoder.net/en/leetcode/1-two-sum).
+Original link: [1. Two Sum - Fuck LeetCode](https://leetcoder.net/en/leetcode/1-two-sum).
 
 GitHub repo: [fuck-leetcode](https://github.com/fuck-leetcode/fuck-leetcode).

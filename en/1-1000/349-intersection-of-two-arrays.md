@@ -1,8 +1,8 @@
-Visit original link: [leetcoder.net - Fuck LeetCode](https://leetcoder.net/en/leetcode/349-intersection-of-two-arrays) for a better experience!
+# 349. Intersection of Two Arrays - Fuck LeetCode
+
+Visit original link: [349. Intersection of Two Arrays - Fuck LeetCode](https://leetcoder.net/en/leetcode/349-intersection-of-two-arrays) for a better experience!
 
 GitHub repo: [fuck-leetcode](https://github.com/fuck-leetcode/fuck-leetcode).
-
-# 349. Intersection of Two Arrays - Fuck LeetCode
 
 LeetCode link: [349. Intersection of Two Arrays](https://leetcode.com/problems/intersection-of-two-arrays), difficulty: **Easy**.
 
@@ -191,6 +191,6 @@ end
 
 Dear LeetCoders! For a better LeetCode problem-solving experience, please visit website [leetcoder.net](https://leetcoder.net): Dare to claim the best practices of LeetCode solutions! Will save you a lot of time!
 
-Original link: [leetcoder.net - Fuck LeetCode](https://leetcoder.net/en/leetcode/349-intersection-of-two-arrays).
+Original link: [349. Intersection of Two Arrays - Fuck LeetCode](https://leetcoder.net/en/leetcode/349-intersection-of-two-arrays).
 
 GitHub repo: [fuck-leetcode](https://github.com/fuck-leetcode/fuck-leetcode).

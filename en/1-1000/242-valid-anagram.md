@@ -1,8 +1,8 @@
-Visit original link: [leetcoder.net - Fuck LeetCode](https://leetcoder.net/en/leetcode/242-valid-anagram) for a better experience!
+# 242. Valid Anagram - Fuck LeetCode
+
+Visit original link: [242. Valid Anagram - Fuck LeetCode](https://leetcoder.net/en/leetcode/242-valid-anagram) for a better experience!
 
 GitHub repo: [fuck-leetcode](https://github.com/fuck-leetcode/fuck-leetcode).
-
-# 242. Valid Anagram - Fuck LeetCode
 
 LeetCode link: [242. Valid Anagram](https://leetcode.com/problems/valid-anagram), difficulty: **Easy**.
 
@@ -219,6 +219,6 @@ public:
 
 Dear LeetCoders! For a better LeetCode problem-solving experience, please visit website [leetcoder.net](https://leetcoder.net): Dare to claim the best practices of LeetCode solutions! Will save you a lot of time!
 
-Original link: [leetcoder.net - Fuck LeetCode](https://leetcoder.net/en/leetcode/242-valid-anagram).
+Original link: [242. Valid Anagram - Fuck LeetCode](https://leetcoder.net/en/leetcode/242-valid-anagram).
 
 GitHub repo: [fuck-leetcode](https://github.com/fuck-leetcode/fuck-leetcode).

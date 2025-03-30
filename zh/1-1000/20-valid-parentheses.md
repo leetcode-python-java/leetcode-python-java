@@ -1,8 +1,8 @@
-Visit 原文链接：[leetcoder.net - 力扣题解最佳实践 - 力扣人](https://leetcoder.net/zh/leetcode/20-valid-parentheses) for a better experience!
+# 20. 有效的括号 - 力扣题解最佳实践
 
-GitHub repo: [fuck-leetcode](https://github.com/fuck-leetcode/fuck-leetcode).
+访问 原文链接：[20. 有效的括号 - 力扣题解最佳实践](https://leetcoder.net/zh/leetcode/20-valid-parentheses) 体验更佳！
 
-# 20. 有效的括号 - 力扣题解最佳实践 - 力扣人
+GitHub 仓库: [fuck-leetcode](https://github.com/fuck-leetcode/fuck-leetcode).
 
 力扣链接：[20. 有效的括号](https://leetcode.cn/problems/valid-parentheses), 难度：**简单**。
 
@@ -350,8 +350,9 @@ end
 // Welcome to create a PR to complete the code of this language, thanks!
 ```
 
-Dear LeetCoders! For a better LeetCode problem-solving experience, please visit website [leetcoder.net](https://leetcoder.net): Dare to claim the best practices of LeetCode solutions! Will save you a lot of time!
+亲爱的力扣人，为了您更好的刷题体验，请访问 [leetcoder.net](https://leetcoder.net)。
+本站敢称力扣题解最佳实践，终将省你大量刷题时间！
 
-原文链接：[leetcoder.net - 力扣题解最佳实践 - 力扣人](https://leetcoder.net/zh/leetcode/20-valid-parentheses).
+原文链接：[20. 有效的括号 - 力扣题解最佳实践](https://leetcoder.net/zh/leetcode/20-valid-parentheses).
 
-GitHub repo: [fuck-leetcode](https://github.com/fuck-leetcode/fuck-leetcode).
+GitHub 仓库: [fuck-leetcode](https://github.com/fuck-leetcode/fuck-leetcode).

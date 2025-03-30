@@ -1,8 +1,8 @@
-Visit original link: [leetcoder.net - Fuck LeetCode](https://leetcoder.net/en/leetcode/203-remove-linked-list-elements) for a better experience!
+# 203. Remove Linked List Elements - Fuck LeetCode
+
+Visit original link: [203. Remove Linked List Elements - Fuck LeetCode](https://leetcoder.net/en/leetcode/203-remove-linked-list-elements) for a better experience!
 
 GitHub repo: [fuck-leetcode](https://github.com/fuck-leetcode/fuck-leetcode).
-
-# 203. Remove Linked List Elements - Fuck LeetCode
 
 LeetCode link: [203. Remove Linked List Elements](https://leetcode.com/problems/remove-linked-list-elements), difficulty: **Easy**.
 
@@ -270,6 +270,6 @@ end
 
 Dear LeetCoders! For a better LeetCode problem-solving experience, please visit website [leetcoder.net](https://leetcoder.net): Dare to claim the best practices of LeetCode solutions! Will save you a lot of time!
 
-Original link: [leetcoder.net - Fuck LeetCode](https://leetcoder.net/en/leetcode/203-remove-linked-list-elements).
+Original link: [203. Remove Linked List Elements - Fuck LeetCode](https://leetcoder.net/en/leetcode/203-remove-linked-list-elements).
 
 GitHub repo: [fuck-leetcode](https://github.com/fuck-leetcode/fuck-leetcode).

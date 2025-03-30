@@ -1,8 +1,8 @@
-Visit original link: [leetcoder.net - Fuck LeetCode](https://leetcoder.net/en/leetcode/202-happy-number) for a better experience!
+# 202. Happy Number - Fuck LeetCode
+
+Visit original link: [202. Happy Number - Fuck LeetCode](https://leetcoder.net/en/leetcode/202-happy-number) for a better experience!
 
 GitHub repo: [fuck-leetcode](https://github.com/fuck-leetcode/fuck-leetcode).
-
-# 202. Happy Number - Fuck LeetCode
 
 LeetCode link: [202. Happy Number](https://leetcode.com/problems/happy-number), difficulty: **Easy**.
 
@@ -276,6 +276,6 @@ end
 
 Dear LeetCoders! For a better LeetCode problem-solving experience, please visit website [leetcoder.net](https://leetcoder.net): Dare to claim the best practices of LeetCode solutions! Will save you a lot of time!
 
-Original link: [leetcoder.net - Fuck LeetCode](https://leetcoder.net/en/leetcode/202-happy-number).
+Original link: [202. Happy Number - Fuck LeetCode](https://leetcoder.net/en/leetcode/202-happy-number).
 
 GitHub repo: [fuck-leetcode](https://github.com/fuck-leetcode/fuck-leetcode).
