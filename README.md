@@ -20,7 +20,7 @@ I have planned a learning route for you. You just need to do the problems in the
 You can skip the more difficult problems and do them later.
 
 ## Array
-- [344. Reverse String](en/1-1000/344-reverse-string.md) Python, Java, C++, JavaScript, C#, Go, Ruby.
+- <a name="344"></a>[344. Reverse String](en/1-1000/344-reverse-string.md) Python, Java, C++, JavaScript, C#, Go, Ruby.
 - [27. Remove Element](en/1-1000/27-remove-element.md) Python, Java, C++, JavaScript, C#, Go, Ruby, **2** ways.
 - [704. Binary Search](en/1-1000/704-binary-search.md) Python, Java, C++, JavaScript, C#, Go, Ruby.
 - [977. Squares of a Sorted Array](en/1-1000/977-squares-of-a-sorted-array.md) Python, Java, C++, JavaScript, C#, Go, Ruby.
@@ -137,6 +137,6 @@ You can skip the more difficult problems and do them later.
 ## Other Algorithms
 - [433. Minimum Genetic Mutation](en/1-1000/433-minimum-genetic-mutation.md) Python, 3 ways.
 
-## Fuck LeetCode More Problems
+## "Fuck LeetCode": More Problems
 
 More LeetCode problems and solutions will be added soon. Updated every day. 
