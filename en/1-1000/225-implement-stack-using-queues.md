@@ -1,8 +1,6 @@
-# 225. Implement Stack using Queues - Fuck LeetCode
+# 225. Implement Stack using Queues - LeetCode Best Practices
 
-Visit original link: [225. Implement Stack using Queues - Fuck LeetCode](https://leetcoder.net/en/leetcode/225-implement-stack-using-queues) for a better experience!
-
-GitHub repo: [fuck-leetcode](https://github.com/fuck-leetcode/fuck-leetcode).
+Visit original link: [225. Implement Stack using Queues - LeetCode Best Practices](https://leetcoder.net/en/leetcode/225-implement-stack-using-queues) for a better experience!
 
 LeetCode link: [225. Implement Stack using Queues](https://leetcode.com/problems/implement-stack-using-queues), difficulty: **Easy**.
 
@@ -705,6 +703,7 @@ public class MyStack
 
 Dear LeetCoders! For a better LeetCode problem-solving experience, please visit website [leetcoder.net](https://leetcoder.net): Dare to claim the best practices of LeetCode solutions! Will save you a lot of time!
 
-Original link: [225. Implement Stack using Queues - Fuck LeetCode](https://leetcoder.net/en/leetcode/225-implement-stack-using-queues).
+Original link: [225. Implement Stack using Queues - LeetCode Best Practices](https://leetcoder.net/en/leetcode/225-implement-stack-using-queues).
 
-GitHub repo: [fuck-leetcode](https://github.com/fuck-leetcode/fuck-leetcode).
+GitHub repository: [f*ck-leetcode](https://github.com/fuck-leetcode/fuck-leetcode).
+

@@ -1,8 +1,6 @@
-# 1049. Last Stone Weight II - Fuck LeetCode
+# 1049. Last Stone Weight II - LeetCode Best Practices
 
-Visit original link: [1049. Last Stone Weight II - Fuck LeetCode](https://leetcoder.net/en/leetcode/1049-last-stone-weight-ii) for a better experience!
-
-GitHub repo: [fuck-leetcode](https://github.com/fuck-leetcode/fuck-leetcode).
+Visit original link: [1049. Last Stone Weight II - LeetCode Best Practices](https://leetcoder.net/en/leetcode/1049-last-stone-weight-ii) for a better experience!
 
 LeetCode link: [1049. Last Stone Weight II](https://leetcode.com/problems/last-stone-weight-ii), difficulty: **Medium**.
 
@@ -82,7 +80,7 @@ These five steps are a pattern for solving `Dynamic Programming` problems.
 2. Determine the `dp` array's initial value
     - Use an example:
 
-        ```ruby
+        ```
         stones = [2,7,4,1,8,1], so 'half of the sum' is 11.
         The `size` of the knapsack is `half of the sum`, and the `items` are `stones`.
         So after initialization, the 'dp' array would be:
@@ -101,20 +99,20 @@ These five steps are a pattern for solving `Dynamic Programming` problems.
 3. Determine the `dp` array's recurrence formula
     - Try to complete the grid. In the process, you will get inspiration to derive the formula.
 
-        ```ruby
+        ```
         1. Use the first stone '2'.
         #    0 1 2 3 4 5 6 7 8 9 10 11
         #    T F F F F F F F F F F  F
         # 2  T F T F F F F F F F F  F # dp
         ```
-        ```ruby
+        ```
         2. Use the second stone '7'.
         #    0 1 2 3 4 5 6 7 8 9 10 11
         #    T F F F F F F F F F F  F
         # 2  T F T F F F F F F F F  F
         # 7  T F T F F F F T F T F  F
         ```
-        ```ruby
+        ```
         3. Use the third stone '4'.
         #    0 1 2 3 4 5 6 7 8 9 10 11
         #    T F F F F F F F F F F  F
@@ -539,6 +537,7 @@ end
 
 Dear LeetCoders! For a better LeetCode problem-solving experience, please visit website [leetcoder.net](https://leetcoder.net): Dare to claim the best practices of LeetCode solutions! Will save you a lot of time!
 
-Original link: [1049. Last Stone Weight II - Fuck LeetCode](https://leetcoder.net/en/leetcode/1049-last-stone-weight-ii).
+Original link: [1049. Last Stone Weight II - LeetCode Best Practices](https://leetcoder.net/en/leetcode/1049-last-stone-weight-ii).
 
-GitHub repo: [fuck-leetcode](https://github.com/fuck-leetcode/fuck-leetcode).
+GitHub repository: [f*ck-leetcode](https://github.com/fuck-leetcode/fuck-leetcode).
+

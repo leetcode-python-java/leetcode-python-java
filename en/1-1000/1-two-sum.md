@@ -1,8 +1,6 @@
-# 1. Two Sum - Fuck LeetCode
+# 1. Two Sum - LeetCode Best Practices
 
-Visit original link: [1. Two Sum - Fuck LeetCode](https://leetcoder.net/en/leetcode/1-two-sum) for a better experience!
-
-GitHub repo: [fuck-leetcode](https://github.com/fuck-leetcode/fuck-leetcode).
+Visit original link: [1. Two Sum - LeetCode Best Practices](https://leetcoder.net/en/leetcode/1-two-sum) for a better experience!
 
 LeetCode link: [1. Two Sum](https://leetcode.com/problems/two-sum), difficulty: **Easy**.
 
@@ -69,7 +67,7 @@ You can return the answer in any order.
 
 ## Intuition 1
 
-1. The time complexity of the brute force solution is `O(n**2)`. To improve efficiency, you can sort the array, and then use **two pointers**, one pointing to the head of the array and the other pointing to the tail of the array, and decide `left += 1` or `right -= 1` according to the comparison of `sum` and `target`.
+1. The time complexity of the brute force solution is `O(n^2)`. To improve efficiency, you can sort the array, and then use **two pointers**, one pointing to the head of the array and the other pointing to the tail of the array, and decide `left += 1` or `right -= 1` according to the comparison of `sum` and `target`.
 
 2. After sorting an array of numbers, if you want to know the original `index` corresponding to a certain value, there are two solutions:
 
@@ -327,6 +325,7 @@ class Solution:
 
 Dear LeetCoders! For a better LeetCode problem-solving experience, please visit website [leetcoder.net](https://leetcoder.net): Dare to claim the best practices of LeetCode solutions! Will save you a lot of time!
 
-Original link: [1. Two Sum - Fuck LeetCode](https://leetcoder.net/en/leetcode/1-two-sum).
+Original link: [1. Two Sum - LeetCode Best Practices](https://leetcoder.net/en/leetcode/1-two-sum).
 
-GitHub repo: [fuck-leetcode](https://github.com/fuck-leetcode/fuck-leetcode).
+GitHub repository: [f*ck-leetcode](https://github.com/fuck-leetcode/fuck-leetcode).
+

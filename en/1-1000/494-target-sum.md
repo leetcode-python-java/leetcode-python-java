@@ -1,8 +1,6 @@
-# 494. Target Sum - Fuck LeetCode
+# 494. Target Sum - LeetCode Best Practices
 
-Visit original link: [494. Target Sum - Fuck LeetCode](https://leetcoder.net/en/leetcode/494-target-sum) for a better experience!
-
-GitHub repo: [fuck-leetcode](https://github.com/fuck-leetcode/fuck-leetcode).
+Visit original link: [494. Target Sum - LeetCode Best Practices](https://leetcoder.net/en/leetcode/494-target-sum) for a better experience!
 
 LeetCode link: [494. Target Sum](https://leetcode.com/problems/target-sum), difficulty: **Medium**.
 
@@ -67,13 +65,13 @@ These five steps are a pattern for solving `Dynamic Programming` problems.
     - Use an example. We didn't use the `Example 1: Input: nums = [1,1,1,1,1], target = 3` because it is too special and is not a good example for deriving a formula.
     - I made up an example: `nums = [1,2,1,2], target = 4`. The example must be simple, otherwise it would take too long to complete the grid.
     - First, determine the `size` of the knapsack.
-    - The `target` value may be very small, such as `0`, so it alone cannot determine the `size` of the knapsack.
-    - The sum of `nums` should also be taken into account to fully cover all knapsack sizes.
-    - `target` may be negative, but considering that `+` and `-` are added to `num` arbitrarily, the `dp[j]` should be symmetrical around `0`. So the result of negative `target` `dp[target]` is equal to `dp[abs(target)]`.
-    - So the `size` of the knapsack can be `max(sum(nums), target) + 1`.
-    - The `items` are the `nums`.
+        - The `target` value may be very small, such as `0`, so it alone cannot determine the `size` of the knapsack.
+        - The sum of `nums` should also be taken into account to fully cover all knapsack sizes.
+        - `target` may be negative, but considering that `+` and `-` are added to `num` arbitrarily, the `dp[j]` should be symmetrical around `0`. So the result of negative `target` `dp[target]` is equal to `dp[abs(target)]`.
+        - So the `size` of the knapsack can be `max(sum(nums), target) + 1`.
+    - Second, determine what are the `items`. The `items` are the `nums` in this problem.
 
-        ```ruby
+        ```
         So after initialization, the 'dp' array would be:
         #    0  1  2  3  4  5  6
         #    1  0  0  0  0  0  0 # dp
@@ -88,7 +86,7 @@ These five steps are a pattern for solving `Dynamic Programming` problems.
 3. Determine the `dp` array's recurrence formula
     - Try to complete the grid. In the process, you will get inspiration to derive the formula.
 
-        ```ruby
+        ```
         1. Use the first num '1'.
         #    0  1  2  3  4  5  6
         #    1  0  0  0  0  0  0
@@ -97,7 +95,7 @@ These five steps are a pattern for solving `Dynamic Programming` problems.
         # 1
         # 2
         ```
-        ```ruby
+        ```
         2. Use the second num '2'.
         #    0  1  2  3  4  5  6
         #    1  0  0  0  0  0  0
@@ -106,7 +104,7 @@ These five steps are a pattern for solving `Dynamic Programming` problems.
         # 1
         # 2
         ```
-        ```ruby
+        ```
         3. Use the third num '1'.
         #    0  1  2  3  4  5  6
         #    1  0  0  0  0  0  0
@@ -115,7 +113,7 @@ These five steps are a pattern for solving `Dynamic Programming` problems.
         # 1  2  0  2  0  1  0  0
         # 2
         ```
-        ```ruby
+        ```
         4. Use the fourth num '2'.
         #    0  1  2  3  4  5  6
         #    1  0  0  0  0  0  0
@@ -125,6 +123,7 @@ These five steps are a pattern for solving `Dynamic Programming` problems.
         # 2  4  0  3  0  2  0  1 # dp
         ```
     - After analyzing the sample `dp` grid, we can derive the `Recurrence Formula`:
+
         ```java
         dp[j] = dp[abs(j - nums[i])] + dp[j + nums[i]]
         ```
@@ -314,6 +313,7 @@ end
 
 Dear LeetCoders! For a better LeetCode problem-solving experience, please visit website [leetcoder.net](https://leetcoder.net): Dare to claim the best practices of LeetCode solutions! Will save you a lot of time!
 
-Original link: [494. Target Sum - Fuck LeetCode](https://leetcoder.net/en/leetcode/494-target-sum).
+Original link: [494. Target Sum - LeetCode Best Practices](https://leetcoder.net/en/leetcode/494-target-sum).
 
-GitHub repo: [fuck-leetcode](https://github.com/fuck-leetcode/fuck-leetcode).
+GitHub repository: [f*ck-leetcode](https://github.com/fuck-leetcode/fuck-leetcode).
+

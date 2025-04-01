@@ -1,8 +1,6 @@
 # 59. 螺旋矩阵 II - 力扣题解最佳实践
 
-访问 原文链接：[59. 螺旋矩阵 II - 力扣题解最佳实践](https://leetcoder.net/zh/leetcode/59-spiral-matrix-ii) 体验更佳！
-
-GitHub 仓库: [fuck-leetcode](https://github.com/fuck-leetcode/fuck-leetcode).
+访问原文链接：[59. 螺旋矩阵 II - 力扣题解最佳实践](https://leetcoder.net/zh/leetcode/59-spiral-matrix-ii)，体验更佳！
 
 力扣链接：[59. 螺旋矩阵 II](https://leetcode.cn/problems/spiral-matrix-ii), 难度：**中等**。
 
@@ -415,4 +413,5 @@ private:
 
 原文链接：[59. 螺旋矩阵 II - 力扣题解最佳实践](https://leetcoder.net/zh/leetcode/59-spiral-matrix-ii).
 
-GitHub 仓库: [fuck-leetcode](https://github.com/fuck-leetcode/fuck-leetcode).
+GitHub 仓库: [f*ck-leetcode](https://github.com/fuck-leetcode/fuck-leetcode).
+

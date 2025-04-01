@@ -1,8 +1,6 @@
 # 454. 四数相加 II - 力扣题解最佳实践
 
-访问 原文链接：[454. 四数相加 II - 力扣题解最佳实践](https://leetcoder.net/zh/leetcode/454-4sum-ii) 体验更佳！
-
-GitHub 仓库: [fuck-leetcode](https://github.com/fuck-leetcode/fuck-leetcode).
+访问原文链接：[454. 四数相加 II - 力扣题解最佳实践](https://leetcoder.net/zh/leetcode/454-4sum-ii)，体验更佳！
 
 力扣链接：[454. 四数相加 II](https://leetcode.cn/problems/4sum-ii), 难度：**中等**。
 
@@ -278,4 +276,5 @@ public:
 
 原文链接：[454. 四数相加 II - 力扣题解最佳实践](https://leetcoder.net/zh/leetcode/454-4sum-ii).
 
-GitHub 仓库: [fuck-leetcode](https://github.com/fuck-leetcode/fuck-leetcode).
+GitHub 仓库: [f*ck-leetcode](https://github.com/fuck-leetcode/fuck-leetcode).
+

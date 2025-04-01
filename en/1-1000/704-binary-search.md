@@ -1,8 +1,6 @@
-# 704. Binary Search - Fuck LeetCode
+# 704. Binary Search - LeetCode Best Practices
 
-Visit original link: [704. Binary Search - Fuck LeetCode](https://leetcoder.net/en/leetcode/704-binary-search) for a better experience!
-
-GitHub repo: [fuck-leetcode](https://github.com/fuck-leetcode/fuck-leetcode).
+Visit original link: [704. Binary Search - LeetCode Best Practices](https://leetcoder.net/en/leetcode/704-binary-search) for a better experience!
 
 LeetCode link: [704. Binary Search](https://leetcode.com/problems/binary-search), difficulty: **Easy**.
 
@@ -241,6 +239,7 @@ end
 
 Dear LeetCoders! For a better LeetCode problem-solving experience, please visit website [leetcoder.net](https://leetcoder.net): Dare to claim the best practices of LeetCode solutions! Will save you a lot of time!
 
-Original link: [704. Binary Search - Fuck LeetCode](https://leetcoder.net/en/leetcode/704-binary-search).
+Original link: [704. Binary Search - LeetCode Best Practices](https://leetcoder.net/en/leetcode/704-binary-search).
 
-GitHub repo: [fuck-leetcode](https://github.com/fuck-leetcode/fuck-leetcode).
+GitHub repository: [f*ck-leetcode](https://github.com/fuck-leetcode/fuck-leetcode).
+

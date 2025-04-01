@@ -1,8 +1,6 @@
 # 1049. 最后一块石头的重量 II - 力扣题解最佳实践
 
-访问 原文链接：[1049. 最后一块石头的重量 II - 力扣题解最佳实践](https://leetcoder.net/zh/leetcode/1049-last-stone-weight-ii) 体验更佳！
-
-GitHub 仓库: [fuck-leetcode](https://github.com/fuck-leetcode/fuck-leetcode).
+访问原文链接：[1049. 最后一块石头的重量 II - 力扣题解最佳实践](https://leetcoder.net/zh/leetcode/1049-last-stone-weight-ii)，体验更佳！
 
 力扣链接：[1049. 最后一块石头的重量 II](https://leetcode.cn/problems/last-stone-weight-ii), 难度：**中等**。
 
@@ -80,7 +78,7 @@ GitHub 仓库: [fuck-leetcode](https://github.com/fuck-leetcode/fuck-leetcode).
 2. 确定 `dp` 数组的初始值
     - 举个例子：
 
-        ```ruby
+        ```
         stones = [2,7,4,1,8,1]，所以 '一半的总和' 是 11。
         背包的 `size` 是 '一半的总和'，`items` 是 'stones'。
         所以初始化后，'dp' 数组将是：
@@ -99,20 +97,20 @@ GitHub 仓库: [fuck-leetcode](https://github.com/fuck-leetcode/fuck-leetcode).
 3. 确定 `dp` 数组的递归公式
     - 尝试完成网格。在此过程中，您将获得推导公式的灵感。
 
-        ```ruby
+        ```
         1. 使用第一块石头 '2'。
         # 0 1 2 3 4 5 6 7 8 9 10 11
         # T F F F F F F F F F F F F
         # 2 T F T F F F F F F F F F # dp
         ```
-        ```ruby
+        ```
         2. 使用第二颗石头“7”。
         # 0 1 2 3 4 5 6 7 8 9 10 11
         # T F F F F F F F F F F F
         # 2 T F T F F F F F F F F
         # 7 T F T F F F F T F T F F
         ```
-        ```ruby
+        ```
         3. 使用第三颗石头“4”。
         # 0 1 2 3 4 5 6 7 8 9 10 11
         # T F F F F F F F F F F F F
@@ -540,4 +538,5 @@ end
 
 原文链接：[1049. 最后一块石头的重量 II - 力扣题解最佳实践](https://leetcoder.net/zh/leetcode/1049-last-stone-weight-ii).
 
-GitHub 仓库: [fuck-leetcode](https://github.com/fuck-leetcode/fuck-leetcode).
+GitHub 仓库: [f*ck-leetcode](https://github.com/fuck-leetcode/fuck-leetcode).
+

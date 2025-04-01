@@ -1,8 +1,6 @@
 # 28. 找出字符串中第一个匹配项的下标 - 力扣题解最佳实践
 
-访问 原文链接：[28. 找出字符串中第一个匹配项的下标 - 力扣题解最佳实践](https://leetcoder.net/zh/leetcode/28-find-the-index-of-the-first-occurrence-in-a-string) 体验更佳！
-
-GitHub 仓库: [fuck-leetcode](https://github.com/fuck-leetcode/fuck-leetcode).
+访问原文链接：[28. 找出字符串中第一个匹配项的下标 - 力扣题解最佳实践](https://leetcoder.net/zh/leetcode/28-find-the-index-of-the-first-occurrence-in-a-string)，体验更佳！
 
 力扣链接：[28. 找出字符串中第一个匹配项的下标](https://leetcode.cn/problems/find-the-index-of-the-first-occurrence-in-a-string), 难度：**简单**。
 
@@ -202,4 +200,5 @@ public class Solution {
 
 原文链接：[28. 找出字符串中第一个匹配项的下标 - 力扣题解最佳实践](https://leetcoder.net/zh/leetcode/28-find-the-index-of-the-first-occurrence-in-a-string).
 
-GitHub 仓库: [fuck-leetcode](https://github.com/fuck-leetcode/fuck-leetcode).
+GitHub 仓库: [f*ck-leetcode](https://github.com/fuck-leetcode/fuck-leetcode).
+

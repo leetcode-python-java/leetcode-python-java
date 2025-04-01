@@ -1,8 +1,6 @@
-# 541. Reverse String II - Fuck LeetCode
+# 541. Reverse String II - LeetCode Best Practices
 
-Visit original link: [541. Reverse String II - Fuck LeetCode](https://leetcoder.net/en/leetcode/541-reverse-string-ii) for a better experience!
-
-GitHub repo: [fuck-leetcode](https://github.com/fuck-leetcode/fuck-leetcode).
+Visit original link: [541. Reverse String II - LeetCode Best Practices](https://leetcoder.net/en/leetcode/541-reverse-string-ii) for a better experience!
 
 LeetCode link: [541. Reverse String II](https://leetcode.com/problems/reverse-string-ii), difficulty: **Easy**.
 
@@ -280,6 +278,7 @@ func reverseStr(s string, k int) string {
 
 Dear LeetCoders! For a better LeetCode problem-solving experience, please visit website [leetcoder.net](https://leetcoder.net): Dare to claim the best practices of LeetCode solutions! Will save you a lot of time!
 
-Original link: [541. Reverse String II - Fuck LeetCode](https://leetcoder.net/en/leetcode/541-reverse-string-ii).
+Original link: [541. Reverse String II - LeetCode Best Practices](https://leetcoder.net/en/leetcode/541-reverse-string-ii).
 
-GitHub repo: [fuck-leetcode](https://github.com/fuck-leetcode/fuck-leetcode).
+GitHub repository: [f*ck-leetcode](https://github.com/fuck-leetcode/fuck-leetcode).
+

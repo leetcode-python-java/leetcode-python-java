@@ -1,8 +1,6 @@
 # 977. 有序数组的平方 - 力扣题解最佳实践
 
-访问 原文链接：[977. 有序数组的平方 - 力扣题解最佳实践](https://leetcoder.net/zh/leetcode/977-squares-of-a-sorted-array) 体验更佳！
-
-GitHub 仓库: [fuck-leetcode](https://github.com/fuck-leetcode/fuck-leetcode).
+访问原文链接：[977. 有序数组的平方 - 力扣题解最佳实践](https://leetcoder.net/zh/leetcode/977-squares-of-a-sorted-array)，体验更佳！
 
 力扣链接：[977. 有序数组的平方](https://leetcode.cn/problems/squares-of-a-sorted-array), 难度：**简单**。
 
@@ -353,4 +351,5 @@ end
 
 原文链接：[977. 有序数组的平方 - 力扣题解最佳实践](https://leetcoder.net/zh/leetcode/977-squares-of-a-sorted-array).
 
-GitHub 仓库: [fuck-leetcode](https://github.com/fuck-leetcode/fuck-leetcode).
+GitHub 仓库: [f*ck-leetcode](https://github.com/fuck-leetcode/fuck-leetcode).
+

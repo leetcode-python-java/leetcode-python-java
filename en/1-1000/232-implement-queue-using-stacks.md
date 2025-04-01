@@ -1,8 +1,6 @@
-# 232. Implement Queue using Stacks - Fuck LeetCode
+# 232. Implement Queue using Stacks - LeetCode Best Practices
 
-Visit original link: [232. Implement Queue using Stacks - Fuck LeetCode](https://leetcoder.net/en/leetcode/232-implement-queue-using-stacks) for a better experience!
-
-GitHub repo: [fuck-leetcode](https://github.com/fuck-leetcode/fuck-leetcode).
+Visit original link: [232. Implement Queue using Stacks - LeetCode Best Practices](https://leetcoder.net/en/leetcode/232-implement-queue-using-stacks) for a better experience!
 
 LeetCode link: [232. Implement Queue using Stacks](https://leetcode.com/problems/implement-queue-using-stacks), difficulty: **Easy**.
 
@@ -352,6 +350,7 @@ end
 
 Dear LeetCoders! For a better LeetCode problem-solving experience, please visit website [leetcoder.net](https://leetcoder.net): Dare to claim the best practices of LeetCode solutions! Will save you a lot of time!
 
-Original link: [232. Implement Queue using Stacks - Fuck LeetCode](https://leetcoder.net/en/leetcode/232-implement-queue-using-stacks).
+Original link: [232. Implement Queue using Stacks - LeetCode Best Practices](https://leetcoder.net/en/leetcode/232-implement-queue-using-stacks).
 
-GitHub repo: [fuck-leetcode](https://github.com/fuck-leetcode/fuck-leetcode).
+GitHub repository: [f*ck-leetcode](https://github.com/fuck-leetcode/fuck-leetcode).
+

@@ -1,8 +1,6 @@
-# 977. Squares of a Sorted Array - Fuck LeetCode
+# 977. Squares of a Sorted Array - LeetCode Best Practices
 
-Visit original link: [977. Squares of a Sorted Array - Fuck LeetCode](https://leetcoder.net/en/leetcode/977-squares-of-a-sorted-array) for a better experience!
-
-GitHub repo: [fuck-leetcode](https://github.com/fuck-leetcode/fuck-leetcode).
+Visit original link: [977. Squares of a Sorted Array - LeetCode Best Practices](https://leetcoder.net/en/leetcode/977-squares-of-a-sorted-array) for a better experience!
 
 LeetCode link: [977. Squares of a Sorted Array](https://leetcode.com/problems/squares-of-a-sorted-array), difficulty: **Easy**.
 
@@ -350,6 +348,7 @@ end
 
 Dear LeetCoders! For a better LeetCode problem-solving experience, please visit website [leetcoder.net](https://leetcoder.net): Dare to claim the best practices of LeetCode solutions! Will save you a lot of time!
 
-Original link: [977. Squares of a Sorted Array - Fuck LeetCode](https://leetcoder.net/en/leetcode/977-squares-of-a-sorted-array).
+Original link: [977. Squares of a Sorted Array - LeetCode Best Practices](https://leetcoder.net/en/leetcode/977-squares-of-a-sorted-array).
 
-GitHub repo: [fuck-leetcode](https://github.com/fuck-leetcode/fuck-leetcode).
+GitHub repository: [f*ck-leetcode](https://github.com/fuck-leetcode/fuck-leetcode).
+

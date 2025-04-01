@@ -1,8 +1,6 @@
 # 1. 两数之和 - 力扣题解最佳实践
 
-访问 原文链接：[1. 两数之和 - 力扣题解最佳实践](https://leetcoder.net/zh/leetcode/1-two-sum) 体验更佳！
-
-GitHub 仓库: [fuck-leetcode](https://github.com/fuck-leetcode/fuck-leetcode).
+访问原文链接：[1. 两数之和 - 力扣题解最佳实践](https://leetcoder.net/zh/leetcode/1-two-sum)，体验更佳！
 
 力扣链接：[1. 两数之和](https://leetcode.cn/problems/two-sum), 难度：**简单**。
 
@@ -328,4 +326,5 @@ class Solution:
 
 原文链接：[1. 两数之和 - 力扣题解最佳实践](https://leetcoder.net/zh/leetcode/1-two-sum).
 
-GitHub 仓库: [fuck-leetcode](https://github.com/fuck-leetcode/fuck-leetcode).
+GitHub 仓库: [f*ck-leetcode](https://github.com/fuck-leetcode/fuck-leetcode).
+

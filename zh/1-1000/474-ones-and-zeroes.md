@@ -1,8 +1,6 @@
 # 474. 一和零 - 力扣题解最佳实践
 
-访问 原文链接：[474. 一和零 - 力扣题解最佳实践](https://leetcoder.net/zh/leetcode/474-ones-and-zeroes) 体验更佳！
-
-GitHub 仓库: [fuck-leetcode](https://github.com/fuck-leetcode/fuck-leetcode).
+访问原文链接：[474. 一和零 - 力扣题解最佳实践](https://leetcoder.net/zh/leetcode/474-ones-and-zeroes)，体验更佳！
 
 力扣链接：[474. 一和零](https://leetcode.cn/problems/ones-and-zeroes), 难度：**中等**。
 
@@ -75,7 +73,7 @@ GitHub 仓库: [fuck-leetcode](https://github.com/fuck-leetcode/fuck-leetcode).
 3. 确定 `dp` 数组的递归公式
     - 我们来一步步分析这个例子：
 
-        ```ruby
+        ```
         # Initial state
         #    0 1 2 3 4 5
         #    0 0 0 0 0 0
@@ -416,4 +414,5 @@ end
 
 原文链接：[474. 一和零 - 力扣题解最佳实践](https://leetcoder.net/zh/leetcode/474-ones-and-zeroes).
 
-GitHub 仓库: [fuck-leetcode](https://github.com/fuck-leetcode/fuck-leetcode).
+GitHub 仓库: [f*ck-leetcode](https://github.com/fuck-leetcode/fuck-leetcode).
+

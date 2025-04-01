@@ -1,8 +1,6 @@
 # 416. 分割等和子集 - 力扣题解最佳实践
 
-访问 原文链接：[416. 分割等和子集 - 力扣题解最佳实践](https://leetcoder.net/zh/leetcode/416-partition-equal-subset-sum) 体验更佳！
-
-GitHub 仓库: [fuck-leetcode](https://github.com/fuck-leetcode/fuck-leetcode).
+访问原文链接：[416. 分割等和子集 - 力扣题解最佳实践](https://leetcoder.net/zh/leetcode/416-partition-equal-subset-sum)，体验更佳！
 
 力扣链接：[416. 分割等和子集](https://leetcode.cn/problems/partition-equal-subset-sum), 难度：**中等**。
 
@@ -52,7 +50,7 @@ GitHub 仓库: [fuck-leetcode](https://github.com/fuck-leetcode/fuck-leetcode).
 2. 确定 `dp` 数组的初始值
     - 举个例子：
 
-        ```ruby
+        ```
         nums = [1,5,11,5]，所以 '和的一半' 是 11。
         背包的 `size` 是 '和的一半'，`items` 是 `nums`。
         所以初始化后，'dp' 数组将是：
@@ -70,14 +68,14 @@ GitHub 仓库: [fuck-leetcode](https://github.com/fuck-leetcode/fuck-leetcode).
 3. 确定 `dp` 数组的递归公式
     - 尝试完成网格。在此过程中，你会得到推导公式的灵感。
 
-        ```ruby
+        ```
         1. 使用第一个数字 '1'。
         # 0 1 2 3 4 5 6 7 8 9 10 11
         # T F F F F F F F F F F F F
         # 1 T T F F F F F F F F F F # dp
         ```
 
-        ```ruby
+        ```
         2. 使用第二个数字 '5'。
         # 0 1 2 3 4 5 6 7 8 9 10 11
         # T F F F F F F F F F F F
@@ -85,7 +83,7 @@ GitHub 仓库: [fuck-leetcode](https://github.com/fuck-leetcode/fuck-leetcode).
         # 5 T T F F F T T F F F F F
         ```
 
-        ```ruby
+        ```
         3. 使用第三个数字 '11'。
         # 0  1 2 3 4 5 6 7 8 9 10 11
         # T  F F F F F F F F F F F F
@@ -94,7 +92,7 @@ GitHub 仓库: [fuck-leetcode](https://github.com/fuck-leetcode/fuck-leetcode).
         # 11 T T F F F T T F F F F F T
         ```
 
-        ```ruby
+        ```
         3. 使用最后一个数字“5”。
         # 0  1 2 3 4 5 6 7 8 9 10 11
         # T  F F F F F F F F F F F F
@@ -507,4 +505,5 @@ end
 
 原文链接：[416. 分割等和子集 - 力扣题解最佳实践](https://leetcoder.net/zh/leetcode/416-partition-equal-subset-sum).
 
-GitHub 仓库: [fuck-leetcode](https://github.com/fuck-leetcode/fuck-leetcode).
+GitHub 仓库: [f*ck-leetcode](https://github.com/fuck-leetcode/fuck-leetcode).
+

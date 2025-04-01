@@ -1,8 +1,6 @@
-# 49. Group Anagrams - Fuck LeetCode
+# 49. Group Anagrams - LeetCode Best Practices
 
-Visit original link: [49. Group Anagrams - Fuck LeetCode](https://leetcoder.net/en/leetcode/49-group-anagrams) for a better experience!
-
-GitHub repo: [fuck-leetcode](https://github.com/fuck-leetcode/fuck-leetcode).
+Visit original link: [49. Group Anagrams - LeetCode Best Practices](https://leetcoder.net/en/leetcode/49-group-anagrams) for a better experience!
 
 LeetCode link: [49. Group Anagrams](https://leetcode.com/problems/group-anagrams), difficulty: **Medium**.
 
@@ -106,6 +104,7 @@ end
 
 Dear LeetCoders! For a better LeetCode problem-solving experience, please visit website [leetcoder.net](https://leetcoder.net): Dare to claim the best practices of LeetCode solutions! Will save you a lot of time!
 
-Original link: [49. Group Anagrams - Fuck LeetCode](https://leetcoder.net/en/leetcode/49-group-anagrams).
+Original link: [49. Group Anagrams - LeetCode Best Practices](https://leetcoder.net/en/leetcode/49-group-anagrams).
 
-GitHub repo: [fuck-leetcode](https://github.com/fuck-leetcode/fuck-leetcode).
+GitHub repository: [f*ck-leetcode](https://github.com/fuck-leetcode/fuck-leetcode).
+

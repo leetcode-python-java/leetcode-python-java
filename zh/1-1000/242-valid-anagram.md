@@ -1,8 +1,6 @@
 # 242. 有效的字母异位词 - 力扣题解最佳实践
 
-访问 原文链接：[242. 有效的字母异位词 - 力扣题解最佳实践](https://leetcoder.net/zh/leetcode/242-valid-anagram) 体验更佳！
-
-GitHub 仓库: [fuck-leetcode](https://github.com/fuck-leetcode/fuck-leetcode).
+访问原文链接：[242. 有效的字母异位词 - 力扣题解最佳实践](https://leetcoder.net/zh/leetcode/242-valid-anagram)，体验更佳！
 
 力扣链接：[242. 有效的字母异位词](https://leetcode.cn/problems/valid-anagram), 难度：**简单**。
 
@@ -222,4 +220,5 @@ public:
 
 原文链接：[242. 有效的字母异位词 - 力扣题解最佳实践](https://leetcoder.net/zh/leetcode/242-valid-anagram).
 
-GitHub 仓库: [fuck-leetcode](https://github.com/fuck-leetcode/fuck-leetcode).
+GitHub 仓库: [f*ck-leetcode](https://github.com/fuck-leetcode/fuck-leetcode).
+

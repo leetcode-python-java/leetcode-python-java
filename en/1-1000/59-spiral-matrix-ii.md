@@ -1,8 +1,6 @@
-# 59. Spiral Matrix II - Fuck LeetCode
+# 59. Spiral Matrix II - LeetCode Best Practices
 
-Visit original link: [59. Spiral Matrix II - Fuck LeetCode](https://leetcoder.net/en/leetcode/59-spiral-matrix-ii) for a better experience!
-
-GitHub repo: [fuck-leetcode](https://github.com/fuck-leetcode/fuck-leetcode).
+Visit original link: [59. Spiral Matrix II - LeetCode Best Practices](https://leetcoder.net/en/leetcode/59-spiral-matrix-ii) for a better experience!
 
 LeetCode link: [59. Spiral Matrix II](https://leetcode.com/problems/spiral-matrix-ii), difficulty: **Medium**.
 
@@ -412,6 +410,7 @@ private:
 
 Dear LeetCoders! For a better LeetCode problem-solving experience, please visit website [leetcoder.net](https://leetcoder.net): Dare to claim the best practices of LeetCode solutions! Will save you a lot of time!
 
-Original link: [59. Spiral Matrix II - Fuck LeetCode](https://leetcoder.net/en/leetcode/59-spiral-matrix-ii).
+Original link: [59. Spiral Matrix II - LeetCode Best Practices](https://leetcoder.net/en/leetcode/59-spiral-matrix-ii).
 
-GitHub repo: [fuck-leetcode](https://github.com/fuck-leetcode/fuck-leetcode).
+GitHub repository: [f*ck-leetcode](https://github.com/fuck-leetcode/fuck-leetcode).
+

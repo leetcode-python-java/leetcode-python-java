@@ -1,8 +1,6 @@
 # 303. 区域和检索 - 数组不可变 - 力扣题解最佳实践
 
-访问 原文链接：[303. 区域和检索 - 数组不可变 - 力扣题解最佳实践](https://leetcoder.net/zh/leetcode/303-range-sum-query-immutable) 体验更佳！
-
-GitHub 仓库: [fuck-leetcode](https://github.com/fuck-leetcode/fuck-leetcode).
+访问原文链接：[303. 区域和检索 - 数组不可变 - 力扣题解最佳实践](https://leetcoder.net/zh/leetcode/303-range-sum-query-immutable)，体验更佳！
 
 力扣链接：[303. 区域和检索 - 数组不可变](https://leetcode.cn/problems/range-sum-query-immutable), 难度：**简单**。
 
@@ -238,4 +236,5 @@ class NumArray:
 
 原文链接：[303. 区域和检索 - 数组不可变 - 力扣题解最佳实践](https://leetcoder.net/zh/leetcode/303-range-sum-query-immutable).
 
-GitHub 仓库: [fuck-leetcode](https://github.com/fuck-leetcode/fuck-leetcode).
+GitHub 仓库: [f*ck-leetcode](https://github.com/fuck-leetcode/fuck-leetcode).
+

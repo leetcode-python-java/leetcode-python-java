@@ -1,8 +1,6 @@
 # 349. 两个数组的交集 - 力扣题解最佳实践
 
-访问 原文链接：[349. 两个数组的交集 - 力扣题解最佳实践](https://leetcoder.net/zh/leetcode/349-intersection-of-two-arrays) 体验更佳！
-
-GitHub 仓库: [fuck-leetcode](https://github.com/fuck-leetcode/fuck-leetcode).
+访问原文链接：[349. 两个数组的交集 - 力扣题解最佳实践](https://leetcoder.net/zh/leetcode/349-intersection-of-two-arrays)，体验更佳！
 
 力扣链接：[349. 两个数组的交集](https://leetcode.cn/problems/intersection-of-two-arrays), 难度：**简单**。
 
@@ -192,4 +190,5 @@ end
 
 原文链接：[349. 两个数组的交集 - 力扣题解最佳实践](https://leetcoder.net/zh/leetcode/349-intersection-of-two-arrays).
 
-GitHub 仓库: [fuck-leetcode](https://github.com/fuck-leetcode/fuck-leetcode).
+GitHub 仓库: [f*ck-leetcode](https://github.com/fuck-leetcode/fuck-leetcode).
+

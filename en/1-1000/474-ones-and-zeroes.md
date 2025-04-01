@@ -1,8 +1,6 @@
-# 474. Ones and Zeroes - Fuck LeetCode
+# 474. Ones and Zeroes - LeetCode Best Practices
 
-Visit original link: [474. Ones and Zeroes - Fuck LeetCode](https://leetcoder.net/en/leetcode/474-ones-and-zeroes) for a better experience!
-
-GitHub repo: [fuck-leetcode](https://github.com/fuck-leetcode/fuck-leetcode).
+Visit original link: [474. Ones and Zeroes - LeetCode Best Practices](https://leetcoder.net/en/leetcode/474-ones-and-zeroes) for a better experience!
 
 LeetCode link: [474. Ones and Zeroes](https://leetcode.com/problems/ones-and-zeroes), difficulty: **Medium**.
 
@@ -77,7 +75,7 @@ These five steps are a pattern for solving `Dynamic Programming` problems.
 3. Determine the `dp` array's recurrence formula
     - Let's analyze the example step by step:
 
-        ```ruby
+        ```
         # Initial state
         #    0 1 2 3 4 5
         #    0 0 0 0 0 0
@@ -415,6 +413,7 @@ end
 
 Dear LeetCoders! For a better LeetCode problem-solving experience, please visit website [leetcoder.net](https://leetcoder.net): Dare to claim the best practices of LeetCode solutions! Will save you a lot of time!
 
-Original link: [474. Ones and Zeroes - Fuck LeetCode](https://leetcoder.net/en/leetcode/474-ones-and-zeroes).
+Original link: [474. Ones and Zeroes - LeetCode Best Practices](https://leetcoder.net/en/leetcode/474-ones-and-zeroes).
 
-GitHub repo: [fuck-leetcode](https://github.com/fuck-leetcode/fuck-leetcode).
+GitHub repository: [f*ck-leetcode](https://github.com/fuck-leetcode/fuck-leetcode).
+

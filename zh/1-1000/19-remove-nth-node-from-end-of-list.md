@@ -1,8 +1,6 @@
 # 19. 删除链表的倒数第 N 个结点 - 力扣题解最佳实践
 
-访问 原文链接：[19. 删除链表的倒数第 N 个结点 - 力扣题解最佳实践](https://leetcoder.net/zh/leetcode/19-remove-nth-node-from-end-of-list) 体验更佳！
-
-GitHub 仓库: [fuck-leetcode](https://github.com/fuck-leetcode/fuck-leetcode).
+访问原文链接：[19. 删除链表的倒数第 N 个结点 - 力扣题解最佳实践](https://leetcoder.net/zh/leetcode/19-remove-nth-node-from-end-of-list)，体验更佳！
 
 力扣链接：[19. 删除链表的倒数第 N 个结点](https://leetcode.cn/problems/remove-nth-node-from-end-of-list), 难度：**中等**。
 
@@ -389,4 +387,5 @@ end
 
 原文链接：[19. 删除链表的倒数第 N 个结点 - 力扣题解最佳实践](https://leetcoder.net/zh/leetcode/19-remove-nth-node-from-end-of-list).
 
-GitHub 仓库: [fuck-leetcode](https://github.com/fuck-leetcode/fuck-leetcode).
+GitHub 仓库: [f*ck-leetcode](https://github.com/fuck-leetcode/fuck-leetcode).
+

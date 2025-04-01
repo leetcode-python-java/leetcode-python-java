@@ -1,8 +1,6 @@
 # 206. 反转链表 - 力扣题解最佳实践
 
-访问 原文链接：[206. 反转链表 - 力扣题解最佳实践](https://leetcoder.net/zh/leetcode/206-reverse-linked-list) 体验更佳！
-
-GitHub 仓库: [fuck-leetcode](https://github.com/fuck-leetcode/fuck-leetcode).
+访问原文链接：[206. 反转链表 - 力扣题解最佳实践](https://leetcoder.net/zh/leetcode/206-reverse-linked-list)，体验更佳！
 
 力扣链接：[206. 反转链表](https://leetcode.cn/problems/reverse-linked-list), 难度：**简单**。
 
@@ -293,4 +291,5 @@ end
 
 原文链接：[206. 反转链表 - 力扣题解最佳实践](https://leetcoder.net/zh/leetcode/206-reverse-linked-list).
 
-GitHub 仓库: [fuck-leetcode](https://github.com/fuck-leetcode/fuck-leetcode).
+GitHub 仓库: [f*ck-leetcode](https://github.com/fuck-leetcode/fuck-leetcode).
+

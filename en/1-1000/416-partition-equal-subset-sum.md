@@ -1,8 +1,6 @@
-# 416. Partition Equal Subset Sum - Fuck LeetCode
+# 416. Partition Equal Subset Sum - LeetCode Best Practices
 
-Visit original link: [416. Partition Equal Subset Sum - Fuck LeetCode](https://leetcoder.net/en/leetcode/416-partition-equal-subset-sum) for a better experience!
-
-GitHub repo: [fuck-leetcode](https://github.com/fuck-leetcode/fuck-leetcode).
+Visit original link: [416. Partition Equal Subset Sum - LeetCode Best Practices](https://leetcoder.net/en/leetcode/416-partition-equal-subset-sum) for a better experience!
 
 LeetCode link: [416. Partition Equal Subset Sum](https://leetcode.com/problems/partition-equal-subset-sum), difficulty: **Medium**.
 
@@ -58,7 +56,7 @@ These five steps are a pattern for solving `Dynamic Programming` problems.
 2. Determine the `dp` array's initial value
    - Use an example:
 
-       ```ruby
+       ```
        nums = [1,5,11,5], so 'half of the sum' is 11.
        The `size` of the knapsack is `half of the sum`, and the `items` are `nums`.
        So after initialization, the 'dp' array would be:
@@ -75,14 +73,14 @@ These five steps are a pattern for solving `Dynamic Programming` problems.
 3. Determine the `dp` array's recurrence formula
     - Try to complete the grid. In the process, you will get inspiration to derive the formula.
 
-        ```ruby
+        ```
         1. Use the first num '1'.
         #    0 1 2 3 4 5 6 7 8 9 10 11
         #    T F F F F F F F F F F  F
         # 1  T T F F F F F F F F F  F # dp
         ```
 
-        ```ruby
+        ```
         2. Use the second num '5'.
         #    0 1 2 3 4 5 6 7 8 9 10 11
         #    T F F F F F F F F F F  F
@@ -90,7 +88,7 @@ These five steps are a pattern for solving `Dynamic Programming` problems.
         # 5  T T F F F T T F F F F  F
         ```
 
-        ```ruby
+        ```
         3. Use the third num '11'.
         #    0 1 2 3 4 5 6 7 8 9 10 11
         #    T F F F F F F F F F F  F
@@ -99,7 +97,7 @@ These five steps are a pattern for solving `Dynamic Programming` problems.
         # 11 T T F F F T T F F F F  T
         ```
 
-        ```ruby
+        ```
         3. Use the last num '5'.
         #    0 1 2 3 4 5 6 7 8 9 10 11
         #    T F F F F F F F F F F  F
@@ -510,6 +508,7 @@ end
 
 Dear LeetCoders! For a better LeetCode problem-solving experience, please visit website [leetcoder.net](https://leetcoder.net): Dare to claim the best practices of LeetCode solutions! Will save you a lot of time!
 
-Original link: [416. Partition Equal Subset Sum - Fuck LeetCode](https://leetcoder.net/en/leetcode/416-partition-equal-subset-sum).
+Original link: [416. Partition Equal Subset Sum - LeetCode Best Practices](https://leetcoder.net/en/leetcode/416-partition-equal-subset-sum).
 
-GitHub repo: [fuck-leetcode](https://github.com/fuck-leetcode/fuck-leetcode).
+GitHub repository: [f*ck-leetcode](https://github.com/fuck-leetcode/fuck-leetcode).
+

@@ -1,8 +1,6 @@
 # 160. 相交链表 - 力扣题解最佳实践
 
-访问 原文链接：[160. 相交链表 - 力扣题解最佳实践](https://leetcoder.net/zh/leetcode/160-intersection-of-two-linked-lists) 体验更佳！
-
-GitHub 仓库: [fuck-leetcode](https://github.com/fuck-leetcode/fuck-leetcode).
+访问原文链接：[160. 相交链表 - 力扣题解最佳实践](https://leetcoder.net/zh/leetcode/160-intersection-of-two-linked-lists)，体验更佳！
 
 力扣链接：[160. 相交链表](https://leetcode.cn/problems/intersection-of-two-linked-lists), 难度：**简单**。
 
@@ -499,4 +497,5 @@ func getIntersectionNode(headA, headB *ListNode) *ListNode {
 
 原文链接：[160. 相交链表 - 力扣题解最佳实践](https://leetcoder.net/zh/leetcode/160-intersection-of-two-linked-lists).
 
-GitHub 仓库: [fuck-leetcode](https://github.com/fuck-leetcode/fuck-leetcode).
+GitHub 仓库: [f*ck-leetcode](https://github.com/fuck-leetcode/fuck-leetcode).
+

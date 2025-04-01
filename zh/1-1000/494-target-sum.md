@@ -1,8 +1,6 @@
 # 494. 目标和 - 力扣题解最佳实践
 
-访问 原文链接：[494. 目标和 - 力扣题解最佳实践](https://leetcoder.net/zh/leetcode/494-target-sum) 体验更佳！
-
-GitHub 仓库: [fuck-leetcode](https://github.com/fuck-leetcode/fuck-leetcode).
+访问原文链接：[494. 目标和 - 力扣题解最佳实践](https://leetcoder.net/zh/leetcode/494-target-sum)，体验更佳！
 
 力扣链接：[494. 目标和](https://leetcode.cn/problems/target-sum), 难度：**中等**。
 
@@ -68,13 +66,13 @@ GitHub 仓库: [fuck-leetcode](https://github.com/fuck-leetcode/fuck-leetcode).
     - 使用一个例子。我们没有使用`示例1：输入：nums = [1,1,1,1,1], target = 3`，因为它太特殊，不是推导公式的好例子。
     - 我编了一个例子：`nums = [1,2,1,2], target = 4`。例子一定要简单，否则完成网格会花太长时间。
     - 首先，确定背包的`size`。
-    - `target`值可能很小，比如`0`，所以单独它不能确定背包的`size`。
-    - 还应该考虑`nums`的总和，以完全覆盖所有背包尺寸。
-    - `target`可以是负数，但考虑到`+`和`-`是任意添加到`num`的，`dp[j]`应该围绕`0`对称。所以负数 `target` 的结果 `dp[target]` 等于 `dp[abs(target)]`。
-    - 所以背包的 `size` 可以是 `max(sum(nums), target) + 1`。
-    - `物品` 就是 `nums`。
+        - `target`值可能很小，比如`0`，所以光靠它不能确定背包的`size`。
+        - 还应该考虑`nums`的总和，以完全覆盖所有背包尺寸。
+        - `target`可以是负数，但考虑到`+`和`-`是任意添加到`num`的，`dp[j]`应该围绕`0`对称。所以负数 `target` 的结果 `dp[target]` 等于 `dp[abs(target)]`。
+        - 所以背包的 `size` 可以是 `max(sum(nums), target) + 1`。
+    - 然后，确定什么是`物品`。`物品`在本题中 就是 `nums`。
 
-        ```ruby
+        ```
         所以初始化后，`dp` 数组将是：
         # 0 1 2 3 4 5 6
         # 1 0 0 0 0 0 0 # dp
@@ -89,7 +87,7 @@ GitHub 仓库: [fuck-leetcode](https://github.com/fuck-leetcode/fuck-leetcode).
 3. 确定`dp`数组的递归公式
     - 尝试完成网格，在这个过程中，你会得到推导公式的灵感。
 
-        ```ruby
+        ```
         1. 使用第一个数字'1'。
         # 0 1 2 3 4 5 6
         # 1 0 0 0 0 0 0
@@ -98,7 +96,7 @@ GitHub 仓库: [fuck-leetcode](https://github.com/fuck-leetcode/fuck-leetcode).
         # 1
         # 2
         ```
-        ```ruby
+        ```
         2. 使用第二个数字'2'。
         # 0 1 2 3 4 5 6
         # 1 0 0 0 0 0 0
@@ -107,7 +105,7 @@ GitHub 仓库: [fuck-leetcode](https://github.com/fuck-leetcode/fuck-leetcode).
         # 1
         # 2
         ```
-        ```ruby
+        ```
         3. 使用第三个数字 '1'。
         # 0 1 2 3 4 5 6
         # 1 0 0 0 0 0 0
@@ -116,7 +114,7 @@ GitHub 仓库: [fuck-leetcode](https://github.com/fuck-leetcode/fuck-leetcode).
         # 1 2 0 2 0 1 0 0
         # 2
         ```
-        ```ruby
+        ```
         4. 使用第四个数字 '2'。
         # 0 1 2 3 4 5 6
         # 1 0 0 0 0 0 0
@@ -319,4 +317,5 @@ end
 
 原文链接：[494. 目标和 - 力扣题解最佳实践](https://leetcoder.net/zh/leetcode/494-target-sum).
 
-GitHub 仓库: [fuck-leetcode](https://github.com/fuck-leetcode/fuck-leetcode).
+GitHub 仓库: [f*ck-leetcode](https://github.com/fuck-leetcode/fuck-leetcode).
+

@@ -1,8 +1,6 @@
 # 225. 用队列实现栈 - 力扣题解最佳实践
 
-访问 原文链接：[225. 用队列实现栈 - 力扣题解最佳实践](https://leetcoder.net/zh/leetcode/225-implement-stack-using-queues) 体验更佳！
-
-GitHub 仓库: [fuck-leetcode](https://github.com/fuck-leetcode/fuck-leetcode).
+访问原文链接：[225. 用队列实现栈 - 力扣题解最佳实践](https://leetcoder.net/zh/leetcode/225-implement-stack-using-queues)，体验更佳！
 
 力扣链接：[225. 用队列实现栈](https://leetcode.cn/problems/implement-stack-using-queues), 难度：**简单**。
 
@@ -709,4 +707,5 @@ public class MyStack
 
 原文链接：[225. 用队列实现栈 - 力扣题解最佳实践](https://leetcoder.net/zh/leetcode/225-implement-stack-using-queues).
 
-GitHub 仓库: [fuck-leetcode](https://github.com/fuck-leetcode/fuck-leetcode).
+GitHub 仓库: [f*ck-leetcode](https://github.com/fuck-leetcode/fuck-leetcode).
+
