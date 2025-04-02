@@ -53,11 +53,9 @@ This question is difficult. It is recommended to complete a simple question of t
 
 ## Steps
 
-### Common steps in '0/1 Knapsack Problem'
-These five steps are a pattern for solving `Dynamic Programming` problems.
-
 1. Determine the **meaning** of the `dp[j]`
     - Since we are only considering the zero count constraint for now, we can use a one-dimensional `dp` array.
+    - `items` is `strs`, `backpack` is `max_zero_count`.
     - `dp[j]` represents the maximum number of strings that can be selected with at most `j` zeros.
     - `dp[j]` is an integer.
 
@@ -68,11 +66,10 @@ These five steps are a pattern for solving `Dynamic Programming` problems.
         max_zero_count = m
         dp = [0] * (max_zero_count + 1)
         ```
-    - The `dp` array size is one greater than the zero count constraint. This way, the index value equals the constraint value, making it easier to understand.
     - `dp[0] = 0`, indicating that with no zeros, we can select 0 strings.
     - `dp[j] = 0` as the initial value because we will use `max` to increase them later.
 
-3. Determine the `dp` array's recurrence formula
+3. According to an example, fill in the `dp` grid data "in order".
     - Let's analyze the example step by step:
 
         ```
@@ -100,25 +97,13 @@ These five steps are a pattern for solving `Dynamic Programming` problems.
         #    0 1 2 3 4 5
         #    0 2 3 3 4 4
         ```
-    - After analyzing the sample `dp` grid, we can derive the `Recurrence Formula`:
+4. According to the `dp` grid data, derive the "recursive formula".
 
-        ```cpp
-        dp[j] = max(dp[j], dp[j - zero_count] + 1)
-        ```
-    - This formula means: for each string, we can either:
-        1. Not select it (keep the current value `dp[j]`)
-        2. Select it (add 1 to the value at `dp[j - zero_count]`)
-
-4. Determine the `dp` array's traversal order
-    - First **iterate through the strings**, then **iterate through the zero count** (`in reverse order`).
-    - When iterating through the zero count, since `dp[j]` depends on `dp[j]` and `dp[j - zero_count]`, we should traverse **from right to left**.
-    - This ensures that we don't use the same string multiple times.
-
-5. Check the `dp` array's value
-    - Print the `dp` to see if it is as expected.
-    - The final answer will be at `dp[max_zero_count]`.
-
-6. The code that only considers the quantity limit of `0` is:
+    ```cpp
+    dp[j] = max(dp[j], dp[j - zero_count] + 1)
+    ```
+5. Write a program and print the `dp` array. If it is not as expected, adjust it.
+    - The code that only considers the quantity limit of `0` is:
 
     ```python
     class Solution:
@@ -144,7 +129,7 @@ These five steps are a pattern for solving `Dynamic Programming` problems.
         return zero_count
     ```
 
-### Now, you can consider another dimension: the quantity limit of `1`.
+#### Now, you can consider another dimension: the quantity limit of `1`.
 
 It should be handled similarly to `0` but in another dimension. Please see the complete code below.
 

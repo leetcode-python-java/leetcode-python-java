@@ -62,27 +62,20 @@ we can combine 1 and 1 to get 0, so the array converts to [1], then that&#39;s t
 ## Intuition 1
 
 * This problem can be solved by brute force, that is, find all subsets of the array, see if the sum of each subset array is close to half of the sum of the complete array, and find the one that is closest. But when we see `stones.length <= 30`, we know that such a solution will definitely time out.
-* So we need to change our thinking. Before you The question is equivalent to finding the minimum difference between the sums of the two arrays after splitting. If we find a subset array whose sum is closest to half of the sum of the complete array, then it is the subset array we want.
-* Then this problem will become a `0/1 Knapsack Problem` which belongs to `Dynamic Programming`. `Dynamic programming` means that the answer to the current problem can be derived from the previous similar problem. Therefore, the `dp` array is used to record all the answers.
-* The core logic of the `0/1 Knapsack Problem` uses a two-dimensional `dp` array or a one-dimensional `dp` **rolling array**, first **traverses the items**, then **traverses the knapsack size** (`in reverse order` or use `dp.clone`), then **reference the previous value corresponding to the size of current 'item'**.
-* There are many things to remember when using a two-dimensional `dp` array, and it is difficult to write it right at once during an interview, so I won't describe it here.
+* So we need to change our thinking. The question is equivalent to finding the minimum difference between the sums of the two arrays after splitting. If we find a subset array whose sum is closest to half of the sum of the complete array, then it is the subset array we want.
+* Then this problem will become a `0/1 Knapsack Problem`.
 
 ## Steps
 
-### Common steps in '0/1 Knapsack Problem'
-These five steps are a pattern for solving `Dynamic Programming` problems.
-
 1. Determine the **meaning** of the `dp[j]`
-    - We can use a one-dimensional `dp` **rolling array**. Rolling an array means that the values of the array are overwritten each time through the iteration. 
-    - At first, try to use the problem's `return` value as the value of `dp[j]` to determine the meaning of `dp[j]`. If it doesn't work, try another way.
-    - So, `dp[j]` represents whether it is possible to `sum` the first `i` `stones` to get `j`.
+    - `dp[j]` represents whether it is possible to `sum` the first `i` `stones` to get `j`.
     - `dp[j]` is a boolean.
 2. Determine the `dp` array's initial value
     - Use an example:
 
         ```
         stones = [2,7,4,1,8,1], so 'half of the sum' is 11.
-        The `size` of the knapsack is `half of the sum`, and the `items` are `stones`.
+        The `size` of the knapsack is `11 + 1`, and the `items` are `stones`.
         So after initialization, the 'dp' array would be:
         #    0 1 2 3 4 5 6 7 8 9 10 11
         #    T F F F F F F F F F F  F  # dp
@@ -93,45 +86,38 @@ These five steps are a pattern for solving `Dynamic Programming` problems.
         # 8  
         # 1  
         ```
-    - You can see the `dp` array size is **one** greater than the knapsack size. In this way, the knapsack size and index value are equal, which helps to understand.
     - `dp[0]` is set to `true`, indicating that an empty knapsack can be achieved by not using any `stones`. In addition, it is used as the starting value, and the subsequent `dp[j]` will depend on it. If it is `false`, all values of `dp[j]` will be `false`.
     - `dp[j] = false (j != 0)`, indicating that it is impossible to get `j` with no `stones`.
-3. Determine the `dp` array's recurrence formula
-    - Try to complete the grid. In the process, you will get inspiration to derive the formula.
+3. Fill in the `dp` grid data "in order" according to an example.
 
-        ```
-        1. Use the first stone '2'.
-        #    0 1 2 3 4 5 6 7 8 9 10 11
-        #    T F F F F F F F F F F  F
-        # 2  T F T F F F F F F F F  F # dp
-        ```
-        ```
-        2. Use the second stone '7'.
-        #    0 1 2 3 4 5 6 7 8 9 10 11
-        #    T F F F F F F F F F F  F
-        # 2  T F T F F F F F F F F  F
-        # 7  T F T F F F F T F T F  F
-        ```
-        ```
-        3. Use the third stone '4'.
-        #    0 1 2 3 4 5 6 7 8 9 10 11
-        #    T F F F F F F F F F F  F
-        # 2  T F T F F F F F F F F  F
-        # 7  T F T F F F F T F T F  F
-        # 4  T F T F T F T T F T F  T # dp
-        # ...
-        # You don't need to complete the grid since you have enough information to derive the formula.
-        ```
-    - After analyzing the sample `dp` grid, we can derive the `Recurrence Formula`:
+    ```
+    1. Use the first stone '2'.
+    #   0 1 2 3 4 5 6 7 8 9 10 11
+    #   T F F F F F F F F F F  F
+    # 2 T F T F F F F F F F F  F  # dp
+    ```
+    ```
+    2. Use the second stone '7'.
+    #   0 1 2 3 4 5 6 7 8 9 10 11
+    #   T F F F F F F F F F F  F
+    # 2 T F T F F F F F F F F  F
+    # 7 T F T F F F F T F T F  F
+    ```
+    ```
+    3. Use the third stone '4'.
+    #   0 1 2 3 4 5 6 7 8 9 10 11
+    #   T F F F F F F F F F F  F
+    # 2 T F T F F F F F F F F  F
+    # 7 T F T F F F F F T F F  F
+    # 4 T F T F T F T T F T F  T # dp
+    # ...
+    ```
+4. Based on the `dp` grid data, derive the "recursive formula".
 
-        ```cpp
-        dp[j] = dp[j] || dp[j - stones[i]]
-        ```
-4. Determine the `dp` array's traversal order
-    - `dp[j]` depends on `dp[j]` and `dp[j - stones[i]]`, so we should traverse the `dp` array **in reverse order**.
-    - Please think if we can traverse the `dp` array **not in reverse order**? In the `Python` solution's code comments, I will answer this question.
-5. Check the `dp` array's value
-    - Print the `dp` to see if it is as expected.
+    ```cpp
+    dp[j] = dp[j] || dp[j - stones[i]]
+    ```
+5. Write a program and print the `dp` array. If it is not as expected, adjust it.
 
 ## Complexity
 

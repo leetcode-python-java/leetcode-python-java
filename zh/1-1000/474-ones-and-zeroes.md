@@ -49,12 +49,9 @@
 
 ## 步骤
 
-### '0/1背包问题'中的常用步骤
-
-这五个步骤是解决`动态规划`问题的模式。
-
 1. 确定`dp[j]`的**含义**
     - 由于我们目前只考虑零计数约束，因此我们可以使用一维`dp`数组。
+    - `物品`是`strs`，`背包`是`max_zero_count`。
     - `dp[j]`表示最多可以用`j`个零来选择的最大字符串数。
     - `dp[j]`是一个整数。
 
@@ -66,85 +63,72 @@
         max_zero_count = m
         dp = [0] * (max_zero_count + 1)
         ```
-    - `dp` 数组大小比零计数约束大一。这样，索引值等于约束值，更容易理解。
     - `dp[0] = 0`，表示没有零，我们可以选择 0 个字符串。
     - `dp[j] = 0` 作为初始值，因为我们稍后将使用 `max` 来增加它们。
 
-3. 确定 `dp` 数组的递归公式
-    - 我们来一步步分析这个例子：
+3. 根据一个示例，“按顺序”填入`dp`网格数据。
 
-        ```
-        # Initial state
-        #    0 1 2 3 4 5
-        #    0 0 0 0 0 0
+    ```
+    # Initial state
+    #    0 1 2 3 4 5
+    #    0 0 0 0 0 0
 
-        # After processing "10" (1 zero)
-        #    0 1 2 3 4 5
-        #    0 1 1 1 1 1
+    # After processing "10" (1 zero)
+    #    0 1 2 3 4 5
+    #    0 1 1 1 1 1
 
-        # After processing "0001" (3 zeros)
-        #    0 1 2 3 4 5
-        #    0 1 1 1 2 2
+    # After processing "0001" (3 zeros)
+    #    0 1 2 3 4 5
+    #    0 1 1 1 2 2
 
-        # After processing "111001" (2 zeros)
-        #    0 1 2 3 4 5
-        #    0 1 1 2 2 2
+    # After processing "111001" (2 zeros)
+    #    0 1 2 3 4 5
+    #    0 1 1 2 2 2
 
-        # After processing "1" (0 zeros)
-        #    0 1 2 3 4 5
-        #    0 2 2 3 3 3
+    # After processing "1" (0 zeros)
+    #    0 1 2 3 4 5
+    #    0 2 2 3 3 3
 
-        # After processing "0" (1 zero)
-        #    0 1 2 3 4 5
-        #    0 2 3 3 4 4
-        ```
-    - 分析示例 `dp` 网格后，我们可以得出 `递归公式`：
+    # After processing "0" (1 zero)
+    #    0 1 2 3 4 5
+    #    0 2 3 3 4 4
+    ```
+4. 根据`dp`网格数据，推导出“递推公式”。
 
-        ```cpp
-        dp[j] = max(dp[j], dp[j - zero_count] + 1)
-        ```
-    - 此公式意味着：对于每个字符串，我们可以：
-        1. 不选择它（保留当前值 `dp[j]`）
-        2. 选择它（将 `dp[j - zero_count]` 处的值加 1）
+    ```cpp
+    dp[j] = max(dp[j], dp[j - zero_count] + 1)
+    ```
+5. 写出程序，并打印`dp`数组，不合预期就调整。
 
-4. 确定 `dp` 数组的遍历顺序
-    - 首先 **遍历字符串**，然后 **遍历零计数**（`以相反的顺序`）。
-    - 在遍历零计数时，由于 `dp[j]` 依赖于 `dp[j]` 和 `dp[j - zero_count]`，因此我们应该**从右到左**遍历。
-    - 这确保我们不会多次使用相同的字符串。
+只考虑`0`数量限制的代码是：
 
-5. 检查 `dp` 数组的值
-    - 打印 `dp` 以查看它是否符合预期。
-    - 最终答案将在 `dp[max_zero_count]`。
+```python
+class Solution:
+    def findMaxForm(self, strs: List[str], max_zero_count: int, n: int) -> int:
+        dp = [0] * (max_zero_count + 1)
 
-6. 只考虑`0`数量限制的代码是：
+        for string in strs:
+            zero_count = count_zero(string)
 
-    ```python
-    class Solution:
-        def findMaxForm(self, strs: List[str], max_zero_count: int, n: int) -> int:
-            dp = [0] * (max_zero_count + 1)
-
-            for string in strs:
-                zero_count = count_zero(string)
-
-                for j in range(len(dp) - 1, zero_count - 1, -1): # must iterate in reverse order!
-                    dp[j] = max(dp[j], dp[j - zero_count] + 1)
+            for j in range(len(dp) - 1, zero_count - 1, -1): # must iterate in reverse order!
+               dp[j] = max(dp[j], dp[j - zero_count] + 1)
 
             return dp[-1]
 
 
-    def count_zero(string):
-        zero_count = 0
+def count_zero(string):
+    zero_count = 0
 
-        for bit in string:
-            if bit == '0':
-                zero_count += 1
+    for bit in string:
+        if bit == '0':
+            zero_count += 1
 
-        return zero_count
-    ```
+    return zero_count
+```
 
-### 现在，你可以考虑另一个维度：`1`的数量限制。
+#### 现在，你可以考虑另一个维度：`1`的数量限制。
 
-它应该以与“0”类似的方式处理，但在另一个维度上。请参阅下面的完整代码。
+它应该以与“0”类似的方式处理，只不过是在另一个维度上。请参阅下面的完整代码。
 
 ## 复杂度
 
@@ -409,7 +393,7 @@ end
 // Welcome to create a PR to complete the code of this language, thanks!
 ```
 
-亲爱的力扣人，为了您更好的刷题体验，请访问 [leetcoder.net](https://leetcoder.net)。
+亲爱的力扣人，为了您更好的刷题体验，请访问 [leetcoder.net](https://leetcoder.net/zh)。
 本站敢称力扣题解最佳实践，终将省你大量刷题时间！
 
 原文链接：[474. 一和零 - 力扣题解最佳实践](https://leetcoder.net/zh/leetcode/474-ones-and-zeroes).

@@ -32,86 +32,71 @@
 ## 思路 1
 
 - 第一次看到这道题，我们可能想循环遍历数组的所有子集，如果有一个子集的和等于`和的一半`，就返回`true`。这可以用`回溯算法`来实现，但是看到`nums.length <= 200`这个约束，我们估计程序会超时。
-- 这其实是一个`0/1背包问题`，属于`动态规划`。`动态规划`是指当前问题的答案可以从上一个类似的问题中推导出来。因此，`dp`数组用于记录所有答案。
-- `0/1背包问题`的核心逻辑是使用二维`dp`数组或者一维`dp`**滚动数组**，先**遍历物品**，再**遍历背包大小**（`逆序`或者使用`dp.clone`），然后**引用当前'物品'大小对应的前一个值**。
-- 使用二维`dp`数组需要记住的东西很多，面试的时候很难一下子就写对，这里就不描述了。
+- 本题可用`0/1背包问题`算法来解。
 
 ## 步骤
 
-### '0/1背包问题' 中的常用步骤
-
-这五个步骤是解决`动态规划`问题的模式。
-
 1. 确定`dp[j]`的**含义**
-    - 我们可以使用一维`dp`**滚动数组**。滚动数组意味着每次迭代时都会覆盖数组的值。
-    - 首先，尝试使用问题的`return`值作为`dp[j]`的值来确定`dp[j]`的含义。如果不行，请尝试另一种方法。
-    - 所以，`dp[j]`表示是否可以`sum`前`i`个`nums`得到`j`。
+    - `dp[j]`表示是否前`i`个`nums`的`和`是否等于`j`。
     - `dp[j]`是一个布尔值。
 2. 确定 `dp` 数组的初始值
     - 举个例子：
 
         ```
         nums = [1,5,11,5]，所以 '和的一半' 是 11。
-        背包的 `size` 是 '和的一半'，`items` 是 `nums`。
+        背包的 `size` 是 '11 + 1'，`物品` 是 `nums`。
         所以初始化后，'dp' 数组将是：
-        # 0 1 2 3 4 5 6 7 8 9 10 11
-        # T F F F F F F F F F F F F F # dp
+        #    0 1 2 3 4 5 6 7 8 9 10 11
+        #    T F F F F F F F F F F  F # dp
         # 1
         # 5
         # 11
         # 5
         ```
-    - 可以看到 `dp` 数组大小比背包大小大一。这样，背包大小和索引值就相等了，有助于理解。
     - `dp[0]` 设置为 `true`，表示不放任何物品即可得到空背包，另外，它作为起始值，后面的 `dp[j]` 将依赖它。如果为 `false`，则 `dp[j]` 的所有值都将为 `false`。
-    - `dp[j] = false (j != 0)`，表示没有 `nums` 就不可能得到 `j`。
+    - `dp[j] = false (j != 0)`，表示0个 `nums`的和不可能等于 `j`。
 
-3. 确定 `dp` 数组的递归公式
-    - 尝试完成网格。在此过程中，你会得到推导公式的灵感。
+3. 根据一个示例，“按顺序”填入`dp`网格数据。
 
-        ```
-        1. 使用第一个数字 '1'。
-        # 0 1 2 3 4 5 6 7 8 9 10 11
-        # T F F F F F F F F F F F F
-        # 1 T T F F F F F F F F F F # dp
-        ```
+    ```
+    1. 使用第一个数字 '1'。
+    #    0 1 2 3 4 5 6 7 8 9 10 11
+    #    T F F F F F F F F F F  F
+    # 1  T T F F F F F F F F F  F # dp
+    ```
 
-        ```
-        2. 使用第二个数字 '5'。
-        # 0 1 2 3 4 5 6 7 8 9 10 11
-        # T F F F F F F F F F F F
-        # 1 T T F F F F F F F F F F
-        # 5 T T F F F T T F F F F F
-        ```
+    ```
+    2. 使用第二个数字 '5'。
+    #    0 1 2 3 4 5 6 7 8 9 10 11
+    #    T F F F F F F F F F F  F
+    # 1  T T F F F F F F F F F  F
+    # 5  T T F F F T T F F F F  F
+    ```
 
-        ```
-        3. 使用第三个数字 '11'。
-        # 0  1 2 3 4 5 6 7 8 9 10 11
-        # T  F F F F F F F F F F F F
-        # 1  T T F F F F F F F F F F
-        # 5  T T F F F T T F F F F F
-        # 11 T T F F F T T F F F F F T
-        ```
+    ```
+    3. 使用第三个数字 '11'。
+    #    0 1 2 3 4 5 6 7 8 9 10 11
+    #    T F F F F F F F F F F  F
+    # 1  T T F F F F F F F F F  F
+    # 5  T T F F F T T F F F F  F
+    # 11 T T F F F T T F F F F  T
+    ```
 
-        ```
-        3. 使用最后一个数字“5”。
-        # 0  1 2 3 4 5 6 7 8 9 10 11
-        # T  F F F F F F F F F F F F
-        # 1  T T F F F F F F F F F
-        # 5  T T F F F T T F F F F
-        # 11 T T F F F T T F F F F F T
-        # 5  T T F F F T T F F F F T T # dp
-        ```
-    - 分析示例 `dp` 网格后，我们可以得出 `递归公式`：
+    ```
+    3. 使用最后一个数字“5”。
+    #    0 1 2 3 4 5 6 7 8 9 10 11
+    #    T F F F F F F F F F F  F
+    # 1  T T F F F F F F F F F  F
+    # 5  T T F F F T T F F F F  F
+    # 11 T T F F F T T F F F F  T
+    # 5  T T F F F T T F F F T  T # dp
+    ```
+4. 根据`dp`网格数据，推导出“递推公式”。
 
-        ```cpp
-        dp[j] = dp[j] || dp[j - nums[i]]
-        ```
-4. 确定 `dp` 数组的遍历顺序
-    - 首先 **遍历项目**，然后 **遍历背包大小**（`以相反顺序` 或使用 `dp.clone`）。
-    - 在遍历背包大小时，由于 `dp[j]` 取决于 `dp[j]` 和 `dp[j - nums[i]]`，因此我们应该 **从右到左** 遍历 `dp` 数组。
-    - 请思考是否可以从 `从左到右` 遍历 `dp` 数组？在 `Python` 解决方案的代码注释中，我将回答这个问题。
-5. 检查 `dp` 数组的值
-    - 打印 `dp` 以查看它是否符合预期。
+    ```cpp
+    dp[j] = dp[j] || dp[j - nums[i]]
+    ```
+5. 写出程序，并打印`dp`数组，不合预期就调整。
 
 ## 复杂度
 
@@ -500,7 +485,7 @@ end
 // Welcome to create a PR to complete the code of this language, thanks!
 ```
 
-亲爱的力扣人，为了您更好的刷题体验，请访问 [leetcoder.net](https://leetcoder.net)。
+亲爱的力扣人，为了您更好的刷题体验，请访问 [leetcoder.net](https://leetcoder.net/zh)。
 本站敢称力扣题解最佳实践，终将省你大量刷题时间！
 
 原文链接：[416. 分割等和子集 - 力扣题解最佳实践](https://leetcoder.net/zh/leetcode/416-partition-equal-subset-sum).

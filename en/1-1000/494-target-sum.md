@@ -46,24 +46,14 @@ Return the number of different **expressions** that you can build, which evaluat
 
 This problem is quite difficult if you have not solved similar problems before. So before you start working on this question, it is recommended that you first work on another relatively simple question [416. Partition Equal Subset Sum](416-partition-equal-subset-sum.md) that is similar to this one.
 
-- When we see a set of numbers being used once to obtain another number through some calculation (just like this question), we can consider this to be a `0/1 Knapsack Problem`.
-- `0/1 Knapsack Problem` belongs to `Dynamic Programming`. `Dynamic programming` means that the answer to the current problem can be derived from the previous similar problem. Therefore, the `dp` array is used to record all the answers.
-- The core logic of the `0/1 Knapsack Problem` uses a two-dimensional `dp` array or a one-dimensional `dp` **rolling array**, first **traverses the items**, then **traverses the knapsack size** ([in reverse order](416-partition-equal-subset-sum.md) or use `dp.clone`), then **reference the previous value corresponding to the size of current 'item'**.
-- There are many things to remember when using a two-dimensional `dp` array, and it is difficult to write it right at once during an interview, so I won't describe it here.
-
 ## Steps
 
-### Common steps in '0/1 Knapsack Problem'
-These five steps are a pattern for solving `Dynamic Programming` problems.
-
 1. Determine the **meaning** of the `dp[j]`
-    - We can use a one-dimensional `dp` **rolling array**. Rolling an array means that the values of the array are overwritten each time through the iteration. 
-    - At first, try to use the problem's `return` value as the value of `dp[j]` to determine the meaning of `dp[j]`. If it doesn't work, try another way.
-    - So, `dp[j]` represents that by using the **first** `i` nums, the **number** of different **expressions** that you can build, which evaluates to `j`.
+    - `dp[j]` represents that by using the **first** `i` nums, the **number** of different **expressions** that you can build, which evaluates to `j`.
     - `dp[j]` is an **integer**.
 2. Determine the `dp` array's initial value
     - Use an example. We didn't use the `Example 1: Input: nums = [1,1,1,1,1], target = 3` because it is too special and is not a good example for deriving a formula.
-    - I made up an example: `nums = [1,2,1,2], target = 4`. The example must be simple, otherwise it would take too long to complete the grid.
+    - I made up an example: `nums = [1,2,1,2], target = 4`.
     - First, determine the `size` of the knapsack.
         - The `target` value may be very small, such as `0`, so it alone cannot determine the `size` of the knapsack.
         - The sum of `nums` should also be taken into account to fully cover all knapsack sizes.
@@ -73,66 +63,61 @@ These five steps are a pattern for solving `Dynamic Programming` problems.
 
         ```
         So after initialization, the 'dp' array would be:
-        #    0  1  2  3  4  5  6
-        #    1  0  0  0  0  0  0 # dp
+        #   0 1 2 3 4 5 6
+        #   1 0 0 0 0 0 0 # dp
         # 1
         # 2 
         # 1
         # 2
         ```
-    - You can see the `dp` array size is **one** greater than the knapsack size. In this way, the knapsack size and index value are equal, which helps to understand.
     - `dp[0]` is set to `1`, indicating that an empty knapsack can be achieved by not using any `nums`. In addition, it is used as the starting value, and the subsequent `dp[j]` will depend on it. If it is `0`, all values of `dp[j]` will be `0`.
     - `dp[j] = 0 (j != 0)`, indicating that it is impossible to get `j` with no `nums`.
-3. Determine the `dp` array's recurrence formula
-    - Try to complete the grid. In the process, you will get inspiration to derive the formula.
+3. According to an example, fill in the `dp` grid data "in order".
 
-        ```
-        1. Use the first num '1'.
-        #    0  1  2  3  4  5  6
-        #    1  0  0  0  0  0  0
-        # 1  0  1  0  0  0  0  0 # dp
-        # 2
-        # 1
-        # 2
-        ```
-        ```
-        2. Use the second num '2'.
-        #    0  1  2  3  4  5  6
-        #    1  0  0  0  0  0  0
-        # 1  0  1  0  0  0  0  0
-        # 2  0  1  0  1  0  0  0
-        # 1
-        # 2
-        ```
-        ```
-        3. Use the third num '1'.
-        #    0  1  2  3  4  5  6
-        #    1  0  0  0  0  0  0
-        # 1  0  1  0  0  0  0  0
-        # 2  0  1  0  1  0  0  0
-        # 1  2  0  2  0  1  0  0
-        # 2
-        ```
-        ```
-        4. Use the fourth num '2'.
-        #    0  1  2  3  4  5  6
-        #    1  0  0  0  0  0  0
-        # 1  0  1  0  0  0  0  0
-        # 2  0  1  0  1  0  0  0
-        # 1  2  0  2  0  1  0  0
-        # 2  4  0  3  0  2  0  1 # dp
-        ```
-    - After analyzing the sample `dp` grid, we can derive the `Recurrence Formula`:
+    ```
+    1. Use the first num '1'.
+    #   0 1 2 3 4 5 6
+    #   1 0 0 0 0 0 0
+    # 1 0 1 0 0 0 0 0 # dp
+    # 2
+    # 1
+    # 2
+    ```
+    ```
+    2. Use the second num '2'.
+    #   0 1 2 3 4 5 6
+    #   1 0 0 0 0 0 0
+    # 1 0 1 0 0 0 0 0
+    # 2 0 1 0 1 0 0 0
+    # 1
+    # 2
+    ```
+    ```
+    3. Use the third num '1'.
+    #   0 1 2 3 4 5 6
+    #   1 0 0 0 0 0 0
+    # 1 0 1 0 0 0 0 0
+    # 2 0 1 0 1 0 0 0
+    # 1 2 0 2 0 1 0 0
+    # 2
+    ```
+    ```
+    4. Use the fourth num '2'.
+    #   0 1 2 3 4 5 6
+    #   1 0 0 0 0 0 0
+    # 1 0 1 0 0 0 0 0
+    # 2 0 1 0 1 0 0 0
+    # 1 2 0 2 0 1 0 0
+    # 2 4 0 3 0 2 0 1 # dp
+    ```
+4. According to the `dp` grid data, derive the "recursive formula".
 
-        ```java
-        dp[j] = dp[abs(j - nums[i])] + dp[j + nums[i]]
-        ```
+    ```java
+    dp[j] = dp[abs(j - nums[i])] + dp[j + nums[i]]
+    ```
     - If `j < nums[i]`, `dp[j - nums[i]]` will raise `array index out of range` exception. So we use the `dp[abs(j - num)]` which is equal to it, because the `dp[j]` are symmetrical around `0`, such as `dp[-j]` equals to `dp[j]` (`-j` is an imaginary index).
-4. Determine the `dp` array's traversal order
-    - `dp[j]` depends on `dp[abs(j - nums[i])]` and `dp[j + nums[i]]`, so we can traverse the `dp` array in any order, but must reference the clone of `dp` to prevent the referenced value from being modified during the iteration.
-    - For `j + nums[i] >= dp.length`, `dp[j + nums[i]]` must be `0` because their values are too large and exceed the maximum sum of `nums`.
-5. Check the `dp` array's value
-    - Print the `dp` to see if it is as expected.
+    - When `j + nums[i] >= dp.length`, `dp[j + nums[i]]` must be `0` to prevent interference.
+5. Write a program and print the `dp` array. If it is not as expected, adjust it.
 
 ## Complexity
 

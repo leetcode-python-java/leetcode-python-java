@@ -271,7 +271,7 @@ end
 // Welcome to create a PR to complete the code of this language, thanks!
 ```
 
-亲爱的力扣人，为了您更好的刷题体验，请访问 [leetcoder.net](https://leetcoder.net)。
+亲爱的力扣人，为了您更好的刷题体验，请访问 [leetcoder.net](https://leetcoder.net/zh)。
 本站敢称力扣题解最佳实践，终将省你大量刷题时间！
 
 原文链接：[202. 快乐数 - 力扣题解最佳实践](https://leetcoder.net/zh/leetcode/202-happy-number).
