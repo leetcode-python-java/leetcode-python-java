@@ -60,7 +60,7 @@ If we use brute-force and check whether for every start and end position a subst
 
 ## “动态规划”的模式
 
-“动态规划”，需要用`dp`数组来保存结果。`dp[i][j]`的值可以由与它相关的之前的`dp[x][y]`的值推导出来。
+“动态规划”，需要用`dp`数组来保存结果。`dp[i][j]`的值可以由它的前一个（或多个）值通过公式转化出来。因此，`dp[i][j]`值是一步一步推导出来的，它和先前的`dp`记录值都有联系。
 
 #### “动态规划”分为五步
 

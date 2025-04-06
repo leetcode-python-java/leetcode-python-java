@@ -125,21 +125,9 @@ Return the **minimum** amount of time required for the potions to be brewed prop
 - The first step to solve this problem is to determine what algorithm to use. Because the production of each bottle of potion depends on the completion of the previous bottle of potion in the hands of some wizards, and the potion itself needs to be produced bottle by bottle, so what algorithm should be used?
     <details><summary>Click to view the answer</summary><p> Dynamic Programming. </p></details>
 
-- The core of this algorithm is to determine the **recursive formula**, but the *first step* is not to do this, what is it?
-    <details><summary>Click to view the answer</summary><p> is to determine the meaning of each value in the array. </p></details>
-
-- Dynamic programming can be implemented with *two-dimensional arrays* or *rolling arrays*. When explaining, it is clearer to use *two-dimensional arrays*; when implementing, it is more concise to use *rolling arrays*. So next, I will use *two-dimensional arrays* to explain this problem.
-
-- "Dynamic programming" is divided into five steps. Please follow these five steps strictly.
-    1. Determine what each value represents.
-    2. Initialize the array value.
-    3. Fill in some data. Based on the filled data, derive the "recursive formula".
-    4. Determine the traversal order. It may be from front to back, from back to front, or both.
-    5. Write out the program and print the array to see if it is as expected. If not, continue to adjust the program.
-
 ## Pattern of "Dynamic Programming"
 
-`Dynamic programming` requires the use of the `dp` array to store the results. The value of `dp[i][j]` can be derived from the value of the previous `dp[x][y]` related to it.
+"Dynamic Programming" requires the use of the `dp` array to store the results. The value of `dp[i][j]` can be converted from its previous (or multiple) values ​​through a formula. Therefore, the value of `dp[i][j]` is derived step by step, and it is related to the previous `dp` record value.
 
 #### "Dynamic programming" is divided into five steps
 
@@ -176,24 +164,19 @@ After reading the above, do you feel that "dynamic programming" is not that diff
 
 ## Steps
 
-- So what does each value in the two-dimensional arrays represent? First, each row, and then the value of a column in the row.
-    mark-detail The row represents the potion, and the column represents the wizard, which has been hinted in the question. <br>The meaning of the column value `dp[i][j]` needs to be derived according to the description of the question. If it is not suitable, adjust it. So the meaning is: the time it takes for the `j`<sup>th</sup> wizard to complete the `i`<sup>th</sup> bottle of potion. I deliberately did not add the word "shortest" because the potion cannot be separated from the hands of the wizard during the manufacturing process! mark-detail
-
-- How to initialize the group value?
+1. Determine the meaning of each value of the array `dp`. So what does each `dp[i][j]`  represent?
+    mark-detail The row represents the potion, and the column represents the wizard, which has been hinted in the question. <br>The meaning is: the time it takes for the `j`<sup>th</sup> wizard to complete the `i`<sup>th</sup> bottle of potion. I deliberately did not add the word "shortest" because the potion cannot be separated from the hands of the wizard during the manufacturing process! mark-detail
+2. How to initialize the group value?
     mark-detail Just set all the values to `0`. mark-detail
-
-- How to fill in the data?
+3. Fill in the `dp` grid data "in order" according to an example. How to do it?
     mark-detail The data in the table given in "Example 1" fully meets our needs, so just use it directly. mark-detail
-
-- How to derive the "recursive formula" based on the filled-in data?
+4. Based on the `dp` grid data, derive the "recursive formula". What it the "recursive formula"?
     mark-detail Condition 1: After the `j-1`<sup>th</sup> wizard has finished his work on the `i`<sup>th</sup> bottle of potion, the `j`<sup>th</sup> wizard can start his work on the `i`<sup>th</sup> bottle of potion. <br>Condition 2: After the `j`<sup>th</sup> wizard has finished his work on the `i-1`<sup>th</sup> bottle of potion, he can start his work on the `i`<sup>th</sup> bottle of potion. <br>Condition 3: After the `j`<sup>th</sup> wizard finishes his work on the `i`<sup>th</sup> potion, the `j+1`<sup>th</sup> wizard must immediately start his work on the `i`<sup>th</sup> potion. That is, the potion cannot wait for anyone, and the `j`<sup>th</sup> wizard **cannot start working too early**.mark-detail
-
-- Based on the above three conditions, please write the code and print the array to see if it meets expectations.
-- As a result, you find that some values are smaller than expected. At this time, you need to think about whether there is a logical loophole based on those "abnormal" values. Where is the loophole?
-    mark-detail The logical loophole is: some wizards still start working too early, causing the potion to wait for people. mark-detail
-
-- How to fix the logic loophole?
-    mark-detail **Process again from the back to the front**, because the last wizard no longer has the problem of starting work too early. This shows the importance of traversal order. It may be from front to back, or from back to front, or both. mark-detail
+5. Write a program and print the `dp` array. If it is not as expected, adjust it. What did you find?
+    - As a result, you find that some values are smaller than expected. At this time, you need to think about whether there is a logical loophole based on those "abnormal" values. Where is the loophole?
+        mark-detail The logical loophole is: some wizards still start working too early, causing the potion to wait for people. mark-detail
+    - How to fix the logic loophole?
+        mark-detail **Process again from the back to the front**, because the last wizard no longer has the problem of starting work too early. This shows the importance of traversal order. It may be from front to back, or from back to front, or both. mark-detail
 
 ## Complexity
 

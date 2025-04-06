@@ -34,11 +34,12 @@ In one **step**, you can delete exactly one character in either string.
 
 ## Intuition
 
-It is a question of **comparing two strings**. After doing similar questions many times, we will develop an intuition to use `dynamic programming with two-dimensional arrays`.
+It is a question of **comparing two strings** which is about dealing with "two swappable arrays".
+After doing similar questions many times, we will form the intuition of using `two-dimensional arrays` for dynamic programming.
 
 ## Pattern of "Dynamic Programming"
 
-`Dynamic programming` requires the use of the `dp` array to store the results. The value of `dp[i][j]` can be derived from the value of the previous `dp[x][y]` related to it.
+"Dynamic Programming" requires the use of the `dp` array to store the results. The value of `dp[i][j]` can be converted from its previous (or multiple) values ​​through a formula. Therefore, the value of `dp[i][j]` is derived step by step, and it is related to the previous `dp` record value.
 
 #### "Dynamic programming" is divided into five steps
 
@@ -75,16 +76,10 @@ After reading the above, do you feel that "dynamic programming" is not that diff
 
 ## Steps
 
-### Common steps in dynamic programming
-
-These five steps are a pattern for solving `dynamic programming` problems.
-
-1. Determine the **meaning** of the `dp[i][j]`
-    - Since there are two strings, we can use two-dimensional arrays as the default option.
-    - At first, try to use the problem's `return` value as the value of `dp[i][j]` to determine the meaning of `dp[i][j]`. If it doesn't work, try another way.
+1. Determine the **meaning** of the `dp[i][j]`.
     - `dp[i][j]` represents the **minimum** number of steps required to make `word1`'s first `i` letters and `word2`'s first `j` letters the same.
     - `dp[i][j]` is an integer.
-2. Determine the `dp` array's initial value
+2. Determine the `dp` array's initial value.
     - Use an example:
 
         ```
@@ -97,44 +92,38 @@ These five steps are a pattern for solving `dynamic programming` problems.
         ```
     - `dp[0][j] = j`, because `dp[0]` represents the empty string, and the number of steps is just the number of chars to be deleted.
     - `dp[i][0] = i`, the reason is the same as the previous line, just viewed in vertical direction.
-3. Determine the `dp` array's recurrence formula
-    - Try to complete the grid. In the process, you will get inspiration to derive the formula.
+3. Fill in the `dp` grid data "in order" according to an example.
 
-        ```
-        1. word1 = "s", word2 = "eat"
-        #     e a t
-        #   0 1 2 3
-        # s 1 2 3 4 # dp[1]
-        ```
-        ```
-        2. word1 = "se", word2 = "eat"
-        #     e a t
-        #   0 1 2 3
-        # s 1 2 3 4
-        # e 2 1 2 3
-        ```
-        ```
-        3. word1 = "sea", word2 = "eat"
-        #     e a t
-        #   0 1 2 3
-        # s 1 2 3 4
-        # e 2 1 2 3
-        # a 3 2 1 2
-        ```
-    - When analyzing the sample `dp` grid, remember there are three important points which you should pay special attention to: `dp[i - 1][j - 1]`, `dp[i - 1][j]` and `dp[i][j - 1]`. The current `dp[i][j]` often depends on them.
-    - If the question is also true in reverse (swap `word1` and `word2`), and we need to use `dp[i - 1][j]` or `dp[i][j - 1]`, then we probably need to use both of them.  
-    - We can derive the `Recurrence Formula`:
+    ```
+    1. word1 = "s", word2 = "eat"
+    #     e a t
+    #   0 1 2 3
+    # s 1 2 3 4 # dp[1]
+    ```
+    ```
+    2. word1 = "se", word2 = "eat"
+    #     e a t
+    #   0 1 2 3
+    # s 1 2 3 4
+    # e 2 1 2 3
+    ```
+    ```
+    3. word1 = "sea", word2 = "eat"
+    #     e a t
+    #   0 1 2 3
+    # s 1 2 3 4
+    # e 2 1 2 3
+    # a 3 2 1 2
+    ```
+4. Based on the `dp` grid data, derive the "recursive formula".
 
-        ```python
-        if word1[i - 1] == word2[j - 1]
-            dp[i][j] = dp[i - 1][j - 1]
-        else
-            dp[i][j] = min(dp[i - 1][j], dp[i][j - 1]) + 1
-        ```
-4. Determine the `dp` array's traversal order
-    - `dp[i][j]` depends on `dp[i - 1][j - 1]`, `dp[i - 1][j]` and `dp[i][j - 1]`, so we should traverse the `dp` array from top to bottom, then from left to right.
-5. Check the `dp` array's value
-    - Print the `dp` to see if it is as expected.
+    ```python
+    if word1[i - 1] == word2[j - 1]
+        dp[i][j] = dp[i - 1][j - 1]
+    else
+        dp[i][j] = min(dp[i - 1][j], dp[i][j - 1]) + 1
+    ```
+5. Write a program and print the `dp` array. If it is not as expected, adjust it.
 
 ## Complexity
 

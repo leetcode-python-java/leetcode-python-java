@@ -45,18 +45,15 @@ Given an integer array `nums`, find the `subarray` with the largest sum, and ret
 
 ## Intuition 1
 
-- This problem can be solved by using `Greedy Algorithm` (please see `solution 2`), but here we will use another way.
-- Imagine the size of nums is `i`, let us consider if the same question is applied to the `subarray` of `nums` from index `0` to `i - 1`.
-- The answer is `yes`. Then let us think if the `i - 1`'s answer could impact the answer of `i`.
-- The answer is still `yes`. What would be the impact?
-- For `nums[i]`,
+- This problem can be solved by using `Greedy Algorithm` (please see `solution 2`), yet here we will use another way.
+- For `nums[i]`:
     1. If the `previous sum` is negative, we can discard `previous sum`;
     2. If the `previous sum` is positive, we can add `previous sum` to the `current sum`.
-- So we can use `Dynamic Programming` to solve the problem. The characteristic of the "Dynamic Programming" algorithm is that the value of `dp[i]` is converted from `dp[i - 1]`.
+- Therefore, it meets the characteristics of a `dynamic programming` problem.
 
 ## Pattern of "Dynamic Programming"
 
-`Dynamic programming` requires the use of the `dp` array to store the results. The value of `dp[i][j]` can be derived from the value of the previous `dp[x][y]` related to it.
+"Dynamic Programming" requires the use of the `dp` array to store the results. The value of `dp[i][j]` can be converted from its previous (or multiple) values ​​through a formula. Therefore, the value of `dp[i][j]` is derived step by step, and it is related to the previous `dp` record value.
 
 #### "Dynamic programming" is divided into five steps
 
@@ -93,47 +90,36 @@ After reading the above, do you feel that "dynamic programming" is not that diff
 
 ## Steps
 
-### Common steps in dynamic programming
-
-These five steps are a pattern for solving `dynamic programming` problems.
-
 1. Determine the **meaning** of the `dp[i]`
-    - At first, try to use the problem's `return` value as the value of `dp[i]` to determine the meaning of `dp[i]`. If it doesn't work, try another way.
     - Imagine that `dp[i]` represents the `largest sum` at index `i`. Is this okay?
         mark-detail `dp[i + 1]` cannot be calculated by `dp[i]`. So we have to change the meaning. mark-detail
 - How to design it?
         mark-detail If `dp[i]` represents the `current sum` at index `i`, `dp[i + 1]` can be calculated by `dp[i]`. Finally, we can see that the `maximum sum` is recorded in the `current sum` array. mark-detail
 2. Determine the `dp` array's initial value
-    - Use an example:
 
-        ```ruby
-        nums = [-2,  1, -3,  4, -1,  2,  1, -5,  4]
-        dp   = [-2,  1, -3,  4, -1,  2,  1, -5,  4]
-        ```
-    - `dp[i] = nums[i]` would be good.
-3. Determine the `dp` array's recurrence formula
-    - Try to complete the `dp` array. In the process, you will get inspiration to derive the formula.
+    ```ruby
+    nums = [-2,  1, -3,  4, -1,  2,  1, -5,  4]
+    dp   = [-2,  1, -3,  4, -1,  2,  1, -5,  4]
+    ```
+3. Fill in the `dp` grid data "in order" according to an example.
 
-        ```ruby
-        nums = [-2,  1, -3,  4, -1,  2,  1, -5,  4]
-        dp   = [-2,  1,  N,  N,  N,  N,  N,  N,  N] # N means don't pay attention to it now
-        dp   = [-2,  1, -2,  N,  N,  N,  N,  N,  N]
-        dp   = [-2,  1, -2,  4,  N,  N,  N,  N,  N]
-        dp   = [-2,  1, -2,  4,  3,  N,  N,  N,  N]
-        dp   = [-2,  1, -2,  4,  3,  5,  N,  N,  N]
-        dp   = [-2,  1, -2,  4,  3,  5,  6,  N,  N]
-        dp   = [-2,  1, -2,  4,  3,  5,  6,  1,  N]
-        dp   = [-2,  1, -2,  4,  3,  5,  6,  1,  5]
-        ```
-    - After analyzing the sample `dp` array, we can derive the `Recurrence Formula`:
+    ```ruby
+    nums = [-2,  1, -3,  4, -1,  2,  1, -5,  4]
+    dp   = [-2,  1,  N,  N,  N,  N,  N,  N,  N] # N means don't pay attention to it now
+    dp   = [-2,  1, -2,  N,  N,  N,  N,  N,  N]
+    dp   = [-2,  1, -2,  4,  N,  N,  N,  N,  N]
+    dp   = [-2,  1, -2,  4,  3,  N,  N,  N,  N]
+    dp   = [-2,  1, -2,  4,  3,  5,  N,  N,  N]
+    dp   = [-2,  1, -2,  4,  3,  5,  6,  N,  N]
+    dp   = [-2,  1, -2,  4,  3,  5,  6,  1,  N]
+    dp   = [-2,  1, -2,  4,  3,  5,  6,  1,  5]
+    ```
+4. Based on the `dp` grid data, derive the "recursive formula".
 
-        ```python
-        dp[i] = max(nums[i], dp[i - 1] + nums[i])
-        ```
-4. Determine the `dp` array's traversal order
-    - `dp[i]` depends on `dp[i - 1]`, so we should traverse the `dp` array from left to right.
-5. Check the `dp` array's value
-    - Print the `dp` to see if it is as expected.
+    ```python
+    dp[i] = max(nums[i], dp[i - 1] + nums[i])
+    ```
+5. Write a program and print the `dp` array. If it is not as expected, adjust it.
 
 ## Complexity
 

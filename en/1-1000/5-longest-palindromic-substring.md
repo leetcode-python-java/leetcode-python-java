@@ -60,7 +60,7 @@ If we use brute-force and check whether for every start and end position a subst
 
 ## Pattern of "Dynamic Programming"
 
-`Dynamic programming` requires the use of the `dp` array to store the results. The value of `dp[i][j]` can be derived from the value of the previous `dp[x][y]` related to it.
+"Dynamic Programming" requires the use of the `dp` array to store the results. The value of `dp[i][j]` can be converted from its previous (or multiple) values ​​through a formula. Therefore, the value of `dp[i][j]` is derived step by step, and it is related to the previous `dp` record value.
 
 #### "Dynamic programming" is divided into five steps
 

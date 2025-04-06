@@ -230,15 +230,16 @@ end
 
 ## Intuition 2
 
-- Solution 1 is essentially a "dynamic programming" algorithm implemented with rolling variables. It is easy to understand, and the space complexity is reduced to `O(1)`.
+- `Solution 1` is essentially a "dynamic programming" algorithm implemented with `rolling variables`. It is easy to understand, and the space complexity is reduced to `O(1)`.
 - But now, not only do we not reduce the dimension, but we also increase the dimension. It will be more difficult to understand and implement. So why do this thankless task?
     <details><summary>Click to view the answer</summary><p> Because it can handle a more complex scenario (e.g. [583. Delete Operation for Two Strings](583-delete-operation-for-two-strings.md)) that is common in dynamic programming. </p></details>
-- In this question, can we use a one-dimensional rolling array to implement the "dynamic programming" algorithm?
-    <details><summary>Click to view the answer</summary><p> Of course, but considering that a one-dimensional rolling array is not as easy to understand as a two-dimensional array, and the implementation process is also prone to errors, so here I didn't give the relevant code implementation. If you are interested, you can try it. </p></details>
+- In this question, can we use a `one-dimensional rolling array` to implement the "dynamic programming" algorithm?
+    <details><summary>Click to view the answer</summary><p> Of course, but considering that for this problem a `one-dimensional rolling array` is not as easy to understand as a `two-dimensional array`, and the implementation process is also prone to errors, so here I didn't give the relevant code implementation. If you are interested, you can try it. </p></details>
+- The **compare two strings** question is about dealing with "two swappable arrays". After doing similar questions many times, we will form the intuition of using `two-dimensional arrays` for dynamic programming.
 
 ## Pattern of "Dynamic Programming"
 
-`Dynamic programming` requires the use of the `dp` array to store the results. The value of `dp[i][j]` can be derived from the value of the previous `dp[x][y]` related to it.
+"Dynamic Programming" requires the use of the `dp` array to store the results. The value of `dp[i][j]` can be converted from its previous (or multiple) values ​​through a formula. Therefore, the value of `dp[i][j]` is derived step by step, and it is related to the previous `dp` record value.
 
 #### "Dynamic programming" is divided into five steps
 
@@ -275,18 +276,10 @@ After reading the above, do you feel that "dynamic programming" is not that diff
 
 ## Steps
 
-It is a question of **comparing two strings**. After doing similar questions many times, we will develop an intuition to use `dynamic programming` with two-dimensional arrays.
-
-### Common steps in dynamic programming
-
-These five steps are a pattern for solving `dynamic programming` problems.
-
-1. Determine the **meaning** of the `dp[i][j]`
-    - Since there are two strings, we can use two-dimensional arrays as the default option.
-    - At first, try to use the problem's `return` value as the value of `dp[i][j]` to determine the meaning of `dp[i][j]`. If it doesn't work, try another way.
+1. Determine the **meaning** of the `dp[i][j]`.
     - `dp[i][j]` represents whether the first `i` letters of `s` are a subsequence of `t`'s first `j` letters.
     - `dp[i][j]` is `true` or `false`.
-2. Determine the `dp` array's initial value
+2. Determine the `dp` array's initial value.
     - Use an example:
 
         ```
@@ -300,45 +293,39 @@ These five steps are a pattern for solving `dynamic programming` problems.
         ```
     - `dp[0][j] = true` because `dp[0]` represents the empty string, and empty string is a subsequence of any string.
     - `dp[i][j] = false (i != 0)`.
-3. Determine the `dp` array's recurrence formula
-    - Try to complete the `dp` grid. In the process, you will get inspiration to derive the formula.
+3. Fill in the `dp` grid data "in order" according to an example.
 
-        ```
-        1. s = "a", t = "ahbgdc" 
-        #     a h b g d c
-        #   T T T T T T T
-        # a F T T T T T T # dp[1]
-        ```
-        ```
-        2. s = "ab", t = "ahbgdc" 
-        #     a h b g d c
-        #   T T T T T T T
-        # a F T T T T T T
-        # b F F F T T T T
-        ```
-        ```
-        3. s = "abc", t = "ahbgdc"
-        #     a h b g d c
-        #   T T T T T T T
-        # a F T T T T T T
-        # b F F F T T T T
-        # c F F F F F F T # dp[3]
-        ```
-    - When analyzing the sample `dp` grid, remember there are three important points which you should pay special attention to: `dp[i - 1][j - 1]`, `dp[i - 1][j]` and `dp[i][j - 1]`. The current `dp[i][j]` often depends on them.
-    - If the question is also true in reverse (swap `s` and `t`), and we need to use `dp[i - 1][j]` or `dp[i][j - 1]`, then we probably need to use both of them.
-    - We can derive the `Recurrence Formula`:
+    ```
+    1. s = "a", t = "ahbgdc" 
+    #     a h b g d c
+    #   T T T T T T T
+    # a F T T T T T T # dp[1]
+    ```
+    ```
+    2. s = "ab", t = "ahbgdc" 
+    #     a h b g d c
+    #   T T T T T T T
+    # a F T T T T T T
+    # b F F F T T T T
+    ```
+    ```
+    3. s = "abc", t = "ahbgdc"
+    #     a h b g d c
+    #   T T T T T T T
+    # a F T T T T T T
+    # b F F F T T T T
+    # c F F F F F F T # dp[3]
+    ```
+4. Based on the `dp` grid data, derive the "recursive formula".
 
-        ```ruby
-        if s[i - 1] == t[j - 1]
-          dp[i][j] = dp[i - 1][j - 1]
-        else
-          dp[i][j] = dp[i][j - 1]
-        end
-        ```
-4. Determine the `dp` array's traversal order
-    - `dp[i][j]` depends on `dp[i - 1][j - 1]` and `dp[i][j - 1]`, so we should traverse the `dp` array from top to bottom, then from left to right.
-5. Check the `dp` array's value
-    - Print the `dp` to see if it is as expected.
+    ```ruby
+    if s[i - 1] == t[j - 1]
+      dp[i][j] = dp[i - 1][j - 1]
+    else
+      dp[i][j] = dp[i][j - 1]
+    end
+    ```
+5. Write a program and print the `dp` array. If it is not as expected, adjust it.
 
 ## Complexity
 
