@@ -14,7 +14,11 @@ Here, I will provide you with **common problem-solving patterns** so that you do
 
 **Python, C++, Java, JavaScript, C#, Go, Ruby** languages' solutions are provided for every selected LeetCode problem. Other languages' solutions will be provided in the future. If you have better solutions, welcome to create an issue or PR!
 
-## How to Use this "Fuck LeetCode" Repo?
+## How to fully demonstrate your abilities to employers and get the offer you want?
+
+[Developer Portfolio](https://github.com/developer-portfolios/developer-portfolio) focuses on bringing value to developers, including resume, portfolio, blog and other functions. With it, your abilities will be better seen by employers!
+
+## How to Use this "Fuck LeetCode" Repository?
 
 I have planned a learning route for you. You just need to do the problems in the order they are listed.
 You can skip the more difficult problems and do them later.
@@ -139,4 +143,4 @@ You can skip the more difficult problems and do them later.
 
 ## "Fuck LeetCode": More Problems
 
-More LeetCode problems and solutions will be added soon. Updated every day. 
+More LeetCode problems and solutions will be added soon. Updated every day.
