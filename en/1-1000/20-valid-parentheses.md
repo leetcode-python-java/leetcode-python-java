@@ -1,6 +1,6 @@
-# 20. Valid Parentheses - LeetCode Best Practices
+# 20. Valid Parentheses - LeetCode solutions in Python/Java/C++ and more
 
-Visit original link: [20. Valid Parentheses - LeetCode Best Practices](https://leetcoder.net/en/leetcode/20-valid-parentheses) for a better experience!
+Visit original link: [20. Valid Parentheses - LeetCode solutions in Python/Java/C++ and more](https://leetcodepython.com/en/leetcode/20-valid-parentheses) for a better experience!
 
 LeetCode link: [20. Valid Parentheses](https://leetcode.com/problems/valid-parentheses), difficulty: **Easy**.
 
@@ -348,9 +348,9 @@ end
 // Welcome to create a PR to complete the code of this language, thanks!
 ```
 
-Dear LeetCoders! For a better LeetCode problem-solving experience, please visit website [leetcoder.net](https://leetcoder.net): Dare to claim the best practices of LeetCode solutions! Will save you a lot of time!
+Dear LeetCoders! For a better LeetCode problem-solving experience, please visit website [LeetCodePython.com](https://leetcodepython.com): Dare to claim the best practices of LeetCode solutions! Will save you a lot of time!
 
-Original link: [20. Valid Parentheses - LeetCode Best Practices](https://leetcoder.net/en/leetcode/20-valid-parentheses).
+Original link: [20. Valid Parentheses - LeetCode solutions in Python/Java/C++ and more](https://leetcodepython.com/en/leetcode/20-valid-parentheses).
 
 GitHub repository: [f*ck-leetcode](https://github.com/fuck-leetcode/fuck-leetcode).
 

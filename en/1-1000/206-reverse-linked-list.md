@@ -1,6 +1,6 @@
-# 206. Reverse Linked List - LeetCode Best Practices
+# 206. Reverse Linked List - LeetCode solutions in Python/Java/C++ and more
 
-Visit original link: [206. Reverse Linked List - LeetCode Best Practices](https://leetcoder.net/en/leetcode/206-reverse-linked-list) for a better experience!
+Visit original link: [206. Reverse Linked List - LeetCode solutions in Python/Java/C++ and more](https://leetcodepython.com/en/leetcode/206-reverse-linked-list) for a better experience!
 
 LeetCode link: [206. Reverse Linked List](https://leetcode.com/problems/reverse-linked-list), difficulty: **Easy**.
 
@@ -287,9 +287,9 @@ end
 // Welcome to create a PR to complete the code of this language, thanks!
 ```
 
-Dear LeetCoders! For a better LeetCode problem-solving experience, please visit website [leetcoder.net](https://leetcoder.net): Dare to claim the best practices of LeetCode solutions! Will save you a lot of time!
+Dear LeetCoders! For a better LeetCode problem-solving experience, please visit website [LeetCodePython.com](https://leetcodepython.com): Dare to claim the best practices of LeetCode solutions! Will save you a lot of time!
 
-Original link: [206. Reverse Linked List - LeetCode Best Practices](https://leetcoder.net/en/leetcode/206-reverse-linked-list).
+Original link: [206. Reverse Linked List - LeetCode solutions in Python/Java/C++ and more](https://leetcodepython.com/en/leetcode/206-reverse-linked-list).
 
 GitHub repository: [f*ck-leetcode](https://github.com/fuck-leetcode/fuck-leetcode).
 

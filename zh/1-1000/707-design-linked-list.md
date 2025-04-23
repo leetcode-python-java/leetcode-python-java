@@ -1,6 +1,6 @@
-# 707. 设计链表 - 力扣题解最佳实践
+# 707. 设计链表 - 力扣Python/Java/C++等题解
 
-访问原文链接：[707. 设计链表 - 力扣题解最佳实践](https://leetcoder.net/zh/leetcode/707-design-linked-list)，体验更佳！
+访问原文链接：[707. 设计链表 - 力扣Python/Java/C++等题解](https://leetcodepython.com/zh/leetcode/707-design-linked-list)，体验更佳！
 
 力扣链接：[707. 设计链表](https://leetcode.cn/problems/design-linked-list), 难度：**中等**。
 
@@ -632,10 +632,10 @@ end
 // Welcome to create a PR to complete the code of this language, thanks!
 ```
 
-亲爱的力扣人，为了您更好的刷题体验，请访问 [leetcoder.net](https://leetcoder.net/zh)。
+亲爱的力扣人，为了您更好的刷题体验，请访问 [LeetCodePython.com](https://leetcodepython.com/zh)。
 本站敢称力扣题解最佳实践，终将省你大量刷题时间！
 
-原文链接：[707. 设计链表 - 力扣题解最佳实践](https://leetcoder.net/zh/leetcode/707-design-linked-list).
+原文链接：[707. 设计链表 - 力扣Python/Java/C++等题解](https://leetcodepython.com/zh/leetcode/707-design-linked-list).
 
 GitHub 仓库: [f*ck-leetcode](https://github.com/fuck-leetcode/fuck-leetcode).
 

@@ -1,6 +1,6 @@
-# 3494. Find the Minimum Amount of Time to Brew Potions - LeetCode Best Practices
+# 3494. Find the Minimum Amount of Time to Brew Potions - LeetCode solutions in Python/Java/C++ and more
 
-Visit original link: [3494. Find the Minimum Amount of Time to Brew Potions - LeetCode Best Practices](https://leetcoder.net/en/leetcode/3494-find-the-minimum-amount-of-time-to-brew-potions) for a better experience!
+Visit original link: [3494. Find the Minimum Amount of Time to Brew Potions - LeetCode solutions in Python/Java/C++ and more](https://leetcodepython.com/en/leetcode/3494-find-the-minimum-amount-of-time-to-brew-potions) for a better experience!
 
 LeetCode link: [3494. Find the Minimum Amount of Time to Brew Potions](https://leetcode.com/problems/find-the-minimum-amount-of-time-to-brew-potions), difficulty: **Medium**.
 
@@ -432,9 +432,9 @@ func minTime(skill []int, mana []int) int64 {
 // Welcome to create a PR to complete the code of this language, thanks!
 ```
 
-Dear LeetCoders! For a better LeetCode problem-solving experience, please visit website [leetcoder.net](https://leetcoder.net): Dare to claim the best practices of LeetCode solutions! Will save you a lot of time!
+Dear LeetCoders! For a better LeetCode problem-solving experience, please visit website [LeetCodePython.com](https://leetcodepython.com): Dare to claim the best practices of LeetCode solutions! Will save you a lot of time!
 
-Original link: [3494. Find the Minimum Amount of Time to Brew Potions - LeetCode Best Practices](https://leetcoder.net/en/leetcode/3494-find-the-minimum-amount-of-time-to-brew-potions).
+Original link: [3494. Find the Minimum Amount of Time to Brew Potions - LeetCode solutions in Python/Java/C++ and more](https://leetcodepython.com/en/leetcode/3494-find-the-minimum-amount-of-time-to-brew-potions).
 
 GitHub repository: [f*ck-leetcode](https://github.com/fuck-leetcode/fuck-leetcode).
 

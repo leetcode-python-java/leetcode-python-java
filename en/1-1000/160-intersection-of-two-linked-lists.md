@@ -1,6 +1,6 @@
-# 160. Intersection of Two Linked Lists - LeetCode Best Practices
+# 160. Intersection of Two Linked Lists - LeetCode solutions in Python/Java/C++ and more
 
-Visit original link: [160. Intersection of Two Linked Lists - LeetCode Best Practices](https://leetcoder.net/en/leetcode/160-intersection-of-two-linked-lists) for a better experience!
+Visit original link: [160. Intersection of Two Linked Lists - LeetCode solutions in Python/Java/C++ and more](https://leetcodepython.com/en/leetcode/160-intersection-of-two-linked-lists) for a better experience!
 
 LeetCode link: [160. Intersection of Two Linked Lists](https://leetcode.com/problems/intersection-of-two-linked-lists), difficulty: **Easy**.
 
@@ -493,9 +493,9 @@ func getIntersectionNode(headA, headB *ListNode) *ListNode {
 // Welcome to create a PR to complete the code of this language, thanks!
 ```
 
-Dear LeetCoders! For a better LeetCode problem-solving experience, please visit website [leetcoder.net](https://leetcoder.net): Dare to claim the best practices of LeetCode solutions! Will save you a lot of time!
+Dear LeetCoders! For a better LeetCode problem-solving experience, please visit website [LeetCodePython.com](https://leetcodepython.com): Dare to claim the best practices of LeetCode solutions! Will save you a lot of time!
 
-Original link: [160. Intersection of Two Linked Lists - LeetCode Best Practices](https://leetcoder.net/en/leetcode/160-intersection-of-two-linked-lists).
+Original link: [160. Intersection of Two Linked Lists - LeetCode solutions in Python/Java/C++ and more](https://leetcodepython.com/en/leetcode/160-intersection-of-two-linked-lists).
 
 GitHub repository: [f*ck-leetcode](https://github.com/fuck-leetcode/fuck-leetcode).
 

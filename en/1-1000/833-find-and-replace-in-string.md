@@ -1,6 +1,6 @@
-# 833. Find And Replace in String - LeetCode Best Practices
+# 833. Find And Replace in String - LeetCode solutions in Python/Java/C++ and more
 
-Visit original link: [833. Find And Replace in String - LeetCode Best Practices](https://leetcoder.net/en/leetcode/833-find-and-replace-in-string) for a better experience!
+Visit original link: [833. Find And Replace in String - LeetCode solutions in Python/Java/C++ and more](https://leetcodepython.com/en/leetcode/833-find-and-replace-in-string) for a better experience!
 
 LeetCode link: [833. Find And Replace in String](https://leetcode.com/problems/find-and-replace-in-string), difficulty: **Medium**.
 
@@ -105,9 +105,9 @@ class Solution:
 // Welcome to create a PR to complete the code of this language, thanks!
 ```
 
-Dear LeetCoders! For a better LeetCode problem-solving experience, please visit website [leetcoder.net](https://leetcoder.net): Dare to claim the best practices of LeetCode solutions! Will save you a lot of time!
+Dear LeetCoders! For a better LeetCode problem-solving experience, please visit website [LeetCodePython.com](https://leetcodepython.com): Dare to claim the best practices of LeetCode solutions! Will save you a lot of time!
 
-Original link: [833. Find And Replace in String - LeetCode Best Practices](https://leetcoder.net/en/leetcode/833-find-and-replace-in-string).
+Original link: [833. Find And Replace in String - LeetCode solutions in Python/Java/C++ and more](https://leetcodepython.com/en/leetcode/833-find-and-replace-in-string).
 
 GitHub repository: [f*ck-leetcode](https://github.com/fuck-leetcode/fuck-leetcode).
 

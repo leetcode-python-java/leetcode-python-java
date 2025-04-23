@@ -1,6 +1,6 @@
-# 3478. Choose K Elements With Maximum Sum - LeetCode Best Practices
+# 3478. Choose K Elements With Maximum Sum - LeetCode solutions in Python/Java/C++ and more
 
-Visit original link: [3478. Choose K Elements With Maximum Sum - LeetCode Best Practices](https://leetcoder.net/en/leetcode/3478-choose-k-elements-with-maximum-sum) for a better experience!
+Visit original link: [3478. Choose K Elements With Maximum Sum - LeetCode solutions in Python/Java/C++ and more](https://leetcodepython.com/en/leetcode/3478-choose-k-elements-with-maximum-sum) for a better experience!
 
 LeetCode link: [3478. Choose K Elements With Maximum Sum](https://leetcode.com/problems/choose-k-elements-with-maximum-sum), difficulty: **Medium**.
 
@@ -129,9 +129,9 @@ class Solution:
 // Welcome to create a PR to complete the code of this language, thanks!
 ```
 
-Dear LeetCoders! For a better LeetCode problem-solving experience, please visit website [leetcoder.net](https://leetcoder.net): Dare to claim the best practices of LeetCode solutions! Will save you a lot of time!
+Dear LeetCoders! For a better LeetCode problem-solving experience, please visit website [LeetCodePython.com](https://leetcodepython.com): Dare to claim the best practices of LeetCode solutions! Will save you a lot of time!
 
-Original link: [3478. Choose K Elements With Maximum Sum - LeetCode Best Practices](https://leetcoder.net/en/leetcode/3478-choose-k-elements-with-maximum-sum).
+Original link: [3478. Choose K Elements With Maximum Sum - LeetCode solutions in Python/Java/C++ and more](https://leetcodepython.com/en/leetcode/3478-choose-k-elements-with-maximum-sum).
 
 GitHub repository: [f*ck-leetcode](https://github.com/fuck-leetcode/fuck-leetcode).
 

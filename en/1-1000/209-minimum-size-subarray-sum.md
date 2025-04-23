@@ -1,6 +1,6 @@
-# 209. Minimum Size Subarray Sum - LeetCode Best Practices
+# 209. Minimum Size Subarray Sum - LeetCode solutions in Python/Java/C++ and more
 
-Visit original link: [209. Minimum Size Subarray Sum - LeetCode Best Practices](https://leetcoder.net/en/leetcode/209-minimum-size-subarray-sum) for a better experience!
+Visit original link: [209. Minimum Size Subarray Sum - LeetCode solutions in Python/Java/C++ and more](https://leetcodepython.com/en/leetcode/209-minimum-size-subarray-sum) for a better experience!
 
 LeetCode link: [209. Minimum Size Subarray Sum](https://leetcode.com/problems/minimum-size-subarray-sum), difficulty: **Medium**.
 
@@ -294,9 +294,9 @@ public:
 // Welcome to create a PR to complete the code of this language, thanks!
 ```
 
-Dear LeetCoders! For a better LeetCode problem-solving experience, please visit website [leetcoder.net](https://leetcoder.net): Dare to claim the best practices of LeetCode solutions! Will save you a lot of time!
+Dear LeetCoders! For a better LeetCode problem-solving experience, please visit website [LeetCodePython.com](https://leetcodepython.com): Dare to claim the best practices of LeetCode solutions! Will save you a lot of time!
 
-Original link: [209. Minimum Size Subarray Sum - LeetCode Best Practices](https://leetcoder.net/en/leetcode/209-minimum-size-subarray-sum).
+Original link: [209. Minimum Size Subarray Sum - LeetCode solutions in Python/Java/C++ and more](https://leetcodepython.com/en/leetcode/209-minimum-size-subarray-sum).
 
 GitHub repository: [f*ck-leetcode](https://github.com/fuck-leetcode/fuck-leetcode).
 

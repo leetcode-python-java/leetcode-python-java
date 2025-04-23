@@ -1,6 +1,6 @@
-# 202. Happy Number - LeetCode Best Practices
+# 202. Happy Number - LeetCode solutions in Python/Java/C++ and more
 
-Visit original link: [202. Happy Number - LeetCode Best Practices](https://leetcoder.net/en/leetcode/202-happy-number) for a better experience!
+Visit original link: [202. Happy Number - LeetCode solutions in Python/Java/C++ and more](https://leetcodepython.com/en/leetcode/202-happy-number) for a better experience!
 
 LeetCode link: [202. Happy Number](https://leetcode.com/problems/happy-number), difficulty: **Easy**.
 
@@ -272,9 +272,9 @@ end
 // Welcome to create a PR to complete the code of this language, thanks!
 ```
 
-Dear LeetCoders! For a better LeetCode problem-solving experience, please visit website [leetcoder.net](https://leetcoder.net): Dare to claim the best practices of LeetCode solutions! Will save you a lot of time!
+Dear LeetCoders! For a better LeetCode problem-solving experience, please visit website [LeetCodePython.com](https://leetcodepython.com): Dare to claim the best practices of LeetCode solutions! Will save you a lot of time!
 
-Original link: [202. Happy Number - LeetCode Best Practices](https://leetcoder.net/en/leetcode/202-happy-number).
+Original link: [202. Happy Number - LeetCode solutions in Python/Java/C++ and more](https://leetcodepython.com/en/leetcode/202-happy-number).
 
 GitHub repository: [f*ck-leetcode](https://github.com/fuck-leetcode/fuck-leetcode).
 
