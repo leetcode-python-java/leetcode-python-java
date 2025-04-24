@@ -4,7 +4,7 @@
 
 力扣链接：[5. 最长回文子串](https://leetcode.cn/problems/longest-palindromic-substring), 难度：**中等**。
 
-## 力扣“5. 最长回文子串”问题描述
+## LeetCode “5. 最长回文子串”问题描述
 
 给你一个字符串 `s`，找到 `s` 中最长的 **回文子串**。
 

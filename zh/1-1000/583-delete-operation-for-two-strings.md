@@ -4,7 +4,7 @@
 
 力扣链接：[583. 两个字符串的删除操作](https://leetcode.cn/problems/delete-operation-for-two-strings), 难度：**中等**。
 
-## 力扣“583. 两个字符串的删除操作”问题描述
+## LeetCode “583. 两个字符串的删除操作”问题描述
 
 给定两个单词 `word1` 和 `word2` ，返回使得 `word1` 和  `word2` 相同所需的最小步数。
 

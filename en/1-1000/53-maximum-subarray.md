@@ -1,6 +1,6 @@
-# 53. Maximum Subarray - LeetCode solutions in Python/Java/C++ and more
+# 53. Maximum Subarray - LeetCode Python/Java/C++/JS code
 
-Visit original link: [53. Maximum Subarray - LeetCode solutions in Python/Java/C++ and more](https://leetcodepython.com/en/leetcode/53-maximum-subarray) for a better experience!
+Visit original link: [53. Maximum Subarray - LeetCode Python/Java/C++/JS code](https://leetcodepython.com/en/leetcode/53-maximum-subarray) for a better experience!
 
 LeetCode link: [53. Maximum Subarray](https://leetcode.com/problems/maximum-subarray), difficulty: **Medium**.
 
@@ -88,7 +88,7 @@ Given an integer array `nums`, find the `subarray` with the largest sum, and ret
 
 After reading the above, do you feel that "dynamic programming" is not that difficult? Try to solve this problem. 🤗
 
-## Steps
+## Step by Step Solutions
 
 1. Determine the **meaning** of the `dp[i]`
     - Imagine that `dp[i]` represents the `largest sum` at index `i`. Is this okay?
@@ -386,7 +386,7 @@ class Solution {
 
 Dear LeetCoders! For a better LeetCode problem-solving experience, please visit website [LeetCodePython.com](https://leetcodepython.com): Dare to claim the best practices of LeetCode solutions! Will save you a lot of time!
 
-Original link: [53. Maximum Subarray - LeetCode solutions in Python/Java/C++ and more](https://leetcodepython.com/en/leetcode/53-maximum-subarray).
+Original link: [53. Maximum Subarray - LeetCode Python/Java/C++/JS code](https://leetcodepython.com/en/leetcode/53-maximum-subarray).
 
 GitHub repository: [f*ck-leetcode](https://github.com/fuck-leetcode/fuck-leetcode).
 

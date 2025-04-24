@@ -1,6 +1,6 @@
-# 541. Reverse String II - LeetCode solutions in Python/Java/C++ and more
+# 541. Reverse String II - LeetCode Python/Java/C++/JS code
 
-Visit original link: [541. Reverse String II - LeetCode solutions in Python/Java/C++ and more](https://leetcodepython.com/en/leetcode/541-reverse-string-ii) for a better experience!
+Visit original link: [541. Reverse String II - LeetCode Python/Java/C++/JS code](https://leetcodepython.com/en/leetcode/541-reverse-string-ii) for a better experience!
 
 LeetCode link: [541. Reverse String II](https://leetcode.com/problems/reverse-string-ii), difficulty: **Easy**.
 
@@ -35,7 +35,7 @@ Given a string `s` and an integer `k`, reverse the first `k` characters for ever
 2. In the loop, it is more convenient to use `k` as the step value rather than `2k`, because if `2k` is used, `k` must still be used for judgment.
 3. It is required to reverse only the first `k` characters of each `2k` characters, so a `boolean` variable `should_reverse` is needed as a judgment condition for whether to reverse.
 
-## Steps
+## Step by Step Solutions
 
 1. Use a new string `result` as the return value. In the loop, the step value is `k`.
 
@@ -278,7 +278,7 @@ func reverseStr(s string, k int) string {
 
 Dear LeetCoders! For a better LeetCode problem-solving experience, please visit website [LeetCodePython.com](https://leetcodepython.com): Dare to claim the best practices of LeetCode solutions! Will save you a lot of time!
 
-Original link: [541. Reverse String II - LeetCode solutions in Python/Java/C++ and more](https://leetcodepython.com/en/leetcode/541-reverse-string-ii).
+Original link: [541. Reverse String II - LeetCode Python/Java/C++/JS code](https://leetcodepython.com/en/leetcode/541-reverse-string-ii).
 
 GitHub repository: [f*ck-leetcode](https://github.com/fuck-leetcode/fuck-leetcode).
 

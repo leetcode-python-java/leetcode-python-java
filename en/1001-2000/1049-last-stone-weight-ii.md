@@ -1,6 +1,6 @@
-# 1049. Last Stone Weight II - LeetCode solutions in Python/Java/C++ and more
+# 1049. Last Stone Weight II - LeetCode Python/Java/C++/JS code
 
-Visit original link: [1049. Last Stone Weight II - LeetCode solutions in Python/Java/C++ and more](https://leetcodepython.com/en/leetcode/1049-last-stone-weight-ii) for a better experience!
+Visit original link: [1049. Last Stone Weight II - LeetCode Python/Java/C++/JS code](https://leetcodepython.com/en/leetcode/1049-last-stone-weight-ii) for a better experience!
 
 LeetCode link: [1049. Last Stone Weight II](https://leetcode.com/problems/last-stone-weight-ii), difficulty: **Medium**.
 
@@ -137,7 +137,7 @@ Because "0/1 Knapsack Problem" belongs to "Dynamic Programming", I will explain 
         ```
 5. Write a program and print the `dp` array. If it is not as expected, adjust it.
 
-## Steps
+## Step by Step Solutions
 
 1. Determine the **meaning** of the `dp[j]`
     - `dp[j]` represents whether it is possible to `sum` the first `i` `stones` to get `j`.
@@ -595,7 +595,7 @@ end
 
 Dear LeetCoders! For a better LeetCode problem-solving experience, please visit website [LeetCodePython.com](https://leetcodepython.com): Dare to claim the best practices of LeetCode solutions! Will save you a lot of time!
 
-Original link: [1049. Last Stone Weight II - LeetCode solutions in Python/Java/C++ and more](https://leetcodepython.com/en/leetcode/1049-last-stone-weight-ii).
+Original link: [1049. Last Stone Weight II - LeetCode Python/Java/C++/JS code](https://leetcodepython.com/en/leetcode/1049-last-stone-weight-ii).
 
 GitHub repository: [f*ck-leetcode](https://github.com/fuck-leetcode/fuck-leetcode).
 

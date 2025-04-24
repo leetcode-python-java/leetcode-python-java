@@ -4,7 +4,7 @@
 
 力扣链接：[3478. 选出和最大的 K 个元素](https://leetcode.cn/problems/choose-k-elements-with-maximum-sum), 难度：**中等**。
 
-## 力扣“3478. 选出和最大的 K 个元素”问题描述
+## LeetCode “3478. 选出和最大的 K 个元素”问题描述
 
 给你两个整数数组，`nums1` 和 `nums2`，长度均为 `n`，以及一个正整数 `k` 。
 

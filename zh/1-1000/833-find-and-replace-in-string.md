@@ -4,7 +4,7 @@
 
 力扣链接：[833. 字符串中的查找与替换](https://leetcode.cn/problems/find-and-replace-in-string), 难度：**中等**。
 
-## 力扣“833. 字符串中的查找与替换”问题描述
+## LeetCode “833. 字符串中的查找与替换”问题描述
 
 你会得到一个字符串 `s` (索引从 0 开始)，你必须对它执行 `k` 个替换操作。替换操作以三个长度均为 `k` 的并行数组给出：`indices`, `sources`, `targets`。
 

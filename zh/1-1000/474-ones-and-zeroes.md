@@ -4,7 +4,7 @@
 
 力扣链接：[474. 一和零](https://leetcode.cn/problems/ones-and-zeroes), 难度：**中等**。
 
-## 力扣“474. 一和零”问题描述
+## LeetCode “474. 一和零”问题描述
 
 给你一个二进制字符串数组 `strs` 和两个整数 `m` 和 `n` 。
 

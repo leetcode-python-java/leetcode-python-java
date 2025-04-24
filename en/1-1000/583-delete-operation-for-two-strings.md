@@ -1,6 +1,6 @@
-# 583. Delete Operation for Two Strings - LeetCode solutions in Python/Java/C++ and more
+# 583. Delete Operation for Two Strings - LeetCode Python/Java/C++/JS code
 
-Visit original link: [583. Delete Operation for Two Strings - LeetCode solutions in Python/Java/C++ and more](https://leetcodepython.com/en/leetcode/583-delete-operation-for-two-strings) for a better experience!
+Visit original link: [583. Delete Operation for Two Strings - LeetCode Python/Java/C++/JS code](https://leetcodepython.com/en/leetcode/583-delete-operation-for-two-strings) for a better experience!
 
 LeetCode link: [583. Delete Operation for Two Strings](https://leetcode.com/problems/delete-operation-for-two-strings), difficulty: **Medium**.
 
@@ -74,7 +74,7 @@ After doing similar questions many times, we will form the intuition of using `t
 
 After reading the above, do you feel that "dynamic programming" is not that difficult? Try to solve this problem. 🤗
 
-## Steps
+## Step by Step Solutions
 
 1. Determine the **meaning** of the `dp[i][j]`.
     - `dp[i][j]` represents the **minimum** number of steps required to make `word1`'s first `i` letters and `word2`'s first `j` letters the same.
@@ -331,7 +331,7 @@ end
 
 Dear LeetCoders! For a better LeetCode problem-solving experience, please visit website [LeetCodePython.com](https://leetcodepython.com): Dare to claim the best practices of LeetCode solutions! Will save you a lot of time!
 
-Original link: [583. Delete Operation for Two Strings - LeetCode solutions in Python/Java/C++ and more](https://leetcodepython.com/en/leetcode/583-delete-operation-for-two-strings).
+Original link: [583. Delete Operation for Two Strings - LeetCode Python/Java/C++/JS code](https://leetcodepython.com/en/leetcode/583-delete-operation-for-two-strings).
 
 GitHub repository: [f*ck-leetcode](https://github.com/fuck-leetcode/fuck-leetcode).
 

@@ -4,7 +4,7 @@
 
 力扣链接：[494. 目标和](https://leetcode.cn/problems/target-sum), 难度：**中等**。
 
-## 力扣“494. 目标和”问题描述
+## LeetCode “494. 目标和”问题描述
 
 给你一个非负整数数组 `nums` 和一个整数 `target` 。
 

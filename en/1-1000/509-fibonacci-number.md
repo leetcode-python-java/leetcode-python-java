@@ -1,6 +1,6 @@
-# 509. Fibonacci Number - LeetCode solutions in Python/Java/C++ and more
+# 509. Fibonacci Number - LeetCode Python/Java/C++/JS code
 
-Visit original link: [509. Fibonacci Number - LeetCode solutions in Python/Java/C++ and more](https://leetcodepython.com/en/leetcode/509-fibonacci-number) for a better experience!
+Visit original link: [509. Fibonacci Number - LeetCode Python/Java/C++/JS code](https://leetcodepython.com/en/leetcode/509-fibonacci-number) for a better experience!
 
 LeetCode link: [509. Fibonacci Number](https://leetcode.com/problems/fibonacci-number), difficulty: **Easy**.
 
@@ -605,7 +605,7 @@ end
 
 Dear LeetCoders! For a better LeetCode problem-solving experience, please visit website [LeetCodePython.com](https://leetcodepython.com): Dare to claim the best practices of LeetCode solutions! Will save you a lot of time!
 
-Original link: [509. Fibonacci Number - LeetCode solutions in Python/Java/C++ and more](https://leetcodepython.com/en/leetcode/509-fibonacci-number).
+Original link: [509. Fibonacci Number - LeetCode Python/Java/C++/JS code](https://leetcodepython.com/en/leetcode/509-fibonacci-number).
 
 GitHub repository: [f*ck-leetcode](https://github.com/fuck-leetcode/fuck-leetcode).
 

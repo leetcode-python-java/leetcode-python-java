@@ -4,7 +4,7 @@
 
 力扣链接：[1049. 最后一块石头的重量 II](https://leetcode.cn/problems/last-stone-weight-ii), 难度：**中等**。
 
-## 力扣“1049. 最后一块石头的重量 II”问题描述
+## LeetCode “1049. 最后一块石头的重量 II”问题描述
 
 有一堆石头，用整数数组 `stones` 表示。其中 `stones[i]` 表示第 `i` 块石头的重量。
 

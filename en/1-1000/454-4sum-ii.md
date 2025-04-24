@@ -1,6 +1,6 @@
-# 454. 4Sum II - LeetCode solutions in Python/Java/C++ and more
+# 454. 4Sum II - LeetCode Python/Java/C++/JS code
 
-Visit original link: [454. 4Sum II - LeetCode solutions in Python/Java/C++ and more](https://leetcodepython.com/en/leetcode/454-4sum-ii) for a better experience!
+Visit original link: [454. 4Sum II - LeetCode Python/Java/C++/JS code](https://leetcodepython.com/en/leetcode/454-4sum-ii) for a better experience!
 
 LeetCode link: [454. 4Sum II](https://leetcode.com/problems/4sum-ii), difficulty: **Medium**.
 
@@ -48,7 +48,7 @@ Given four integer arrays `nums1`, `nums2`, `nums3`, and `nums4` all of length `
 2. Count the number of each `sum`. Use `Map` to store, `key` is `sum`, `value` is `count`.
 3. Iterate over `nums3` and `nums4`, if `-(num3 + num4)` exists in `keys` of `Map`, then `count` is included in the total.
 
-## Steps
+## Step by Step Solutions
 
 1. Count the number of each `sum`. Use `Map` to store, `key` is `sum`, `value` is `count`.
 
@@ -273,7 +273,7 @@ public:
 
 Dear LeetCoders! For a better LeetCode problem-solving experience, please visit website [LeetCodePython.com](https://leetcodepython.com): Dare to claim the best practices of LeetCode solutions! Will save you a lot of time!
 
-Original link: [454. 4Sum II - LeetCode solutions in Python/Java/C++ and more](https://leetcodepython.com/en/leetcode/454-4sum-ii).
+Original link: [454. 4Sum II - LeetCode Python/Java/C++/JS code](https://leetcodepython.com/en/leetcode/454-4sum-ii).
 
 GitHub repository: [f*ck-leetcode](https://github.com/fuck-leetcode/fuck-leetcode).
 

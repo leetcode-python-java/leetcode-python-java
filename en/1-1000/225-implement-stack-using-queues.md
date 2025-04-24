@@ -1,6 +1,6 @@
-# 225. Implement Stack using Queues - LeetCode solutions in Python/Java/C++ and more
+# 225. Implement Stack using Queues - LeetCode Python/Java/C++/JS code
 
-Visit original link: [225. Implement Stack using Queues - LeetCode solutions in Python/Java/C++ and more](https://leetcodepython.com/en/leetcode/225-implement-stack-using-queues) for a better experience!
+Visit original link: [225. Implement Stack using Queues - LeetCode Python/Java/C++/JS code](https://leetcodepython.com/en/leetcode/225-implement-stack-using-queues) for a better experience!
 
 LeetCode link: [225. Implement Stack using Queues](https://leetcode.com/problems/implement-stack-using-queues), difficulty: **Easy**.
 
@@ -703,7 +703,7 @@ public class MyStack
 
 Dear LeetCoders! For a better LeetCode problem-solving experience, please visit website [LeetCodePython.com](https://leetcodepython.com): Dare to claim the best practices of LeetCode solutions! Will save you a lot of time!
 
-Original link: [225. Implement Stack using Queues - LeetCode solutions in Python/Java/C++ and more](https://leetcodepython.com/en/leetcode/225-implement-stack-using-queues).
+Original link: [225. Implement Stack using Queues - LeetCode Python/Java/C++/JS code](https://leetcodepython.com/en/leetcode/225-implement-stack-using-queues).
 
 GitHub repository: [f*ck-leetcode](https://github.com/fuck-leetcode/fuck-leetcode).
 

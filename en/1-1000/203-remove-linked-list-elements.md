@@ -1,6 +1,6 @@
-# 203. Remove Linked List Elements - LeetCode solutions in Python/Java/C++ and more
+# 203. Remove Linked List Elements - LeetCode Python/Java/C++/JS code
 
-Visit original link: [203. Remove Linked List Elements - LeetCode solutions in Python/Java/C++ and more](https://leetcodepython.com/en/leetcode/203-remove-linked-list-elements) for a better experience!
+Visit original link: [203. Remove Linked List Elements - LeetCode Python/Java/C++/JS code](https://leetcodepython.com/en/leetcode/203-remove-linked-list-elements) for a better experience!
 
 LeetCode link: [203. Remove Linked List Elements](https://leetcode.com/problems/remove-linked-list-elements), difficulty: **Easy**.
 
@@ -268,7 +268,7 @@ end
 
 Dear LeetCoders! For a better LeetCode problem-solving experience, please visit website [LeetCodePython.com](https://leetcodepython.com): Dare to claim the best practices of LeetCode solutions! Will save you a lot of time!
 
-Original link: [203. Remove Linked List Elements - LeetCode solutions in Python/Java/C++ and more](https://leetcodepython.com/en/leetcode/203-remove-linked-list-elements).
+Original link: [203. Remove Linked List Elements - LeetCode Python/Java/C++/JS code](https://leetcodepython.com/en/leetcode/203-remove-linked-list-elements).
 
 GitHub repository: [f*ck-leetcode](https://github.com/fuck-leetcode/fuck-leetcode).
 

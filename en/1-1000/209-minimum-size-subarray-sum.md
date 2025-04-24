@@ -1,6 +1,6 @@
-# 209. Minimum Size Subarray Sum - LeetCode solutions in Python/Java/C++ and more
+# 209. Minimum Size Subarray Sum - LeetCode Python/Java/C++/JS code
 
-Visit original link: [209. Minimum Size Subarray Sum - LeetCode solutions in Python/Java/C++ and more](https://leetcodepython.com/en/leetcode/209-minimum-size-subarray-sum) for a better experience!
+Visit original link: [209. Minimum Size Subarray Sum - LeetCode Python/Java/C++/JS code](https://leetcodepython.com/en/leetcode/209-minimum-size-subarray-sum) for a better experience!
 
 LeetCode link: [209. Minimum Size Subarray Sum](https://leetcode.com/problems/minimum-size-subarray-sum), difficulty: **Medium**.
 
@@ -45,7 +45,7 @@ Given an array of positive integers `nums` and a positive integer `target`, retu
 
 For **subarray** problems, you can consider using **Sliding Window Technique**, which is similar to the **Fast & Slow Pointers Approach**.
 
-## Steps
+## Step by Step Solutions
 
 1. Iterate over the `nums` array, the `index` of the element is named `fastIndex`. Although inconspicuous, this is the most important logic of the *Fast & Slow Pointers Approach*. Please memorize it.
 
@@ -296,7 +296,7 @@ public:
 
 Dear LeetCoders! For a better LeetCode problem-solving experience, please visit website [LeetCodePython.com](https://leetcodepython.com): Dare to claim the best practices of LeetCode solutions! Will save you a lot of time!
 
-Original link: [209. Minimum Size Subarray Sum - LeetCode solutions in Python/Java/C++ and more](https://leetcodepython.com/en/leetcode/209-minimum-size-subarray-sum).
+Original link: [209. Minimum Size Subarray Sum - LeetCode Python/Java/C++/JS code](https://leetcodepython.com/en/leetcode/209-minimum-size-subarray-sum).
 
 GitHub repository: [f*ck-leetcode](https://github.com/fuck-leetcode/fuck-leetcode).
 

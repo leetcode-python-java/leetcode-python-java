@@ -1,6 +1,6 @@
-# 1. Two Sum - LeetCode solutions in Python/Java/C++ and more
+# 1. Two Sum - LeetCode Python/Java/C++/JS code
 
-Visit original link: [1. Two Sum - LeetCode solutions in Python/Java/C++ and more](https://leetcodepython.com/en/leetcode/1-two-sum) for a better experience!
+Visit original link: [1. Two Sum - LeetCode Python/Java/C++/JS code](https://leetcodepython.com/en/leetcode/1-two-sum) for a better experience!
 
 LeetCode link: [1. Two Sum](https://leetcode.com/problems/two-sum), difficulty: **Easy**.
 
@@ -116,7 +116,7 @@ class Solution:
 1. In `Map`, `key` is `num`, and `value` is array `index`.
 2. Traverse the array, if `target - num` is in `Map`, return it. Otherwise, add `num` to `Map`.
 
-## Steps
+## Step by Step Solutions
 
 1. In `Map`, `key` is `num`, and `value` is array `index`.
 
@@ -325,7 +325,7 @@ class Solution:
 
 Dear LeetCoders! For a better LeetCode problem-solving experience, please visit website [LeetCodePython.com](https://leetcodepython.com): Dare to claim the best practices of LeetCode solutions! Will save you a lot of time!
 
-Original link: [1. Two Sum - LeetCode solutions in Python/Java/C++ and more](https://leetcodepython.com/en/leetcode/1-two-sum).
+Original link: [1. Two Sum - LeetCode Python/Java/C++/JS code](https://leetcodepython.com/en/leetcode/1-two-sum).
 
 GitHub repository: [f*ck-leetcode](https://github.com/fuck-leetcode/fuck-leetcode).
 

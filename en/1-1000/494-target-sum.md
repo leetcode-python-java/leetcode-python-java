@@ -1,6 +1,6 @@
-# 494. Target Sum - LeetCode solutions in Python/Java/C++ and more
+# 494. Target Sum - LeetCode Python/Java/C++/JS code
 
-Visit original link: [494. Target Sum - LeetCode solutions in Python/Java/C++ and more](https://leetcodepython.com/en/leetcode/494-target-sum) for a better experience!
+Visit original link: [494. Target Sum - LeetCode Python/Java/C++/JS code](https://leetcodepython.com/en/leetcode/494-target-sum) for a better experience!
 
 LeetCode link: [494. Target Sum](https://leetcode.com/problems/target-sum), difficulty: **Medium**.
 
@@ -83,7 +83,7 @@ This problem is quite difficult if you have not solved similar problems before. 
 
 After reading the above, do you feel that "dynamic programming" is not that difficult? Try to solve this problem. 🤗
 
-## Steps
+## Step by Step Solutions
 
 1. Determine the **meaning** of the `dp[j]`
     - `dp[j]` represents that by using the **first** `i` nums, the **number** of different **expressions** that you can build, which evaluates to `j`.
@@ -335,7 +335,7 @@ end
 
 Dear LeetCoders! For a better LeetCode problem-solving experience, please visit website [LeetCodePython.com](https://leetcodepython.com): Dare to claim the best practices of LeetCode solutions! Will save you a lot of time!
 
-Original link: [494. Target Sum - LeetCode solutions in Python/Java/C++ and more](https://leetcodepython.com/en/leetcode/494-target-sum).
+Original link: [494. Target Sum - LeetCode Python/Java/C++/JS code](https://leetcodepython.com/en/leetcode/494-target-sum).
 
 GitHub repository: [f*ck-leetcode](https://github.com/fuck-leetcode/fuck-leetcode).
 

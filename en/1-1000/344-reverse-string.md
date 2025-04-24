@@ -1,6 +1,6 @@
-# 344. Reverse String - LeetCode solutions in Python/Java/C++ and more
+# 344. Reverse String - LeetCode Python/Java/C++/JS code
 
-Visit original link: [344. Reverse String - LeetCode solutions in Python/Java/C++ and more](https://leetcodepython.com/en/leetcode/344-reverse-string) for a better experience!
+Visit original link: [344. Reverse String - LeetCode Python/Java/C++/JS code](https://leetcodepython.com/en/leetcode/344-reverse-string) for a better experience!
 
 LeetCode link: [344. Reverse String](https://leetcode.com/problems/reverse-string), difficulty: **Easy**.
 
@@ -44,7 +44,7 @@ You must do this by modifying the input array [in-place](https://en.wikipedia.or
 4. In the loop body, swap the two values.
 5. The above is the template for `two pointers` in `opposite directions`.
 
-## Steps
+## Step by Step Solutions
 
 1. Use two pointers with **opposite directions**, initially one pointer points to the index `0` and the other pointer points to the index `s.length - 1`.
 
@@ -214,7 +214,7 @@ end
 
 Dear LeetCoders! For a better LeetCode problem-solving experience, please visit website [LeetCodePython.com](https://leetcodepython.com): Dare to claim the best practices of LeetCode solutions! Will save you a lot of time!
 
-Original link: [344. Reverse String - LeetCode solutions in Python/Java/C++ and more](https://leetcodepython.com/en/leetcode/344-reverse-string).
+Original link: [344. Reverse String - LeetCode Python/Java/C++/JS code](https://leetcodepython.com/en/leetcode/344-reverse-string).
 
 GitHub repository: [f*ck-leetcode](https://github.com/fuck-leetcode/fuck-leetcode).
 

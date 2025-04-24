@@ -1,6 +1,6 @@
-# 19. Remove Nth Node From End of List - LeetCode solutions in Python/Java/C++ and more
+# 19. Remove Nth Node From End of List - LeetCode Python/Java/C++/JS code
 
-Visit original link: [19. Remove Nth Node From End of List - LeetCode solutions in Python/Java/C++ and more](https://leetcodepython.com/en/leetcode/19-remove-nth-node-from-end-of-list) for a better experience!
+Visit original link: [19. Remove Nth Node From End of List - LeetCode Python/Java/C++/JS code](https://leetcodepython.com/en/leetcode/19-remove-nth-node-from-end-of-list) for a better experience!
 
 LeetCode link: [19. Remove Nth Node From End of List](https://leetcode.com/problems/remove-nth-node-from-end-of-list), difficulty: **Medium**.
 
@@ -51,7 +51,7 @@ Given the `head` of a linked list, remove the *n<sup>th</sup>* node from the end
 3. When `index == node_count - n`, delete the node by `node.next = node.next.next`.
 4. Since the deleted node may be `head`, a virtual node `dummy_node` is used to facilitate unified processing.
 
-## Steps
+## Step by Step Solutions
 
 1. First find out `node_count`.
 
@@ -384,7 +384,7 @@ end
 
 Dear LeetCoders! For a better LeetCode problem-solving experience, please visit website [LeetCodePython.com](https://leetcodepython.com): Dare to claim the best practices of LeetCode solutions! Will save you a lot of time!
 
-Original link: [19. Remove Nth Node From End of List - LeetCode solutions in Python/Java/C++ and more](https://leetcodepython.com/en/leetcode/19-remove-nth-node-from-end-of-list).
+Original link: [19. Remove Nth Node From End of List - LeetCode Python/Java/C++/JS code](https://leetcodepython.com/en/leetcode/19-remove-nth-node-from-end-of-list).
 
 GitHub repository: [f*ck-leetcode](https://github.com/fuck-leetcode/fuck-leetcode).
 

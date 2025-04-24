@@ -1,6 +1,6 @@
-# 3494. Find the Minimum Amount of Time to Brew Potions - LeetCode solutions in Python/Java/C++ and more
+# 3494. Find the Minimum Amount of Time to Brew Potions - LeetCode Python/Java/C++/JS code
 
-Visit original link: [3494. Find the Minimum Amount of Time to Brew Potions - LeetCode solutions in Python/Java/C++ and more](https://leetcodepython.com/en/leetcode/3494-find-the-minimum-amount-of-time-to-brew-potions) for a better experience!
+Visit original link: [3494. Find the Minimum Amount of Time to Brew Potions - LeetCode Python/Java/C++/JS code](https://leetcodepython.com/en/leetcode/3494-find-the-minimum-amount-of-time-to-brew-potions) for a better experience!
 
 LeetCode link: [3494. Find the Minimum Amount of Time to Brew Potions](https://leetcode.com/problems/find-the-minimum-amount-of-time-to-brew-potions), difficulty: **Medium**.
 
@@ -162,7 +162,7 @@ Return the **minimum** amount of time required for the potions to be brewed prop
 
 After reading the above, do you feel that "dynamic programming" is not that difficult? Try to solve this problem. 🤗
 
-## Steps
+## Step by Step Solutions
 
 1. Determine the meaning of each value of the array `dp`. So what does each `dp[i][j]`  represent?
     mark-detail The row represents the potion, and the column represents the wizard, which has been hinted in the question. <br>The meaning is: the time it takes for the `j`<sup>th</sup> wizard to complete the `i`<sup>th</sup> bottle of potion. I deliberately did not add the word "shortest" because the potion cannot be separated from the hands of the wizard during the manufacturing process! mark-detail
@@ -434,7 +434,7 @@ func minTime(skill []int, mana []int) int64 {
 
 Dear LeetCoders! For a better LeetCode problem-solving experience, please visit website [LeetCodePython.com](https://leetcodepython.com): Dare to claim the best practices of LeetCode solutions! Will save you a lot of time!
 
-Original link: [3494. Find the Minimum Amount of Time to Brew Potions - LeetCode solutions in Python/Java/C++ and more](https://leetcodepython.com/en/leetcode/3494-find-the-minimum-amount-of-time-to-brew-potions).
+Original link: [3494. Find the Minimum Amount of Time to Brew Potions - LeetCode Python/Java/C++/JS code](https://leetcodepython.com/en/leetcode/3494-find-the-minimum-amount-of-time-to-brew-potions).
 
 GitHub repository: [f*ck-leetcode](https://github.com/fuck-leetcode/fuck-leetcode).
 

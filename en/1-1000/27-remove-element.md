@@ -1,6 +1,6 @@
-# 27. Remove Element - LeetCode solutions in Python/Java/C++ and more
+# 27. Remove Element - LeetCode Python/Java/C++/JS code
 
-Visit original link: [27. Remove Element - LeetCode solutions in Python/Java/C++ and more](https://leetcodepython.com/en/leetcode/27-remove-element) for a better experience!
+Visit original link: [27. Remove Element - LeetCode Python/Java/C++/JS code](https://leetcodepython.com/en/leetcode/27-remove-element) for a better experience!
 
 LeetCode link: [27. Remove Element](https://leetcode.com/problems/remove-element), difficulty: **Easy**.
 
@@ -430,7 +430,7 @@ end
 
 Dear LeetCoders! For a better LeetCode problem-solving experience, please visit website [LeetCodePython.com](https://leetcodepython.com): Dare to claim the best practices of LeetCode solutions! Will save you a lot of time!
 
-Original link: [27. Remove Element - LeetCode solutions in Python/Java/C++ and more](https://leetcodepython.com/en/leetcode/27-remove-element).
+Original link: [27. Remove Element - LeetCode Python/Java/C++/JS code](https://leetcodepython.com/en/leetcode/27-remove-element).
 
 GitHub repository: [f*ck-leetcode](https://github.com/fuck-leetcode/fuck-leetcode).
 

@@ -4,7 +4,7 @@
 
 力扣链接：[209. 长度最小的子数组](https://leetcode.cn/problems/minimum-size-subarray-sum), 难度：**中等**。
 
-## 力扣“209. 长度最小的子数组”问题描述
+## LeetCode “209. 长度最小的子数组”问题描述
 
 给定一个含有 `n` 个正整数的数组和一个正整数 `target` 。
 

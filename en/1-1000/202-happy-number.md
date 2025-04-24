@@ -1,6 +1,6 @@
-# 202. Happy Number - LeetCode solutions in Python/Java/C++ and more
+# 202. Happy Number - LeetCode Python/Java/C++/JS code
 
-Visit original link: [202. Happy Number - LeetCode solutions in Python/Java/C++ and more](https://leetcodepython.com/en/leetcode/202-happy-number) for a better experience!
+Visit original link: [202. Happy Number - LeetCode Python/Java/C++/JS code](https://leetcodepython.com/en/leetcode/202-happy-number) for a better experience!
 
 LeetCode link: [202. Happy Number](https://leetcode.com/problems/happy-number), difficulty: **Easy**.
 
@@ -46,7 +46,7 @@ Return `true` if `n` is *a happy number*, and `false` if not.
 2. If `n` has already appeared, it means that the loop has been entered, and `return false`. You can use `Set` to save the `n` that has appeared.
 3. Go is the iterative solution, other languages are the recursive solution.
 
-## Steps
+## Step by Step Solutions
 
 1. Generate a new `n` as the `isHappy(n)` parameter.
 
@@ -274,7 +274,7 @@ end
 
 Dear LeetCoders! For a better LeetCode problem-solving experience, please visit website [LeetCodePython.com](https://leetcodepython.com): Dare to claim the best practices of LeetCode solutions! Will save you a lot of time!
 
-Original link: [202. Happy Number - LeetCode solutions in Python/Java/C++ and more](https://leetcodepython.com/en/leetcode/202-happy-number).
+Original link: [202. Happy Number - LeetCode Python/Java/C++/JS code](https://leetcodepython.com/en/leetcode/202-happy-number).
 
 GitHub repository: [f*ck-leetcode](https://github.com/fuck-leetcode/fuck-leetcode).
 

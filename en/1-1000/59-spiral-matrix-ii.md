@@ -1,6 +1,6 @@
-# 59. Spiral Matrix II - LeetCode solutions in Python/Java/C++ and more
+# 59. Spiral Matrix II - LeetCode Python/Java/C++/JS code
 
-Visit original link: [59. Spiral Matrix II - LeetCode solutions in Python/Java/C++ and more](https://leetcodepython.com/en/leetcode/59-spiral-matrix-ii) for a better experience!
+Visit original link: [59. Spiral Matrix II - LeetCode Python/Java/C++/JS code](https://leetcodepython.com/en/leetcode/59-spiral-matrix-ii) for a better experience!
 
 LeetCode link: [59. Spiral Matrix II](https://leetcode.com/problems/spiral-matrix-ii), difficulty: **Medium**.
 
@@ -32,7 +32,7 @@ Given a positive integer `n`, generate an `n x n` matrix filled with elements fr
 
 - You can write a method `get_increment(i, j)`, which is specifically used to get the change between the next position and the current position.
 
-## Steps
+## Step by Step Solutions
 
 1. Initialize `increments` and `increment_index`:
 
@@ -410,7 +410,7 @@ private:
 
 Dear LeetCoders! For a better LeetCode problem-solving experience, please visit website [LeetCodePython.com](https://leetcodepython.com): Dare to claim the best practices of LeetCode solutions! Will save you a lot of time!
 
-Original link: [59. Spiral Matrix II - LeetCode solutions in Python/Java/C++ and more](https://leetcodepython.com/en/leetcode/59-spiral-matrix-ii).
+Original link: [59. Spiral Matrix II - LeetCode Python/Java/C++/JS code](https://leetcodepython.com/en/leetcode/59-spiral-matrix-ii).
 
 GitHub repository: [f*ck-leetcode](https://github.com/fuck-leetcode/fuck-leetcode).
 

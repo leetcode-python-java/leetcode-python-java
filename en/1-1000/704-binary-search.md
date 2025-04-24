@@ -1,6 +1,6 @@
-# 704. Binary Search - LeetCode solutions in Python/Java/C++ and more
+# 704. Binary Search - LeetCode Python/Java/C++/JS code
 
-Visit original link: [704. Binary Search - LeetCode solutions in Python/Java/C++ and more](https://leetcodepython.com/en/leetcode/704-binary-search) for a better experience!
+Visit original link: [704. Binary Search - LeetCode Python/Java/C++/JS code](https://leetcodepython.com/en/leetcode/704-binary-search) for a better experience!
 
 LeetCode link: [704. Binary Search](https://leetcode.com/problems/binary-search), difficulty: **Easy**.
 
@@ -37,7 +37,7 @@ You must write an algorithm with `O(log n)` runtime complexity.
 
 Because it is an already sorted array, by using the middle value for comparison, half of the numbers can be eliminated each time.
 
-## Steps
+## Step by Step Solutions
 
 The fastest and easiest way is to use the three indices `left`, `right`, and `middle`.
 If `nums[middle] > target`, then `right = middle - 1`, otherwise, `left = middle + 1`.
@@ -239,7 +239,7 @@ end
 
 Dear LeetCoders! For a better LeetCode problem-solving experience, please visit website [LeetCodePython.com](https://leetcodepython.com): Dare to claim the best practices of LeetCode solutions! Will save you a lot of time!
 
-Original link: [704. Binary Search - LeetCode solutions in Python/Java/C++ and more](https://leetcodepython.com/en/leetcode/704-binary-search).
+Original link: [704. Binary Search - LeetCode Python/Java/C++/JS code](https://leetcodepython.com/en/leetcode/704-binary-search).
 
 GitHub repository: [f*ck-leetcode](https://github.com/fuck-leetcode/fuck-leetcode).
 

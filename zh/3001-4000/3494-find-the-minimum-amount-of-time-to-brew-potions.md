@@ -4,7 +4,7 @@
 
 力扣链接：[3494. 酿造药水需要的最少总时间](https://leetcode.cn/problems/find-the-minimum-amount-of-time-to-brew-potions), 难度：**中等**。
 
-## 力扣“3494. 酿造药水需要的最少总时间”问题描述
+## LeetCode “3494. 酿造药水需要的最少总时间”问题描述
 
 给你两个长度分别为 `n` 和 `m` 的整数数组 `skill` 和 `mana` 。
 

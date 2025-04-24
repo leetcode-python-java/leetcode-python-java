@@ -1,6 +1,6 @@
-# 474. Ones and Zeroes - LeetCode solutions in Python/Java/C++ and more
+# 474. Ones and Zeroes - LeetCode Python/Java/C++/JS code
 
-Visit original link: [474. Ones and Zeroes - LeetCode solutions in Python/Java/C++ and more](https://leetcodepython.com/en/leetcode/474-ones-and-zeroes) for a better experience!
+Visit original link: [474. Ones and Zeroes - LeetCode Python/Java/C++/JS code](https://leetcodepython.com/en/leetcode/474-ones-and-zeroes) for a better experience!
 
 LeetCode link: [474. Ones and Zeroes](https://leetcode.com/problems/ones-and-zeroes), difficulty: **Medium**.
 
@@ -123,7 +123,7 @@ Because "0/1 Knapsack Problem" belongs to "Dynamic Programming", I will explain 
         ```
 5. Write a program and print the `dp` array. If it is not as expected, adjust it.
 
-## Steps
+## Step by Step Solutions
 
 1. Determine the **meaning** of the `dp[j]`
     - Since we are only considering the zero count constraint for now, we can use a one-dimensional `dp` array.
@@ -470,7 +470,7 @@ end
 
 Dear LeetCoders! For a better LeetCode problem-solving experience, please visit website [LeetCodePython.com](https://leetcodepython.com): Dare to claim the best practices of LeetCode solutions! Will save you a lot of time!
 
-Original link: [474. Ones and Zeroes - LeetCode solutions in Python/Java/C++ and more](https://leetcodepython.com/en/leetcode/474-ones-and-zeroes).
+Original link: [474. Ones and Zeroes - LeetCode Python/Java/C++/JS code](https://leetcodepython.com/en/leetcode/474-ones-and-zeroes).
 
 GitHub repository: [f*ck-leetcode](https://github.com/fuck-leetcode/fuck-leetcode).
 

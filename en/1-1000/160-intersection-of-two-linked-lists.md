@@ -1,6 +1,6 @@
-# 160. Intersection of Two Linked Lists - LeetCode solutions in Python/Java/C++ and more
+# 160. Intersection of Two Linked Lists - LeetCode Python/Java/C++/JS code
 
-Visit original link: [160. Intersection of Two Linked Lists - LeetCode solutions in Python/Java/C++ and more](https://leetcodepython.com/en/leetcode/160-intersection-of-two-linked-lists) for a better experience!
+Visit original link: [160. Intersection of Two Linked Lists - LeetCode Python/Java/C++/JS code](https://leetcodepython.com/en/leetcode/160-intersection-of-two-linked-lists) for a better experience!
 
 LeetCode link: [160. Intersection of Two Linked Lists](https://leetcode.com/problems/intersection-of-two-linked-lists), difficulty: **Easy**.
 
@@ -66,7 +66,7 @@ You must first calculate how many kilometers her home is farther from the school
 3. At this time, repeat `node = node.next` on the two linked lists until the same node is found or one of the linked lists has reached the end.
 </p></details>
 
-## Steps
+## Step by Step Solutions
 
 1. First calculate the number of nodes in the two linked lists A and B. The number of nodes in linked list A is `node_count_a`, and the number of nodes in linked list B is `node_count_b`.
 
@@ -495,7 +495,7 @@ func getIntersectionNode(headA, headB *ListNode) *ListNode {
 
 Dear LeetCoders! For a better LeetCode problem-solving experience, please visit website [LeetCodePython.com](https://leetcodepython.com): Dare to claim the best practices of LeetCode solutions! Will save you a lot of time!
 
-Original link: [160. Intersection of Two Linked Lists - LeetCode solutions in Python/Java/C++ and more](https://leetcodepython.com/en/leetcode/160-intersection-of-two-linked-lists).
+Original link: [160. Intersection of Two Linked Lists - LeetCode Python/Java/C++/JS code](https://leetcodepython.com/en/leetcode/160-intersection-of-two-linked-lists).
 
 GitHub repository: [f*ck-leetcode](https://github.com/fuck-leetcode/fuck-leetcode).
 
