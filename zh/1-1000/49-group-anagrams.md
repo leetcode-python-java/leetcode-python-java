@@ -1,8 +1,8 @@
-# 49. 字母异位词分组 - 力扣Python/Java/C++等题解
+# 49. 字母异位词分组 - LeetCode Python/Java/C++ 题解
 
-访问原文链接：[49. 字母异位词分组 - 力扣Python/Java/C++等题解](https://leetcodepython.com/zh/leetcode/49-group-anagrams)，体验更佳！
+访问原文链接：[49. 字母异位词分组 - LeetCode Python/Java/C++ 题解](https://leetcodepython.com/zh/leetcode/49-group-anagrams)，体验更佳！
 
-力扣链接：[49. 字母异位词分组](https://leetcode.cn/problems/group-anagrams), 难度：**中等**。
+力扣链接：[49. 字母异位词分组](https://leetcode.cn/problems/group-anagrams), 难度等级：**中等**。
 
 ## LeetCode “49. 字母异位词分组”问题描述
 
@@ -105,7 +105,7 @@ end
 亲爱的力扣人，为了您更好的刷题体验，请访问 [LeetCodePython.com](https://leetcodepython.com/zh)。
 本站敢称力扣题解最佳实践，终将省你大量刷题时间！
 
-原文链接：[49. 字母异位词分组 - 力扣Python/Java/C++等题解](https://leetcodepython.com/zh/leetcode/49-group-anagrams).
+原文链接：[49. 字母异位词分组 - LeetCode Python/Java/C++ 题解](https://leetcodepython.com/zh/leetcode/49-group-anagrams).
 
 GitHub 仓库: [f*ck-leetcode](https://github.com/fuck-leetcode/fuck-leetcode).
 

@@ -1,8 +1,8 @@
-# 20. 有效的括号 - 力扣Python/Java/C++等题解
+# 20. 有效的括号 - LeetCode Python/Java/C++ 题解
 
-访问原文链接：[20. 有效的括号 - 力扣Python/Java/C++等题解](https://leetcodepython.com/zh/leetcode/20-valid-parentheses)，体验更佳！
+访问原文链接：[20. 有效的括号 - LeetCode Python/Java/C++ 题解](https://leetcodepython.com/zh/leetcode/20-valid-parentheses)，体验更佳！
 
-力扣链接：[20. 有效的括号](https://leetcode.cn/problems/valid-parentheses), 难度：**简单**。
+力扣链接：[20. 有效的括号](https://leetcode.cn/problems/valid-parentheses), 难度等级：**简单**。
 
 ## LeetCode “20. 有效的括号”问题描述
 
@@ -351,7 +351,7 @@ end
 亲爱的力扣人，为了您更好的刷题体验，请访问 [LeetCodePython.com](https://leetcodepython.com/zh)。
 本站敢称力扣题解最佳实践，终将省你大量刷题时间！
 
-原文链接：[20. 有效的括号 - 力扣Python/Java/C++等题解](https://leetcodepython.com/zh/leetcode/20-valid-parentheses).
+原文链接：[20. 有效的括号 - LeetCode Python/Java/C++ 题解](https://leetcodepython.com/zh/leetcode/20-valid-parentheses).
 
 GitHub 仓库: [f*ck-leetcode](https://github.com/fuck-leetcode/fuck-leetcode).
 

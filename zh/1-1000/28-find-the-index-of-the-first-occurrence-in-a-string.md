@@ -1,8 +1,8 @@
-# 28. 找出字符串中第一个匹配项的下标 - 力扣Python/Java/C++等题解
+# 28. 找出字符串中第一个匹配项的下标 - LeetCode Python/Java/C++ 题解
 
-访问原文链接：[28. 找出字符串中第一个匹配项的下标 - 力扣Python/Java/C++等题解](https://leetcodepython.com/zh/leetcode/28-find-the-index-of-the-first-occurrence-in-a-string)，体验更佳！
+访问原文链接：[28. 找出字符串中第一个匹配项的下标 - LeetCode Python/Java/C++ 题解](https://leetcodepython.com/zh/leetcode/28-find-the-index-of-the-first-occurrence-in-a-string)，体验更佳！
 
-力扣链接：[28. 找出字符串中第一个匹配项的下标](https://leetcode.cn/problems/find-the-index-of-the-first-occurrence-in-a-string), 难度：**简单**。
+力扣链接：[28. 找出字符串中第一个匹配项的下标](https://leetcode.cn/problems/find-the-index-of-the-first-occurrence-in-a-string), 难度等级：**简单**。
 
 ## LeetCode “28. 找出字符串中第一个匹配项的下标”问题描述
 
@@ -198,7 +198,7 @@ public class Solution {
 亲爱的力扣人，为了您更好的刷题体验，请访问 [LeetCodePython.com](https://leetcodepython.com/zh)。
 本站敢称力扣题解最佳实践，终将省你大量刷题时间！
 
-原文链接：[28. 找出字符串中第一个匹配项的下标 - 力扣Python/Java/C++等题解](https://leetcodepython.com/zh/leetcode/28-find-the-index-of-the-first-occurrence-in-a-string).
+原文链接：[28. 找出字符串中第一个匹配项的下标 - LeetCode Python/Java/C++ 题解](https://leetcodepython.com/zh/leetcode/28-find-the-index-of-the-first-occurrence-in-a-string).
 
 GitHub 仓库: [f*ck-leetcode](https://github.com/fuck-leetcode/fuck-leetcode).
 

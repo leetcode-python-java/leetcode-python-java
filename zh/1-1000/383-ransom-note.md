@@ -1,8 +1,8 @@
-# 383. 赎金信 - 力扣Python/Java/C++等题解
+# 383. 赎金信 - LeetCode Python/Java/C++ 题解
 
-访问原文链接：[383. 赎金信 - 力扣Python/Java/C++等题解](https://leetcodepython.com/zh/leetcode/383-ransom-note)，体验更佳！
+访问原文链接：[383. 赎金信 - LeetCode Python/Java/C++ 题解](https://leetcodepython.com/zh/leetcode/383-ransom-note)，体验更佳！
 
-力扣链接：[383. 赎金信](https://leetcode.cn/problems/ransom-note), 难度：**简单**。
+力扣链接：[383. 赎金信](https://leetcode.cn/problems/ransom-note), 难度等级：**简单**。
 
 ## LeetCode “383. 赎金信”问题描述
 
@@ -246,7 +246,7 @@ public:
 亲爱的力扣人，为了您更好的刷题体验，请访问 [LeetCodePython.com](https://leetcodepython.com/zh)。
 本站敢称力扣题解最佳实践，终将省你大量刷题时间！
 
-原文链接：[383. 赎金信 - 力扣Python/Java/C++等题解](https://leetcodepython.com/zh/leetcode/383-ransom-note).
+原文链接：[383. 赎金信 - LeetCode Python/Java/C++ 题解](https://leetcodepython.com/zh/leetcode/383-ransom-note).
 
 GitHub 仓库: [f*ck-leetcode](https://github.com/fuck-leetcode/fuck-leetcode).
 

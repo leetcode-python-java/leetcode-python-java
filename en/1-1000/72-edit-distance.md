@@ -1,136 +1,182 @@
-# 72. Edit Distance (Dynamic Programming Solution)
-LeetCode link: [72. Edit Distance](https://leetcode.com/problems/edit-distance/)
+# 72. Edit Distance - LeetCode Python/Java/C++/JS code
 
-## LeetCode problem description
-> Given two strings `word1` and `word2`, return the **minimum** number of operations required to convert `word1` to `word2`.
+Visit original link: [72. Edit Distance - LeetCode Python/Java/C++/JS code](https://leetcodepython.com/en/leetcode/72-edit-distance) for a better experience!
+
+LeetCode link: [72. Edit Distance](https://leetcode.com/problems/edit-distance), difficulty: **Medium**.
+
+## LeetCode description of "72. Edit Distance"
+
+Given two strings `word1` and `word2`, return the **minimum** number of operations required to convert `word1` to `word2`.
 
 You have the following three operations permitted on a word:
+
 - Insert a character
 - Delete a character
 - Replace a character
 
-```
-Example 1:
+### [Example 1]
 
-Input: word1 = "horse", word2 = "ros"
-Output: 3
+**Input**: `word1 = "horse", word2 = "ros"`
 
-Explanation:
-horse -> rorse (replace 'h' with 'r')
-rorse -> rose (remove 'r')
-rose -> ros (remove 'e')
--------------------------------------------------------
+**Output**: `3`
 
-Example 2:
+**Explanation**: 
 
-Input: word1 = "intention", word2 = "execution"
-Output: 5
+<p>horse -&gt; rorse (replace &#39;h&#39; with &#39;r&#39;)<br>
+rorse -&gt; rose (remove &#39;r&#39;)<br>
+rose -&gt; ros (remove &#39;e&#39;)</p>
 
-Explanation:
-intention -> inention (remove 't')
-inention -> enention (replace 'i' with 'e')
-enention -> exention (replace 'n' with 'x')
-exention -> exection (replace 'n' with 'c')
-exection -> execution (insert 'u')
--------------------------------------------------------
 
-Constraints:
+### [Example 2]
 
-1. 0 <= word1.length, word2.length <= 500
+**Input**: `word1 = "intention", word2 = "execution"`
+
+**Output**: `5`
+
+**Explanation**: 
+
+<p>intention -&gt; inention (remove &#39;t&#39;)<br>
+inention -&gt; enention (replace &#39;i&#39; with &#39;e&#39;)<br>
+enention -&gt; exention (replace &#39;n&#39; with &#39;x&#39;)<br>
+exention -&gt; exection (replace &#39;n&#39; with &#39;c&#39;)<br>
+exection -&gt; execution (insert &#39;u&#39;)</p>
+
+
+### [Constraints]
+
+1. `0 <= word1.length, word2.length <= 500`
 2. `word1` and `word2` consist of lowercase English letters.
-```
 
-## Thoughts
-* It is a question of comparing two strings. After doing similar questions many times, we will develop an intuition to use dynamic programming with two-dimensional arrays.
+## Intuition
 
-### Common steps in dynamic programming
-These five steps are a pattern for solving `dynamic programming` problems.
+It is a question of comparing two strings. After doing similar questions many times, we will develop an intuition to use Dynamic Programming with *two-dimensional* arrays.
 
-1. Determine the **meaning** of the `dp[i][j]`
-    * Since there are two strings, we can use two-dimensional arrays as the default option.
-    * At first, try to use the problem's `return` value as the value of `dp[i][j]` to determine the meaning of `dp[i][j]`. If it doesn't work, try another way.
-    * `dp[i][j]` represents the **minimum** number of operations required to convert `word1`'s first `i` letters to `word2`'s first `j` letters.
-    * `dp[i][j]` is an integer.
-2. Determine the `dp` array's initial value
-    * Use an example:
-   ```
-   After initialization, the 'dp' array would be:  
-   #     r o s
-   #   0 1 2 3 # dp[0]
-   # h 1 0 0 0
-   # o 2 0 0 0
-   # r 3 0 0 0
-   # s 4 0 0 0
-   # e 5 0 0 0
-   ```
-    * `dp[i][0] = i`, because `dp[i][0]` represents the empty string, and the number of operations is just the number of chars to be deleted.
-    * `dp[0][j] = j`, the reason is the same as the previous line, just viewed from the opposite angle: convert `word2` to `word1`.
-    
-3. Determine the `dp` array's recurrence formula
-    * Try to complete the `dp` grid. In the process, you will get inspiration to derive the formula.
-   ```
-   1. Convert `h` to `ros`. 
-   #     r o s
-   #   0 1 2 3
-   # h 1 1 2 3 # dp[1]
-   ```
-   ```
-   2. Convert `ho` to `ros`. 
-   #     r o s
-   #   0 1 2 3
-   # h 1 1 2 3
-   # o 2 2 1 2
-   ```
-   ```
-   3. Convert `hor` to `ros`. 
-   #     r o s
-   #   0 1 2 3
-   # h 1 1 2 3
-   # o 2 2 1 2
-   # r 3 2 2 2
-   ```
-   ```
-   4. Convert `hors` to `ros`. 
-   #     r o s
-   #   0 1 2 3
-   # h 1 1 2 3
-   # o 2 2 1 2
-   # r 3 2 2 2
-   # s 4 3 3 2
-   ```
-   ```
-   5. Convert `horse` to `ros`. 
-   #     r o s
-   #   0 1 2 3
-   # h 1 1 2 3
-   # o 2 2 1 2
-   # r 3 2 2 2
-   # s 4 3 3 2
-   # e 5 4 4 3 # dp[5]
-   ```
-    * When analyzing the sample `dp` grid, remember there are three important points which you should pay special attention to: `dp[i - 1][j - 1]`, `dp[i - 1][j]` and `dp[i][j - 1]`. The current `dp[i][j]` often depends on them.
-    * If the question is also true in reverse (swap `word1` and `word2`), and we need to use `dp[i - 1][j]` or `dp[i][j - 1]`, then we probably need to use both of them.
-    * We can derive the `Recurrence Formula`:
-   ```python
-   if word1[i - 1] == word2[j - 1]
-       dp[i][j] = dp[i - 1][j - 1]
-   else
-       dp[i][j] = min(
-         dp[i - 1][j - 1],
-         dp[i - 1][j],
-         dp[i][j - 1],
-       ) + 1
-   ```
-4. Determine the `dp` array's traversal order
-    * `dp[i][j]` depends on `dp[i - 1][j - 1]`, `dp[i - 1][j]` and `dp[i][j - 1]`, so we should traverse the `dp` array from top to bottom, then from left to right.
-5. Check the `dp` array's value
-    * Print the `dp` to see if it is as expected.
+## Pattern of "Dynamic Programming"
 
-### Complexity
-* Time: `O(n * m)`.
-* Space: `O(n * m)`.
+"Dynamic Programming" requires the use of the `dp` array to store the results. The value of `dp[i][j]` can be converted from its previous (or multiple) values ​​through a formula. Therefore, the value of `dp[i][j]` is derived step by step, and it is related to the previous `dp` record value.
+
+#### "Dynamic programming" is divided into five steps
+
+1. Determine the **meaning** of each value of the array `dp`.
+2. Initialize the value of the array `dp`.
+3. Fill in the `dp` grid data **in order** according to an example.
+4. Based on the `dp` grid data, derive the **recursive formula**.
+5. Write a program and print the `dp` array. If it is not as expected, adjust it.
+
+#### Detailed description of these five steps
+
+1. Determine the **meaning** of each value of the array `dp`.
+    - First determine whether `dp` is a one-dimensional array or a two-dimensional array. A `one-dimensional rolling array` means that the values ​​of the array are overwritten at each iteration. Most of the time, using `one-dimensional rolling array` instead of `two-dimensional array` can simplify the code; but for some problems, such as operating "two swappable arrays", for the sake of ease of understanding, it is better to use `two-dimensional array`.
+    - Try to use the meaning of the `return value` required by the problem as the meaning of `dp[i]` (one-dimensional) or `dp[i][j]` (two-dimensional). It works about 60% of the time. If it doesn't work, try other meanings.
+    - Try to save more information in the design. Repeated information only needs to be saved once in a `dp[i]`.
+    - Use simplified meanings. If the problem can be solved with `boolean value`, don't use `numeric value`.
+2. Initialize the value of the array `dp`. The value of `dp` involves two levels:
+    1. The length of `dp`. Usually: `condition array length plus 1` or `condition array length`.
+    2. The value of `dp[i]` or `dp[i][j]`. `dp[0]` or `dp[0][0]` sometimes requires special treatment.
+3. Fill in the `dp` grid data **in order** according to an example.
+    - The "recursive formula" is the core of the "dynamic programming" algorithm. But the "recursive formula" is obscure. If you want to get it, you need to make a table and use data to inspire yourself.
+    - If the original example is not good enough, you need to redesign one yourself.
+    - According to the example, fill in the `dp` grid data "in order", which is very important because it determines the traversal order of the code.
+    - Most of the time, from left to right, from top to bottom. But sometimes it is necessary to traverse from right to left, from bottom to top, from the middle to the right (or left), such as the "palindrome" problems. Sometimes, it is necessary to traverse a line twice, first forward and then backward.
+    - When the order is determined correctly, the starting point is determined. Starting from the starting point, fill in the `dp` grid data "in order". This order is also the order in which the program processes.
+    - In this process, you will get inspiration to write a "recursive formula". If you can already derive the formula, you do not need to complete the grid.
+4. Based on the `dp` grid data, derive the **recursive formula**.
+    - There are three special positions to pay attention to: `dp[i - 1][j - 1]`, `dp[i - 1][j]` and `dp[i][j - 1]`, the current `dp[i][j]` often depends on them.
+    - When operating "two swappable arrays", due to symmetry, we may need to use `dp[i - 1][j]` and `dp[i][j - 1]` at the same time.
+5. Write a program and print the `dp` array. If it is not as expected, adjust it.
+    - Focus on analyzing those values that are not as expected.
+
+After reading the above, do you feel that "dynamic programming" is not that difficult? Try to solve this problem. 🤗
+
+## Pattern of "Subsequence Problems"
+
+- Since there are two swappable arrays (or strings) to compare, we can use **two-dimensional** arrays as `dp`.
+- The traversal order of `dp` array is from top to bottom, then from left to right.
+
+## Step by Step Solutions
+
+1. Determine the **meaning** of each value of the array `dp`.
+    - `dp[i][j]` represents the **minimum** number of operations required to convert `word1`'s first `i` letters to `word2`'s first `j` letters.
+    - `dp[i][j]` is an integer.
+2. Initialize the value of the array `dp`.
+    - Use an example:
+
+    ```
+    After initialization, the 'dp' array would be:  
+    #     r o s
+    #   0 1 2 3 # dp[0]
+    # h 1 0 0 0
+    # o 2 0 0 0
+    # r 3 0 0 0
+    # s 4 0 0 0
+    # e 5 0 0 0
+    ```
+    - `dp[i][0] = i`, because `dp[i][0]` represents the empty string, and the number of operations is just the number of chars to be deleted.
+    - `dp[0][j] = j`, the reason is the same as the previous line, just viewed from the opposite angle: convert `word2` to `word1`.
+
+3. Fill in the `dp` grid data **in order** according to an example.
+
+    ```
+    1. Convert `h` to `ros`. 
+    #     r o s
+    #   0 1 2 3
+    # h 1 1 2 3 # dp[1]
+    ```
+    ```
+    2. Convert `ho` to `ros`. 
+    #     r o s
+    #   0 1 2 3
+    # h 1 1 2 3
+    # o 2 2 1 2
+    ```
+    ```
+    3. Convert `hor` to `ros`. 
+    #     r o s
+    #   0 1 2 3
+    # h 1 1 2 3
+    # o 2 2 1 2
+    # r 3 2 2 2
+    ```
+    ```
+    4. Convert `hors` to `ros`. 
+    #     r o s
+    #   0 1 2 3
+    # h 1 1 2 3
+    # o 2 2 1 2
+    # r 3 2 2 2
+    # s 4 3 3 2
+    ```
+    ```
+    5. Convert `horse` to `ros`. 
+    #     r o s
+    #   0 1 2 3
+    # h 1 1 2 3
+    # o 2 2 1 2
+    # r 3 2 2 2
+    # s 4 3 3 2
+    # e 5 4 4 3 # dp[5]
+    ```
+4. Based on the `dp` grid data, derive the **recursive formula**.
+
+    ```python
+    if word1[i - 1] == word2[j - 1]:
+        dp[i][j] = dp[i - 1][j - 1]
+    else:
+        dp[i][j] = min(
+          dp[i - 1][j - 1],
+          dp[i - 1][j],
+          dp[i][j - 1],
+        ) + 1
+    ```
+5. Write a program and print the `dp` array. If it is not as expected, adjust it.
+
+## Complexity
+
+- Time complexity: `O(N * M)`.
+- Space complexity: `O(N * M)`.
 
 ## Java
+
 ```java
 class Solution {
     public int minDistance(String word1, String word2) {
@@ -158,7 +204,8 @@ class Solution {
 ```
 
 ## C#
-```c#
+
+```csharp
 public class Solution
 {
     public int MinDistance(string word1, string word2)
@@ -192,6 +239,7 @@ public class Solution
 ```
 
 ## Python
+
 ```python
 class Solution:
     def minDistance(self, word1: str, word2: str) -> int:
@@ -212,6 +260,7 @@ class Solution:
 ```
 
 ## C++
+
 ```cpp
 class Solution {
 public:
@@ -240,6 +289,7 @@ public:
 ```
 
 ## JavaScript
+
 ```javascript
 var minDistance = function (word1, word2) {
   const dp = Array(word1.length + 1).fill().map(
@@ -263,6 +313,7 @@ var minDistance = function (word1, word2) {
 ```
 
 ## Go
+
 ```go
 func minDistance(word1 string, word2 string) int {
     dp := make([][]int, len(word1) + 1)
@@ -289,6 +340,7 @@ func minDistance(word1 string, word2 string) int {
 ```
 
 ## Ruby
+
 ```ruby
 def min_distance(word1, word2)
   dp = Array.new(word1.size + 1) do
@@ -316,12 +368,15 @@ def min_distance(word1, word2)
 end
 ```
 
-## Rust
-```rust
+## Other languages
+
+```java
 // Welcome to create a PR to complete the code of this language, thanks!
 ```
 
-## Other languages
-```
-// Welcome to create a PR to complete the code of this language, thanks!
-```
+Dear LeetCoders! For a better LeetCode problem-solving experience, please visit website [LeetCodePython.com](https://leetcodepython.com): Dare to claim the best practices of LeetCode solutions! Will save you a lot of time!
+
+Original link: [72. Edit Distance - LeetCode Python/Java/C++/JS code](https://leetcodepython.com/en/leetcode/72-edit-distance).
+
+GitHub repository: [f*ck-leetcode](https://github.com/fuck-leetcode/fuck-leetcode).
+

@@ -1,8 +1,8 @@
-# 977. 有序数组的平方 - 力扣Python/Java/C++等题解
+# 977. 有序数组的平方 - LeetCode Python/Java/C++ 题解
 
-访问原文链接：[977. 有序数组的平方 - 力扣Python/Java/C++等题解](https://leetcodepython.com/zh/leetcode/977-squares-of-a-sorted-array)，体验更佳！
+访问原文链接：[977. 有序数组的平方 - LeetCode Python/Java/C++ 题解](https://leetcodepython.com/zh/leetcode/977-squares-of-a-sorted-array)，体验更佳！
 
-力扣链接：[977. 有序数组的平方](https://leetcode.cn/problems/squares-of-a-sorted-array), 难度：**简单**。
+力扣链接：[977. 有序数组的平方](https://leetcode.cn/problems/squares-of-a-sorted-array), 难度等级：**简单**。
 
 ## LeetCode “977. 有序数组的平方”问题描述
 
@@ -349,7 +349,7 @@ end
 亲爱的力扣人，为了您更好的刷题体验，请访问 [LeetCodePython.com](https://leetcodepython.com/zh)。
 本站敢称力扣题解最佳实践，终将省你大量刷题时间！
 
-原文链接：[977. 有序数组的平方 - 力扣Python/Java/C++等题解](https://leetcodepython.com/zh/leetcode/977-squares-of-a-sorted-array).
+原文链接：[977. 有序数组的平方 - LeetCode Python/Java/C++ 题解](https://leetcodepython.com/zh/leetcode/977-squares-of-a-sorted-array).
 
 GitHub 仓库: [f*ck-leetcode](https://github.com/fuck-leetcode/fuck-leetcode).
 

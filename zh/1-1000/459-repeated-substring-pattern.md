@@ -1,8 +1,8 @@
-# 459. 重复的子字符串 - 力扣Python/Java/C++等题解
+# 459. 重复的子字符串 - LeetCode Python/Java/C++ 题解
 
-访问原文链接：[459. 重复的子字符串 - 力扣Python/Java/C++等题解](https://leetcodepython.com/zh/leetcode/459-repeated-substring-pattern)，体验更佳！
+访问原文链接：[459. 重复的子字符串 - LeetCode Python/Java/C++ 题解](https://leetcodepython.com/zh/leetcode/459-repeated-substring-pattern)，体验更佳！
 
-力扣链接：[459. 重复的子字符串](https://leetcode.cn/problems/repeated-substring-pattern), 难度：**简单**。
+力扣链接：[459. 重复的子字符串](https://leetcode.cn/problems/repeated-substring-pattern), 难度等级：**简单**。
 
 ## LeetCode “459. 重复的子字符串”问题描述
 
@@ -223,7 +223,7 @@ end
 亲爱的力扣人，为了您更好的刷题体验，请访问 [LeetCodePython.com](https://leetcodepython.com/zh)。
 本站敢称力扣题解最佳实践，终将省你大量刷题时间！
 
-原文链接：[459. 重复的子字符串 - 力扣Python/Java/C++等题解](https://leetcodepython.com/zh/leetcode/459-repeated-substring-pattern).
+原文链接：[459. 重复的子字符串 - LeetCode Python/Java/C++ 题解](https://leetcodepython.com/zh/leetcode/459-repeated-substring-pattern).
 
 GitHub 仓库: [f*ck-leetcode](https://github.com/fuck-leetcode/fuck-leetcode).
 

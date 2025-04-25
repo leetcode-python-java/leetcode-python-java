@@ -1,8 +1,8 @@
-# 202. 快乐数 - 力扣Python/Java/C++等题解
+# 202. 快乐数 - LeetCode Python/Java/C++ 题解
 
-访问原文链接：[202. 快乐数 - 力扣Python/Java/C++等题解](https://leetcodepython.com/zh/leetcode/202-happy-number)，体验更佳！
+访问原文链接：[202. 快乐数 - LeetCode Python/Java/C++ 题解](https://leetcodepython.com/zh/leetcode/202-happy-number)，体验更佳！
 
-力扣链接：[202. 快乐数](https://leetcode.cn/problems/happy-number), 难度：**简单**。
+力扣链接：[202. 快乐数](https://leetcode.cn/problems/happy-number), 难度等级：**简单**。
 
 ## LeetCode “202. 快乐数”问题描述
 
@@ -274,7 +274,7 @@ end
 亲爱的力扣人，为了您更好的刷题体验，请访问 [LeetCodePython.com](https://leetcodepython.com/zh)。
 本站敢称力扣题解最佳实践，终将省你大量刷题时间！
 
-原文链接：[202. 快乐数 - 力扣Python/Java/C++等题解](https://leetcodepython.com/zh/leetcode/202-happy-number).
+原文链接：[202. 快乐数 - LeetCode Python/Java/C++ 题解](https://leetcodepython.com/zh/leetcode/202-happy-number).
 
 GitHub 仓库: [f*ck-leetcode](https://github.com/fuck-leetcode/fuck-leetcode).
 

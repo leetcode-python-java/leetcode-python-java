@@ -1,8 +1,8 @@
-# 160. 相交链表 - 力扣Python/Java/C++等题解
+# 160. 相交链表 - LeetCode Python/Java/C++ 题解
 
-访问原文链接：[160. 相交链表 - 力扣Python/Java/C++等题解](https://leetcodepython.com/zh/leetcode/160-intersection-of-two-linked-lists)，体验更佳！
+访问原文链接：[160. 相交链表 - LeetCode Python/Java/C++ 题解](https://leetcodepython.com/zh/leetcode/160-intersection-of-two-linked-lists)，体验更佳！
 
-力扣链接：[160. 相交链表](https://leetcode.cn/problems/intersection-of-two-linked-lists), 难度：**简单**。
+力扣链接：[160. 相交链表](https://leetcode.cn/problems/intersection-of-two-linked-lists), 难度等级：**简单**。
 
 ## LeetCode “160. 相交链表”问题描述
 
@@ -495,7 +495,7 @@ func getIntersectionNode(headA, headB *ListNode) *ListNode {
 亲爱的力扣人，为了您更好的刷题体验，请访问 [LeetCodePython.com](https://leetcodepython.com/zh)。
 本站敢称力扣题解最佳实践，终将省你大量刷题时间！
 
-原文链接：[160. 相交链表 - 力扣Python/Java/C++等题解](https://leetcodepython.com/zh/leetcode/160-intersection-of-two-linked-lists).
+原文链接：[160. 相交链表 - LeetCode Python/Java/C++ 题解](https://leetcodepython.com/zh/leetcode/160-intersection-of-two-linked-lists).
 
 GitHub 仓库: [f*ck-leetcode](https://github.com/fuck-leetcode/fuck-leetcode).
 
