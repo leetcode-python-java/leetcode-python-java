@@ -25,7 +25,7 @@ You can skip the more difficult problems and do them later.
 
 ## Array
 - <a name="344"></a>[344. Reverse String](en/1-1000/344-reverse-string.md) Python, Java, C++, JavaScript, C#, Go, Ruby.
-- <a name="27"></a>[27. Remove Element](en/1-1000/27-remove-element.md) Python, Java, C++, JavaScript, C#, Go, Ruby, **2** ways.
+- <a name="27"></a>[27. Remove Element](en/1-1000/27-remove-element.md) Python, Java, C++, JavaScript, C#, Go, Ruby, **2** approaches.
 - <a name="704"></a>[704. Binary Search](en/1-1000/704-binary-search.md) Python, Java, C++, JavaScript, C#, Go, Ruby.
 - <a name="977"></a>[977. Squares of a Sorted Array](en/1-1000/977-squares-of-a-sorted-array.md) Python, Java, C++, JavaScript, C#, Go, Ruby.
 - <a name="209"></a>[209. Minimum Size Subarray Sum](en/1-1000/209-minimum-size-subarray-sum.md) Python, Java, C++, JavaScript, C#, Go, Ruby.
@@ -58,16 +58,16 @@ You can skip the more difficult problems and do them later.
 - <a name="833"></a>[833. Find, Replace in String](https://leetcodepython.com/en/leetcode/833-find-and-replace-in-string) Python.
 
 ## Two Pointers
-- <a name="15"></a>[15. 3Sum](en/1-1000/15-3sum.md) Python, Java, C++, JavaScript, C#, Go, Ruby, 2 ways.
+- <a name="15"></a>[15. 3Sum](en/1-1000/15-3sum.md) Python, Java, C++, JavaScript, C#, Go, Ruby, 2 approaches.
 - <a name="18"></a>[18. 4Sum](en/1-1000/18-4sum.md) Python, Java, C++, JavaScript, C#, Go, Ruby.
 
 ## Stack & Queue
 - <a name="20"></a>[20. Valid Parentheses](en/1-1000/20-valid-parentheses.md) Python, Java, C++, JavaScript, C#, Go, Ruby.
 - <a name="232"></a>[232. Implement Queue using Stacks](en/1-1000/232-implement-queue-using-stacks.md) Python, Java, C++, JavaScript, C#, Go, Ruby.
-- <a name="225"></a>[225. Implement Stack using Queues](en/1-1000/225-implement-stack-using-queues.md) Python, Java, C++, JavaScript, C#, Go, Ruby, 3 ways.
+- <a name="225"></a>[225. Implement Stack using Queues](en/1-1000/225-implement-stack-using-queues.md) Python, Java, C++, JavaScript, C#, Go, Ruby, 3 approaches.
 
 ## Binary Tree
-- <a name="144"></a>[144. Binary Tree Preorder Traversal](en/1-1000/144-binary-tree-preorder-traversal.md) Python, 2 ways.
+- <a name="144"></a>[144. Binary Tree Preorder Traversal](en/1-1000/144-binary-tree-preorder-traversal.md) Python, 2 approaches.
 
 ## Dynamic Programming
 ### Easy Problems
@@ -76,12 +76,12 @@ You can skip the more difficult problems and do them later.
 ### House Robber
 - <a name="198"></a>[198. House Robber](en/1-1000/198-house-robber.md) Python, Java, C++, JavaScript, C#, Go, Ruby.
 - <a name="213"></a>[213. House Robber II](en/1-1000/213-house-robber-ii.md) Python, Java, C++, JavaScript, C#, Go, Ruby.
-- <a name="337"></a>[337. House Robber III](en/1-1000/337-house-robber-iii.md) Python, Java, C++, JavaScript, C#, Go, Ruby, **2** ways.
+- <a name="337"></a>[337. House Robber III](en/1-1000/337-house-robber-iii.md) Python, Java, C++, JavaScript, C#, Go, Ruby, **2** approaches.
 
 ### Knapsack Problems
 #### 0/1 Knapsack
-- <a name="416"></a>[416. Partition Equal Subset Sum](en/1-1000/416-partition-equal-subset-sum.md) Python, Java, C++, JavaScript, C#, Go, Ruby, **2** ways.
-- <a name="1049"></a>[1049. Last Stone Weight II](en/1001-2000/1049-last-stone-weight-ii.md) Python, Java, C++, JavaScript, C#, Go, Ruby, **2** ways.
+- <a name="416"></a>[416. Partition Equal Subset Sum](en/1-1000/416-partition-equal-subset-sum.md) Python, Java, C++, JavaScript, C#, Go, Ruby, **2** approaches.
+- <a name="1049"></a>[1049. Last Stone Weight II](en/1001-2000/1049-last-stone-weight-ii.md) Python, Java, C++, JavaScript, C#, Go, Ruby, **2** approaches.
 - <a name="494"></a>[494. Target Sum](en/1-1000/494-target-sum.md) Python, Java, C++, JavaScript, C#, Go, Ruby.
 - <a name="474"></a>[474. Ones and Zeroes](en/1-1000/474-ones-and-zeroes.md) Python, Java, C++, JavaScript, C#, Go, Ruby.
 
@@ -121,25 +121,25 @@ You can skip the more difficult problems and do them later.
 - <a name="84"></a>[84. Largest Rectangle in Histogram](en/1-1000/84-largest-rectangle-in-histogram.md) Python, Java, C++, JavaScript, C#, Go, Ruby.
 
 ## Graph Theory
-- <a name="797"></a>[797. All Paths From Source to Target](en/1-1000/797-all-paths-from-source-to-target.md) Python, Java, C++, JavaScript, C#, Go, Ruby, **2** ways.
-- <a name="200"></a>[200. Number of Islands](en/1-1000/200-number-of-islands.md) Python, Java, C++, JavaScript, C#, Go, Ruby, **3** ways.
-- <a name="463"></a>[463. Island Perimeter](en/1-1000/463-island-perimeter.md) Python, **2** ways.
-- <a name="695"></a>[695. Max Area of Island](en/1-1000/695-max-area-of-island.md) Python, Java, C++, JavaScript, C#, Go, Ruby, **3** ways.
-- <a name="827"></a>[827. Making A Large Island](en/1-1000/827-making-a-large-island.md) Python, **2** ways.
+- <a name="797"></a>[797. All Paths From Source to Target](en/1-1000/797-all-paths-from-source-to-target.md) Python, Java, C++, JavaScript, C#, Go, Ruby, **2** approaches.
+- <a name="200"></a>[200. Number of Islands](en/1-1000/200-number-of-islands.md) Python, Java, C++, JavaScript, C#, Go, Ruby, **3** approaches.
+- <a name="463"></a>[463. Island Perimeter](en/1-1000/463-island-perimeter.md) Python, **2** approaches.
+- <a name="695"></a>[695. Max Area of Island](en/1-1000/695-max-area-of-island.md) Python, Java, C++, JavaScript, C#, Go, Ruby, **3** approaches.
+- <a name="827"></a>[827. Making A Large Island](en/1-1000/827-making-a-large-island.md) Python, **2** approaches.
 - <a name="127"></a>[127. Word Ladder](en/1-1000/127-word-ladder.md) Python.
-- <a name="1971"></a>[1971. Find if Path Exists in Graph](en/1001-2000/1971-find-if-path-exists-in-graph.md) Python, Java, C++, JavaScript, C#, Go, Ruby, 2 ways.
+- <a name="1971"></a>[1971. Find if Path Exists in Graph](en/1001-2000/1971-find-if-path-exists-in-graph.md) Python, Java, C++, JavaScript, C#, Go, Ruby, 2 approaches.
 - <a name="684"></a>[684. Redundant Connection](en/1-1000/684-redundant-connection.md) Python, Java, C++, JavaScript, C#, Go, Ruby.
 - <a name="685"></a>[685. Redundant Connection II](en/1-1000/685-redundant-connection-ii.md) Python.
-- <a name="1584"></a>[1584. Min Cost to Connect All Points](en/1001-2000/1584-min-cost-to-connect-all-points.md) Python, Java, C++, JavaScript, C#, Go, Ruby, 2 ways.
-- <a name="207"></a>[207. Course Schedule](en/1-1000/207-course-schedule.md) Python, Java, C++, C#, 2 ways.
-- <a name="1514"></a>[1514. Path with Maximum Probability](en/1001-2000/1514-path-with-maximum-probability.md) Python, 2 ways.
-- <a name="752"></a>[752. Open the Lock](en/1-1000/752-open-the-lock.md) Python, 2 ways.
-- <a name="743"></a>[743. Network Delay Time](en/1-1000/743-network-delay-time.md) Python, 2 ways.
+- <a name="1584"></a>[1584. Min Cost to Connect All Points](en/1001-2000/1584-min-cost-to-connect-all-points.md) Python, Java, C++, JavaScript, C#, Go, Ruby, 2 approaches.
+- <a name="207"></a>[207. Course Schedule](en/1-1000/207-course-schedule.md) Python, Java, C++, C#, 2 approaches.
+- <a name="1514"></a>[1514. Path with Maximum Probability](en/1001-2000/1514-path-with-maximum-probability.md) Python, 2 approaches.
+- <a name="752"></a>[752. Open the Lock](en/1-1000/752-open-the-lock.md) Python, 2 approaches.
+- <a name="743"></a>[743. Network Delay Time](en/1-1000/743-network-delay-time.md) Python, 2 approaches.
 - <a name="787"></a>[787. Cheapest Flights Within K Stops](en/1-1000/787-cheapest-flights-within-k-stops.md) Python.
 - <a name="1334"></a>[1334. Find the City With the Smallest Number of Neighbors at a Threshold Distance](en/1001-2000/1334-find-the-city-with-the-smallest-number-of-neighbors-at-a-threshold-distance.md) Python.
 
 ## Other Algorithms
-- <a name="433"></a>[433. Minimum Genetic Mutation](en/1-1000/433-minimum-genetic-mutation.md) Python, 3 ways.
+- <a name="433"></a>[433. Minimum Genetic Mutation](en/1-1000/433-minimum-genetic-mutation.md) Python, 3 approaches.
 
 ## "Fuck LeetCode": More Problems
 
