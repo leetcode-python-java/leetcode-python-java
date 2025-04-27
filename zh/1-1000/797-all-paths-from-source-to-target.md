@@ -1,321 +1,594 @@
-# 797. All Paths From Source to Target
-LeetCode link: [797. All Paths From Source to Target](https://leetcode.com/problems/all-paths-from-source-to-target/)
+# 797. 所有可能的路径 - LeetCode Python/Java/C++ 题解
 
-## LeetCode problem description
-Given a directed acyclic graph (**DAG**) of `n` nodes labeled from `0` to `n - 1`, find all possible paths from node `0` to node `n - 1` and return them in **any order**.
+访问原文链接：[797. 所有可能的路径 - LeetCode Python/Java/C++ 题解](https://leetcodepython.com/zh/leetcode/797-all-paths-from-source-to-target)，体验更佳！
 
-The graph is given as follows: `graph[i]` is a list of all nodes you can visit from node `i` (i.e., there is a directed edge from node `i` to node `graph[i][j]`).
+力扣链接：[797. 所有可能的路径](https://leetcode.cn/problems/all-paths-from-source-to-target), 难度等级：**中等**。
 
-### Example 1
+## LeetCode “797. 所有可能的路径”问题描述
+
+给你一个有 `n` 个节点的 **有向无环图（DAG）**，请你找出所有从节点 `0` 到节点 `n-1` 的路径并输出（**不要求按特定顺序**）
+
+`graph[i]` 是一个从节点 `i` 可以访问的所有节点的列表（即从节点 `i` 到节点 `graph[i][j]` 存在一条有向边）。
+
+### [示例 1]
+
 ![](../../images/examples/797_1.jpg)
-```
-Input: graph = [[1,2],[3],[3],[]]
-Output: [[0,1,3],[0,2,3]]
-Explanation: There are two paths: 0 -> 1 -> 3 and 0 -> 2 -> 3.
-```
 
-### Example 2
+**输入**: `graph = [[1,2],[3],[3],[]]`
+
+**输出**: `[[0,1,3],[0,2,3]]`
+
+**解释**: `有两条路径 0 -> 1 -> 3 和 0 -> 2 -> 3`
+
+### [示例 2]
+
 ![](../../images/examples/797_2.jpg)
-```
-Input: graph = [[4,3,1],[3,2,4],[3],[4],[]]
-Output: [[0,4],[0,3,4],[0,1,3,4],[0,1,2,3,4],[0,1,4]]
-```
 
-### Constraints
+**输入**: `graph = [[4,3,1],[3,2,4],[3],[4],[]]`
+
+**输出**: `[[0,4],[0,3,4],[0,1,3,4],[0,1,2,3,4],[0,1,4]]`
+
+### [约束]
+
 - `n == graph.length`
 - `2 <= n <= 15`
 - `0 <= graph[i][j] < n`
-- `graph[i][j] != i` (i.e., there will be no self-loops).
-- All the elements of `graph[i]` are **unique**.
-- The input graph is **guaranteed** to be a **DAG**.
+- `graph[i][j] != i`（即不存在自环）
+- `graph[i]` 中的所有元素 **互不相同**
+- 保证输入为 **有向无环图（DAG）**
 
-# Intuition
-This problem can be solved using **Depth-First Search of a Graph**.
+## 思路 1
 
-# Approach
-1. From node `0`, visit all of its neighbors `graph[node]` in an iteration.
-2. In the iteration, recursively call the `dfs` function to visit all the paths.
-3. Use an array `path` to save the path (node itself inclusive).
-4. Around the `dfs()` call code are the `path.push(node)` (use `node`) and `path.pop()` (undo use `node`).
-5. Use an array `paths` to save the results.
 
-## Complexity
-* Time: `O(2**n)`.
-* Space: `O(n)`.
+
+## “深度优先搜索”的模式
+
+深度优先搜索（DFS）是一种经典的图遍历算法，其核心特点是**“尽可能深”**地探索图的分支。DFS 从起始顶点出发，沿着一条路径不断深入，直到到达没有未访问邻接点的顶点，然后回溯到最近的分叉点继续探索。这一过程通过**递归**或**显式栈（迭代法）**实现，形成“后进先出”的搜索顺序，因此 DFS 在非加权图中能快速找到离起点较远的深层节点。
+
+**与 BFS 的对比**：
+
+1. **搜索顺序**：DFS 优先探索深度方向，而广度优先搜索（BFS）按层逐层扩展，形成“先进先出”的队列结构。
+2. **适用场景**：DFS 更适合强连通分量或回溯类问题（如迷宫所有路径），而 BFS 擅长最短路径（未加权图）或邻近节点探索（如社交网络好友推荐）。
+
+**DFS 的独特性**：
+
+- **不完全性**：若图无限深或存在环路（未标记已访问），DFS 可能无法终止，而 BFS 总能找到最短路径（未加权图）。
+- **“一支笔走到底”** 的搜索风格，使其在回溯剪枝或记录路径时更具灵活性，但也可能错过近邻最优解。
+
+
+总之，DFS 以深度优先的策略揭示图的纵向结构，其回溯特性与栈的天然结合，使其在路径记录和状态空间探索中表现突出，但需注意处理环路和最优解缺失的局限性。
+
+## 步骤
+
+1. 初始化一个空列表 `paths`，用于存储所有找到的有效路径。
+2. 初始化一个堆栈来管理 DFS 遍历。堆栈中的每个元素将存储一个 pair（或元组），其中包含当前 `node` 和到达该节点所采用的 `path`。
+3. 将起始状态加入到堆栈：初始节点 `0` 和一个空的路径列表（例如 `(0, [])`）。
+4. 当堆栈不为空时：
+    - 从堆栈中弹出顶部元素，检索当前 `node` 及其关联的 `path`。
+    - 通过将当前 `node` 附加到从堆栈中弹出的 `path` 来创建一个 `currentPath` 数组，它表示通往当前节点并包含当前节点的路径。
+    - 检查当前 `node` 是否为目标节点（`n - 1`，其中 `n` 是节点总数）。
+        - 如果它是目标节点，则将 `currentPath` 添加到 `paths` 数组中，因为已经找到了从源节点到目标节点的完整路径。
+        -  如果不是目标节点，则遍历当前 `node` 可访问的所有 `neighbor` 节点（即遍历 `graph[node]`）。
+            - 对于每个 `neighbor`，将一个新的 pair（`neighbor` 节点和 `currentPath`）加入到堆栈中。这为遍历探索从邻居节点延伸的路径做好准备。
+5. 循环结束后（堆栈为空），返回 `paths` 数组，其中包含从节点 `0` 到节点 `n - 1` 的所有已发现路径。
+
+## 复杂度
+
+- 时间复杂度: `Too complex`.
+- 空间复杂度: `Too complex`.
 
 ## Python
-### Solution 1: New array as 'path' parameter
+
 ```python
 class Solution:
-    def __init__(self):
-        self.paths = []
-        self.graph = None
-
     def allPathsSourceTarget(self, graph: List[List[int]]) -> List[List[int]]:
-        self.graph = graph
+        paths = []
+        stack = [(0, [])]
 
-        self.dfs(0, [0])
+        while stack:
+            node, path = stack.pop()
 
-        return self.paths
-    
-    def dfs(self, node, path):
-        if node == len(self.graph) - 1:
-            self.paths.append(path.copy())
-            return
+            if node == len(graph) - 1:
+                paths.append(path + [node])
+                continue
 
-        for target_node in self.graph[node]:
-            self.dfs(target_node, path + [target_node])
-```
+            for target_node in graph[node]:
+                stack.append((target_node, path + [node]))
 
-### Solution 2: More efficient by reusing one array (recommended)
-```python
-class Solution:
-    def __init__(self):
-        self.paths = []
-        self.path = [0]
-        self.graph = None
-
-    def allPathsSourceTarget(self, graph: List[List[int]]) -> List[List[int]]:
-        self.graph = graph
-
-        self.dfs(0)
-
-        return self.paths
-
-    def dfs(self, node):
-        if node == len(self.graph) - 1:
-            self.paths.append(self.path.copy())
-            return
-
-        for target_node in self.graph[node]:
-            self.path.append(target_node)
-
-            self.dfs(target_node)
-
-            self.path.pop()
+        return paths
 ```
 
 ## Java
+
 ```java
 class Solution {
-    List<List<Integer>> paths = new ArrayList<>();
-    List<Integer> path = new ArrayList<>();
-    int[][] graph;
+    public List<List<Integer>> allPathsSourceTarget(int[][] graph) {
+        List<List<Integer>> paths = new ArrayList<>();
+        // Each element in the stack is a pair: (current_node, current_path)
+        Stack<Pair<Integer, List<Integer>>> stack = new Stack<>();
+        List<Integer> initialPath = new ArrayList<>();
+        stack.push(new Pair<>(0, initialPath));
+
+        int targetNode = graph.length - 1;
+
+        while (!stack.isEmpty()) {
+            var current = stack.pop();
+            int node = current.getKey();
+            var path = current.getValue();
+
+            var nextPath = new ArrayList<>(path);
+            nextPath.add(node);
+
+            if (node == targetNode) {
+                paths.add(nextPath);
+                continue;
+            }
+
+            for (int neighbor : graph[node]) {
+                stack.push(new Pair<>(neighbor, nextPath));
+            }
+        }
+
+        return paths;
+    }
+}
+
+```
+
+## C++
+
+```cpp
+class Solution {
+public:
+    vector<vector<int>> allPathsSourceTarget(vector<vector<int>>& graph) {
+        vector<vector<int>> paths;
+        // Stack stores pairs of (current_node, current_path)
+        stack<pair<int, vector<int>>> s;
+        s.push({0, {}}); // Start at node 0 with an empty path initially
+
+        int targetNode = graph.size() - 1;
+
+        while (!s.empty()) {
+            auto node_path = s.top();
+            s.pop();
+            int node = node_path.first;
+            vector<int> path = node_path.second;
+
+            // Add the current node to the path
+            path.push_back(node);
+
+            if (node == targetNode) {
+                paths.push_back(path); // Found a path to the target
+                continue;
+            }
+
+            // Explore neighbors
+            for (int neighbor : graph[node]) {
+                s.push({neighbor, path});
+            }
+        }
+
+        return paths;
+    }
+};
+```
+
+## JavaScript
+
+```javascript
+/**
+ * @param {number[][]} graph
+ * @return {number[][]}
+ */
+var allPathsSourceTarget = function(graph) {
+    const paths = [];
+    // Stack stores arrays: [current_node, current_path]
+    const stack = [[0, []]]; // Start at node 0 with an empty path
+    const targetNode = graph.length - 1;
+
+    while (stack.length > 0) {
+        const [node, path] = stack.pop();
+
+        // Create the new path by appending the current node
+        const currentPath = [...path, node];
+
+        if (node === targetNode) {
+            paths.push(currentPath); // Found a path
+            continue;
+        }
+
+        // Explore neighbors
+        for (const neighbor of graph[node]) {
+            stack.push([neighbor, currentPath]); // Push neighbor and the path so far
+        }
+    }
+
+    return paths;
+};
+
+```
+
+## C#
+
+```csharp
+public class Solution {
+    public IList<IList<int>> AllPathsSourceTarget(int[][] graph)
+    {
+        var paths = new List<IList<int>>();
+        // Stack stores tuples: (current_node, current_path)
+        var stack = new Stack<(int node, List<int> path)>();
+        stack.Push((0, new List<int>())); // Start at node 0
+
+        int targetNode = graph.Length - 1;
+
+        while (stack.Count > 0)
+        {
+            var (node, path) = stack.Pop();
+
+            var currentPath = new List<int>(path);
+            currentPath.Add(node);
+
+            if (node == targetNode)
+            {
+                paths.Add(currentPath); // Found a path
+                continue;
+            }
+
+            // Explore neighbors
+            foreach (int neighbor in graph[node])
+            {
+                stack.Push((neighbor, currentPath)); // Push neighbor and the path so far
+            }
+        }
+
+        return paths;
+    }
+}
+```
+
+## Go
+
+```go
+type StackItem struct {
+    Node int
+    Path []int
+}
+
+func allPathsSourceTarget(graph [][]int) [][]int {
+    var paths [][]int
+    stack := []StackItem{{Node: 0, Path: []int{}}} // Start at node 0
+
+    targetNode := len(graph) - 1
+
+    for len(stack) > 0 {
+        currentItem := stack[len(stack) - 1] // Pop from stack
+        stack = stack[:len(stack) - 1]
+
+        node := currentItem.Node
+        path := currentItem.Path
+
+        newPath := append([]int(nil), path...)
+        newPath = append(newPath, node)
+
+        if node == targetNode {
+            paths = append(paths, newPath) // Found a path
+            continue
+        }
+
+        for _, neighbor := range graph[node] {
+            stack = append(stack, StackItem{Node: neighbor, Path: newPath})
+        }
+    }
+
+    return paths
+}
+```
+
+## Ruby
+
+```ruby
+# @param {Integer[][]} graph
+# @return {Integer[][]}
+def all_paths_source_target(graph)
+  paths = []
+  # Stack stores arrays: [current_node, current_path]
+  stack = [[0, []]] # Start at node 0 with an empty path
+  target_node = graph.length - 1
+
+  while !stack.empty?
+    node, path = stack.pop
+
+    # Create the new path by appending the current node
+    current_path = path + [node]
+
+    if node == target_node
+      paths << current_path # Found a path
+      next
+    end
+
+    # Explore neighbors
+    graph[node].each do |neighbor|
+      stack.push([neighbor, current_path])
+    end
+  end
+
+  paths
+end
+```
+
+## Other languages
+
+```java
+// Welcome to create a PR to complete the code of this language, thanks!
+```
+
+## 思路 2
+
+
+
+## “深度优先搜索”的模式
+
+深度优先搜索（DFS）是一种经典的图遍历算法，其核心特点是**“尽可能深”**地探索图的分支。DFS 从起始顶点出发，沿着一条路径不断深入，直到到达没有未访问邻接点的顶点，然后回溯到最近的分叉点继续探索。这一过程通过**递归**或**显式栈（迭代法）**实现，形成“后进先出”的搜索顺序，因此 DFS 在非加权图中能快速找到离起点较远的深层节点。
+
+**与 BFS 的对比**：
+
+1. **搜索顺序**：DFS 优先探索深度方向，而广度优先搜索（BFS）按层逐层扩展，形成“先进先出”的队列结构。
+2. **适用场景**：DFS 更适合强连通分量或回溯类问题（如迷宫所有路径），而 BFS 擅长最短路径（未加权图）或邻近节点探索（如社交网络好友推荐）。
+
+**DFS 的独特性**：
+
+- **不完全性**：若图无限深或存在环路（未标记已访问），DFS 可能无法终止，而 BFS 总能找到最短路径（未加权图）。
+- **“一支笔走到底”** 的搜索风格，使其在回溯剪枝或记录路径时更具灵活性，但也可能错过近邻最优解。
+
+
+总之，DFS 以深度优先的策略揭示图的纵向结构，其回溯特性与栈的天然结合，使其在路径记录和状态空间探索中表现突出，但需注意处理环路和最优解缺失的局限性。
+
+## “递归”的模式
+
+递归（Recursion）是计算机科学和数学中的一个重要概念，指的是 一个函数在其定义中 **直接或间接调用自身** 的方法。
+
+### 递归的核心思想
+
+- **自我调用**：函数在执行过程中调用自身。
+- **基线情况**：相当于终止条件。到达基线情况后，就可以返回结果了，不需要再递归调用，防止无限循环。
+- **递归步骤**：问题逐步向“基线情况”靠近的步骤。
+
+## 复杂度
+
+- 时间复杂度: `Too complex`.
+- 空间复杂度: `Too complex`.
+
+## Python
+
+```python
+class Solution:
+    def allPathsSourceTarget(self, graph: List[List[int]]) -> List[List[int]]:
+        self.paths = []
+        self.graph = graph
+        self.target = len(graph) - 1
+
+        self.dfs(0, []) # Start DFS from node 0 with an empty initial path
+
+        return self.paths
+
+    def dfs(self, node, path):
+        current_path = path + [node]
+
+        if node == self.target: # Base case
+            self.paths.append(current_path)
+            return
+
+        for neighbor in self.graph[node]: # Recursive step: Explore neighbors
+            self.dfs(neighbor, current_path)
+```
+
+## Java
+
+```java
+class Solution {
+    private List<List<Integer>> paths;
+    private int[][] graph;
+    private int targetNode;
 
     public List<List<Integer>> allPathsSourceTarget(int[][] graph) {
+        this.paths = new ArrayList<>();
         this.graph = graph;
-        path.add(0);
+        this.targetNode = graph.length - 1;
 
-        dfs(0);
+        List<Integer> initialPath = new ArrayList<>();
+        dfs(0, initialPath); // Start DFS from node 0 with an empty initial path
 
         return paths;
     }
 
-    void dfs(int node) {
-        if (node == graph.length - 1) {
-            paths.add(new ArrayList<>(path));
+    private void dfs(int node, List<Integer> currentPath) {
+        List<Integer> newPath = new ArrayList<>(currentPath);
+        newPath.add(node);
+
+        if (node == targetNode) { // Base case
+            paths.add(newPath);
             return;
         }
 
-        for (int targetNode : graph[node]) {
-            path.add(targetNode);
-
-            dfs(targetNode);
-
-            path.removeLast();
+        for (int neighbor : graph[node]) { // Recursive step: Explore neighbors
+            dfs(neighbor, newPath);
         }
     }
 }
 ```
 
 ## C++
+
 ```cpp
 class Solution {
 public:
     vector<vector<int>> allPathsSourceTarget(vector<vector<int>>& graph) {
-        graph_ = graph;
-        path_.push_back(0);
+        _graph = graph;
 
-        dfs(0);
+        vector<int> initial_path; // Empty initial path
+        dfs(0, initial_path); // Start DFS from node 0
 
-        return paths_;
+        return _paths;
     }
 
 private:
-    vector<vector<int>> paths_;
-    vector<int> path_;
-    vector<vector<int>> graph_;
+    vector<vector<int>> _paths;
+    vector<vector<int>> _graph;
 
-    void dfs(int node) {
-        if (node == graph_.size() - 1) {
-            paths_.push_back(path_);
+    void dfs(int node, vector<int> current_path) {
+        current_path.push_back(node);
+
+        if (node == _graph.size() - 1) { // Base case
+            _paths.push_back(current_path);
             return;
         }
 
-        for (int target_node : graph_[node]) {
-            path_.push_back(target_node);
-
-            dfs(target_node);
-
-            path_.pop_back();
+        for (int neighbor : _graph[node]) { // Recursive step: Explore neighbors
+            dfs(neighbor, current_path);
         }
     }
 };
 ```
 
 ## JavaScript
+
 ```javascript
 let paths
-let path
 let graph
 
 var allPathsSourceTarget = function (graph_) {
-  graph = graph_
   paths = []
-  path = [0]
+  graph = graph_
 
-  dfs(0)
+  dfs(0, [])
 
   return paths
-};
+}
 
-function dfs(node) {
-  if (node === graph.length - 1) {
-    paths.push([...path])
+function dfs(node, currentPath) {
+  const newPath = [...currentPath, node]
+
+  if (node === graph.length - 1) { // Base case
+    paths.push(newPath)
     return
   }
 
-  for (const targetNode of graph[node]) {
-    path.push(targetNode)
-
-    dfs(targetNode)
-
-    path.pop()
+  for (const neighbor of graph[node]) { // Recursive step: Explore neighbors
+    dfs(neighbor, newPath)
   }
 }
+
 ```
 
 ## C#
-```c#
+
+```csharp
 public class Solution
 {
-    IList<IList<int>> paths = new List<IList<int>>();
-    IList<int> path = new List<int>();
-    int[][] graph;
+    private IList<IList<int>> paths;
+    private int[][] graph;
+    private int targetNode;
 
     public IList<IList<int>> AllPathsSourceTarget(int[][] graph)
     {
+        this.paths = new List<IList<int>>();
         this.graph = graph;
-        path.Add(0);
+        this.targetNode = graph.Length - 1;
 
-        dfs(0);
+        Dfs(0, new List<int>());
 
         return paths;
     }
 
-    void dfs(int node)
+    private void Dfs(int node, List<int> currentPath)
     {
-        if (node == graph.Length - 1)
+        var newPath = new List<int>(currentPath);
+        newPath.Add(node);
+
+        if (node == targetNode) // Base case
         {
-            paths.Add(path.ToList());
+            paths.Add(newPath);
             return;
         }
 
-        foreach (int targetNode in graph[node])
+        foreach (int neighbor in graph[node]) // Recursive step: Explore neighbors
         {
-            path.Add(targetNode);
-
-            dfs(targetNode);
-
-            path.RemoveAt(path.Count - 1);
+            Dfs(neighbor, newPath);
         }
     }
 }
 ```
 
 ## Go
+
 ```go
 var (
     paths [][]int
-    path []int
     graph [][]int
+    targetNode int
 )
 
 func allPathsSourceTarget(graph_ [][]int) [][]int {
+    paths = [][]int{}
     graph = graph_
-    paths = nil
-    path = []int{0}
+    targetNode = len(graph) - 1
 
-    dfs(0)
+    dfs(0, []int{})
 
     return paths
 }
 
-func dfs(node int) {
-    if (node == len(graph) - 1) {
-        paths = append(paths, slices.Clone(path))
+func dfs(node int, currentPath []int) {
+    newPath := append([]int(nil), currentPath...)
+    newPath = append(newPath, node)  
+
+    if node == targetNode { // Base case
+        paths = append(paths, newPath)
         return
     }
 
-    for _, targetNode := range graph[node] {
-        path = append(path, targetNode)
-
-        dfs(targetNode)
-
-        path = path[:len(path) - 1]
+    for _, neighbor := range graph[node] { // Recursive step: Explore neighbors
+        dfs(neighbor, newPath)
     }
 }
 ```
 
 ## Ruby
+
 ```ruby
 def all_paths_source_target(graph)
-  @graph = graph
   @paths = []
-  @path = [0]
+  @graph = graph
 
-  dfs(0)
+  dfs(0, [])
 
   @paths
 end
 
-def dfs(node)
-  if node == @graph.size - 1
-    @paths.append(@path.clone)
+def dfs(node, current_path)
+  new_path = current_path + [node]
+
+  if node == @graph.size - 1 # Base case
+    @paths << new_path
     return
   end
 
-  @graph[node].each do |target_node|
-    @path << target_node
-
-    dfs(target_node)
-
-    @path.pop
+  @graph[node].each do |neighbor| # Recursive step: Explore neighbors
+    dfs(neighbor, new_path)
   end
 end
 ```
 
-## C
-```c
-// Welcome to create a PR to complete the code of this language, thanks!
-```
-
-## Kotlin
-```kotlin
-// Welcome to create a PR to complete the code of this language, thanks!
-```
-
-## Swift
-```swift
-// Welcome to create a PR to complete the code of this language, thanks!
-```
-
-## Rust
-```rust
-// Welcome to create a PR to complete the code of this language, thanks!
-```
-
 ## Other languages
-```
+
+```java
 // Welcome to create a PR to complete the code of this language, thanks!
 ```
+
+亲爱的力扣人，为了您更好的刷题体验，请访问 [LeetCodePython.com](https://leetcodepython.com/zh)。
+本站敢称力扣题解最佳实践，终将省你大量刷题时间！
+
+原文链接：[797. 所有可能的路径 - LeetCode Python/Java/C++ 题解](https://leetcodepython.com/zh/leetcode/797-all-paths-from-source-to-target).
+
+GitHub 仓库: [f*ck-leetcode](https://github.com/fuck-leetcode/fuck-leetcode).
+

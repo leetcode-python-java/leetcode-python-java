@@ -52,8 +52,8 @@ Recursion is an important concept in computer science and mathematics, which ref
 ### The core idea of ​​recursion
 
 - **Self-call**: A function calls itself during execution.
-- **Termination condition**: Recursion must have a termination condition to prevent infinite loops.
-- **Recursive equation**: Through equations, the problem gradually approaches the "termination condition".
+- **Base case**: Equivalent to the termination condition. After reaching the base case, the result can be returned without recursive calls to prevent infinite loops.
+- **Recursive step**: The step by which the problem gradually approaches the "base case".
 
 ## Complexity
 
