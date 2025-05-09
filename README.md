@@ -54,8 +54,11 @@ You can skip the more difficult problems and do them later.
 ## String
 - <a name="28"></a>[28. Find the Index of the First Occurrence in a String](en/1-1000/28-find-the-index-of-the-first-occurrence-in-a-string.md) Python, Java, C++, JavaScript, C#, Go, Ruby.
 - <a name="541"></a>[541. Reverse String II](en/1-1000/541-reverse-string-ii.md) Python, Java, C++, JavaScript, C#, Go, Ruby.
+- <a name="1768"></a>[1768. Merge Strings Alternately](en/1001-2000/1768-merge-strings-alternately.md) Python, Java, C++, JavaScript, C#, Go, Ruby.
+- <a name="1431"></a>[1431. Kids With the Greatest Number of Candies](en/1001-2000/1431-kids-with-the-greatest-number-of-candies.md) Python, Java, C++, JavaScript, C#, Go, Ruby.
 - <a name="459"></a>[459. Repeated Substring Pattern](en/1-1000/459-repeated-substring-pattern.md) Python, Java, C++, JavaScript, C#, Go, Ruby.
 - <a name="833"></a>[833. Find, Replace in String](https://leetcodepython.com/en/leetcode/833-find-and-replace-in-string) Python.
+- <a name="1071"></a>[1071. Greatest Common Divisor of Strings](en/1001-2000/1071-greatest-common-divisor-of-strings.md) Python, Java, C++, JavaScript, C#, Go, Ruby.
 
 ## Two Pointers
 - <a name="15"></a>[15. 3Sum](en/1-1000/15-3sum.md) Python, Java, C++, JavaScript, C#, Go, Ruby, 2 approaches.
