@@ -26,6 +26,7 @@ You can skip the more difficult problems and do them later.
 ## Array
 - <a name="344"></a>[344. Reverse String](en/1-1000/344-reverse-string.md) Python, Java, C++, JavaScript, C#, Go, Ruby.
 - <a name="27"></a>[27. Remove Element](en/1-1000/27-remove-element.md) Python, Java, C++, JavaScript, C#, Go, Ruby, **2** approaches.
+- <a name="605"></a>[605. Can Place Flowers](en/1-1000/605-can-place-flowers.md) Python, Java, C++, JavaScript, C#, Go, Ruby.
 - <a name="704"></a>[704. Binary Search](en/1-1000/704-binary-search.md) Python, Java, C++, JavaScript, C#, Go, Ruby.
 - <a name="977"></a>[977. Squares of a Sorted Array](en/1-1000/977-squares-of-a-sorted-array.md) Python, Java, C++, JavaScript, C#, Go, Ruby.
 - <a name="209"></a>[209. Minimum Size Subarray Sum](en/1-1000/209-minimum-size-subarray-sum.md) Python, Java, C++, JavaScript, C#, Go, Ruby.
@@ -61,6 +62,7 @@ You can skip the more difficult problems and do them later.
 - <a name="1071"></a>[1071. Greatest Common Divisor of Strings](en/1001-2000/1071-greatest-common-divisor-of-strings.md) Python, Java, C++, JavaScript, C#, Go, Ruby.
 
 ## Two Pointers
+- <a name="345"></a>[345. Reverse Vowels of a String](en/1-1000/345-reverse-vowels-of-a-string.md) Python, Java, C++, JavaScript, C#, Go, Ruby.
 - <a name="15"></a>[15. 3Sum](en/1-1000/15-3sum.md) Python, Java, C++, JavaScript, C#, Go, Ruby, 2 approaches.
 - <a name="18"></a>[18. 4Sum](en/1-1000/18-4sum.md) Python, Java, C++, JavaScript, C#, Go, Ruby.
 
