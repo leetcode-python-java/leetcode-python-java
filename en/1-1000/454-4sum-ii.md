@@ -1,6 +1,6 @@
 # 454. 4Sum II - LeetCode Python/Java/C++/JS code
 
-Visit original link: [454. 4Sum II - LeetCode Python/Java/C++/JS code](https://leetcodepython.com/en/leetcode/454-4sum-ii) for a better experience!
+Visit original link: [454. 4Sum II - LeetCode Python/Java/C++/JS code](https://leetcode.blog/en/leetcode/454-4sum-ii) for a better experience!
 
 LeetCode link: [454. 4Sum II](https://leetcode.com/problems/4sum-ii), difficulty: **Medium**.
 
@@ -271,9 +271,9 @@ public:
 // Welcome to create a PR to complete the code of this language, thanks!
 ```
 
-Dear LeetCoders! For a better LeetCode problem-solving experience, please visit website [LeetCodePython.com](https://leetcodepython.com): Dare to claim the best practices of LeetCode solutions! Will save you a lot of time!
+Dear LeetCoders! For a better LeetCode problem-solving experience, please visit website [LeetCode.blog](https://leetcode.blog): Dare to claim the best practices of LeetCode solutions! Will save you a lot of time!
 
-Original link: [454. 4Sum II - LeetCode Python/Java/C++/JS code](https://leetcodepython.com/en/leetcode/454-4sum-ii).
+Original link: [454. 4Sum II - LeetCode Python/Java/C++/JS code](https://leetcode.blog/en/leetcode/454-4sum-ii).
 
 GitHub repository: [f*ck-leetcode](https://github.com/fuck-leetcode/fuck-leetcode).
 

@@ -1,6 +1,6 @@
 # 1431. Kids With the Greatest Number of Candies - LeetCode Python/Java/C++/JS code
 
-Visit original link: [1431. Kids With the Greatest Number of Candies - LeetCode Python/Java/C++/JS code](https://leetcodepython.com/en/leetcode/1431-kids-with-the-greatest-number-of-candies) for a better experience!
+Visit original link: [1431. Kids With the Greatest Number of Candies - LeetCode Python/Java/C++/JS code](https://leetcode.blog/en/leetcode/1431-kids-with-the-greatest-number-of-candies) for a better experience!
 
 LeetCode link: [1431. Kids With the Greatest Number of Candies](https://leetcode.com/problems/kids-with-the-greatest-number-of-candies), difficulty: **Easy**.
 
@@ -184,9 +184,9 @@ end
 // Welcome to create a PR to complete the code of this language, thanks!
 ```
 
-Dear LeetCoders! For a better LeetCode problem-solving experience, please visit website [LeetCodePython.com](https://leetcodepython.com): Dare to claim the best practices of LeetCode solutions! Will save you a lot of time!
+Dear LeetCoders! For a better LeetCode problem-solving experience, please visit website [LeetCode.blog](https://leetcode.blog): Dare to claim the best practices of LeetCode solutions! Will save you a lot of time!
 
-Original link: [1431. Kids With the Greatest Number of Candies - LeetCode Python/Java/C++/JS code](https://leetcodepython.com/en/leetcode/1431-kids-with-the-greatest-number-of-candies).
+Original link: [1431. Kids With the Greatest Number of Candies - LeetCode Python/Java/C++/JS code](https://leetcode.blog/en/leetcode/1431-kids-with-the-greatest-number-of-candies).
 
 GitHub repository: [f*ck-leetcode](https://github.com/fuck-leetcode/fuck-leetcode).
 

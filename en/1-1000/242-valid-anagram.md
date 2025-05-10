@@ -1,6 +1,6 @@
 # 242. Valid Anagram - LeetCode Python/Java/C++/JS code
 
-Visit original link: [242. Valid Anagram - LeetCode Python/Java/C++/JS code](https://leetcodepython.com/en/leetcode/242-valid-anagram) for a better experience!
+Visit original link: [242. Valid Anagram - LeetCode Python/Java/C++/JS code](https://leetcode.blog/en/leetcode/242-valid-anagram) for a better experience!
 
 LeetCode link: [242. Valid Anagram](https://leetcode.com/problems/valid-anagram), difficulty: **Easy**.
 
@@ -215,9 +215,9 @@ public:
 // Welcome to create a PR to complete the code of this language, thanks!
 ```
 
-Dear LeetCoders! For a better LeetCode problem-solving experience, please visit website [LeetCodePython.com](https://leetcodepython.com): Dare to claim the best practices of LeetCode solutions! Will save you a lot of time!
+Dear LeetCoders! For a better LeetCode problem-solving experience, please visit website [LeetCode.blog](https://leetcode.blog): Dare to claim the best practices of LeetCode solutions! Will save you a lot of time!
 
-Original link: [242. Valid Anagram - LeetCode Python/Java/C++/JS code](https://leetcodepython.com/en/leetcode/242-valid-anagram).
+Original link: [242. Valid Anagram - LeetCode Python/Java/C++/JS code](https://leetcode.blog/en/leetcode/242-valid-anagram).
 
 GitHub repository: [f*ck-leetcode](https://github.com/fuck-leetcode/fuck-leetcode).
 

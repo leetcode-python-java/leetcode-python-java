@@ -1,6 +1,6 @@
 # 19. Remove Nth Node From End of List - LeetCode Python/Java/C++/JS code
 
-Visit original link: [19. Remove Nth Node From End of List - LeetCode Python/Java/C++/JS code](https://leetcodepython.com/en/leetcode/19-remove-nth-node-from-end-of-list) for a better experience!
+Visit original link: [19. Remove Nth Node From End of List - LeetCode Python/Java/C++/JS code](https://leetcode.blog/en/leetcode/19-remove-nth-node-from-end-of-list) for a better experience!
 
 LeetCode link: [19. Remove Nth Node From End of List](https://leetcode.com/problems/remove-nth-node-from-end-of-list), difficulty: **Medium**.
 
@@ -382,9 +382,9 @@ end
 // Welcome to create a PR to complete the code of this language, thanks!
 ```
 
-Dear LeetCoders! For a better LeetCode problem-solving experience, please visit website [LeetCodePython.com](https://leetcodepython.com): Dare to claim the best practices of LeetCode solutions! Will save you a lot of time!
+Dear LeetCoders! For a better LeetCode problem-solving experience, please visit website [LeetCode.blog](https://leetcode.blog): Dare to claim the best practices of LeetCode solutions! Will save you a lot of time!
 
-Original link: [19. Remove Nth Node From End of List - LeetCode Python/Java/C++/JS code](https://leetcodepython.com/en/leetcode/19-remove-nth-node-from-end-of-list).
+Original link: [19. Remove Nth Node From End of List - LeetCode Python/Java/C++/JS code](https://leetcode.blog/en/leetcode/19-remove-nth-node-from-end-of-list).
 
 GitHub repository: [f*ck-leetcode](https://github.com/fuck-leetcode/fuck-leetcode).
 

@@ -1,6 +1,6 @@
 # 72. Edit Distance - LeetCode Python/Java/C++/JS code
 
-Visit original link: [72. Edit Distance - LeetCode Python/Java/C++/JS code](https://leetcodepython.com/en/leetcode/72-edit-distance) for a better experience!
+Visit original link: [72. Edit Distance - LeetCode Python/Java/C++/JS code](https://leetcode.blog/en/leetcode/72-edit-distance) for a better experience!
 
 LeetCode link: [72. Edit Distance](https://leetcode.com/problems/edit-distance), difficulty: **Medium**.
 
@@ -374,9 +374,9 @@ end
 // Welcome to create a PR to complete the code of this language, thanks!
 ```
 
-Dear LeetCoders! For a better LeetCode problem-solving experience, please visit website [LeetCodePython.com](https://leetcodepython.com): Dare to claim the best practices of LeetCode solutions! Will save you a lot of time!
+Dear LeetCoders! For a better LeetCode problem-solving experience, please visit website [LeetCode.blog](https://leetcode.blog): Dare to claim the best practices of LeetCode solutions! Will save you a lot of time!
 
-Original link: [72. Edit Distance - LeetCode Python/Java/C++/JS code](https://leetcodepython.com/en/leetcode/72-edit-distance).
+Original link: [72. Edit Distance - LeetCode Python/Java/C++/JS code](https://leetcode.blog/en/leetcode/72-edit-distance).
 
 GitHub repository: [f*ck-leetcode](https://github.com/fuck-leetcode/fuck-leetcode).
 

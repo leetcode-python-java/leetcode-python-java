@@ -1,6 +1,6 @@
 # 28. Find the Index of the First Occurrence in a String - LeetCode Python/Java/C++/JS code
 
-Visit original link: [28. Find the Index of the First Occurrence in a String - LeetCode Python/Java/C++/JS code](https://leetcodepython.com/en/leetcode/28-find-the-index-of-the-first-occurrence-in-a-string) for a better experience!
+Visit original link: [28. Find the Index of the First Occurrence in a String - LeetCode Python/Java/C++/JS code](https://leetcode.blog/en/leetcode/28-find-the-index-of-the-first-occurrence-in-a-string) for a better experience!
 
 LeetCode link: [28. Find the Index of the First Occurrence in a String](https://leetcode.com/problems/find-the-index-of-the-first-occurrence-in-a-string), difficulty: **Easy**.
 
@@ -202,9 +202,9 @@ public class Solution {
 // Welcome to create a PR to complete the code of this language, thanks!
 ```
 
-Dear LeetCoders! For a better LeetCode problem-solving experience, please visit website [LeetCodePython.com](https://leetcodepython.com): Dare to claim the best practices of LeetCode solutions! Will save you a lot of time!
+Dear LeetCoders! For a better LeetCode problem-solving experience, please visit website [LeetCode.blog](https://leetcode.blog): Dare to claim the best practices of LeetCode solutions! Will save you a lot of time!
 
-Original link: [28. Find the Index of the First Occurrence in a String - LeetCode Python/Java/C++/JS code](https://leetcodepython.com/en/leetcode/28-find-the-index-of-the-first-occurrence-in-a-string).
+Original link: [28. Find the Index of the First Occurrence in a String - LeetCode Python/Java/C++/JS code](https://leetcode.blog/en/leetcode/28-find-the-index-of-the-first-occurrence-in-a-string).
 
 GitHub repository: [f*ck-leetcode](https://github.com/fuck-leetcode/fuck-leetcode).
 
