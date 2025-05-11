@@ -34,12 +34,43 @@ The vowels are `'a'`, `'e'`, `'i'`, `'o'`, and `'u'`, and they can appear in bot
 
 ## Intuition
 
+Use two pointers to swap vowels in the string. The left pointer finds vowels from the start, the right pointer finds vowels from the end, and they swap until the pointers meet.
 
+## Pattern of "left & right pointers"
+
+The code framework is as follows:
+
+```java
+int r = target.length() - 1;
+
+for (int l = 0; l < target.length(); l++) { // Important
+    // ...
+    if (l >= r) {
+        break;
+    }
+
+    // ...
+    r--;
+}
+```
+
+## Step by Step Solutions
+
+1. Initialize a set of vowels
+2. For some languages, convert the string to a character array (since strings are immutable)
+3. Left pointer `l` starts at `0`, right pointer `r` starts at the end
+4. Loop processing:
+    - Move `l` right until a vowel is found
+    - Move `r` left until a vowel is found
+    - Swap the two vowels when `l < r`
+5. Return the processed string
 
 ## Complexity
 
-- Time complexity: ``.
-- Space complexity: ``.
+> Space complexity is O(N) if converting to a character array
+
+- Time complexity: `O(N)`.
+- Space complexity: `O(1) or O(N)`.
 
 ## Python
 
@@ -66,10 +97,195 @@ class Solution:
         return ''.join(s)
 ```
 
-## SQL
+## Java
 
-```sql
+```java
+class Solution {
+    public String reverseVowels(String s) {
+        var vowels = new HashSet<>(Arrays.asList('a', 'e', 'i', 'o', 'u', 'A', 'E', 'I', 'O', 'U'));
+        var chars = s.toCharArray();
+        int r = chars.length - 1;
 
+        for (int l = 0; l < chars.length; l++) { // important
+            if (!vowels.contains(chars[l])) {
+                continue;
+            }
+
+            while (r > 0 && !vowels.contains(chars[r])) {
+                r--;
+            }
+
+            if (l >= r) {
+                break;
+            }
+
+            // Swap the vowels
+            char temp = chars[l];
+            chars[l] = chars[r];
+            chars[r] = temp;
+            r--;
+        }
+
+        return new String(chars);
+    }
+}
+```
+
+## C++
+
+```cpp
+class Solution {
+public:
+    string reverseVowels(string s) {
+        unordered_set<char> vowels = {'a', 'e', 'i', 'o', 'u', 'A', 'E', 'I', 'O', 'U'};
+        int r = s.size() - 1;
+
+        for (int l = 0; l < s.size(); l++) { // important
+            if (!vowels.contains(s[l])) {
+                continue;
+            }
+
+            while (r > 0 && !vowels.contains(s[r])) {
+                r--;
+            }
+
+            if (l >= r) {
+                break;
+            }
+
+            swap(s[l], s[r]);
+            r--;
+        }
+
+        return s;
+    }
+};
+```
+
+## JavaScript
+
+```javascript
+var reverseVowels = function (s) {
+  const vowels = new Set(['a', 'e', 'i', 'o', 'u', 'A', 'E', 'I', 'O', 'U'])
+  const chars = s.split('')
+  let r = chars.length - 1
+
+  for (let l = 0; l < chars.length; l++) { // important
+    if (!vowels.has(chars[l])) {
+      continue
+    }
+
+    while (r > 0 && !vowels.has(chars[r])) {
+      r--
+    }
+
+    if (l >= r) {
+      break
+    }
+
+    [chars[l], chars[r]] = [chars[r], chars[l]]
+    r--
+  }
+
+  return chars.join('')
+};
+```
+
+## Ruby
+
+```ruby
+def reverse_vowels(s)
+  vowels = Set.new(['a', 'e', 'i', 'o', 'u', 'A', 'E', 'I', 'O', 'U'])
+  r = s.size - 1
+
+  (0...s.size).each do |l|
+    unless vowels.include?(s[l])
+      next
+    end
+
+    while r > 0 && !vowels.include?(s[r])
+      r -= 1
+    end
+
+    if l >= r
+      break
+    end
+
+    s[l], s[r] = s[r], s[l]
+    r -= 1
+  end
+
+  s
+end
+```
+
+## C#
+
+```csharp
+public class Solution
+{
+    public string ReverseVowels(string s)
+    {
+        var vowels = new HashSet<char> {'a', 'e', 'i', 'o', 'u', 'A', 'E', 'I', 'O', 'U'};
+        var chars = s.ToCharArray();
+        int r = chars.Length - 1;
+        // important
+        for (int l = 0; l < chars.Length; l++)
+        {
+            if (!vowels.Contains(chars[l]))
+            {
+                continue;
+            }
+
+            while (r > 0 && !vowels.Contains(chars[r]))
+            {
+                r--;
+            }
+
+            if (l >= r)
+            {
+                break;
+            }
+
+            (chars[l], chars[r]) = (chars[r], chars[l]);
+            r--;
+        }
+
+        return new string(chars);
+    }
+}
+```
+
+## Go
+
+```go
+func reverseVowels(s string) string {
+    vowels := map[byte]bool{
+        'a': true, 'e': true, 'i': true, 'o': true, 'u': true,
+        'A': true, 'E': true, 'I': true, 'O': true, 'U': true,
+    }
+    chars := []byte(s)
+    r := len(chars) - 1
+
+    for l := 0; l < len(chars); l++ { // important
+        if !vowels[chars[l]] {
+            continue
+        }
+
+        for r > 0 && !vowels[chars[r]] {
+            r--
+        }
+
+        if l >= r {
+            break
+        }
+
+        chars[l], chars[r] = chars[r], chars[l]
+        r--
+    }
+
+    return string(chars)
+}
 ```
 
 ## Other languages
