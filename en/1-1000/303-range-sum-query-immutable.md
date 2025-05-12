@@ -1,6 +1,6 @@
-# 303. Range Sum Query - Immutable - LeetCode Python/Java/C++/JS code
+# 303. Range Sum Query - Immutable - LeetCode Python/Java/C++/JS/C#/Go/Ruby Solutions
 
-Visit original link: [303. Range Sum Query - Immutable - LeetCode Python/Java/C++/JS code](https://leetcode.blog/en/leetcode/303-range-sum-query-immutable) for a better experience!
+Visit original link: [303. Range Sum Query - Immutable - LeetCode Python/Java/C++/JS/C#/Go/Ruby Solutions](https://leetcode.blog/en/leetcode/303-range-sum-query-immutable) for a better experience!
 
 LeetCode link: [303. Range Sum Query - Immutable](https://leetcode.com/problems/range-sum-query-immutable), difficulty: **Easy**.
 
@@ -234,7 +234,7 @@ class NumArray:
 
 Dear LeetCoders! For a better LeetCode problem-solving experience, please visit website [LeetCode.blog](https://leetcode.blog): Dare to claim the best practices of LeetCode solutions! Will save you a lot of time!
 
-Original link: [303. Range Sum Query - Immutable - LeetCode Python/Java/C++/JS code](https://leetcode.blog/en/leetcode/303-range-sum-query-immutable).
+Original link: [303. Range Sum Query - Immutable - LeetCode Python/Java/C++/JS/C#/Go/Ruby Solutions](https://leetcode.blog/en/leetcode/303-range-sum-query-immutable).
 
-GitHub repository: [f*ck-leetcode](https://github.com/fuck-leetcode/fuck-leetcode).
+GitHub repository: [leetcode-python-java](https://github.com/leetcode-python-java/leetcode-python-java).
 

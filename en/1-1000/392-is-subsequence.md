@@ -1,6 +1,6 @@
-# 392. Is Subsequence - LeetCode Python/Java/C++/JS code
+# 392. Is Subsequence - LeetCode Python/Java/C++/JS/C#/Go/Ruby Solutions
 
-Visit original link: [392. Is Subsequence - LeetCode Python/Java/C++/JS code](https://leetcode.blog/en/leetcode/392-is-subsequence) for a better experience!
+Visit original link: [392. Is Subsequence - LeetCode Python/Java/C++/JS/C#/Go/Ruby Solutions](https://leetcode.blog/en/leetcode/392-is-subsequence) for a better experience!
 
 LeetCode link: [392. Is Subsequence](https://leetcode.com/problems/is-subsequence), difficulty: **Medium**.
 
@@ -509,7 +509,7 @@ end
 
 Dear LeetCoders! For a better LeetCode problem-solving experience, please visit website [LeetCode.blog](https://leetcode.blog): Dare to claim the best practices of LeetCode solutions! Will save you a lot of time!
 
-Original link: [392. Is Subsequence - LeetCode Python/Java/C++/JS code](https://leetcode.blog/en/leetcode/392-is-subsequence).
+Original link: [392. Is Subsequence - LeetCode Python/Java/C++/JS/C#/Go/Ruby Solutions](https://leetcode.blog/en/leetcode/392-is-subsequence).
 
-GitHub repository: [f*ck-leetcode](https://github.com/fuck-leetcode/fuck-leetcode).
+GitHub repository: [leetcode-python-java](https://github.com/leetcode-python-java/leetcode-python-java).
 

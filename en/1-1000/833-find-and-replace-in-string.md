@@ -1,6 +1,6 @@
-# 833. Find And Replace in String - LeetCode Python/Java/C++/JS code
+# 833. Find And Replace in String - LeetCode Python/Java/C++/JS/C#/Go/Ruby Solutions
 
-Visit original link: [833. Find And Replace in String - LeetCode Python/Java/C++/JS code](https://leetcode.blog/en/leetcode/833-find-and-replace-in-string) for a better experience!
+Visit original link: [833. Find And Replace in String - LeetCode Python/Java/C++/JS/C#/Go/Ruby Solutions](https://leetcode.blog/en/leetcode/833-find-and-replace-in-string) for a better experience!
 
 LeetCode link: [833. Find And Replace in String](https://leetcode.com/problems/find-and-replace-in-string), difficulty: **Medium**.
 
@@ -107,7 +107,7 @@ class Solution:
 
 Dear LeetCoders! For a better LeetCode problem-solving experience, please visit website [LeetCode.blog](https://leetcode.blog): Dare to claim the best practices of LeetCode solutions! Will save you a lot of time!
 
-Original link: [833. Find And Replace in String - LeetCode Python/Java/C++/JS code](https://leetcode.blog/en/leetcode/833-find-and-replace-in-string).
+Original link: [833. Find And Replace in String - LeetCode Python/Java/C++/JS/C#/Go/Ruby Solutions](https://leetcode.blog/en/leetcode/833-find-and-replace-in-string).
 
-GitHub repository: [f*ck-leetcode](https://github.com/fuck-leetcode/fuck-leetcode).
+GitHub repository: [leetcode-python-java](https://github.com/leetcode-python-java/leetcode-python-java).
 

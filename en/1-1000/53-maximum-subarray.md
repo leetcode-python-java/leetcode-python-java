@@ -1,6 +1,6 @@
-# 53. Maximum Subarray - LeetCode Python/Java/C++/JS code
+# 53. Maximum Subarray - LeetCode Python/Java/C++/JS/C#/Go/Ruby Solutions
 
-Visit original link: [53. Maximum Subarray - LeetCode Python/Java/C++/JS code](https://leetcode.blog/en/leetcode/53-maximum-subarray) for a better experience!
+Visit original link: [53. Maximum Subarray - LeetCode Python/Java/C++/JS/C#/Go/Ruby Solutions](https://leetcode.blog/en/leetcode/53-maximum-subarray) for a better experience!
 
 LeetCode link: [53. Maximum Subarray](https://leetcode.com/problems/maximum-subarray), difficulty: **Medium**.
 
@@ -386,7 +386,7 @@ class Solution {
 
 Dear LeetCoders! For a better LeetCode problem-solving experience, please visit website [LeetCode.blog](https://leetcode.blog): Dare to claim the best practices of LeetCode solutions! Will save you a lot of time!
 
-Original link: [53. Maximum Subarray - LeetCode Python/Java/C++/JS code](https://leetcode.blog/en/leetcode/53-maximum-subarray).
+Original link: [53. Maximum Subarray - LeetCode Python/Java/C++/JS/C#/Go/Ruby Solutions](https://leetcode.blog/en/leetcode/53-maximum-subarray).
 
-GitHub repository: [f*ck-leetcode](https://github.com/fuck-leetcode/fuck-leetcode).
+GitHub repository: [leetcode-python-java](https://github.com/leetcode-python-java/leetcode-python-java).
 

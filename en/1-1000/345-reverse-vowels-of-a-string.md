@@ -1,6 +1,6 @@
-# 345. Reverse Vowels of a String - LeetCode Python/Java/C++/JS code
+# 345. Reverse Vowels of a String - LeetCode Python/Java/C++/JS/C#/Go/Ruby Solutions
 
-Visit original link: [345. Reverse Vowels of a String - LeetCode Python/Java/C++/JS code](https://leetcode.blog/en/leetcode/345-reverse-vowels-of-a-string) for a better experience!
+Visit original link: [345. Reverse Vowels of a String - LeetCode Python/Java/C++/JS/C#/Go/Ruby Solutions](https://leetcode.blog/en/leetcode/345-reverse-vowels-of-a-string) for a better experience!
 
 LeetCode link: [345. Reverse Vowels of a String](https://leetcode.com/problems/reverse-vowels-of-a-string), difficulty: **Easy**.
 
@@ -296,7 +296,7 @@ func reverseVowels(s string) string {
 
 Dear LeetCoders! For a better LeetCode problem-solving experience, please visit website [LeetCode.blog](https://leetcode.blog): Dare to claim the best practices of LeetCode solutions! Will save you a lot of time!
 
-Original link: [345. Reverse Vowels of a String - LeetCode Python/Java/C++/JS code](https://leetcode.blog/en/leetcode/345-reverse-vowels-of-a-string).
+Original link: [345. Reverse Vowels of a String - LeetCode Python/Java/C++/JS/C#/Go/Ruby Solutions](https://leetcode.blog/en/leetcode/345-reverse-vowels-of-a-string).
 
-GitHub repository: [f*ck-leetcode](https://github.com/fuck-leetcode/fuck-leetcode).
+GitHub repository: [leetcode-python-java](https://github.com/leetcode-python-java/leetcode-python-java).
 

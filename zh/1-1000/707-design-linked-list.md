@@ -1,6 +1,6 @@
-# 707. 设计链表 - LeetCode Python/Java/C++ 题解
+# 707. 设计链表 - LeetCode Python/Java/C++/JS/C#/Go/Ruby 题解
 
-访问原文链接：[707. 设计链表 - LeetCode Python/Java/C++ 题解](https://leetcode.blog/zh/leetcode/707-design-linked-list)，体验更佳！
+访问原文链接：[707. 设计链表 - LeetCode Python/Java/C++/JS/C#/Go/Ruby 题解](https://leetcode.blog/zh/leetcode/707-design-linked-list)，体验更佳！
 
 力扣链接：[707. 设计链表](https://leetcode.cn/problems/design-linked-list), 难度等级：**中等**。
 
@@ -635,7 +635,7 @@ end
 亲爱的力扣人，为了您更好的刷题体验，请访问 [LeetCode.blog](https://leetcode.blog/zh)。
 本站敢称力扣题解最佳实践，终将省你大量刷题时间！
 
-原文链接：[707. 设计链表 - LeetCode Python/Java/C++ 题解](https://leetcode.blog/zh/leetcode/707-design-linked-list).
+原文链接：[707. 设计链表 - LeetCode Python/Java/C++/JS/C#/Go/Ruby 题解](https://leetcode.blog/zh/leetcode/707-design-linked-list).
 
-GitHub 仓库: [f*ck-leetcode](https://github.com/fuck-leetcode/fuck-leetcode).
+GitHub 仓库: [leetcode-python-java](https://github.com/leetcode-python-java/leetcode-python-java).
 

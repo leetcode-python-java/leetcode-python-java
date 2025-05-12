@@ -1,6 +1,6 @@
-# 232. 用栈实现队列 - LeetCode Python/Java/C++ 题解
+# 232. 用栈实现队列 - LeetCode Python/Java/C++/JS/C#/Go/Ruby 题解
 
-访问原文链接：[232. 用栈实现队列 - LeetCode Python/Java/C++ 题解](https://leetcode.blog/zh/leetcode/232-implement-queue-using-stacks)，体验更佳！
+访问原文链接：[232. 用栈实现队列 - LeetCode Python/Java/C++/JS/C#/Go/Ruby 题解](https://leetcode.blog/zh/leetcode/232-implement-queue-using-stacks)，体验更佳！
 
 力扣链接：[232. 用栈实现队列](https://leetcode.cn/problems/implement-queue-using-stacks), 难度等级：**简单**。
 
@@ -351,7 +351,7 @@ end
 亲爱的力扣人，为了您更好的刷题体验，请访问 [LeetCode.blog](https://leetcode.blog/zh)。
 本站敢称力扣题解最佳实践，终将省你大量刷题时间！
 
-原文链接：[232. 用栈实现队列 - LeetCode Python/Java/C++ 题解](https://leetcode.blog/zh/leetcode/232-implement-queue-using-stacks).
+原文链接：[232. 用栈实现队列 - LeetCode Python/Java/C++/JS/C#/Go/Ruby 题解](https://leetcode.blog/zh/leetcode/232-implement-queue-using-stacks).
 
-GitHub 仓库: [f*ck-leetcode](https://github.com/fuck-leetcode/fuck-leetcode).
+GitHub 仓库: [leetcode-python-java](https://github.com/leetcode-python-java/leetcode-python-java).
 

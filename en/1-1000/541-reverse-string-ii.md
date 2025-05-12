@@ -1,6 +1,6 @@
-# 541. Reverse String II - LeetCode Python/Java/C++/JS code
+# 541. Reverse String II - LeetCode Python/Java/C++/JS/C#/Go/Ruby Solutions
 
-Visit original link: [541. Reverse String II - LeetCode Python/Java/C++/JS code](https://leetcode.blog/en/leetcode/541-reverse-string-ii) for a better experience!
+Visit original link: [541. Reverse String II - LeetCode Python/Java/C++/JS/C#/Go/Ruby Solutions](https://leetcode.blog/en/leetcode/541-reverse-string-ii) for a better experience!
 
 LeetCode link: [541. Reverse String II](https://leetcode.com/problems/reverse-string-ii), difficulty: **Easy**.
 
@@ -278,7 +278,7 @@ func reverseStr(s string, k int) string {
 
 Dear LeetCoders! For a better LeetCode problem-solving experience, please visit website [LeetCode.blog](https://leetcode.blog): Dare to claim the best practices of LeetCode solutions! Will save you a lot of time!
 
-Original link: [541. Reverse String II - LeetCode Python/Java/C++/JS code](https://leetcode.blog/en/leetcode/541-reverse-string-ii).
+Original link: [541. Reverse String II - LeetCode Python/Java/C++/JS/C#/Go/Ruby Solutions](https://leetcode.blog/en/leetcode/541-reverse-string-ii).
 
-GitHub repository: [f*ck-leetcode](https://github.com/fuck-leetcode/fuck-leetcode).
+GitHub repository: [leetcode-python-java](https://github.com/leetcode-python-java/leetcode-python-java).
 

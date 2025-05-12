@@ -1,6 +1,6 @@
-# 344. Reverse String - LeetCode Python/Java/C++/JS code
+# 344. Reverse String - LeetCode Python/Java/C++/JS/C#/Go/Ruby Solutions
 
-Visit original link: [344. Reverse String - LeetCode Python/Java/C++/JS code](https://leetcode.blog/en/leetcode/344-reverse-string) for a better experience!
+Visit original link: [344. Reverse String - LeetCode Python/Java/C++/JS/C#/Go/Ruby Solutions](https://leetcode.blog/en/leetcode/344-reverse-string) for a better experience!
 
 LeetCode link: [344. Reverse String](https://leetcode.com/problems/reverse-string), difficulty: **Easy**.
 
@@ -214,7 +214,7 @@ end
 
 Dear LeetCoders! For a better LeetCode problem-solving experience, please visit website [LeetCode.blog](https://leetcode.blog): Dare to claim the best practices of LeetCode solutions! Will save you a lot of time!
 
-Original link: [344. Reverse String - LeetCode Python/Java/C++/JS code](https://leetcode.blog/en/leetcode/344-reverse-string).
+Original link: [344. Reverse String - LeetCode Python/Java/C++/JS/C#/Go/Ruby Solutions](https://leetcode.blog/en/leetcode/344-reverse-string).
 
-GitHub repository: [f*ck-leetcode](https://github.com/fuck-leetcode/fuck-leetcode).
+GitHub repository: [leetcode-python-java](https://github.com/leetcode-python-java/leetcode-python-java).
 
