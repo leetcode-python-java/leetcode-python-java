@@ -1,6 +1,9 @@
-# Fuck LeetCode
 
-## Best practices for LeetCode solutions
+# leetcode-python-java
+
+**Not only** Python & Java solutions for LeetCode problems, but also =>
+
+## LeetCode Python/Java/JavaScript/C#/Go/Ruby Solutions
 
 Dear LeetCoders! For a better LeetCode problem-solving experience, please visit website [LeetCode.blog](https://leetcode.blog): Dare to claim the best practices of LeetCode solutions! Will save you a lot of time!
 
@@ -16,9 +19,9 @@ Here, I will provide you with **common problem-solving patterns** so that you do
 
 ## How to fully demonstrate your abilities to employers and get the offer you want?
 
-[Developer Portfolio](https://github.com/developer-portfolios/developer-portfolio) focuses on bringing value to developers, including resume, portfolio, blog and other functions. With it, your abilities will be better seen by employers!
+[Personal Brand Website Builder](https://github.com/PersonalBranding/personal-brand-website-builder) focuses on bringing value to developers, including resume, portfolio, blog and other functions. With it, your abilities will be better seen by employers!
 
-## How to Use this "Fuck LeetCode" Repository?
+## How to Use this "leetcode-python-java" Repository?
 
 I have planned a learning route for you. You just need to do the problems in the order they are listed.
 You can skip the more difficult problems and do them later.
@@ -148,6 +151,6 @@ You can skip the more difficult problems and do them later.
 ## Other Algorithms
 - <a name="433"></a>[433. Minimum Genetic Mutation](en/1-1000/433-minimum-genetic-mutation.md) Python, 3 approaches.
 
-## "Fuck LeetCode": More Problems
+## "leetcode-python-java": More Problems
 
 More LeetCode problems and solutions will be added soon. Updated every day.
