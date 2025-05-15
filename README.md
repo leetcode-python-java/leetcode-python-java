@@ -79,6 +79,9 @@ You can skip the more difficult problems and do them later.
 ## Binary Tree
 - <a name="144"></a>[144. Binary Tree Preorder Traversal](en/1-1000/144-binary-tree-preorder-traversal.md) Python, 2 approaches.
 
+## Greedy Algorithm
+- <a name="344"></a>[334. Increasing Triplet Subsequence](en/1-1000/334-increasing-triplet-subsequence.md) Python, Java, C++, JavaScript, C#, Go, Ruby.
+
 ## Dynamic Programming
 ### Easy Problems
 - <a name="509"></a>[509. Fibonacci Number](en/1-1000/509-fibonacci-number.md) Python, Java, C++, JavaScript, C#, Go, Ruby.
