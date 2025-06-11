@@ -1,6 +1,6 @@
 # 474. Ones and Zeroes - LeetCode Python/Java/C++/JS/C#/Go/Ruby Solutions
 
-Visit original link: [474. Ones and Zeroes - LeetCode Python/Java/C++/JS/C#/Go/Ruby Solutions](https://leetcode.blog/en/leetcode/474-ones-and-zeroes) for a better experience!
+Visit original link: [474. Ones and Zeroes - LeetCode Python/Java/C++/JS/C#/Go/Ruby Solutions](https://leetcode.to/en/leetcode/474-ones-and-zeroes) for a better experience!
 
 LeetCode link: [474. Ones and Zeroes](https://leetcode.com/problems/ones-and-zeroes), difficulty: **Medium**.
 
@@ -468,9 +468,9 @@ end
 // Welcome to create a PR to complete the code of this language, thanks!
 ```
 
-Dear LeetCoders! For a better LeetCode problem-solving experience, please visit website [LeetCode.blog](https://leetcode.blog): Dare to claim the best practices of LeetCode solutions! Will save you a lot of time!
+Dear LeetCoders! For a better LeetCode problem-solving experience, please visit website [LeetCode.to](https://leetcode.to): Dare to claim the best practices of LeetCode solutions! Will save you a lot of time!
 
-Original link: [474. Ones and Zeroes - LeetCode Python/Java/C++/JS/C#/Go/Ruby Solutions](https://leetcode.blog/en/leetcode/474-ones-and-zeroes).
+Original link: [474. Ones and Zeroes - LeetCode Python/Java/C++/JS/C#/Go/Ruby Solutions](https://leetcode.to/en/leetcode/474-ones-and-zeroes).
 
 GitHub repository: [leetcode-python-java](https://github.com/leetcode-python-java/leetcode-python-java).
 

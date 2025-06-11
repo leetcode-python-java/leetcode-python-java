@@ -1,6 +1,6 @@
 # 349. Intersection of Two Arrays - LeetCode Python/Java/C++/JS/C#/Go/Ruby Solutions
 
-Visit original link: [349. Intersection of Two Arrays - LeetCode Python/Java/C++/JS/C#/Go/Ruby Solutions](https://leetcode.blog/en/leetcode/349-intersection-of-two-arrays) for a better experience!
+Visit original link: [349. Intersection of Two Arrays - LeetCode Python/Java/C++/JS/C#/Go/Ruby Solutions](https://leetcode.to/en/leetcode/349-intersection-of-two-arrays) for a better experience!
 
 LeetCode link: [349. Intersection of Two Arrays](https://leetcode.com/problems/intersection-of-two-arrays), difficulty: **Easy**.
 
@@ -187,9 +187,9 @@ end
 // Welcome to create a PR to complete the code of this language, thanks!
 ```
 
-Dear LeetCoders! For a better LeetCode problem-solving experience, please visit website [LeetCode.blog](https://leetcode.blog): Dare to claim the best practices of LeetCode solutions! Will save you a lot of time!
+Dear LeetCoders! For a better LeetCode problem-solving experience, please visit website [LeetCode.to](https://leetcode.to): Dare to claim the best practices of LeetCode solutions! Will save you a lot of time!
 
-Original link: [349. Intersection of Two Arrays - LeetCode Python/Java/C++/JS/C#/Go/Ruby Solutions](https://leetcode.blog/en/leetcode/349-intersection-of-two-arrays).
+Original link: [349. Intersection of Two Arrays - LeetCode Python/Java/C++/JS/C#/Go/Ruby Solutions](https://leetcode.to/en/leetcode/349-intersection-of-two-arrays).
 
 GitHub repository: [leetcode-python-java](https://github.com/leetcode-python-java/leetcode-python-java).
 
