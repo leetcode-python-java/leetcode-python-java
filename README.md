@@ -5,7 +5,7 @@
 
 ## LeetCode Python/Java/JavaScript/C#/Go/Ruby Solutions
 
-Dear LeetCoders! For a better LeetCode problem-solving experience, please visit website [LeetCode.blog](https://leetcode.blog): Dare to claim the best practices of LeetCode solutions! Will save you a lot of time!
+Dear LeetCoders! For a better LeetCode problem-solving experience, please visit website [LeetCode.to](https://leetcode.to): Dare to claim the best practices of LeetCode solutions! Will save you a lot of time!
 
 Hi there! I'm Lane.
 Do you feel that there are too many problems (over 3,450) on the LeetCode and you can't finish them all?
@@ -37,7 +37,7 @@ You can skip the more difficult problems and do them later.
 - <a name="303"></a>[303. Range Sum Query - Immutable](en/1-1000/303-range-sum-query-immutable.md) Python, Java, C++, JavaScript, C#, Go, Ruby.
 - <a name="59"></a>[59. Spiral Matrix II](en/1-1000/59-spiral-matrix-ii.md) Python, Java, C++, JavaScript, C#, Go, Ruby.
 - <a name="503"></a>[503. Next Greater Element II](en/1-1000/503-next-greater-element-ii.md) Python, Java, C++, JavaScript, C#, Go, Ruby.
-- <a name="3478"></a>[3478. Choose K Elements With Maximum Sum](https://leetcode.blog/en/leetcode/3478-choose-k-elements-with-maximum-sum) Python.
+- <a name="3478"></a>[3478. Choose K Elements With Maximum Sum](https://leetcode.to/en/leetcode/3478-choose-k-elements-with-maximum-sum) Python.
 
 ## Linked List
 - <a name="203"></a>[203. Remove Linked List Elements](en/1-1000/203-remove-linked-list-elements.md) Python, Java, C++, JavaScript, C#, Go, Ruby.
@@ -54,7 +54,7 @@ You can skip the more difficult problems and do them later.
 - <a name="383"></a>[383. Ransom Note](en/1-1000/383-ransom-note.md) Python, Java, C++, JavaScript, C#, Go, Ruby.
 - <a name="202"></a>[202. Happy Number](en/1-1000/202-happy-number.md) Python, Java, C++, JavaScript, C#, Go, Ruby.
 - <a name="454"></a>[454. 4Sum II](en/1-1000/454-4sum-ii.md) Python, Java, C++, JavaScript, C#, Go, Ruby.
-- <a name="49"></a>[49. Group Anagrams](https://leetcode.blog/en/leetcode/49-group-anagrams) Python, Ruby.
+- <a name="49"></a>[49. Group Anagrams](https://leetcode.to/en/leetcode/49-group-anagrams) Python, Ruby.
 
 ## String
 - <a name="28"></a>[28. Find the Index of the First Occurrence in a String](en/1-1000/28-find-the-index-of-the-first-occurrence-in-a-string.md) Python, Java, C++, JavaScript, C#, Go, Ruby.
@@ -63,7 +63,7 @@ You can skip the more difficult problems and do them later.
 - <a name="1431"></a>[1431. Kids With the Greatest Number of Candies](en/1001-2000/1431-kids-with-the-greatest-number-of-candies.md) Python, Java, C++, JavaScript, C#, Go, Ruby.
 - <a name="151"></a>[151. Reverse Words in a String](en/1-1000/151-reverse-words-in-a-string.md) Python, Java, C++, JavaScript, C#, Go, Ruby.
 - <a name="459"></a>[459. Repeated Substring Pattern](en/1-1000/459-repeated-substring-pattern.md) Python, Java, C++, JavaScript, C#, Go, Ruby.
-- <a name="833"></a>[833. Find, Replace in String](https://leetcode.blog/en/leetcode/833-find-and-replace-in-string) Python.
+- <a name="833"></a>[833. Find, Replace in String](https://leetcode.to/en/leetcode/833-find-and-replace-in-string) Python.
 - <a name="1071"></a>[1071. Greatest Common Divisor of Strings](en/1001-2000/1071-greatest-common-divisor-of-strings.md) Python, Java, C++, JavaScript, C#, Go, Ruby.
 
 ## Two Pointers
