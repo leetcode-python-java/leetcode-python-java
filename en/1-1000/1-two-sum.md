@@ -116,7 +116,7 @@ class Solution:
 1. In `Map`, `key` is `num`, and `value` is array `index`.
 2. Traverse the array, if `target - num` is in `Map`, return it. Otherwise, add `num` to `Map`.
 
-## Step by Step Solutions
+## Step-by-Step Solution
 
 1. In `Map`, `key` is `num`, and `value` is array `index`.
 

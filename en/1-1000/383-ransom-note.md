@@ -43,7 +43,7 @@ Each letter in `magazine` can only be used once in `ransomNote`.
 
     <details><summary>Click to view the answer</summary><p> Traverses `ransomNote` and subtracts one from the number corresponding to the current character (reverse operation). If the number of a character is less than 0, return `false`. </p></details>
 
-## Step by Step Solutions
+## Step-by-Step Solution
 
 1. First count the characters in `magazine`, and store the results in `Map`.
 

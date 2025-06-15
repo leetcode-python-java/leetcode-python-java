@@ -44,7 +44,7 @@ You must do this by modifying the input array [in-place](https://en.wikipedia.or
 4. In the loop body, swap the two values.
 5. The above is the template for `two pointers` in `opposite directions`.
 
-## Step by Step Solutions
+## Step-by-Step Solution
 
 1. Use two pointers with **opposite directions**, initially one pointer points to the index `0` and the other pointer points to the index `s.length - 1`.
 

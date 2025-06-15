@@ -45,7 +45,7 @@ Given the `head` of a singly linked list, reverse the list, and return _the reve
 
 	<details><summary>Click to view the answer</summary><p>It is `while (current != null)`, because the operation to be performed is `current.next = previous`.</p></details>
 
-## Step by Step Solutions
+## Step-by-Step Solution
 
 1. Traverse all nodes.
 

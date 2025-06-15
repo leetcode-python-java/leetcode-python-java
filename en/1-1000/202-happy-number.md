@@ -46,7 +46,7 @@ Return `true` if `n` is *a happy number*, and `false` if not.
 2. If `n` has already appeared, it means that the loop has been entered, and `return false`. You can use `Set` to save the `n` that has appeared.
 3. Go is the iterative solution, other languages are the recursive solution.
 
-## Step by Step Solutions
+## Step-by-Step Solution
 
 1. Generate a new `n` as the `isHappy(n)` parameter.
 

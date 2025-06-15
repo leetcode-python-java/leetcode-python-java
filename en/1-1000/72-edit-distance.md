@@ -93,7 +93,7 @@ After reading the above, do you feel that "dynamic programming" is not that diff
 - Since there are two swappable arrays (or strings) to compare, we can use **two-dimensional** arrays as `dp`.
 - The traversal order of `dp` array is from top to bottom, then from left to right.
 
-## Step by Step Solutions
+## Step-by-Step Solution
 
 1. Determine the **meaning** of each value of the array `dp`.
     - `dp[i][j]` represents the **minimum** number of operations required to convert `word1`'s first `i` letters to `word2`'s first `j` letters.

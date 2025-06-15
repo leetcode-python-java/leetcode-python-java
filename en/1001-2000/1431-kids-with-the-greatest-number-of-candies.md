@@ -67,7 +67,7 @@ Kid 1 will always have the greatest number of candies, even if a different kid i
 1. Find the maximum number of candies among all kids
 2. Check if each kid can reach or exceed this maximum after receiving extra candies
 
-## Step by Step Solutions
+## Step-by-Step Solution
 
 1. `max_candy = candies.max` → Directly get the maximum value from the array
 2. `candies.map { |c| c + extra_candy >= max_candy }` → Use `map` to iterate and check if each kid can have the most candies

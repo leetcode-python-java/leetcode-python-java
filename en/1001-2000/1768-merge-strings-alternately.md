@@ -74,7 +74,7 @@ The core idea is to iterate through both strings simultaneously, picking one cha
 
 Once we run out of characters in the shorter string, we simply take all the remaining characters from the longer string and append them to our result.
 
-## Step by Step Solutions
+## Step-by-Step Solution
 
 1.  Initialize an empty string (or a list of characters, or a string builder) to store the merged result.
 2.  Determine the lengths of `word1` and `word2`. Let these be `n1` and `n2`.

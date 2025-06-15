@@ -68,7 +68,7 @@ You must write an algorithm that runs in `O(n)` time and **without using the div
 - **High-frequency computation problems**: Such as Fibonacci sequences, factorials, prime number tables, etc., which avoid repetitive calculations by pre-generating lookup tables.
 - **Dynamic Programming (DP)**: Pre-computing and storing solutions to sub-problems, e.g., the `knapsack problem` or `shortest path problems`.
 
-## Step by Step Solutions
+## Step-by-Step Solution
 
 1. **Initialize Arrays**:
     - Create a `leftProducts` array to store the product of all elements to the left of each element
@@ -315,7 +315,7 @@ func productExceptSelf(nums []int) []int {
 2. **Two-Phase Calculation**: First compute left products and store in the result, then dynamically compute right products and merge directly
 3. **In-Place Operation**: Use only a single variable to dynamically maintain the right product
 
-## Step by Step Solutions
+## Step-by-Step Solution
 
 1. **Initialize Result Array**:
     - Create an `answer` array of the same size, initialized with all 1s

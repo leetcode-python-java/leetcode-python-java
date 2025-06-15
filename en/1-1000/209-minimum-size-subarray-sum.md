@@ -45,7 +45,7 @@ Given an array of positive integers `nums` and a positive integer `target`, retu
 
 For **subarray** problems, you can consider using **Sliding Window Technique**, which is similar to the **Fast & Slow Pointers Approach**.
 
-## Step by Step Solutions
+## Step-by-Step Solution
 
 1. Iterate over the `nums` array, the `index` of the element is named `fastIndex`. Although inconspicuous, this is the most important logic of the *Fast & Slow Pointers Approach*. Please memorize it.
 

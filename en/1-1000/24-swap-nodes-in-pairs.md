@@ -46,7 +46,7 @@ Before solving this problem, it is recommended to solve the simple problem [206.
 1. To solve this problem, you still need to define at least two variables: `current` and `previous`.
 2. The loop condition should be `while (current.next != null)` instead of `while (current != null)`, because the operations that need to be performed include `current.next.next`.
 
-## Step by Step Solutions
+## Step-by-Step Solution
 
 1. Traverse all nodes.
 

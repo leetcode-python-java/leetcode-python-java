@@ -37,7 +37,7 @@ Check each empty plot (`0`). If both adjacent plots are empty (or boundaries), p
 
 The `Greedy Algorithm` is a strategy that makes the locally optimal choice at each step with the hope of leading to a "globally optimal" solution. In other words, "local optima" can result in "global optima."
 
-## Step by Step Solutions
+## Step-by-Step Solution
 
 1. Initialize counter `count = 0`.
 2. Iterate through each plot:

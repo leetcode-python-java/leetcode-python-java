@@ -50,7 +50,7 @@ To find an increasing triplet subsequence, we can track the smallest and second-
 
 The `Greedy Algorithm` is a strategy that makes the locally optimal choice at each step with the hope of leading to a "globally optimal" solution. In other words, "local optima" can result in "global optima."
 
-## Step by Step Solutions
+## Step-by-Step Solution
 
 1. Initialize `first` as the first element and `second` as infinity.
 2. Iterate through the array starting from the second element:

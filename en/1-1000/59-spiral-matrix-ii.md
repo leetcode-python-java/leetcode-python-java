@@ -32,7 +32,7 @@ Given a positive integer `n`, generate an `n x n` matrix filled with elements fr
 
 - You can write a method `get_increment(i, j)`, which is specifically used to get the change between the next position and the current position.
 
-## Step by Step Solutions
+## Step-by-Step Solution
 
 1. Initialize `increments` and `increment_index`:
 

@@ -83,7 +83,7 @@ This problem is quite difficult if you have not solved similar problems before. 
 
 After reading the above, do you feel that "dynamic programming" is not that difficult? Try to solve this problem. 🤗
 
-## Step by Step Solutions
+## Step-by-Step Solution
 
 1. Determine the **meaning** of the `dp[j]`
     - `dp[j]` represents that by using the **first** `i` nums, the **number** of different **expressions** that you can build, which evaluates to `j`.

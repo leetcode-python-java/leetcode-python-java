@@ -74,7 +74,7 @@ After doing similar questions many times, we will form the intuition of using `t
 
 After reading the above, do you feel that "dynamic programming" is not that difficult? Try to solve this problem. 🤗
 
-## Step by Step Solutions
+## Step-by-Step Solution
 
 1. Determine the **meaning** of the `dp[i][j]`.
     - `dp[i][j]` represents the **minimum** number of steps required to make `word1`'s first `i` letters and `word2`'s first `j` letters the same.

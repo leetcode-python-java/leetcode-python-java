@@ -51,7 +51,7 @@ Given the `head` of a linked list, remove the *n<sup>th</sup>* node from the end
 3. When `index == node_count - n`, delete the node by `node.next = node.next.next`.
 4. Since the deleted node may be `head`, a virtual node `dummy_node` is used to facilitate unified processing.
 
-## Step by Step Solutions
+## Step-by-Step Solution
 
 1. First find out `node_count`.
 

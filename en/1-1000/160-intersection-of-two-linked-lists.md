@@ -66,7 +66,7 @@ You must first calculate how many kilometers her home is farther from the school
 3. At this time, repeat `node = node.next` on the two linked lists until the same node is found or one of the linked lists has reached the end.
 </p></details>
 
-## Step by Step Solutions
+## Step-by-Step Solution
 
 1. First calculate the number of nodes in the two linked lists A and B. The number of nodes in linked list A is `node_count_a`, and the number of nodes in linked list B is `node_count_b`.
 

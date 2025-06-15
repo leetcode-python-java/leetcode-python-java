@@ -162,7 +162,7 @@ Return the **minimum** amount of time required for the potions to be brewed prop
 
 After reading the above, do you feel that "dynamic programming" is not that difficult? Try to solve this problem. 🤗
 
-## Step by Step Solutions
+## Step-by-Step Solution
 
 1. Determine the meaning of each value of the array `dp`. So what does each `dp[i][j]`  represent?
     mark-detail The row represents the potion, and the column represents the wizard, which has been hinted in the question. <br>The meaning is: the time it takes for the `j`<sup>th</sup> wizard to complete the `i`<sup>th</sup> bottle of potion. I deliberately did not add the word "shortest" because the potion cannot be separated from the hands of the wizard during the manufacturing process! mark-detail

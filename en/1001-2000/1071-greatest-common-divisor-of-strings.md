@@ -51,7 +51,7 @@ Enumerate all possible prefixes and check whether repeating the prefix several t
 Return the longest one that satisfies the condition.
 
 
-## Step by Step Solutions
+## Step-by-Step Solution
 
 1. Get the minimum length `min_size` of the two strings.
 2. For length `i` from `1` to `min_size`, enumerate the prefix `candidate`.

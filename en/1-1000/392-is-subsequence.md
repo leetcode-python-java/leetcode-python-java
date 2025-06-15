@@ -274,7 +274,7 @@ end
 
 After reading the above, do you feel that "dynamic programming" is not that difficult? Try to solve this problem. 🤗
 
-## Step by Step Solutions
+## Step-by-Step Solution
 
 1. Determine the **meaning** of the `dp[i][j]`.
     - `dp[i][j]` represents whether the first `i` letters of `s` are a subsequence of `t`'s first `j` letters.

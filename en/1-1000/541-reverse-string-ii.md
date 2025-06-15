@@ -35,7 +35,7 @@ Given a string `s` and an integer `k`, reverse the first `k` characters for ever
 2. In the loop, it is more convenient to use `k` as the step value rather than `2k`, because if `2k` is used, `k` must still be used for judgment.
 3. It is required to reverse only the first `k` characters of each `2k` characters, so a `boolean` variable `should_reverse` is needed as a judgment condition for whether to reverse.
 
-## Step by Step Solutions
+## Step-by-Step Solution
 
 1. Use a new string `result` as the return value. In the loop, the step value is `k`.
 

@@ -48,7 +48,7 @@ Given four integer arrays `nums1`, `nums2`, `nums3`, and `nums4` all of length `
 2. Count the number of each `sum`. Use `Map` to store, `key` is `sum`, `value` is `count`.
 3. Iterate over `nums3` and `nums4`, if `-(num3 + num4)` exists in `keys` of `Map`, then `count` is included in the total.
 
-## Step by Step Solutions
+## Step-by-Step Solution
 
 1. Count the number of each `sum`. Use `Map` to store, `key` is `sum`, `value` is `count`.
 

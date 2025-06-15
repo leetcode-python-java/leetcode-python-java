@@ -88,7 +88,7 @@ Given an integer array `nums`, find the `subarray` with the largest sum, and ret
 
 After reading the above, do you feel that "dynamic programming" is not that difficult? Try to solve this problem. 🤗
 
-## Step by Step Solutions
+## Step-by-Step Solution
 
 1. Determine the **meaning** of the `dp[i]`
     - Imagine that `dp[i]` represents the `largest sum` at index `i`. Is this okay?

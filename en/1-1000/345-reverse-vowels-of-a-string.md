@@ -54,7 +54,7 @@ for (int l = 0; l < target.length(); l++) { // Important
 }
 ```
 
-## Step by Step Solutions
+## Step-by-Step Solution
 
 1. Initialize a set of vowels
 2. For some languages, convert the string to a character array (since strings are immutable)

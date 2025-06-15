@@ -37,7 +37,7 @@ You must write an algorithm with `O(log n)` runtime complexity.
 
 Because it is an already sorted array, by using the middle value for comparison, half of the numbers can be eliminated each time.
 
-## Step by Step Solutions
+## Step-by-Step Solution
 
 The fastest and easiest way is to use the three indices `left`, `right`, and `middle`.
 If `nums[middle] > target`, then `right = middle - 1`, otherwise, `left = middle + 1`.

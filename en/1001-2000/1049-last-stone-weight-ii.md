@@ -137,7 +137,7 @@ Because "0/1 Knapsack Problem" belongs to "Dynamic Programming", I will explain 
         ```
 5. Write a program and print the `dp` array. If it is not as expected, adjust it.
 
-## Step by Step Solutions
+## Step-by-Step Solution
 
 1. Determine the **meaning** of the `dp[j]`
     - `dp[j]` represents whether it is possible to `sum` the first `i` `stones` to get `j`.

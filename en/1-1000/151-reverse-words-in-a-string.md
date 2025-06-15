@@ -48,7 +48,7 @@ Return *a string of the words in reverse order concatenated by a single space*.
 2. Reverse the order of the words
 3. Join the words with a single space
 
-## Step by Step Solutions
+## Step-by-Step Solution
 
 1. Split the string using `split(' ')`
 2. Remove empty strings

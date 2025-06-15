@@ -60,7 +60,7 @@ The graph is given as follows: `graph[i]` is a list of all nodes you can visit f
 
 In summary, DFS reveals the vertical structure of a graph through its depth-first strategy. Its inherent backtracking mechanism, combined with the natural use of a stack, makes it highly effective for path recording and state-space exploration. However, precautions must be taken to handle cycles and the potential absence of optimal solutions.
 
-## Step by Step Solutions
+## Step-by-Step Solution
 
 1. Initialize an empty list `paths` to store all valid paths found.
 2. Initialize a stack to manage the DFS traversal. Each element on the stack will store a pair (or tuple) containing the current `node` and the `path` taken to reach that node.
@@ -354,7 +354,7 @@ Recursion is an important concept in computer science and mathematics, which ref
 - **Base case**: Equivalent to the termination condition. After reaching the base case, the result can be returned without recursive calls to prevent infinite loops.
 - **Recursive step**: The step by which the problem gradually approaches the "base case".
 
-## Step by Step Solutions
+## Step-by-Step Solution
 
 1. Initialize an empty list `paths` to store all the valid paths found from source to target.
 2. Define a recursive Depth-First Search (DFS) function, say `dfs`, that takes the current `node` and the `currentPath` (a list of nodes visited so far to reach the current node) as input.
@@ -619,7 +619,7 @@ end
 
 In summary, DFS reveals the vertical structure of a graph through its depth-first strategy. Its inherent backtracking mechanism, combined with the natural use of a stack, makes it highly effective for path recording and state-space exploration. However, precautions must be taken to handle cycles and the potential absence of optimal solutions.
 
-## Step by Step Solutions
+## Step-by-Step Solution
 
 1. Initialize an empty list `paths` to store all valid paths found from the source to the target.
 2. Create a mutable list `path` to track the current path being explored, initially containing only the source node `0`.
