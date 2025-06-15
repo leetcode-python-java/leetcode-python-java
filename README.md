@@ -7,7 +7,7 @@
 
 Dear LeetCoders! For a better LeetCode problem-solving experience, please visit website [LeetCode.to](https://leetcode.to): Dare to claim the best practices of LeetCode solutions! Will save you a lot of time!
 
-Hi there! I'm Lane.
+Hi there! I'm Jian.
 Do you feel that there are too many problems (over 3,450) on the LeetCode and you can't finish them all?
 Or do you forget how to solve the problems you did last time?
 
@@ -21,7 +21,16 @@ Here, I will provide you with **common problem-solving patterns** so that you do
 
 [Personal Brand Website Builder](https://github.com/PersonalBranding/personal-brand-website-builder) focuses on bringing value to developers, including resume, portfolio, blog and other functions. With it, your abilities will be better seen by employers!
 
-## How to Use this "leetcode-python-java" Repository?
+# How to Use this "leetcode-python-java" Repository?
+
+## LeetCode Official Study Plan
+You can do questions according to your own preferences, such as completing all questions of 'LeetCode 75' first.
+
+- [LeetCode 75](https://leetcode.to/en/tags/75) solved in Python, Java, C++, JavaScript, C#, Go and Ruby.
+- [LeetCode Top 100 Liked](https://leetcode.to/en/tags/100) solved in Python, Java, C++, JavaScript, C#, Go and Ruby.
+- [LeetCode Top Interview 150](https://leetcode.to/en/tags/150) solved in Python, Java, C++, JavaScript, C#, Go and Ruby.
+
+# Study Plan by Jian
 
 I have planned a learning route for you. You just need to do the problems in the order they are listed.
 You can skip the more difficult problems and do them later.
@@ -70,6 +79,7 @@ You can skip the more difficult problems and do them later.
 - <a name="345"></a>[345. Reverse Vowels of a String](en/1-1000/345-reverse-vowels-of-a-string.md) Python, Java, C++, JavaScript, C#, Go, Ruby.
 - <a name="15"></a>[15. 3Sum](en/1-1000/15-3sum.md) Python, Java, C++, JavaScript, C#, Go, Ruby, 2 approaches.
 - <a name="18"></a>[18. 4Sum](en/1-1000/18-4sum.md) Python, Java, C++, JavaScript, C#, Go, Ruby.
+- <a name="443"</a>[443. String Compression](en/1-1000/443-string-compression.md) Python, Java, C++, JavaScript, C#, Go, Ruby.
 
 ## Stack & Queue
 - <a name="20"></a>[20. Valid Parentheses](en/1-1000/20-valid-parentheses.md) Python, Java, C++, JavaScript, C#, Go, Ruby.
