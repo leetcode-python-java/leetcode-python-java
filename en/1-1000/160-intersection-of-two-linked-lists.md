@@ -498,4 +498,3 @@ Dear LeetCoders! For a better LeetCode problem-solving experience, please visit 
 Original link: [160. Intersection of Two Linked Lists - LeetCode Python/Java/C++/JS/C#/Go/Ruby Solutions](https://leetcode.to/en/leetcode/160-intersection-of-two-linked-lists).
 
 GitHub repository: [leetcode-python-java](https://github.com/leetcode-python-java/leetcode-python-java).
-

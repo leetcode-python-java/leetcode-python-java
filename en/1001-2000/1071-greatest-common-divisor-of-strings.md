@@ -261,4 +261,3 @@ Dear LeetCoders! For a better LeetCode problem-solving experience, please visit 
 Original link: [1071. Greatest Common Divisor of Strings - LeetCode Python/Java/C++/JS/C#/Go/Ruby Solutions](https://leetcode.to/en/leetcode/1071-greatest-common-divisor-of-strings).
 
 GitHub repository: [leetcode-python-java](https://github.com/leetcode-python-java/leetcode-python-java).
-

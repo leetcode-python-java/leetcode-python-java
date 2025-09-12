@@ -189,4 +189,3 @@ Dear LeetCoders! For a better LeetCode problem-solving experience, please visit 
 Original link: [1431. Kids With the Greatest Number of Candies - LeetCode Python/Java/C++/JS/C#/Go/Ruby Solutions](https://leetcode.to/en/leetcode/1431-kids-with-the-greatest-number-of-candies).
 
 GitHub repository: [leetcode-python-java](https://github.com/leetcode-python-java/leetcode-python-java).
-

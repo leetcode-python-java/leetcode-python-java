@@ -334,4 +334,3 @@ Dear LeetCoders! For a better LeetCode problem-solving experience, please visit 
 Original link: [583. Delete Operation for Two Strings - LeetCode Python/Java/C++/JS/C#/Go/Ruby Solutions](https://leetcode.to/en/leetcode/583-delete-operation-for-two-strings).
 
 GitHub repository: [leetcode-python-java](https://github.com/leetcode-python-java/leetcode-python-java).
-

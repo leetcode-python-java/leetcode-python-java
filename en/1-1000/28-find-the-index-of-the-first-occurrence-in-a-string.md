@@ -207,4 +207,3 @@ Dear LeetCoders! For a better LeetCode problem-solving experience, please visit 
 Original link: [28. Find the Index of the First Occurrence in a String - LeetCode Python/Java/C++/JS/C#/Go/Ruby Solutions](https://leetcode.to/en/leetcode/28-find-the-index-of-the-first-occurrence-in-a-string).
 
 GitHub repository: [leetcode-python-java](https://github.com/leetcode-python-java/leetcode-python-java).
-

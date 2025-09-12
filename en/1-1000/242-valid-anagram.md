@@ -220,4 +220,3 @@ Dear LeetCoders! For a better LeetCode problem-solving experience, please visit 
 Original link: [242. Valid Anagram - LeetCode Python/Java/C++/JS/C#/Go/Ruby Solutions](https://leetcode.to/en/leetcode/242-valid-anagram).
 
 GitHub repository: [leetcode-python-java](https://github.com/leetcode-python-java/leetcode-python-java).
-

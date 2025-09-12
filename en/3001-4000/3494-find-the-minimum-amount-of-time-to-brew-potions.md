@@ -437,4 +437,3 @@ Dear LeetCoders! For a better LeetCode problem-solving experience, please visit 
 Original link: [3494. Find the Minimum Amount of Time to Brew Potions - LeetCode Python/Java/C++/JS/C#/Go/Ruby Solutions](https://leetcode.to/en/leetcode/3494-find-the-minimum-amount-of-time-to-brew-potions).
 
 GitHub repository: [leetcode-python-java](https://github.com/leetcode-python-java/leetcode-python-java).
-

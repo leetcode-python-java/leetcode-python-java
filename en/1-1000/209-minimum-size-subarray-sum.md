@@ -299,4 +299,3 @@ Dear LeetCoders! For a better LeetCode problem-solving experience, please visit 
 Original link: [209. Minimum Size Subarray Sum - LeetCode Python/Java/C++/JS/C#/Go/Ruby Solutions](https://leetcode.to/en/leetcode/209-minimum-size-subarray-sum).
 
 GitHub repository: [leetcode-python-java](https://github.com/leetcode-python-java/leetcode-python-java).
-
