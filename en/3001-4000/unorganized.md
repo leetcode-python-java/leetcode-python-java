@@ -1,3 +1,109 @@
+```ruby
+Problem.all.order(created_at: :desc).map do |problem| puts problem.id.to_s + '. ' + problem.title;  end
+```
+
+```
+125. Valid Palindrome
+14. Longest Common Prefix
+58. Length of Last Word
+13. Roman to Integer
+169. Majority Element
+88. Merge Sorted Array
+605. Can Place Flowers
+5. Longest Palindromic Substring
+3494. Find the Minimum Amount of Time to Brew Potions
+833. Find And Replace in String
+49. Group Anagrams
+3478. Choose K Elements With Maximum Sum
+144. Binary Tree Preorder Traversal
+1334. Find the City With the Smallest Number of Neighbors at a Threshold Distance
+787. Cheapest Flights Within K Stops
+743. Network Delay Time
+433. Minimum Genetic Mutation
+752. Open the Lock
+1514. Path with Maximum Probability
+207. Course Schedule
+1584. Min Cost to Connect All Points
+685. Redundant Connection II
+684. Redundant Connection
+1971. Find if Path Exists in Graph
+127. Word Ladder
+827. Making A Large Island
+695. Max Area of Island
+463. Island Perimeter
+200. Number of Islands
+797. All Paths From Source to Target
+84. Largest Rectangle in Histogram
+42. Trapping Rain Water
+496. Next Greater Element I
+739. Daily Temperatures
+72. Edit Distance
+583. Delete Operation for Two Strings
+392. Is Subsequence
+53. Maximum Subarray
+1035. Uncrossed Lines
+1143. Longest Common Subsequence
+718. Maximum Length of Repeated Subarray
+300. Longest Increasing Subsequence
+674. Longest Continuous Increasing Subsequence
+309. Best Time to Buy and Sell Stock with Cooldown
+188. Best Time to Buy and Sell Stock IV
+123. Best Time to Buy and Sell Stock III
+714. Best Time to Buy and Sell Stock with Transaction Fee
+122. Best Time to Buy and Sell Stock II
+121. Best Time to Buy and Sell Stock
+139. Word Break
+279. Perfect Squares
+322. Coin Change
+377. Combination Sum IV
+518. Coin Change II
+474. Ones and Zeroes
+494. Target Sum
+1049. Last Stone Weight II
+416. Partition Equal Subset Sum
+337. House Robber III
+213. House Robber II
+198. House Robber
+509. Fibonacci Number
+225. Implement Stack using Queues
+20. Valid Parentheses
+232. Implement Queue using Stacks
+18. 4Sum
+459. Repeated Substring Pattern
+541. Reverse String II
+28. Find the Index of the First Occurrence in a String
+15. 3Sum
+454. 4Sum II
+202. Happy Number
+383. Ransom Note
+1. Two Sum
+242. Valid Anagram
+349. Intersection of Two Arrays
+24. Swap Nodes in Pairs
+19. Remove Nth Node From End of List
+707. Design Linked List
+160. Intersection of Two Linked Lists
+206. Reverse Linked List
+203. Remove Linked List Elements
+26. Remove Duplicates from Sorted Array
+503. Next Greater Element II
+303. Range Sum Query - Immutable
+209. Minimum Size Subarray Sum
+59. Spiral Matrix II
+977. Squares of a Sorted Array
+704. Binary Search
+27. Remove Element
+344. Reverse String
+443. String Compression
+334. Increasing Triplet Subsequence
+238. Product of Array Except Self
+151. Reverse Words in a String
+345. Reverse Vowels of a String
+1431. Kids With the Greatest Number of Candies
+1071. Greatest Common Divisor of Strings
+1768. Merge Strings Alternately
+```
+
 # LeetCode skills
 If you want to solve problems in the most understandable way, please look for Coding5DotCom.
 

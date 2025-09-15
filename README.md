@@ -19,7 +19,7 @@ Here, I will provide you with **common problem-solving patterns** so that you do
 
 ## How to fully demonstrate your abilities to employers and get the offer you want?
 
-[Personal Brand Website Builder](https://github.com/PersonalBranding/personal-brand-website-builder) focuses on bringing value to developers, including resume, portfolio, blog and other functions. With it, your abilities will be better seen by employers!
+[is-bio](https://github.com/is-bio/is-bio) focuses on bringing value to developers, including resume, portfolio, blog and other functions. With it, your abilities will be better seen by employers!
 
 # How to Use this "leetcode-python-java" Repository?
 
@@ -35,7 +35,8 @@ You can do questions according to your own preferences, such as completing all q
 I have planned a learning route for you. You just need to do the problems in the order they are listed.
 You can skip the more difficult problems and do them later.
 
-## Array
+# Array
+## Required problems
 - <a name="344"></a>[344. Reverse String](en/1-1000/344-reverse-string.md) Python, Java, C++, JavaScript, C#, Go, Ruby.
 - <a name="27"></a>[27. Remove Element](en/1-1000/27-remove-element.md) Python, Java, C++, JavaScript, C#, Go, Ruby, **2** approaches.
 - <a name="605"></a>[605. Can Place Flowers](en/1-1000/605-can-place-flowers.md) Python, Java, C++, JavaScript, C#, Go, Ruby.
@@ -48,7 +49,13 @@ You can skip the more difficult problems and do them later.
 - <a name="503"></a>[503. Next Greater Element II](en/1-1000/503-next-greater-element-ii.md) Python, Java, C++, JavaScript, C#, Go, Ruby.
 - <a name="3478"></a>[3478. Choose K Elements With Maximum Sum](https://leetcode.to/en/leetcode/3478-choose-k-elements-with-maximum-sum) Python.
 
-## Linked List
+## Optional problems
+- <a name="88"></a>[88. Merge Sorted Array](en/1-1000/88-merge-sorted-array.md) Python, Java, Ruby.
+- <a name="169"></a>[169. Majority Element](en/1-1000/169-majority-element.md) Python, Java, Ruby.
+- <a name="26"></a>[26. Remove Duplicates from Sorted Array](en/1-1000/26-remove-duplicates-from-sorted-array.md) Easy. Python, Java, Ruby.
+
+# Linked List
+## Required problems
 - <a name="203"></a>[203. Remove Linked List Elements](en/1-1000/203-remove-linked-list-elements.md) Python, Java, C++, JavaScript, C#, Go, Ruby.
 - <a name="206"></a>[206. Reverse Linked List](en/1-1000/206-reverse-linked-list.md) Python, Java, C++, JavaScript, C#, Go, Ruby.
 - <a name="160"></a>[160. Intersection of Two Linked Lists](en/1-1000/160-intersection-of-two-linked-lists.md) Python, Java, C++, JavaScript, C#, Go, Ruby.
@@ -56,7 +63,8 @@ You can skip the more difficult problems and do them later.
 - <a name="707"></a>[707. Design Linked List](en/1-1000/707-design-linked-list.md) Python, Java, C++, JavaScript, C#, Go, Ruby.
 - <a name="24"></a>[24. Swap Nodes in Pairs](en/1-1000/24-swap-nodes-in-pairs.md) Python, Java, C++, JavaScript, C#, Go, Ruby.
 
-## Hash Table
+# Hash Table
+## Required problems
 - <a name="349"></a>[349. Intersection of Two Arrays](en/1-1000/349-intersection-of-two-arrays.md) Python, Java, C++, JavaScript, C#, Go, Ruby.
 - <a name="242"></a>[242. Valid Anagram](en/1-1000/242-valid-anagram.md) Python, Java, C++, JavaScript, C#, Go, Ruby.
 - <a name="1"></a>[1. Two Sum](en/1-1000/1-two-sum.md) Python, Java, C++, JavaScript, C#, Go, Ruby.
@@ -65,7 +73,8 @@ You can skip the more difficult problems and do them later.
 - <a name="454"></a>[454. 4Sum II](en/1-1000/454-4sum-ii.md) Python, Java, C++, JavaScript, C#, Go, Ruby.
 - <a name="49"></a>[49. Group Anagrams](https://leetcode.to/en/leetcode/49-group-anagrams) Python, Ruby.
 
-## String
+# String
+## Required problems
 - <a name="28"></a>[28. Find the Index of the First Occurrence in a String](en/1-1000/28-find-the-index-of-the-first-occurrence-in-a-string.md) Python, Java, C++, JavaScript, C#, Go, Ruby.
 - <a name="541"></a>[541. Reverse String II](en/1-1000/541-reverse-string-ii.md) Python, Java, C++, JavaScript, C#, Go, Ruby.
 - <a name="1768"></a>[1768. Merge Strings Alternately](en/1001-2000/1768-merge-strings-alternately.md) Python, Java, C++, JavaScript, C#, Go, Ruby.
@@ -75,24 +84,35 @@ You can skip the more difficult problems and do them later.
 - <a name="833"></a>[833. Find, Replace in String](https://leetcode.to/en/leetcode/833-find-and-replace-in-string) Python.
 - <a name="1071"></a>[1071. Greatest Common Divisor of Strings](en/1001-2000/1071-greatest-common-divisor-of-strings.md) Python, Java, C++, JavaScript, C#, Go, Ruby.
 
-## Two Pointers
+## Optional problems
+- <a name="13"></a>[13. Roman to Integer](en/1-1000/13-roman-to-integer.md) Python, Java, Ruby.
+- <a name="58"></a>[58. Length of Last Word](en/1-1000/58-length-of-last-word.md) Python, Java, Ruby.
+- <a name="14"></a>[14. Longest Common Prefix](en/1-1000/14-longest-common-prefix.md) Python, Java, Ruby.
+- <a name="125"></a>[125. Valid Palindrome](en/1-1000/125-valid-palindrome.md) Python, Java, Ruby.
+
+# Two Pointers
+## Required problems
 - <a name="345"></a>[345. Reverse Vowels of a String](en/1-1000/345-reverse-vowels-of-a-string.md) Python, Java, C++, JavaScript, C#, Go, Ruby.
 - <a name="15"></a>[15. 3Sum](en/1-1000/15-3sum.md) Python, Java, C++, JavaScript, C#, Go, Ruby, 2 approaches.
 - <a name="18"></a>[18. 4Sum](en/1-1000/18-4sum.md) Python, Java, C++, JavaScript, C#, Go, Ruby.
 - <a name="443"></a>[443. String Compression](en/1-1000/443-string-compression.md) Python, Java, C++, JavaScript, C#, Go, Ruby.
 
-## Stack & Queue
+# Stack & Queue
+## Required problems
 - <a name="20"></a>[20. Valid Parentheses](en/1-1000/20-valid-parentheses.md) Python, Java, C++, JavaScript, C#, Go, Ruby.
 - <a name="232"></a>[232. Implement Queue using Stacks](en/1-1000/232-implement-queue-using-stacks.md) Python, Java, C++, JavaScript, C#, Go, Ruby.
 - <a name="225"></a>[225. Implement Stack using Queues](en/1-1000/225-implement-stack-using-queues.md) Python, Java, C++, JavaScript, C#, Go, Ruby, 3 approaches.
 
-## Binary Tree
+# Binary Tree
+## Required problems
 - <a name="144"></a>[144. Binary Tree Preorder Traversal](en/1-1000/144-binary-tree-preorder-traversal.md) Python, 2 approaches.
 
-## Greedy Algorithm
+# Greedy Algorithm
+## Required problems
 - <a name="344"></a>[334. Increasing Triplet Subsequence](en/1-1000/334-increasing-triplet-subsequence.md) Python, Java, C++, JavaScript, C#, Go, Ruby.
 
-## Dynamic Programming
+# Dynamic Programming
+## Required problems
 ### Easy Problems
 - <a name="509"></a>[509. Fibonacci Number](en/1-1000/509-fibonacci-number.md) Python, Java, C++, JavaScript, C#, Go, Ruby.
 
@@ -137,13 +157,18 @@ You can skip the more difficult problems and do them later.
 ### Hard Problems
 - <a name="3494"></a>[3494. Find the Minimum Amount of Time to Brew Potions](https://leetcodepython.com/en/leetcode/3494-find-the-minimum-amount-of-time-to-brew-potions) Python, Java, C++, JavaScript, C#, Go, Ruby.
 
-## Monotonic Stack
+## Optional problems
+- <a name="5"></a>[5. Longest Palindromic Substring](en/1-1000/5-longest-palindromic-substring.md) Ruby.
+
+# Monotonic Stack
+## Required problems
 - <a name="739"></a>[739. Daily Temperatures](en/1-1000/739-daily-temperatures.md) Python, Java, C++, JavaScript, C#, Go, Ruby.
 - <a name="496"></a>[496. Next Greater Element I](en/1-1000/496-next-greater-element-i.md) Python, Java, C++, JavaScript, C#, Go, Ruby.
 - <a name="42"></a>[42. Trapping Rain Water](en/1-1000/42-trapping-rain-water.md) Python, Java, C++, JavaScript, C#, Go, Ruby.
 - <a name="84"></a>[84. Largest Rectangle in Histogram](en/1-1000/84-largest-rectangle-in-histogram.md) Python, Java, C++, JavaScript, C#, Go, Ruby.
 
-## Graph Theory
+# Graph Theory
+## Required problems
 - <a name="797"></a>[797. All Paths From Source to Target](en/1-1000/797-all-paths-from-source-to-target.md) Python, Java, C++, JavaScript, C#, Go, Ruby, **2** approaches.
 - <a name="200"></a>[200. Number of Islands](en/1-1000/200-number-of-islands.md) Python, Java, C++, JavaScript, C#, Go, Ruby, **3** approaches.
 - <a name="463"></a>[463. Island Perimeter](en/1-1000/463-island-perimeter.md) Python, **2** approaches.
@@ -161,9 +186,9 @@ You can skip the more difficult problems and do them later.
 - <a name="787"></a>[787. Cheapest Flights Within K Stops](en/1-1000/787-cheapest-flights-within-k-stops.md) Python.
 - <a name="1334"></a>[1334. Find the City With the Smallest Number of Neighbors at a Threshold Distance](en/1001-2000/1334-find-the-city-with-the-smallest-number-of-neighbors-at-a-threshold-distance.md) Python.
 
-## Other Algorithms
+# Other Algorithms
 - <a name="433"></a>[433. Minimum Genetic Mutation](en/1-1000/433-minimum-genetic-mutation.md) Python, 3 approaches.
 
-## "leetcode-python-java": More Problems
+# "leetcode-python-java": More Problems
 
 More LeetCode problems and solutions will be added soon. Updated every day.
