@@ -1,6 +1,6 @@
 # 58. 最后一个单词的长度 - LeetCode Python/Java/C++/JS/C#/Go/Ruby 题解
 
-访问原文链接：[58. 最后一个单词的长度 - LeetCode Python/Java/C++/JS/C#/Go/Ruby 题解](https://leetcode.to/zh/leetcode/58-length-of-last-word)，体验更佳！
+访问原文链接：[58. 最后一个单词的长度 - LeetCode Python/Java/C++/JS/C#/Go/Ruby 题解](https://leetcode.blog/zh/leetcode/58-length-of-last-word)，体验更佳！
 
 力扣链接：[58. 最后一个单词的长度](https://leetcode.cn/problems/length-of-last-word), 难度等级：**简单**。
 
@@ -101,16 +101,41 @@ def length_of_last_word(s)
 end
 ```
 
+## Java
+
+```java
+class Solution {
+    public int lengthOfLastWord(String s) {
+        // Reverse the string
+        var sb = new StringBuilder(s);
+        String reversed = sb.reverse().toString();
+
+        var startIndex = 0;
+        // Skip leading spaces (which were trailing spaces in original)
+        while (startIndex < reversed.length() && reversed.charAt(startIndex) == ' ') {
+            startIndex++;
+        }
+
+        var endIndex = startIndex;
+        while (endIndex < reversed.length() && reversed.charAt(endIndex) != ' ') {
+            endIndex++;
+        }
+
+        return endIndex - startIndex;
+    }
+}
+```
+
 ## Other languages
 
 ```java
 // Welcome to create a PR to complete the code of this language, thanks!
 ```
 
-亲爱的力扣人，为了您更好的刷题体验，请访问 [LeetCode.to](https://leetcode.to/zh)。
+亲爱的力扣人，为了您更好的刷题体验，请访问 [LeetCode.blog](https://leetcode.blog/zh)。
 本站敢称力扣题解最佳实践，终将省你大量刷题时间！
 
-原文链接：[58. 最后一个单词的长度 - LeetCode Python/Java/C++/JS/C#/Go/Ruby 题解](https://leetcode.to/zh/leetcode/58-length-of-last-word).
+原文链接：[58. 最后一个单词的长度 - LeetCode Python/Java/C++/JS/C#/Go/Ruby 题解](https://leetcode.blog/zh/leetcode/58-length-of-last-word).
 
 GitHub 仓库: [leetcode-python-java](https://github.com/leetcode-python-java/leetcode-python-java).
 

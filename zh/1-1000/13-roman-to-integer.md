@@ -1,6 +1,6 @@
 # 13. 罗马数字转整数 - LeetCode Python/Java/C++/JS/C#/Go/Ruby 题解
 
-访问原文链接：[13. 罗马数字转整数 - LeetCode Python/Java/C++/JS/C#/Go/Ruby 题解](https://leetcode.to/zh/leetcode/13-roman-to-integer)，体验更佳！
+访问原文链接：[13. 罗马数字转整数 - LeetCode Python/Java/C++/JS/C#/Go/Ruby 题解](https://leetcode.blog/zh/leetcode/13-roman-to-integer)，体验更佳！
 
 力扣链接：[13. 罗马数字转整数](https://leetcode.cn/problems/roman-to-integer), 难度等级：**简单**。
 
@@ -159,16 +159,53 @@ class Solution:
         return result
 ```
 
+## Java
+
+```java
+class Solution {
+    public int romanToInt(String s) {
+        Map<Character, Integer> symbolToValue = new HashMap<>();
+        symbolToValue.put('I', 1);
+        symbolToValue.put('V', 5);
+        symbolToValue.put('X', 10);
+        symbolToValue.put('L', 50);
+        symbolToValue.put('C', 100);
+        symbolToValue.put('D', 500);
+        symbolToValue.put('M', 1000);
+        
+        var result = 0;
+        Character previousChar = null;
+
+        for (var i = s.length() - 1; i >= 0; i--) {
+            var currentChar = s.charAt(i);
+
+            if (previousChar != null && (
+                (currentChar == 'I' && (previousChar == 'V' || previousChar == 'X')) ||
+                (currentChar == 'X' && (previousChar == 'L' || previousChar == 'C')) ||
+                (currentChar == 'C' && (previousChar == 'D' || previousChar == 'M')))) {
+                result -= symbolToValue.get(currentChar);
+            } else {
+                result += symbolToValue.get(currentChar);
+            }
+            
+            previousChar = currentChar;
+        }
+        
+        return result;
+    }
+}
+```
+
 ## Other languages
 
 ```java
 // Welcome to create a PR to complete the code of this language, thanks!
 ```
 
-亲爱的力扣人，为了您更好的刷题体验，请访问 [LeetCode.to](https://leetcode.to/zh)。
+亲爱的力扣人，为了您更好的刷题体验，请访问 [LeetCode.blog](https://leetcode.blog/zh)。
 本站敢称力扣题解最佳实践，终将省你大量刷题时间！
 
-原文链接：[13. 罗马数字转整数 - LeetCode Python/Java/C++/JS/C#/Go/Ruby 题解](https://leetcode.to/zh/leetcode/13-roman-to-integer).
+原文链接：[13. 罗马数字转整数 - LeetCode Python/Java/C++/JS/C#/Go/Ruby 题解](https://leetcode.blog/zh/leetcode/13-roman-to-integer).
 
 GitHub 仓库: [leetcode-python-java](https://github.com/leetcode-python-java/leetcode-python-java).
 

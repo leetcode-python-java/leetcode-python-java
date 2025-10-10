@@ -1,6 +1,6 @@
 # 509. Fibonacci Number - LeetCode Python/Java/C++/JS/C#/Go/Ruby Solutions
 
-Visit original link: [509. Fibonacci Number - LeetCode Python/Java/C++/JS/C#/Go/Ruby Solutions](https://leetcode.to/en/leetcode/509-fibonacci-number) for a better experience!
+Visit original link: [509. Fibonacci Number - LeetCode Python/Java/C++/JS/C#/Go/Ruby Solutions](https://leetcode.blog/en/leetcode/509-fibonacci-number) for a better experience!
 
 LeetCode link: [509. Fibonacci Number](https://leetcode.com/problems/fibonacci-number), difficulty: **Easy**.
 
@@ -603,8 +603,8 @@ end
 // Welcome to create a PR to complete the code of this language, thanks!
 ```
 
-Dear LeetCoders! For a better LeetCode problem-solving experience, please visit website [LeetCode.to](https://leetcode.to): Dare to claim the best practices of LeetCode solutions! Will save you a lot of time!
+Dear LeetCoders! For a better LeetCode problem-solving experience, please visit website [LeetCode.blog](https://leetcode.blog): Dare to claim the best practices of LeetCode solutions! Will save you a lot of time!
 
-Original link: [509. Fibonacci Number - LeetCode Python/Java/C++/JS/C#/Go/Ruby Solutions](https://leetcode.to/en/leetcode/509-fibonacci-number).
+Original link: [509. Fibonacci Number - LeetCode Python/Java/C++/JS/C#/Go/Ruby Solutions](https://leetcode.blog/en/leetcode/509-fibonacci-number).
 
 GitHub repository: [leetcode-python-java](https://github.com/leetcode-python-java/leetcode-python-java).

@@ -1,6 +1,6 @@
 # 541. 反转字符串 II - LeetCode Python/Java/C++/JS/C#/Go/Ruby 题解
 
-访问原文链接：[541. 反转字符串 II - LeetCode Python/Java/C++/JS/C#/Go/Ruby 题解](https://leetcode.to/zh/leetcode/541-reverse-string-ii)，体验更佳！
+访问原文链接：[541. 反转字符串 II - LeetCode Python/Java/C++/JS/C#/Go/Ruby 题解](https://leetcode.blog/zh/leetcode/541-reverse-string-ii)，体验更佳！
 
 力扣链接：[541. 反转字符串 II](https://leetcode.cn/problems/reverse-string-ii), 难度等级：**简单**。
 
@@ -276,10 +276,10 @@ func reverseStr(s string, k int) string {
 // Welcome to create a PR to complete the code of this language, thanks!
 ```
 
-亲爱的力扣人，为了您更好的刷题体验，请访问 [LeetCode.to](https://leetcode.to/zh)。
+亲爱的力扣人，为了您更好的刷题体验，请访问 [LeetCode.blog](https://leetcode.blog/zh)。
 本站敢称力扣题解最佳实践，终将省你大量刷题时间！
 
-原文链接：[541. 反转字符串 II - LeetCode Python/Java/C++/JS/C#/Go/Ruby 题解](https://leetcode.to/zh/leetcode/541-reverse-string-ii).
+原文链接：[541. 反转字符串 II - LeetCode Python/Java/C++/JS/C#/Go/Ruby 题解](https://leetcode.blog/zh/leetcode/541-reverse-string-ii).
 
 GitHub 仓库: [leetcode-python-java](https://github.com/leetcode-python-java/leetcode-python-java).
 

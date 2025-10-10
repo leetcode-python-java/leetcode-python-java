@@ -1,6 +1,6 @@
 # 88. 合并两个有序数组 - LeetCode Python/Java/C++/JS/C#/Go/Ruby 题解
 
-访问原文链接：[88. 合并两个有序数组 - LeetCode Python/Java/C++/JS/C#/Go/Ruby 题解](https://leetcode.to/zh/leetcode/88-merge-sorted-array)，体验更佳！
+访问原文链接：[88. 合并两个有序数组 - LeetCode Python/Java/C++/JS/C#/Go/Ruby 题解](https://leetcode.blog/zh/leetcode/88-merge-sorted-array)，体验更佳！
 
 力扣链接：[88. 合并两个有序数组](https://leetcode.cn/problems/merge-sorted-array), 难度等级：**简单**。
 
@@ -123,16 +123,42 @@ end
 
 ```
 
+## Java
+
+```java
+class Solution {
+    public void merge(int[] nums1, int m, int[] nums2, int n) {
+        // Make a good example first.
+        // nums1: [1, 5, 7, 0, 0, 0, 0]
+        // nums2: [2, 3, 4, 8]
+        // result:[1, 2, 3, 4, 5, 7, 8]
+
+        var i = m - 1;
+        var j = n - 1;
+
+        for (var k = nums1.length - 1; k >= 0; k--) {
+            if (i < 0 || (j >= 0 && nums2[j] > nums1[i])) {
+                nums1[k] = nums2[j];
+                j--;
+            } else {
+                nums1[k] = nums1[i];
+                i--;
+            }
+        }
+    }
+}
+```
+
 ## Other languages
 
 ```java
 // Welcome to create a PR to complete the code of this language, thanks!
 ```
 
-亲爱的力扣人，为了您更好的刷题体验，请访问 [LeetCode.to](https://leetcode.to/zh)。
+亲爱的力扣人，为了您更好的刷题体验，请访问 [LeetCode.blog](https://leetcode.blog/zh)。
 本站敢称力扣题解最佳实践，终将省你大量刷题时间！
 
-原文链接：[88. 合并两个有序数组 - LeetCode Python/Java/C++/JS/C#/Go/Ruby 题解](https://leetcode.to/zh/leetcode/88-merge-sorted-array).
+原文链接：[88. 合并两个有序数组 - LeetCode Python/Java/C++/JS/C#/Go/Ruby 题解](https://leetcode.blog/zh/leetcode/88-merge-sorted-array).
 
 GitHub 仓库: [leetcode-python-java](https://github.com/leetcode-python-java/leetcode-python-java).
 

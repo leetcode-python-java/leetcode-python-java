@@ -1,6 +1,6 @@
 # 26. Remove Duplicates from Sorted Array - LeetCode Python/Java/C++/JS/C#/Go/Ruby Solutions
 
-Visit original link: [26. Remove Duplicates from Sorted Array - LeetCode Python/Java/C++/JS/C#/Go/Ruby Solutions](https://leetcode.to/en/leetcode/26-remove-duplicates-from-sorted-array) for a better experience!
+Visit original link: [26. Remove Duplicates from Sorted Array - LeetCode Python/Java/C++/JS/C#/Go/Ruby Solutions](https://leetcode.blog/en/leetcode/26-remove-duplicates-from-sorted-array) for a better experience!
 
 LeetCode link: [26. Remove Duplicates from Sorted Array](https://leetcode.com/problems/remove-duplicates-from-sorted-array), difficulty: **Easy**.
 
@@ -107,8 +107,8 @@ return something;
 
 ## Complexity
 
-- Time complexity: `N`.
-- Space complexity: `1`.
+- Time complexity: `O(N)`.
+- Space complexity: `O(1)`.
 
 ## Python
 
@@ -151,14 +151,34 @@ def remove_duplicates(nums)
 end
 ```
 
+## Java
+
+```java
+class Solution {
+    public int removeDuplicates(int[] nums) {
+        var slow = 1;
+
+        // nums = [0,0,1,1,1,2,2,3,3,4]
+        for (var fast = 1; fast < nums.length; fast++) {
+            if (nums[fast] != nums[slow - 1]) {
+                nums[slow] = nums[fast];
+                slow++;
+            }
+        }
+
+        return slow;
+    }
+}
+```
+
 ## Other languages
 
 ```java
 // Welcome to create a PR to complete the code of this language, thanks!
 ```
 
-Dear LeetCoders! For a better LeetCode problem-solving experience, please visit website [LeetCode.to](https://leetcode.to): Dare to claim the best practices of LeetCode solutions! Will save you a lot of time!
+Dear LeetCoders! For a better LeetCode problem-solving experience, please visit website [LeetCode.blog](https://leetcode.blog): Dare to claim the best practices of LeetCode solutions! Will save you a lot of time!
 
-Original link: [26. Remove Duplicates from Sorted Array - LeetCode Python/Java/C++/JS/C#/Go/Ruby Solutions](https://leetcode.to/en/leetcode/26-remove-duplicates-from-sorted-array).
+Original link: [26. Remove Duplicates from Sorted Array - LeetCode Python/Java/C++/JS/C#/Go/Ruby Solutions](https://leetcode.blog/en/leetcode/26-remove-duplicates-from-sorted-array).
 
 GitHub repository: [leetcode-python-java](https://github.com/leetcode-python-java/leetcode-python-java).

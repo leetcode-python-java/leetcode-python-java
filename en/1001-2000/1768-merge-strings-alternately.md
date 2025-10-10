@@ -1,6 +1,6 @@
 # 1768. Merge Strings Alternately - LeetCode Python/Java/C++/JS/C#/Go/Ruby Solutions
 
-Visit original link: [1768. Merge Strings Alternately - LeetCode Python/Java/C++/JS/C#/Go/Ruby Solutions](https://leetcode.to/en/leetcode/1768-merge-strings-alternately) for a better experience!
+Visit original link: [1768. Merge Strings Alternately - LeetCode Python/Java/C++/JS/C#/Go/Ruby Solutions](https://leetcode.blog/en/leetcode/1768-merge-strings-alternately) for a better experience!
 
 LeetCode link: [1768. Merge Strings Alternately](https://leetcode.com/problems/merge-strings-alternately), difficulty: **Easy**.
 
@@ -235,8 +235,8 @@ end
 // Welcome to create a PR to complete the code of this language, thanks!
 ```
 
-Dear LeetCoders! For a better LeetCode problem-solving experience, please visit website [LeetCode.to](https://leetcode.to): Dare to claim the best practices of LeetCode solutions! Will save you a lot of time!
+Dear LeetCoders! For a better LeetCode problem-solving experience, please visit website [LeetCode.blog](https://leetcode.blog): Dare to claim the best practices of LeetCode solutions! Will save you a lot of time!
 
-Original link: [1768. Merge Strings Alternately - LeetCode Python/Java/C++/JS/C#/Go/Ruby Solutions](https://leetcode.to/en/leetcode/1768-merge-strings-alternately).
+Original link: [1768. Merge Strings Alternately - LeetCode Python/Java/C++/JS/C#/Go/Ruby Solutions](https://leetcode.blog/en/leetcode/1768-merge-strings-alternately).
 
 GitHub repository: [leetcode-python-java](https://github.com/leetcode-python-java/leetcode-python-java).

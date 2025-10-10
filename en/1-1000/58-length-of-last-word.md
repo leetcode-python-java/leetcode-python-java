@@ -1,6 +1,6 @@
 # 58. Length of Last Word - LeetCode Python/Java/C++/JS/C#/Go/Ruby Solutions
 
-Visit original link: [58. Length of Last Word - LeetCode Python/Java/C++/JS/C#/Go/Ruby Solutions](https://leetcode.to/en/leetcode/58-length-of-last-word) for a better experience!
+Visit original link: [58. Length of Last Word - LeetCode Python/Java/C++/JS/C#/Go/Ruby Solutions](https://leetcode.blog/en/leetcode/58-length-of-last-word) for a better experience!
 
 LeetCode link: [58. Length of Last Word](https://leetcode.com/problems/length-of-last-word), difficulty: **Easy**.
 
@@ -101,14 +101,39 @@ def length_of_last_word(s)
 end
 ```
 
+## Java
+
+```java
+class Solution {
+    public int lengthOfLastWord(String s) {
+        // Reverse the string
+        var sb = new StringBuilder(s);
+        String reversed = sb.reverse().toString();
+
+        var startIndex = 0;
+        // Skip leading spaces (which were trailing spaces in original)
+        while (startIndex < reversed.length() && reversed.charAt(startIndex) == ' ') {
+            startIndex++;
+        }
+
+        var endIndex = startIndex;
+        while (endIndex < reversed.length() && reversed.charAt(endIndex) != ' ') {
+            endIndex++;
+        }
+
+        return endIndex - startIndex;
+    }
+}
+```
+
 ## Other languages
 
 ```java
 // Welcome to create a PR to complete the code of this language, thanks!
 ```
 
-Dear LeetCoders! For a better LeetCode problem-solving experience, please visit website [LeetCode.to](https://leetcode.to): Dare to claim the best practices of LeetCode solutions! Will save you a lot of time!
+Dear LeetCoders! For a better LeetCode problem-solving experience, please visit website [LeetCode.blog](https://leetcode.blog): Dare to claim the best practices of LeetCode solutions! Will save you a lot of time!
 
-Original link: [58. Length of Last Word - LeetCode Python/Java/C++/JS/C#/Go/Ruby Solutions](https://leetcode.to/en/leetcode/58-length-of-last-word).
+Original link: [58. Length of Last Word - LeetCode Python/Java/C++/JS/C#/Go/Ruby Solutions](https://leetcode.blog/en/leetcode/58-length-of-last-word).
 
 GitHub repository: [leetcode-python-java](https://github.com/leetcode-python-java/leetcode-python-java).

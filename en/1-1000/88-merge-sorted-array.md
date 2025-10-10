@@ -1,6 +1,6 @@
 # 88. Merge Sorted Array - LeetCode Python/Java/C++/JS/C#/Go/Ruby Solutions
 
-Visit original link: [88. Merge Sorted Array - LeetCode Python/Java/C++/JS/C#/Go/Ruby Solutions](https://leetcode.to/en/leetcode/88-merge-sorted-array) for a better experience!
+Visit original link: [88. Merge Sorted Array - LeetCode Python/Java/C++/JS/C#/Go/Ruby Solutions](https://leetcode.blog/en/leetcode/88-merge-sorted-array) for a better experience!
 
 LeetCode link: [88. Merge Sorted Array](https://leetcode.com/problems/merge-sorted-array), difficulty: **Easy**.
 
@@ -128,14 +128,40 @@ end
 
 ```
 
+## Java
+
+```java
+class Solution {
+    public void merge(int[] nums1, int m, int[] nums2, int n) {
+        // Make a good example first.
+        // nums1: [1, 5, 7, 0, 0, 0, 0]
+        // nums2: [2, 3, 4, 8]
+        // result:[1, 2, 3, 4, 5, 7, 8]
+
+        var i = m - 1;
+        var j = n - 1;
+
+        for (var k = nums1.length - 1; k >= 0; k--) {
+            if (i < 0 || (j >= 0 && nums2[j] > nums1[i])) {
+                nums1[k] = nums2[j];
+                j--;
+            } else {
+                nums1[k] = nums1[i];
+                i--;
+            }
+        }
+    }
+}
+```
+
 ## Other languages
 
 ```java
 // Welcome to create a PR to complete the code of this language, thanks!
 ```
 
-Dear LeetCoders! For a better LeetCode problem-solving experience, please visit website [LeetCode.to](https://leetcode.to): Dare to claim the best practices of LeetCode solutions! Will save you a lot of time!
+Dear LeetCoders! For a better LeetCode problem-solving experience, please visit website [LeetCode.blog](https://leetcode.blog): Dare to claim the best practices of LeetCode solutions! Will save you a lot of time!
 
-Original link: [88. Merge Sorted Array - LeetCode Python/Java/C++/JS/C#/Go/Ruby Solutions](https://leetcode.to/en/leetcode/88-merge-sorted-array).
+Original link: [88. Merge Sorted Array - LeetCode Python/Java/C++/JS/C#/Go/Ruby Solutions](https://leetcode.blog/en/leetcode/88-merge-sorted-array).
 
 GitHub repository: [leetcode-python-java](https://github.com/leetcode-python-java/leetcode-python-java).

@@ -1,6 +1,6 @@
 # 1071. Greatest Common Divisor of Strings - LeetCode Python/Java/C++/JS/C#/Go/Ruby Solutions
 
-Visit original link: [1071. Greatest Common Divisor of Strings - LeetCode Python/Java/C++/JS/C#/Go/Ruby Solutions](https://leetcode.to/en/leetcode/1071-greatest-common-divisor-of-strings) for a better experience!
+Visit original link: [1071. Greatest Common Divisor of Strings - LeetCode Python/Java/C++/JS/C#/Go/Ruby Solutions](https://leetcode.blog/en/leetcode/1071-greatest-common-divisor-of-strings) for a better experience!
 
 LeetCode link: [1071. Greatest Common Divisor of Strings](https://leetcode.com/problems/greatest-common-divisor-of-strings), difficulty: **Easy**.
 
@@ -256,8 +256,8 @@ end
 // Welcome to create a PR to complete the code of this language, thanks!
 ```
 
-Dear LeetCoders! For a better LeetCode problem-solving experience, please visit website [LeetCode.to](https://leetcode.to): Dare to claim the best practices of LeetCode solutions! Will save you a lot of time!
+Dear LeetCoders! For a better LeetCode problem-solving experience, please visit website [LeetCode.blog](https://leetcode.blog): Dare to claim the best practices of LeetCode solutions! Will save you a lot of time!
 
-Original link: [1071. Greatest Common Divisor of Strings - LeetCode Python/Java/C++/JS/C#/Go/Ruby Solutions](https://leetcode.to/en/leetcode/1071-greatest-common-divisor-of-strings).
+Original link: [1071. Greatest Common Divisor of Strings - LeetCode Python/Java/C++/JS/C#/Go/Ruby Solutions](https://leetcode.blog/en/leetcode/1071-greatest-common-divisor-of-strings).
 
 GitHub repository: [leetcode-python-java](https://github.com/leetcode-python-java/leetcode-python-java).

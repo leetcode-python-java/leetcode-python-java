@@ -1,6 +1,6 @@
 # 26. 删除有序数组中的重复项 - LeetCode Python/Java/C++/JS/C#/Go/Ruby 题解
 
-访问原文链接：[26. 删除有序数组中的重复项 - LeetCode Python/Java/C++/JS/C#/Go/Ruby 题解](https://leetcode.to/zh/leetcode/26-remove-duplicates-from-sorted-array)，体验更佳！
+访问原文链接：[26. 删除有序数组中的重复项 - LeetCode Python/Java/C++/JS/C#/Go/Ruby 题解](https://leetcode.blog/zh/leetcode/26-remove-duplicates-from-sorted-array)，体验更佳！
 
 力扣链接：[26. 删除有序数组中的重复项](https://leetcode.cn/problems/remove-duplicates-from-sorted-array), 难度等级：**简单**。
 
@@ -100,8 +100,8 @@ return something;
 
 ## 复杂度
 
-- 时间复杂度: `N`.
-- 空间复杂度: `1`.
+- 时间复杂度: `O(N)`.
+- 空间复杂度: `O(1)`.
 
 ## Python
 
@@ -144,16 +144,36 @@ def remove_duplicates(nums)
 end
 ```
 
+## Java
+
+```java
+class Solution {
+    public int removeDuplicates(int[] nums) {
+        var slow = 1;
+
+        // nums = [0,0,1,1,1,2,2,3,3,4]
+        for (var fast = 1; fast < nums.length; fast++) {
+            if (nums[fast] != nums[slow - 1]) {
+                nums[slow] = nums[fast];
+                slow++;
+            }
+        }
+
+        return slow;
+    }
+}
+```
+
 ## Other languages
 
 ```java
 // Welcome to create a PR to complete the code of this language, thanks!
 ```
 
-亲爱的力扣人，为了您更好的刷题体验，请访问 [LeetCode.to](https://leetcode.to/zh)。
+亲爱的力扣人，为了您更好的刷题体验，请访问 [LeetCode.blog](https://leetcode.blog/zh)。
 本站敢称力扣题解最佳实践，终将省你大量刷题时间！
 
-原文链接：[26. 删除有序数组中的重复项 - LeetCode Python/Java/C++/JS/C#/Go/Ruby 题解](https://leetcode.to/zh/leetcode/26-remove-duplicates-from-sorted-array).
+原文链接：[26. 删除有序数组中的重复项 - LeetCode Python/Java/C++/JS/C#/Go/Ruby 题解](https://leetcode.blog/zh/leetcode/26-remove-duplicates-from-sorted-array).
 
 GitHub 仓库: [leetcode-python-java](https://github.com/leetcode-python-java/leetcode-python-java).
 

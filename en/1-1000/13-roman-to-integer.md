@@ -1,6 +1,6 @@
 # 13. Roman to Integer - LeetCode Python/Java/C++/JS/C#/Go/Ruby Solutions
 
-Visit original link: [13. Roman to Integer - LeetCode Python/Java/C++/JS/C#/Go/Ruby Solutions](https://leetcode.to/en/leetcode/13-roman-to-integer) for a better experience!
+Visit original link: [13. Roman to Integer - LeetCode Python/Java/C++/JS/C#/Go/Ruby Solutions](https://leetcode.blog/en/leetcode/13-roman-to-integer) for a better experience!
 
 LeetCode link: [13. Roman to Integer](https://leetcode.com/problems/roman-to-integer), difficulty: **Easy**.
 
@@ -157,14 +157,51 @@ class Solution:
         return result
 ```
 
+## Java
+
+```java
+class Solution {
+    public int romanToInt(String s) {
+        Map<Character, Integer> symbolToValue = new HashMap<>();
+        symbolToValue.put('I', 1);
+        symbolToValue.put('V', 5);
+        symbolToValue.put('X', 10);
+        symbolToValue.put('L', 50);
+        symbolToValue.put('C', 100);
+        symbolToValue.put('D', 500);
+        symbolToValue.put('M', 1000);
+        
+        var result = 0;
+        Character previousChar = null;
+
+        for (var i = s.length() - 1; i >= 0; i--) {
+            var currentChar = s.charAt(i);
+
+            if (previousChar != null && (
+                (currentChar == 'I' && (previousChar == 'V' || previousChar == 'X')) ||
+                (currentChar == 'X' && (previousChar == 'L' || previousChar == 'C')) ||
+                (currentChar == 'C' && (previousChar == 'D' || previousChar == 'M')))) {
+                result -= symbolToValue.get(currentChar);
+            } else {
+                result += symbolToValue.get(currentChar);
+            }
+            
+            previousChar = currentChar;
+        }
+        
+        return result;
+    }
+}
+```
+
 ## Other languages
 
 ```java
 // Welcome to create a PR to complete the code of this language, thanks!
 ```
 
-Dear LeetCoders! For a better LeetCode problem-solving experience, please visit website [LeetCode.to](https://leetcode.to): Dare to claim the best practices of LeetCode solutions! Will save you a lot of time!
+Dear LeetCoders! For a better LeetCode problem-solving experience, please visit website [LeetCode.blog](https://leetcode.blog): Dare to claim the best practices of LeetCode solutions! Will save you a lot of time!
 
-Original link: [13. Roman to Integer - LeetCode Python/Java/C++/JS/C#/Go/Ruby Solutions](https://leetcode.to/en/leetcode/13-roman-to-integer).
+Original link: [13. Roman to Integer - LeetCode Python/Java/C++/JS/C#/Go/Ruby Solutions](https://leetcode.blog/en/leetcode/13-roman-to-integer).
 
 GitHub repository: [leetcode-python-java](https://github.com/leetcode-python-java/leetcode-python-java).

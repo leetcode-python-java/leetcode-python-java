@@ -1,6 +1,6 @@
 # 704. 二分查找 - LeetCode Python/Java/C++/JS/C#/Go/Ruby 题解
 
-访问原文链接：[704. 二分查找 - LeetCode Python/Java/C++/JS/C#/Go/Ruby 题解](https://leetcode.to/zh/leetcode/704-binary-search)，体验更佳！
+访问原文链接：[704. 二分查找 - LeetCode Python/Java/C++/JS/C#/Go/Ruby 题解](https://leetcode.blog/zh/leetcode/704-binary-search)，体验更佳！
 
 力扣链接：[704. 二分查找](https://leetcode.cn/problems/binary-search), 难度等级：**简单**。
 
@@ -234,10 +234,10 @@ end
 // Welcome to create a PR to complete the code of this language, thanks!
 ```
 
-亲爱的力扣人，为了您更好的刷题体验，请访问 [LeetCode.to](https://leetcode.to/zh)。
+亲爱的力扣人，为了您更好的刷题体验，请访问 [LeetCode.blog](https://leetcode.blog/zh)。
 本站敢称力扣题解最佳实践，终将省你大量刷题时间！
 
-原文链接：[704. 二分查找 - LeetCode Python/Java/C++/JS/C#/Go/Ruby 题解](https://leetcode.to/zh/leetcode/704-binary-search).
+原文链接：[704. 二分查找 - LeetCode Python/Java/C++/JS/C#/Go/Ruby 题解](https://leetcode.blog/zh/leetcode/704-binary-search).
 
 GitHub 仓库: [leetcode-python-java](https://github.com/leetcode-python-java/leetcode-python-java).
 

@@ -1,6 +1,6 @@
 # 59. 螺旋矩阵 II - LeetCode Python/Java/C++/JS/C#/Go/Ruby 题解
 
-访问原文链接：[59. 螺旋矩阵 II - LeetCode Python/Java/C++/JS/C#/Go/Ruby 题解](https://leetcode.to/zh/leetcode/59-spiral-matrix-ii)，体验更佳！
+访问原文链接：[59. 螺旋矩阵 II - LeetCode Python/Java/C++/JS/C#/Go/Ruby 题解](https://leetcode.blog/zh/leetcode/59-spiral-matrix-ii)，体验更佳！
 
 力扣链接：[59. 螺旋矩阵 II](https://leetcode.cn/problems/spiral-matrix-ii), 难度等级：**中等**。
 
@@ -408,10 +408,10 @@ private:
 // Welcome to create a PR to complete the code of this language, thanks!
 ```
 
-亲爱的力扣人，为了您更好的刷题体验，请访问 [LeetCode.to](https://leetcode.to/zh)。
+亲爱的力扣人，为了您更好的刷题体验，请访问 [LeetCode.blog](https://leetcode.blog/zh)。
 本站敢称力扣题解最佳实践，终将省你大量刷题时间！
 
-原文链接：[59. 螺旋矩阵 II - LeetCode Python/Java/C++/JS/C#/Go/Ruby 题解](https://leetcode.to/zh/leetcode/59-spiral-matrix-ii).
+原文链接：[59. 螺旋矩阵 II - LeetCode Python/Java/C++/JS/C#/Go/Ruby 题解](https://leetcode.blog/zh/leetcode/59-spiral-matrix-ii).
 
 GitHub 仓库: [leetcode-python-java](https://github.com/leetcode-python-java/leetcode-python-java).
 

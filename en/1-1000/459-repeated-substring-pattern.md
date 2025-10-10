@@ -1,6 +1,6 @@
 # 459. Repeated Substring Pattern - LeetCode Python/Java/C++/JS/C#/Go/Ruby Solutions
 
-Visit original link: [459. Repeated Substring Pattern - LeetCode Python/Java/C++/JS/C#/Go/Ruby Solutions](https://leetcode.to/en/leetcode/459-repeated-substring-pattern) for a better experience!
+Visit original link: [459. Repeated Substring Pattern - LeetCode Python/Java/C++/JS/C#/Go/Ruby Solutions](https://leetcode.blog/en/leetcode/459-repeated-substring-pattern) for a better experience!
 
 LeetCode link: [459. Repeated Substring Pattern](https://leetcode.com/problems/repeated-substring-pattern), difficulty: **Easy**.
 
@@ -224,8 +224,8 @@ end
 // Welcome to create a PR to complete the code of this language, thanks!
 ```
 
-Dear LeetCoders! For a better LeetCode problem-solving experience, please visit website [LeetCode.to](https://leetcode.to): Dare to claim the best practices of LeetCode solutions! Will save you a lot of time!
+Dear LeetCoders! For a better LeetCode problem-solving experience, please visit website [LeetCode.blog](https://leetcode.blog): Dare to claim the best practices of LeetCode solutions! Will save you a lot of time!
 
-Original link: [459. Repeated Substring Pattern - LeetCode Python/Java/C++/JS/C#/Go/Ruby Solutions](https://leetcode.to/en/leetcode/459-repeated-substring-pattern).
+Original link: [459. Repeated Substring Pattern - LeetCode Python/Java/C++/JS/C#/Go/Ruby Solutions](https://leetcode.blog/en/leetcode/459-repeated-substring-pattern).
 
 GitHub repository: [leetcode-python-java](https://github.com/leetcode-python-java/leetcode-python-java).
