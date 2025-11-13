@@ -5,7 +5,7 @@
 
 ## LeetCode Python/Java/JavaScript/C#/Go/Ruby Solutions
 
-Dear LeetCoders! For a better LeetCode problem-solving experience, please visit website [LeetCode.to](https://leetcode.to): Dare to claim the best practices of LeetCode solutions! Will save you a lot of time!
+Dear LeetCoders! For a better LeetCode problem-solving experience, please visit website [LeetCode.blog](https://leetcode.blog): Dare to claim the best practices of LeetCode solutions! Will save you a lot of time!
 
 Hi there! I'm Jian.
 Do you feel that there are too many problems (over 3,450) on the LeetCode and you can't finish them all?
@@ -17,18 +17,18 @@ Here, I will provide you with **common problem-solving patterns** so that you do
 
 **Python, C++, Java, JavaScript, C#, Go, Ruby** languages' solutions are provided for every selected LeetCode problem. Other languages' solutions will be provided in the future. If you have better solutions, welcome to create an issue or PR!
 
-## How to fully demonstrate your abilities to employers and get the offer you want?
+## Want to land a high-paying job? It's important to showcase yourself!
 
-[is-bio](https://github.com/is-bio/is-bio) focuses on bringing value to developers, including resume, portfolio, blog and other functions. With it, your abilities will be better seen by employers!
+[Me.Expert](https://www.me.expert) helps you **Build the professional home for your portfolio, resume, and blog**.
 
 # How to Use this "leetcode-python-java" Repository?
 
 ## LeetCode Official Study Plan
 You can do questions according to your own preferences, such as completing all questions of 'LeetCode 75' first.
 
-- [LeetCode 75](https://leetcode.to/en/tags/75) solved in Python, Java, C++, JavaScript, C#, Go and Ruby.
-- [LeetCode Top 100 Liked](https://leetcode.to/en/tags/100) solved in Python, Java, C++, JavaScript, C#, Go and Ruby.
-- [LeetCode Top Interview 150](https://leetcode.to/en/tags/150) solved in Python, Java, C++, JavaScript, C#, Go and Ruby.
+- [LeetCode 75](https://leetcode.blog/en/tags/75) solved in Python, Java, C++, JavaScript, C#, Go and Ruby.
+- [LeetCode Top 100 Liked](https://leetcode.blog/en/tags/100) solved in Python, Java, C++, JavaScript, C#, Go and Ruby.
+- [LeetCode Top Interview 150](https://leetcode.blog/en/tags/150) solved in Python, Java, C++, JavaScript, C#, Go and Ruby.
 
 # Study Plan by Jian
 
@@ -47,7 +47,7 @@ You can skip the more difficult problems and do them later.
 - <a name="303"></a>[303. Range Sum Query - Immutable](en/1-1000/303-range-sum-query-immutable.md) Python, Java, C++, JavaScript, C#, Go, Ruby.
 - <a name="59"></a>[59. Spiral Matrix II](en/1-1000/59-spiral-matrix-ii.md) Python, Java, C++, JavaScript, C#, Go, Ruby.
 - <a name="503"></a>[503. Next Greater Element II](en/1-1000/503-next-greater-element-ii.md) Python, Java, C++, JavaScript, C#, Go, Ruby.
-- <a name="3478"></a>[3478. Choose K Elements With Maximum Sum](https://leetcode.to/en/leetcode/3478-choose-k-elements-with-maximum-sum) Python.
+- <a name="3478"></a>[3478. Choose K Elements With Maximum Sum](https://leetcode.blog/en/leetcode/3478-choose-k-elements-with-maximum-sum) Python.
 
 ## Optional problems
 - <a name="88"></a>[88. Merge Sorted Array](en/1-1000/88-merge-sorted-array.md) Python, Java, Ruby.
@@ -71,7 +71,7 @@ You can skip the more difficult problems and do them later.
 - <a name="383"></a>[383. Ransom Note](en/1-1000/383-ransom-note.md) Python, Java, C++, JavaScript, C#, Go, Ruby.
 - <a name="202"></a>[202. Happy Number](en/1-1000/202-happy-number.md) Python, Java, C++, JavaScript, C#, Go, Ruby.
 - <a name="454"></a>[454. 4Sum II](en/1-1000/454-4sum-ii.md) Python, Java, C++, JavaScript, C#, Go, Ruby.
-- <a name="49"></a>[49. Group Anagrams](https://leetcode.to/en/leetcode/49-group-anagrams) Python, Ruby.
+- <a name="49"></a>[49. Group Anagrams](https://leetcode.blog/en/leetcode/49-group-anagrams) Python, Ruby.
 
 # String
 ## Required problems
@@ -81,7 +81,7 @@ You can skip the more difficult problems and do them later.
 - <a name="1431"></a>[1431. Kids With the Greatest Number of Candies](en/1001-2000/1431-kids-with-the-greatest-number-of-candies.md) Python, Java, C++, JavaScript, C#, Go, Ruby.
 - <a name="151"></a>[151. Reverse Words in a String](en/1-1000/151-reverse-words-in-a-string.md) Python, Java, C++, JavaScript, C#, Go, Ruby.
 - <a name="459"></a>[459. Repeated Substring Pattern](en/1-1000/459-repeated-substring-pattern.md) Python, Java, C++, JavaScript, C#, Go, Ruby.
-- <a name="833"></a>[833. Find, Replace in String](https://leetcode.to/en/leetcode/833-find-and-replace-in-string) Python.
+- <a name="833"></a>[833. Find, Replace in String](https://leetcode.blog/en/leetcode/833-find-and-replace-in-string) Python.
 - <a name="1071"></a>[1071. Greatest Common Divisor of Strings](en/1001-2000/1071-greatest-common-divisor-of-strings.md) Python, Java, C++, JavaScript, C#, Go, Ruby.
 
 ## Optional problems
