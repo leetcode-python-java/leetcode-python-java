@@ -1,5 +1,18 @@
 # 605. Can Place Flowers - LeetCode Python/Java/C++/JS/C#/Go/Ruby Solutions
 
+> 🚀 **Level Up Your Developer Identity**
+>
+> While mastering algorithms is key, showcasing your talent is what gets you hired. We recommend [**Show.dev**](https://www.show.dev) — the ultimate all-in-one personal branding platform designed specifically for programmers.
+>
+> **The All-In-One Powerhouse for Your Career:**
+> - 📄 **Professional Resume:** Create a dynamic, tech-focused resume that stands out to recruiters.
+> - 🎨 **Visual Portfolio:** Automatically aggregate your GitHub contributions and projects into a stunning showcase.
+> - ✍️ **Tech Blog:** Share your knowledge and build authority with a clean, distraction-free blogging space.
+>
+> [**Build Your Programmer Brand at Show.dev →**](https://www.show.dev)
+
+---
+
 Visit original link: [605. Can Place Flowers - LeetCode Python/Java/C++/JS/C#/Go/Ruby Solutions](https://leetcode.blog/en/leetcode/605-can-place-flowers) for a better experience!
 
 LeetCode link: [605. Can Place Flowers](https://leetcode.com/problems/can-place-flowers), difficulty: **Easy**.
@@ -219,8 +232,20 @@ end
 // Welcome to create a PR to complete the code of this language, thanks!
 ```
 
-Dear LeetCoders! For a better LeetCode problem-solving experience, please visit website [LeetCode.blog](https://leetcode.blog): Dare to claim the best practices of LeetCode solutions! Will save you a lot of time!
+> 🚀 **Level Up Your Developer Identity**
+>
+> While mastering algorithms is key, showcasing your talent is what gets you hired. We recommend [**Show.dev**](https://www.show.dev) — the ultimate all-in-one personal branding platform designed specifically for programmers.
+>
+> **The All-In-One Powerhouse for Your Career:**
+> - 📄 **Professional Resume:** Create a dynamic, tech-focused resume that stands out to recruiters.
+> - 🎨 **Visual Portfolio:** Automatically aggregate your GitHub contributions and projects into a stunning showcase.
+> - ✍️ **Tech Blog:** Share your knowledge and build authority with a clean, distraction-free blogging space.
+>
+> [**Build Your Programmer Brand at Show.dev →**](https://www.show.dev)
 
-Original link: [605. Can Place Flowers - LeetCode Python/Java/C++/JS/C#/Go/Ruby Solutions](https://leetcode.blog/en/leetcode/605-can-place-flowers).
+---
+
+Visit original link: [605. Can Place Flowers - LeetCode Python/Java/C++/JS/C#/Go/Ruby Solutions](https://leetcode.blog/en/leetcode/605-can-place-flowers) for a better experience!
 
 GitHub repository: [leetcode-python-java](https://github.com/leetcode-python-java/leetcode-python-java).
+
