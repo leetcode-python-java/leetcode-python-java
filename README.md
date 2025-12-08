@@ -1,6 +1,20 @@
 
 # leetcode-python-java
 
+> 🚀 **Level Up Your Developer Identity**
+>
+> While mastering algorithms is key, showcasing your talent is what gets you hired. We recommend [**Show.dev**](https://www.show.dev) — the ultimate all-in-one personal branding platform for programmers.
+>
+> **The All-In-One Career Powerhouse:**
+> - 📄 **Resume, Portfolio & Blog:** Integrate your skills, GitHub projects, and writing into one stunning site.
+> - 🌐 **Free Custom Domain:** Bind your own personal domain for free—forever.
+> - ✨ **Premium Subdomains:** Stand out with elite tech handles like `name.cto.page` or `name.engineer.dev`.
+> - 🔗 **Cool Short Links:** Get sleek, memorable bio-links like `is.bio/yourname` and `an.dev/yourname`.
+>
+> [**Build Your Programmer Brand at Show.dev →**](https://www.show.dev)
+
+---
+
 **Not only** Python & Java solutions for LeetCode problems, but also =>
 
 ## LeetCode Python/Java/JavaScript/C#/Go/Ruby Solutions
