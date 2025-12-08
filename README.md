@@ -32,10 +32,6 @@ Here, I will provide you with **common problem-solving patterns** so that you do
 
 **Python, C++, Java, JavaScript, C#, Go, Ruby** languages' solutions are provided for every selected LeetCode problem. Other languages' solutions will be provided in the future. If you have better solutions, welcome to create an issue or PR!
 
-## Want to land a high-paying job? It's important to showcase yourself!
-
-[Me.Expert](https://www.me.expert) helps you **Build the professional home for your portfolio, resume, and blog**.
-
 # How to Use this "leetcode-python-java" Repository?
 
 ## LeetCode Official Study Plan
