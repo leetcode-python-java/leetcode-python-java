@@ -3,7 +3,8 @@
 > 🚀 **Level Up Your Developer Identity**
 >
 > While mastering algorithms is key, showcasing your talent is what gets you hired.
-> We recommend [**Show.dev**](https://www.show.dev) — the ultimate all-in-one personal branding platform for programmers.
+>
+> We recommend [**Like.dev**](https://www.like.dev) — the ultimate all-in-one personal branding platform for programmers.
 >
 > **The All-In-One Career Powerhouse:**
 > - 📄 **Resume, Portfolio & Blog:** Integrate your skills, GitHub projects, and writing into one stunning site.
@@ -11,7 +12,7 @@
 > - ✨ **Premium Subdomains:** Stand out with elite tech handles like `name.cto.page` or `name.engineer.dev`.
 > - 🔗 **Cool Short Links:** Get sleek, memorable bio-links like `is.bio/yourname` and `an.dev/yourname`.
 >
-> [**Build Your Programmer Brand at Show.dev →**](https://www.show.dev)
+> [**Build Your Programmer Brand at Like.dev →**](https://www.like.dev)
 
 ---
 
@@ -133,7 +134,8 @@ class Solution {
 > 🚀 **Level Up Your Developer Identity**
 >
 > While mastering algorithms is key, showcasing your talent is what gets you hired.
-> We recommend [**Show.dev**](https://www.show.dev) — the ultimate all-in-one personal branding platform for programmers.
+>
+> We recommend [**Like.dev**](https://www.like.dev) — the ultimate all-in-one personal branding platform for programmers.
 >
 > **The All-In-One Career Powerhouse:**
 > - 📄 **Resume, Portfolio & Blog:** Integrate your skills, GitHub projects, and writing into one stunning site.
@@ -141,7 +143,7 @@ class Solution {
 > - ✨ **Premium Subdomains:** Stand out with elite tech handles like `name.cto.page` or `name.engineer.dev`.
 > - 🔗 **Cool Short Links:** Get sleek, memorable bio-links like `is.bio/yourname` and `an.dev/yourname`.
 >
-> [**Build Your Programmer Brand at Show.dev →**](https://www.show.dev)
+> [**Build Your Programmer Brand at Like.dev →**](https://www.like.dev)
 
 ---
 
