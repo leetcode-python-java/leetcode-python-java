@@ -97,7 +97,7 @@ You can skip the more difficult problems and do them later.
 - <a name="1071"></a>[1071. Greatest Common Divisor of Strings](en/1001-2000/1071-greatest-common-divisor-of-strings.md) Python, Java, C++, JavaScript, C#, Go, Ruby. [中文](zh/1001-2000/1071-greatest-common-divisor-of-strings.md)
 
 ## Optional problems
-- <a name="13"></a>[13. Roman to Integer](en/1-1000/13-roman-to-integer.md) Python, Java, Ruby. [中文](zh/1-1000/13-roman-to-integer.md)
+- <a name="13"></a>[13. Roman to Integer](en/1-1000/13-roman-to-integer.md) Python, Java, C++, JavaScript, C#, Go, Ruby. [中文](zh/1-1000/13-roman-to-integer.md)
 - <a name="58"></a>[58. Length of Last Word](en/1-1000/58-length-of-last-word.md) Python, Java, Ruby. [中文](zh/1-1000/58-length-of-last-word.md)
 - <a name="14"></a>[14. Longest Common Prefix](en/1-1000/14-longest-common-prefix.md) Python, Java, Ruby. [中文](zh/1-1000/14-longest-common-prefix.md)
 - <a name="125"></a>[125. Valid Palindrome](en/1-1000/125-valid-palindrome.md) Python, Java, Ruby. [中文](zh/1-1000/125-valid-palindrome.md)
