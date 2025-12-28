@@ -4,7 +4,7 @@
 >
 > 掌握算法是成功的基石，而全方位展示你的才华则是获得垂青的关键。
 >
-> 我们向你推荐 [**Like.dev**](https://www.like.dev) —— 专为程序员打造的“全能型”个人品牌展示平台。
+> 我的另一个项目 [**leader.me**](https://www.leader.me) —— 专为程序员打造的“全能型”个人品牌展示平台。
 >
 > **三位一体（All-In-One）的职场利器：**
 > - 📄 **简历 + 作品集 + 博客：** 将你的 GitHub 项目、技术心得与职场经历完美融合。
@@ -12,7 +12,7 @@
 > - ✨ **顶级行业子域名：** 提供 `name.cto.page`、`name.engineer.dev` 等极具职业含金量的专属域名。
 > - 🔗 **超酷超短个人主页：** 获得极其简练的社交名片，如 `is.bio/yourname` 或 `an.dev/yourname`。
 >
-> [**立即前往 Like.dev 打造你的个人品牌 →**](https://www.like.dev)
+> [**立即前往 leader.me 打造你的个人品牌 →**](https://www.leader.me)
 
 ---
 
@@ -100,6 +100,7 @@
 ```python
 class Solution:
     def findReplaceString(self, s: str, indices: List[int], sources: List[str], targets: List[str]) -> str:
+        # Each item of this array is a string, not a char! We won't change the size of this array.
         result = list(s)
 
         for i in range(len(indices)):
@@ -115,6 +116,32 @@ class Solution:
         return ''.join(result)
 ```
 
+## Ruby
+
+```ruby
+# @param {String} s
+# @param {Integer[]} indices
+# @param {String[]} sources
+# @param {String[]} targets
+# @return {String}
+def find_replace_string(s, indices, sources, targets)
+  # Each item of this array is a string, not a char! We won't change the size of this array.
+  result = s.clone.chars
+
+  indices.each_with_index do |index, i|
+    if s[index...index + sources[i].size] == sources[i]
+      result[index] = targets[i] # The first one keep the whole targets[i]
+
+      (1...sources[i].size).each do |j|
+        result[index + j] = ""
+      end
+    end
+  end
+
+  result.join("")
+end
+```
+
 ## Other languages
 
 ```java
@@ -125,7 +152,7 @@ class Solution:
 >
 > 掌握算法是成功的基石，而全方位展示你的才华则是获得垂青的关键。
 >
-> 我们向你推荐 [**Like.dev**](https://www.like.dev) —— 专为程序员打造的“全能型”个人品牌展示平台。
+> 我的另一个项目 [**leader.me**](https://www.leader.me) —— 专为程序员打造的“全能型”个人品牌展示平台。
 >
 > **三位一体（All-In-One）的职场利器：**
 > - 📄 **简历 + 作品集 + 博客：** 将你的 GitHub 项目、技术心得与职场经历完美融合。
@@ -133,7 +160,7 @@ class Solution:
 > - ✨ **顶级行业子域名：** 提供 `name.cto.page`、`name.engineer.dev` 等极具职业含金量的专属域名。
 > - 🔗 **超酷超短个人主页：** 获得极其简练的社交名片，如 `is.bio/yourname` 或 `an.dev/yourname`。
 >
-> [**立即前往 Like.dev 打造你的个人品牌 →**](https://www.like.dev)
+> [**立即前往 leader.me 打造你的个人品牌 →**](https://www.leader.me)
 
 ---
 

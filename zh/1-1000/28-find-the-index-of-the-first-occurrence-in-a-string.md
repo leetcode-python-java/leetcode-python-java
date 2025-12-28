@@ -4,7 +4,7 @@
 >
 > 掌握算法是成功的基石，而全方位展示你的才华则是获得垂青的关键。
 >
-> 我们向你推荐 [**Like.dev**](https://www.like.dev) —— 专为程序员打造的“全能型”个人品牌展示平台。
+> 我的另一个项目 [**leader.me**](https://www.leader.me) —— 专为程序员打造的“全能型”个人品牌展示平台。
 >
 > **三位一体（All-In-One）的职场利器：**
 > - 📄 **简历 + 作品集 + 博客：** 将你的 GitHub 项目、技术心得与职场经历完美融合。
@@ -12,7 +12,7 @@
 > - ✨ **顶级行业子域名：** 提供 `name.cto.page`、`name.engineer.dev` 等极具职业含金量的专属域名。
 > - 🔗 **超酷超短个人主页：** 获得极其简练的社交名片，如 `is.bio/yourname` 或 `an.dev/yourname`。
 >
-> [**立即前往 Like.dev 打造你的个人品牌 →**](https://www.like.dev)
+> [**立即前往 leader.me 打造你的个人品牌 →**](https://www.leader.me)
 
 ---
 
@@ -49,15 +49,13 @@
 ## 思路
 
 - 这样的题目，如果用内置的`index()`，一行代码就可以实现。显然，出题人是想考察我们对循环的控制能力。
-- 针对 `heystack`，依次遍历每个字符。可能出现两种情况：
-	1. 该字符与`needle`的首字母不相等。这时处理下一个字符。
-	2. 该字符与`needle`的首字母相等，则在一个内部循环中继续比较继续比较`heystack`和`needle`的下一个字符，直到不相等或者`needle`已经完全匹配。
+- 针对 `heystack`，依次遍历每个字符。如果从当前字符开始到`needle`长度的子串与`needle`相同，则返回当前字符的位置。
 
 - 本题直接看代码比较容易理解。
 
 ## 复杂度
 
-- 时间复杂度: `O(N + M)`.
+- 时间复杂度: `O(N * M)`.
 - 空间复杂度: `O(1)`.
 
 ## Python
@@ -65,36 +63,37 @@
 ```python
 class Solution:
     def strStr(self, haystack: str, needle: str) -> int:
-        for i in range(len(haystack)):
-            j = 0
-            
-            while i + j < len(haystack) and haystack[i + j] == needle[j]:
-                j += 1
-
-                if j == len(needle):
-                    return i
-
+        n = len(haystack)
+        m = len(needle)
+        
+        for i in range(n - m + 1):
+            if haystack[i:i + m] == needle:
+                return i
+        
         return -1
 ```
 
 ## JavaScript
 
 ```javascript
-var strStr = function (haystack, needle) {
-  for (let i = 0; i < haystack.length; i++) {
-    let j = 0
-            
-    while (i + j < haystack.length && haystack[i + j] == needle[j]) {
-        j += 1
-
-        if (j == needle.length) {
-            return i
-        }
+/**
+ * @param {string} haystack
+ * @param {string} needle
+ * @return {number}
+ */
+var strStr = function(haystack, needle) {
+  const n = haystack.length;
+  const m = needle.length;
+    
+  for (let i = 0; i <= n - m; i++) {
+    if (haystack.substring(i, i + m) === needle) {
+      return i;
     }
   }
-
-  return -1
+    
+  return -1;
 };
+
 ```
 
 ## Ruby
@@ -104,16 +103,12 @@ var strStr = function (haystack, needle) {
 # @param {String} needle
 # @return {Integer}
 def str_str(haystack, needle)
-  (0...haystack.length).each do |i|
-    j = 0
-    
-    while i + j < haystack.length && haystack[i + j] == needle[j]
-      j += 1
-      
-      return i if j == needle.length
+  (0..haystack.size - needle.size).each do |i|
+    if haystack[i...i + needle.size] == needle
+      return i  
     end
   end
-  
+
   -1
 end
 ```
@@ -215,7 +210,7 @@ public class Solution {
 >
 > 掌握算法是成功的基石，而全方位展示你的才华则是获得垂青的关键。
 >
-> 我们向你推荐 [**Like.dev**](https://www.like.dev) —— 专为程序员打造的“全能型”个人品牌展示平台。
+> 我的另一个项目 [**leader.me**](https://www.leader.me) —— 专为程序员打造的“全能型”个人品牌展示平台。
 >
 > **三位一体（All-In-One）的职场利器：**
 > - 📄 **简历 + 作品集 + 博客：** 将你的 GitHub 项目、技术心得与职场经历完美融合。
@@ -223,7 +218,7 @@ public class Solution {
 > - ✨ **顶级行业子域名：** 提供 `name.cto.page`、`name.engineer.dev` 等极具职业含金量的专属域名。
 > - 🔗 **超酷超短个人主页：** 获得极其简练的社交名片，如 `is.bio/yourname` 或 `an.dev/yourname`。
 >
-> [**立即前往 Like.dev 打造你的个人品牌 →**](https://www.like.dev)
+> [**立即前往 leader.me 打造你的个人品牌 →**](https://www.leader.me)
 
 ---
 

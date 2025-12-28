@@ -4,7 +4,7 @@
 >
 > 掌握算法是成功的基石，而全方位展示你的才华则是获得垂青的关键。
 >
-> 我们向你推荐 [**Like.dev**](https://www.like.dev) —— 专为程序员打造的“全能型”个人品牌展示平台。
+> 我的另一个项目 [**leader.me**](https://www.leader.me) —— 专为程序员打造的“全能型”个人品牌展示平台。
 >
 > **三位一体（All-In-One）的职场利器：**
 > - 📄 **简历 + 作品集 + 博客：** 将你的 GitHub 项目、技术心得与职场经历完美融合。
@@ -12,7 +12,7 @@
 > - ✨ **顶级行业子域名：** 提供 `name.cto.page`、`name.engineer.dev` 等极具职业含金量的专属域名。
 > - 🔗 **超酷超短个人主页：** 获得极其简练的社交名片，如 `is.bio/yourname` 或 `an.dev/yourname`。
 >
-> [**立即前往 Like.dev 打造你的个人品牌 →**](https://www.like.dev)
+> [**立即前往 leader.me 打造你的个人品牌 →**](https://www.leader.me)
 
 ---
 
@@ -72,9 +72,10 @@
 
 1. 初始化：将`first`设为数组第一个元素，`second`设为最大整数值
 2. 从第二个元素开始遍历数组：
-    - 如果当前数字 > `second`：找到三元组，直接返回`true`
-    - 如果当前数字 > `first`：将`second`更新为当前数字
-    - 否则：将`first`更新为当前数字（保持记录最小值）
+    - if 当前数字 > `second`：找到三元组，直接返回`true`
+    - else
+        - if 当前数字 > `first`：将`second`更新为当前数字
+        - else：将`first`更新为当前数字（保持记录最小值）
 3. 遍历结束后仍未找到则返回`false`
 
 ## 复杂度
@@ -94,6 +95,7 @@ class Solution:
             if nums[i] > second:
                 return True
 
+            # Here, nums[i] <= second
             if nums[i] > first:
                 second = nums[i]
             else:
@@ -114,7 +116,8 @@ class Solution {
             if (nums[i] > second) {
                 return true;
             }
-
+            
+            // Here, nums[i] <= second
             if (nums[i] > first) {
                 second = nums[i];
             } else {
@@ -140,6 +143,7 @@ public:
                 return true;
             }
 
+            // Here, nums[i] <= second
             if (nums[i] > first) {
                 second = nums[i];
             } else {
@@ -167,7 +171,8 @@ var increasingTriplet = function (nums) {
     if (nums[i] > second) {
       return true
     }
-    
+
+    // Here, nums[i] <= second
     if (nums[i] > first) {
       second = nums[i]
     } else {
@@ -192,6 +197,7 @@ public class Solution {
                 return true;
             }
 
+            // Here, nums[i] <= second
             if (nums[i] > first) {
                 second = nums[i];
             } else {
@@ -216,6 +222,7 @@ func increasingTriplet(nums []int) bool {
             return true
         }
 
+        // Here, num <= second
         if num > first {
             second = num
         } else {
@@ -241,6 +248,7 @@ def increasing_triplet(nums)
       return true
     end  
     
+    # Here, num <= second
     if num > first
       second = num
     else
@@ -262,7 +270,7 @@ end
 >
 > 掌握算法是成功的基石，而全方位展示你的才华则是获得垂青的关键。
 >
-> 我们向你推荐 [**Like.dev**](https://www.like.dev) —— 专为程序员打造的“全能型”个人品牌展示平台。
+> 我的另一个项目 [**leader.me**](https://www.leader.me) —— 专为程序员打造的“全能型”个人品牌展示平台。
 >
 > **三位一体（All-In-One）的职场利器：**
 > - 📄 **简历 + 作品集 + 博客：** 将你的 GitHub 项目、技术心得与职场经历完美融合。
@@ -270,7 +278,7 @@ end
 > - ✨ **顶级行业子域名：** 提供 `name.cto.page`、`name.engineer.dev` 等极具职业含金量的专属域名。
 > - 🔗 **超酷超短个人主页：** 获得极其简练的社交名片，如 `is.bio/yourname` 或 `an.dev/yourname`。
 >
-> [**立即前往 Like.dev 打造你的个人品牌 →**](https://www.like.dev)
+> [**立即前往 leader.me 打造你的个人品牌 →**](https://www.leader.me)
 
 ---
 

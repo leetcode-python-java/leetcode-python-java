@@ -4,7 +4,7 @@
 >
 > 掌握算法是成功的基石，而全方位展示你的才华则是获得垂青的关键。
 >
-> 我们向你推荐 [**Like.dev**](https://www.like.dev) —— 专为程序员打造的“全能型”个人品牌展示平台。
+> 我的另一个项目 [**leader.me**](https://www.leader.me) —— 专为程序员打造的“全能型”个人品牌展示平台。
 >
 > **三位一体（All-In-One）的职场利器：**
 > - 📄 **简历 + 作品集 + 博客：** 将你的 GitHub 项目、技术心得与职场经历完美融合。
@@ -12,7 +12,7 @@
 > - ✨ **顶级行业子域名：** 提供 `name.cto.page`、`name.engineer.dev` 等极具职业含金量的专属域名。
 > - 🔗 **超酷超短个人主页：** 获得极其简练的社交名片，如 `is.bio/yourname` 或 `an.dev/yourname`。
 >
-> [**立即前往 Like.dev 打造你的个人品牌 →**](https://www.like.dev)
+> [**立即前往 leader.me 打造你的个人品牌 →**](https://www.leader.me)
 
 ---
 
@@ -63,9 +63,9 @@
 - 最后一个单词在最后，如果从前向后求解，并不是很方便。有什么其它方法吗？
 
 <details><summary>点击查看答案</summary><p>
-方法一：可以直接从后往前求解。
-方法二：把字符串 `s` 倒序，求第一个单词的长度。
-本题采用方法二。在做完方法二后，建议用方法一实现一下。
+可以直接从后往前求解。只要考虑两种情况：当前字符是空还是非空。
+起初，如果看到空字符就处理下一个字符，看到非空字符length就加1。
+如果length > 0，说明之间已经遇到字符了，这时，如果当前字符是空，就可以返回结果了。
 </p></details>
 
 ## 复杂度
@@ -78,19 +78,17 @@
 ```python
 class Solution:
     def lengthOfLastWord(self, s: str) -> int:
-        s = s[::-1]  # Reverse the string
-
-        start_index = 0
-
-        while start_index < len(s) and s[start_index] == ' ':
-            start_index += 1
-
-        end_index = start_index
-
-        while end_index < len(s) and s[end_index] != ' ':
-            end_index += 1
-
-        return end_index - start_index
+        length = 0
+    
+        for i in range(len(s) - 1, -1, -1):
+            if s[i] == " ":
+                if length > 0:
+                    return length
+                continue
+            
+            length += 1
+                
+        return length
 ```
 
 ## Ruby
@@ -99,21 +97,18 @@ class Solution:
 # @param {String} s
 # @return {Integer}
 def length_of_last_word(s)
-  s.reverse!
+  length = 0
 
-  start_index = 0
+  (s.size - 1).downto(0) do |i|
+    if s[i] == " "
+      return length if length > 0
+      next
+    end
 
-  while s[start_index] == ' '
-    start_index += 1
+    length += 1
   end
 
-  end_index = start_index
-
-  while end_index < s.size && s[end_index] != ' '
-    end_index += 1
-  end
-
-  end_index - start_index
+  length
 end
 ```
 
@@ -122,23 +117,119 @@ end
 ```java
 class Solution {
     public int lengthOfLastWord(String s) {
-        // Reverse the string
-        var sb = new StringBuilder(s);
-        String reversed = sb.reverse().toString();
-
-        var startIndex = 0;
-        // Skip leading spaces (which were trailing spaces in original)
-        while (startIndex < reversed.length() && reversed.charAt(startIndex) == ' ') {
-            startIndex++;
+        int length = 0;
+    
+        for (int i = s.length() - 1; i >= 0; i--) {
+            if (s.charAt(i) == ' ') {
+                if (length > 0) {
+                    return length;
+                }
+                continue;
+            }
+            
+            length++;
         }
-
-        var endIndex = startIndex;
-        while (endIndex < reversed.length() && reversed.charAt(endIndex) != ' ') {
-            endIndex++;
-        }
-
-        return endIndex - startIndex;
+        
+        return length;
     }
+}
+
+```
+
+## C++
+
+```cpp
+class Solution {
+public:
+    int lengthOfLastWord(string s) {
+        int length = 0;
+        int n = s.size();
+
+        for (int i = n - 1; i >= 0; i--) {
+            if (s[i] == ' ') {
+                if (length > 0) {
+                    return length;
+                }
+                continue;
+            }
+
+            length++;
+        }
+
+        return length;
+    }
+};
+```
+
+## C#
+
+```csharp
+public class Solution {
+    public int LengthOfLastWord(string s) {
+        int length = 0;
+
+        for (int i = s.Length - 1; i >= 0; i--) {
+            if (s[i] == ' ') {
+                if (length > 0) {
+                    return length;
+                }
+                continue;
+            }
+
+            length++;
+        }
+
+        return length;
+    }
+}
+
+```
+
+## JavaScript
+
+```javascript
+/**
+ * @param {string} s
+ * @return {number}
+ */
+var lengthOfLastWord = function (s) {
+    let length = 0;
+
+    for (let i = s.length - 1; i >= 0; i--) {
+        if (s[i] === " ") {
+            if (length > 0) {
+                return length;
+            }
+            continue;
+        }
+
+        length++;
+    }
+
+    return length;
+};
+
+
+```
+
+## Go
+
+```go
+func lengthOfLastWord(s string) int {
+    length := 0
+    
+    for i := len(s) - 1; i >= 0; i-- {
+        if s[i] == ' ' {
+            if length > 0 {
+                return length
+            }
+            continue
+        }
+        
+        length++
+    }
+    
+    return length
 }
 ```
 
@@ -152,7 +243,7 @@ class Solution {
 >
 > 掌握算法是成功的基石，而全方位展示你的才华则是获得垂青的关键。
 >
-> 我们向你推荐 [**Like.dev**](https://www.like.dev) —— 专为程序员打造的“全能型”个人品牌展示平台。
+> 我的另一个项目 [**leader.me**](https://www.leader.me) —— 专为程序员打造的“全能型”个人品牌展示平台。
 >
 > **三位一体（All-In-One）的职场利器：**
 > - 📄 **简历 + 作品集 + 博客：** 将你的 GitHub 项目、技术心得与职场经历完美融合。
@@ -160,7 +251,7 @@ class Solution {
 > - ✨ **顶级行业子域名：** 提供 `name.cto.page`、`name.engineer.dev` 等极具职业含金量的专属域名。
 > - 🔗 **超酷超短个人主页：** 获得极其简练的社交名片，如 `is.bio/yourname` 或 `an.dev/yourname`。
 >
-> [**立即前往 Like.dev 打造你的个人品牌 →**](https://www.like.dev)
+> [**立即前往 leader.me 打造你的个人品牌 →**](https://www.leader.me)
 
 ---
 

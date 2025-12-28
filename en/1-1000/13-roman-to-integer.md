@@ -4,7 +4,7 @@
 >
 > While mastering algorithms is key, showcasing your talent is what gets you hired.
 >
-> We recommend [**Like.dev**](https://www.like.dev) — the ultimate all-in-one personal branding platform for programmers.
+> We recommend [**leader.me**](https://www.leader.me) — the ultimate all-in-one personal branding platform for programmers.
 >
 > **The All-In-One Career Powerhouse:**
 > - 📄 **Resume, Portfolio & Blog:** Integrate your skills, GitHub projects, and writing into one stunning site.
@@ -12,7 +12,7 @@
 > - ✨ **Premium Subdomains:** Stand out with elite tech handles like `name.cto.page` or `name.engineer.dev`.
 > - 🔗 **Cool Short Links:** Get sleek, memorable bio-links like `is.bio/yourname` and `an.dev/yourname`.
 >
-> [**Build Your Programmer Brand at Like.dev →**](https://www.like.dev)
+> [**Build Your Programmer Brand at leader.me →**](https://www.leader.me)
 
 ---
 
@@ -95,12 +95,10 @@ Given a roman numeral, convert it to an integer.
 
 ## Intuition
 
-* The correspondence between characters and values can be represented with a `Map`.
-* The intuition is to add the value to `result` whenever a digit is encountered.
-* But cases like `IV` may occur, so you need to consider whether to process from left to right or from right to left. Which processing direction do you choose?
-    <details><summary>Click to view the answer</summary><p> Processing from right to left is more convenient, because once you see that the current character and the previous character form a specific combination, you can handle it directly. </p></details> 
-* How do you deal with cases like `IV`?
-    <details><summary>Click to view the answer</summary><p> Just handle it in reverse. In the forward direction you do addition, but now you do subtraction. </p></details>
+- The character-to-value mapping can be done using a `Map`.
+- Intuitively, you add the value of each number you encounter to `result`, iterating from left to right.
+- But consider cases like `IV`, where the value of the current character is greater than the value of the previous character. In this case, how should you update the value of `result`?
+<details><summary>Click to view the answer</summary><p>Subtract "the value of the previous character * 2".</p></details>
 
 ## Complexity
 
@@ -113,28 +111,24 @@ Given a roman numeral, convert it to an integer.
 # @param {String} s
 # @return {Integer}
 def roman_to_int(s)
-  symbol_to_value = {
-    'I' => 1,
-    'V' => 5,
-    'X' => 10,
-    'L' => 50,
-    'C' => 100,
-    'D' => 500,
-    'M' => 1000,
+  char_to_num = {
+    "I" => 1,
+    "V" => 5,
+    "X" => 10,
+    "L" => 50,
+    "C" => 100,
+    "D" => 500,
+    "M" => 1000,
   }
   result = 0
-  previous_char = nil
 
-  (s.size - 1).downto(0).each do |i|
-    char = s[i]
-    if ('I' == char && ['V', 'X'].include?(previous_char)) || 
-       ('X' == char && ['L', 'C'].include?(previous_char)) ||
-       ('C' == char && ['D', 'M'].include?(previous_char))
-      result -= symbol_to_value[char]
-    else
-      result += symbol_to_value[char]
+  s.chars.each_with_index do |c, i|
+    result += char_to_num[c]
+    next if i == 0
+    
+    if char_to_num[s[i - 1]] < char_to_num[c]
+      result -= char_to_num[s[i - 1]] * 2
     end
-    previous_char = char
   end
 
   result
@@ -146,29 +140,27 @@ end
 ```python
 class Solution:
     def romanToInt(self, s: str) -> int:
-        symbol_to_value = {
-            'I': 1,
-            'V': 5,
-            'X': 10,
-            'L': 50,
-            'C': 100,
-            'D': 500,
-            'M': 1000,
+        char_to_num = {
+            "I": 1,
+            "V": 5,
+            "X": 10,
+            "L": 50,
+            "C": 100,
+            "D": 500,
+            "M": 1000,
         }
         result = 0
-        previous_char = None
 
-        for i in range(len(s) - 1, -1, -1):
-            char = s[i]
+        for i, c in enumerate(s):
+            result += char_to_num[c]
 
-            if ('I' == char and previous_char in ['V', 'X']) or \
-               ('X' == char and previous_char in ['L', 'C']) or \
-               ('C' == char and previous_char in ['D', 'M']):
-                result -= symbol_to_value[char]
-            else:
-                result += symbol_to_value[char]
-
-            previous_char = char
+            if i == 0:
+                continue
+            
+            # If the previous value is smaller than the current, 
+            # subtract it twice (once because it was added, once for the rule)
+            if char_to_num[s[i - 1]] < char_to_num[c]:
+                result -= char_to_num[s[i - 1]] * 2
 
         return result
 ```
@@ -178,35 +170,188 @@ class Solution:
 ```java
 class Solution {
     public int romanToInt(String s) {
-        Map<Character, Integer> symbolToValue = new HashMap<>();
-        symbolToValue.put('I', 1);
-        symbolToValue.put('V', 5);
-        symbolToValue.put('X', 10);
-        symbolToValue.put('L', 50);
-        symbolToValue.put('C', 100);
-        symbolToValue.put('D', 500);
-        symbolToValue.put('M', 1000);
-        
-        var result = 0;
-        Character previousChar = null;
+        Map<Character, Integer> charToNum = new HashMap<>();
+        charToNum.put('I', 1);
+        charToNum.put('V', 5);
+        charToNum.put('X', 10);
+        charToNum.put('L', 50);
+        charToNum.put('C', 100);
+        charToNum.put('D', 500);
+        charToNum.put('M', 1000);
 
-        for (var i = s.length() - 1; i >= 0; i--) {
-            var currentChar = s.charAt(i);
+        int result = 0;
 
-            if (previousChar != null && (
-                (currentChar == 'I' && (previousChar == 'V' || previousChar == 'X')) ||
-                (currentChar == 'X' && (previousChar == 'L' || previousChar == 'C')) ||
-                (currentChar == 'C' && (previousChar == 'D' || previousChar == 'M')))) {
-                result -= symbolToValue.get(currentChar);
-            } else {
-                result += symbolToValue.get(currentChar);
+        for (int i = 0; i < s.length(); i++) {
+            char c = s.charAt(i);
+            result += charToNum.get(c);
+
+            if (i == 0) {
+                continue;
             }
-            
-            previousChar = currentChar;
+
+            // If previous value is smaller than current, subtract it twice
+            if (charToNum.get(s.charAt(i - 1)) < charToNum.get(c)) {
+                result -= charToNum.get(s.charAt(i - 1)) * 2;
+            }
         }
-        
+
         return result;
     }
+}
+```
+
+## C++
+
+```cpp
+class Solution {
+public:
+    int romanToInt(string s) {
+        unordered_map<char, int> char_to_num = {
+            {'I', 1},
+            {'V', 5},
+            {'X', 10},
+            {'L', 50},
+            {'C', 100},
+            {'D', 500},
+            {'M', 1000}
+        };
+        int result = 0;
+
+        for (int i = 0; i < s.length(); i++) {
+            result += char_to_num[s[i]];
+
+            if (i == 0) continue;
+
+            // If the previous character's value is less than the current,
+            // subtract that previous value twice.
+            if (char_to_num[s[i - 1]] < char_to_num[s[i]]) {
+                result -= char_to_num[s[i - 1]] * 2;
+            }
+        }
+
+        return result;
+    }
+};
+```
+
+## JavaScript
+
+```javascript
+/**
+ * @param {string} s
+ * @return {number}
+ */
+const romanToInt = function(s) {
+    const charToNum = {
+        'I': 1,
+        'V': 5,
+        'X': 10,
+        'L': 50,
+        'C': 100,
+        'D': 500,
+        'M': 1000
+    };
+    let result = 0;
+
+    for (let i = 0; i < s.length; i++) {
+        const currentVal = charToNum[s[i]];
+        result += currentVal;
+
+        if (i === 0) {
+            continue;
+        }
+
+        const prevVal = charToNum[s[i - 1]];
+
+        // If the previous value is smaller than the current, 
+        // subtract it twice (adjusting for the previous addition)
+        if (prevVal < currentVal) {
+            result -= prevVal * 2;
+        }
+    }
+
+    return result;
+};
+```
+
+## C#
+
+```csharp
+public class Solution
+{
+    public int RomanToInt(string s)
+    {
+        var charToNum = new Dictionary<char, int>
+        {
+            {'I', 1},
+            {'V', 5},
+            {'X', 10},
+            {'L', 50},
+            {'C', 100},
+            {'D', 500},
+            {'M', 1000}
+        };
+
+        int result = 0;
+
+        for (int i = 0; i < s.Length; i++)
+        {
+            int currentVal = charToNum[s[i]];
+            result += currentVal;
+
+            if (i == 0)
+            {
+                continue;
+            }
+
+            int prevVal = charToNum[s[i - 1]];
+
+            // If the previous value is less than the current, 
+            // subtract it twice to correct the total.
+            if (prevVal < currentVal)
+            {
+                result -= prevVal * 2;
+            }
+        }
+
+        return result;
+    }
+}
+```
+
+## Go
+
+```go
+func romanToInt(s string) int {
+    charToNum := map[rune]int{
+        'I': 1,
+        'V': 5,
+        'X': 10,
+        'L': 50,
+        'C': 100,
+        'D': 500,
+        'M': 1000,
+    }
+
+    result := 0
+    // Converting string to a slice of runes for easy indexing
+    runes := []rune(s)
+
+    for i, c := range runes {
+        result += charToNum[c]
+
+        if i == 0 {
+            continue
+        }
+
+        // If the previous value is smaller than the current,
+        // subtract it twice (adjusting for the previous addition)
+        if charToNum[runes[i - 1]] < charToNum[c] {
+            result -= charToNum[runes[i - 1]] * 2
+        }
+    }
+
+    return result
 }
 ```
 
@@ -220,7 +365,7 @@ class Solution {
 >
 > While mastering algorithms is key, showcasing your talent is what gets you hired.
 >
-> We recommend [**Like.dev**](https://www.like.dev) — the ultimate all-in-one personal branding platform for programmers.
+> We recommend [**leader.me**](https://www.leader.me) — the ultimate all-in-one personal branding platform for programmers.
 >
 > **The All-In-One Career Powerhouse:**
 > - 📄 **Resume, Portfolio & Blog:** Integrate your skills, GitHub projects, and writing into one stunning site.
@@ -228,7 +373,7 @@ class Solution {
 > - ✨ **Premium Subdomains:** Stand out with elite tech handles like `name.cto.page` or `name.engineer.dev`.
 > - 🔗 **Cool Short Links:** Get sleek, memorable bio-links like `is.bio/yourname` and `an.dev/yourname`.
 >
-> [**Build Your Programmer Brand at Like.dev →**](https://www.like.dev)
+> [**Build Your Programmer Brand at leader.me →**](https://www.leader.me)
 
 ---
 

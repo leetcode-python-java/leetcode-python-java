@@ -4,7 +4,7 @@
 >
 > While mastering algorithms is key, showcasing your talent is what gets you hired.
 >
-> We recommend [**Like.dev**](https://www.like.dev) — the ultimate all-in-one personal branding platform for programmers.
+> We recommend [**leader.me**](https://www.leader.me) — the ultimate all-in-one personal branding platform for programmers.
 >
 > **The All-In-One Career Powerhouse:**
 > - 📄 **Resume, Portfolio & Blog:** Integrate your skills, GitHub projects, and writing into one stunning site.
@@ -12,7 +12,7 @@
 > - ✨ **Premium Subdomains:** Stand out with elite tech handles like `name.cto.page` or `name.engineer.dev`.
 > - 🔗 **Cool Short Links:** Get sleek, memorable bio-links like `is.bio/yourname` and `an.dev/yourname`.
 >
-> [**Build Your Programmer Brand at Like.dev →**](https://www.like.dev)
+> [**Build Your Programmer Brand at leader.me →**](https://www.leader.me)
 
 ---
 
@@ -70,9 +70,10 @@ The `Greedy Algorithm` is a strategy that makes the locally optimal choice at ea
 
 1. Initialize `first` as the first element and `second` as infinity.
 2. Iterate through the array starting from the second element:
-    - If current element > `second`, triplet found → return `true`.
-    - If current element > `first`, update `second` to current element.
-    - Else, update `first` to current element (keeping it the smallest seen so far).
+    - if current element > `second`, then triplet found → return `true`.
+    - else (current element < `second`)
+        - if current element > `first`, update `second` to current element.
+        - else, update `first` to current element (keeping it the smallest seen so far).
 3. If loop completes without finding a triplet, return `false`.
 
 ## Complexity
@@ -92,6 +93,7 @@ class Solution:
             if nums[i] > second:
                 return True
 
+            # Here, nums[i] <= second
             if nums[i] > first:
                 second = nums[i]
             else:
@@ -112,7 +114,8 @@ class Solution {
             if (nums[i] > second) {
                 return true;
             }
-
+            
+            // Here, nums[i] <= second
             if (nums[i] > first) {
                 second = nums[i];
             } else {
@@ -138,6 +141,7 @@ public:
                 return true;
             }
 
+            // Here, nums[i] <= second
             if (nums[i] > first) {
                 second = nums[i];
             } else {
@@ -165,7 +169,8 @@ var increasingTriplet = function (nums) {
     if (nums[i] > second) {
       return true
     }
-    
+
+    // Here, nums[i] <= second
     if (nums[i] > first) {
       second = nums[i]
     } else {
@@ -190,6 +195,7 @@ public class Solution {
                 return true;
             }
 
+            // Here, nums[i] <= second
             if (nums[i] > first) {
                 second = nums[i];
             } else {
@@ -214,6 +220,7 @@ func increasingTriplet(nums []int) bool {
             return true
         }
 
+        // Here, num <= second
         if num > first {
             second = num
         } else {
@@ -239,6 +246,7 @@ def increasing_triplet(nums)
       return true
     end  
     
+    # Here, num <= second
     if num > first
       second = num
     else
@@ -260,7 +268,7 @@ end
 >
 > While mastering algorithms is key, showcasing your talent is what gets you hired.
 >
-> We recommend [**Like.dev**](https://www.like.dev) — the ultimate all-in-one personal branding platform for programmers.
+> We recommend [**leader.me**](https://www.leader.me) — the ultimate all-in-one personal branding platform for programmers.
 >
 > **The All-In-One Career Powerhouse:**
 > - 📄 **Resume, Portfolio & Blog:** Integrate your skills, GitHub projects, and writing into one stunning site.
@@ -268,7 +276,7 @@ end
 > - ✨ **Premium Subdomains:** Stand out with elite tech handles like `name.cto.page` or `name.engineer.dev`.
 > - 🔗 **Cool Short Links:** Get sleek, memorable bio-links like `is.bio/yourname` and `an.dev/yourname`.
 >
-> [**Build Your Programmer Brand at Like.dev →**](https://www.like.dev)
+> [**Build Your Programmer Brand at leader.me →**](https://www.leader.me)
 
 ---
 

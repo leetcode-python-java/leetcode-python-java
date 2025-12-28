@@ -4,7 +4,7 @@
 >
 > While mastering algorithms is key, showcasing your talent is what gets you hired.
 >
-> We recommend [**Like.dev**](https://www.like.dev) — the ultimate all-in-one personal branding platform for programmers.
+> We recommend [**leader.me**](https://www.leader.me) — the ultimate all-in-one personal branding platform for programmers.
 >
 > **The All-In-One Career Powerhouse:**
 > - 📄 **Resume, Portfolio & Blog:** Integrate your skills, GitHub projects, and writing into one stunning site.
@@ -12,7 +12,7 @@
 > - ✨ **Premium Subdomains:** Stand out with elite tech handles like `name.cto.page` or `name.engineer.dev`.
 > - 🔗 **Cool Short Links:** Get sleek, memorable bio-links like `is.bio/yourname` and `an.dev/yourname`.
 >
-> [**Build Your Programmer Brand at Like.dev →**](https://www.like.dev)
+> [**Build Your Programmer Brand at leader.me →**](https://www.leader.me)
 
 ---
 
@@ -56,15 +56,13 @@ The first occurrence is at index 0, so we return 0.</p>
 
 - This kind of question can be solved with one line of code using the built-in `index()`. Obviously, the questioner wants to test our ability to control the loop.
 
-- For `heystack`, traverse each character in turn. There may be two situations:
-    1. First, the character is not equal to the first letter of `needle`. Then process the next character.
-    2. Second, if the character is equal to the first letter of `needle`, continue to compare the next character of `heystack` and `needle` in an internal loop until they are not equal or `needle` has completely matched.
+- For `heystack`, iterate through each character in turn. If the substring from the current character to `needle` is the same as `needle`, return the position of the current character.
 
 - This question is easier to understand by looking at the code directly.
 
 ## Complexity
 
-- Time complexity: `O(N + M)`.
+- Time complexity: `O(N * M)`.
 - Space complexity: `O(1)`.
 
 ## Python
@@ -72,36 +70,37 @@ The first occurrence is at index 0, so we return 0.</p>
 ```python
 class Solution:
     def strStr(self, haystack: str, needle: str) -> int:
-        for i in range(len(haystack)):
-            j = 0
-            
-            while i + j < len(haystack) and haystack[i + j] == needle[j]:
-                j += 1
-
-                if j == len(needle):
-                    return i
-
+        n = len(haystack)
+        m = len(needle)
+        
+        for i in range(n - m + 1):
+            if haystack[i:i + m] == needle:
+                return i
+        
         return -1
 ```
 
 ## JavaScript
 
 ```javascript
-var strStr = function (haystack, needle) {
-  for (let i = 0; i < haystack.length; i++) {
-    let j = 0
-            
-    while (i + j < haystack.length && haystack[i + j] == needle[j]) {
-        j += 1
-
-        if (j == needle.length) {
-            return i
-        }
+/**
+ * @param {string} haystack
+ * @param {string} needle
+ * @return {number}
+ */
+var strStr = function(haystack, needle) {
+  const n = haystack.length;
+  const m = needle.length;
+    
+  for (let i = 0; i <= n - m; i++) {
+    if (haystack.substring(i, i + m) === needle) {
+      return i;
     }
   }
-
-  return -1
+    
+  return -1;
 };
+
 ```
 
 ## Ruby
@@ -111,16 +110,12 @@ var strStr = function (haystack, needle) {
 # @param {String} needle
 # @return {Integer}
 def str_str(haystack, needle)
-  (0...haystack.length).each do |i|
-    j = 0
-    
-    while i + j < haystack.length && haystack[i + j] == needle[j]
-      j += 1
-      
-      return i if j == needle.length
+  (0..haystack.size - needle.size).each do |i|
+    if haystack[i...i + needle.size] == needle
+      return i  
     end
   end
-  
+
   -1
 end
 ```
@@ -222,7 +217,7 @@ public class Solution {
 >
 > While mastering algorithms is key, showcasing your talent is what gets you hired.
 >
-> We recommend [**Like.dev**](https://www.like.dev) — the ultimate all-in-one personal branding platform for programmers.
+> We recommend [**leader.me**](https://www.leader.me) — the ultimate all-in-one personal branding platform for programmers.
 >
 > **The All-In-One Career Powerhouse:**
 > - 📄 **Resume, Portfolio & Blog:** Integrate your skills, GitHub projects, and writing into one stunning site.
@@ -230,7 +225,7 @@ public class Solution {
 > - ✨ **Premium Subdomains:** Stand out with elite tech handles like `name.cto.page` or `name.engineer.dev`.
 > - 🔗 **Cool Short Links:** Get sleek, memorable bio-links like `is.bio/yourname` and `an.dev/yourname`.
 >
-> [**Build Your Programmer Brand at Like.dev →**](https://www.like.dev)
+> [**Build Your Programmer Brand at leader.me →**](https://www.leader.me)
 
 ---
 

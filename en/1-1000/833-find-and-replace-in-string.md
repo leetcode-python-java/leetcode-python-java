@@ -4,7 +4,7 @@
 >
 > While mastering algorithms is key, showcasing your talent is what gets you hired.
 >
-> We recommend [**Like.dev**](https://www.like.dev) — the ultimate all-in-one personal branding platform for programmers.
+> We recommend [**leader.me**](https://www.leader.me) — the ultimate all-in-one personal branding platform for programmers.
 >
 > **The All-In-One Career Powerhouse:**
 > - 📄 **Resume, Portfolio & Blog:** Integrate your skills, GitHub projects, and writing into one stunning site.
@@ -12,7 +12,7 @@
 > - ✨ **Premium Subdomains:** Stand out with elite tech handles like `name.cto.page` or `name.engineer.dev`.
 > - 🔗 **Cool Short Links:** Get sleek, memorable bio-links like `is.bio/yourname` and `an.dev/yourname`.
 >
-> [**Build Your Programmer Brand at Like.dev →**](https://www.like.dev)
+> [**Build Your Programmer Brand at leader.me →**](https://www.leader.me)
 
 ---
 
@@ -100,6 +100,7 @@ This question looks simple, but it takes a lot of time to do it.
 ```python
 class Solution:
     def findReplaceString(self, s: str, indices: List[int], sources: List[str], targets: List[str]) -> str:
+        # Each item of this array is a string, not a char! We won't change the size of this array.
         result = list(s)
 
         for i in range(len(indices)):
@@ -115,6 +116,32 @@ class Solution:
         return ''.join(result)
 ```
 
+## Ruby
+
+```ruby
+# @param {String} s
+# @param {Integer[]} indices
+# @param {String[]} sources
+# @param {String[]} targets
+# @return {String}
+def find_replace_string(s, indices, sources, targets)
+  # Each item of this array is a string, not a char! We won't change the size of this array.
+  result = s.clone.chars
+
+  indices.each_with_index do |index, i|
+    if s[index...index + sources[i].size] == sources[i]
+      result[index] = targets[i] # The first one keep the whole targets[i]
+
+      (1...sources[i].size).each do |j|
+        result[index + j] = ""
+      end
+    end
+  end
+
+  result.join("")
+end
+```
+
 ## Other languages
 
 ```java
@@ -125,7 +152,7 @@ class Solution:
 >
 > While mastering algorithms is key, showcasing your talent is what gets you hired.
 >
-> We recommend [**Like.dev**](https://www.like.dev) — the ultimate all-in-one personal branding platform for programmers.
+> We recommend [**leader.me**](https://www.leader.me) — the ultimate all-in-one personal branding platform for programmers.
 >
 > **The All-In-One Career Powerhouse:**
 > - 📄 **Resume, Portfolio & Blog:** Integrate your skills, GitHub projects, and writing into one stunning site.
@@ -133,7 +160,7 @@ class Solution:
 > - ✨ **Premium Subdomains:** Stand out with elite tech handles like `name.cto.page` or `name.engineer.dev`.
 > - 🔗 **Cool Short Links:** Get sleek, memorable bio-links like `is.bio/yourname` and `an.dev/yourname`.
 >
-> [**Build Your Programmer Brand at Like.dev →**](https://www.like.dev)
+> [**Build Your Programmer Brand at leader.me →**](https://www.leader.me)
 
 ---
 

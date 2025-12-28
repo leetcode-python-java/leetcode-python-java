@@ -4,7 +4,7 @@
 >
 > While mastering algorithms is key, showcasing your talent is what gets you hired.
 >
-> We recommend [**Like.dev**](https://www.like.dev) — the ultimate all-in-one personal branding platform for programmers.
+> We recommend [**leader.me**](https://www.leader.me) — the ultimate all-in-one personal branding platform for programmers.
 >
 > **The All-In-One Career Powerhouse:**
 > - 📄 **Resume, Portfolio & Blog:** Integrate your skills, GitHub projects, and writing into one stunning site.
@@ -12,7 +12,7 @@
 > - ✨ **Premium Subdomains:** Stand out with elite tech handles like `name.cto.page` or `name.engineer.dev`.
 > - 🔗 **Cool Short Links:** Get sleek, memorable bio-links like `is.bio/yourname` and `an.dev/yourname`.
 >
-> [**Build Your Programmer Brand at Like.dev →**](https://www.like.dev)
+> [**Build Your Programmer Brand at leader.me →**](https://www.leader.me)
 
 ---
 
@@ -63,9 +63,10 @@ A **word** is a maximal substring consisting of non-space characters only.
 - Since the last word is at the end, solving it from the front isn’t very convenient. Is there another way?
 
 <details><summary>Click to view the answer</summary><p>
-**Method 1:** Solve it directly by traversing from the end to the beginning.
-**Method 2:** Reverse the string `s` and then find the length of the first word.
-In this problem, we use **Method 2**. After completing Method 2, it’s recommended to also try implementing Method 1.
+You can solve this by traversing the string **backwards**. There are only two cases to consider: whether the current character is a space or not.
+
+* **Initially**, if you encounter a space, skip it and move to the next character. If you encounter a non-space character, increment the `length`.
+* **If `length > 0`**, it means you have already encountered letters. At this point, if the current character is a space, you can return the result.
 </p></details>
 
 ## Complexity
@@ -78,19 +79,17 @@ In this problem, we use **Method 2**. After completing Method 2, it’s recommen
 ```python
 class Solution:
     def lengthOfLastWord(self, s: str) -> int:
-        s = s[::-1]  # Reverse the string
-
-        start_index = 0
-
-        while start_index < len(s) and s[start_index] == ' ':
-            start_index += 1
-
-        end_index = start_index
-
-        while end_index < len(s) and s[end_index] != ' ':
-            end_index += 1
-
-        return end_index - start_index
+        length = 0
+    
+        for i in range(len(s) - 1, -1, -1):
+            if s[i] == " ":
+                if length > 0:
+                    return length
+                continue
+            
+            length += 1
+                
+        return length
 ```
 
 ## Ruby
@@ -99,21 +98,18 @@ class Solution:
 # @param {String} s
 # @return {Integer}
 def length_of_last_word(s)
-  s.reverse!
+  length = 0
 
-  start_index = 0
+  (s.size - 1).downto(0) do |i|
+    if s[i] == " "
+      return length if length > 0
+      next
+    end
 
-  while s[start_index] == ' '
-    start_index += 1
+    length += 1
   end
 
-  end_index = start_index
-
-  while end_index < s.size && s[end_index] != ' '
-    end_index += 1
-  end
-
-  end_index - start_index
+  length
 end
 ```
 
@@ -122,23 +118,119 @@ end
 ```java
 class Solution {
     public int lengthOfLastWord(String s) {
-        // Reverse the string
-        var sb = new StringBuilder(s);
-        String reversed = sb.reverse().toString();
-
-        var startIndex = 0;
-        // Skip leading spaces (which were trailing spaces in original)
-        while (startIndex < reversed.length() && reversed.charAt(startIndex) == ' ') {
-            startIndex++;
+        int length = 0;
+    
+        for (int i = s.length() - 1; i >= 0; i--) {
+            if (s.charAt(i) == ' ') {
+                if (length > 0) {
+                    return length;
+                }
+                continue;
+            }
+            
+            length++;
         }
-
-        var endIndex = startIndex;
-        while (endIndex < reversed.length() && reversed.charAt(endIndex) != ' ') {
-            endIndex++;
-        }
-
-        return endIndex - startIndex;
+        
+        return length;
     }
+}
+
+```
+
+## C++
+
+```cpp
+class Solution {
+public:
+    int lengthOfLastWord(string s) {
+        int length = 0;
+        int n = s.size();
+
+        for (int i = n - 1; i >= 0; i--) {
+            if (s[i] == ' ') {
+                if (length > 0) {
+                    return length;
+                }
+                continue;
+            }
+
+            length++;
+        }
+
+        return length;
+    }
+};
+```
+
+## C#
+
+```csharp
+public class Solution {
+    public int LengthOfLastWord(string s) {
+        int length = 0;
+
+        for (int i = s.Length - 1; i >= 0; i--) {
+            if (s[i] == ' ') {
+                if (length > 0) {
+                    return length;
+                }
+                continue;
+            }
+
+            length++;
+        }
+
+        return length;
+    }
+}
+
+```
+
+## JavaScript
+
+```javascript
+/**
+ * @param {string} s
+ * @return {number}
+ */
+var lengthOfLastWord = function (s) {
+    let length = 0;
+
+    for (let i = s.length - 1; i >= 0; i--) {
+        if (s[i] === " ") {
+            if (length > 0) {
+                return length;
+            }
+            continue;
+        }
+
+        length++;
+    }
+
+    return length;
+};
+
+
+```
+
+## Go
+
+```go
+func lengthOfLastWord(s string) int {
+    length := 0
+    
+    for i := len(s) - 1; i >= 0; i-- {
+        if s[i] == ' ' {
+            if length > 0 {
+                return length
+            }
+            continue
+        }
+        
+        length++
+    }
+    
+    return length
 }
 ```
 
@@ -152,7 +244,7 @@ class Solution {
 >
 > While mastering algorithms is key, showcasing your talent is what gets you hired.
 >
-> We recommend [**Like.dev**](https://www.like.dev) — the ultimate all-in-one personal branding platform for programmers.
+> We recommend [**leader.me**](https://www.leader.me) — the ultimate all-in-one personal branding platform for programmers.
 >
 > **The All-In-One Career Powerhouse:**
 > - 📄 **Resume, Portfolio & Blog:** Integrate your skills, GitHub projects, and writing into one stunning site.
@@ -160,7 +252,7 @@ class Solution {
 > - ✨ **Premium Subdomains:** Stand out with elite tech handles like `name.cto.page` or `name.engineer.dev`.
 > - 🔗 **Cool Short Links:** Get sleek, memorable bio-links like `is.bio/yourname` and `an.dev/yourname`.
 >
-> [**Build Your Programmer Brand at Like.dev →**](https://www.like.dev)
+> [**Build Your Programmer Brand at leader.me →**](https://www.leader.me)
 
 ---
 

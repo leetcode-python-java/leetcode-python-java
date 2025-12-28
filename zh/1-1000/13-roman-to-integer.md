@@ -4,7 +4,7 @@
 >
 > 掌握算法是成功的基石，而全方位展示你的才华则是获得垂青的关键。
 >
-> 我们向你推荐 [**Like.dev**](https://www.like.dev) —— 专为程序员打造的“全能型”个人品牌展示平台。
+> 我的另一个项目 [**leader.me**](https://www.leader.me) —— 专为程序员打造的“全能型”个人品牌展示平台。
 >
 > **三位一体（All-In-One）的职场利器：**
 > - 📄 **简历 + 作品集 + 博客：** 将你的 GitHub 项目、技术心得与职场经历完美融合。
@@ -12,7 +12,7 @@
 > - ✨ **顶级行业子域名：** 提供 `name.cto.page`、`name.engineer.dev` 等极具职业含金量的专属域名。
 > - 🔗 **超酷超短个人主页：** 获得极其简练的社交名片，如 `is.bio/yourname` 或 `an.dev/yourname`。
 >
-> [**立即前往 Like.dev 打造你的个人品牌 →**](https://www.like.dev)
+> [**立即前往 leader.me 打造你的个人品牌 →**](https://www.leader.me)
 
 ---
 
@@ -98,11 +98,10 @@ M             1000
 ## 思路
 
 - 字符与数值的对应关系可以用 `Map`。 
-- 直觉是见到一个数字就把值加到 `result` 中。
-- 但可能出现类似 `IV` 这样的情况，要考虑是从左到右处理还是从右到左处理这种情况。你选择的处理方向是？ 
-    <details><summary>点击查看答案</summary><p>从右向左处理比较方便，因为一但看到当前字符与前一个字符是特定组合，就可以直接处理。</p></details>
-- 如何处理 `IV` 这样的情况呢？
-    <details><summary>点击查看答案</summary><p>反向处理就好了。正向是做加法，现在做减法。</p></details>
+- 直觉是见到一个数字就把值加到 `result` 中，从左向右遍历。
+- 但考虑出现类似 `IV` 这样的情况，即“当前的字符对应的值”大于“前一个字符对应的值”。这时，应该如何进行 `result` 数值更新？
+    <details><summary>点击查看答案</summary><p>减去“前一个字符对应的值 * 2”。</p></details>
+
 
 ## 复杂度
 
@@ -115,28 +114,24 @@ M             1000
 # @param {String} s
 # @return {Integer}
 def roman_to_int(s)
-  symbol_to_value = {
-    'I' => 1,
-    'V' => 5,
-    'X' => 10,
-    'L' => 50,
-    'C' => 100,
-    'D' => 500,
-    'M' => 1000,
+  char_to_num = {
+    "I" => 1,
+    "V" => 5,
+    "X" => 10,
+    "L" => 50,
+    "C" => 100,
+    "D" => 500,
+    "M" => 1000,
   }
   result = 0
-  previous_char = nil
 
-  (s.size - 1).downto(0).each do |i|
-    char = s[i]
-    if ('I' == char && ['V', 'X'].include?(previous_char)) || 
-       ('X' == char && ['L', 'C'].include?(previous_char)) ||
-       ('C' == char && ['D', 'M'].include?(previous_char))
-      result -= symbol_to_value[char]
-    else
-      result += symbol_to_value[char]
+  s.chars.each_with_index do |c, i|
+    result += char_to_num[c]
+    next if i == 0
+    
+    if char_to_num[s[i - 1]] < char_to_num[c]
+      result -= char_to_num[s[i - 1]] * 2
     end
-    previous_char = char
   end
 
   result
@@ -148,29 +143,27 @@ end
 ```python
 class Solution:
     def romanToInt(self, s: str) -> int:
-        symbol_to_value = {
-            'I': 1,
-            'V': 5,
-            'X': 10,
-            'L': 50,
-            'C': 100,
-            'D': 500,
-            'M': 1000,
+        char_to_num = {
+            "I": 1,
+            "V": 5,
+            "X": 10,
+            "L": 50,
+            "C": 100,
+            "D": 500,
+            "M": 1000,
         }
         result = 0
-        previous_char = None
 
-        for i in range(len(s) - 1, -1, -1):
-            char = s[i]
+        for i, c in enumerate(s):
+            result += char_to_num[c]
 
-            if ('I' == char and previous_char in ['V', 'X']) or \
-               ('X' == char and previous_char in ['L', 'C']) or \
-               ('C' == char and previous_char in ['D', 'M']):
-                result -= symbol_to_value[char]
-            else:
-                result += symbol_to_value[char]
-
-            previous_char = char
+            if i == 0:
+                continue
+            
+            # If the previous value is smaller than the current, 
+            # subtract it twice (once because it was added, once for the rule)
+            if char_to_num[s[i - 1]] < char_to_num[c]:
+                result -= char_to_num[s[i - 1]] * 2
 
         return result
 ```
@@ -180,35 +173,188 @@ class Solution:
 ```java
 class Solution {
     public int romanToInt(String s) {
-        Map<Character, Integer> symbolToValue = new HashMap<>();
-        symbolToValue.put('I', 1);
-        symbolToValue.put('V', 5);
-        symbolToValue.put('X', 10);
-        symbolToValue.put('L', 50);
-        symbolToValue.put('C', 100);
-        symbolToValue.put('D', 500);
-        symbolToValue.put('M', 1000);
-        
-        var result = 0;
-        Character previousChar = null;
+        Map<Character, Integer> charToNum = new HashMap<>();
+        charToNum.put('I', 1);
+        charToNum.put('V', 5);
+        charToNum.put('X', 10);
+        charToNum.put('L', 50);
+        charToNum.put('C', 100);
+        charToNum.put('D', 500);
+        charToNum.put('M', 1000);
 
-        for (var i = s.length() - 1; i >= 0; i--) {
-            var currentChar = s.charAt(i);
+        int result = 0;
 
-            if (previousChar != null && (
-                (currentChar == 'I' && (previousChar == 'V' || previousChar == 'X')) ||
-                (currentChar == 'X' && (previousChar == 'L' || previousChar == 'C')) ||
-                (currentChar == 'C' && (previousChar == 'D' || previousChar == 'M')))) {
-                result -= symbolToValue.get(currentChar);
-            } else {
-                result += symbolToValue.get(currentChar);
+        for (int i = 0; i < s.length(); i++) {
+            char c = s.charAt(i);
+            result += charToNum.get(c);
+
+            if (i == 0) {
+                continue;
             }
-            
-            previousChar = currentChar;
+
+            // If previous value is smaller than current, subtract it twice
+            if (charToNum.get(s.charAt(i - 1)) < charToNum.get(c)) {
+                result -= charToNum.get(s.charAt(i - 1)) * 2;
+            }
         }
-        
+
         return result;
     }
+}
+```
+
+## C++
+
+```cpp
+class Solution {
+public:
+    int romanToInt(string s) {
+        unordered_map<char, int> char_to_num = {
+            {'I', 1},
+            {'V', 5},
+            {'X', 10},
+            {'L', 50},
+            {'C', 100},
+            {'D', 500},
+            {'M', 1000}
+        };
+        int result = 0;
+
+        for (int i = 0; i < s.length(); i++) {
+            result += char_to_num[s[i]];
+
+            if (i == 0) continue;
+
+            // If the previous character's value is less than the current,
+            // subtract that previous value twice.
+            if (char_to_num[s[i - 1]] < char_to_num[s[i]]) {
+                result -= char_to_num[s[i - 1]] * 2;
+            }
+        }
+
+        return result;
+    }
+};
+```
+
+## JavaScript
+
+```javascript
+/**
+ * @param {string} s
+ * @return {number}
+ */
+const romanToInt = function(s) {
+    const charToNum = {
+        'I': 1,
+        'V': 5,
+        'X': 10,
+        'L': 50,
+        'C': 100,
+        'D': 500,
+        'M': 1000
+    };
+    let result = 0;
+
+    for (let i = 0; i < s.length; i++) {
+        const currentVal = charToNum[s[i]];
+        result += currentVal;
+
+        if (i === 0) {
+            continue;
+        }
+
+        const prevVal = charToNum[s[i - 1]];
+
+        // If the previous value is smaller than the current, 
+        // subtract it twice (adjusting for the previous addition)
+        if (prevVal < currentVal) {
+            result -= prevVal * 2;
+        }
+    }
+
+    return result;
+};
+```
+
+## C#
+
+```csharp
+public class Solution
+{
+    public int RomanToInt(string s)
+    {
+        var charToNum = new Dictionary<char, int>
+        {
+            {'I', 1},
+            {'V', 5},
+            {'X', 10},
+            {'L', 50},
+            {'C', 100},
+            {'D', 500},
+            {'M', 1000}
+        };
+
+        int result = 0;
+
+        for (int i = 0; i < s.Length; i++)
+        {
+            int currentVal = charToNum[s[i]];
+            result += currentVal;
+
+            if (i == 0)
+            {
+                continue;
+            }
+
+            int prevVal = charToNum[s[i - 1]];
+
+            // If the previous value is less than the current, 
+            // subtract it twice to correct the total.
+            if (prevVal < currentVal)
+            {
+                result -= prevVal * 2;
+            }
+        }
+
+        return result;
+    }
+}
+```
+
+## Go
+
+```go
+func romanToInt(s string) int {
+    charToNum := map[rune]int{
+        'I': 1,
+        'V': 5,
+        'X': 10,
+        'L': 50,
+        'C': 100,
+        'D': 500,
+        'M': 1000,
+    }
+
+    result := 0
+    // Converting string to a slice of runes for easy indexing
+    runes := []rune(s)
+
+    for i, c := range runes {
+        result += charToNum[c]
+
+        if i == 0 {
+            continue
+        }
+
+        // If the previous value is smaller than the current,
+        // subtract it twice (adjusting for the previous addition)
+        if charToNum[runes[i - 1]] < charToNum[c] {
+            result -= charToNum[runes[i - 1]] * 2
+        }
+    }
+
+    return result
 }
 ```
 
@@ -222,7 +368,7 @@ class Solution {
 >
 > 掌握算法是成功的基石，而全方位展示你的才华则是获得垂青的关键。
 >
-> 我们向你推荐 [**Like.dev**](https://www.like.dev) —— 专为程序员打造的“全能型”个人品牌展示平台。
+> 我的另一个项目 [**leader.me**](https://www.leader.me) —— 专为程序员打造的“全能型”个人品牌展示平台。
 >
 > **三位一体（All-In-One）的职场利器：**
 > - 📄 **简历 + 作品集 + 博客：** 将你的 GitHub 项目、技术心得与职场经历完美融合。
@@ -230,7 +376,7 @@ class Solution {
 > - ✨ **顶级行业子域名：** 提供 `name.cto.page`、`name.engineer.dev` 等极具职业含金量的专属域名。
 > - 🔗 **超酷超短个人主页：** 获得极其简练的社交名片，如 `is.bio/yourname` 或 `an.dev/yourname`。
 >
-> [**立即前往 Like.dev 打造你的个人品牌 →**](https://www.like.dev)
+> [**立即前往 leader.me 打造你的个人品牌 →**](https://www.leader.me)
 
 ---
 
