@@ -1,19 +1,17 @@
-
 # leetcode-python-java
 
 > 🚀 **Level Up Your Developer Identity**
 >
 > While mastering algorithms is key, showcasing your talent is what gets you hired.
 > 
-> We recommend [**Like.dev**](https://www.like.dev) — the ultimate all-in-one personal branding platform for programmers.
+> We recommend [**that.dev**](https://www.that.dev) — the ultimate all-in-one personal branding platform for programmers.
 >
 > **The All-In-One Career Powerhouse:**
 > - 📄 **Resume, Portfolio & Blog:** Integrate your skills, GitHub projects, and writing into one stunning site.
 > - 🌐 **Free Custom Domain:** Bind your own personal domain for free—forever.
-> - ✨ **Premium Subdomains:** Stand out with elite tech handles like `name.cto.page` or `name.engineer.dev`.
-> - 🔗 **Cool Short Links:** Get sleek, memorable bio-links like `is.bio/yourname` and `an.dev/yourname`.
+> - ✨ **Premium Subdomains:** Stand out with elite tech handle like `yourname.that.dev`.
 >
-> [**Build Your Programmer Brand at Like.dev →**](https://www.like.dev)
+> [**Build Your Programmer Brand at that.dev →**](https://www.that.dev)
 
 ---
 
@@ -98,7 +96,7 @@ You can skip the more difficult problems and do them later.
 
 ## Optional problems
 - <a name="13"></a>[13. Roman to Integer](en/1-1000/13-roman-to-integer.md) Python, Java, C++, JavaScript, C#, Go, Ruby. [中文](zh/1-1000/13-roman-to-integer.md)
-- <a name="58"></a>[58. Length of Last Word](en/1-1000/58-length-of-last-word.md) Python, Java, Ruby. [中文](zh/1-1000/58-length-of-last-word.md)
+- <a name="58"></a>[58. Length of Last Word](en/1-1000/58-length-of-last-word.md) Python, Java, C++, JavaScript, C#, Go, Ruby. [中文](zh/1-1000/58-length-of-last-word.md)
 - <a name="14"></a>[14. Longest Common Prefix](en/1-1000/14-longest-common-prefix.md) Python, Java, Ruby. [中文](zh/1-1000/14-longest-common-prefix.md)
 - <a name="125"></a>[125. Valid Palindrome](en/1-1000/125-valid-palindrome.md) Python, Java, Ruby. [中文](zh/1-1000/125-valid-palindrome.md)
 
@@ -211,12 +209,11 @@ More LeetCode problems and solutions will be added soon. Updated every week.
 >
 > While mastering algorithms is key, showcasing your talent is what gets you hired.
 > 
-> We recommend [**Like.dev**](https://www.like.dev) — the ultimate all-in-one personal branding platform for programmers.
+> We recommend [**that.dev**](https://www.that.dev) — the ultimate all-in-one personal branding platform for programmers.
 >
 > **The All-In-One Career Powerhouse:**
 > - 📄 **Resume, Portfolio & Blog:** Integrate your skills, GitHub projects, and writing into one stunning site.
 > - 🌐 **Free Custom Domain:** Bind your own personal domain for free—forever.
-> - ✨ **Premium Subdomains:** Stand out with elite tech handles like `name.cto.page` or `name.engineer.dev`.
-> - 🔗 **Cool Short Links:** Get sleek, memorable bio-links like `is.bio/yourname` and `an.dev/yourname`.
+> - ✨ **Premium Subdomains:** Stand out with elite tech handle like `yourname.that.dev`.
 >
-> [**Build Your Programmer Brand at Like.dev →**](https://www.like.dev)
+> [**Build Your Programmer Brand at that.dev →**](https://www.that.dev)
