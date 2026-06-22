@@ -1,21 +1,8 @@
 # 238. 除自身以外数组的乘积 - LeetCode Python/Java/C++/JS/C#/Go/Ruby 题解
 
-> 🚀 **打造你的开发者个人IP**
->
-> 掌握算法是成功的基石，而全方位展示你的才华则是获得垂青的关键。
->
-> 我的另一个项目 [**leader.me**](https://www.leader.me) —— 专为程序员打造的“全能型”个人品牌展示平台。
->
-> **三位一体（All-In-One）的职场利器：**
-> - 📄 **简历 + 作品集 + 博客：** 将你的 GitHub 项目、技术心得与职场经历完美融合。
-> - 🌐 **永久免费自定义域名：** 支持绑定你自己的独立域名，且该功能永久免费。
-> - ✨ **顶级行业子域名：** 提供 `name.leader.me`，极具职业含金量的专属域名。
->
-> [**立即前往 leader.me 打造你的个人品牌 →**](https://www.leader.me)
+> [**前往 leader.me 打造你的开发者个人IP →**](https://www.leader.me)
 
----
-
-访问原文链接：[238. 除自身以外数组的乘积 - LeetCode Python/Java/C++/JS/C#/Go/Ruby 题解](https://leetcode.blog/zh/leetcode/238-product-of-array-except-self)，体验更佳！
+访问原文链接：[238. 除自身以外数组的乘积 - LeetCode Python/Java/C++/JS/C#/Go/Ruby 题解](https://www.leader.me/leetcode/zh/solutions/238-product-of-array-except-self)，体验更佳！
 
 力扣链接：[238. 除自身以外数组的乘积](https://leetcode.cn/problems/product-of-array-except-self), 难度等级：**中等**。
 
@@ -572,7 +559,7 @@ func productExceptSelf(nums []int) []int {
 
 ---
 
-访问原文链接：[238. 除自身以外数组的乘积 - LeetCode Python/Java/C++/JS/C#/Go/Ruby 题解](https://leetcode.blog/zh/leetcode/238-product-of-array-except-self)，体验更佳！
+访问原文链接：[238. 除自身以外数组的乘积 - LeetCode Python/Java/C++/JS/C#/Go/Ruby 题解](https://www.leader.me/leetcode/zh/solutions/238-product-of-array-except-self)，体验更佳！
 
 GitHub 仓库: [leetcode-python-java](https://github.com/leetcode-python-java/leetcode-python-java).
 

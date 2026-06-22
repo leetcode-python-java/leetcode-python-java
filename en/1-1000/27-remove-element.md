@@ -1,21 +1,8 @@
 # 27. Remove Element - LeetCode Python/Java/C++/JS/C#/Go/Ruby Solutions
 
-> 🚀 **Level Up Your Developer Identity**
->
-> While mastering algorithms is key, showcasing your talent is what gets you hired.
->
-> We recommend [**leader.me**](https://www.leader.me) — the ultimate all-in-one personal branding platform for programmers.
->
-> **The All-In-One Career Powerhouse:**
-> - 📄 **Resume, Portfolio & Blog:** Integrate your skills, GitHub projects, and writing into one stunning site.
-> - 🌐 **Free Custom Domain:** Bind your own personal domain for free—forever.
-> - ✨ **Premium Subdomains:** Stand out with elite tech handle like `name.leader.me`.
->
 > [**Build Your Programmer Brand at leader.me →**](https://www.leader.me)
 
----
-
-Visit original link: [27. Remove Element - LeetCode Python/Java/C++/JS/C#/Go/Ruby Solutions](https://leetcode.blog/en/leetcode/27-remove-element) for a better experience!
+Visit original link: [27. Remove Element - LeetCode Python/Java/C++/JS/C#/Go/Ruby Solutions](https://www.leader.me/leetcode/en/solutions/27-remove-element) for a better experience!
 
 LeetCode link: [27. Remove Element](https://leetcode.com/problems/remove-element), difficulty: **Easy**.
 
@@ -458,7 +445,7 @@ end
 
 ---
 
-Visit original link: [27. Remove Element - LeetCode Python/Java/C++/JS/C#/Go/Ruby Solutions](https://leetcode.blog/en/leetcode/27-remove-element) for a better experience!
+Visit original link: [27. Remove Element - LeetCode Python/Java/C++/JS/C#/Go/Ruby Solutions](https://www.leader.me/leetcode/en/solutions/27-remove-element) for a better experience!
 
 GitHub repository: [leetcode-python-java](https://github.com/leetcode-python-java/leetcode-python-java).
 
