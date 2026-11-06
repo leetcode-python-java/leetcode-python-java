@@ -1,8 +1,8 @@
 # 119. Pascal's Triangle II - LeetCode Python/Java/C++/JS/C#/Go/Ruby Solutions
 
-> [**Build Your Programmer Brand at leader.me →**](https://www.leader.me)
+> [**Build Your Programmer Brand at coder.id →**](https://www.coder.id)
 
-Visit original link: [119. Pascal's Triangle II - LeetCode Python/Java/C++/JS/C#/Go/Ruby Solutions](https://www.leader.me/leetcode/en/solutions/119-pascals-triangle-ii) for a better experience!
+Visit original link: [119. Pascal's Triangle II - LeetCode Python/Java/C++/JS/C#/Go/Ruby Solutions](https://www.coder.id/leetcode/en/solutions/119-pascals-triangle-ii) for a better experience!
 
 LeetCode link: [119. Pascal's Triangle II](https://leetcode.com/problems/pascals-triangle-ii), difficulty: **Easy**.
 
@@ -293,18 +293,18 @@ class Solution {
 >
 > While mastering algorithms is key, showcasing your talent is what gets you hired.
 >
-> We recommend [**leader.me**](https://www.leader.me) — the ultimate all-in-one personal branding platform for programmers.
+> We recommend [**coder.id**](https://www.coder.id) — the ultimate all-in-one personal branding platform for programmers.
 >
 > **The All-In-One Career Powerhouse:**
 > - 📄 **Resume, Portfolio & Blog:** Integrate your skills, GitHub projects, and writing into one stunning site.
 > - 🌐 **Free Custom Domain:** Bind your own personal domain for free—forever.
-> - ✨ **Premium Subdomains:** Stand out with elite tech handle like `name.leader.me`.
+> - ✨ **Premium Subdomains:** Stand out with elite tech handle like `name.coder.id`.
 >
-> [**Build Your Programmer Brand at leader.me →**](https://www.leader.me)
+> [**Build Your Programmer Brand at coder.id →**](https://www.coder.id)
 
 ---
 
-Visit original link: [119. Pascal's Triangle II - LeetCode Python/Java/C++/JS/C#/Go/Ruby Solutions](https://www.leader.me/leetcode/en/solutions/119-pascals-triangle-ii) for a better experience!
+Visit original link: [119. Pascal's Triangle II - LeetCode Python/Java/C++/JS/C#/Go/Ruby Solutions](https://www.coder.id/leetcode/en/solutions/119-pascals-triangle-ii) for a better experience!
 
 GitHub repository: [leetcode-python-java](https://github.com/leetcode-python-java/leetcode-python-java).
 
