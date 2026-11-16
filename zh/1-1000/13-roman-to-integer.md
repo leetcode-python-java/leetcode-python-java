@@ -127,6 +127,7 @@ end
 ## Python
 
 ```python
+# Solution 1.
 class Solution:
     def romanToInt(self, s: str) -> int:
         char_to_num = {
@@ -152,6 +153,24 @@ class Solution:
                 result -= char_to_num[s[i - 1]] * 2
 
         return result
+
+
+# Solution 2
+class Solution:
+    def romanToInt(self, s: str) -> int:
+        ans = 0
+        r_to_v = {'I': 1, 'V': 5, 'X': 10, 'L': 50, 'C': 100, 'D': 500, 'M': 1000}
+        prev = None
+
+        for i in range(len(s) - 1, -1, -1): # iterate from right to left
+            value = r_to_v[s[i]]
+            if prev and prev // value in (5, 10):
+                ans -= value
+            else:
+                ans += value
+            prev = value
+
+        return ans
 ```
 
 ## Java

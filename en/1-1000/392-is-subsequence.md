@@ -4,7 +4,7 @@
 
 Visit original link: [392. Is Subsequence - LeetCode Python/Java/C++/JS/C#/Go/Ruby Solutions](https://www.coder.id/leetcode/en/solutions/392-is-subsequence) for a better experience!
 
-LeetCode link: [392. Is Subsequence](https://leetcode.com/problems/is-subsequence), difficulty: **Medium**.
+LeetCode link: [392. Is Subsequence](https://leetcode.com/problems/is-subsequence), difficulty: **Easy**.
 
 ## LeetCode description of "392. Is Subsequence"
 

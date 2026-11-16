@@ -47,7 +47,7 @@ struct Node {
 * 树中的节点数在范围 `[0, 6000]` 内
 * `-100 <= Node.val <= 100`
 
-## 思路
+## 思路 1
 
 我们需要连接同一层的节点。使用队列的标准广度优先搜索（BFS）需要 O(N) 的空间。然而，题目要求 O(1) 的额外空间。注意到一旦某一层的 `next` 指针被完全连接，它就形成了一个链表。我们可以将当前层作为链表进行遍历，找到所有子节点并将它们连接起来，形成下一层的链表。通过为下一层使用一个哑节点（dummy node），我们可以很容易地跟踪下一层的起始位置。
 
@@ -640,6 +640,62 @@ class Solution {
         return root
     }
 }
+```
+
+## Other languages
+
+```java
+// Welcome to create a PR to complete the code of this language, thanks!
+```
+
+## 思路 2
+
+
+
+## 复杂度
+
+- 时间复杂度: `O(n)`.
+- 空间复杂度: `O(n)`.
+
+## Python
+
+```python
+"""
+# Definition for a Node.
+class Node:
+    def __init__(self, val: int = 0, left: 'Node' = None, right: 'Node' = None, next: 'Node' = None):
+        self.val = val
+        self.left = left
+        self.right = right
+        self.next = next
+"""
+
+class Solution:
+    def connect(self, root: 'Node') -> 'Node':
+        if root is None:
+            return
+
+        queue = deque([root]) # key 1. Breadth First Search need a queue.
+
+        while queue:
+            size = len(queue)
+            prev = None
+            
+            for _ in range(size): # key 2: Go through all nodes (previous level) in queue.
+                node = queue.popleft()
+
+                if prev:
+                    prev.next = node # key 3
+
+                prev = node # key 4
+
+                if node.left:
+                    queue.append(node.left)
+
+                if node.right:
+                    queue.append(node.right)
+        
+        return root
 ```
 
 ## Other languages

@@ -94,6 +94,25 @@ class Solution:
             else:
                 nums1[k] = nums1[i]
                 i -= 1
+
+
+# Solution two.
+class Solution:
+    def merge(self, nums1: list[int], m: int, nums2: list[int], n: int) -> None:
+        nums = [] # use a new array to save ordered num.
+        i = 0
+        j = 0
+
+        while i < m or j < n:
+            if j >= n or (i < m and nums1[i] <= nums2[j]):
+                nums.append(nums1[i])
+                i += 1
+            else:
+                nums.append(nums2[j])
+                j += 1
+
+        for i, num in enumerate(nums):
+            nums1[i] = num
 ```
 
 ## Ruby

@@ -4,7 +4,7 @@
 
 访问原文链接：[3689. 最大子数组总和 I - LeetCode Python/Java/C++/JS/C#/Go/Ruby 题解](https://www.coder.id/leetcode/zh/solutions/3689-maximum-total-subarray-value-i)，体验更佳！
 
-力扣链接：[3689. 最大子数组总和 I](https://leetcode.cn/problems/maximum-total-subarray-value-i), 难度等级：**困难**。
+力扣链接：[3689. 最大子数组总和 I](https://leetcode.cn/problems/maximum-total-subarray-value-i), 难度等级：**中等**。
 
 ## LeetCode “3689. 最大子数组总和 I”问题描述
 
@@ -17,6 +17,9 @@
 **总和** 是所有被选中的子数组的 **值** 之和。
 
 返回你能达到的 **最大** 可能总和。
+
+**子数组** 是数组中连续的 **非空** 元素序列。
+
 
 ### [示例 1]
 
@@ -57,21 +60,7 @@
 
 <details>
   <summary>提示 1</summary>
-  Notice that for any subarray `nums[l..r]`, its maximum value is at most the global maximum of `nums`, and its minimum value is at least the global minimum of `nums`.
-
-  
-</details>
-
-<details>
-  <summary>提示 2</summary>
-  Therefore, the value of any subarray `max(nums[l..r]) - min(nums[l..r])` can never exceed the difference between the global maximum and the global minimum of the entire array.
-
-  
-</details>
-
-<details>
-  <summary>提示 3</summary>
-  Since we want to maximize the total value and we are allowed to pick the exact same subarray multiple times, we can simply pick the entire array `nums` exactly `k` times.
+  Choose the whole subarray `k` times.
 
   
 </details>
@@ -98,8 +87,8 @@
 > - **时间复杂度：** `O(N)`，其中 `N` 是数组的长度。我们只需要遍历数组一次即可找到最大值和最小值。
 - **空间复杂度：** `O(1)`。我们只使用了几个额外的变量来跟踪最大值和最小值，这需要常数级别的额外空间。
 
-- 时间复杂度: ``.
-- 空间复杂度: ``.
+- 时间复杂度: `O(N)`.
+- 空间复杂度: `O(1)`.
 
 ## Python
 

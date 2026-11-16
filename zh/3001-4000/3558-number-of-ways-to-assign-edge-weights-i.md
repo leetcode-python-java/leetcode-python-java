@@ -22,6 +22,8 @@
 
 ### [示例 1]
 
+![](../../images/examples/3558_1.png)
+
 **输入**: `edges = [[1,2]]`
 
 **输出**: `1`
@@ -35,6 +37,8 @@
 
 
 ### [示例 2]
+
+![](../../images/examples/3558_2.png)
 
 **输入**: `edges = [[1,2],[1,3],[3,4],[3,5]]`
 
@@ -61,28 +65,28 @@
 
 <details>
   <summary>提示 1</summary>
-  How can we find the maximum depth of the tree rooted at node 1?
+  Depth‑First Search (DFS) to compute the depth of each node from the root.
 
   
 </details>
 
 <details>
   <summary>提示 2</summary>
-  Use Breadth-First Search (BFS) or Depth-First Search (DFS) to find the node `x` at the maximum depth and determine its distance `d` from the root.
+  Find the maximum depth, `max_depth`.
 
   
 </details>
 
 <details>
   <summary>提示 3</summary>
-  Since we only care about the `d` edges in the path from node 1 to `x`, each edge can be assigned a weight of 1 or 2.
+  The number of `2`s doesn’t affect parity; we only need an odd number of `1`s along the path.
 
   
 </details>
 
 <details>
   <summary>提示 4</summary>
-  The total cost is odd if and only if there is an odd number of edges with weight 1. Using combinatorial math, the number of such assignments is `2^(d-1)`.
+  The number of ways to choose an odd count of `1`s among `max_depth` edges is `2^(max_depth-1)`.
 
   
 </details>
@@ -108,11 +112,11 @@
 
 ## 复杂度
 
-> - **时间复杂度：** `O(n)`。构建图需要 `O(n)` 的时间。BFS 遍历精确地访问每个节点和每条边一次，需要 `O(n)` 的时间。快速幂取模需要 `O(\log d)` 的时间，即 `O(\log n)`。总体时间复杂度是线性的 `O(n)`。
+> - **时间复杂度：** `O(n)`。构建图需要 `O(n)` 的时间。BFS 遍历精确地访问每个节点和每条边一次，需要 `O(n)` 的时间。快速幂取模需要 `O(log d)` 的时间，即 `O(log n)`。总体时间复杂度是线性的 `O(n)`。
 - **空间复杂度：** `O(n)`。邻接表需要 `O(n)` 的空间来存储图。BFS 的队列和访问记录集合/数组也需要最多 `O(n)` 的空间。因此，整体空间复杂度为 `O(n)`。
 
-- 时间复杂度: ``.
-- 空间复杂度: ``.
+- 时间复杂度: `O(n)`.
+- 空间复杂度: `O(n)`.
 
 ## Python
 

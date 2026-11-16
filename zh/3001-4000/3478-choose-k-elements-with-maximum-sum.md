@@ -72,7 +72,7 @@
 ## 思路
 
 - 要求1：找出所有满足 `nums1[j]` 小于 `nums1[i]` 的下标 `j` 。
-    看到这个，大家一定会想到把 `nums1` 按从小到大排序，这样，前面的小于等于后面的，但一排序下标就**乱**了。如果对这个问题没有好办法解决，整个题目就做不出来。先请思考下。
+    看到这个，大家一定会想到把 `nums1` 按从小到大排序（如果不排序，无法通过测试，会超时），这样，前面的小于等于后面的，但一排序下标就**乱**了。如果对这个问题没有好办法解决，整个题目就做不出来。先请思考下。
 
     <details><summary>点击查看答案</summary><p>在排序时带上索引下标，即排序的对象是元组`(num, index)`的数组。这个技术**一定要掌握**，许多题目都会用到。</p></details>
 
@@ -100,17 +100,15 @@
 ```python
 class Solution:
     def findMaxSum(self, nums1: List[int], nums2: List[int], k: int) -> List[int]:
-        num_index_list = [(num, index) for index, num in enumerate(nums1)] # key 1
+        num_index_list = [(num, index) for index, num in enumerate(nums1)] # key line 1
         num_index_list.sort()
 
         answer = [None] * len(nums1)
         k_max_nums = []
         sum_ = 0
-        num_to_sum = defaultdict(int) # key 2
+        num_to_sum = defaultdict(int) # key line 2
 
-        for i, num_index in enumerate(num_index_list):
-            num, index = num_index
-
+        for num, index in num_index_list:
             if num in num_to_sum:
                 answer[index] = num_to_sum[num]
             else:
@@ -121,10 +119,11 @@ class Solution:
             sum_ += nums2[index]
 
             if len(k_max_nums) > k:
-                num = heapq.heappop(k_max_nums) # key 3
+                num = heapq.heappop(k_max_nums) # key line 3
                 sum_ -= num
 
         return answer
+
 ```
 
 ## Other languages

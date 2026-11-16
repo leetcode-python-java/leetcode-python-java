@@ -47,7 +47,7 @@ Initially, all next pointers are set to `NULL`.
 * The number of nodes in the tree is in the range `[0, 6000]`.
 * `-100 <= Node.val <= 100`
 
-## Intuition
+## Intuition 1
 
 We need to connect nodes at the same level. A standard Breadth-First Search (BFS) using a queue takes O(N) space. However, the problem asks for O(1) extra space. Notice that once a level's `next` pointers are fully connected, it forms a linked list. We can traverse the current level as a linked list to find all children and link them up to form the next level's linked list. By using a dummy node for the next level, we can easily keep track of the start of the next level.
 
@@ -640,6 +640,62 @@ class Solution {
         return root
     }
 }
+```
+
+## Other languages
+
+```java
+// Welcome to create a PR to complete the code of this language, thanks!
+```
+
+## Intuition 2
+
+
+
+## Complexity
+
+- Time complexity: `O(n)`.
+- Space complexity: `O(n)`.
+
+## Python
+
+```python
+"""
+# Definition for a Node.
+class Node:
+    def __init__(self, val: int = 0, left: 'Node' = None, right: 'Node' = None, next: 'Node' = None):
+        self.val = val
+        self.left = left
+        self.right = right
+        self.next = next
+"""
+
+class Solution:
+    def connect(self, root: 'Node') -> 'Node':
+        if root is None:
+            return
+
+        queue = deque([root]) # key 1. Breadth First Search need a queue.
+
+        while queue:
+            size = len(queue)
+            prev = None
+            
+            for _ in range(size): # key 2: Go through all nodes (previous level) in queue.
+                node = queue.popleft()
+
+                if prev:
+                    prev.next = node # key 3
+
+                prev = node # key 4
+
+                if node.left:
+                    queue.append(node.left)
+
+                if node.right:
+                    queue.append(node.right)
+        
+        return root
 ```
 
 ## Other languages

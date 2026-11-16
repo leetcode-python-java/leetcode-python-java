@@ -48,13 +48,13 @@ Given an integer array `nums`, return `true` if there exists a triple of indices
 
 To find an increasing triplet subsequence, we can track the smallest and second-smallest elements seen so far. If we encounter an element larger than both, we've found our triplet.
 
-## Pattern of "Greedy Algorithm"
+## Pattern of "Greedy"
 
 The `Greedy Algorithm` is a strategy that makes the locally optimal choice at each step with the hope of leading to a "globally optimal" solution. In other words, "local optima" can result in "global optima."
 
 ## Step-by-Step Solution
 
-1. Initialize `first` as the first element and `second` as infinity.
+1. Initialize variable `first` as the first element and variable `second` as infinity.
 2. Iterate through the array starting from the second element:
     - if current element > `second`, then triplet found → return `true`.
     - else (current element < `second`)

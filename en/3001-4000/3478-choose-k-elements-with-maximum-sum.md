@@ -70,7 +70,7 @@ Return an array `answer` of size `n`, where `answer[i]` represents the result fo
 
 ## Intuition
 
-* Seeing this, everyone will definitely think of sorting `nums1` from small to large, so that the front is less than or equal to the back, but the indexes will be **messy** when sorting. If there is no good way to solve this problem, the whole question cannot be solved. Please think about it first.
+* Seeing this, everyone will definitely think of sorting `nums1` from small to large (without sorting, you will not pass because of the Timeout failure), so that the front is less than or equal to the back, but the indexes will be **messy** when sorting. If there is no good way to solve this problem, the whole question cannot be solved. Please think about it first.
 
     <details><summary>Click to view the answer</summary><p> Bring the `index` when sorting, that is, the object to be sorted is an array of tuples of `(num, index)`. This technique **must be mastered**, as it will be used in many questions.</p></details>
 
@@ -98,17 +98,15 @@ Return an array `answer` of size `n`, where `answer[i]` represents the result fo
 ```python
 class Solution:
     def findMaxSum(self, nums1: List[int], nums2: List[int], k: int) -> List[int]:
-        num_index_list = [(num, index) for index, num in enumerate(nums1)] # key 1
+        num_index_list = [(num, index) for index, num in enumerate(nums1)] # key line 1
         num_index_list.sort()
 
         answer = [None] * len(nums1)
         k_max_nums = []
         sum_ = 0
-        num_to_sum = defaultdict(int) # key 2
+        num_to_sum = defaultdict(int) # key line 2
 
-        for i, num_index in enumerate(num_index_list):
-            num, index = num_index
-
+        for num, index in num_index_list:
             if num in num_to_sum:
                 answer[index] = num_to_sum[num]
             else:
@@ -119,10 +117,11 @@ class Solution:
             sum_ += nums2[index]
 
             if len(k_max_nums) > k:
-                num = heapq.heappop(k_max_nums) # key 3
+                num = heapq.heappop(k_max_nums) # key line 3
                 sum_ -= num
 
         return answer
+
 ```
 
 ## Other languages

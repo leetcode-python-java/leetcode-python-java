@@ -4,7 +4,7 @@
 
 访问原文链接：[3753. 范围内的数字总波度 II - LeetCode Python/Java/C++/JS/C#/Go/Ruby 题解](https://www.coder.id/leetcode/zh/solutions/3753-total-waviness-of-numbers-in-range-ii)，体验更佳！
 
-力扣链接：[3753. 范围内的数字总波度 II](https://leetcode.cn/problems/total-waviness-of-numbers-in-range-ii), 难度等级：**Difficulty/**。
+力扣链接：[3753. 范围内的数字总波度 II](https://leetcode.cn/problems/total-waviness-of-numbers-in-range-ii), 难度等级：**困难**。
 
 ## LeetCode “3753. 范围内的数字总波度 II”问题描述
 
@@ -84,7 +84,13 @@
 
 ## 思路
 
-问题要求我们求出范围 `[num1, num2]` 内所有数字的波度总和。由于范围可以大到 `10^15`，遍历所有数字的暴力解法太慢了。相反，我们可以使用数位动态规划（Digit DP）。核心思想是逐位计算符合条件的贡献。我们定义一个函数 `calc(x)`，它计算范围 `[1, x]` 内所有数字的总波度。那么最终答案将是 `calc(num2) - calc(num1 - 1)`。在 DP 状态中，我们需要跟踪当前位置（`pos`）、前缀是否受限于上限（`tight`）、数字是否已经开始（用于处理前导零，`started`），以及最后两个数字（`prev2` 和 `prev1`）。DP 函数将返回一对值：从当前状态形成的有效数字的计数，以及这些数字贡献的总波度。
+问题要求我们求出范围 `[num1, num2]` 内所有数字的波度总和。由于范围可以大到 `10^15`，遍历所有数字的暴力解法太慢了。
+
+相反，我们可以使用数位动态规划（Digit DP）。核心思想是逐位计算符合条件的贡献。我们定义一个函数 `calc(x)`，它计算范围 `[1, x]` 内所有数字的总波度。那么最终答案将是 `calc(num2) - calc(num1 - 1)`。
+
+在 DP 状态中，我们需要跟踪当前位置（`pos`）、前缀是否受限于上限（`tight`）、数字是否已经开始（用于处理前导零，`started`），以及最后两个数字（`prev2` 和 `prev1`）。
+
+DP 函数将返回一对值：从当前状态形成的有效数字的计数，以及这些数字贡献的总波度。
 
 ## 步骤
 
@@ -99,8 +105,8 @@
 > - **时间复杂度：** `O(D * 10 * 10 * 10)`，其中 `D` 是 `num2` 的位数（最大为 16，因为上限是 `10^15`）。状态由 `pos`（最大 16）、`prev2`（11 种可能：0-9 以及 10 表示无）、`prev1`（11 种可能）和 `started`（2 种可能）组成。对于每个状态，我们最多遍历 10 个数字。状态总数很小（大约 `16 * 11 * 11 * 2 = 3872`），使得时间复杂度实际上是 `O(1)`，严格来说是 `O(log(num2))`。
 - **空间复杂度：** `O(D * 10 * 10 * 2)`，用于存储备忘录表。递归栈也需要 `O(D)` 的空间。这只需要微不足道的空间，使得空间复杂度实际上是 `O(1)`，严格来说是 `O(log(num2))`。
 
-- 时间复杂度: ``.
-- 空间复杂度: ``.
+- 时间复杂度: `O(D * 10 * 10 * 10)`.
+- 空间复杂度: `O(D * 10 * 10 * 2)`.
 
 ## Python
 
@@ -312,6 +318,228 @@ var totalWaviness = function(num1, num2) {
     
     return calc(num2) - calc(num1 - 1);
 };
+```
+
+## Rust
+
+```rust
+impl Solution {
+    pub fn total_waviness(num1: i64, num2: i64) -> i64 {
+        fn calc(x: i64) -> i64 {
+            if x <= 0 {
+                return 0;
+            }
+            
+            let s: Vec<char> = x.to_string().chars().collect();
+            let n = s.len();
+            
+            let mut memo = vec![vec![vec![vec![None; 2]; 11]; 11]; n];
+            
+            fn dfs(
+                pos: usize, 
+                tight: bool, 
+                started: bool, 
+                prev2: usize, 
+                prev1: usize,
+                s: &Vec<char>,
+                memo: &mut Vec<Vec<Vec<Vec<Option<(i64, i64)>>>>>
+            ) -> (i64, i64) {
+                if pos == s.len() {
+                    return (if started { 1 } else { 0 }, 0);
+                }
+                
+                let started_idx = if started { 1 } else { 0 };
+                if !tight && memo[pos][prev2][prev1][started_idx].is_some() {
+                    return memo[pos][prev2][prev1][started_idx].unwrap();
+                }
+                
+                let limit = if tight { s[pos] as usize - '0' as usize } else { 9 };
+                let mut total_cnt = 0;
+                let mut total_wav = 0;
+                
+                for d in 0..=limit {
+                    let nt = tight && (d == limit);
+                    
+                    if !started && d == 0 {
+                        let (cnt, wav) = dfs(pos + 1, nt, false, 10, 10, s, memo);
+                        total_cnt += cnt;
+                        total_wav += wav;
+                    } else if !started {
+                        let (cnt, wav) = dfs(pos + 1, nt, true, 10, d, s, memo);
+                        total_cnt += cnt;
+                        total_wav += wav;
+                    } else if prev2 == 10 {
+                        let (cnt, wav) = dfs(pos + 1, nt, true, prev1, d, s, memo);
+                        total_cnt += cnt;
+                        total_wav += wav;
+                    } else {
+                        let add = if (prev1 > prev2 && prev1 > d) || (prev1 < prev2 && prev1 < d) { 1 } else { 0 };
+                        let (cnt, wav) = dfs(pos + 1, nt, true, prev1, d, s, memo);
+                        total_cnt += cnt;
+                        total_wav += wav + cnt * add;
+                    }
+                }
+                
+                let ans = (total_cnt, total_wav);
+                if !tight {
+                    memo[pos][prev2][prev1][started_idx] = Some(ans);
+                }
+                ans
+            }
+            
+            dfs(0, true, false, 10, 10, &s, &mut memo).1
+        }
+        
+        calc(num2) - calc(num1 - 1)
+    }
+}
+```
+
+## Kotlin
+
+```kotlin
+class Solution {
+    private data class Pair(val cnt: Long, val wav: Long)
+
+    fun totalWaviness(num1: Long, num2: Long): Long {
+        return calc(num2) - calc(num1 - 1)
+    }
+
+    private fun calc(x: Long): Long {
+        if (x <= 0) return 0
+        
+        val s = x.toString().toCharArray()
+        val n = s.size
+        
+        val memo = Array(n) { Array(11) { Array(11) { arrayOfNulls<Pair>(2) } } }
+        
+        fun dfs(pos: Int, tight: Boolean, started: Boolean, prev2: Int, prev1: Int): Pair {
+            if (pos == n) {
+                return Pair(if (started) 1L else 0L, 0L)
+            }
+            
+            val startedIdx = if (started) 1 else 0
+            if (!tight) {
+                val cached = memo[pos][prev2][prev1][startedIdx]
+                if (cached != null) return cached
+            }
+            
+            val limit = if (tight) s[pos] - '0' else 9
+            var totalCnt = 0L
+            var totalWav = 0L
+            
+            for (d in 0..limit) {
+                val nt = tight && (d == s[pos] - '0')
+                
+                if (!started && d == 0) {
+                    val nxt = dfs(pos + 1, nt, false, 10, 10)
+                    totalCnt += nxt.cnt
+                    totalWav += nxt.wav
+                } else if (!started) {
+                    val nxt = dfs(pos + 1, nt, true, 10, d)
+                    totalCnt += nxt.cnt
+                    totalWav += nxt.wav
+                } else if (prev2 == 10) {
+                    val nxt = dfs(pos + 1, nt, true, prev1, d)
+                    totalCnt += nxt.cnt
+                    totalWav += nxt.wav
+                } else {
+                    val add = if ((prev1 > prev2 && prev1 > d) || (prev1 < prev2 && prev1 < d)) 1L else 0L
+                    val nxt = dfs(pos + 1, nt, true, prev1, d)
+                    totalCnt += nxt.cnt
+                    totalWav += nxt.wav + nxt.cnt * add
+                }
+            }
+            
+            val ans = Pair(totalCnt, totalWav)
+            if (!tight) {
+                memo[pos][prev2][prev1][startedIdx] = ans
+            }
+            return ans
+        }
+        
+        return dfs(0, true, false, 10, 10).wav
+    }
+}
+```
+
+## Swift
+
+```swift
+class Solution {
+    struct Pair {
+        let cnt: Int64
+        let wav: Int64
+    }
+
+    func totalWaviness(_ num1: Int, _ num2: Int) -> Int {
+        func calc(_ x: Int64) -> Int64 {
+            if x <= 0 { return 0 }
+            
+            let s = Array(String(x))
+            let n = s.count
+            
+            // Using a flat array for 4D memoization to avoid nested array overhead
+            // Dimensions: [20][11][11][2]
+            var memo = [Pair?](repeating: nil, count: 20 * 11 * 11 * 2)
+            
+            func getIndex(pos: Int, prev2: Int, prev1: Int, startedIdx: Int) -> Int {
+                return ((pos * 11 + prev2) * 11 + prev1) * 2 + startedIdx
+            }
+            
+            func dfs(pos: Int, tight: Bool, started: Bool, prev2: Int, prev1: Int) -> Pair {
+                if pos == n {
+                    return Pair(cnt: started ? 1 : 0, wav: 0)
+                }
+                
+                let startedIdx = started ? 1 : 0
+                let memoIdx = getIndex(pos: pos, prev2: prev2, prev1: prev1, startedIdx: startedIdx)
+                
+                if !tight, let cached = memo[memoIdx] {
+                    return cached
+                }
+                
+                let limit = tight ? Int(s[pos].asciiValue! - Character("0").asciiValue!) : 9
+                var totalCnt: Int64 = 0
+                var totalWav: Int64 = 0
+                
+                for d in 0...limit {
+                    let nt = tight && (d == limit)
+                    
+                    if !started && d == 0 {
+                        let nxt = dfs(pos: pos + 1, tight: nt, started: false, prev2: 10, prev1: 10)
+                        totalCnt += nxt.cnt
+                        totalWav += nxt.wav
+                    } else if !started {
+                        let nxt = dfs(pos: pos + 1, tight: nt, started: true, prev2: 10, prev1: d)
+                        totalCnt += nxt.cnt
+                        totalWav += nxt.wav
+                    } else if prev2 == 10 {
+                        let nxt = dfs(pos: pos + 1, tight: nt, started: true, prev2: prev1, prev1: d)
+                        totalCnt += nxt.cnt
+                        totalWav += nxt.wav
+                    } else {
+                        let isPeakOrValley = (prev1 > prev2 && prev1 > d) || (prev1 < prev2 && prev1 < d)
+                        let add: Int64 = isPeakOrValley ? 1 : 0
+                        let nxt = dfs(pos: pos + 1, tight: nt, started: true, prev2: prev1, prev1: d)
+                        totalCnt += nxt.cnt
+                        totalWav += nxt.wav + nxt.cnt * add
+                    }
+                }
+                
+                let ans = Pair(cnt: totalCnt, wav: totalWav)
+                if !tight {
+                    memo[memoIdx] = ans
+                }
+                return ans
+            }
+            
+            return dfs(pos: 0, tight: true, started: false, prev2: 10, prev1: 10).wav
+        }
+        
+        return Int(calc(Int64(num2)) - calc(Int64(num1 - 1)))
+    }
+}
 ```
 
 ## Java
@@ -649,228 +877,6 @@ func totalWaviness(num1 int64, num2 int64) int64 {
 	}
 	
 	return calc(num2) - calc(num1-1)
-}
-```
-
-## Rust
-
-```rust
-impl Solution {
-    pub fn total_waviness(num1: i64, num2: i64) -> i64 {
-        fn calc(x: i64) -> i64 {
-            if x <= 0 {
-                return 0;
-            }
-            
-            let s: Vec<char> = x.to_string().chars().collect();
-            let n = s.len();
-            
-            let mut memo = vec![vec![vec![vec![None; 2]; 11]; 11]; n];
-            
-            fn dfs(
-                pos: usize, 
-                tight: bool, 
-                started: bool, 
-                prev2: usize, 
-                prev1: usize,
-                s: &Vec<char>,
-                memo: &mut Vec<Vec<Vec<Vec<Option<(i64, i64)>>>>>
-            ) -> (i64, i64) {
-                if pos == s.len() {
-                    return (if started { 1 } else { 0 }, 0);
-                }
-                
-                let started_idx = if started { 1 } else { 0 };
-                if !tight && memo[pos][prev2][prev1][started_idx].is_some() {
-                    return memo[pos][prev2][prev1][started_idx].unwrap();
-                }
-                
-                let limit = if tight { s[pos] as usize - '0' as usize } else { 9 };
-                let mut total_cnt = 0;
-                let mut total_wav = 0;
-                
-                for d in 0..=limit {
-                    let nt = tight && (d == limit);
-                    
-                    if !started && d == 0 {
-                        let (cnt, wav) = dfs(pos + 1, nt, false, 10, 10, s, memo);
-                        total_cnt += cnt;
-                        total_wav += wav;
-                    } else if !started {
-                        let (cnt, wav) = dfs(pos + 1, nt, true, 10, d, s, memo);
-                        total_cnt += cnt;
-                        total_wav += wav;
-                    } else if prev2 == 10 {
-                        let (cnt, wav) = dfs(pos + 1, nt, true, prev1, d, s, memo);
-                        total_cnt += cnt;
-                        total_wav += wav;
-                    } else {
-                        let add = if (prev1 > prev2 && prev1 > d) || (prev1 < prev2 && prev1 < d) { 1 } else { 0 };
-                        let (cnt, wav) = dfs(pos + 1, nt, true, prev1, d, s, memo);
-                        total_cnt += cnt;
-                        total_wav += wav + cnt * add;
-                    }
-                }
-                
-                let ans = (total_cnt, total_wav);
-                if !tight {
-                    memo[pos][prev2][prev1][started_idx] = Some(ans);
-                }
-                ans
-            }
-            
-            dfs(0, true, false, 10, 10, &s, &mut memo).1
-        }
-        
-        calc(num2) - calc(num1 - 1)
-    }
-}
-```
-
-## Kotlin
-
-```kotlin
-class Solution {
-    private data class Pair(val cnt: Long, val wav: Long)
-
-    fun totalWaviness(num1: Long, num2: Long): Long {
-        return calc(num2) - calc(num1 - 1)
-    }
-
-    private fun calc(x: Long): Long {
-        if (x <= 0) return 0
-        
-        val s = x.toString().toCharArray()
-        val n = s.size
-        
-        val memo = Array(n) { Array(11) { Array(11) { arrayOfNulls<Pair>(2) } } }
-        
-        fun dfs(pos: Int, tight: Boolean, started: Boolean, prev2: Int, prev1: Int): Pair {
-            if (pos == n) {
-                return Pair(if (started) 1L else 0L, 0L)
-            }
-            
-            val startedIdx = if (started) 1 else 0
-            if (!tight) {
-                val cached = memo[pos][prev2][prev1][startedIdx]
-                if (cached != null) return cached
-            }
-            
-            val limit = if (tight) s[pos] - '0' else 9
-            var totalCnt = 0L
-            var totalWav = 0L
-            
-            for (d in 0..limit) {
-                val nt = tight && (d == s[pos] - '0')
-                
-                if (!started && d == 0) {
-                    val nxt = dfs(pos + 1, nt, false, 10, 10)
-                    totalCnt += nxt.cnt
-                    totalWav += nxt.wav
-                } else if (!started) {
-                    val nxt = dfs(pos + 1, nt, true, 10, d)
-                    totalCnt += nxt.cnt
-                    totalWav += nxt.wav
-                } else if (prev2 == 10) {
-                    val nxt = dfs(pos + 1, nt, true, prev1, d)
-                    totalCnt += nxt.cnt
-                    totalWav += nxt.wav
-                } else {
-                    val add = if ((prev1 > prev2 && prev1 > d) || (prev1 < prev2 && prev1 < d)) 1L else 0L
-                    val nxt = dfs(pos + 1, nt, true, prev1, d)
-                    totalCnt += nxt.cnt
-                    totalWav += nxt.wav + nxt.cnt * add
-                }
-            }
-            
-            val ans = Pair(totalCnt, totalWav)
-            if (!tight) {
-                memo[pos][prev2][prev1][startedIdx] = ans
-            }
-            return ans
-        }
-        
-        return dfs(0, true, false, 10, 10).wav
-    }
-}
-```
-
-## Swift
-
-```swift
-class Solution {
-    struct Pair {
-        let cnt: Int64
-        let wav: Int64
-    }
-
-    func totalWaviness(_ num1: Int, _ num2: Int) -> Int {
-        func calc(_ x: Int64) -> Int64 {
-            if x <= 0 { return 0 }
-            
-            let s = Array(String(x))
-            let n = s.count
-            
-            // Using a flat array for 4D memoization to avoid nested array overhead
-            // Dimensions: [20][11][11][2]
-            var memo = [Pair?](repeating: nil, count: 20 * 11 * 11 * 2)
-            
-            func getIndex(pos: Int, prev2: Int, prev1: Int, startedIdx: Int) -> Int {
-                return ((pos * 11 + prev2) * 11 + prev1) * 2 + startedIdx
-            }
-            
-            func dfs(pos: Int, tight: Bool, started: Bool, prev2: Int, prev1: Int) -> Pair {
-                if pos == n {
-                    return Pair(cnt: started ? 1 : 0, wav: 0)
-                }
-                
-                let startedIdx = started ? 1 : 0
-                let memoIdx = getIndex(pos: pos, prev2: prev2, prev1: prev1, startedIdx: startedIdx)
-                
-                if !tight, let cached = memo[memoIdx] {
-                    return cached
-                }
-                
-                let limit = tight ? Int(s[pos].asciiValue! - Character("0").asciiValue!) : 9
-                var totalCnt: Int64 = 0
-                var totalWav: Int64 = 0
-                
-                for d in 0...limit {
-                    let nt = tight && (d == limit)
-                    
-                    if !started && d == 0 {
-                        let nxt = dfs(pos: pos + 1, tight: nt, started: false, prev2: 10, prev1: 10)
-                        totalCnt += nxt.cnt
-                        totalWav += nxt.wav
-                    } else if !started {
-                        let nxt = dfs(pos: pos + 1, tight: nt, started: true, prev2: 10, prev1: d)
-                        totalCnt += nxt.cnt
-                        totalWav += nxt.wav
-                    } else if prev2 == 10 {
-                        let nxt = dfs(pos: pos + 1, tight: nt, started: true, prev2: prev1, prev1: d)
-                        totalCnt += nxt.cnt
-                        totalWav += nxt.wav
-                    } else {
-                        let isPeakOrValley = (prev1 > prev2 && prev1 > d) || (prev1 < prev2 && prev1 < d)
-                        let add: Int64 = isPeakOrValley ? 1 : 0
-                        let nxt = dfs(pos: pos + 1, tight: nt, started: true, prev2: prev1, prev1: d)
-                        totalCnt += nxt.cnt
-                        totalWav += nxt.wav + nxt.cnt * add
-                    }
-                }
-                
-                let ans = Pair(cnt: totalCnt, wav: totalWav)
-                if !tight {
-                    memo[memoIdx] = ans
-                }
-                return ans
-            }
-            
-            return dfs(pos: 0, tight: true, started: false, prev2: 10, prev1: 10).wav
-        }
-        
-        return Int(calc(Int64(num2)) - calc(Int64(num1 - 1)))
-    }
 }
 ```
 

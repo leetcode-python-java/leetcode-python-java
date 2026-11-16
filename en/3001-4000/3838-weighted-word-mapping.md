@@ -120,14 +120,14 @@ After finding the sum, we apply the modulo 26 operation. Finally, we map this re
 - **Space Complexity:** `O(N)`
   We use a string builder or array to store the resulting mapped character for each word. Since there are `N` words, the resulting string will have length `N`. Thus, the auxiliary space is `O(N)`.
 
-- Time complexity: ``.
-- Space complexity: ``.
+- Time complexity: `O(N * M)`.
+- Space complexity: `O(N * M)`.
 
 ## Python
 
 ```python
 class Solution:
-    def weightedWordMapping(self, words: List[str], weights: List[int]) -> str:
+    def mapWordWeights(self, words: List[str], weights: List[int]) -> str:
         # Array to store the mapped characters for each word
         result = []
         
@@ -156,7 +156,7 @@ class Solution:
 
 ```java
 class Solution {
-    public String weightedWordMapping(String[] words, int[] weights) {
+    public String mapWordWeights(String[] words, int[] weights) {
         // Use a StringBuilder for efficient string concatenation
         StringBuilder result = new StringBuilder();
         
@@ -195,7 +195,7 @@ class Solution {
  * @param {number[]} weights
  * @return {string}
  */
-var weightedWordMapping = function(words, weights) {
+var mapWordWeights = function(words, weights) {
     // Array to collect the resulting characters
     let result = [];
     
@@ -230,7 +230,7 @@ var weightedWordMapping = function(words, weights) {
 ```cpp
 class Solution {
 public:
-    string weightedWordMapping(vector<string>& words, vector<int>& weights) {
+    string mapWordWeights(vector<string>& words, vector<int>& weights) {
         // String to store the concatenated mapped characters
         string result = "";
         
@@ -263,7 +263,7 @@ public:
 
 ```csharp
 public class Solution {
-    public string WeightedWordMapping(string[] words, int[] weights) {
+    public string mapWordWeights(string[] words, int[] weights) {
         // StringBuilder is optimal for creating strings character by character
         System.Text.StringBuilder result = new System.Text.StringBuilder();
         
@@ -296,7 +296,7 @@ public class Solution {
 ## Go
 
 ```go
-func weightedWordMapping(words []string, weights []int) string {
+func mapWordWeights(words []string, weights []int) string {
     // Use a byte slice to efficiently build the result string
     result := make([]byte, 0, len(words))
     
@@ -332,7 +332,7 @@ func weightedWordMapping(words []string, weights []int) string {
 # @param {String[]} words
 # @param {Integer[]} weights
 # @return {String}
-def weighted_word_mapping(words, weights)
+def map_word_weights(words, weights)
     result = ""
     
     # Process each word individually
@@ -365,7 +365,7 @@ end
 
 ```rust
 impl Solution {
-    pub fn weighted_word_mapping(words: Vec<String>, weights: Vec<i32>) -> String {
+    pub fn map_word_weights(words: Vec<String>, weights: Vec<i32>) -> String {
         // String to store our concatenated results
         let mut result = String::with_capacity(words.len());
         
@@ -399,7 +399,7 @@ impl Solution {
 
 ```kotlin
 class Solution {
-    fun weightedWordMapping(words: Array<String>, weights: IntArray): String {
+    fun mapWordWeights(words: Array<String>, weights: IntArray): String {
         // StringBuilder is used to concatenate characters efficiently
         val result = java.lang.StringBuilder()
         
@@ -432,7 +432,7 @@ class Solution {
 
 ```swift
 class Solution {
-    func weightedWordMapping(_ words: [String], _ weights: [Int]) -> String {
+    func mapWordWeights(_ words: [String], _ weights: [Int]) -> String {
         // String to collect the mapped characters
         var result = ""
         

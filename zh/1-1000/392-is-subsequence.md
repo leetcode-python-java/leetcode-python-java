@@ -4,7 +4,7 @@
 
 访问原文链接：[392. 判断子序列 - LeetCode Python/Java/C++/JS/C#/Go/Ruby 题解](https://www.coder.id/leetcode/zh/solutions/392-is-subsequence)，体验更佳！
 
-力扣链接：[392. 判断子序列](https://leetcode.cn/problems/is-subsequence), 难度等级：**中等**。
+力扣链接：[392. 判断子序列](https://leetcode.cn/problems/is-subsequence), 难度等级：**简单**。
 
 ## LeetCode “392. 判断子序列”问题描述
 

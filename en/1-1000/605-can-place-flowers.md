@@ -35,7 +35,7 @@ Given an integer array `flowerbed` containing `0`'s and `1`'s, where `0` means e
 
 Check each empty plot (`0`). If both adjacent plots are empty (or boundaries), plant a flower (set to `1`) and count. Return `true` if the final count ≥ `n`, otherwise `false`.
 
-## Pattern of "Greedy Algorithm"
+## Pattern of "Greedy"
 
 The `Greedy Algorithm` is a strategy that makes the locally optimal choice at each step with the hope of leading to a "globally optimal" solution. In other words, "local optima" can result in "global optima."
 

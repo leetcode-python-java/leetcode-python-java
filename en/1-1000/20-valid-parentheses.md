@@ -122,6 +122,7 @@ var isValid = function (s) {
 ## Python
 
 ```python
+# Solution 1, a bit complex.
 class Solution:
     def isValid(self, s: str) -> bool:
         # Map closing brackets to their opening brackets
@@ -147,6 +148,21 @@ class Solution:
                 return False
 
         return not stack
+
+
+# Solution 2, more concise.
+class Solution:
+    def isValid(self, s: str) -> bool:
+        left_to_right = { '(': ')', '{': '}', '[': ']' }
+        st = []
+
+        for c in s:
+            if st and st[-1] in left_to_right and left_to_right[st[-1]] == c:
+                st.pop()
+            else:
+                st.append(c)
+
+        return not st
 ```
 
 ## Java

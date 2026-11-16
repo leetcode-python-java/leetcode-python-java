@@ -4,7 +4,7 @@
 
 Visit original link: [3689. Maximum Total Subarray Value I - LeetCode Python/Java/C++/JS/C#/Go/Ruby Solutions](https://www.coder.id/leetcode/en/solutions/3689-maximum-total-subarray-value-i) for a better experience!
 
-LeetCode link: [3689. Maximum Total Subarray Value I](https://leetcode.com/problems/maximum-total-subarray-value-i), difficulty: **Hard**.
+LeetCode link: [3689. Maximum Total Subarray Value I](https://leetcode.com/problems/maximum-total-subarray-value-i), difficulty: **Medium**.
 
 ## LeetCode description of "3689. Maximum Total Subarray Value I"
 
@@ -57,21 +57,7 @@ Adding these gives <code>4 + 4 + 4 = 12</code>.</p>
 
 <details>
   <summary>Hint 1</summary>
-  Notice that for any subarray `nums[l..r]`, its maximum value is at most the global maximum of `nums`, and its minimum value is at least the global minimum of `nums`.
-
-  
-</details>
-
-<details>
-  <summary>Hint 2</summary>
-  Therefore, the value of any subarray `max(nums[l..r]) - min(nums[l..r])` can never exceed the difference between the global maximum and the global minimum of the entire array.
-
-  
-</details>
-
-<details>
-  <summary>Hint 3</summary>
-  Since we want to maximize the total value and we are allowed to pick the exact same subarray multiple times, we can simply pick the entire array `nums` exactly `k` times.
+  Choose the whole subarray `k` times.
 
   
 </details>
@@ -98,8 +84,8 @@ The problem boils down to finding the global maximum and minimum elements of the
 > - **Time Complexity:** `O(N)`, where `N` is the length of the array. We only need to iterate through the array once to find the maximum and minimum values.
 - **Space Complexity:** `O(1)`. We only use a few extra variables to keep track of the maximum and minimum values, which requires constant extra space.
 
-- Time complexity: ``.
-- Space complexity: ``.
+- Time complexity: `O(N)`.
+- Space complexity: `O(1)`.
 
 ## Python
 

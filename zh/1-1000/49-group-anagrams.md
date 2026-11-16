@@ -70,6 +70,21 @@ class Solution:
             ordered_to_original[ordered].append(original)
 
         return list(ordered_to_original.values())
+
+# More concise solution:
+class Solution:
+    def groupAnagrams(self, strs: list[str]) -> list[list[str]]:
+        s_to_list = defaultdict(list)
+
+        for s in strs:
+            s_to_list[
+                ''.join(sorted(s))
+            ].append(s)
+        
+        print(s_to_list) # defaultdict(<class 'list'>, {'aet': ['eat', 'tea', 'ate'], 'ant': ['tan', 'nat'], 'abt': ['bat']})
+
+        return list(s_to_list.values())
+
 ```
 
 ## Ruby

@@ -22,6 +22,8 @@ Since the answer may be large, return it **modulo** `10^9 + 7`.
 
 ### [Example 1]
 
+![](../../images/examples/3558_1.png)
+
 **Input**: `edges = [[1,2]]`
 
 **Output**: `1`
@@ -35,6 +37,8 @@ Since the answer may be large, return it **modulo** `10^9 + 7`.
 
 
 ### [Example 2]
+
+![](../../images/examples/3558_2.png)
 
 **Input**: `edges = [[1,2],[1,3],[3,4],[3,5]]`
 
@@ -61,28 +65,28 @@ Since the answer may be large, return it **modulo** `10^9 + 7`.
 
 <details>
   <summary>Hint 1</summary>
-  How can we find the maximum depth of the tree rooted at node 1?
+  Depth‑First Search (DFS) to compute the depth of each node from the root.
 
   
 </details>
 
 <details>
   <summary>Hint 2</summary>
-  Use Breadth-First Search (BFS) or Depth-First Search (DFS) to find the node `x` at the maximum depth and determine its distance `d` from the root.
+  Find the maximum depth, `max_depth`.
 
   
 </details>
 
 <details>
   <summary>Hint 3</summary>
-  Since we only care about the `d` edges in the path from node 1 to `x`, each edge can be assigned a weight of 1 or 2.
+  The number of `2`s doesn’t affect parity; we only need an odd number of `1`s along the path.
 
   
 </details>
 
 <details>
   <summary>Hint 4</summary>
-  The total cost is odd if and only if there is an odd number of edges with weight 1. Using combinatorial math, the number of such assignments is `2^(d-1)`.
+  The number of ways to choose an odd count of `1`s among `max_depth` edges is `2^(max_depth-1)`.
 
   
 </details>
@@ -96,6 +100,7 @@ First, we recognize that the actual structure of the tree beyond this path does 
 If the path from node 1 to `x` has a length of `d` edges, we need to choose weights from `{1, 2}` for these `d` edges so that their sum is odd. The sum is odd if and only if the number of `1`s chosen is odd (since `2` is even and does not change the parity of the sum).
 
 By the properties of binomial coefficients, the number of ways to choose an odd number of items from `d` items is `2^{d-1}` (for `d > 0`). Thus, the problem simplifies to two steps:
+
 1. Find the maximum depth `d` (number of edges from node 1) using BFS or DFS.
 2. Calculate `2^{d-1} \pmod{10^9+7}` using modular exponentiation.
 
@@ -108,11 +113,11 @@ By the properties of binomial coefficients, the number of ways to choose an odd 
 
 ## Complexity
 
-> - **Time Complexity:** `O(n)`. Building the graph takes `O(n)` time. The BFS traversal visits each node and edge exactly once, taking `O(n)` time. The modular exponentiation takes `O(\log d)` time, which is `O(\log n)`. The overall time complexity is linear `O(n)`.
+> - **Time Complexity:** `O(n)`. Building the graph takes `O(n)` time. The BFS traversal visits each node and edge exactly once, taking `O(n)` time. The modular exponentiation takes `O(log d)` time, which is `O(log n)`. The overall time complexity is linear `O(n)`.
 - **Space Complexity:** `O(n)`. The adjacency list requires `O(n)` space to store the graph. The BFS queue and the visited set/array also require up to `O(n)` space. Thus, the overall space complexity is `O(n)`.
 
-- Time complexity: ``.
-- Space complexity: ``.
+- Time complexity: `O(n)`.
+- Space complexity: `O(n)`.
 
 ## Python
 

@@ -4,7 +4,7 @@
 
 Visit original link: [3691. Maximum Total Subarray Value II - LeetCode Python/Java/C++/JS/C#/Go/Ruby Solutions](https://www.coder.id/leetcode/en/solutions/3691-maximum-total-subarray-value-ii) for a better experience!
 
-LeetCode link: [3691. Maximum Total Subarray Value II](https://leetcode.com/problems/maximum-total-subarray-value-ii), difficulty: **Difficulty/**.
+LeetCode link: [3691. Maximum Total Subarray Value II](https://leetcode.com/problems/maximum-total-subarray-value-ii), difficulty: **Hard**.
 
 ## LeetCode description of "3691. Maximum Total Subarray Value II"
 
@@ -80,7 +80,15 @@ Adding these gives <code>4 + 4 + 4 = 12</code>.</p>
 
 ## Intuition
 
-The problem asks us to find `k` distinct subarrays that maximize the total value, where the value of a subarray is defined as its maximum element minus its minimum element. We can observe that for a fixed starting index `l`, as the ending index `r` moves to the left (i.e., the subarray shrinks), the maximum element can only decrease or stay the same, and the minimum element can only increase or stay the same. Therefore, the value `v(l, r)` is non-increasing as `r` decreases. This monotonic property suggests a Greedy approach using a Priority Queue (Max-Heap), similar to finding the K-th largest sum. We can use a Sparse Table (RMQ) to compute the value of any subarray in O(1) time. We initialize the Max-Heap with the largest possible subarrays starting from each index `l`, which are `(l, n-1)`. Then, we repeatedly pop the subarray with the maximum value. If we pop a subarray `(l, r)`, the next best candidate starting at `l` is `(l, r-1)`, so we push it into the heap. We repeat this process `k` times to accumulate the maximum total value.
+The problem asks us to find `k` distinct subarrays that maximize the total value, where the value of a subarray is defined as its maximum element minus its minimum element. 
+
+We can observe that for a fixed starting index `l`, as the ending index `r` moves to the left (i.e., the subarray shrinks), the maximum element can only decrease or stay the same, and the minimum element can only increase or stay the same. 
+
+Therefore, the value `v(l, r)` is non-increasing as `r` decreases. This monotonic property suggests a Greedy approach using a Priority Queue (Max-Heap), similar to finding the K-th largest sum. We can use a Sparse Table (RMQ) to compute the value of any subarray in O(1) time. 
+
+We initialize the Max-Heap with the largest possible subarrays starting from each index `l`, which are `(l, n-1)`. 
+
+Then, we repeatedly pop the subarray with the maximum value. If we pop a subarray `(l, r)`, the next best candidate starting at `l` is `(l, r-1)`, so we push it into the heap. We repeat this process `k` times to accumulate the maximum total value.
 
 ## Step-by-Step Solution
 
@@ -95,8 +103,8 @@ The problem asks us to find `k` distinct subarrays that maximize the total value
 > - **Time Complexity:** `O(N log N + K log N)`. Building the Sparse Tables takes `O(N log N)` time. The max-heap initially takes `O(N)` to build. We perform `K` extraction and insertion operations on the heap, each taking `O(log N)` time. Since `K <= 10^5` and `N <= 5 * 10^4`, the overall time complexity is highly efficient.
 - **Space Complexity:** `O(N log N)`. The two Sparse Tables require `O(N log N)` space to store the minimum and maximum values for intervals of length power of 2. The priority queue stores up to `N` elements at any time, requiring `O(N)` space. Thus, the total space complexity is dominated by the Sparse Tables.
 
-- Time complexity: ``.
-- Space complexity: ``.
+- Time complexity: `O(N log N + K log N)`.
+- Space complexity: `O(N log N)`.
 
 ## Python
 
